@@ -1,0 +1,50 @@
+
+
+
+//左右漸層色
+
+@mixin leftRightGradient($left, $right) {
+  background: #{$left}; /* Old browsers */
+  background:    -moz-linear-gradient(left, #{$left} 0%, #{$right} 100%); /* FF3.6+ */
+  background:        -webkit-gradient(linear, left left, left right, color-sleft(0%, #{$left}), color-sleft(100%, #{$right})); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #{$left} 0%, #{$right} 100%); /* Chrome10+,Safari5.1+ */
+  background:      -o-linear-gradient(left, #{$left} 0%, #{$right} 100%); /* Opera 11.10+ */
+  background:     -ms-linear-gradient(left, #{$left} 0%, #{$right} 100%); /* IE10+ */
+  background:         linear-gradient(to right, #{$left} 0%, #{$right} 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$left}', endColorstr='#{$right}', GradientType=0 ); /* IE6-9 */
+}
+
+
+@mixin topBottomGradient($top, $bottom) {
+  background: #{$top}; /* Old browsers */
+  background:    -moz-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* FF3.6+ */
+  background:        -webkit-gradient(linear, top top, top bottom, color-stop(0%, #{$top}), color-stop(100%, #{$bottom})); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* Chrome10+,Safari5.1+ */
+  background:      -o-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* Opera 11.10+ */
+  background:     -ms-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* IE10+ */
+  background:         linear-gradient(to bottom, #{$top} 0%, #{$bottom} 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$top}', endColorstr='#{$bottom}', GradientType=0 ); /* IE6-9 */
+}
+
+
+
+//RWD斷點
+
+$mobile: 767px;
+$tablet_min:768px;
+$tablet_max:1200px;
+
+@mixin rwd($breakpoint){
+	
+	@if $breakpoint == "mobile" {
+
+		@media all and (max-width:$mobile){
+			@content;
+		}
+	}
+	@else if $breakpoint =="desktop"{
+		@media all and (min-width:$tablet_min) and (max-width:$tablet_max){
+			@content;
+		}
+	}
+}	

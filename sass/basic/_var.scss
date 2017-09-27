@@ -1,0 +1,38 @@
+//顏色color
+
+$globalBgColor : #fbf8f1 ; 	 // 網頁背景米白色
+$globalFtColor : #f2ebd4 ;   // footer底色
+$globalHdColor01 : #805934 ; // header漸層深
+$globalHdColor02 : #9e693d ; // header漸層淺
+$globalStarColor : #f6921E;  // 評價星號顏色
+$globalBossColor : #0099cc;  // 店長專區用色
+$globalAccountColor : #7ac943;  // 會員專區用色
+
+
+// 字體顏色
+$globalTitleColor : #996633 ;    // 標題字體顏色
+$globalFontColor :  #663300 ;    // 內文字體顏色
+$globalLinkColor : #3399ff ;   	 // 超連結字體顏色
+$globalBtnColor : #f06428 ; 	 // 按鈕icon與字體顏色，"*"顏色
+$globalAltColor : #999 ;		 // 替代字體顏色
+$globalUnclickColor : #bbb; 	 // 未選取狀態字體顏色
+
+
+//字體大小
+$globalBigSize : 48px; 	   //超大字體
+$globalh1Size : 36px;  	   //h1字體大小
+$globalh2Size : 28px;  	   //h2字體大小
+$globalh3Size : 24px;  	   //h3字體大小
+$globalBtnSize : 18px;	   //按鈕字體大小
+$globalContentSize : 16px; //內文字體大小
+$globalCardSize : 12px;    //提醒與顯示狀態字體大小
+
+//字體樣式
+
+$globalFont : 'Noto Sans CJK TC'; //中文字體
+$globalFontEng : 'Gadugi'; //英數字字體
+
+
+//版面縮排，最大到1200px
+$globalMaxWidth:1200px; //最大寬度為1200px
+
