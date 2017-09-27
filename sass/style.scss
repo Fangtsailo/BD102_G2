@@ -1,0 +1,290 @@
+@import "mixins/_setting.scss";
+
+
+
+//var
+$font-h1-size: 300px;
+$red: #000;
+$width: 800px;
+$font: 'lato';
+//變數代換 
+
+h1 {
+    font-family: $font;
+    font-size: $font-h1-size;
+    color: $red;
+}
+
+
+h2 {
+
+color: $red;
+
+}
+.box {
+    width: $width;
+    height: $width;
+}
+
+
+// nesting  very good!!!
+//巢狀編輯
+.container {
+    width: $width;
+    height: 100px;
+    background-color: #ccc;
+    ul {
+        margin-top: 100px;
+        background-color: #f00;
+        li {
+            color: $red;
+            font-size: 100px;
+            background-color: #0f0;
+            display: block;
+            div{
+
+            	&.box {
+            	background-color: #00f;
+              margin: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+$class:fork;
+
+
+//跳脫字元
+##{$class}{
+	width: 100px;
+	height: 100px;
+	background-color: #0ff;
+}
+
+
+
+
+$vary:900px;
+.box1{
+    @include adam($vary,red,20px,20px);
+     height: 500px;
+}
+
+
+@import "base/_var.scss";
+.box3 {
+  width: 900px;
+  background-color: $aaa;
+  height: 500px;
+  @extend %box-line; 
+    @extend .box1;
+}
+
+
+
+  %box-line{
+    border: 100px solid #000;
+    border-radius: 50px;
+  }
+
+$aa:20px;
+$bb:3;
+
+$font-base-size:14px;
+
+.box4 {
+    background-color: $aaa;
+     width: 20px*2;
+     top: 20px+2px;
+     right: 20px-2;
+     left:round($aa/$bb);
+     left:ceil($aa/$bb);
+     left:(10px/2);
+     height:(20px+10)*2;
+}
+
+
+h1{font-size:round($font-base-size*5.8);}
+h2{font-size:round($font-base-size*3.6);}
+h3{font-size:round($font-base-size*2.4);}
+h4{font-size:round($font-base-size*1.8);}
+h5{font: italic bold 24px/60px Georgia;}
+
+
+// if else
+
+$margin_top : 40px;
+
+@include distools(box5,$margin_top);
+@include distools(box6,$margin_top);
+
+
+//@content
+@mixin frames($paddings) {
+    .box {
+        padding: $paddings;
+        @content;
+    }
+     
+    
+}
+
+.frames {
+        @include frames(10px) {
+            margin: 20px;
+            width: 30px;
+            font-size: 30px;
+        
+    }
+}
+
+
+
+
+
+@mixin grid-col($name,$cols) {
+
+    @for $i from 1 to $cols {
+        .col-#{$name}-#{$i} { 
+            width: ($i / $cols)*100%;
+        }
+    }
+
+}
+
+@include grid-col(sm,12);
+@include grid-col(lg,12);
+ 
+
+
+
+
+
+
+@mixin photo($list){
+    @each $man in $list{
+        .photo-#{$man}{
+            background:url('images/#{$man}.png');
+            @content;
+        }
+    }
+}
+
+@include photo(i1 i2 i3) {
+    width: 100px;
+};
+
+
+
+
+
+
+@mixin margin-right($cols) {
+
+    @for $i from 1 to $cols {
+        .margin-right-#{$i} { 
+            margin-right: $i+px;
+        }
+    }
+
+}
+
+
+@include margin-right(20);
+
+
+@mixin margin($dirc,$cols) {
+
+    @for $i from 1 through $cols {
+        .margin-#{$dirc}-#{$i} { 
+            margin-#{$dirc}: $i+px;
+        }
+    }
+
+}
+
+
+
+
+
+//
+//css3漸層
+
+
+@mixin linearGradient($dirc,$top, $bottom,$start,$end) {
+  background: #{$top}; /* Old browsers */
+  background:    -moz-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* FF3.6+ */
+  background:        -webkit-gradient(linear, left top, left bottom, color-stop(0%, #{$top}), color-stop(100%, #{$bottom})); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* Safari5.1+ */
+  background:      -o-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* Opera 11.10+ */
+  background:     -ms-linear-gradient(top, #{$top} 0%, #{$bottom} 100%); /* IE10+ */
+  background:         linear-gradient(to #{$dirc}, #{$top} #{$start}, #{$bottom} #{$end}); /* W3C chrome*/
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$top}', endColorstr='#{$bottom}', GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+
+@mixin hover-shadow($x, $y ,$blur, $color) {
+	transition:1s ease;
+	&:hover{box-shadow: #{$x} #{$y} #{$blur} #{$color};
+			border-radius: 50%;
+			opacity:0.8;}
+}
+
+
+
+.box3{
+	margin: 500px;
+	border-radius: 0px;
+	@include linearGradient(right,#f00,#0f0,30%,100%);
+	@include hover-shadow(0px, 40px ,30px, #aaa);
+}
+
+
+
+	$moblie : 767px ; 
+    $tablet_V_max : 768px;
+    $tablet_V_min : 991px;
+    $tablet_H_max : 992px;
+    $tablet_H_min : 1199px;
+    $desktop : 1200px;
+
+
+
+    @mixin rwd ($breakpoint) {
+        @if $breakpoint=="moblie" {
+            @media all and (max-width: $moblie) {
+                @content;
+            }
+        }
+        @else if $breakpoint=="tablet_V" {
+            @media all and (max-width:$tablet_V_max) and (min-width: $tablet_V_min) {
+                @content;
+            }
+        }
+
+		
+		@else if $breakpoint=="tablet_H" {
+            @media all and (max-width:$tablet_H_max) and (min-width: $tablet_H_min) {
+                @content;
+            }
+        }
+
+        @else if $breakpoint=="desktop" {
+            @media all and (min-width: $desktop) {
+                @content;
+            }
+        }
+    }
+
+
+    @include rwd (moblie) {
+	 h1{
+	 	font-size: 30px;
+	 }
+}

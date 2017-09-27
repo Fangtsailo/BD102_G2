@@ -1,0 +1,20 @@
+@mixin distools($box,$margin_top) {
+    .#{$box}{
+        @if ($margin_top) <=20px {
+            margin-top: $margin_top;
+        }@else {
+            margin-top: $margin_top * 2;
+        }
+    }
+
+}
+
+
+@mixin adam($width,$color,$top:null,$left:null) {
+    width:$width;
+    background-color:$color;
+    top: $top;
+    left: $left;
+}
+
+
