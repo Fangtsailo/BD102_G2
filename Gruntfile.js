@@ -45,7 +45,7 @@ module.exports = function (grunt) {
         },
         options: {
           watchTask: true,
-          browser: "firefox",
+          browser: "chrome",
           server: {
             baseDir: './',
             index: 'index.html'
