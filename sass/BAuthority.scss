@@ -1,0 +1,60 @@
+@import "backstage/authority/_BStgBasicVar.scss";
+
+
+body{
+	background-color: #e6e0d9;
+}
+
+header{
+	z-index: 1;
+}
+
+
+.navition{
+padding-top: $header-height;
+background-color: #ddcdb5;
+width: $navition-width;
+float: left;
+height: 100vh;
+position: fixed;
+	z-index: -1;
+	ul{
+		&:first-child{
+			border-top: 1px solid #aaaaaa;
+		}
+		&:last-child{
+			border-bottom: 1px solid #aaaaaa;
+		}
+		li{
+			width:$navition-width;
+			height:$navition-li-height;
+			background-color: $navition-li-bgColor;
+			border: 1px solid #aaaaaa;
+			box-sizing: border-box;
+			color:#ffffff;
+			line-height: $navition-li-height;
+			padding-left: 20px;
+			font-size:$navition-li-fontSize;
+		}
+	}
+}
+
+
+
+
+.tableArea{
+	float: left;
+	padding-top: $header-height;
+	padding-left: $navition-width;
+	// width: 100vw;
+	// height: 100vh;
+}
+
+
+.tableContent{
+	width: $tableContent-width;
+	margin-right: 0;
+	margin-left: 0;
+	margin: auto;
+}
+
