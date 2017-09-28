@@ -27,10 +27,17 @@ header {
     padding-left: 20px;
     font-size: 18px; }
 
+.coverNavition {
+  width: 200px;
+  height: 100vh;
+  overflow: hidden;
+  float: left; }
+
 .tableArea {
   float: left;
   padding-top: 100px;
-  padding-left: 200px; }
+  padding-left: 200px;
+  height: 100vh; }
 
 .tableContent {
   width: 900px;

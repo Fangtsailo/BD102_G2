@@ -40,6 +40,13 @@ position: fixed;
 }
 
 
+.coverNavition{
+	width:$navition-width;
+	height: 100vh;
+	overflow: hidden;
+	float: left;
+
+}
 
 
 .tableArea{
@@ -47,7 +54,7 @@ position: fixed;
 	padding-top: $header-height;
 	padding-left: $navition-width;
 	// width: 100vw;
-	// height: 100vh;
+	height: 100vh;
 }
 
 
