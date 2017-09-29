@@ -1,0 +1,9 @@
+/*===========================================================*/
+body {
+  font-size: 10px; }
+  body .wrapper {
+    margin: 10px; }
+
+.box {
+  width: 100px;
+  margin: auto; }

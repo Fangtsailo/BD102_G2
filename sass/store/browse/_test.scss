@@ -1,0 +1,4 @@
+@mixin centerBox($width) {
+	width: $width;
+	margin: auto;
+}

@@ -1,0 +1,14 @@
+@import "store/browse/_test.scss";
+
+/*===========================================================*/
+body {
+  font-size: 10px;   
+
+ .wrapper {
+       margin: 10px;
+   }   
+}
+
+.box {
+	@include centerBox(100px);
+}
