@@ -1,0 +1,12 @@
+
+// ========後台側邊導覽列HOVER效果
+@mixin navition-hover() {
+
+	&:hover{
+				color:#000000;
+				background-color: $navition-li-bgColor-hover;
+				transition:0.5s;
+
+			}
+	
+}
