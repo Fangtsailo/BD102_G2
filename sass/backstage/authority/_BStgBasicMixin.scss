@@ -10,3 +10,16 @@
 			}
 	
 }
+
+
+
+
+@mixin button-hover() {
+
+	&:hover{
+        				background-color:#ffffff;
+        				color:#7e4a1d;
+        				transition:0.3s;
+        			}	
+	
+}

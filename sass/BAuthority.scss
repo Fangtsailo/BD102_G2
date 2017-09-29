@@ -11,15 +11,23 @@ header{
 }
 
 
+// .container{
+// 	box-sizing: border-box;
+// 	position: relative;
+// 	left:0;
+// 	z-index: -6;
+	
+// }
 
 .coverHeader{
 
-	width:100vw;
+	
 	height: $header-height;
 	overflow: hidden;
 	// float: left;
 	position: relative;
 	z-index: 1;
+	left:0;
 
 }
 
@@ -46,8 +54,9 @@ width: $navition-width;
 float: left;
 height: 100vh;
 position: fixed;
-	z-index: -1;
+	z-index:3;
 	ul{
+
 		&:first-child{
 			border-top: 1px solid #aaaaaa;
 		}
@@ -73,10 +82,11 @@ position: fixed;
 .coverNavition{
 	width:$navition-width;
 	height: 100vh;
-	overflow: hidden;
+	// overflow: hidden;
 	float: left;
 	position: relative;
-	z-index: -1;
+	// z-index: -1;
+	left:0;
 
 }
 
@@ -86,62 +96,93 @@ position: fixed;
 
 
 .tableArea{
-	float: left;
+	// float: left;
 	// padding-top: $header-height;
-	padding-left: $navition-width;
-	width: $tableContent-width;
+	// padding-left: $navition-width;
+	// width: $tableContent-width;
 	height: 100vh;
 	position: relative;
-}
-
-
-.tableHeader{
-	width: $tableContent-width;
-	padding-top: 20px;
-	margin-right: 0;
-	margin-left: 0;
 	margin: auto;
-	position: fixed;
-	tr{
-
-		td{
-			color:$tableContent-word-color;
-			background-color: #e6e0d9;
-			width: 50px;
-			&:nth-child(1){
-				width: $table-col1;
-			}
-			&:nth-child(2){
-				width: $table-col2;
-			}
-			&:nth-child(3){
-				width: $table-col3;
-			}
-			&:nth-child(4){
-				width: $table-col4;
-			}
-			&:nth-child(5){
-				width: $table-col5;
-			}
-
-		}
-	}
-
+	// z-index: -1;
+	left:0;
 }
+
+
+
+.tableHeaderCover{
+	width: 100%;
+	height: 78px;
+	position: relative;
+	background-color: #e6e0d9;
+	.tableHeader{
+		width: $tableContent-width;
+		// padding-top: 20px;
+		margin-right: 0;
+		margin-left: 0;
+		margin: auto;
+		position: fixed;
+		left: 20vw;
+		// margin-bottom: 10px;
+		overflow: hidden;
+		border-spacing: 0px;
+		tr{
+			border-bottom:4px solid #d1c2b5 ;
+			border-collapse: collapse;
+			td{
+				color:$tableContent-word-color;
+				background-color: #e6e0d9;
+				height: 50px;
+				text-align: center;
+				border-bottom:4px solid #d1c2b5 ;
+				border-collapse: collapse;
+				padding-top: 20px;
+
+				&:nth-child(1){
+					width: $table-col1;
+				}
+				&:nth-child(2){
+					width: $table-col2;
+				}
+				&:nth-child(3){
+					width: $table-col3;
+				}
+				&:nth-child(4){
+					width: $table-col4;
+				}
+				&:nth-child(5){
+					width: $table-col5;
+				}
+
+			}
+		}
+
+	}
+}
+
+
 
 
 .tableContent{
 	width: $tableContent-width;
-	padding-top: 50px;
+	// padding-top: 70px;
 	margin-right: 0;
 	margin-left: 0;
 	margin: auto;
+	margin-bottom: 200px;
 	tr{
-
+		&:hover{
+		background-color:#000;
+		}
+	
 		td{
 			color:$tableContent-word-color;
 			background-color: #ffffff;
 			height: 50px;
+			text-align: center;
+			// &:hover{
+			// background-color: #e1ccb0;
+			// }
+			
 			&:nth-child(1){
 				width: $table-col1;
 			}
@@ -164,6 +205,7 @@ position: fixed;
 					background-color:#af6363;
 					border-radius: 10px;
 					box-shadow:0 0 0;
+					border: none;
 				}
 			}
 
@@ -175,10 +217,72 @@ position: fixed;
 
 
 footer{
-	width: 900px;
-	height: 100px;
+	// width: 900px;
+	height: 150px;
 	position: fixed;
 	bottom: 0;
-	left:$navition-width;
+	left:0;
+	background-color: #c5beb7;
+	margin: auto;
+	.square{
+		width:$navition-width;
+		height: 100%;
+		float: left;
+	}	
+
+
+	section{
+		
+		.square_2{
+
+			margin-top: 20px;
+
+			span{
+				input{
+					width: 120px;
+					height: 40px;
+					color:#ffffff;
+					background-color:#7e4a1d;
+					border-radius: 10px;
+					box-shadow:0 0 0;
+					margin-top: 5px;
+					border: none;
+					@include button-hover();
+				}
+			}
+
+			label{
+			display: block;
+			margin: 5px;
+
+				span{
+					display: inline-block;
+					width: 100px;
+					height: 30px;
+					background-color: #ffffff;
+					color:$tableContent-word-color;
+					border-radius: 10px;
+					margin-right: 10px;
+					// float: left;
+					font-size: 16px;
+					// line-height: 28px;
+					
+				}
+				input{
+					display: inline-block;
+					border-radius: 10px;
+					height: 30px;
+					width: 300px;
+					margin: 0;
+        			padding: 0;
+        			border: none;
+
+				}
+
+
+			}
+		}
+	
+	}
 }
 

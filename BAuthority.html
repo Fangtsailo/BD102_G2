@@ -132,7 +132,7 @@
 
 
 
-	<div class="container">
+<!-- 	<div class="container"> -->
 		<div class="coverNavition">
 			<div class="navition">
 				<ul>
@@ -154,15 +154,17 @@
 
 
 			<!-- =====表頭===== -->
-			<table class="tableHeader">
-				<tr>
-					<td>編號</td>
-					<td>帳號</td>
-					<td>等級</td>
-					<td>權限管理</td>
-					<td>權限修改</td>
-				</tr>	
-			</table>
+			<!-- <div class="tableHeaderCover">
+				<table class="tableHeader">
+					<tr>
+						<td>編號</td>
+						<td>帳號</td>
+						<td>等級</td>
+						<td>權限管理</td>
+						<td>權限修改</td>
+					</tr>	
+				</table>
+			</div> -->
 			<!-- =====表頭===== end-->
 
 
@@ -172,7 +174,18 @@
 			<form method="" action="">
 
 			<!-- =====表格內容===== -->
-			<section>
+			<!-- <section> -->
+			<div class="tableHeaderCover">
+				<table class="tableHeader">
+					<tr>
+						<td>編號</td>
+						<td>帳號</td>
+						<td>等級</td>
+						<td>權限管理</td>
+						<td>權限修改</td>
+					</tr>	
+				</table>
+			</div>
 				
 				<table class="tableContent">
 					<tr>
@@ -245,14 +258,8 @@
 						<td>正常</td>
 						<td><input type="button" name="" value="停權"></td>
 					</tr>
+					
 					<tr>
-						<td>100</td>
-						<td>ID125</td>
-						<td>一般管理員</td>
-						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
-					</tr>
-					<!-- <tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
@@ -274,14 +281,14 @@
 						<td><input type="button" name="" value="停權"></td>
 					</tr>
 					<tr>
-						<td>100</td>
+						<td>101</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
 						<td><input type="button" name="" value="停權"></td>
-					</tr> -->
+					</tr>
 				</table>
-			</section>
+			<!-- </section> -->
 			<!-- =====表格內容===== end-->
 
 
@@ -294,16 +301,21 @@
 		</div> <!-- tableArea -->
 
 		<footer>
+				<div class="square"></div>
 				<section>
-					<label><span>帳號</span><input type="text" name="" value=""></label>
-					<label><span>密碼</span><input type="text" name="" value=""></label>
-					<span><input type="button" name="" value="新增管理員"></span>
+					<div class="square_2">
+						<label><span>帳號</span><input type="text" name="" value="">
+						</label>
+						<label><span>密碼</span><input type="text" name="" value="">
+						</label>
+						<span><input type="button" name="" value="新增管理員"></span>
+					</div>
 				</section>
 		</footer>
 
 
 
-	</div><!-- container -->
+	<!-- </div> --><!-- container -->
 	
 
 
