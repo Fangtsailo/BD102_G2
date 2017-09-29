@@ -1,5 +1,5 @@
-@import "backstage/authority/_BStgBasicVar.scss";
-@import "backstage/authority/_BStgBasicMixin.scss";
+@import "backstage/member/ordinary/_BStgOrdinaryVar.scss";
+@import "backstage/member/ordinary/_BStgOrdinaryMixin.scss";
 
 
 body{
@@ -108,12 +108,34 @@ position: fixed;
 }
 
 
+.search{
+		width: $tableContent-width;
+		margin-right: 0;
+		margin-left: 0;
+		margin: auto;
+		position: fixed;
+		z-index: 3;
+		left: 20vw;
+		text-align: center;
+		margin-top: 20px;
+		input{
+			width: 600px;
+			height: 40px;
+			border-radius: 15px;
+			border:none;
+			background-color: #b5b5b5;
+			opacity:0.35;
+		}
+	}
+
+
 
 .tableHeaderCover{
 	width: 100%;
 	height: 78px;
 	position: relative;
 	background-color: #e6e0d9;
+
 	.tableHeader{
 		width: $tableContent-width;
 		// padding-top: 20px;
@@ -135,7 +157,7 @@ position: fixed;
 				text-align: center;
 				border-bottom:4px solid #d1c2b5 ;
 				border-collapse: collapse;
-				padding-top: 20px;
+				padding-top: 70px;
 
 				&:nth-child(1){
 					width: $table-col1;
@@ -151,6 +173,15 @@ position: fixed;
 				}
 				&:nth-child(5){
 					width: $table-col5;
+				}
+				&:nth-child(6){
+					width: $table-col6;
+				}
+				&:nth-child(7){
+					width: $table-col7;
+				}
+				&:nth-child(8){
+					width: $table-col8;
 				}
 
 			}
@@ -169,6 +200,7 @@ position: fixed;
 	margin-left: 0;
 	margin: auto;
 	margin-bottom: 160px;
+	padding-top: 50px;
 	tr{
 		&:hover{
 		background-color:#000;
@@ -196,9 +228,18 @@ position: fixed;
 				width: $table-col4;
 			}
 			&:nth-child(5){
-				width: $table-col5;
-				text-align: center;
-				input{
+				width: $table-col5;	
+			}
+			&:nth-child(6){
+					width: $table-col6;
+			}
+			&:nth-child(7){
+					width: $table-col7;
+			}
+			&:nth-child(8){
+					width: $table-col8;
+					text-align: center;
+					input{
 					width: 80px;
 					height: 40px;
 					color:#ffffff;
@@ -207,6 +248,7 @@ position: fixed;
 					box-shadow:0 0 0;
 					border: none;
 				}
+
 			}
 
 		}
