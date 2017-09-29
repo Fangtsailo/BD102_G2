@@ -1,14 +1,242 @@
-@import "store/browse/_test.scss";
+@import "basic/_var.scss";
+@import "basic/_mixin.scss";
 
 /*===========================================================*/
-body {
-  font-size: 10px;   
-
- .wrapper {
-       margin: 10px;
-   }   
+//每個 screen 的 title style
+@mixin title($bgColor, $color) {
+	width: 200px;
+	margin: auto;
+	text-align: center;
+	background-color: $bgColor;
+	font-size: $globalh2Size;
+	color: $color;
+}
+//透明主色背景, 主要在說明文
+@mixin describeBg {
+	background-color: rgba(128,89,52,0.5);
 }
 
-.box {
-	@include centerBox(100px);
+h3 {
+	font-size: $globalh3Size;
+}
+h2 {
+	font-size: $globalh2Size;
+}
+h1 {
+	font-size: $globalh1Size;
+}
+.globalHead {
+	z-index: 10;
+}
+.screen-1 {
+	height: $storeBrowseScreenHeight;
+	background-image: url("../img/store/browse/screen1-bg.png");
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	.detail-box {
+	width: 200px;
+	padding: 10px 10px;
+	background-color: rgba(255,255,255,0.5);
+	text-align: justify;
+	margin-left: 50px;
+	margin-top: 150px;
+	.store-logo {
+		margin: auto;
+		width: 150px;
+		margin-top: -50px;
+	}
+	.store-name {
+		text-align: center;
+		font-size: $globalh2Size;
+		color: $globalTitleColor;
+	}
+	.detail {
+		color: $globalFontColor;
+	}
+	.address-map ,.trace {
+		width: 96px;
+		height: 40px;
+		background-color: red;
+		display: inline-block;
+		text-align: center;
+	}
+	}
+	.right-describe {
+		width: 600px;
+		position: absolute;
+		right: 0;
+		top:40vh;
+		@include describeBg();
+		color: $globalBgColor;
+		padding: 10px;
+		text-align: justify;
+	}
+	.bottom-city {
+		width: 920px;
+		bottom: -15px;
+		margin: auto;
+		left: 0;
+		right: 0;
+		position: absolute;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.screen-bread-car-map {
+	height: $storeBrowseScreenHeight;
+	background-color: $globalHdColor02;
+	.title {
+		@include title($globalBgColor, $globalHdColor02);
+	}
+}
+.screen-product {
+	height: $storeBrowseScreenHeight;
+	background-color: $globalBgColor;
+	img {
+		width: 100%;
+	}
+	.title {
+		@include title($globalHdColor02, $globalBgColor);
+	}
+	.product {
+		padding: 30px 0px;
+		overflow: hidden;
+		width: 800px;
+		height: 400px;
+		margin: auto;
+		.image {
+			width: 360px;
+			float: left;
+			margin-right: 40px
+		}		
+		.describe {
+			@include describeBg();
+			float: left;
+			margin-top: 100px; 
+			width: 380px;
+			padding: 10px;
+			color: $globalBgColor;
+			h3 {
+				color: $globalFontColor;
+			}
+		}
+	}
+	.product-list {
+		width: 800px;
+		margin: auto;
+		font-size: 0px;
+		position: relative;
+		.item {
+			width: 120px;
+			padding: 0px 40px;
+			display: inline-block;
+			text-align: center;
+			font-size: 16px;
+		}
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 100px;
+			left: -50px;
+			top: 20px;
+			background-image: url("../img/store/browse/black_left.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 100px;
+			right: -50px;
+			top: 20px;
+			background-image: url("../img/store/browse/black_right.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+	}
+}
+.screen-activity {
+	height: $storeBrowseScreenHeight;
+	background-color: $globalHdColor02;
+	img {
+		width: 100%;
+	}
+	.title {
+		@include title($globalBgColor, $globalHdColor02);
+	}
+	.banner-area {
+		padding-top: 50px;
+		width: 700px;
+		margin: auto;
+		position: relative;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 100px;
+			left: -100px;
+			top: 40vh;
+			background-image: url("../img/store/browse/black_left.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 100px;
+			right: -100px;
+			top: 40vh;
+			background-image: url("../img/store/browse/black_right.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+	}
+}
+.screen-other-store {
+	height: $storeBrowseScreenHeight;
+	background-color: $globalBgColor;
+	img {
+		width: 100%;
+		vertical-align: top;
+	}
+	.store-list {
+		font-size: 0;
+	}
+	.title {
+		@include title($globalHdColor02, $globalBgColor);
+	}
+	.top-list, .bottom-list {
+		max-width: 1000px;
+		margin: auto;
+		.item {
+			width: 33.333333%;
+			display: inline-block;
+		}
+	}
+}
+// rwd=========================================
+@include rwd("mobile") {
+	.screen-1 {
+		.detail-box {
+			width: 100%;
+		}
+		.right-describe {
+			width: 100%;
+			@include describeBg();
+			color: $globalBgColor;
+			padding: 10px;
+			text-align: justify;
+			position: relative;
+		}
+	}
 }
