@@ -67,6 +67,7 @@ header {
   position: fixed; }
   .tableHeader tr td {
     color: #502f0d;
+    background-color: #e6e0d9;
     width: 50px; }
     .tableHeader tr td:nth-child(1) {
       width: 30px; }
@@ -88,7 +89,7 @@ header {
   .tableContent tr td {
     color: #502f0d;
     background-color: #ffffff;
-    width: 50px; }
+    height: 50px; }
     .tableContent tr td:nth-child(1) {
       width: 30px; }
     .tableContent tr td:nth-child(2) {
@@ -98,7 +99,15 @@ header {
     .tableContent tr td:nth-child(4) {
       width: 30px; }
     .tableContent tr td:nth-child(5) {
-      width: 30px; }
+      width: 30px;
+      text-align: center; }
+      .tableContent tr td:nth-child(5) input {
+        width: 80px;
+        height: 40px;
+        color: #ffffff;
+        background-color: #af6363;
+        border-radius: 10px;
+        box-shadow: 0 0 0; }
 
 footer {
   width: 900px;
