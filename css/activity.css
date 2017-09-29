@@ -14,8 +14,7 @@ a {
   color: #3399ff; }
 
 .container-template {
-  width: 100%;
-  height: 1000px; }
+  width: 100%; }
 
 .globalForm {
   width: 50%;
@@ -323,26 +322,68 @@ footer {
 /* ===================================================*/
 /* ===================================================*/
 /* ===================================================*/
-.activity_banner .activity_Dough {
+.activity_banner {
   width: 100%;
   height: 100%;
   background: url("../img/acty_background.png") center center;
-  background-repeat: no-repeat;
   background-size: cover;
-  -moz-background-size: cover;
-  overflow: hidden;
-  height: 100vh; }
-  .activity_banner .activity_Dough #acty_Dough {
+  height: 136vh; }
+  .activity_banner #acty_Dough {
+    min-width: 250px;
     max-width: 300px;
-    width: 28.5%;
-    padding-top: 15%;
-    margin: auto; }
-    .activity_banner .activity_Dough #acty_Dough img {
+    width: 28.5vw;
+    margin: auto;
+    padding: 30vh 0 0;
+    position: relative; }
+    .activity_banner #acty_Dough img {
       width: 100%; }
-    .activity_banner .activity_Dough #acty_Dough #acty_icon {
-      max-width: 32px;
+    .activity_banner #acty_Dough .acty_h1 {
+      width: 100%;
+      position: absolute;
+      bottom: 18%;
+      left: 0%;
+      text-align: center; }
+      .activity_banner #acty_Dough .acty_h1 h1 {
+        color: #996633;
+        font-size: 28px; }
+  .activity_banner .clear {
+    clear: both; }
+  .activity_banner .activity_board {
+    float: left;
+    max-width: 380px;
+    min-width: 320px;
+    width: 40vw;
+    margin: 5vh 10vw;
+    position: relative;
+    bottom: 0; }
+    .activity_banner .activity_board .acty_stirrer {
+      max-width: 90px;
+      width: 15vw;
+      position: absolute;
+      top: -45%;
+      left: -10%; }
+    .activity_banner .activity_board img {
       width: 100%; }
-      .activity_banner .activity_Dough #acty_Dough #acty_icon img {
-        width: 100%; }
-    .activity_banner .activity_Dough #acty_Dough h1 {
-      font-size: 36px; }
+    .activity_banner .activity_board .acty_board_p {
+      font-size: 18px;
+      padding: 4%;
+      width: 82%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #663300; }
+  .activity_banner .activity_detail {
+    min-width: 250px;
+    width: 25vw;
+    padding: 1%;
+    float: right;
+    margin: 0 5vw;
+    background-color: rgba(246, 146, 30, 0.4);
+    box-sizing: border-box; }
+    .activity_banner .activity_detail ul {
+      list-style-type: none;
+      color: #fbf8f1; }
+      .activity_banner .activity_detail ul li {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+        font-size: 16px;
+        line-height: 25px; }

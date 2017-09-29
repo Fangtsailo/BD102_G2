@@ -4,43 +4,96 @@
 /* ===================================================*/
 /* ===================================================*/
 	.activity_banner{
-		.activity_Dough{
-				width:100%;
-				height:100%;
-				background: url('../img/acty_background.png') center center ;
-				background-repeat: no-repeat;
-				background-size:cover;
-				-moz-background-size: cover;
-				overflow: hidden;
-				height: 100vh;
+		
+		width:100%;
+		height:100%;
+		background: url('../img/acty_background.png') center center ;
+		background-size:cover;
+		// -moz-background-size: cover;
+		// overflow: hidden;
+		height: 136vh;
 
-				#acty_Dough{
-					max-width:300+px;
-					width:28.5%;
-					padding-top:15%;
-					margin:auto;
-				
-					img{
-						width:100%;
-					}
-					#acty_icon{
-					max-width:32 +px;
+		#acty_Dough{
+			min-width:250+px;
+			max-width:300+px;
+			width:28.5vw;
+			// margin:30vh auto 0;
+			margin: auto;
+    		padding: 30vh 0 0;
+			position:relative;
+			
+	
+				img{
 					width:100%;
+				}
 					
-						img{
-							width:100%;
-						}
-					}
+				.acty_h1{
+					width:100%;
+					position:absolute;
+					bottom: 18%;
+					left:0%;
+					text-align:center;
 					h1{
-						font-size:$globalh1Size;
+						color:$globalTitleColor;
+						font-size:$globalh2Size;
+								
 					}
+				}
 
-				}   //#acty_Dough
-				
+		}   //#acty_Dough
+		.clear{
+			clear:both;
+		}
+		.activity_board{
+			float:left;
+			max-width:380+px;
+			min-width:320+px;
+			width:40vw;
+			margin: 5vh 10vw;
+			position:relative;
+			bottom:0;
+			.acty_stirrer{
+				max-width:90+px;
+				width:15+vw;
+				position:absolute;
+				top:-45%;
+				left:-10%;
+			}
+			img{
+				width:100%;
+			}					
+			.acty_board_p{
+				font-size:18+px;
+				padding:4%;
+				width:82%;
+				position:absolute;
+				top:0;
+				left:0;
+				color:$globalFontColor;
+			}
+		}			
+		.activity_detail{
+			min-width:250 +px;
+			width:25 +vw;
+			padding:1%;
+			float:right;
+			margin:0 5vw ;
+			background-color: rgba(246, 146, 30, .4);
+			box-sizing:border-box;
+			ul{
+				list-style-type:none;
+				color:$globalBgColor;
+				li{  
+					text-shadow: 1+px 1+px 1+px rgba(0, 0, 0, .6);
+					 font-size:16+px;
+					 line-height:25+px;
+				}
+			}
+
+		}
 
 
-
-			} //activity_Dough
+			
 
 		
 	}  //activity_banner
