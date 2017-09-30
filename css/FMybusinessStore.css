@@ -16,38 +16,66 @@
 .container {
   width: 100%; }
 
-.CoverLeftBusiness {
+.LeftBusiness {
   width: 200px;
-  height: 100vh;
-  background-color: #ccc;
-  display: inline-block; }
-  .CoverLeftBusiness .LeftBusiness {
+  height: 500px;
+  position: fixed;
+  left: 0;
+  top: 160px; }
+  .LeftBusiness div:nth-child(1) {
     width: 200px;
-    height: 500px;
-    position: fixed;
-    left: 0;
-    top: 160px;
-    background-color: #000; }
+    height: 50px;
+    background-color: #4289FF;
+    margin-top: 150px; }
+  .LeftBusiness div:nth-child(2) {
+    width: 200px;
+    height: 50px;
+    background-color: #4289FF;
+    margin-top: 6px; }
+  .LeftBusiness div:nth-child(3) {
+    width: 200px;
+    height: 50px;
+    background-color: #4289FF;
+    margin-top: 6px; }
 
 .CenterBusiness {
   width: 70%;
-  height: 800px;
-  background-color: #ff0;
-  display: inline-block;
+  height: 1800px;
+  border: 2px solid #f00;
   margin: auto; }
 
-.CoverRightMy {
+.RightMy {
   width: 200px;
-  height: 100vh;
-  background-color: #ccc;
-  display: inline-block; }
-  .CoverRightMy .RightMy {
+  height: 500px;
+  position: fixed;
+  right: 0;
+  top: 160px; }
+  .RightMy div:nth-child(1) {
     width: 200px;
-    height: 500px;
-    position: fixed;
-    right: 0;
-    top: 160px;
-    background-color: #000; }
+    height: 50px;
+    background-color: #00C853;
+    margin-top: 6px;
+    margin-top: 150px; }
+  .RightMy div:nth-child(2) {
+    width: 200px;
+    height: 50px;
+    background-color: #00C853;
+    margin-top: 6px; }
+  .RightMy div:nth-child(3) {
+    width: 200px;
+    height: 50px;
+    background-color: #00C853;
+    margin-top: 6px; }
+  .RightMy div:nth-child(4) {
+    width: 200px;
+    height: 50px;
+    background-color: #00C853;
+    margin-top: 6px; }
+  .RightMy div:nth-child(5) {
+    width: 200px;
+    height: 50px;
+    background-color: #00C853;
+    margin-top: 6px; }
 
 footer {
   width: 100vw;

@@ -31,27 +31,38 @@ width: 100%;
 }
 
 
-.CoverLeftBusiness{
-	width: 200px;
-	height: 100vh;
-	background-color: #ccc;
-	display: inline-block;
+
 	.LeftBusiness{
 		width: 200px;
 		height: 500px;
 		position: fixed;
 		left: 0;
 		top: 160px;
-		background-color: #000;
+		// background-color: #ccc;
+		div{
+			&:nth-child(1){
+				width: 200px;
+				height: 50px;
+				background-color:$MybusinessStore-subtitle-bgColor;
+				margin-top:150px;  
+			}
+			&:nth-child(2){
+				@include store-nav-bar-propity();  
+			}
+
+			&:nth-child(3){
+				@include store-nav-bar-propity();  
+			}
+		}
 	}
-}
+
 
 
 .CenterBusiness{
 	width: 70%;
-	height: 800px;
-	background-color: #ff0;
-	display: inline-block;
+	height: 1800px;
+	border: 2px solid #f00;
+	// display: inline-block;
 	margin: auto;
 }
 
@@ -60,20 +71,34 @@ width: 100%;
 
 
 
-.CoverRightMy{
-	width: 200px;
-	height: 100vh;
-	background-color: #ccc;
-	display:inline-block;
+
 	.RightMy{
 		width: 200px;
 		height: 500px;
 		position: fixed;
 		right: 0;
 		top: 160px;
-		background-color: #000;
+		// background-color: #ccc;
+		div {
+			&:nth-child(1){
+				@include member-nav-bar-propity();
+				margin-top:150px;  
+			}
+			&:nth-child(2){
+				@include member-nav-bar-propity();
+			}
+			&:nth-child(3){
+				@include member-nav-bar-propity();
+			}
+			&:nth-child(4){
+				@include member-nav-bar-propity();
+			}
+			&:nth-child(5){
+				@include member-nav-bar-propity();
+			}
+		}
 	}
-}
+
 
 
 

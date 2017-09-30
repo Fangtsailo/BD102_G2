@@ -23,3 +23,23 @@
         			}	
 	
 }
+
+
+@mixin store-nav-bar-propity() {
+
+	width: 200px;
+	height: 50px;
+	background-color:$MybusinessStore-subtitle-bgColor;
+	margin-top:6px; 
+		
+}
+
+
+@mixin member-nav-bar-propity() {
+
+	width: 200px;
+	height: 50px;
+	background-color:#00C853;
+	margin-top:6px; 
+		
+}
