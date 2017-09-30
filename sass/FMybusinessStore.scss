@@ -1,0 +1,90 @@
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+
+
+.coverHeader{
+	// width: 100vw;
+	height: 100px;
+}
+
+
+.subtitle{
+	height: 60px;
+	width: 100vw;
+	position: fixed;
+	top: 100px;
+	h2{
+		line-height: 60px;
+		font-size: 20px;
+		background-color:$MybusinessStore-subtitle-bgColor;
+		padding-left: 20px;
+		color:#fff;
+	}
+}
+
+
+
+.container{
+width: 100%;
+// width: 100vw;
+
+}
+
+
+.CoverLeftBusiness{
+	width: 200px;
+	height: 100vh;
+	background-color: #ccc;
+	display: inline-block;
+	.LeftBusiness{
+		width: 200px;
+		height: 500px;
+		position: fixed;
+		left: 0;
+		top: 160px;
+		background-color: #000;
+	}
+}
+
+
+.CenterBusiness{
+	width: 70%;
+	height: 800px;
+	background-color: #ff0;
+	display: inline-block;
+	margin: auto;
+}
+
+
+
+
+
+
+.CoverRightMy{
+	width: 200px;
+	height: 100vh;
+	background-color: #ccc;
+	display:inline-block;
+	.RightMy{
+		width: 200px;
+		height: 500px;
+		position: fixed;
+		right: 0;
+		top: 160px;
+		background-color: #000;
+	}
+}
+
+
+
+
+
+
+
+
+footer{
+	width: 100vw;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+}

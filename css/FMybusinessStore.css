@@ -1,0 +1,56 @@
+.coverHeader {
+  height: 100px; }
+
+.subtitle {
+  height: 60px;
+  width: 100vw;
+  position: fixed;
+  top: 100px; }
+  .subtitle h2 {
+    line-height: 60px;
+    font-size: 20px;
+    background-color: #4289FF;
+    padding-left: 20px;
+    color: #fff; }
+
+.container {
+  width: 100%; }
+
+.CoverLeftBusiness {
+  width: 200px;
+  height: 100vh;
+  background-color: #ccc;
+  display: inline-block; }
+  .CoverLeftBusiness .LeftBusiness {
+    width: 200px;
+    height: 500px;
+    position: fixed;
+    left: 0;
+    top: 160px;
+    background-color: #000; }
+
+.CenterBusiness {
+  width: 70%;
+  height: 800px;
+  background-color: #ff0;
+  display: inline-block;
+  margin: auto; }
+
+.CoverRightMy {
+  width: 200px;
+  height: 100vh;
+  background-color: #ccc;
+  display: inline-block; }
+  .CoverRightMy .RightMy {
+    width: 200px;
+    height: 500px;
+    position: fixed;
+    right: 0;
+    top: 160px;
+    background-color: #000; }
+
+footer {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  bottom: 0; }
