@@ -7,6 +7,10 @@
 	height: 100px;
 }
 
+header{
+	z-index: 3;
+}
+
 .coverSubtitile{
 	height: 60px;
 	.subtitle{
@@ -14,6 +18,7 @@
 		width: 100vw;
 		position: fixed;
 		top: 100px;
+		z-index: 3;
 		h2{
 			line-height: 60px;
 			font-size: 20px;
@@ -79,7 +84,7 @@ width: 100%;
 	margin: auto;
 	.subtitle{
 		height: 100px;
-		border: 1px solid #ccc;
+		// border: 1px solid #ccc;
 		h2{
 			text-align: center;
 			line-height: 100px;
@@ -96,6 +101,12 @@ width: 100%;
 			margin-left: 0;
 			margin-right: 0;
 			margin:auto;
+
+			span,div,input{
+				color:#999;
+			}
+
+
 			tr{
 
 				height: 70px;
@@ -120,6 +131,7 @@ width: 100%;
 
 				td{
 					text-align: center;
+
 					width: 80%;
 					border-bottom: 1px solid #ccc;
 					// &:nth-child(1){
@@ -138,7 +150,7 @@ width: 100%;
 				&:nth-child(1){
 					td{
 						input{
-							width: 80%;
+							width: 90%;
 							height: 40px;
 							box-sizing: border-box;
 						}
@@ -149,7 +161,7 @@ width: 100%;
 				&:nth-child(2){
 					td{
 						input{
-							width: 80%;
+							width: 90%;
 							height: 40px;
 							box-sizing: border-box;
 						}
@@ -159,7 +171,7 @@ width: 100%;
 				&:nth-child(3){
 					td{
 						input{
-							width: 80%;
+							width: 90%;
 							height: 40px;
 							box-sizing: border-box;
 						}
@@ -170,7 +182,7 @@ width: 100%;
 				&:nth-child(4){
 					td{
 						input{
-							width: 80%;
+							width: 90%;
 							height: 40px;
 							box-sizing: border-box;
 						}
@@ -185,7 +197,7 @@ width: 100%;
 
 					td{
 						input{
-							width: 80%;
+							width: 90%;
 							height: 40px;
 							box-sizing: border-box;
 						}
@@ -213,6 +225,11 @@ width: 100%;
 							width: 13%;
 							border:1px solid #ddd;
 							min-width: 63px;
+							&:hover{
+								background-color: #4289FF;
+								color:#fff;
+								transition:0.5s;
+							}
 
 						}
 
@@ -223,11 +240,12 @@ width: 100%;
 
 				&:nth-child(6){
 
-					// height: 100px;					
+					height: 100px;					
 
 					th{
 						div{
 							height: 80px;
+							line-height: 80px;
 						}
 					}
 					
@@ -235,10 +253,103 @@ width: 100%;
 
 					td{
 						
-						div{
+						label{
 							display: inline-block;
-							width: 13%;
-							border:1px solid #ddd;
+							margin: 20px;
+							input{
+								// width: 80%;
+							}
+						}
+
+					}
+				}
+
+				&:nth-child(7){
+
+					height: 180px;					
+
+					th{
+						div{
+							height: 160px;
+							line-height: 160px;
+						}
+					}
+					
+
+
+					td{
+						
+						textarea{
+							display: block;
+							margin-top: 0;
+							margin-bottom: 0;
+							margin: auto;
+						}
+
+					}
+				}
+
+
+
+
+				&:nth-child(8){
+
+					height: 220px;					
+
+					th{
+						div{
+							height: 200px;
+							line-height: 200px;
+						}
+					}
+					
+
+
+					td{
+						position: relative;
+						div{
+							
+							width: 50%;
+							height: 160px;
+							border: 1px solid #ccc;
+							position: relative;
+							top: 0;
+							bottom: 0;
+							right: 0;
+							left: 0;
+							margin: auto;
+							padding-top: 5%;
+
+							div{
+								height: 80%;
+								width: 100%;
+								border: none;
+								// margin-bottom: 0px;
+								// margin: auto;
+
+								input{
+									display: none;
+								}
+
+								img{
+									display: block;
+									margin: auto;
+									// position: absolute;
+									// top: 0;
+									
+									// right: 0;
+									// left: 0;
+									// margin: auto;
+
+								}
+
+								span{
+									display: block;
+									font-size: 8px;
+									
+								}
+
+							}
 
 						}
 
@@ -249,6 +360,32 @@ width: 100%;
 			} //tr
 		}//table
 	}//content-table
+
+
+	.commit{
+		text-align: center;
+		padding-top: 50px;
+		input{
+			border: none;
+			width: 150px;
+			height: 50px;
+			border-radius: 25px;
+			&:nth-child(1){
+				margin-right: 10px;
+				border: 1px solid #F06428;
+				background-color: #fff;
+				color:#F06428;
+			}
+			&:nth-child(2){
+				margin-left: 10px;
+				border: 1px solid #F06428;
+				background-color:#F06428;
+				color:#fff;
+			}
+		}
+	}
+
+
 }//CenterBusiness
 
 
