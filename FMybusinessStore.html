@@ -124,8 +124,10 @@
 
 
 
-<div class="subtitle">
-			<h2>店長專區</h2>
+<div class="coverSubtitile">
+	<div class="subtitle">
+				<h2>店長專區</h2>
+	</div>
 </div>
 
 
@@ -357,39 +359,41 @@
 <!-- ==============center content================== -->
 	<div class="CenterBusiness">
 
-		<div class="subtitle"></div>
+		<div class="subtitle">
+			<h2>編輯麵包店</h2>
+		</div>
 
-		.<content>
+		<div class="content-table">
 				
 			<table>
 
 
 				<tr>
-				<th>狀態</th>
+				<th><div>狀態</div></th>
 				<td><input type="text" name="" value="上架中"></td>
 				</tr>
 
 
 				<tr>
-				<th>店名</th>
+				<th><div>店名</div></th>
 				<td><input type="text" name="" value="小木屋鬆餅"></td>
 				</tr>
 
 
 				<tr>
-				<th>電話</th>
+				<th><div>電話</div></th>
 				<td><input type="text" name="" value="03-4265214"></td>
 				</tr>
 
 
 				<tr>
-				<th>地址</th>
+				<th><div>地址</div></th>
 				<td><input type="text" name="" value="桃園市中大路300號"></td>
 				</tr>
 
 
 				<tr>
-				<th>公休日(複選)</th>
+				<th><div>公休日<br>(複選)</div></th>
 				<td>
 					<div>星期一</div>
 					<div>星期二</div>
@@ -403,7 +407,7 @@
 
 
 				<tr>
-				<th>營業時間</th>
+				<th><div>營業時間</div></th>
 				<td>
 					<label>
 						<span>開始</span>
@@ -418,9 +422,9 @@
 
 
 				<tr>
-				<th>故事</th>
+				<th><div>故事</div></th>
 				<td>
-					<textarea>寫故事...</textarea>
+					<textarea placeholder="寫故事..."></textarea>
 				</td>
 				</tr>
 
@@ -432,14 +436,44 @@
 
 
 				<tr>
-				<th>新增店照<br>(最多一張)</th>
-				<td>   </td>
+				<th><div>新增店照<br>(最多1張)</div></th>
+				<td>
+					<div>
+						<img src="http://fakeimg.pl/60x50/00CED1/FFF/?text=camera">
+						<input type="file">
+						<span>點擊上傳店頭照片<br>建議寬、高大於1440像素</span>
+					</div>
+				</td>
 				</tr>
 
 
 				<tr>
-				<th></th>
-				<td></td>
+				<th><div>新增商品<br>(最多6筆)</div></th>
+				<td>
+					<div class="">
+						<div>
+							<label>
+								<span>品名</span>
+								<input type="text" name="" value="">
+							</label>
+							<label>
+								<span>價格</span>
+								<input type="text" name="" value="">
+								<span>元</span>
+							</label>
+						</div>
+
+						<div>
+							<img src="http://fakeimg.pl/60x50/00CED1/FFF/?text=camera">
+							<input type="file">
+							<span>點擊上傳店頭照片<br>建議寬、高大於1440像素</span>
+						</div>
+					</div>
+					<div class="">
+						<img src="http://fakeimg.pl/45x45/00CED1/FFF/?text=cross">
+						<span>新增下一個商品</span>
+					</div>
+				</td>
 				</tr>
 
 
@@ -451,16 +485,18 @@
 
 
 
-		</content>
+		</div>  <!-- content-table -->
 
 	
 
 
+		<div class="commit">
+			<input type="button" name="" value="編輯完成">
+		</div>
 
 
 
-
-	</div>
+	</div>  <!-- CenterBusiness -->
 
 
 

@@ -7,21 +7,22 @@
 	height: 100px;
 }
 
-
-.subtitle{
+.coverSubtitile{
 	height: 60px;
-	width: 100vw;
-	position: fixed;
-	top: 100px;
-	h2{
-		line-height: 60px;
-		font-size: 20px;
-		background-color:$MybusinessStore-subtitle-bgColor;
-		padding-left: 20px;
-		color:#fff;
+	.subtitle{
+		height: 60px;
+		width: 100vw;
+		position: fixed;
+		top: 100px;
+		h2{
+			line-height: 60px;
+			font-size: 20px;
+			background-color:$MybusinessStore-subtitle-bgColor;
+			padding-left: 20px;
+			color:#fff;
+		}
 	}
 }
-
 
 
 .container{
@@ -70,12 +71,185 @@ width: 100%;
 
 
 .CenterBusiness{
+	margin-top:260px ;
 	width: 70%;
 	height: 1800px;
-	border: 2px solid #f00;
+	// border: 2px solid #f00;
 	// display: inline-block;
 	margin: auto;
-}
+	.subtitle{
+		height: 100px;
+		border: 1px solid #ccc;
+		h2{
+			text-align: center;
+			line-height: 100px;
+			color:$MybusinessStore-subtitle-bgColor;
+		}
+
+	}
+
+	.content-table{
+		// background-color: #ccc;
+		table{
+			width: 80%;
+			background-color: #fff;
+			margin-left: 0;
+			margin-right: 0;
+			margin:auto;
+			tr{
+
+				height: 70px;
+				
+				th{
+					border-bottom: 1px solid #ccc;
+					text-align: center;
+					font-weight: normal;
+					width: 20%;
+					div{
+						height: 40px;
+						width: 80%;
+						min-width: 86px;
+						background-color: #F2EBD4;
+						margin-right: 0;
+						margin-left: 0;
+						margin: auto;
+						line-height: 40px;
+						border-radius: 6px;
+					}	
+				}
+
+				td{
+					text-align: center;
+					width: 80%;
+					border-bottom: 1px solid #ccc;
+					// &:nth-child(1){
+					// 	background-color: #000;
+					// 	input{
+					// 		width: 80%;
+					// 	}
+					// }
+
+				}
+
+
+
+
+				
+				&:nth-child(1){
+					td{
+						input{
+							width: 80%;
+							height: 40px;
+							box-sizing: border-box;
+						}
+					}
+				}
+
+
+				&:nth-child(2){
+					td{
+						input{
+							width: 80%;
+							height: 40px;
+							box-sizing: border-box;
+						}
+					}
+				}
+
+				&:nth-child(3){
+					td{
+						input{
+							width: 80%;
+							height: 40px;
+							box-sizing: border-box;
+						}
+					}
+				}
+
+
+				&:nth-child(4){
+					td{
+						input{
+							width: 80%;
+							height: 40px;
+							box-sizing: border-box;
+						}
+					}
+				}
+
+
+
+				&:nth-child(4){
+					
+
+
+					td{
+						input{
+							width: 80%;
+							height: 40px;
+							box-sizing: border-box;
+						}
+					}
+				}
+
+
+
+				&:nth-child(5){
+
+					height: 100px;					
+
+					th{
+						div{
+							height: 80px;
+						}
+					}
+					
+
+
+					td{
+						
+						div{
+							display: inline-block;
+							width: 13%;
+							border:1px solid #ddd;
+							min-width: 63px;
+
+						}
+
+					}
+				}
+
+
+
+				&:nth-child(6){
+
+					// height: 100px;					
+
+					th{
+						div{
+							height: 80px;
+						}
+					}
+					
+
+
+					td{
+						
+						div{
+							display: inline-block;
+							width: 13%;
+							border:1px solid #ddd;
+
+						}
+
+					}
+				}
+
+
+			} //tr
+		}//table
+	}//content-table
+}//CenterBusiness
 
 
 
