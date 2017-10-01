@@ -56,24 +56,6 @@ header {
   margin: auto;
   left: 0; }
 
-.search {
-  width: 70%;
-  margin-right: 0;
-  margin-left: 0;
-  margin: auto;
-  position: fixed;
-  z-index: 3;
-  left: 20vw;
-  text-align: center;
-  margin-top: 20px; }
-  .search input {
-    width: 600px;
-    height: 40px;
-    border-radius: 15px;
-    border: none;
-    background-color: #b5b5b5;
-    opacity: 0.35; }
-
 .tableHeaderCover {
   width: 100%;
   height: 78px;
@@ -98,31 +80,24 @@ header {
         text-align: center;
         border-bottom: 4px solid #d1c2b5;
         border-collapse: collapse;
-        padding-top: 70px; }
+        padding-top: 20px; }
         .tableHeaderCover .tableHeader tr td:nth-child(1) {
-          width: 10%; }
+          width: 15%; }
         .tableHeaderCover .tableHeader tr td:nth-child(2) {
-          width: 10%; }
+          width: 15%; }
         .tableHeaderCover .tableHeader tr td:nth-child(3) {
-          width: 20%; }
+          width: 30%; }
         .tableHeaderCover .tableHeader tr td:nth-child(4) {
-          width: 10%; }
+          width: 20%; }
         .tableHeaderCover .tableHeader tr td:nth-child(5) {
-          width: 17%; }
-        .tableHeaderCover .tableHeader tr td:nth-child(6) {
-          width: 11%; }
-        .tableHeaderCover .tableHeader tr td:nth-child(7) {
-          width: 11%; }
-        .tableHeaderCover .tableHeader tr td:nth-child(8) {
-          width: 11%; }
+          width: 20%; }
 
 .tableContent {
   width: 70%;
   margin-right: 0;
   margin-left: 0;
   margin: auto;
-  margin-bottom: 160px;
-  padding-top: 50px; }
+  margin-bottom: 160px; }
   .tableContent tr:hover {
     background-color: #000; }
   .tableContent tr td {
@@ -131,23 +106,17 @@ header {
     height: 50px;
     text-align: center; }
     .tableContent tr td:nth-child(1) {
-      width: 10%; }
+      width: 15%; }
     .tableContent tr td:nth-child(2) {
-      width: 10%; }
+      width: 15%; }
     .tableContent tr td:nth-child(3) {
-      width: 20%; }
+      width: 30%; }
     .tableContent tr td:nth-child(4) {
-      width: 10%; }
+      width: 20%; }
     .tableContent tr td:nth-child(5) {
-      width: 17%; }
-    .tableContent tr td:nth-child(6) {
-      width: 11%; }
-    .tableContent tr td:nth-child(7) {
-      width: 11%; }
-    .tableContent tr td:nth-child(8) {
-      width: 11%;
+      width: 20%;
       text-align: center; }
-      .tableContent tr td:nth-child(8) input {
+      .tableContent tr td:nth-child(5) input {
         width: 80px;
         height: 40px;
         color: #ffffff;
