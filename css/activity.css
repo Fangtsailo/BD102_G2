@@ -349,19 +349,16 @@ footer {
   .activity_banner .clear {
     clear: both; }
   .activity_banner .activity_board {
-    float: left;
     max-width: 380px;
     min-width: 320px;
-    width: 40vw;
-    margin: 5vh 10vw;
     position: relative;
     bottom: 0; }
     .activity_banner .activity_board .acty_stirrer {
+      min-width: 76px;
       max-width: 90px;
       width: 15vw;
       position: absolute;
-      top: -45%;
-      left: -10%; }
+      top: -45%; }
     .activity_banner .activity_board img {
       width: 100%; }
     .activity_banner .activity_board .acty_board_p {
@@ -374,10 +371,7 @@ footer {
       color: #663300; }
   .activity_banner .activity_detail {
     min-width: 250px;
-    width: 25vw;
     padding: 1%;
-    float: right;
-    margin: 0 5vw;
     background-color: rgba(246, 146, 30, 0.4);
     box-sizing: border-box; }
     .activity_banner .activity_detail ul {
@@ -387,3 +381,197 @@ footer {
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
         font-size: 16px;
         line-height: 25px; }
+
+/* .activity_banner rwd ==========================
+==================================================
+================================================== */
+@media all and (min-width: 768px) {
+  .activity_detail {
+    width: 25vw;
+    float: right;
+    margin: 15vw 10vw 8vw 0; } }
+@media all and (max-width: 767px) {
+  .activity_detail {
+    margin: auto;
+    width: 80%;
+    display: block; }
+
+  .acty_stirrer {
+    left: -7%; } }
+@media all and (max-width: 959px) {
+  .activity_board {
+    width: 80px;
+    display: block;
+    margin: 20px auto;
+    float: none; }
+    .activity_board .acty_stirrer {
+      left: -10%; }
+
+  .activity_detail {
+    margin: auto;
+    float: none; } }
+@media all and (max-width: 767px) {
+  .activity_detail {
+    width: 80%;
+    display: block; }
+
+  .acty_stirrer {
+    left: -7%; } }
+@media all and (min-width: 960px) {
+  .activity_board {
+    width: 40vw;
+    margin: 15vh 8vw 5vw 10vh;
+    float: left; }
+    .activity_board .acty_stirrer {
+      left: -10%; } }
+/*---------- .activity_detail rwd end -----------
+=====================================================
+===================================================== */
+@keyframes dough1 {
+  0% {
+    border-radius: 30% 30% 40% 60%/50% 55% 45% 50%; }
+  100% {
+    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
+.activity_content {
+  background: url("../img/acty_background_2.png") center center;
+  background-size: cover;
+  padding-bottom: 50px;
+  position: relative;
+  width: 100%; }
+  .activity_content .activity_pot {
+    float: left;
+    margin-left: 10vw;
+    position: relative;
+    z-index: 2;
+    max-width: 320px;
+    min-width: 300px;
+    top: 20vw; }
+    .activity_content .activity_pot img {
+      width: 100%; }
+    .activity_content .activity_pot h2 {
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      width: 80%;
+      font-size: 22px;
+      text-align: center;
+      color: #9e693d; }
+  .activity_content .activity_pot_b {
+    position: absolute;
+    top: -25%;
+    left: 5px;
+    z-index: -5; }
+  .activity_content .activity_dough_1 {
+    margin: auto;
+    width: 320px;
+    height: 250px;
+    background: url("../img/acty_bread.png");
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    position: relative;
+    right: -5vw;
+    top: 5vw; }
+  .activity_content .activity_dough_2 {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10vw;
+    width: 250px;
+    height: 230px;
+    background: #FFF8D7;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+    /* IE6-9 */
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    animation: dough1 2s linear infinite alternate;
+    transition: 1s;
+    box-sizing: border-box;
+    padding: 30px; }
+    .activity_content .activity_dough_2 p {
+      color: #996633;
+      font-size: 18px;
+      margin-top: 30px;
+      text-shadow: 1px 1px 1px rgba(90, 88, 86, 0.2); }
+  .activity_content .activity_dough_3 {
+    float: right;
+    width: 350px;
+    height: 300px;
+    padding: 60px 35px;
+    box-sizing: border-box;
+    margin-top: 5vw;
+    margin-right: 20vw;
+    background: #FFF8D7;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+    /* IE6-9 */
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+    .activity_content .activity_dough_3 p {
+      color: #5a5856;
+      margin: 30px auto;
+      vertical-align: middle; }
+  .activity_content .activity_dough_4_all {
+    margin-right: 8vw; }
+    .activity_content .activity_dough_4_all .activity_dough_4 {
+      width: 150px;
+      height: 130px;
+      background-size: cover;
+      float: right; }
+    .activity_content .activity_dough_4_all .pic_1 {
+      background: url("../img/acty_pic1.png") no-repeat center center;
+      background-size: cover;
+      margin: 0 3%;
+      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+    .activity_content .activity_dough_4_all .pic_2 {
+      background: url("../img/acty_pic2.png") no-repeat center center;
+      background-size: cover;
+      margin: 5% 0;
+      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+    .activity_content .activity_dough_4_all .pic_3 {
+      background: url("../img/acty_pic3.png") no-repeat center center;
+      background-size: cover;
+      margin: 0 3%;
+      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+  .activity_content .activity_dough_5 {
+    float: right;
+    margin: 15vw 8vw 0vw 0vw;
+    width: 320px;
+    height: 250px;
+    background: url("../img/acty_pic4.png");
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+  .activity_content .activity_dough_6 {
+    float: right;
+    margin: 3vw auto;
+    width: 320px;
+    height: 250px;
+    background: url("../img/acty_pic5.png");
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    position: relative; }
+
+/*===========content   rwd ====================
+================================================
+===============================================*/
+@media all and (min-width: 1401px) {
+  .activity_pot {
+    display: block; } }

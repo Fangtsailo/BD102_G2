@@ -3,6 +3,13 @@
 /* ===================================================*/
 /* ===================================================*/
 /* ===================================================*/
+	
+	$dough_color_1 : #FFF8D7;
+	$dough_color_2 : #ebb78f;
+
+
+
+
 	.activity_banner{
 		
 		width:100%;
@@ -45,22 +52,22 @@
 			clear:both;
 		}
 		.activity_board{
-			float:left;
+			
 			max-width:380+px;
 			min-width:320+px;
-			width:40vw;
-			margin: 5vh 10vw;
 			position:relative;
 			bottom:0;
 			.acty_stirrer{
+				min-width: 76+px;
 				max-width:90+px;
 				width:15+vw;
 				position:absolute;
 				top:-45%;
-				left:-10%;
+				
 			}
 			img{
 				width:100%;
+
 			}					
 			.acty_board_p{
 				font-size:18+px;
@@ -74,10 +81,10 @@
 		}			
 		.activity_detail{
 			min-width:250 +px;
-			width:25 +vw;
+			// width:25 +vw;
 			padding:1%;
-			float:right;
-			margin:0 5vw ;
+			// float:right;
+			// margin:2vw 5vw ;
 			background-color: rgba(246, 146, 30, .4);
 			box-sizing:border-box;
 			ul{
@@ -91,9 +98,251 @@
 			}
 
 		}
+	
+	}  //activity_banner
+
+/* .activity_banner rwd ==========================
+==================================================
+================================================== */
+	
+	@media all and (min-width:$tablet_min) {
+			.activity_detail{
+				width:25 +vw;
+				float:right;
+				margin:15vw 10vw 8vw 0;
+
+			}
 
 
-			
+
+		}
+
+
+	@media all and (max-width:$mobile){
+			.activity_detail{
+				margin:auto;
+				width: 80%;
+				display:block;
+			}
+			.acty_stirrer{
+					left:-7%;
+				}
+		}
+
+
+
+	@media all and (max-width:959+px){
+			.activity_board{
+				width: 80+px;
+				display: block;
+				margin: 20+px auto;
+				float:none;
+				.acty_stirrer{
+					left:-10%;
+				}
+			}
+			.activity_detail{
+				margin:auto;
+				float:none;
+			}
+		}
+	@media all and (max-width:$mobile){
+			.activity_detail{
+				
+				width: 80%;
+				display:block;
+			}
+			.acty_stirrer{
+					left:-7%;
+				}
+
+		}
+
+
+	@media all and (min-width:960+px){
+			.activity_board{
+				width:40vw;
+				margin: 15vh 8vw 5vw 10vh;
+				float:left;
+				.acty_stirrer{
+					left:-10%;
+				}
+
+			}
+
+		}
+
+/*---------- .activity_detail rwd end -----------
+=====================================================
+===================================================== */
+
+
+	@keyframes dough1{
+	0%{border-radius: 30% 30% 40% 60% / 50% 55% 45% 50% ;
+		
+	}
+	100%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
+	}
+
 
 		
-	}  //activity_banner
+	.activity_content{
+		background: url("../img/acty_background_2.png") center center;
+		background-size:cover;
+		padding-bottom: 50 +px;
+		position:relative;
+		// height:200vh;
+		// overflow:hidden;
+
+		width:100%;
+		.activity_pot{
+			float:left;
+			margin-left:10vw;
+			position:relative;
+			z-index:2;
+			max-width:320+px;
+			min-width:300+px;
+			// width:50vw;
+
+			top:20vw;
+			img{
+				width:100%;
+
+			}
+			h2{
+				position:absolute;
+				top:40%;
+				left:10%;
+				width:80%;
+				font-size:22+px;
+				text-align:center;
+				color:$globalHdColor02;
+			}
+		}
+		.activity_pot_b{
+			
+			position:absolute;
+			top:-25%;
+			left:5+px;
+			z-index:-5;
+		}
+		.activity_dough_1{
+
+			margin: auto ;
+			width:320+px;
+			height:250+px;
+			background: url('../img/acty_bread.png');
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			position:relative;
+			right:-5vw;
+			top:5vw;
+
+		}
+		.activity_dough_2{
+			float:right;
+			margin-bottom:10+px;
+			// margin-top:10+px;
+			margin-right:10vw;
+			width:250+px;
+			height:230+px;
+			@include topBottomGradient($dough_color_1,$dough_color_2);
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			animation: dough1 2s linear infinite alternate;
+    		transition: 1s;
+    		box-sizing:border-box;
+    		padding: 30 +px;
+    		
+    		p{	
+    			color:$globalTitleColor;
+    			font-size: 18+px;
+    			margin-top: 30+px;
+    			text-shadow:1+px 1+px 1+px rgba(90, 88, 86, .2);
+    		}
+		}
+		.activity_dough_3{
+			float:right;
+			width:350+px;
+			height:300+px;
+			padding:60+px 35+px;
+			box-sizing:border-box;
+			margin-top:5vw;
+			margin-right:20vw;
+			@include topBottomGradient($dough_color_1,$dough_color_2);
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			p{
+				color:#5a5856;
+				margin:30+px auto;
+				vertical-align:middle;
+				// padding:40+px;
+			}
+			
+		}  //.activity_dough_3
+		.activity_dough_4_all{
+			margin-right:8vw;
+			.activity_dough_4{
+				width:150+px;
+				height:130+px;
+				background-size:cover;
+				float:right;
+				   		
+						
+			}
+			.pic_1{
+				background: url('../img/acty_pic1.png') no-repeat center center;
+				background-size:cover;
+				margin:0 3%;
+				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			}	
+			.pic_2{
+				background: url('../img/acty_pic2.png') no-repeat center center;
+				background-size:cover;
+				margin: 5% 0;
+				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			}
+			.pic_3{
+					
+				background: url('../img/acty_pic3.png') no-repeat center center;
+				background-size:cover;
+				margin:0 3%;
+				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			}	
+
+		}
+
+		.activity_dough_5{
+			float:right;
+			margin: 15vw 8vw 0vw 0vw;
+			width:320+px;
+			height:250+px;
+			background: url('../img/acty_pic4.png');
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			
+		}
+		.activity_dough_6{
+			float:right;
+			margin: 3vw auto  ;
+			width:320+px;
+			height:250+px;
+			background: url('../img/acty_pic5.png');
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			position:relative;
+			
+		}
+
+		
+	} //.activity_content
+
+/*===========content   rwd ====================
+================================================
+===============================================*/
+		
+@media all and (max-width:1400px) {
+			.activity_pot{
+				
+			}
+		}
+@media all and (min-width:1401px) {
+			.activity_pot{
+				display:block;
+			}
+		}
