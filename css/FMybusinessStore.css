@@ -22,60 +22,118 @@
   position: fixed;
   left: 0;
   top: 160px; }
-  .LeftBusiness div:nth-child(1) {
+  .LeftBusiness .nav-Group1 {
+    margin-top: 50px; }
+  .LeftBusiness div div:nth-child(1) {
     width: 200px;
-    height: 50px;
+    height: 57px;
+    margin-top: 10px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(1) .cls-1 {
+      fill: #4289FF; }
+    .LeftBusiness div div:nth-child(1) .cls-2 {
+      fill: #bbb; }
+    .LeftBusiness div div:nth-child(1) .cls-3 {
+      fill: #999; }
+    .LeftBusiness div div:nth-child(1) h2 {
+      position: absolute;
+      line-height: 60px;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+  .LeftBusiness div div:nth-child(2) {
+    width: 180px;
+    height: 60px;
     background-color: #4289FF;
-    margin-top: 150px; }
-  .LeftBusiness div:nth-child(2) {
-    width: 200px;
-    height: 50px;
+    margin-top: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(2) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 90px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+    .LeftBusiness div div:nth-child(2) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(2) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(2) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(2) svg .cls-3 {
+        fill: #999; }
+  .LeftBusiness div div:nth-child(3) {
+    width: 180px;
+    height: 60px;
     background-color: #4289FF;
-    margin-top: 6px; }
-  .LeftBusiness div:nth-child(3) {
-    width: 200px;
-    height: 50px;
+    margin-top: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(3) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 90px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+    .LeftBusiness div div:nth-child(3) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(3) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(3) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(3) svg .cls-3 {
+        fill: #999; }
+  .LeftBusiness div div:nth-child(4) {
+    width: 180px;
+    height: 60px;
     background-color: #4289FF;
-    margin-top: 6px; }
+    margin-top: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(4) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 90px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+    .LeftBusiness div div:nth-child(4) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(4) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(4) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(4) svg .cls-3 {
+        fill: #999; }
 
 .CenterBusiness {
   width: 70%;
   height: 1800px;
   border: 2px solid #f00;
   margin: auto; }
-
-.RightMy {
-  width: 200px;
-  height: 500px;
-  position: fixed;
-  right: 0;
-  top: 160px; }
-  .RightMy div:nth-child(1) {
-    width: 200px;
-    height: 50px;
-    background-color: #00C853;
-    margin-top: 6px;
-    margin-top: 150px; }
-  .RightMy div:nth-child(2) {
-    width: 200px;
-    height: 50px;
-    background-color: #00C853;
-    margin-top: 6px; }
-  .RightMy div:nth-child(3) {
-    width: 200px;
-    height: 50px;
-    background-color: #00C853;
-    margin-top: 6px; }
-  .RightMy div:nth-child(4) {
-    width: 200px;
-    height: 50px;
-    background-color: #00C853;
-    margin-top: 6px; }
-  .RightMy div:nth-child(5) {
-    width: 200px;
-    height: 50px;
-    background-color: #00C853;
-    margin-top: 6px; }
 
 footer {
   width: 100vw;
