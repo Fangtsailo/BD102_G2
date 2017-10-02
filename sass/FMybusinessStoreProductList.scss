@@ -98,253 +98,153 @@ width: 100%;
 			// left: 0;
 			// margin: auto; 
 			// color:$MybusinessStore-subtitle-bgColor;
-		}
+		}//svg
 
-	}
+	}//subtitle
 
 	.content-table{
 		// background-color: #ccc;
-		table{
-			width: 80%;
-			background-color: #fff;
-			margin-left: 0;
+		.tableHeader{
+			width: 90%;
+			// padding-top: 20px;
 			margin-right: 0;
-			margin:auto;
-
-			span,div,input{
-				color:#999;
-			}
-
-
+			margin-left: 0;
+			margin: auto;
+			// position: fixed;
+			
+			// margin-bottom: 10px;
+			
+			border-spacing: 0px;
 			tr{
-
-				height: 70px;
-				
-				th{
-					border-bottom: 1px solid #ccc;
-					text-align: center;
-					font-weight: normal;
-					width: 20%;
-					div{
-						height: 40px;
-						width: 80%;
-						// min-width: 86px;
-						background-color: #F2EBD4;
-						margin-right: 0;
-						margin-left: 0;
-						margin: auto;
-						line-height: 40px;
-						border-radius: 6px;
-					}	
-				}
-
-				td{
-					text-align: center;
-
-					width: 80%;
-					border-bottom: 1px solid #ccc;
-					// &:nth-child(1){
-					// 	background-color: #000;
-					// 	input{
-					// 		width: 80%;
-					// 	}
-					// }
-
-				}
-
-
-				&:nth-child(1){
+				border-bottom:4px solid #d1c2b5 ;
+				border-collapse: collapse;
+				&.tabletitle{
+					text-align: left;
 					th{
-						
-						text-align: left;
 						padding-left: 20px;
 						color: #999;
 						font-size: 26px;
-
 					}
-				}
-
-				
-				&:nth-child(2){
-					@include tdInputTextForm();
-				}
-
-
-				&:nth-child(3){
-					@include tdInputTextForm();
-				}
-
-				&:nth-child(4){
-					@include tdInputTextForm();
-				}
-
-
-				&:nth-child(5){
-					@include tdInputTextForm();
-				}
-
-
-
-				&:nth-child(6){
-
-					height: 100px;					
-
-					th{
-						div{
-							height: 80px;
-						}
-					}
-					
-
-
 					td{
-						
-						div{
-							display: inline-block;
-							width: 13%;
-							border:1px solid #ddd;
-							// min-width: 63px;
-
-
-							&:hover{
-								background-color: #4289FF;
-								color:#fff;
-								transition:0.5s;
-							}
-
+						border: none;
+						// line-height: 80px;
+						// vertical-align: middle;
+						padding-top: 0px;
+						text-align: right;
+						img{
+							// text-decoration: none;
+							vertical-align: middle;
 						}
-
+						span{
+							vertical-align: middle;
+							// line-height: 80px;
+							color:#f06428;
+						}
 					}
 				}
+				td{
+					color:#666666;
+					background-color: #fbf8f1;
+					height: 50px;
+					text-align: center;
+					border-bottom:1px solid #cccccc ;
+					border-collapse: collapse;
+					padding-top: 20px;
 
-
-
-				&:nth-child(7){
-
-					height: 100px;					
-
-					th{
-						div{
-							height: 80px;
-							line-height: 80px;
-						}
+					&:nth-child(1){
+						width: $table-col1;
 					}
-					
-
-
-					td{
-						
-						label{
-							display: inline-block;
-							margin: 20px;
-							input{
-								// width: 80%;
-							}
-						}
+					&:nth-child(2){
+						width: $table-col2;
 
 					}
-				}
-
-				&:nth-child(8){
-
-					height: 180px;					
-
-					th{
-						div{
-							height: 160px;
-							line-height: 160px;
-						}
+					&:nth-child(3){
+						width: $table-col3;
 					}
-					
-
-
-					td{
-						
-						textarea{
-							display: block;
-							margin-top: 0;
-							margin-bottom: 0;
-							margin: auto;
-							width: 90%;
-							height: 140px;
-							border:1px solid #ccc;
-							resize : none;
-						}
-
+					&:nth-child(4){
+						width: $table-col4;
 					}
-				}
-
-
-
-
-				&:nth-child(9){
-
-					height: 220px;					
-
-					th{
-						div{
-							height: 200px;
-							line-height: 200px;
-						}
+					&:nth-child(5){
+						width: $table-col5;
 					}
-					
 
+				}//td
+			}//tr
 
-					td{
-						position: relative;
-						div{
-							
-							width: 90%;
-							height: 160px;
-							border: 1px solid #ccc;
-							position: relative;
-							top: 0;
-							bottom: 0;
-							right: 0;
-							left: 0;
-							margin: auto;
-							padding-top: 5%;
-
-							div{
-								height: 80%;
-								width: 100%;
-								border: none;
-								// margin-bottom: 0px;
-								// margin: auto;
-
-								input{
-									display: none;
-								}
-
-								img{
-									display: block;
-									margin: auto;
-									// position: absolute;
-									// top: 0;
-									
-									// right: 0;
-									// left: 0;
-									// margin: auto;
-
-								}
-
-								span{
-									display: block;
-									font-size: 8px;
-									
-								}
-
-							}
-
-						}
-
-					}
-				}
-
-
-			} //tr
-		}//table
+		}//tableHeader
 	}//content-table
+
+
+
+
+	.tableContent{
+			width: 90%;
+			// padding-top: 70px;
+			margin-right: 0;
+			margin-left: 0;
+			margin: auto;
+			margin-bottom: 160px;
+			tr{
+				&:hover{
+				background-color:#000;
+				}
+			
+				td{
+					color:$tableContent-word-color;
+					background-color: #ffffff;
+					height: 80px;
+					text-align: center;
+					border-bottom:1px solid #cccccc ;
+					// &:hover{
+					// background-color: #e1ccb0;
+					// }
+					
+					&:nth-child(1){
+						width: $table-col1;
+					}
+					&:nth-child(2){
+						width: $table-col2;
+						img{
+							width: 100%;
+							vertical-align: middle;
+						}
+					}
+					&:nth-child(3){
+						width: $table-col3;
+					}
+					&:nth-child(4){
+						width: $table-col4;
+					}
+					&:nth-child(5){
+						width: $table-col5;
+						text-align: center;
+						padding-right: 5%;
+						padding-left: 5%;
+
+						div{
+							img{
+								display: block;
+								margin: auto;
+
+							}
+							&:nth-child(1){
+
+								width: 50%;
+								float: left;
+							}
+							&:nth-child(2){
+								width: 50%;
+								float: left;
+							}
+						}
+						
+					}//&:nth-child(5)
+
+				}//td
+			}//tr
+
+	}//tableContent
+}//CenterBusiness
 
 
 	.commit{
@@ -384,7 +284,7 @@ width: 100%;
 	}
 
 
-}//CenterBusiness
+//CenterBusiness
 
 
 
@@ -435,4 +335,73 @@ footer{
 }
 
 
-@import "FMybusinessStore_mediaMax767.scss";
+@media screen and (max-width : 940px) {
+
+	.LeftBusiness{
+		display: none;
+	}
+ 
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width : 940px) {
+
+	
+
+	.CenterBusiness{ 
+			
+			width:90%;
+
+			// .subtitle{
+			// 			display: none;
+			// }
+
+
+
+			.content-table{
+				
+				.tableHeader{
+					width: 100%;
+				}
+
+				table{
+
+					width: 100%;
+
+					tr{
+						td{
+							font-size: 14px;
+							&:nth-child(5){
+								div{
+									span{
+										display: none;
+									}
+								}
+							}
+						}
+					}
+
+					
+				
+
+				}
+
+
+
+		}//content-table
+
+
+
+		
+	}//CenterBusiness
+	 
+}
+
+
+
