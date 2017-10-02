@@ -7,6 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
     <script src="js/storeBrowse.js"></script>
+    <style type="text/css">
+    	header.globalHead {
+    		opacity: 0.7;
+    	}
+    </style>
 </head>
 <body>
 
@@ -199,14 +204,19 @@
 			<img src="img/store/browse/small_product2.png">
 			<p>name</p>
 		</div>
-		<div class="item">
+		<div class="item only-pc">
 			<img src="img/store/browse/small_product3.png">
 			<p>name</p>
 		</div>
-		<div class="item">
+		<div class="item only-pc">
 			<img src="img/store/browse/small_product4.png">
 			<p>name</p>
 		</div>
+	</div>
+	<div class="switcher">
+		<div class="item selected"></div>
+		<div class="item"></div>
+		<div class="item"></div>
 	</div>
 </div>
 <div class="screen-activity">
@@ -214,6 +224,11 @@
 	<div class="banner-area">
 		<div class="item">
 			<img src="img/store/browse/activity_banner1.png">
+		</div>
+		<div class="switcher">
+			<div class="item selected"></div>
+			<div class="item"></div>
+			<div class="item"></div>
 		</div>
 	</div>
 </div>
@@ -227,7 +242,7 @@
 			<div class="item">
 				<img src="img/store/browse/other_store1.png">
 			</div>
-			<div class="item">
+			<div class="item only-pc">
 				<img src="img/store/browse/other_store1.png">
 			</div>
 		</div>
@@ -238,7 +253,7 @@
 			<div class="item">
 				<img src="img/store/browse/other_store1.png">
 			</div>
-			<div class="item">
+			<div class="item only-pc">
 				<img src="img/store/browse/other_store1.png">
 			</div>
 		</div>
@@ -256,53 +271,86 @@
 		<div class="message-box" id="MSG123">
 			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
 			<div class="content">
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
 				<div class="setting-area">
-				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
-				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
-			</div>
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+<!-- 				<div class="reply-area">
+					<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+					<div class="content">
+					<p class="name">小架純</p>
+					<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+					<div class="setting-area">
+						<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+					</div>
+					</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="message-box" id="MSG123">
 			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
 			<div class="content">
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
 				<div class="setting-area">
-				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
-				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
-			</div>
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
 			</div>
 		</div>
 		<div class="message-box" id="MSG123">
 			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
 			<div class="content">
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
 				<div class="setting-area">
-				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
-				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
-			</div>
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
 			</div>
 		</div>
 		<div class="message-box" id="MSG123">
 			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
 			<div class="content">
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
 				<div class="setting-area">
-				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
-				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
-			</div>
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
 			</div>
 		</div>
 		<div class="message-box" id="MSG123">
 			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
 			<div class="content">
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
 				<div class="setting-area">
-				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
-				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
-			</div>
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
 			</div>
 		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 </div>
 
