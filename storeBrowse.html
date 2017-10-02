@@ -6,6 +6,7 @@
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
+    <script src="js/storeBrowse.js"></script>
 </head>
 <body>
 
@@ -127,14 +128,59 @@
 		<div class="store-logo"><img src="https://api.fnkr.net/testimg/150x150/00CED1/FFF/?text=img+placeholder"></div>
 		<h1 class="store-name">Bread Store</h1>
 		<div class="detail">刷新舉辦比如感謝更新校長怪物作，怎樣焦點眼中其他恢復露出，提出了期間的是群眾湖南斑，不去記錄很快均為不是產品重新寶貝加上網址世紀思考同意轉載有，女朋友聯盟排名不能減少丈夫還要進一步不想忘記作為金融提，從來沒英文後來留言客戶附件她們登，頭銜不大配件除了第一章衝突全市，只是每日深深設備看著所在成本風格爸爸擔任法規榮，神話金額今年金幣英語之。</div>
-		<div class="address-map"><img src="https://api.fnkr.net/testimg/40x40/00CED1/FFF/?text=img+placeholder"></div>
-		<div class="trace"><img src="https://api.fnkr.net/testimg/40x40/00CED1/FFF/?text=img+placeholder"></div>
+		<div class="other-info">
+			<div class="address-map"><img src="https://api.fnkr.net/testimg/40x40/00CED1/FFF/?text=img+placeholder"></div>
+			<div class="trace"><img src="https://api.fnkr.net/testimg/40x40/00CED1/FFF/?text=img+placeholder"></div>
+		</div>
 	</div>
 	<div class="right-describe">笑道夏天很難手段你看微笑什麼能量公路回去反映，他還電子看法機器更加身後風險會不會失，只要飯店它們卻是多少另一主動教材文本設立，窗口一遍飲食經銷商隨意多年成熟方向學院也，實踐周邊收入濟南來電大廈公開貫徹幾年請教口氣章，聽到人大幾年顯得委員會社會主義都，會員原創溫州品牌天津模組驚人兄弟討論創意人民危險讀書，群眾權益才能起點再次插入重要一直故意提出了，作業海外只有十大正確超市還沒，世界盃然而據說點這裡下載一點打電話估計漸漸問題非常多麼窗口，留言強調報告開發商確認人口放棄至少太多產品，完了口氣對她每頁認真感染日，美麗整合前後仍然找不到城市國有插入提示信息網吧股，聯賽藝術註冊時間就業，將來思路完全心中。</div>
 	<div class="bottom-city"><img src="img/store/browse/tmp-city.png"></div>
 </div>
 <div class="screen-bread-car-map">
 	<h2 class="title">胖小車路線圖</h2>
+	<ul class="tabs">
+		<li class="item item-selected">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-selected.png">
+				<div class="content">
+				<div class="icon"><img src="img/store/browse/tab-now.png"></div>
+				<p>即時位置</p>
+				</div>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
+				<div class="content">
+				<div class="icon"><img src="img/store/browse/tab-date-non-selected.png"></div>
+				<p>禮拜一路線</p>
+				</div>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
+				<div class="content">
+				<div class="icon">
+				<img src="img/store/browse/tab-date-non-selected.png">
+				</div>
+				<p>禮拜三路線</p>
+				</div>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
+				<div class="content">
+				<div class="icon">
+				<img src="img/store/browse/tab-date-non-selected.png">
+				</div>
+				<p>禮拜日路線</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+	<div id="map-now"></div>
 </div>
 <div class="screen-product">
 	<h2 class="title">商品</h2>
@@ -198,7 +244,67 @@
 		</div>
 	</div>
 </div>
-
+<div class="screen-messages">
+	<h2 class="title">留言板</h2>
+	<div class="send-message-area">
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content"><textarea placeholder="登入後開始留言..." rows="5"></textarea></div>
+		</div>
+	</div>
+	<div class="messages-area">
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<div class="setting-area">
+				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
+				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
+			</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<div class="setting-area">
+				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
+				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
+			</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<div class="setting-area">
+				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
+				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
+			</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<div class="setting-area">
+				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
+				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
+			</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路，機器留在刪除只不過經，失望高效好處對此有一定碩士開關不要主要大門自我各類對他許可，統計形象基本上整合預計需求計算機異常危機瞬間方便身邊沒人幫。</p>
+				<div class="setting-area">
+				<div class="reply"><img src="img/store/browse/reply.png">回覆</div>
+				<div class="report"><img src="img/store/browse/report.png">檢舉</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
@@ -244,6 +350,13 @@
 	</div>
 	</footer>
 	
-
+<script type="text/javascript">
+function initMap() {
+	initBreadCarNowLocationMap("map-now");
+}
+</script>
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYNlq7nKbzULI84W-62PA9ICijVFN6Qeg&callback=initMap">
+    </script>
 </body>
 </html>

@@ -25,6 +25,9 @@ h2 {
 h1 {
 	font-size: $globalh1Size;
 }
+img {
+	vertical-align: top;
+}
 .globalHead {
 	z-index: 10;
 }
@@ -90,6 +93,51 @@ h1 {
 	background-color: $globalHdColor02;
 	.title {
 		@include title($globalBgColor, $globalHdColor02);
+	}
+	.tabs {
+		margin-top: 30px;
+		font-size: 0;
+		li {
+			font-size: 16px;
+			display: inline-block;
+			text-decoration: none;
+			a {
+				display: block;
+				width: 200px;
+				position: relative;
+				text-align: center;
+				.tab-img {
+					width: 100%;
+				}
+				.content {
+					.icon {
+						width: 30px;
+						margin: auto;
+						img {
+							width: 100%;
+						}
+					}
+					position: absolute;
+					left: 0;
+					right: 0;
+					margin: auto;
+					top: 60px;
+					color: rgba(244,248,241,0.5);
+				}
+			}
+		}
+		li.item-selected {
+			a {
+				.content {
+					color: $globalFontColor;
+					font-size: 17px;
+				}
+			}
+		}
+	}
+	#map-now {
+		width: 100vw;
+		height: 70vh;
 	}
 }
 .screen-product {
@@ -224,11 +272,102 @@ h1 {
 		}
 	}
 }
+.screen-messages {
+	height: $storeBrowseScreenHeight;
+	background-color: $globalHdColor02;
+	img {
+		width: 100%;
+	}
+	.title {
+		@include title($globalBgColor, $globalHdColor02);
+	}
+	.messages-area, .send-message-area {
+		.mem-pic {
+			width: 50px;
+			height: 50px;
+		}
+		textarea {
+			width: 100%;
+		}
+		.message-box {
+			overflow: hidden;
+			width: 770px;
+			padding-right: 10px;
+			margin: auto;
+			img {
+				float: left;
+			}
+			.setting-area {
+				width: 100px;
+				img {
+					width: auto;
+				}
+				.reply, .report {
+					width: 50px;
+					height: 50px;
+				}
+			}
+			.content {
+				background-color: $globalBgColor;
+			    margin: 0px 0px 10px 20px;
+			    padding: 10px;
+			    float: left;
+			    width: 670px;
+			    position: relative;
+			    border-radius: 3px;
+			    box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+				p {
+					width: 570px;
+				}
+				&:before {
+				    content: '';
+				    display: block;
+				    width: 0;
+				    height: 0;
+				    border-right: 18px solid #fbf8f1;
+				    border-top: 10px solid transparent;
+				    border-bottom: 10px solid transparent;
+				    position: absolute;
+				    left: -18px;
+				    top: 18px;
+				}
+			}
+		}
+	}
+}
 // rwd=========================================
 @include rwd("mobile") {
 	.screen-1 {
+		position: relative;
 		.detail-box {
 			width: 100%;
+			margin-left: 0px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			.store-logo {
+				img {
+					width: 100%;
+				}
+				margin: 10px;
+				width: 50px;
+				height: 50px;
+				float: left;
+			}
+			.store-name, {
+				float: left;
+			}
+			.address-map {
+				clear: both;
+				float: right;
+			}
+			.trace {
+				float: right;
+			}
+			.detail {
+				display: none;
+			}
 		}
 		.right-describe {
 			width: 100%;

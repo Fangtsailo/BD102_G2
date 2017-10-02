@@ -8,6 +8,9 @@ h2 {
 h1 {
   font-size: 36px; }
 
+img {
+  vertical-align: top; }
+
 .globalHead {
   z-index: 10; }
 
@@ -69,6 +72,38 @@ h1 {
     background-color: #fbf8f1;
     font-size: 28px;
     color: #9e693d; }
+  .screen-bread-car-map .tabs {
+    margin-top: 30px;
+    font-size: 0; }
+    .screen-bread-car-map .tabs li {
+      font-size: 16px;
+      display: inline-block;
+      text-decoration: none; }
+      .screen-bread-car-map .tabs li a {
+        display: block;
+        width: 200px;
+        position: relative;
+        text-align: center; }
+        .screen-bread-car-map .tabs li a .tab-img {
+          width: 100%; }
+        .screen-bread-car-map .tabs li a .content {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          top: 60px;
+          color: rgba(244, 248, 241, 0.5); }
+          .screen-bread-car-map .tabs li a .content .icon {
+            width: 30px;
+            margin: auto; }
+            .screen-bread-car-map .tabs li a .content .icon img {
+              width: 100%; }
+    .screen-bread-car-map .tabs li.item-selected a .content {
+      color: #663300;
+      font-size: 17px; }
+  .screen-bread-car-map #map-now {
+    width: 100vw;
+    height: 70vh; }
 
 .screen-product {
   height: 100vh;
@@ -197,13 +232,90 @@ h1 {
       width: 33.333333%;
       display: inline-block; }
 
-@media all and (max-width: 767px) {
-  .screen-1 .detail-box {
+.screen-messages {
+  height: 100vh;
+  background-color: #9e693d; }
+  .screen-messages img {
     width: 100%; }
-  .screen-1 .right-describe {
-    width: 100%;
-    background-color: rgba(128, 89, 52, 0.5);
-    color: #fbf8f1;
-    padding: 10px;
-    text-align: justify;
-    position: relative; } }
+  .screen-messages .title {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    background-color: #fbf8f1;
+    font-size: 28px;
+    color: #9e693d; }
+  .screen-messages .messages-area .mem-pic, .screen-messages .send-message-area .mem-pic {
+    width: 50px;
+    height: 50px; }
+  .screen-messages .messages-area textarea, .screen-messages .send-message-area textarea {
+    width: 100%; }
+  .screen-messages .messages-area .message-box, .screen-messages .send-message-area .message-box {
+    overflow: hidden;
+    width: 770px;
+    padding-right: 10px;
+    margin: auto; }
+    .screen-messages .messages-area .message-box img, .screen-messages .send-message-area .message-box img {
+      float: left; }
+    .screen-messages .messages-area .message-box .setting-area, .screen-messages .send-message-area .message-box .setting-area {
+      width: 100px; }
+      .screen-messages .messages-area .message-box .setting-area img, .screen-messages .send-message-area .message-box .setting-area img {
+        width: auto; }
+      .screen-messages .messages-area .message-box .setting-area .reply, .screen-messages .messages-area .message-box .setting-area .report, .screen-messages .send-message-area .message-box .setting-area .reply, .screen-messages .send-message-area .message-box .setting-area .report {
+        width: 50px;
+        height: 50px; }
+    .screen-messages .messages-area .message-box .content, .screen-messages .send-message-area .message-box .content {
+      background-color: #fbf8f1;
+      margin: 0px 0px 10px 20px;
+      padding: 10px;
+      float: left;
+      width: 670px;
+      position: relative;
+      border-radius: 3px;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); }
+      .screen-messages .messages-area .message-box .content p, .screen-messages .send-message-area .message-box .content p {
+        width: 570px; }
+      .screen-messages .messages-area .message-box .content:before, .screen-messages .send-message-area .message-box .content:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-right: 18px solid #fbf8f1;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        left: -18px;
+        top: 18px; }
+
+@media all and (max-width: 767px) {
+  .screen-1 {
+    position: relative; }
+    .screen-1 .detail-box {
+      width: 100%;
+      margin-left: 0px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden; }
+      .screen-1 .detail-box .store-logo {
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        float: left; }
+        .screen-1 .detail-box .store-logo img {
+          width: 100%; }
+      .screen-1 .detail-box .store-name {
+        float: left; }
+      .screen-1 .detail-box .address-map {
+        clear: both;
+        float: right; }
+      .screen-1 .detail-box .trace {
+        float: right; }
+      .screen-1 .detail-box .detail {
+        display: none; }
+    .screen-1 .right-describe {
+      width: 100%;
+      background-color: rgba(128, 89, 52, 0.5);
+      color: #fbf8f1;
+      padding: 10px;
+      text-align: justify;
+      position: relative; } }
