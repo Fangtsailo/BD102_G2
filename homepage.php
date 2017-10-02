@@ -6,7 +6,6 @@
 	<title>TREPUN</title>
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="js/header.js"></script>
 </head>
 <body>
 	<?php 
@@ -16,9 +15,6 @@ require_once("header.php");
  ?>
 
 <!-- ======================================================內頁開始========================================================= -->	
-
-
-<div class="homeContainer">
 	
 
 
@@ -57,12 +53,12 @@ require_once("header.php");
 						</select>
 					</div>
 				
-					<div class="filter" id="filterTops">
+					<button class="filter" id="filterTops">
 						<span>熱門</span>
-					</div>
-					<div class="filter" id="filterzstars">
+					</button>
+					<button class="filter" id="filterstars">
 						<span>評價</span>
-					</div>
+					</button>
 					<div class="searchbar">
 					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
 					<button type="submit">搜尋</button>
@@ -78,76 +74,86 @@ require_once("header.php");
 
 	</section>
 
+
+
+
+
 <!-- ======================================================2nd首頁熱門店家========================================================= -->
 	<section class="homeTopChart">
 		<p class="topChartDescrp">為您篩選出各地區的熱門麵包香，<br>尋找附近地區最熱門的麵包小店！</p>
 		
-		<div class="showContent">
-
-			<div class="contentTitle">
-				<img id="titleIcon" src="img/homepage/topChartIcon.png">
-				<h3>精選熱門店家</h3>
-				<p>Top Charts</p>
-			</div>
-			<div class="shopContent">
-				<h3 class="shopName">Bakki烘焙屋</h3>
-				<ul class="shopPlace">
-					<li>
-						<svg viewBox="0 0 38 38">
-							<style type="text/css">
-										.st0{fill:url(#SVGID_1_);}
-										.st1{fill:#FFFFFF;}
-							</style>
-							<g>
-								<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="7.5023" y1="19" x2="30.4977" y2="19">
-									<stop  offset="0" style="stop-color:#B41526"/>
-									<stop  offset="1" style="stop-color:#E95513"/>
-								</linearGradient>
-								<path class="st0" d="M30.5,11.9c0-6.4-5.1-11.5-11.5-11.5c-6.4,0-11.5,5.1-11.5,11.5c0,7.1,11.4,25.6,11.4,25.6
-									S30.5,19.3,30.5,11.9z"/>
-								<circle class="st1" cx="19.6" cy="11.9" r="7"/>
-							</g>
-						</svg>
-					</li>
-					<li>桃園 中壢市</li>
-				</ul>
-				<ul class="shopInfo">
-					<li>
-						<span><img src="img/icon/follow.svg"></span>
-						<span>220人追蹤</span>
+		<div class="topChartGrp">
+			<div class="showContent">
+			
+				<div class="contentTitle">
+					<img id="titleIcon" src="img/homepage/topChartIcon.png">
+					<h3>精選熱門店家</h3>
+					<!-- <p>Top Charts</p> -->
+					<div class="clearfix"></div>
+				</div>
+				<div class="shopContent">
+					<h3 class="shopName">Bakki烘焙屋</h3>
+					<ul class="shopPlace">
+						<li>
+							<svg viewBox="0 0 38 38">
+								<style type="text/css">
+											.st0{fill:url(#SVGID_1_);}
+											.st1{fill:#FFFFFF;}
+								</style>
+								<g>
+									<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="7.5023" y1="19" x2="30.4977" y2="19">
+										<stop  offset="0" style="stop-color:#B41526"/>
+										<stop  offset="1" style="stop-color:#E95513"/>
+									</linearGradient>
+									<path class="st0" d="M30.5,11.9c0-6.4-5.1-11.5-11.5-11.5c-6.4,0-11.5,5.1-11.5,11.5c0,7.1,11.4,25.6,11.4,25.6
+										S30.5,19.3,30.5,11.9z"/>
+									<circle class="st1" cx="19.6" cy="11.9" r="7"/>
+								</g>
+							</svg>
 						</li>
-					<li>
-						<span><img src="img/icon/star.svg"></span>
-						<span>4.5顆星評價</span>
-					</li>
-				</ul>
-				<div class="messageBoard">
-					<div id="memPic"></div>
-					<span id="memName">AJay</span>
-					<span id="messageTime">2小時前</span>
-					<div class="messageContent">
-						<p id="messageTxt">居然還有自製果醬，跟他們家的白土司是絕配啊！</p>
+						<li>桃園 中壢市</li>
+					</ul>
+					<ul class="shopInfo">
+						<li>
+							<span><img src="img/icon/follow.svg"></span>
+							<span>220人追蹤</span>
+							</li>
+						<li>
+							<span><img src="img/icon/star.svg"></span>
+							<span>4.5顆星評價</span>
+						</li>
+					</ul>
+					<div class="messageBoard">
+						<div id="memPic"></div>
+						<span id="memName">AJay</span>
+						<span id="messageTime">2小時前</span>
+						<div class="messageContent">
+							<p id="messageTxt">居然還有自製果醬，跟他們家的白土司是絕配啊！</p>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 			<div class="shopArea" id="shopTaipei">
 				<h3>台北</h3>
 			</div>
 			<div class="shopArea" id="shopNewTpe">
 				<h3>新北</h3>
 			</div>
-			<div class="shopArea" id="shopTaoyuan">
-				<h3>桃園</h3>
-			</div>
-			<div class="shopArea" id="shopTaichung">
-				<h3>台中</h3>
-			</div>
-			<div class="shopArea" id="shopTainan">
-				<h3>台南</h3>
-			</div>
-			<div class="shopArea" id="shopKaohsiung">
-				<h3>高雄</h3>
-			</div>
+				<div class="shopArea" id="shopTaoyuan">
+					<h3>桃園</h3>
+				</div>
+				<div class="shopArea" id="shopTaichung">
+					<h3>台中</h3>
+				</div>
+				<div class="shopArea" id="shopTainan">
+					<h3>台南</h3>
+				</div>
+				<div class="shopArea" id="shopKaohsiung">
+					<h3>高雄</h3>
+				</div>
+
+
 		</div>
 		
 	</section>
@@ -198,38 +204,46 @@ require_once("header.php");
 			<img src="img/homepage/titleDecor2.png">
 		</div>
 		<div class="newShops">
-			<div class="newShopItem">
-				<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=img+placeholder">
-				<div class="shopContent">
-					<h3>XXX麵包店</h3>
-					<span class="newShopPlace">桃園 中壢市</span>
-					<span class="postTime">2小時前</span>
+			<div class="newShopsGrp col-sm-12 col-xs-12">
+				<div class="newShopItem">
+					<img src="img/homepage/shop1.jpg">
+					<div class="shopContent">
+						<h3>力可烘焙坊</h3>
+						<span class="newShopPlace">桃園 中壢市</span>
+						<span class="postTime">2小時前</span>
+					</div>
 				</div>
 			</div>
-			<div class="newShopItem">
-				<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=img+placeholder">
-				<div class="shopContent">
-					<h3>店名</h3>
-					<span class="newShopPlace">地點</span>
-					<span class="postTime">發布時間</span>
+			<!-- <div class="newShopsGrp col-sm-3 col-xs-6">
+				<div class="newShopItem">
+					<img src="img/homepage/shop2.jpg">
+					<div class="shopContent">
+						<h3>高崎麵包</h3>
+						<span class="newShopPlace">台北 信義區</span>
+						<span class="postTime">3小時前</span>
+					</div>
 				</div>
 			</div>
-			<div class="newShopItem">
-				<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=img+placeholder">
-				<div class="shopContent">
-					<h3>店名</h3>
-					<span class="newShopPlace">地點</span>
-					<span class="postTime">發布時間</span>
+			<div class="newShopsGrp col-sm-3 col-xs-6">
+				<div class="newShopItem">
+					<img src="img/homepage/shop3.jpg">
+					<div class="shopContent">
+						<h3>田也麵包</h3>
+						<span class="newShopPlace">台南 永康</span>
+						<span class="postTime">4小時前</span>
+					</div>
 				</div>
 			</div>
-			<div class="newShopItem">
-				<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=img+placeholder">
+			<div class="newShopsGrp col-sm-3 col-xs-6">
+				<div class="newShopItem">
+				<img src="img/homepage/shop4.jpg">
 				<div class="shopContent">
-					<h3>店名</h3>
-					<span class="newShopPlace">地點</span>
-					<span class="postTime">發布時間</span>
+					<h3>Bakki烘焙屋</h3>
+					<span class="newShopPlace">台中 北屯</span>
+					<span class="postTime">6小時前</span>
 				</div>
 			</div>
+		</div> -->
 		</div>
 	</section>
 
@@ -257,6 +271,9 @@ require_once("header.php");
 
 require_once("footer.php");
  	 ?>
+
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="js/homepage.js"></script>
 </body>
 </html>
 

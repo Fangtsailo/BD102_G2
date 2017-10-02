@@ -53,10 +53,10 @@ module.exports = function (grunt) {
           server: {
             baseDir: './',
             index: 'index.html'
-          }
-        }
-      }
-    }
+          } //server
+        } //option
+      } //dev
+    } //browserSync
   });
 
   //Load the plugin that provides the "watch sass browserSync" task.
