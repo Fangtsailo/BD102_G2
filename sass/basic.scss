@@ -25,7 +25,9 @@ a {
 	height: 1000px;
 
 }
-
+li {
+	list-style: none;
+}
 
 
 
@@ -86,6 +88,7 @@ a {
 		margin: auto;
 		background-color: transparent;
 		border:none;
+		outline: none;
 		border-bottom: 1px solid $globalUnclickColor;
 			&::-webkit-input-placeholder{
 			color: $globalUnclickColor;
@@ -144,8 +147,9 @@ a {
 
 header.globalHead {
 	width: 100%;
-	height: 100px;
-	@include leftRightGradient($globalHdColor01,$globalHdColor02);
+	height: 80px;
+	@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
+	z-index: 9999;
 	position:fixed;
 
 
@@ -248,71 +252,160 @@ header.globalHead {
 
 	//頁首logo區塊
 	.headLogo {
-		width: 10%;
-		height: 80px;
-		padding: 10px;
+		width: 10vw;
+		padding: 10px 20px;
 		display: inline-block;
 		img {
-			display: block;
-			width: 160px;
-			height: 80px;
+
+			display: inline-block;
+			height: 65px;
 		}
 	}
 	
 	
 	.headerRight {
-		width: 50%;
-		height: 80px;
-		padding: 10px 0px;
+		height: 50%;
+		padding: 5px 0px;
 		position: absolute;
+		// box-sizing:border-box;
 		top: 0;
 		right: 0;
 
 
 		//頁首搜尋區塊
 		.headSearch {
-			position:absolute;
-			top: 0;
-			left: 0;
-			width: 70%;
-			height: 80px;
-			border:1px solid #ccc;
-		}
-		//頁首會員區塊
-		.headAccount {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 30%;
-			height: 80px;
-			border:1px solid #ccc;
-			#headMemStatus {
-				display:none;
-				#headMemPic {
+			width: 70vw;
+			// height: 70px;
+			float: left;
+			padding: 20px 10px;
+			// border:1px solid #ccc;
+			box-sizing:border-box;
+			text-align: right;
+			span {
+				margin-right: 10px;
+				color:$globalBgColor;
+				font-weight: 300;
+			}
+			#headSearch {
+				width: 20%;
+				height: 30px;
+				display: inline-block;
+				margin: 0px 5px;
+				border:1px solid #fff;
+				padding-left: 10px;
+				outline: none;
+				box-sizing:border-box;
+				vertical-align: top;
+			}
+			select {
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				color:$globalBgColor;
+				background-color:transparent;
+				border:1px solid $globalBgColor;
+				margin: 0px 5px;
+				font-size: $globalContentSize;
+				outline: none;
+				border-radius:2px;
+				box-sizing:border-box;
+				}
+			button {
+				width: 80px;
+				display: inline-block;
+				height: 30px;
+				color:$globalBgColor;
+				background-color:transparent;
+				border:1px solid $globalBgColor;
+				margin: 0px 5px;
+				font-size: $globalContentSize;
+				border-radius:2px;
+				&:focus {
+				background-color: $globalBgColor;
+				color:$globalHdColor01;
+				outline: none;
+				box-sizing:border-box;
+				}
+			}	
+			#headSearchSubmit {
 				display: inline-block;
 				width: 50px;
-				height: 50px;
-				padding: 10px 0px;
+				height: 30px;
+				color:$globalFontColor;
+				background-color:$globalFtColor;
+				// border:1px solid $globalBgColor;
+				border:none;
+				margin-left: 5px;
+				font-size: $globalContentSize;
+				border-radius:2px;
+				outline: none;
+				box-sizing:border-box;
+				&:active {
+					background-color:$globalFontColor ;
+					color:$globalBgColor;
+				}
+
+			}
+		}
+		
+
+
+
+		//頁首會員區塊
+		.headAccount {
+
+			width: 10vw;
+			height: 80px;
+			float: left;
+			// border:1px solid #ccc;
+			box-sizing:border-box;
+
+			#headMemStatus {
+				display:none;
+
+				#headMemPic {
+				width: 100%;
+				height: 80px;
 				}
 			}
-			
+
 			#headMemLogin {
-				display:inline-block;
-				width: 100px;
+				width: 100%;
 				height: 80px;
-				padding: 10px 0px;
-				span {
-					display:inline-block;
-					width: 40px;
-					height: 40px;
-					padding: 0px 5%;
-					fill:$globalBgColor;	
+
+				.loginGrp {
+				width: 50%;
+				margin: auto;
+				height: 80px;
+				}
+
+				#loginBtn {
+					width: 32px;
+					height: 32px;
+					display: block;
+					margin: auto;
+					fill:$globalBgColor;
+					margin-top: 12px;
+				}
+				#loginTxt {
+					text-align: center;
+					color:$globalBgColor;
+					display: block;
+					margin: auto;
+					margin-bottom: 12px;
+					font-weight: 300;
 				}
 			}
 		}
 	}
-
-
+	
+	//RWD區塊樣式
+	.rwd_headerSearch {
+		display:none;
+	}
+	.burgerMenu {
+		display: none;
+	}
 
 
 }
@@ -329,6 +422,7 @@ footer {
 	.globalFtBtn {
 	display: inline-block;
 	margin:15px;
+	cursor: pointer;
 
 		.svg {
 			width: 50px;
@@ -429,15 +523,61 @@ footer {
 
 @include rwd(mobile){
 	
+
+
+
+
+	// --------------------------頁首RWD樣式--------------------------
 	header.globalHead{
+		text-align: center;
 		.headLogo {
+			width: 30vw;
+			margin: auto;
+			display: inline-block;
+			text-align: center;
 			img {
-				width: 30vw;
+				width: 100%;
 			}
 		}
+		.headerRight {
+			display: none;
+		}
+		.rwd_headerSearch {
+			display:inline-block;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 0px;
+			right: 20px;
+			bottom: 0;
+			margin: auto;
+				
+			.searchIcon {
+				width: 20vw;
+				height: 40px;
+				fill:$globalBgColor;
+
+			}
+
+		}
+		.burgerMenu {
+			display: inline-block;
+			width: 20vw;
+			height: 40px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 20px;
+			margin: auto;
+		}
+
 	}
 
 
+
+
+
+	// --------------------------表單RWD樣式--------------------------
 	.globalForm {
 		width: 80%;
 		margin: auto;

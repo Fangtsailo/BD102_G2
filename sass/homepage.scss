@@ -1,0 +1,628 @@
+@import "basic";
+
+
+body {
+	background-image: url("../img/homepage/homepage_bg0.png");
+	overflow-x:hidden;
+}
+section {
+	width: 100vw;
+	height: 100vh;
+}
+
+
+//================= 1st搜尋板塊 ================================
+
+
+section.homeSearchBar {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../img/homepage/homepage_bg1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center bottom;
+
+	.itemGrp {
+		width: 70%;
+		height: 100%;
+		margin: auto;
+		padding-top: 150px;
+		max-width: 720px;
+		.bigLogo {
+			width: 100%;
+			height: 30%;
+			
+			img {
+				width: 100%;
+				height: 100%;
+
+			}
+		}
+		h2 {
+			text-align: center;
+			color: $globalBgColor;
+			font-size: 5vmin;
+			margin:10px 0px;
+			text-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
+		}
+		.searchPart {
+			width: 100%;
+			.tabs {
+				width: 100%;
+				box-sizing:border-box;
+				.tab_contents {
+					width: 100px;
+					float: left;
+					text-align: center;
+					background-color: $globalHdColor01;
+					padding:10px;
+					box-sizing:border-box;
+					a {
+						color:$globalBgColor;
+					}
+					&.active {
+						background-color: #E7E6E6;
+						color:$globalHdColor02;
+					}
+				}
+				
+			}
+			.searchContent {
+				width: 100%;
+				float: left;
+				box-sizing:border-box;
+				border-radius:0px 3px 3px 3px;
+				background-color: #E7E6E6;
+				text-align: center;
+				span.filterTitle {
+					display: inline-block;
+					padding:10px 20px;
+					margin:10px 0px;
+					color:$globalTitleColor;
+				}
+				.filter {
+					display: inline-block;
+					padding:5px 20px;
+					margin:10px 10px;
+					background-color: rgba(255,255,255,0.9);
+					color:$globalTitleColor;
+					font-size:  $globalContentSize;
+					border-radius:2px;
+					outline:none;
+					select {
+						font-size: $globalContentSize;
+						color:$globalTitleColor;
+						border:none;
+					}
+				}
+				.searchbar {
+					width: 100%;
+					display:block;
+					box-sizing:border-box;
+					background-color: #fff;
+					text-align: left;
+					border-radius:0px 0px 3px 3px;
+					input {
+						width: 80%;
+						height: 100%;
+						padding:10px;
+						font-size: $globalContentSize;
+						background-color:transparent;
+						border:none;
+						display:inline-block;
+						box-sizing:border-box;
+						outline:none;
+					
+
+					}
+					button {
+						display:inline-block;
+						width: 19%;
+						text-align: center;
+						font-size: $globalContentSize;
+						padding:10px;
+						border:none;
+						box-sizing:border-box;
+						background-color:transparent;
+						outline:none;
+
+					}
+				}
+			}	
+
+
+		}
+
+	}
+
+}
+
+
+
+
+//================= 2nd 熱門店家 ================================
+
+
+section.homeTopChart {
+	position: relative;
+
+	p.topChartDescrp {
+		width: 50%;
+		text-align: center;
+		margin: 50px auto;
+		font-size: $globalh3Size;
+		color:$globalFontColor;
+		line-height: 1.5;
+		font-weight: 500;
+	}
+	.showContent {
+		width: 70vmin;
+		height: 70vmin;
+		min-width: 570px;
+		min-height: 570px;
+		text-align: center;
+		margin: auto;
+		background-color: #fff;
+		// border-radius: 45% 55% 45% 55% / 60% 60% 40% 40%;
+		border-radius:50% 60% 60% 50%;
+		position: relative;
+		.contentTitle {
+			width: 70%;
+			margin: auto;
+			text-align: center;
+			padding-top: 30px;
+			#titleIcon {
+				width: 40px;
+				height: 40px;	
+		
+			}
+			h3 {
+				padding: 5px 0px;
+				font-size: $globalh1Size;
+				color:$globalFontColor;
+				font-weight: 700;
+			}
+			p {
+				color:$globalFontColor;
+				font-size: $globalh3Size;
+				font-weight: 500;
+			}
+		}
+		
+		.shopContent {
+			width:60%;
+			margin: auto;
+			margin-top: 20px;
+			padding:15px;
+			background-color:$globalFtColor;
+			border-radius:8px;
+
+			.shopName {
+				width: 33.3333%;
+				float: left;
+				padding:10px;
+				font-size: $globalh3Size;
+				box-sizing:border-box;
+				color:$globalFontColor;
+				margin-bottom: 15px;
+				text-align: left;
+				font-weight: 700;
+
+			}
+			ul.shopPlace {
+				width: 33.3333%;
+				float: left;
+				
+				box-sizing:border-box;
+				color:$globalFontColor;
+				li:first-child {
+					width: 32px;
+					height: 32px;
+					margin: auto;
+					margin-top: 10px;
+				}
+			}
+			ul.shopInfo {
+				width: 33.3333%;
+				float: left;
+		
+				box-sizing:border-box;
+				color:$globalFontColor;
+				span {
+
+				}
+				span:first-child img {
+					width: 32px;
+					height: 32px;
+				}
+			}
+			.messageBoard {
+				clear:both;
+				width: 100%;
+				padding:20px;
+				box-sizing:border-box;
+				position: relative;
+				background-color: rgba(251, 248, 241, 0.9);
+				&:after {
+						content:'';
+						display:block;
+						width: 0px;
+						height: 0px;
+						position: absolute;
+						border-bottom:20px solid rgba(251, 248, 241, 0.9);
+						border-right:20px solid transparent;
+						// border-left:none;
+						// border-right:none;
+						// border-top:none;
+						top: -20px;
+						left: 20px;
+					}
+				#memPic {
+					float: left;
+					width: 32px;
+					height: 32px;
+					padding:10px;
+					border-radius:50%;
+					background-color: #aaa;
+				}
+				#memName {
+					float: left;
+					width: 10%;
+					padding:20px 10px;
+					color:$globalFontColor;
+				}
+				#messageTime {
+					float: right;
+					width: 40%;
+					padding:20px 10px;
+					color:$globalFontColor;
+				}
+				.messageContent {
+					clear:both;
+					width: 100%;
+					padding:10px;
+					background-color: #FFF;
+					border-radius: 5px;
+					box-sizing:border-box;
+					
+					border-radius:8px;
+
+					
+					#messageTxt {
+						text-align: left;
+						color:$globalFontColor;
+					}
+
+				}
+			}
+		}
+
+
+	}
+
+
+
+	.shopArea {
+		width: 150px;
+		height: 150px;
+		background-color: #ccc;
+		border-radius: 45% 55% 45% 55% / 60% 60% 40% 40%;
+		text-align: center;
+		h3 {
+			width: 100%;
+			margin: auto;
+			line-height: 20vh;
+			text-align: center;
+			color:$globalBgColor;
+
+		}
+	}
+	#shopTaipei {
+		position: absolute;
+		top: -10px;
+		left: -70px;
+
+	}
+	#shopNewTpe {
+		position: absolute;
+		top: 220px;
+		left: -100px;
+	}
+	#shopTaoyuan {
+		position: absolute;
+		bottom: 0px;
+		left: -70px;
+	}
+	#shopHsinchu {
+		position: absolute;
+		bottom: -180px;
+		left: 0px;
+		right: 0;
+		margin: auto;
+	}
+	#shopKaohsiung {
+		position: absolute;
+		top: -10px;
+		right: -70px;
+	}
+	#shopTainan {
+		position: absolute;
+		top: 220px;
+		right: -100px;
+	}
+	#shopTaichung {
+		position: absolute;
+		bottom: 0px;
+		right: -70px;
+	}
+}
+
+@media all and (max-width:1024px) and (min-width:768px){
+	.shopContent {width: 100%;}
+
+}
+// @include rwd(desktop){
+	
+// 	.showContent {
+// 		width:100%;
+
+// 	}
+	
+// }
+
+
+
+
+
+
+
+//================= 3rd 胖小車地圖 ================================
+
+
+
+section.homeCarMap {
+	background-image: url("../img/homepage/homepage_bg3.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding:5vw;
+	box-sizing:border-box;
+
+	.carMap {
+		width: 100%;
+		height: 100%;
+		margin: auto;
+		background-image: url("../img/homepage/homepage_bg6.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		h1.mapTitle {
+			width: 30vmin;
+			height: 100px;
+			font-size: 5vmin;
+			color:$globalFontColor;
+			background-color: $globalBgColor;
+			text-align: center;
+			line-height: 100px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+//================= 4th 精選活動 ================================
+
+
+
+
+section.homeActivity {
+	background-image: url("../img/homepage/homepage_bg4.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	.activityTitle {
+			background-color: rgba(96,56,19,.32);
+			position: absolute;
+			top: 0;
+			left: 10vw;
+			padding:20px;
+			width: 20%;
+			img {
+				display:block;
+				width: 70px;
+				margin: 30px auto;
+			}
+			h1 {
+				width: 90%;
+				margin: auto;
+				font-size: $globalh1Size;
+				text-align: center;
+				color:$globalBgColor;
+				letter-spacing: 1.8px;
+				text-shadow:0px 2px 10px 0px rgba(0,0,0,0.5);
+
+			}
+			p {
+				width: 90%;
+				text-align: left;
+				color:$globalBgColor;
+				padding-top: 50px;
+				font-size: $globalh3Size;
+				margin: auto;
+			}
+	}
+	.activityItem {
+		width: 40%;
+		height: 100%;
+		float: right;
+		margin-right: 10%;
+		.svg {
+				width: 100px;
+				fill:$globalBgColor;
+			}
+		#chooseActUp {
+				width: 80px;
+				margin: auto;
+				vertical-align: top;
+
+		}
+		#actBanner {
+				max-width: 600px;
+				width: 100%;
+				height:40vw;
+				background-color: #ccc;
+				border-radius:90% 90% 90% 90%;
+		}
+		#chooseActDown {
+			 	width: 80px;
+			 	margin: auto;
+			 	
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//================= 5th 新進店家 ================================
+
+
+
+
+
+
+
+section.homeNewshop {
+	background-image: url("../img/homepage/homepage_bg5.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	top: -20px;
+	.newShopTitle {
+		width: 70%;
+		margin: auto;
+		padding:100px 0px 50px 0px;
+		clear:both;
+		text-align: center;
+		img {
+			display: inline-block;
+
+		}
+		h1 {
+			display: inline-block;
+			color:$globalBgColor;
+			font-size:$globalBigSize;
+			text-align: center;
+			letter-spacing: 1.8;
+			vertical-align: top;
+		}
+
+	}
+	.newShops {
+		width: 90vw;
+		height: 50vw;
+		margin: auto;
+		text-align: center;
+		.newShopItem {
+			display: inline-block;
+			width: 20vw;
+			height: 25vw;
+			margin:10px;	
+			background-color: $globalFtColor;
+			box-sizing:border-box;
+			padding:10px;
+			border-radius:3px;
+			img {
+				width: 100%;
+				height: 60%;
+				object-fit: cover;
+			}
+			.shopContent {
+				width: 70%;
+				margin: 10px auto;
+				height: 35%;
+				border-radius: 45% 55% 45% 55% / 50% 45% 55% 50%;				
+				background-color: $globalBgColor;
+				box-shadow:0px 0px 10px 2px #CDC9B9;
+				h3 {
+					padding:10px 5px;
+					font-size: 2vmin;
+				}
+				span {
+					display: inline-block;
+					width: 70%;
+				}
+			}
+		}
+	}
+	
+}
+
+
+
+//================= 6th 聯絡 ================================
+
+
+
+section.homeContact {
+	width: 100vw;
+	height: 50vh;
+	clear:both;
+	img {
+		width: 15%;
+		height: 15%;
+		display:block;
+		margin: auto;
+	
+	}
+	p {
+		width: 70%;
+		margin: auto;
+		margin-top: 50px;
+		text-align: center;
+		margin-bottom: 20px;
+		font-size: 4vmin;
+		color:$globalFontColor;
+		font-weight: 700;
+	}
+	h3 {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 20px;
+		text-align: center;
+		font-weight: 500;
+		font-size: 3vmin;
+		color: $globalFontColor;
+	}
+	.addShop {
+		width: 50%;
+		height: 100%;
+		float: left;
+		box-sizing:border-box;
+	}
+	.contactUs {
+		width: 50%;
+		height: 100%;
+		float: left;
+		box-sizing:border-box;
+	}
+
+}
+
+
+
+
