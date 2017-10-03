@@ -56,12 +56,15 @@ img {
 	.detail {
 		color: $globalFontColor;
 	}
-	.address-map ,.trace {
+	.follow ,.trace {
 		width: 96px;
 		height: 40px;
 		background-color: red;
 		display: inline-block;
 		text-align: center;
+		img {
+			width: 40px;
+		}
 	}
 	}
 	.right-describe {
@@ -433,23 +436,24 @@ img {
 			position: relative;
 			top: 0;
 			left: 0;
-			overflow: hidden;
 			box-sizing: border-box;
 			margin-top: 250px;
 			background-color: #FBF8F1;
+			height: 114px;
 			.store-logo {
 				img {
 					width: 100%;
 				}
-				margin: 10px;
-				width: 50px;
-				height: 50px;
-				float: left;
+			    margin: 10px;
+			    width: 100px;
+			    margin-top: -50px;
+			    height: 100px;
+			    float: left;
 			}
 			.store-name, {
 				float: left;
 			}
-			.address-map {
+			.follow {
 				clear: both;
 				float: right;
 			}
