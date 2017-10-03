@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>TREPUN</title>
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -179,21 +179,25 @@ require_once("header.php");
 			<p>適合全家大小一起動手製作的烘焙課程</p>
 		</div>
 		<div class="activityItem">
-			<div id="chooseActUp">
-				<div class="svg">
-					<svg viewBox="0 0 38 38" >
-					<polygon points="19.4,14.4 28.2,25.4 26.6,26.6 19.4,17.6 12.2,26.6 10.6,25.4 "/>
-					</svg>
+			
+			<div class="activityRight">
+				<div id="chooseActUp">
+					<div class="svg">
+						<svg width="100" height="100" viewBox="0 0 38 38" >
+						<polygon style="fill:#fbf8f1" points="19.4,14.4 28.2,25.4 26.6,26.6 19.4,17.6 12.2,26.6 10.6,25.4 "/>
+						</svg>
+					</div>
+				</div>
+				<div id="actBanner"></div>
+				<div id="chooseActDown">
+					<div class="svg">
+						<svg width="100" height="100" viewBox="0 0 38 38">
+							<polygon style="fill:#fbf8f1" points="28.2,15.5 26.6,14.2 19.4,23.2 12.2,14.2 10.6,15.5 19.4,26.4 "/>
+						</svg>
+					</div>
 				</div>
 			</div>
-			<div id="actBanner"></div>
-			<div id="chooseActDown">
-				<div class="svg">
-					<svg viewBox="0 0 38 38">
-						<polygon points="28.2,15.5 26.6,14.2 19.4,23.2 12.2,14.2 10.6,15.5 19.4,26.4 "/>
-					</svg>
-				</div>
-			</div>
+
 		</div>
 	</section>
 <!-- ======================================================5th首頁新進店家========================================================= -->
@@ -204,47 +208,19 @@ require_once("header.php");
 			<img src="img/homepage/titleDecor2.png">
 		</div>
 		<div class="newShops">
-			<div class="newShopsGrp col-sm-12 col-xs-12">
 				<div class="newShopItem">
 					<img src="img/homepage/shop1.jpg">
 					<div class="shopContent">
-						<h3>力可烘焙坊</h3>
-						<span class="newShopPlace">桃園 中壢市</span>
+						<h2>裕馥西點麵包店</h2>
+						<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+						<span class="newShopPlace">新北市 永和</span>
 						<span class="postTime">2小時前</span>
 					</div>
 				</div>
+				<div class="clearfix"></div>
 			</div>
-			<!-- <div class="newShopsGrp col-sm-3 col-xs-6">
-				<div class="newShopItem">
-					<img src="img/homepage/shop2.jpg">
-					<div class="shopContent">
-						<h3>高崎麵包</h3>
-						<span class="newShopPlace">台北 信義區</span>
-						<span class="postTime">3小時前</span>
-					</div>
-				</div>
-			</div>
-			<div class="newShopsGrp col-sm-3 col-xs-6">
-				<div class="newShopItem">
-					<img src="img/homepage/shop3.jpg">
-					<div class="shopContent">
-						<h3>田也麵包</h3>
-						<span class="newShopPlace">台南 永康</span>
-						<span class="postTime">4小時前</span>
-					</div>
-				</div>
-			</div>
-			<div class="newShopsGrp col-sm-3 col-xs-6">
-				<div class="newShopItem">
-				<img src="img/homepage/shop4.jpg">
-				<div class="shopContent">
-					<h3>Bakki烘焙屋</h3>
-					<span class="newShopPlace">台中 北屯</span>
-					<span class="postTime">6小時前</span>
-				</div>
-			</div>
-		</div> -->
 		</div>
+
 	</section>
 
 <!-- ======================================================6th首頁聯絡我們========================================================= -->
@@ -263,6 +239,7 @@ require_once("header.php");
 			<h3>客服中心</h3>
 			<img src="img/icon/report.svg">	
 		</div>
+		<div class="clearfix"></div>
 	</section>
 
 

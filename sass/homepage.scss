@@ -167,11 +167,32 @@ section {
 
 				}
 			}
+			
 
 		}
 	}
 }
-
+@media screen and (max-width:500px){
+	section.homeSearchBar {
+		.itemGrp {
+			.searchPart {
+				.searchContent {
+					.filterTitle {
+						width: 100%;
+					}
+					.searchbar {
+						input {
+							width: 70%;
+						}
+						button {
+							width: 20%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 //================= 2nd 熱門店家 ================================
 
@@ -352,46 +373,53 @@ section {
 			line-height: 20vh;
 			text-align: center;
 			color:$globalBgColor;
-
+			z-index: 3;
+			text-shadow: 2px 2px 10px 0px #000;
 		}
 	}
 	#shopTaipei {
 		position: absolute;
 		top:0px;
 		left: -80px;
+		background-image: url("../img/homepage/circle1.png");
+		background-position: center center;
+
 
 	}
 	#shopNewTpe {
 		position: absolute;
 		top: 220px;
 		left: -120px;
+		background-image: url("../img/homepage/circle2.png");
+		background-position: center center;
 	}
 	#shopTaoyuan {
 		position: absolute;
 		bottom: 0px;
 		left: -80px;
-	}
-	#shopHsinchu {
-		position: absolute;
-		bottom: 180px;
-		left: 0px;
-		right: 0;
-		margin: auto;
+		background-image: url("../img/homepage/circle3.png");
+		background-position: center center;
 	}
 	#shopKaohsiung {
 		position: absolute;
 		top: 0px;
 		right: -80px;
+		background-image: url("../img/homepage/circle5.png");
+		background-position: center center;
 	}
 	#shopTainan {
 		position: absolute;
 		top: 220px;
 		right: -120px;
+		background-image: url("../img/homepage/circle4.png");
+		background-position: center center;
 	}
 	#shopTaichung {
 		position: absolute;
 		bottom: 0px;
 		right: -80px;
+		background-image: url("../img/homepage/circle6.png");
+		background-position: center center;
 	}
 
 
@@ -655,6 +683,7 @@ section.homeCarMap {
 	background-image: url("../img/homepage/homepage_bg4.png");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: fixed;
 	position: relative;
 	.activityTitle {
 			background-color: rgba(96,56,19,.32);
@@ -687,32 +716,64 @@ section.homeCarMap {
 				margin: auto;
 			}
 	}
+
 	.activityItem {
-		width: 40%;
+		width: 50%;
 		height: 100%;
 		float: right;
 		margin-right: 10%;
-		.svg {
-				width: 100px;
-				fill:$globalBgColor;
-			}
+		
+		.activityRight {
+			width: 100%;
+			height: 100%;
+			margin: auto;
+			
+		}
+
 		#chooseActUp {
 				width: 80px;
+				height: 20%;
 				margin: auto;
 				vertical-align: top;
-
+				position: relative;
+				.svg {
+				width: 100px;
+				height: 100px;
+				margin: auto;
+				fill:$globalBgColor;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
 		}
+
 		#actBanner {
 				max-width: 600px;
 				width: 100%;
-				height:40vw;
-				background-color: #ccc;
+				height:60%;
+				margin: auto;
+				background-color: $globalBgColor;
 				border-radius:90% 90% 90% 90%;
+				
 		}
 		#chooseActDown {
 			 	width: 80px;
+			 	height: 20%;
 			 	margin: auto;
-			 	
+			 	position: relative;	
+			 	.svg {
+				width: 100px;
+				height: 100px;
+				margin: auto;
+				fill:$globalBgColor;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			} 	
 		}
 	}
 
@@ -739,7 +800,7 @@ section.homeCarMap {
 			}
 			p {
 				display: block;
-				text-align: left;
+				text-align: center;
 				color:$globalBgColor;
 				padding-top: 10px;
 				font-size: $globalh3Size;
@@ -751,11 +812,10 @@ section.homeCarMap {
 			height: 50%;
 			margin: auto;
 			.svg {
-					width: 10vmin;
-					fill:$globalBgColor;
+				position: static;
+
 				}
 			#chooseActUp {
-					width: 4vmin;
 					margin: auto;
 					vertical-align: top;
 
@@ -764,12 +824,11 @@ section.homeCarMap {
 					max-width: 600px;	
 					width: 70%;
 					height:60vw;
-					background-color: #ccc;
+					background-color: $globalBgColor;
 					border-radius: 10%;
 					margin: auto;
 			}
 			#chooseActDown {
-				 	width: 4vmin;
 				 	margin: auto;
 				 	
 			}
@@ -816,48 +875,59 @@ section.homeCarMap {
 			text-align: center;
 			letter-spacing: 1.8;
 			vertical-align: top;
+			text-shadow: 0px 0px 10px 2px black;
 		}
 
 	}
 	.newShops {
 		width: 90vw;
-		height: 50vw;
+		// height: 40vw;
 		margin: auto;
+		padding: 10px;
 		text-align: center;
-
+		background-color: $globalBgColor;
+		border-radius: 20px;
+		box-shadow: 0px 0px 10px 2px #222;
 		.newShopItem {
-			max-width: 720px;
-			// width: 20vw;
-			height: 50vh;
-			// margin:10px;	
-			background-color: $globalFtColor;
-			box-sizing:border-box;
-			padding:10px;
-			border-radius:3px;
+			width: 100%;
+			height: 100%;
 			img {
-				width: 100%;
-				height: 60%;
-				object-fit: cover;
+				display:block;
+				width: 50%;
+				height: 100%;
+				object-fit:cover;
+				border:5px solid #fff;
+				float: left;
+				border-radius: 20px;
 			}
 			.shopContent {
-				width: 70%;
-				margin: 10px auto;
-				height: 35%;
-				border-radius: 45% 55% 45% 55% / 50% 45% 55% 50%;				
-				background-color: $globalBgColor;
-				box-shadow:0px 0px 10px 2px #CDC9B9;
-				h3 {
-					padding:10px 5px;
-					font-size: 2vmin;
+				float: left;
+				width: 50%;
+				height: 100%;
+				padding:5%;
+				// border:1px solid #000;
+				h2 {
+					width: 100%;
+					text-align: left;
+					font-size: $globalh2Size;
 					color:$globalFontColor;
-
+					margin:10px 0px;
+				}
+				p {
+					width: 100%;
+					text-align: left;
+					margin:10px 0px;
+					word-wrap: wrap;
+					color:$globalAltColor;
+					font-size: $globalBtnSize;
 				}
 				span {
-					display: inline-block;
-					width: 70%;
-					color:$globalFontColor;
+					display:block;
+					text-align: center;
+					margin: 10px;
 				}
 			}
+
 		}
 	}
 	
@@ -867,25 +937,36 @@ section.homeCarMap {
 @media screen and (max-width:768px){
 	.homeNewshop {
 			.newShopTitle {
-			width: 70%;
+			width: 90%;
 			margin: auto;
 			padding:50px 0px 50px 0px;
 			clear:both;
 			text-align: center;
 			img {
 				width: 10vw;
-				
 				display: inline-block;
 			}
 			h1 {
 				display: inline-block;
 				color:$globalBgColor;
-				font-size:$globalh3Size;
+				font-size:$globalh1Size;
 				text-align: center;
 				letter-spacing: 1.8;
 				vertical-align: top;
 			}
 		}
+		.newShops{
+				.newShopItem {
+				img {
+					width: 100%;
+					height: 50%;
+				}
+				.shopContent {
+					width: 100%;
+				}
+			}
+		}
+		
 	}
 }
 
@@ -897,7 +978,7 @@ section.homeCarMap {
 
 
 
-section.homeContact {
+.homeContact {
 	width: 100%;
 	height: 50vh;
 	clear:both;
@@ -941,7 +1022,29 @@ section.homeContact {
 	}
 
 }
+@media screen and (max-width:768px){
+	
+	.homeContact {
+		height: 70vh;
+		p {
+			font-size: 5vw;
 
+		}
+		.addShop {
+			width: 100%;
+			height: 50%;
+
+		}
+		.contactUs {
+			width: 100%;
+			height: 50%;
+		}
+
+	}
+
+	
+
+}
 
 
 
