@@ -218,7 +218,7 @@ require_once("header.php");
 					</div>
 				</div>
 				<div class="clearfix"></div>
-			</div>
+			</div>   
 		</div>
 
 	</section>
