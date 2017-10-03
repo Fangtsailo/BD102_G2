@@ -172,7 +172,7 @@
 
 		}
 
-/*---------- .activity_detail rwd end -----------
+/*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
 
@@ -189,35 +189,56 @@
 	.activity_content{
 		background: url("../img/acty_background_2.png") center center;
 		background-size:cover;
+		padding-top: 120 +px;
 		padding-bottom: 50 +px;
 		position:relative;
 		// height:200vh;
 		// overflow:hidden;
 
 		width:100%;
-		.activity_pot{
-			float:left;
-			margin-left:10vw;
+		.activity_pot{	
+
 			position:relative;
 			z-index:2;
 			max-width:320+px;
-			min-width:300+px;
-			// width:50vw;
-
+			// min-width:250+px;
+			width:30%;
 			top:20vw;
 			img{
 				width:100%;
 
+			}
+			.activity_dough_change{
+				width:200+px;
+				height:150+px;
+				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
+				@include topBottomGradient($dough_color_1,$dough_color_2);
+				position:absolute;
+				top:-40%;
+				left:20%;
+				z-index:-2;
 			}
 			h2{
 				position:absolute;
 				top:40%;
 				left:10%;
 				width:80%;
-				font-size:22+px;
+				font-size:2.5vmin;
 				text-align:center;
 				color:$globalHdColor02;
 			}
+		}
+		.content_1{
+			width:50%;
+			float:left;
+		}
+
+
+
+
+		.content_2{
+			width:50%;
+			float:left;
 		}
 		.activity_pot_b{
 			
@@ -227,22 +248,22 @@
 			z-index:-5;
 		}
 		.activity_dough_1{
-
-			margin: auto ;
+			// float:right;
+			// margin: 3vw 30vw 2vw 0vw;
 			width:320+px;
 			height:250+px;
 			background: url('../img/acty_bread.png');
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			position:relative;
-			right:-5vw;
-			top:5vw;
+			// right:-5vw;
+			top:-2vw;
 
 		}
 		.activity_dough_2{
-			float:right;
-			margin-bottom:10+px;
+			// float:right;
+			
 			// margin-top:10+px;
-			margin-right:10vw;
+			
 			width:250+px;
 			height:230+px;
 			@include topBottomGradient($dough_color_1,$dough_color_2);
@@ -260,13 +281,11 @@
     		}
 		}
 		.activity_dough_3{
-			float:right;
+			
 			width:350+px;
 			height:300+px;
 			padding:60+px 35+px;
 			box-sizing:border-box;
-			margin-top:5vw;
-			margin-right:20vw;
 			@include topBottomGradient($dough_color_1,$dough_color_2);
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			p{
@@ -278,40 +297,40 @@
 			
 		}  //.activity_dough_3
 		.activity_dough_4_all{
-			margin-right:8vw;
+				text-align:center;
 			.activity_dough_4{
 				width:150+px;
 				height:130+px;
 				background-size:cover;
-				float:right;
+				
 				   		
 						
 			}
 			.pic_1{
 				background: url('../img/acty_pic1.png') no-repeat center center;
 				background-size:cover;
-				margin:0 3%;
+				
+				
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			}	
 			.pic_2{
 				background: url('../img/acty_pic2.png') no-repeat center center;
 				background-size:cover;
-				margin: 5% 0;
+				
+				
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			}
 			.pic_3{
 					
 				background: url('../img/acty_pic3.png') no-repeat center center;
 				background-size:cover;
-				margin:0 3%;
+				
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			}	
 
 		}
 
-		.activity_dough_5{
-			float:right;
-			margin: 15vw 8vw 0vw 0vw;
+		.activity_dough_5{	
 			width:320+px;
 			height:250+px;
 			background: url('../img/acty_pic4.png');
@@ -319,13 +338,13 @@
 			
 		}
 		.activity_dough_6{
-			float:right;
-			margin: 3vw auto  ;
+			
+			margin: 3vw auto ;
 			width:320+px;
 			height:250+px;
 			background: url('../img/acty_pic5.png');
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
-			position:relative;
+			
 			
 		}
 
@@ -335,14 +354,158 @@
 /*===========content   rwd ====================
 ================================================
 ===============================================*/
+	@include rwd(mobile){   //767以下
+		.activity_pot{
+			display:block;
+			margin:5vw auto;
+			
+		}
+		.activity_dough_1{
+			margin: auto;
+			display:block;
+			right:0;
+		}
+		.activity_dough_2{
+			margin: 10vw auto;
+			float:none;
+
+		}
+		.activity_dough_3{
+			float:none;
+			margin:auto;
+		}
+		.pic_3{
+			margin:10+px auto;
+						
+		}
+		// .pic_1{
+		// 	margin:0 5%;
+		// }
+		.activity_dough_4_all{
+			margin:auto;
+			width:100%;
+		}
+		.activity_dough_4{
+			float:none;
+			display:inline-block;
+			margin: 2% 3%;
+		} 
+		.activity_dough_5{
+			float:none;
+			margin:auto;
+		} 
+		.activity_dough_5{
+			float:none;
+		}
 		
-@media all and (max-width:1400px) {
-			.activity_pot{
+	}	
+
+	@media all and (min-width:$tablet_min){   //768以上
+		
+		.activity_pot{
+			
+			margin-left:10vw;
+			float:left;
+		}
+		.activity_dough_1{
+			 margin: 3vw 30vw 2vw 0vw;
+			 float:right;
+			 right:-5vw;
+		}
+		.activity_dough_2{
+			float:right;
+			margin-bottom:10+px;
+			margin-right:10vw;
+
+		}
+		.activity_dough_3{
+			float:right;
+			margin-top:5vw;
+			margin-right:20vw;
+		} 
+		.pic_3{
+			margin:0 3%;
+			
+		}   
+		.pic_2{
+			margin: 5% 0;
+		}
+		.activity_dough_4_all{
+			width:85%;
+		 	margin-right: 8vw
+		}
+		.activity_dough_4{
+			float:right;
+		} 
+		.activity_dough_5{
+			float:right;
+			margin: 15vw 8vw 0vw 0vw;
+		} 
+		.activity_dough_6{
+			float:right;
+		}
+
+
+	}
+/*===========content   rwd  end====================
+================================================
+===============================================*/
+
+
+.activity_application{
+
+	background:url('../img/acty_background_3.png') center ;
+	overflow:hidden;
+	background-size:cover;
+	padding:8vw 5vw 5vw;
+	.activity_final{
+		width:50%;
+		float:left;
+		text-align:center;
+		.activity_fin_pic{
+			float:right;
+			background-color:rgba(246, 146, 30, .8);
+			width:200+px;
+			height:10vw;
+			max-height:165+px;
+			overflow:hidden;
+			img{
+				width:100%;
 				
+				vertical-align:top;
 			}
 		}
-@media all and (min-width:1401px) {
-			.activity_pot{
-				display:block;
+	
+		.activity_bread{
+
+			margin:90+px auto 0;
+			width: 200+px;
+			img{
+				width:100%;
 			}
 		}
+			
+	}
+
+
+
+	.activity_form{
+		
+		float:left;
+		width:50%;
+		.globalForm{
+			width:85%;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -424,7 +424,7 @@ footer {
     float: left; }
     .activity_board .acty_stirrer {
       left: -10%; } }
-/*---------- .activity_detail rwd end -----------
+/*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
 @keyframes dough1 {
@@ -435,45 +435,69 @@ footer {
 .activity_content {
   background: url("../img/acty_background_2.png") center center;
   background-size: cover;
+  padding-top: 120px;
   padding-bottom: 50px;
   position: relative;
   width: 100%; }
   .activity_content .activity_pot {
-    float: left;
-    margin-left: 10vw;
     position: relative;
     z-index: 2;
     max-width: 320px;
-    min-width: 300px;
+    width: 30%;
     top: 20vw; }
     .activity_content .activity_pot img {
       width: 100%; }
+    .activity_content .activity_pot .activity_dough_change {
+      width: 200px;
+      height: 150px;
+      border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
+      background: #FFF8D7;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+      /* IE6-9 */
+      position: absolute;
+      top: -40%;
+      left: 20%;
+      z-index: -2; }
     .activity_content .activity_pot h2 {
       position: absolute;
       top: 40%;
       left: 10%;
       width: 80%;
-      font-size: 22px;
+      font-size: 2.5vmin;
       text-align: center;
       color: #9e693d; }
+  .activity_content .content_1 {
+    width: 50%;
+    float: left; }
+  .activity_content .content_2 {
+    width: 50%;
+    float: left; }
   .activity_content .activity_pot_b {
     position: absolute;
     top: -25%;
     left: 5px;
     z-index: -5; }
   .activity_content .activity_dough_1 {
-    margin: auto;
     width: 320px;
     height: 250px;
     background: url("../img/acty_bread.png");
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     position: relative;
-    right: -5vw;
-    top: 5vw; }
+    top: -2vw; }
   .activity_content .activity_dough_2 {
-    float: right;
-    margin-bottom: 10px;
-    margin-right: 10vw;
     width: 250px;
     height: 230px;
     background: #FFF8D7;
@@ -503,13 +527,10 @@ footer {
       margin-top: 30px;
       text-shadow: 1px 1px 1px rgba(90, 88, 86, 0.2); }
   .activity_content .activity_dough_3 {
-    float: right;
     width: 350px;
     height: 300px;
     padding: 60px 35px;
     box-sizing: border-box;
-    margin-top: 5vw;
-    margin-right: 20vw;
     background: #FFF8D7;
     /* Old browsers */
     background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
@@ -532,46 +553,142 @@ footer {
       margin: 30px auto;
       vertical-align: middle; }
   .activity_content .activity_dough_4_all {
-    margin-right: 8vw; }
+    text-align: center; }
     .activity_content .activity_dough_4_all .activity_dough_4 {
       width: 150px;
       height: 130px;
-      background-size: cover;
-      float: right; }
+      background-size: cover; }
     .activity_content .activity_dough_4_all .pic_1 {
       background: url("../img/acty_pic1.png") no-repeat center center;
       background-size: cover;
-      margin: 0 3%;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
     .activity_content .activity_dough_4_all .pic_2 {
       background: url("../img/acty_pic2.png") no-repeat center center;
       background-size: cover;
-      margin: 5% 0;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
     .activity_content .activity_dough_4_all .pic_3 {
       background: url("../img/acty_pic3.png") no-repeat center center;
       background-size: cover;
-      margin: 0 3%;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
   .activity_content .activity_dough_5 {
-    float: right;
-    margin: 15vw 8vw 0vw 0vw;
     width: 320px;
     height: 250px;
     background: url("../img/acty_pic4.png");
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
   .activity_content .activity_dough_6 {
-    float: right;
     margin: 3vw auto;
     width: 320px;
     height: 250px;
     background: url("../img/acty_pic5.png");
-    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
-    position: relative; }
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
 
 /*===========content   rwd ====================
 ================================================
 ===============================================*/
-@media all and (min-width: 1401px) {
+@media all and (max-width: 767px) {
   .activity_pot {
-    display: block; } }
+    display: block;
+    margin: 5vw auto; }
+
+  .activity_dough_1 {
+    margin: auto;
+    display: block;
+    right: 0; }
+
+  .activity_dough_2 {
+    margin: 10vw auto;
+    float: none; }
+
+  .activity_dough_3 {
+    float: none;
+    margin: auto; }
+
+  .pic_3 {
+    margin: 10px auto; }
+
+  .activity_dough_4_all {
+    margin: auto;
+    width: 100%; }
+
+  .activity_dough_4 {
+    float: none;
+    display: inline-block;
+    margin: 2% 3%; }
+
+  .activity_dough_5 {
+    float: none;
+    margin: auto; }
+
+  .activity_dough_5 {
+    float: none; } }
+@media all and (min-width: 768px) {
+  .activity_pot {
+    margin-left: 10vw;
+    float: left; }
+
+  .activity_dough_1 {
+    margin: 3vw 30vw 2vw 0vw;
+    float: right;
+    right: -5vw; }
+
+  .activity_dough_2 {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10vw; }
+
+  .activity_dough_3 {
+    float: right;
+    margin-top: 5vw;
+    margin-right: 20vw; }
+
+  .pic_3 {
+    margin: 0 3%; }
+
+  .pic_2 {
+    margin: 5% 0; }
+
+  .activity_dough_4_all {
+    width: 85%;
+    margin-right: 8vw; }
+
+  .activity_dough_4 {
+    float: right; }
+
+  .activity_dough_5 {
+    float: right;
+    margin: 15vw 8vw 0vw 0vw; }
+
+  .activity_dough_6 {
+    float: right; } }
+/*===========content   rwd  end====================
+================================================
+===============================================*/
+.activity_application {
+  background: url("../img/acty_background_3.png") center;
+  overflow: hidden;
+  background-size: cover;
+  padding: 8vw 5vw 5vw; }
+  .activity_application .activity_final {
+    width: 50%;
+    float: left;
+    text-align: center; }
+    .activity_application .activity_final .activity_fin_pic {
+      float: right;
+      background-color: rgba(246, 146, 30, 0.8);
+      width: 200px;
+      height: 10vw;
+      max-height: 165px;
+      overflow: hidden; }
+      .activity_application .activity_final .activity_fin_pic img {
+        width: 100%;
+        vertical-align: top; }
+    .activity_application .activity_final .activity_bread {
+      margin: 90px auto 0;
+      width: 200px; }
+      .activity_application .activity_final .activity_bread img {
+        width: 100%; }
+  .activity_application .activity_form {
+    float: left;
+    width: 50%; }
+    .activity_application .activity_form .globalForm {
+      width: 85%; }
