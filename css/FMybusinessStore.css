@@ -54,8 +54,7 @@ header {
     width: 180px;
     height: 60px;
     background-color: #D9E8FF;
-    border-radius: 6px;
-    margin-top: 2px;
+    border-radius: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(2) h3 {
       position: absolute;
@@ -86,8 +85,7 @@ header {
     width: 180px;
     height: 60px;
     background-color: #D9E8FF;
-    border-radius: 6px;
-    margin-top: 2px;
+    border-radius: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(3) h3 {
       position: absolute;
@@ -118,8 +116,7 @@ header {
     width: 180px;
     height: 60px;
     background-color: #D9E8FF;
-    border-radius: 6px;
-    margin-top: 2px;
+    border-radius: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(4) h3 {
       position: absolute;

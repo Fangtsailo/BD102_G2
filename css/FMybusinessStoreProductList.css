@@ -1,3 +1,6 @@
+body {
+  background-color: #fbf8f1; }
+
 .coverHeader {
   height: 100px; }
 
@@ -5,15 +8,15 @@ header {
   z-index: 3; }
 
 .coverSubtitile {
-  height: 60px; }
+  height: 44px; }
   .coverSubtitile .subtitle {
-    height: 60px;
+    height: 44px;
     width: 100vw;
     position: fixed;
-    top: 100px;
+    top: 80px;
     z-index: 3; }
     .coverSubtitile .subtitle h2 {
-      line-height: 60px;
+      line-height: 44px;
       font-size: 20px;
       background-color: #4289FF;
       padding-left: 20px;
@@ -30,6 +33,10 @@ header {
   top: 160px; }
   .LeftBusiness .nav-Group1 {
     margin-top: 30px; }
+    .LeftBusiness .nav-Group1 svg .cls-ma-1 {
+      fill: #00c853; }
+    .LeftBusiness .nav-Group1 svg .cls-ma-2 {
+      fill: #fff; }
   .LeftBusiness div div:nth-child(1) {
     width: 200px;
     height: 57px;
@@ -54,8 +61,7 @@ header {
     width: 180px;
     height: 60px;
     background-color: #D9E8FF;
-    border-radius: 6px;
-    margin-top: 2px;
+    border-radius: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(2) h3 {
       position: absolute;
@@ -86,8 +92,7 @@ header {
     width: 180px;
     height: 60px;
     background-color: #D9E8FF;
-    border-radius: 6px;
-    margin-top: 2px;
+    border-radius: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(3) h3 {
       position: absolute;
@@ -118,8 +123,7 @@ header {
     width: 180px;
     height: 60px;
     background-color: #D9E8FF;
-    border-radius: 6px;
-    margin-top: 2px;
+    border-radius: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(4) h3 {
       position: absolute;

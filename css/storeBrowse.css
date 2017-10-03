@@ -358,7 +358,7 @@ img {
 .only-pc {
   display: block; }
 
-@media all and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .screen-1, .screen-bread-car-map, .screen-product, .screen-activity
   , .screen-other-store, .screen-messages {
     height: auto; }
