@@ -19,7 +19,7 @@
 			$('#loginBox').css('display','none');
 			$('#RegisterBox').css('display','none');
 		});
-
+   
 
 	
     // $(window).bind('scroll resize', function(){
