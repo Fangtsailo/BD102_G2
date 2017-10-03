@@ -54,38 +54,52 @@ img {
     color: #fbf8f1;
     padding: 10px;
     text-align: justify; }
-  .screen-1 .bottom-city {
+  .screen-1 #bottom-city {
     width: 920px;
     bottom: -15px;
     margin: auto;
     left: 0;
     right: 0;
     position: absolute; }
-    .screen-1 .bottom-city img {
+    .screen-1 #bottom-city img {
       width: 100%; }
-    .screen-1 .bottom-city > * {
+    .screen-1 #bottom-city > * {
       position: absolute; }
-    .screen-1 .bottom-city .cloud-1 {
+    .screen-1 #bottom-city .cloud-1 {
       width: 74px;
       height: 42px;
       bottom: 50px;
       left: 50px;
       background-image: url("../img/store/browse/cloud.png");
       background-repeat: no-repeat; }
-    .screen-1 .bottom-city .cloud-2 {
+    .screen-1 #bottom-city .cloud-2 {
       width: 74px;
       height: 42px;
       bottom: 150px;
       left: 500px;
       background-image: url("../img/store/browse/cloud.png");
       background-repeat: no-repeat; }
-    .screen-1 .bottom-city .cloud-3 {
+    .screen-1 #bottom-city .cloud-3 {
       width: 74px;
       height: 42px;
       bottom: 100px;
       right: 10px;
       background-image: url("../img/store/browse/cloud.png");
       background-repeat: no-repeat; }
+@keyframes cloud-move {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(150px); } }
+    .screen-1 #bottom-city .city {
+      width: 572px;
+      margin: auto;
+      height: 175px;
+      bottom: 0px;
+      background-image: url(../img/store/browse/citys.png);
+      background-repeat: no-repeat;
+      left: 0;
+      right: 0; }
 
 .screen-bread-car-map {
   height: 100vh;

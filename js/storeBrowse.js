@@ -14,3 +14,103 @@ var beachMarker = new google.maps.Marker({
   icon: image
 });
 }
+
+//screen1 animation, like a paper
+function animate_illustration(a, b) {
+    $("#" + a).find("div");
+    TweenMax.killTweensOf($("#" + a));
+    switch (b) {
+        case "start":
+            setTimeout(function() {
+                $("#" + a).find('div:not(".cloud,.country_name")').each(function(a) {
+                    TweenMax.to($(this), .5, {
+                        delay: .15 * a,
+                        rotationX: 0,
+                        opacity: 1,
+                        ease: "Back.easeOut",
+                        startAt: {
+                            visibility: "visible"
+                        }
+                    })
+                })
+            }, 100);
+            setTimeout(function() {
+                    $("#" + a).find("div.cloud").each(function(a) {
+                        TweenMax.fromTo($(this), .5, {
+                            scale: 3,
+                            opacity: 0,
+                            rotationX: 0,
+                            visibility: "visible"
+                        }, {
+                            delay: .15 * a,
+                            scale: 1,
+                            opacity: 1,
+                            ease: "Back.easeOut"
+                        })
+                    })
+                },
+                400);
+            setTimeout(function() {
+                TweenMax.to($("#" + a).find("div.country_name"), .5, {
+                    opacity: 1,
+                    left: $("#" + a).find("div.country_name").data("posx") + "%",
+                    ease: "Back.easeOut"
+                })
+            }, 1E3);
+            break;
+        case "end":
+            setTimeout(function() {
+                    $("#" + a).find('div:not(".cloud,.country_name")').each(function(a) {
+                        TweenMax.fromTo($(this), .5, {
+                            rotationX: 0,
+                            startAt: {
+                                visibility: "visible"
+                            }
+                        }, {
+                            delay: .15 * a,
+                            rotationX: -89,
+                            ease: "Back.easeIn",
+                            opacity: 0,
+                            onCompleteParams: [$(this)],
+                            onComplete: function(a) {
+                                a.css({
+                                    visibility: "hidden",
+                                    opacity: 1
+                                })
+                            }
+                        })
+                    })
+                }, 400),
+                $("#" + a).find("div.cloud").each(function(a) {
+                    TweenMax.fromTo($(this), .5, {
+                        scale: 1,
+                        opacity: 1,
+                        startAt: {
+                            visibility: "visible"
+                        }
+                    }, {
+                        delay: .15 * a,
+                        scale: 0,
+                        ease: "Back.easeIn",
+                        opacity: 0,
+                        onCompleteParams: [$(this)],
+                        onComplete: function(a) {
+                            $(this).css({
+                                visibility: "hidden",
+                                opacity: 1,
+                                scale: 3
+                            })
+                        }
+                    })
+                }), setTimeout(function() {
+                    $("#" + a).find("div.country_name").each(function(a) {
+                        TweenMax.to($(this), .5, {
+                            delay: .15 * a,
+                            opacity: 0,
+                            left: "20%",
+                            ease: "Back.easeOut"
+                        })
+                    })
+                }, 1E3)
+    }
+}
