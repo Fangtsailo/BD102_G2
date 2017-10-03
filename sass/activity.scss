@@ -200,17 +200,17 @@
 
 			position:relative;
 			z-index:2;
-			max-width:320+px;
+			max-width:350+px;
 			// min-width:250+px;
-			width:30%;
+			width:40%;
 			top:20vw;
 			img{
 				width:100%;
 
 			}
 			.activity_dough_change{
-				width:200+px;
-				height:150+px;
+				width:75%;
+				height:100%;
 				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
 				@include topBottomGradient($dough_color_1,$dough_color_2);
 				position:absolute;
@@ -404,7 +404,7 @@
 		
 		.activity_pot{
 			
-			margin-left:10vw;
+			margin-left:12vw;
 			float:left;
 		}
 		.activity_dough_1{
