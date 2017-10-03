@@ -87,6 +87,34 @@ img {
 		img {
 			width: 100%;
 		}
+		& > * {
+			position: absolute;
+		}
+		.cloud-1 {
+			width: 74px;
+		    height: 42px;
+		    bottom: 50px;
+		    left: 50px;
+			background-image: url("../img/store/browse/cloud.png");
+			background-repeat: no-repeat;
+		}
+		.cloud-2 {
+			width: 74px;
+		    height: 42px;
+		    bottom: 150px;
+		    left: 500px;
+			background-image: url("../img/store/browse/cloud.png");
+			background-repeat: no-repeat;
+		}
+		.cloud-3 {
+			width: 74px;
+		    height: 42px;
+		    bottom: 100px;
+		    right: 10px;
+			background-image: url("../img/store/browse/cloud.png");
+			background-repeat: no-repeat;
+		}
+
 	}
 }
 

@@ -63,6 +63,29 @@ img {
     position: absolute; }
     .screen-1 .bottom-city img {
       width: 100%; }
+    .screen-1 .bottom-city > * {
+      position: absolute; }
+    .screen-1 .bottom-city .cloud-1 {
+      width: 74px;
+      height: 42px;
+      bottom: 50px;
+      left: 50px;
+      background-image: url("../img/store/browse/cloud.png");
+      background-repeat: no-repeat; }
+    .screen-1 .bottom-city .cloud-2 {
+      width: 74px;
+      height: 42px;
+      bottom: 150px;
+      left: 500px;
+      background-image: url("../img/store/browse/cloud.png");
+      background-repeat: no-repeat; }
+    .screen-1 .bottom-city .cloud-3 {
+      width: 74px;
+      height: 42px;
+      bottom: 100px;
+      right: 10px;
+      background-image: url("../img/store/browse/cloud.png");
+      background-repeat: no-repeat; }
 
 .screen-bread-car-map {
   height: 100vh;
@@ -358,7 +381,7 @@ img {
 .only-pc {
   display: block; }
 
-@media all and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .screen-1, .screen-bread-car-map, .screen-product, .screen-activity
   , .screen-other-store, .screen-messages {
     height: auto; }
