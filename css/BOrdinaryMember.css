@@ -1,50 +1,204 @@
-/*
-Error: File to import not found or unreadable: backstage/member/ordinary/_BStgOrdinaryVar.scss.
-        on line 1 of sass/BOrdinaryMember.scss
+body {
+  background-color: #e6e0d9; }
 
-1: @import "backstage/member/ordinary/_BStgOrdinaryVar.scss";
-2: @import "backstage/member/ordinary/_BStgOrdinaryMixin.scss";
-3: 
-4: 
-5: body{
-6: 	background-color: #e6e0d9;
+header {
+  z-index: 1; }
 
-Backtrace:
-sass/BOrdinaryMember.scss:1
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:45:in `import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:290:in `render'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:400:in `run'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
-C:/Ruby24-x64/bin/sass:22:in `load'
-C:/Ruby24-x64/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: backstage/member/ordinary/_BStgOrdinaryVar.scss.\A         on line 1 of sass/BOrdinaryMember.scss\A \A 1: @import \"backstage/member/ordinary/_BStgOrdinaryVar.scss\";\A 2: @import \"backstage/member/ordinary/_BStgOrdinaryMixin.scss\";\A 3: \A 4: \A 5: body{\A 6: 	background-color: #e6e0d9;"; }
+.coverHeader {
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  left: 0; }
+
+.headerCenter {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  color: #fff; }
+
+.navition {
+  background-color: #ddcdb5;
+  width: 200px;
+  float: left;
+  height: 100vh;
+  position: fixed;
+  z-index: 3; }
+  .navition ul:first-child {
+    border-top: 1px solid #aaaaaa; }
+  .navition ul:last-child {
+    border-bottom: 1px solid #aaaaaa; }
+  .navition ul li {
+    width: 200px;
+    height: 60px;
+    background-color: #aa815d;
+    border: 1px solid #aaaaaa;
+    box-sizing: border-box;
+    color: #ffffff;
+    line-height: 60px;
+    padding-left: 20px;
+    font-size: 18px; }
+    .navition ul li:hover {
+      color: #000000;
+      background-color: #cfa972;
+      transition: 0.5s; }
+
+.coverNavition {
+  width: 200px;
+  height: 100vh;
+  float: left;
+  position: relative;
+  left: 0; }
+
+.tableArea {
+  height: 100vh;
+  position: relative;
+  margin: auto;
+  left: 0; }
+
+.search {
+  width: 70%;
+  margin-right: 0;
+  margin-left: 0;
+  margin: auto;
+  position: fixed;
+  z-index: 3;
+  left: 20vw;
+  text-align: center;
+  margin-top: 20px; }
+  .search input {
+    width: 600px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: #b5b5b5;
+    opacity: 0.35; }
+
+.tableHeaderCover {
+  width: 100%;
+  height: 78px;
+  position: relative;
+  background-color: #e6e0d9; }
+  .tableHeaderCover .tableHeader {
+    width: 70%;
+    margin-right: 0;
+    margin-left: 0;
+    margin: auto;
+    position: fixed;
+    left: 20vw;
+    overflow: hidden;
+    border-spacing: 0px; }
+    .tableHeaderCover .tableHeader tr {
+      border-bottom: 4px solid #d1c2b5;
+      border-collapse: collapse; }
+      .tableHeaderCover .tableHeader tr td {
+        color: #502f0d;
+        background-color: #e6e0d9;
+        height: 50px;
+        text-align: center;
+        border-bottom: 4px solid #d1c2b5;
+        border-collapse: collapse;
+        padding-top: 70px; }
+        .tableHeaderCover .tableHeader tr td:nth-child(1) {
+          width: 10%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(2) {
+          width: 10%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(3) {
+          width: 20%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(4) {
+          width: 10%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(5) {
+          width: 17%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(6) {
+          width: 11%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(7) {
+          width: 11%; }
+        .tableHeaderCover .tableHeader tr td:nth-child(8) {
+          width: 11%; }
+
+.tableContent {
+  width: 70%;
+  margin-right: 0;
+  margin-left: 0;
+  margin: auto;
+  margin-bottom: 160px;
+  padding-top: 50px; }
+  .tableContent tr:hover {
+    background-color: #000; }
+  .tableContent tr td {
+    color: #502f0d;
+    background-color: #ffffff;
+    height: 50px;
+    text-align: center; }
+    .tableContent tr td:nth-child(1) {
+      width: 10%; }
+    .tableContent tr td:nth-child(2) {
+      width: 10%; }
+    .tableContent tr td:nth-child(3) {
+      width: 20%; }
+    .tableContent tr td:nth-child(4) {
+      width: 10%; }
+    .tableContent tr td:nth-child(5) {
+      width: 17%; }
+    .tableContent tr td:nth-child(6) {
+      width: 11%; }
+    .tableContent tr td:nth-child(7) {
+      width: 11%; }
+    .tableContent tr td:nth-child(8) {
+      width: 11%;
+      text-align: center; }
+      .tableContent tr td:nth-child(8) input {
+        width: 80px;
+        height: 40px;
+        color: #ffffff;
+        background-color: #af6363;
+        border-radius: 10px;
+        box-shadow: 0 0 0;
+        border: none; }
+
+footer {
+  height: 150px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #c5beb7;
+  margin: auto; }
+  footer .square {
+    width: 200px;
+    height: 100%;
+    float: left; }
+  footer section .square_2 {
+    margin-top: 20px; }
+    footer section .square_2 span input {
+      width: 120px;
+      height: 40px;
+      color: #ffffff;
+      background-color: #7e4a1d;
+      border-radius: 10px;
+      box-shadow: 0 0 0;
+      margin-top: 5px;
+      border: none; }
+      footer section .square_2 span input:hover {
+        background-color: #ffffff;
+        color: #7e4a1d;
+        transition: 0.3s; }
+    footer section .square_2 label {
+      display: block;
+      margin: 5px; }
+      footer section .square_2 label span {
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        background-color: #ffffff;
+        color: #502f0d;
+        border-radius: 10px;
+        margin-right: 10px;
+        font-size: 16px; }
+      footer section .square_2 label input {
+        display: inline-block;
+        border-radius: 10px;
+        height: 30px;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        border: none; }
