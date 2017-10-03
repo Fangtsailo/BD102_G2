@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3ce5aa27fdedf316f82904b9db3d21bce619c5c0
 body {
   background-color: #e6e0d9; }
 
@@ -203,6 +206,7 @@ footer {
         margin: 0;
         padding: 0;
         border: none; }
+<<<<<<< HEAD
 =======
 /*
 Error: File to import not found or unreadable: backstage/member/ordinary/_BStgOrdinaryVar.scss.
@@ -255,3 +259,5 @@ body:before {
   font-family: monospace;
   content: "Error: File to import not found or unreadable: backstage/member/ordinary/_BStgOrdinaryVar.scss.\A         on line 1 of sass/BOrdinaryMember.scss\A \A 1: @import \"backstage/member/ordinary/_BStgOrdinaryVar.scss\";\A 2: @import \"backstage/member/ordinary/_BStgOrdinaryMixin.scss\";\A 3: \A 4: \A 5: body{\A 6: 	background-color: #e6e0d9;"; }
 >>>>>>> 808c3c51499300aa21b16dabc5e5d007e00d1342
+=======
+>>>>>>> 3ce5aa27fdedf316f82904b9db3d21bce619c5c0
