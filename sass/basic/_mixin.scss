@@ -39,7 +39,7 @@ $tablet_max:1200px;
 	@if $breakpoint == "mobile" {
 
 		@media all and (max-width:$mobile){
-			@content;
+      @content;
 		}
 	}
 	@else if $breakpoint =="desktop"{
