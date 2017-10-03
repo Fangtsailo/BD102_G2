@@ -1,53 +1,279 @@
 .coverHeader {
   height: 100px; }
 
-.subtitle {
-  height: 60px;
-  width: 100vw;
-  position: fixed;
-  top: 100px; }
-  .subtitle h2 {
-    line-height: 60px;
-    font-size: 20px;
-    background-color: #4289FF;
-    padding-left: 20px;
-    color: #fff; }
+header {
+  z-index: 3; }
+
+.coverSubtitile {
+  height: 60px; }
+  .coverSubtitile .subtitle {
+    height: 60px;
+    width: 100vw;
+    position: fixed;
+    top: 100px;
+    z-index: 3; }
+    .coverSubtitile .subtitle h2 {
+      line-height: 60px;
+      font-size: 20px;
+      background-color: #4289FF;
+      padding-left: 20px;
+      color: #fff; }
 
 .container {
   width: 100%; }
 
-.CoverLeftBusiness {
+.LeftBusiness {
   width: 200px;
-  height: 100vh;
-  background-color: #ccc;
-  display: inline-block; }
-  .CoverLeftBusiness .LeftBusiness {
+  height: 500px;
+  position: fixed;
+  left: 0;
+  top: 160px; }
+  .LeftBusiness .nav-Group1 {
+    margin-top: 50px; }
+  .LeftBusiness div div:nth-child(1) {
     width: 200px;
-    height: 500px;
-    position: fixed;
-    left: 0;
-    top: 160px;
-    background-color: #000; }
+    height: 57px;
+    margin-top: 10px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(1) .cls-1 {
+      fill: #4289FF; }
+    .LeftBusiness div div:nth-child(1) .cls-2 {
+      fill: #bbb; }
+    .LeftBusiness div div:nth-child(1) .cls-3 {
+      fill: #999; }
+    .LeftBusiness div div:nth-child(1) h2 {
+      position: absolute;
+      line-height: 60px;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+  .LeftBusiness div div:nth-child(2) {
+    width: 180px;
+    height: 60px;
+    background-color: #4289FF;
+    margin-top: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(2) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 90px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+    .LeftBusiness div div:nth-child(2) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(2) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(2) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(2) svg .cls-3 {
+        fill: #999; }
+  .LeftBusiness div div:nth-child(3) {
+    width: 180px;
+    height: 60px;
+    background-color: #4289FF;
+    margin-top: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(3) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 90px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+    .LeftBusiness div div:nth-child(3) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(3) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(3) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(3) svg .cls-3 {
+        fill: #999; }
+  .LeftBusiness div div:nth-child(4) {
+    width: 180px;
+    height: 60px;
+    background-color: #4289FF;
+    margin-top: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(4) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 90px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+    .LeftBusiness div div:nth-child(4) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(4) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(4) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(4) svg .cls-3 {
+        fill: #999; }
 
 .CenterBusiness {
+  margin-top: 260px;
   width: 70%;
-  height: 800px;
-  background-color: #ff0;
-  display: inline-block;
+  height: 1800px;
   margin: auto; }
-
-.CoverRightMy {
-  width: 200px;
-  height: 100vh;
-  background-color: #ccc;
-  display: inline-block; }
-  .CoverRightMy .RightMy {
-    width: 200px;
-    height: 500px;
-    position: fixed;
-    right: 0;
-    top: 160px;
-    background-color: #000; }
+  .CenterBusiness .subtitle {
+    height: 100px; }
+    .CenterBusiness .subtitle h2 {
+      text-align: center;
+      line-height: 100px;
+      color: #4289FF; }
+  .CenterBusiness .content-table table {
+    width: 80%;
+    background-color: #fff;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto; }
+    .CenterBusiness .content-table table span, .CenterBusiness .content-table table div, .CenterBusiness .content-table table input {
+      color: #999; }
+    .CenterBusiness .content-table table tr {
+      height: 70px; }
+      .CenterBusiness .content-table table tr th {
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        font-weight: normal;
+        width: 20%; }
+        .CenterBusiness .content-table table tr th div {
+          height: 40px;
+          width: 80%;
+          min-width: 86px;
+          background-color: #F2EBD4;
+          margin-right: 0;
+          margin-left: 0;
+          margin: auto;
+          line-height: 40px;
+          border-radius: 6px; }
+      .CenterBusiness .content-table table tr td {
+        text-align: center;
+        width: 80%;
+        border-bottom: 1px solid #ccc; }
+      .CenterBusiness .content-table table tr:nth-child(1) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(2) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(3) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(4) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(4) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(5) {
+        height: 100px; }
+        .CenterBusiness .content-table table tr:nth-child(5) th div {
+          height: 80px; }
+        .CenterBusiness .content-table table tr:nth-child(5) td div {
+          display: inline-block;
+          width: 13%;
+          border: 1px solid #ddd;
+          min-width: 63px; }
+          .CenterBusiness .content-table table tr:nth-child(5) td div:hover {
+            background-color: #4289FF;
+            color: #fff;
+            transition: 0.5s; }
+      .CenterBusiness .content-table table tr:nth-child(6) {
+        height: 100px; }
+        .CenterBusiness .content-table table tr:nth-child(6) th div {
+          height: 80px;
+          line-height: 80px; }
+        .CenterBusiness .content-table table tr:nth-child(6) td label {
+          display: inline-block;
+          margin: 20px; }
+      .CenterBusiness .content-table table tr:nth-child(7) {
+        height: 180px; }
+        .CenterBusiness .content-table table tr:nth-child(7) th div {
+          height: 160px;
+          line-height: 160px; }
+        .CenterBusiness .content-table table tr:nth-child(7) td textarea {
+          display: block;
+          margin-top: 0;
+          margin-bottom: 0;
+          margin: auto; }
+      .CenterBusiness .content-table table tr:nth-child(8) {
+        height: 220px; }
+        .CenterBusiness .content-table table tr:nth-child(8) th div {
+          height: 200px;
+          line-height: 200px; }
+        .CenterBusiness .content-table table tr:nth-child(8) td {
+          position: relative; }
+          .CenterBusiness .content-table table tr:nth-child(8) td div {
+            width: 50%;
+            height: 160px;
+            border: 1px solid #ccc;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            padding-top: 5%; }
+            .CenterBusiness .content-table table tr:nth-child(8) td div div {
+              height: 80%;
+              width: 100%;
+              border: none; }
+              .CenterBusiness .content-table table tr:nth-child(8) td div div input {
+                display: none; }
+              .CenterBusiness .content-table table tr:nth-child(8) td div div img {
+                display: block;
+                margin: auto; }
+              .CenterBusiness .content-table table tr:nth-child(8) td div div span {
+                display: block;
+                font-size: 8px; }
+  .CenterBusiness .commit {
+    text-align: center;
+    padding-top: 50px; }
+    .CenterBusiness .commit input {
+      border: none;
+      width: 150px;
+      height: 50px;
+      border-radius: 25px; }
+      .CenterBusiness .commit input:nth-child(1) {
+        margin-right: 10px;
+        border: 1px solid #F06428;
+        background-color: #fff;
+        color: #F06428; }
+      .CenterBusiness .commit input:nth-child(2) {
+        margin-left: 10px;
+        border: 1px solid #F06428;
+        background-color: #F06428;
+        color: #fff; }
 
 footer {
   width: 100vw;
