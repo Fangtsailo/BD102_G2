@@ -1,0 +1,420 @@
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+@import "basic/_var.scss";
+
+
+
+body{
+	background-color: $globalBgColor;
+}
+
+.coverHeader{
+	// width: 100vw;
+	height: 100px;
+}
+
+header{
+	z-index: 3;
+}
+
+.coverSubtitile{
+	height: 44px;
+	.subtitle{
+		height: 44px;
+		width: 100vw;
+		position: fixed;
+		top: 80px;
+		z-index: 3;
+		h2{
+			line-height: 44px;
+			font-size: 20px;
+			background-color:$MybusinessStore-subtitle-bgColor;
+			padding-left: 20px;
+			color:#fff;
+		}
+	}
+}
+
+
+.container{
+width: 100%;
+// width: 100vw;
+
+}
+
+
+
+	.LeftBusiness{
+		width: 200px;
+		height: 500px;
+		position: fixed;
+		left: 0;
+		top: 160px;
+		// background-color: #ccc;
+		.nav-Group1{
+			margin-top: 30px;
+			svg{
+				.cls-ma-1{
+					fill:$globalAccountColor;
+				}
+				.cls-ma-2{
+					fill:#fff;
+				}
+			}
+		}
+		div{
+			div{
+				&:nth-child(1){
+					@include member-nav-bar-mainTitle-propity();
+					// margin-top:150px;
+
+				}
+				&:nth-child(2){
+					@include member-nav-bar-subTitle-propity();
+					
+				}
+				&:nth-child(3){
+					@include member-nav-bar-subTitle-propity();
+					
+				}
+				&:nth-child(4){
+					@include member-nav-bar-subTitle-propity();
+					
+				}
+
+				
+			}
+		}
+	}
+
+
+
+.CenterBusiness{
+	margin-top:260px ;
+	width: 70%;
+	// height: 1800px;
+	// border: 2px solid #f00;
+	// display: inline-block;
+	margin: auto;
+	.subtitle{
+		height: 100px;
+		// border: 1px solid #ccc;
+		text-align: center;
+		padding-top: 20px;
+		svg{
+			
+			// display: block;
+			// position:relative;
+			// top: 0;
+			// bottom: 0;
+			// right: 0;
+			// left: 0;
+			// margin: auto; 
+			// color:$MybusinessStore-subtitle-bgColor;
+		}//svg
+
+	}//subtitle
+
+	.content-table{
+		// background-color: #ccc;
+		.tableHeader{
+			width: 90%;
+			// padding-top: 20px;
+			margin-right: 0;
+			margin-left: 0;
+			margin: auto;
+			// position: fixed;
+			
+			// margin-bottom: 10px;
+			
+			border-spacing: 0px;
+			tr{
+				border-bottom:4px solid #d1c2b5 ;
+				border-collapse: collapse;
+				&.tabletitle{
+					text-align: left;
+					th{
+						padding-left: 20px;
+						color: #999;
+						font-size: 26px;
+					}
+					td{
+						border: none;
+						// line-height: 80px;
+						// vertical-align: middle;
+						padding-top: 0px;
+						text-align: right;
+						img{
+							// text-decoration: none;
+							vertical-align: middle;
+						}
+						span{
+							vertical-align: middle;
+							// line-height: 80px;
+							color:#f06428;
+						}
+					}
+				}
+				td{
+					color:#666666;
+					background-color: #fbf8f1;
+					height: 50px;
+					text-align: center;
+					border-bottom:1px solid #cccccc ;
+					border-collapse: collapse;
+					padding-top: 20px;
+
+					&:nth-child(1){
+						width: $table-col1;
+					}
+					&:nth-child(2){
+						width: $table-col2;
+
+					}
+					&:nth-child(3){
+						width: $table-col3;
+					}
+					&:nth-child(4){
+						width: $table-col4;
+					}
+					&:nth-child(5){
+						width: $table-col5;
+					}
+
+				}//td
+			}//tr
+
+		}//tableHeader
+	}//content-table
+
+
+
+
+	.tableContent{
+			width: 90%;
+			// padding-top: 70px;
+			margin-right: 0;
+			margin-left: 0;
+			margin: auto;
+			margin-bottom: 160px;
+			tr{
+				&:hover{
+				background-color:#000;
+				}
+			
+				td{
+					color:$tableContent-word-color;
+					background-color: #ffffff;
+					height: 80px;
+					text-align: center;
+					border-bottom:1px solid #cccccc ;
+					// &:hover{
+					// background-color: #e1ccb0;
+					// }
+					
+					&:nth-child(1){
+						width: $table-col1;
+					}
+					&:nth-child(2){
+						width: $table-col2;
+						img{
+							width: 100%;
+							vertical-align: middle;
+						}
+					}
+					&:nth-child(3){
+						width: $table-col3;
+					}
+					&:nth-child(4){
+						width: $table-col4;
+					}
+					&:nth-child(5){
+						width: $table-col5;
+						text-align: center;
+						padding-right: 5%;
+						padding-left: 5%;
+
+						div{
+							img{
+								display: block;
+								margin: auto;
+
+							}
+							&:nth-child(1){
+
+								width: 50%;
+								float: left;
+							}
+							&:nth-child(2){
+								width: 50%;
+								float: left;
+							}
+						}
+						
+					}//&:nth-child(5)
+
+				}//td
+			}//tr
+
+	}//tableContent
+}//CenterBusiness
+
+
+	.commit{
+		text-align: center;
+		padding-top: 50px;
+		margin-bottom: 100px;
+		input{
+			border: none;
+			width: 150px;
+			height: 50px;
+			border-radius: 25px;
+			&:nth-child(1){
+				margin-right: 10px;
+				border: 1px solid #F06428;
+				background-color: #fff;
+				color:#F06428;
+				display: inline-block;
+				&:hover{
+					color:#fff;
+					background-color:#F06428;
+					transition:0.5s;
+				}
+			}
+			&:nth-child(2){
+				margin-left: 10px;
+				border: 1px solid #F06428;
+				background-color:#F06428;
+				color:#fff;
+				display: inline-block;
+				&:hover{
+					color:#F06428;
+					background-color:#fff;
+					transition:0.5s;
+				}
+			}
+		}
+	}
+
+
+//CenterBusiness
+
+
+
+
+
+
+
+	// .RightMy{
+	// 	width: 200px;
+	// 	height: 500px;
+	// 	position: fixed;
+	// 	right: 0;
+	// 	top: 160px;
+	// 	// background-color: #ccc;
+	// 	div {
+	// 		&:nth-child(1){
+	// 			@include member-nav-bar-propity();
+	// 			margin-top:150px;  
+	// 		}
+	// 		&:nth-child(2){
+	// 			@include member-nav-bar-propity();
+	// 		}
+	// 		&:nth-child(3){
+	// 			@include member-nav-bar-propity();
+	// 		}
+	// 		&:nth-child(4){
+	// 			@include member-nav-bar-propity();
+	// 		}
+	// 		&:nth-child(5){
+	// 			@include member-nav-bar-propity();
+	// 		}
+	// 	}
+	// }
+
+
+
+
+
+
+
+
+
+footer{
+	width: 100vw;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+}
+
+
+@media screen and (max-width : 940px) {
+
+	.LeftBusiness{
+		display: none;
+	}
+ 
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width : 940px) {
+
+	
+
+	.CenterBusiness{ 
+			
+			width:90%;
+
+			// .subtitle{
+			// 			display: none;
+			// }
+
+
+
+			.content-table{
+				
+				.tableHeader{
+					width: 100%;
+				}
+
+				table{
+
+					width: 100%;
+
+					tr{
+						td{
+							font-size: 14px;
+							&:nth-child(5){
+								div{
+									span{
+										display: none;
+									}
+								}
+							}
+						}
+					}
+
+					
+				
+
+				}
+
+
+
+		}//content-table
+
+
+
+		
+	}//CenterBusiness
+	 
+}
+
+
+
