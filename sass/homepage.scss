@@ -199,437 +199,365 @@ section {
 
 .homeTopChart {
 	position: relative;
-
+	
 	p.topChartDescrp {
-		width: 50%;
+		width: 90%;
 		text-align: center;
 		margin: 50px auto;
-		font-size: $globalh3Size;
+		font-size: 1.5em;
 		color:$globalFontColor;
 		line-height: 1.5;
 		font-weight: 500;
 	}
-	.showContent {
-		width: 70vmin;
-		height: 70vmin;
-		// min-width: 570px;
-		// min-height: 570px;
-		text-align: center;
-		margin: auto;
-		background-color: #fff;
-		// border-radius: 45% 55% 45% 55% / 60% 60% 40% 40%;
-		border-radius:50% 60% 60% 50%;
-		position: relative;
-		.contentTitle {
-			width: 70%;
-			margin: auto;
-			text-align: center;
-			padding-top: 30px;
-			#titleIcon {
-				width: 40px;
-				height: 40px;	
-		
-			}
-			h3 {
-				padding: 5px 0px;
-				font-size: $globalh1Size;
-				color:$globalFontColor;
-				font-weight: 700;
-			}
-			p {
-				color:$globalFontColor;
-				font-size: $globalh3Size;
-				font-weight: 500;
-			}
-		}
-		
-		.shopContent {
-			width:60%;
-			margin: auto;
-			margin-top: 20px;
-			padding:15px;
-			background-color:$globalFtColor;
-			border-radius:8px;
-
-			.shopName {
-				width: 33.3333%;
-				float: left;
-				padding:10px;
-				font-size: $globalh3Size;
-				box-sizing:border-box;
-				color:$globalFontColor;
-				margin-bottom: 15px;
-				text-align: left;
-				font-weight: 700;
-
-			}
-			ul.shopPlace {
-				width: 33.3333%;
-				float: left;
-				
-				box-sizing:border-box;
-				color:$globalFontColor;
-				li:first-child {
-					width: 32px;
-					height: 32px;
-					margin: auto;
-					margin-top: 10px;
-				}
-			}
-			ul.shopInfo {
-				width: 33.3333%;
-				float: left;
-		
-				box-sizing:border-box;
-				color:$globalFontColor;
-				span {
-
-				}
-				span:first-child img {
-					width: 32px;
-					height: 32px;
-				}
-			}
-			.messageBoard {
-				clear:both;
-				width: 100%;
-				padding:20px;
-				box-sizing:border-box;
-				position: relative;
-				background-color: rgba(251, 248, 241, 0.9);
-				&:after {
-						content:'';
-						display:block;
-						width: 0px;
-						height: 0px;
-						position: absolute;
-						border-bottom:20px solid rgba(251, 248, 241, 0.9);
-						border-right:20px solid transparent;
-						// border-left:none;
-						// border-right:none;
-						// border-top:none;
-						top: -20px;
-						left: 20px;
-					}
-				#memPic {
-					float: left;
-					width: 32px;
-					height: 32px;
-					padding:10px;
-					border-radius:50%;
-					background-color: #aaa;
-				}
-				#memName {
-					float: left;
-					width: 10%;
-					padding:20px 10px;
-					color:$globalFontColor;
-				}
-				#messageTime {
-					float: right;
-					width: 40%;
-					padding:20px 10px;
-					color:$globalFontColor;
-				}
-				.messageContent {
-					clear:both;
-					width: 100%;
-					padding:10px;
-					background-color: #FFF;
-					border-radius: 5px;
-					box-sizing:border-box;
-					
-					border-radius:8px;
-
-					
-					#messageTxt {
-						text-align: left;
-						color:$globalFontColor;
-					}
-
-				}
-			}
-		}
-
-
-	}
-	.topChartGrp {
-		position: relative;
-		width: 70vmin;
-		margin: auto;
-
-	}
-	
-
-	.shopArea {
-		width: 150px;
-		height: 150px;
-		background-color: #ccc;
-		border-radius: 45% 55% 45% 55% / 60% 60% 40% 40%;
-		text-align: center;
-		h3 {
-			width: 100%;
-			margin: auto;
-			line-height: 20vh;
-			text-align: center;
-			color:$globalBgColor;
-			z-index: 3;
-			text-shadow: 2px 2px 10px 0px #000;
-		}
-	}
-	#shopTaipei {
-		position: absolute;
-		top:0px;
-		left: -80px;
-		background-image: url("../img/homepage/circle1.png");
-		background-position: center center;
-
-
-	}
-	#shopNewTpe {
-		position: absolute;
-		top: 220px;
-		left: -120px;
-		background-image: url("../img/homepage/circle2.png");
-		background-position: center center;
-	}
-	#shopTaoyuan {
-		position: absolute;
-		bottom: 0px;
-		left: -80px;
-		background-image: url("../img/homepage/circle3.png");
-		background-position: center center;
-	}
-	#shopKaohsiung {
-		position: absolute;
-		top: 0px;
-		right: -80px;
-		background-image: url("../img/homepage/circle5.png");
-		background-position: center center;
-	}
-	#shopTainan {
-		position: absolute;
-		top: 220px;
-		right: -120px;
-		background-image: url("../img/homepage/circle4.png");
-		background-position: center center;
-	}
-	#shopTaichung {
-		position: absolute;
-		bottom: 0px;
-		right: -80px;
-		background-image: url("../img/homepage/circle6.png");
-		background-position: center center;
-	}
-
-
-
-}
-
-
-// @include rwd(desktop){
-	
-// 	.showContent {
-// 		width:100%;
-
-// 	}
-	
-// }
-
-@media screen and (max-width:768px){
-	
-	.homeTopChart {
-		p.topChartDescrp {
+	.titleGrp {
 			width: 90%;
-			margin: 30px auto;
-			font-size: 20px;
+			margin: 10px auto;
+			text-align: center;
+			img {
+				display:inline-block;
+				vertical-align: top;
+				margin-right: 10px;
+			}
+			.topChartTitle {
+				text-align: center;
+				margin: 10px auto;
+				display:inline-block;
+				color:$globalFontColor;
+				font-size: 2em;
+			}
 		}
-		.showContent {
+	.shopItem {
 			width: 100%;
-			height: 50vh;
-			margin: auto;
-			min-width: none;
-			min-height: none;
-			border-radius:5px;
-			margin-bottom: 10px;
-			.contentTitle {
+			height: 70vh;
+			padding:5%;
+			// border:1px solid #000;
+			.shopPic {
 				width: 100%;
+				max-width: 720px;
+				height: 60%;
 				margin: auto;
-				clear:both;
-				padding-top: 10px;
-				#titleIcon {
-					display: inline-block;
-					margin-right: 10px;
+				margin-bottom: 30px;
+				border-radius:10px;
+				overflow:hidden;
+				position: relative;
+				box-shadow:0px 11px 24px rgba(165,160,148,0.56);
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius:10px;
+					z-index: -15;
+					object-fit:cover;
 				}
 				h3 {
-					display: inline-block;
-					font-size: 3vh;
-					vertical-align: top;
-				}
-			
-			}
-
-			.shopContent {
-				width: 90%;
-				margin: auto;
-				padding: 10px;
-
-				.shopName {
 					width: 100%;
-					font-size: 5vw;
-					margin-bottom: 0;
+					height: 55px;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 10px;
+					right: 0;
+					margin: auto;
+					color:$globalBgColor;
+					letter-spacing: 2px;
+					text-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+					font-size: $globalh1Size;
 				}
-				ul.shopPlace {
-					width: 50%;
-					float: left;
-					box-sizing:border-box;
-					color:$globalFontColor;
-
-					li:first-child {
-						width: 32px;
-						height: 32px;
-						margin: auto;
-						margin-top: 10px;
-
-					}
-					span {
-						font-size: 3vmin;
-					}
-				}
-				ul.shopInfo {
-					width: 50%;
-					float: left;
-					box-sizing:border-box;
-					color:$globalFontColor;
-					margin-bottom: 10px;
-					span:first-child img {
-						width: 32px;
-						height: 32px;
-					}
-					span {
-						font-size: 3vw;
-					}
-				}
-
-				.messageBoard {
-					clear:both;
+				.shopInfo {
 					width: 100%;
-					padding:10px;
-					box-sizing:border-box;
-					position: relative;
-					background-color: rgba(251, 248, 241, 0.9);
-					&:after {
-							content:'';
-							display:block;
-							width: 0px;
-							height: 0px;
-							position: absolute;
-							border-bottom:20px solid rgba(251, 248, 241, 0.9);
-							border-right:20px solid transparent;
-							// border-left:none;
-							// border-right:none;
-							// border-top:none;
-							top: -20px;
-							left: 20px;
+					height: 20%;
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					padding:1%;
+					background-color: rgba(75,75,75,0.8);
+					ul {
+						width: 100%;
+						height: 100%;
+						text-align: center;
+						
+						li {
+							width:33%;
+							float: left;
+							height: 100%;
+							img {
+								width:4vh;
+								// height: 1em;
+								height: 100%;
+								float: left;
+								margin-right: 10px;
+							}
+							span {
+								float: left;
+								height: 100%;
+								color:$globalBgColor;
+								font-size: 20px;
+								// line-height: 50px;
+								vertical-align: top;
+								padding: 10px 0;
+							}
 						}
-					#memPic {
-						float: left;
+					}
+				}
+				
+			}
+			.shopMessage {
+					width: 100%;
+					max-width: 720px;
+					margin: auto;
+					height: 40%;
+					background-color: $globalFtColor;
+					box-shadow:0px 11px 24px rgba(165,160,148,0.56);
+					border-radius:10px;
+					padding: 10px;
+					.memPic {
 						width: 32px;
 						height: 32px;
-						padding:10px;
-						border-radius:50%;
-						background-color: #aaa;
-					}
-					#memName {
+						max-width: 50px;
+						max-height: 50px;
+						border-radius: 50%;
+						background-color: #ccc;
 						float: left;
-						width: 10%;
-						padding:10px 10px;
-						color:$globalFontColor;
+						margin: 20px;
+
+					}
+					span {
+						display: inline-block;
+						float: left;
+						width: 30%;
+						// border:1px solid #000;
+						height: 32px;
+						line-height: 32px;
+						margin: 20px 0px;
 					}
 					#messageTime {
 						float: right;
-						width: 40%;
-						padding:10px 10px;
-						color:$globalFontColor;
+						text-align: center;
 					}
-					.messageContent {
-						clear:both;
+					.message {
+						display: block;
 						width: 100%;
-						padding:10px;
-						background-color: #FFF;
-						border-radius: 5px;
-						box-sizing:border-box;
-						
-						border-radius:8px;
-
-						
-						#messageTxt {
-							text-align: left;
-							color:$globalFontColor;
+						padding: 10px;
+						background-color: #fff;
+						border-radius:10px;
+						position: relative;
+						&:after {
+							content:'';
+							display: block;
+							width: 0;
+							height: 0;
+							border-top:15px solid transparent;
+							border-right:15px solid #fff;
+							position: absolute;
+							top: -15px;
+							left: 15px;
 						}
+					}
+				}
+		}
+		.chooseBtn {
+			width: 150px;
+			height: 40px;
+			border-radius:20px;
+			text-align: center;
+			line-height: 40px;
+			margin: auto;
+			font-size: $globalBtnSize;
+			border: 1px solid $globalBtnColor;
+			color:$globalBtnColor;
+			background-color: $globalBgColor;
+			transition: .3s ease;
+			&:hover {
+			background-color: $globalBtnColor;
+			color:$globalBgColor;
+			transition: .3s ease;
+			cursor: pointer;
+			}
+		}
 
+
+}
+
+@media screen and (max-width:768px){
+	.homeTopChart {
+		height: 110vh;
+		p.topChartDescrp {
+			width: 90%;
+			text-align: center;
+			margin: 50px auto;
+			font-size: 1.2em;
+			color:$globalFontColor;
+			line-height: 1.5;
+			font-weight: 500;
+		}
+
+		.titleGrp {
+			width: 90%;
+			margin: 10px auto;
+			text-align: center;
+			img {
+				display:inline-block;
+				vertical-align: top;
+				margin-right: 10px;
+			}
+			.topChartTitle {
+				text-align: center;
+				margin: 10px auto;
+				display:inline-block;
+				color:$globalFontColor;
+			}
+		}
+
+		.shopItem {
+			width: 100%;
+			height: 70vh;
+			padding:5%;
+			// border:1px solid #000;
+			.shopPic {
+				width: 100%;
+				height: 50%;
+				margin-bottom: 30px;
+				border-radius:10px;
+				overflow:hidden;
+				position: relative;
+				box-shadow:0px 11px 24px rgba(165,160,148,0.56);
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius:10px;
+					z-index: -15;
+					object-fit:cover;
+				}
+				h3 {
+					width: 100%;
+					height: 50px;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 10px;
+					right: 0;
+					margin: auto;
+					color:$globalBgColor;
+					letter-spacing: 2px;
+					text-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+				}
+				.shopInfo {
+					width: 100%;
+					height: 50px;
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					margin: auto;
+					padding:1%;
+					
+					&:after {
+						content: ''; 
+						position: absolute; 
+						top: 0; 
+						left: 0; 
+						right: 0; 
+						bottom: 0;
+						background-color: rgba(75,75,75,0.5);
+						z-index:-1;
+						background-size: cover;
+						background-attachment: fixed;
+						-webkit-filter: blur(20px);
+						overflow: hidden;
+					}
+					ul {
+						width: 100%;
+						height: 100%;
+						text-align: center;
+						
+						li {
+							width:33%;
+							float: left;
+							height: 100%;
+							img {
+								width: 4vw;
+								height: 4vmin;
+								min-height: 20px;
+								float: left;
+								object-fit:cover;
+								display: inline-block;
+								margin: 10px 0;
+								margin-right: 5px;
+							}
+							span {
+								float: left;
+								color:$globalBgColor;
+								font-size: 16px;
+							}
+						}
 					}
 				}
 			}
 		}
-		.topChartGrp {
-		position: relative;
-		width: 100%;
-		margin: auto;
-		
-		}
-		.shopArea {
-			width: 33.333%;
-			height: 100px;
-			background-color: #ccc;
-			border-radius:0px;
-			text-align: center;
-			h3 {
-				width: 100%;
-				margin: auto;
-				line-height: 100px;
+		.shopMessage {
+			width: 100%;
+			height: 40%;
+			background-color: $globalFtColor;
+			box-shadow:0px 11px 24px rgba(165,160,148,0.56);
+			border-radius:10px;
+			padding: 10px;
+			.memPic {
+				width: 32px;
+				height: 32px;
+				max-width: 50px;
+				max-height: 50px;
+				border-radius: 50%;
+				background-color: #ccc;
+				float: left;
+				margin: 10px;
+
+			}
+			span {
+				display: inline-block;
+				float: left;
+				width: 30%;
+				// border:1px solid #000;
+				height: 32px;
+				line-height: 32px;
+				margin: 10px 0px;
+			}
+			#messageTime {
+				float: right;
 				text-align: center;
-				color:$globalBgColor;
+			}
+			.message {
+				display: block;
+				width: 100%;
+				padding: 10px;
+				background-color: #fff;
+				border-radius:10px;
 
 			}
 		}
-
-		#shopTaipei {
-			position:static;
-			float: left;
+		.chooseBtn {
+			width: 150px;
+			height: 40px;
+			border-radius:20px;
+			text-align: center;
+			line-height: 40px;
+			margin: auto;
+			font-size: $globalBtnSize;
+			border: 1px solid $globalBtnColor;
+			color:$globalBtnColor;
+			background-color: $globalBgColor;
+			transition: .3s ease;
+			&:hover {
+			background-color: $globalBtnColor;
+			color:$globalBgColor;
+			transition: .3s ease;
+			cursor: pointer;
+			}
 		}
-		#shopNewTpe {
-			position:static;
-			float: left;			
-		}
-		#shopTaoyuan {
-			position:static;
-			float: left;
-		}
-		#shopHsinchu {
-			position:static;
-			float: left;
-		}
-		#shopKaohsiung {
-			position:static;
-			float: left;
-		}
-		#shopTainan {
-			position:static;
-			float: left;
-		}
-		#shopTaichung {
-			position:static;
-			float: left;
-		}
-	
-
-
-
-	}	
+		
+	}
 
 }
-
 
 
 
@@ -899,6 +827,7 @@ section.homeCarMap {
 				border:5px solid #fff;
 				float: left;
 				border-radius: 20px;
+
 			}
 			.shopContent {
 				float: left;
@@ -921,11 +850,49 @@ section.homeCarMap {
 					color:$globalAltColor;
 					font-size: $globalBtnSize;
 				}
-				span {
-					display:block;
-					text-align: center;
-					margin: 10px;
+				ul {
+					width: 100%;
+					padding: 10px;
+					li {
+						float: right;
+						margin-right: 10px;
+						img {
+							width: 4vw;
+							display: inline-block;
+							height: 4vw;
+							border:none;
+							max-width: 40px;
+							max-height: 40px;
+
+						}
+						span {
+							display: inline-block;
+							height: 4vw;
+							line-height: 4vw;
+							font-size: $globalBtnSize;
+						}
+					}
 				}
+				.exploreBtn {
+					display:block;
+					width: 120px;
+					height: 40px;
+					border-radius:20px;
+					text-align: center;
+					line-height: 40px;
+					margin: auto;
+					font-size: $globalContentSize;
+					border: 1px solid $globalBtnColor;
+					color:$globalBtnColor;
+					background-color: $globalBgColor;
+					transition: .3s ease;
+						&:hover {
+						background-color: $globalBtnColor;
+						color:$globalBgColor;
+						transition: .3s ease;
+						cursor: pointer;
+						}	
+					}
 			}
 
 		}
@@ -963,6 +930,29 @@ section.homeCarMap {
 				}
 				.shopContent {
 					width: 100%;
+					p {
+						font-size: $globalContentSize;
+					}
+				.exploreBtn {
+					display:block;
+					width: 120px;
+					height: 40px;
+					border-radius:20px;
+					text-align: center;
+					line-height: 40px;
+					margin: auto;
+					font-size: $globalContentSize;
+					border: 1px solid $globalBtnColor;
+					color:$globalBtnColor;
+					background-color: $globalBgColor;
+					transition: .3s ease;
+						&:hover {
+						background-color: $globalBtnColor;
+						color:$globalBgColor;
+						transition: .3s ease;
+						cursor: pointer;
+						}	
+					}
 				}
 			}
 		}
@@ -990,7 +980,7 @@ section.homeCarMap {
 	
 	}
 	p {
-		width: 70%;
+		width: 80%;
 		margin: auto;
 		margin-top: 50px;
 		text-align: center;
@@ -1030,6 +1020,9 @@ section.homeCarMap {
 			font-size: 5vw;
 
 		}
+		h3 {
+			font-size: 4vmin;
+		}	
 		.addShop {
 			width: 100%;
 			height: 50%;
