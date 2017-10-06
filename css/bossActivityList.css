@@ -756,35 +756,16 @@ footer {
   .container .bossActContent {
     width: 70%;
     margin: auto; }
+    .container .bossActContent img.bigTitle {
+      display: block;
+      width: 30%;
+      margin: 30px auto; }
     .container .bossActContent h2 {
-      text-align: center;
-      margin: 20px auto;
-      color: #4289FF;
-      font-size: 2em; }
-    .container .bossActContent .actManage {
-      width: 100%;
-      clear: both; }
-      .container .bossActContent .actManage h3 {
-        float: left;
-        margin: 10px 0;
-        margin-left: 10px;
-        color: #999;
-        font-size: 24px; }
-      .container .bossActContent .actManage .addAct {
-        float: right;
-        margin: 10px;
-        font-size: 0; }
-        .container .bossActContent .actManage .addAct a {
-          display: inline-block;
-          line-height: 32px;
-          color: #f06428;
-          font-size: 24px; }
-          .container .bossActContent .actManage .addAct a span {
-            width: 32px;
-            height: 32px;
-            display: inline-block;
-            vertical-align: top;
-            margin-right: 5px; }
+      margin: 10px 0;
+      margin-left: 10px;
+      color: #999;
+      font-size: 24px;
+      font-weight: 500; }
     .container .bossActContent .actManageTable {
       width: 100%; }
       .container .bossActContent .actManageTable table {
@@ -811,7 +792,7 @@ footer {
             .container .bossActContent .actManageTable table tr td:last-child {
               padding: 0; }
             .container .bossActContent .actManageTable table tr td a {
-              width: 30%;
+              width: 100%;
               height: 100%;
               display: inline-block;
               color: #999; }
@@ -840,23 +821,8 @@ footer {
       .container .bossActContent .actManageTable table {
         width: 100%;
         overflow: hidden; }
-        .container .bossActContent .actManageTable table tr th {
-          display: none; }
-        .container .bossActContent .actManageTable table tr td {
+        .container .bossActContent .actManageTable table tr td a {
           width: 100%;
-          display: block;
-          text-align: left;
           color: #666; }
-          .container .bossActContent .actManageTable table tr td:before {
-            content: attr(data-th) ":";
-            display: inline-block;
-            width: 6.5em;
-            font-weight: 600; }
-          .container .bossActContent .actManageTable table tr td:last-child {
-            padding: 5px; }
-          .container .bossActContent .actManageTable table tr td a {
-            width: 20%;
-            background-color: #fbf8f1;
-            color: #666; }
-            .container .bossActContent .actManageTable table tr td a img {
-              width: 40px; } }
+          .container .bossActContent .actManageTable table tr td a img {
+            width: 40px; } }

@@ -28,25 +28,24 @@
 
     //   //當高度小於100時，關閉區塊 
     //   	if($this_Top < 100){
-    //     　　　$('.globalHead').stop().animate({top:"-80px"});
+    //     　　　$('.globalHead').stop().animate({top:"-80px"},';linear');
     //     　　}
     //     if($this_Top > 100){
-    //     　　　$('.globalHead').stop().animate({top:"0px"});
+    //     　　　$('.globalHead').stop().animate({top:"0px"},'linear');
     //     　　}
     //     　　
     // }).scroll();
 
-
+    // console.log('12345');
 
     var bodyClass = document.body.classList,
-    lastScrollY = 0;
+    lastScrollY = 80;
 	window.addEventListener('scroll', function(){
  	 var st = this.scrollY;
- 	 // 判斷是向上捲動，而且捲軸超過 200px
   		if( st > lastScrollY) {
-  	  		bodyClass.remove('hideUp');
+  	  		bodyClass.add('hideUp');
   		}else{
-    		bodyClass.add('hideUp');
+    		bodyClass.remove('hideUp');
   		}
   		lastScrollY = st;
 	});
