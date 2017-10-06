@@ -4,6 +4,26 @@ body {
 header {
   z-index: 1; }
 
+.LightBox {
+  background-color: #ccc;
+  opacity: 0.9;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3; }
+  .LightBox section {
+    background-color: #c5beb7;
+    width: 20vw;
+    height: 70vh;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto; }
+
 .coverHeader {
   height: 80px;
   overflow: hidden;
@@ -47,7 +67,8 @@ header {
   height: 100vh;
   position: relative;
   margin: auto;
-  left: 0; }
+  left: 0;
+  right: 0; }
 
 .tableHeaderCover {
   width: 100%;
@@ -56,11 +77,10 @@ header {
   background-color: #e6e0d9; }
   .tableHeaderCover .tableHeader {
     width: 70%;
-    margin-right: 0;
-    margin-left: 0;
+    right: 0;
+    left: 0;
     margin: auto;
     position: fixed;
-    left: 20vw;
     overflow: hidden;
     border-spacing: 0px; }
     .tableHeaderCover .tableHeader tr {
@@ -90,33 +110,35 @@ header {
   margin-right: 0;
   margin-left: 0;
   margin: auto;
-  margin-bottom: 160px; }
-  .tableContent tr:hover {
-    background-color: #000; }
-  .tableContent tr td {
-    color: #502f0d;
-    background-color: #ffffff;
-    height: 50px;
-    text-align: center; }
-    .tableContent tr td:nth-child(1) {
-      width: 15%; }
-    .tableContent tr td:nth-child(2) {
-      width: 15%; }
-    .tableContent tr td:nth-child(3) {
-      width: 30%; }
-    .tableContent tr td:nth-child(4) {
-      width: 20%; }
-    .tableContent tr td:nth-child(5) {
-      width: 20%;
+  margin-bottom: 160px;
+  padding-top: 80px; }
+  .tableContent tr {
+    background-color: #ffffff; }
+    .tableContent tr:hover {
+      background-color: #e1ccb0; }
+    .tableContent tr td {
+      color: #502f0d;
+      height: 50px;
       text-align: center; }
-      .tableContent tr td:nth-child(5) input {
-        width: 80px;
-        height: 40px;
-        color: #ffffff;
-        background-color: #af6363;
-        border-radius: 10px;
-        box-shadow: 0 0 0;
-        border: none; }
+      .tableContent tr td:nth-child(1) {
+        width: 15%; }
+      .tableContent tr td:nth-child(2) {
+        width: 15%; }
+      .tableContent tr td:nth-child(3) {
+        width: 30%; }
+      .tableContent tr td:nth-child(4) {
+        width: 20%; }
+      .tableContent tr td:nth-child(5) {
+        width: 20%;
+        text-align: center; }
+        .tableContent tr td:nth-child(5) input {
+          width: 80px;
+          height: 40px;
+          color: #ffffff;
+          background-color: #af6363;
+          border-radius: 10px;
+          box-shadow: 0 0 0;
+          border: none; }
 
 footer {
   height: 150px;
