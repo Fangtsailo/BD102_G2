@@ -1,3 +1,9 @@
+@keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
 body {
   background-color: #fbf8f1; }
 
@@ -159,6 +165,16 @@ header {
     height: 100px;
     text-align: center;
     padding-top: 20px; }
+    .CenterBusiness .subtitle svg .line {
+      fill: none;
+      stroke-width: 1;
+      stroke: #4b7cbf;
+      animation: letterleaf 1s ease forwards; }
+      .CenterBusiness .subtitle svg .line .line-g {
+        opacity: 1;
+        stroke-dasharray: 340;
+        stroke-dashoffset: 340;
+        animation: letterDraw 3s ease forwards; }
   .CenterBusiness .content-table .tableHeader {
     width: 90%;
     margin-right: 0;

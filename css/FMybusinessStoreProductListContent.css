@@ -1,8 +1,14 @@
+@keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
 body {
   background-color: #fbf8f1; }
 
 .coverHeader {
-  height: 100px; }
+  height: 80px; }
 
 header {
   z-index: 3; }
@@ -24,24 +30,6 @@ header {
 
 .coverHeader {
   height: 100px; }
-
-header {
-  z-index: 3; }
-
-.coverSubtitile {
-  height: 60px; }
-  .coverSubtitile .subtitle {
-    height: 60px;
-    width: 100vw;
-    position: fixed;
-    top: 80px;
-    z-index: 3; }
-    .coverSubtitile .subtitle h2 {
-      line-height: 60px;
-      font-size: 20px;
-      background-color: #4289FF;
-      padding-left: 20px;
-      color: #fff; }
 
 .container {
   width: 100%; }
@@ -176,6 +164,16 @@ header {
     height: 100px;
     text-align: center;
     padding-top: 20px; }
+    .CenterBusiness .subtitle svg .line {
+      fill: none;
+      stroke-width: 1;
+      stroke: #4b7cbf;
+      animation: letterleaf 1s ease forwards; }
+      .CenterBusiness .subtitle svg .line .line-g {
+        opacity: 1;
+        stroke-dasharray: 340;
+        stroke-dashoffset: 340;
+        animation: letterDraw 3s ease forwards; }
   .CenterBusiness .content-table table {
     width: 80%;
     background-color: #fff;
