@@ -5,7 +5,7 @@ header {
   z-index: 1; }
 
 .coverHeader {
-  height: 100px;
+  height: 80px;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -42,13 +42,6 @@ header {
       color: #000000;
       background-color: #cfa972;
       transition: 0.5s; }
-
-.coverNavition {
-  width: 200px;
-  height: 100vh;
-  float: left;
-  position: relative;
-  left: 0; }
 
 .tableArea {
   height: 100vh;
