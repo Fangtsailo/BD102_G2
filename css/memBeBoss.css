@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #f2ebd4;
+  background: -webkit-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -o-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -moz-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: radial-gradient(ellipse, #fbf8f1, #f2ebd4); }
+
+.container {
+  width: 100%;
+  text-align: center; }
+  .container img {
+    width: 100%; }
+  .container h1 {
+    font-size: 36px;
+    color: #996633; }
+  .container h3 {
+    font-size: 24px;
+    color: #996633; }
+  .container p {
+    font-size: 18px;
+    color: #663300;
+    font-weight: 300;
+    margin-top: 10px; }
+  .container .memBeBoss {
+    max-width: 69.4444%;
+    margin: 0 auto;
+    padding-top: 124px; }
+    @media screen and (max-width: 767px) {
+      .container .memBeBoss {
+        max-width: 83%; } }
+    .container .memBeBoss .memTitle {
+      width: 40%;
+      margin: 0px 30%; }
+      @media screen and (max-width: 767px) {
+        .container .memBeBoss .memTitle {
+          width: 100%;
+          margin: 0px auto; } }
+    .container .memBeBoss .memsection1 {
+      width: 100%;
+      margin-bottom: 30px; }
+      .container .memBeBoss .memsection1 .memfigure {
+        margin-bottom: 50px; }
+        .container .memBeBoss .memsection1 .memfigure figure {
+          width: 64%;
+          padding: 0 18%; }
+        .container .memBeBoss .memsection1 .memfigure figcaption {
+          width: 88%;
+          padding: 0px 6%;
+          text-align: left; }
+    .container .memBeBoss .memsection1:after {
+      content: '';
+      display: block;
+      clear: both; }
+    .container .memBeBoss .memsection2 {
+      width: 50%;
+      margin: 0 auto;
+      margin-bottom: 80px; }
+      @media screen and (max-width: 767px) {
+        .container .memBeBoss .memsection2 {
+          width: 100%; } }
+      @media screen and (max-width: 767px) {
+        .container .memBeBoss .memsection2 .memFormHeader {
+          padding: 0 6%;
+          text-align: left; }
+          .container .memBeBoss .memsection2 .memFormHeader h1 {
+            font-size: 24px; } }
+      .container .memBeBoss .memsection2 .memFormContent {
+        padding-top: 10px; }
+        .container .memBeBoss .memsection2 .memFormContent .memFormInput {
+          width: 80%;
+          height: 80px;
+          margin: 0px auto;
+          color: #663300; }
+          .container .memBeBoss .memsection2 .memFormContent .memFormInput label {
+            display: block;
+            width: 35% -10px;
+            float: left;
+            height: 100%;
+            line-height: 80px;
+            font-weight: 300; }
+            .container .memBeBoss .memsection2 .memFormContent .memFormInput label span {
+              color: #f06428; }
+          .container .memBeBoss .memsection2 .memFormContent .memFormInput input {
+            display: block;
+            float: right;
+            width: 65%;
+            height: 100%;
+            padding-left: 10px;
+            margin: auto;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #bbb; }
+            .container .memBeBoss .memsection2 .memFormContent .memFormInput input::-webkit-input-placeholder {
+              color: #bbb;
+              font-weight: 300; }
+          .container .memBeBoss .memsection2 .memFormContent .memFormInput .radio {
+            width: 4%;
+            margin: 0 5px;
+            display: inline-block;
+            float: none;
+            line-height: 50px;
+            vertical-align: middle; }
+            .container .memBeBoss .memsection2 .memFormContent .memFormInput .radio:focus {
+              border-color: #663300; }
+            @media screen and (max-width: 767px) {
+              .container .memBeBoss .memsection2 .memFormContent .memFormInput .radio {
+                width: 8%; } }
+          .container .memBeBoss .memsection2 .memFormContent .memFormInput .radio:last-child {
+            margin-left: 20%; }
+            @media screen and (max-width: 767px) {
+              .container .memBeBoss .memsection2 .memFormContent .memFormInput .radio:last-child {
+                margin-left: 6%; } }
+        .container .memBeBoss .memsection2 .memFormContent a {
+          display: block;
+          margin: 50px auto 0 auto; }
+        .container .memBeBoss .memsection2 .memFormContent .nextStep {
+          width: 150px;
+          height: 45px;
+          border-radius: 22.5px;
+          text-align: center;
+          line-height: 45px;
+          font-size: 20px;
+          border: 1px solid #f06428;
+          color: #f06428;
+          transition: .3s ease; }
+          .container .memBeBoss .memsection2 .memFormContent .nextStep:hover {
+            background-color: #f06428;
+            color: #fbf8f1;
+            transition: .3s ease;
+            cursor: pointer; }
+    .container .memBeBoss .memsection2:after {
+      content: '';
+      display: block;
+      clear: both; }
