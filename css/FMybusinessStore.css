@@ -24,6 +24,11 @@ header {
       background-color: #4289FF;
       padding-left: 20px;
       color: #fff; }
+    .coverSubtitile .subtitle .burger {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0; }
 
 .container {
   width: 100%; }
@@ -162,12 +167,12 @@ header {
       fill: none;
       stroke-width: 1;
       stroke: #4b7cbf;
-      animation: letterleaf 1s ease forwards; }
+      animation: letterleaf 2s ease forwards; }
       .CenterBusiness .subtitle svg .line .line-g {
         opacity: 1;
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
-        animation: letterDraw 3s ease forwards; }
+        animation: letterDraw 5s ease forwards; }
   .CenterBusiness .content-table table {
     width: 80%;
     background-color: #fff;
@@ -221,11 +226,13 @@ header {
         height: 100px; }
         .CenterBusiness .content-table table tr:nth-child(6) th div {
           height: 80px; }
-        .CenterBusiness .content-table table tr:nth-child(6) td div {
+        .CenterBusiness .content-table table tr:nth-child(6) td div div {
           display: inline-block;
-          width: 13%;
-          border: 1px solid #ddd; }
-          .CenterBusiness .content-table table tr:nth-child(6) td div:hover {
+          width: 19%;
+          border: 1px solid #ddd;
+          margin: 10px;
+          padding: 5px 0; }
+          .CenterBusiness .content-table table tr:nth-child(6) td div div:hover {
             background-color: #4289FF;
             color: #fff;
             transition: 0.5s; }
@@ -311,6 +318,41 @@ header {
           background-color: #fff;
           transition: 0.5s; }
 
+.CoverRightMy {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 124px;
+  right: -200px;
+  transition: 1s;
+  background-color: #f2ebd4; }
+  .CoverRightMy ul li {
+    background-color: #4289ff;
+    width: 200px;
+    padding: 8px 0;
+    color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    display: block; }
+    .CoverRightMy ul li:hover {
+      color: #f6921E;
+      transition: 0.5s; }
+    .CoverRightMy ul li ul li {
+      background-color: #4289ff;
+      width: 200px;
+      color: #eef;
+      text-align: left;
+      display: block;
+      padding: 2px 20px;
+      border-bottom: 1px solid #4b7cbf; }
+      .CoverRightMy ul li ul li:hover {
+        color: #f06428;
+        transition: 0.5s; }
+
+.moveToLeft {
+  right: -70px;
+  transition: 1s; }
+
 footer {
   width: 100vw;
   height: 50px;
@@ -319,7 +361,10 @@ footer {
 
 @media screen and (max-width: 940px) {
   .LeftBusiness {
-    display: none; } }
+    display: none; }
+
+  .coverSubtitile .subtitle .burger {
+    display: block; } }
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -331,9 +376,10 @@ footer {
           min-width: 10px; }
       .CenterBusiness .content-table table tr td {
         width: 70%; }
-      .CenterBusiness .content-table table tr:nth-child(6) td div {
-        font-size: 14px; } }
-@media screen and (max-width: 912px) {
+      .CenterBusiness .content-table table tr:nth-child(6) td div div {
+        font-size: 14px;
+        margin: 10px 0; } }
+@media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }
     .CenterBusiness .content-table table tr th div {

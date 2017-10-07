@@ -12,7 +12,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3; }
+  z-index: 3;
+  display: none; }
   .LightBox section {
     background-color: #c5beb7;
     width: 40vw;
@@ -203,6 +204,8 @@ header {
           border-radius: 10px;
           box-shadow: 0 0 0;
           border: none; }
+          .tableContent tr td:nth-child(5) input#addAuthority {
+            background-color: #00c853; }
 
 footer {
   height: 150px;

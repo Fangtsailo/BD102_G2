@@ -30,6 +30,7 @@ header{
 	top: 0;
 	left: 0;
 	z-index: 3;
+	display: none;
 
 	
 		section{
@@ -330,6 +331,9 @@ position: fixed;
 					border-radius: 10px;
 					box-shadow:0 0 0;
 					border: none;
+					&#addAuthority{
+						background-color: $globalAccountColor;
+					}
 				}
 			}
 

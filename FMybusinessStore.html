@@ -6,6 +6,13 @@
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStore.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+	
+	
+
+	
 </head>
 <body>
 
@@ -127,6 +134,7 @@
 <div class="coverSubtitile">
 	<div class="subtitle">
 				<h2>店長專區</h2>
+				<img class="burger" src="https://api.fnkr.net/testimg/44x44/00CED1/FFF/?text=img+placeholder">
 	</div>
 </div>
 
@@ -435,13 +443,18 @@
 				<tr>
 				<th><div>公休日<br>(複選)</div></th>
 				<td>
-					<div>星期一</div>
-					<div>星期二</div>
-					<div>星期三</div>
-					<div>星期四</div>
-					<div>星期五</div>
-					<div>星期六</div>
-					<div>星期日</div>
+					<div>
+						<div>星期一</div>
+						<div>星期二</div>
+						<div>星期三</div>
+						<div>星期四</div>
+					</div>
+					<div>
+						<div>星期五</div>
+						<div>星期六</div>
+						<div>星期日</div>
+						<div>國定假</div>
+					</div>
 				</td>
 				</tr>
 
@@ -559,17 +572,30 @@
 
 <!-- ==============right fixed content================== -->
 
-	<!-- <div class="CoverRightMy">
+	<div class="CoverRightMy">
 		
-		<div class="RightMy">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
+		<ul>
+			<li>會員專區</li>
+			<li>麵包店
+				<ul>
+					<li>基本資料</li>
+					<li>商品</li>
+				</ul>
+			</li>
+			<li>胖小車
+				<ul>
+					<li>定位位置</li>
+					<li>基本資料</li>
+					<li>商品</li>
+				</ul>
+			</li>
+			<li>活動管理</li>
+			<li>留言管理</li>
+		</ul>
 		
-	</div> -->
+	</div>
+
+	
 
 
 <!-- ==============right fixed content======END======= -->
@@ -578,7 +604,7 @@
 
 
 
-</div>
+</div><!-- container -->
 <!-- ==============middle content======END======= -->
 
 
@@ -632,7 +658,15 @@
 		<p>© 2017 找麥方TrePun - 設計製作</p>
 	</div> -->
 	</footer>
+
 	
+<script>
+$(document).ready(function(){
+    $(".burger").click(function(){
+        $(".CoverRightMy").toggleClass("moveToLeft");
+    });
+});
+</script>	
 
 </body>
 </html>
