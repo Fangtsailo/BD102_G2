@@ -1,0 +1,217 @@
+@charset "UTF-8";
+@import "basic/setting";
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: $globalFtColor;
+	background: -webkit-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+}
+
+// .coverHeader{
+// 	// width: 100vw;
+// 	height: 100px;
+// }
+
+// header{
+// 	z-index: 3;
+// }
+
+// .coverSubtitile{
+// 	height: 60px;
+// 	.subtitle{
+// 		height: 60px;
+// 		width: 100vw;
+// 		position: fixed;
+// 		top: 100px;
+// 		z-index: 3;
+// 		h2{
+// 			line-height: 60px;
+// 			font-size: 20px;
+// 			background-color:$MybusinessStore-subtitle-bgColor;
+// 			padding-left: 20px;
+// 			color:#fff;
+// 		}
+// 	}
+// }
+
+//--------------------------會員_成為店長p2_container樣式-------------------------
+
+.container{
+	width: 100%;
+	text-align:center;
+	
+	img{
+		width: 100%;
+	}
+
+	h1 {
+		font-size:$globalh1Size;
+		color:$globalTitleColor;
+	}
+
+	h3 {
+		font-size:$globalh3Size;
+		color:$globalTitleColor;
+	}
+
+	p {
+		font-size:$globalBtnSize;
+		color:$globalFontColor;	
+		font-weight: 300;
+		margin-top: 10px;
+	}
+
+	.memBeBoss{
+		max-width: 1000px;
+		width: 69.4444%;
+		margin: 0 auto;
+		padding-top:124px;
+		// outline: 1px dotted #000;
+
+		.memTitle{
+			width: 48%;
+	    	margin: 0 26%;
+	    	// outline: 1px dotted #ccc;
+	    	@media screen and (max-width: 767px) {
+	    		width: 100%;
+	    		margin: 0 auto;
+    		}
+		}//memTitle end
+
+		// .memsection1{
+	 //    	width: 100%;
+	 //    	margin-bottom: 30px;
+  //   		// outline: 1px solid #f00;
+			
+		// 	.memfigure{
+  //   			padding: 0 15px;
+		// 		margin-bottom: 50px;
+		//     	@media screen and (max-width: 767px) {
+		//     		padding: 0;
+	 //    		}
+  //   			// outline: 1px dotted #0f0;
+		// 	    figure{
+		// 			width: 64%;
+		// 			padding: 0 18%;
+		// 			@media screen and (max-width: 767px) {
+	 //    				width: 100%;
+	 //    				padding: 0;
+  //   				}
+  //   				// outline: 1px dotted #00f;
+		// 		}//figure end
+
+		// 		figcaption{
+		// 			width: 90%;
+	 //    			padding: 0px 5%;
+	 //    			text-align:left;
+	 //    			@media screen and (max-width: 767px) {
+	 //    				width: 100%;
+	 //    				padding: 0;
+  //   				}
+	 //    			// outline: 1px dotted #00f;
+		// 		}//figcaption end
+		// 	}//memfigure end
+		// }//memsection1 end
+
+		// .memsection1:after{
+		// 	content: '';
+		// 	display: block;
+		// 	clear: both;  
+		// }
+
+		.memsection5{
+	    	width: 50%;
+	    	margin: 0 auto;
+	    	margin-bottom: 80px;
+    		// outline: 1px solid #f00;
+    		@media screen and (max-width: 767px) {
+    			width: 100%;
+    		}
+
+    		.memFormHeader{
+    			@media screen and (max-width: 767px) {
+					text-align:left;
+					h1{
+						font-size: $globalh3Size;
+					}
+    			}
+			}//memFormHeader end
+
+    		.memFormContent{
+				padding-top:10px;
+				.memFormInput{
+					width: 100%;
+					height: 60px;
+					margin: 0 auto;
+					color:$globalFontColor;
+					label{
+						display: block;
+						float: left;
+						height: 100%;
+						line-height: 60px;
+						font-weight: 300;
+						span{
+							color:$globalBtnColor;
+						}
+					}//label end
+					input{
+						display: block;
+						float: right;
+						width: 65%;
+						height: 100%;
+						padding-left: 10px;	
+						margin: 0 auto;
+						background-color: transparent;
+						border:none;
+						border-bottom: 1px solid $globalUnclickColor;
+						&::-webkit-input-placeholder{
+							color: $globalUnclickColor;
+							font-weight: 300;
+						}
+					}//input end
+				}//memFormInput end
+
+
+				button{
+					display: block;
+					margin: 50px auto 0 auto;
+    				width: 150px;
+					height: 45px;
+					border-radius:22.5px;
+					text-align: center;
+					line-height: 45px;
+					font-size: $globalBtnSize + 2px;
+					border: 1px solid $globalBtnColor;
+					background-color: transparent;
+					color:$globalBtnColor;
+					transition: .3s ease;
+					font-family: $globalFont;
+					&:hover {
+						background-color: $globalBtnColor;
+						color:$globalBgColor;
+						transition: .3s ease;
+						cursor: pointer;
+					}
+    			}
+    		}//memFormContent end
+    	}//memsection2 end
+
+    	.memsection5:after{
+			content: '';
+			display: block;
+			clear: both;  
+		}
+
+	}//memBeBoss end
+}//container end
+
+
