@@ -1,0 +1,110 @@
+// ========後台側邊導覽列HOVER效果
+@mixin navition-hover() {
+
+	&:hover{
+				color:#000000;
+				background-color: $navition-li-bgColor-hover;
+				transition:0.5s;
+
+			}
+	
+}
+
+
+
+
+@mixin button-hover() {
+
+	&:hover{
+        				background-color:#ffffff;
+        				color:#7e4a1d;
+        				transition:0.3s;
+        			}	
+	
+}
+
+
+@mixin store-nav-bar-propity() {
+
+	width: 200px;
+	height:  $store-nav-bar-height;
+	background-color:$MybusinessStore-subtitle-bgColor;
+	margin-top:10px; 
+		
+}
+
+
+@mixin member-nav-bar-propity() {
+
+	width: 200px;
+	height: $store-nav-bar-height;
+	background-color:#00C853;
+	margin-top:6px; 
+		
+}
+
+
+
+@mixin member-nav-bar-mainTitle-propity() {
+	width: 200px;
+	height: 57px;
+	margin-top:10px;
+	position: relative;
+	// border-bottom: 2px solid #00f;
+	.cls-1{
+		fill:$MybusinessStore-subtitle-bgColor;
+	}
+	.cls-2{fill:#bbb;}
+	.cls-3{fill:#999;}
+
+	h2{
+		position: absolute;
+		line-height:$store-nav-bar-height;
+		left: 20px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		font-size: 18px;
+		color: #fff;
+	}	
+}
+
+
+
+
+
+
+
+@mixin member-nav-bar-subTitle-propity() {
+
+	width: 180px;
+	height: $store-nav-bar-height;
+	background-color:$MybusinessStore-subtitle-bgColor;
+	margin-top: 2px;
+	position: relative;
+	h3{
+		position: absolute;
+		line-height:$store-nav-bar-height;
+		left: 90px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		font-size: 18px;
+		color: #fff;
+	}
+	svg{
+
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 30px;
+		margin: auto;
+		.cls-1{fill:none;}
+		.cls-2{fill:#bbb;}
+		.cls-3{fill:#999;}
+
+	}
+
+
+}
