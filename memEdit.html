@@ -6,7 +6,7 @@
 	<title>會員專區_成為店長</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
     <link rel="stylesheet" type="text/css" href="css/grid.css">
-	<link rel="stylesheet" type="text/css" href="css/memBeBoss3.css">
+	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
 </head>
 <body>
 <!-- ======================================================header 頁首========================================================= -->
@@ -126,46 +126,83 @@
     <div class="container">
         <div class="memBeBoss">
             <div class="memTitle col-xs-12 col-sm-12">
-                <img src="img/memimg/bebosstl.svg" alt="成為店長">
+                <img src="img/memimg/mytl.svg" alt="編輯個人資料">
             </div>
 
             <section class="memsection5">
                 <form action="" method="post">
-                    <div class="memFormHeader col-xs-12 col-sm-12">
-                        <h1>繼續完成店長資料登錄</h1>
-                        <p>完成後請按送出，<br>我們將與您進行審核作業！</p>
-                    </div>
                     <div class="memFormContent col-xs-12 col-sm-12">
+                        <div class="memPic"></div>
                         <div class="memFormInput">
-                            <label><span>*</span>店長姓名</label>
+                            <label>變更頭像</label>
+                            <a class="memPic">上傳照片</a>
+                            <input type="file" id="MEM_PIC">
+                        </div>
+                        <div class="memFormInput">
+                            <label>帳號</label>
+                            <input type="text" name="MEM_ID" maxlength="8" class="unChange">
+                            <span class="note">已註冊帳號無法變更</span>
+                        </div>
+                        <div class="memFormInput">
+                            <label>姓名</label>
                             <input type="text" name="MEM_NAME" maxlength="4" placeholder="請輸入真實姓名">
                         </div>
                         <div class="memFormInput">
-                            <label><span>*</span>身分證號</label>
-                            <input type="text" name="BOSS_ID???" maxlength="10" placeholder="輸入格式:A000000000">
+                            <label>信箱</label>
+                            <input type="email" name="MEM_EMAIL???" class="unChange">
+                            <span class="note">已註冊信箱無法變更</span>
                         </div>
                         <div class="memFormInput">
-                            <label><span>*</span>聯絡電話</label>
+                            <label>手機</label>
                             <input type="tel" name="MEM_PHONE" maxlength="10" placeholder="輸入格式:034257387">
                         </div>
-                        <div class="memFormInput">
-                            <label><span>*</span>統一編號</label>
-                            <input type="text" name="TAX_ID???" maxlength="8" placeholder="輸入格式:80088888">
-                        </div>
-                        <div class="memFormInput">
-                            <label><span>*</span>車牌號碼</label>
-                            <input type="text" name="VAN_ID???" maxlength="7" placeholder="輸入格式:KAQ-230">
-                        </div>
-                        
-                        <!-- <div class="memFormBtns"> -->
-                            <button type="submit">送出</button>
-                        <!-- </div> -->
-
+                        <a class="changePsw">變更密碼</a>
+                        <button type="submit">送出</button>
                     </div>
+
+
+                    <!-- ******************重寫無效************************** -->
+                    <!-- <div class="memInfo">    
+                        <ul class="memInfoList">
+                            <li class="memInfoItem">
+                                <label class="th">變更頭像</label>
+                                <div class="memPic"></div>
+                                <a class="file">上傳照片
+                                    <input type="file" id="MEM_PIC"> 
+                                </a>
+                            </li>
+                            <li class="memInfoItem">
+                                <label class="th">帳號</label>
+                                <input type="text" name="MEM_ID" maxlength="8" class="unChange">
+                                <span class="note">已註冊帳號無法變更</span>
+                            </li>
+
+                            <li class="memInfoItem">
+                                <label class="th">姓名</label>
+                                <input type="text" name="MEM_NAME" maxlength="4" placeholder="請輸入真實姓名">
+                            </li>
+
+                            <li class="memInfoItem">
+                                <label class="th">信箱</label>
+                                <input type="email" name="MEM_EMAIL???" class="unChange">
+                                <span class="note">已註冊信箱無法變更</span>
+                            </li>
+
+                            <li class="memInfoItem">
+                                <label class="th">手機</label>
+                                <input type="tel" name="MEM_PHONE" maxlength="10" placeholder="輸入格式:034257387">
+                            </li>
+                        </ul>
+                        <a class="changePsw">變更密碼</a>
+                        <button type="submit">儲存設定</button>
+                    </div> -->
+                        <!-- ******************************************** -->
                 </form>
             </section>
         </div>
     </div>
+
+
 
 <!-- ======================================================footer 頁尾========================================================= -->
     <footer>

@@ -43,7 +43,7 @@ body{
 // 	}
 // }
 
-//--------------------------ÊúÉÂì°_ÊàêÁÇ∫Â∫óÈï∑p2_containerÊ®£Âºè-------------------------
+//--------------------------ï˛ÜT_≥…ûÈµÍÈLp2_containerò” Ω-------------------------
 
 .container{
 	width: 100%;
@@ -69,6 +69,10 @@ body{
 		font-weight: 300;
 		margin-top: 10px;
 	}
+	ul{
+		list-style-type: none;
+	}
+
 
 	.memBeBoss{
 		max-width: 1000px;
@@ -87,52 +91,12 @@ body{
     		}
 		}//memTitle end
 
-		// .memsection1{
-	 //    	width: 100%;
-	 //    	margin-bottom: 30px;
-  //   		// outline: 1px solid #f00;
-			
-		// 	.memfigure{
-  //   			padding: 0 15px;
-		// 		margin-bottom: 50px;
-		//     	@media screen and (max-width: 767px) {
-		//     		padding: 0;
-	 //    		}
-  //   			// outline: 1px dotted #0f0;
-		// 	    figure{
-		// 			width: 64%;
-		// 			padding: 0 18%;
-		// 			@media screen and (max-width: 767px) {
-	 //    				width: 100%;
-	 //    				padding: 0;
-  //   				}
-  //   				// outline: 1px dotted #00f;
-		// 		}//figure end
-
-		// 		figcaption{
-		// 			width: 90%;
-	 //    			padding: 0px 5%;
-	 //    			text-align:left;
-	 //    			@media screen and (max-width: 767px) {
-	 //    				width: 100%;
-	 //    				padding: 0;
-  //   				}
-	 //    			// outline: 1px dotted #00f;
-		// 		}//figcaption end
-		// 	}//memfigure end
-		// }//memsection1 end
-
-		// .memsection1:after{
-		// 	content: '';
-		// 	display: block;
-		// 	clear: both;  
-		// }
-
+		
 		.memsection5{
 	    	width: 50%;
 	    	margin: 0 auto;
 	    	margin-bottom: 80px;
-    		// outline: 1px solid #f00;
+    		outline: 1px solid #999;
     		@media screen and (max-width: 767px) {
     			width: 100%;
     		}
@@ -148,6 +112,16 @@ body{
 
     		.memFormContent{
 				padding-top:10px;
+				outline: 1px solid #999;
+				.memPic{
+					width: 80px;
+					height: 80px;
+					border-radius: 40px;
+					background-image: url("../img/memimg/followimg1.jpg");
+					background-position: center center;
+					background-size: 80px;
+					background-repeat:no-repeat;
+				}
 				.memFormInput{
 					width: 100%;
 					height: 60px;
@@ -163,6 +137,7 @@ body{
 							color:$globalBtnColor;
 						}
 					}//label end
+					
 					input{
 						display: block;
 						float: right;
@@ -202,14 +177,29 @@ body{
 						cursor: pointer;
 					}
     			}
+
+				.memInfoList{
+					
+					.memInfoItem{
+						width: 100%;
+						padding: 20px 0;
+    					border-bottom: 1px solid $globalUnclickColor;
+						label{
+							width: 30%;
+							float:left;
+						}
+						.memPic{
+							width: 80px;
+							height: 80px;
+							color: $globalUnclickColor;
+						}
+						.memItem{
+							
+						}
+					}
+				}    			
     		}//memFormContent end
     	}//memsection5 end
-
-    	.memsection5:after{
-			content: '';
-			display: block;
-			clear: both;  
-		}
 
 	}//memBeBoss end
 }//container end

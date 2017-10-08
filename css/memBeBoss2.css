@@ -28,7 +28,7 @@ body {
     color: #663300;
     font-weight: 300;
     margin-top: 2px; }
-  .container li {
+  .container ul li {
     list-style: none;
     font-size: 16px;
     color: #663300;
