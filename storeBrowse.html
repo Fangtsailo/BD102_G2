@@ -5,10 +5,19 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
+	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
+	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick-theme.css">	
 	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script src="libs/slick-master/slick/slick.min.js"></script>
 	<script src="libs/gsap/src/minified/TweenMax.min.js"></script>
+	<script src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script src="js/storeBrowse.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
+    </script>
     <style type="text/css">
     	header.globalHead {
     		opacity: 0.7;
@@ -130,184 +139,275 @@
 
 
 	
-<div class="screen-1">
+<div class="screen screen-1">
+	<div class="banners">
+	</div>
 	<div class="detail-box">
 		<div class="store-logo"><img src="img/store/browse/bread.svg"></div>
-		<h1 class="store-name">Bread Store</h1>
-		<div class="detail">刷新舉辦比如感謝更新校長怪物作，怎樣焦點眼中其他恢復露出，提出了期間的是群眾湖南斑，不去記錄很快均為不是產品重新寶貝加上網址世紀思考同意轉載有，女朋友聯盟排名不能減少丈夫還要進一步不想忘記作為金融提，從來沒英文後來留言客戶附件她們登，頭銜不大配件除了第一章衝突全市，只是每日深深設備看著所在成本風格爸爸擔任法規榮，神話金額今年金幣英語之。</div>
-		<div class="other-info">
-			<div class="follow"><img src="img/store/browse/star.svg"></div>
-			<div class="trace"><img src="img/store/browse/follow.svg"></div>
+		<div class="title">
+			<div class="container">
+				<h1 class="store-name">山下麵包</h1>
+			</div>
+		</div>
+		<div class="detail">
+			<ul class="follow col-xs-9">
+				<li class="star"><img src="img/store/browse/star.svg"></li>
+				<li class="star"><img src="img/store/browse/star.svg"></li>
+				<li class="star"><img src="img/store/browse/star.svg"></li>
+				<li class="star"><img src="img/store/browse/star.svg"></li>
+				<li class="star"><img src="img/store/browse/star.svg"></li>
+			</ul>
+			<div class="trace col-xs-3"><img src="img/store/browse/follow.svg">(123)</div>
+			<div class="info-box">
+				<div class="address overflow col-xs-12">
+					<p class="title col-lg-3 col-xs-4">地址:</p>
+					<p class="content col-lg-9 col-xs-8">桃園市中壢區中大路300號</p>
+				</div>
+				<div class="open-time overflow col-xs-12">
+					<p class="title col-lg-3 col-xs-4">營業時間:</p>
+					<p class="content col-lg-9 col-xs-8">禮拜一至五 11:00-20:00</p>
+				</div>
+				<div class="phone overflow col-xs-12">
+					<p class="title col-lg-3 col-xs-4">電話:</p>
+					<p class="content col-lg-9 col-xs-8">03-1234567</p>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="right-describe">笑道夏天很難手段你看微笑什麼能量公路回去反映，他還電子看法機器更加身後風險會不會失，只要飯店它們卻是多少另一主動教材文本設立，窗口一遍飲食經銷商隨意多年成熟方向學院也，實踐周邊收入濟南來電大廈公開貫徹幾年請教口氣章，聽到人大幾年顯得委員會社會主義都，會員原創溫州品牌天津模組驚人兄弟討論創意人民危險讀書，群眾權益才能起點再次插入重要一直故意提出了，作業海外只有十大正確超市還沒，世界盃然而據說點這裡下載一點打電話估計漸漸問題非常多麼窗口，留言強調報告開發商確認人口放棄至少太多產品，完了口氣對她每頁認真感染日，美麗整合前後仍然找不到城市國有插入提示信息網吧股，聯賽藝術註冊時間就業，將來思路完全心中。</div>
-	<div id="bottom-city">
-	    <div class="cloud cloud-1" style="visibility: visible; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-	    <div class="cloud cloud-2" style="visibility: visible;opacity: 1;transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-	    <div class="cloud cloud-3" style="visibility: visible; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-	    <div class="city" style="visibility: visible; opacity: 1; transform: translate3d(0px, 0px, 0px);"></div>
-	    <div class="fr_eiffelTower" style="visibility: visible; opacity: 1; transform: translate3d(0px, 0px, 0px);"></div>
-	    <div class="fr_reverbere-1" style="visibility: visible; opacity: 1; transform: translate3d(0px, 0px, 0px);"></div>
-	    <div class="fr_reverbere-1" style="visibility: visible; opacity: 1; transform: translate3d(0px, 0px, 0px);"></div>
-	    <div class="fr_reverbere-2" style="visibility: visible; opacity: 1; transform: translate3d(0px, 0px, 0px);"></div>
-	    <div class="fr_reverbere-2" style="visibility: visible; opacity: 1; transform: translate3d(0px, 0px, 0px);"></div>
-	    <div data-posx="37" class="country_name fr_titre" style="left: 37%; opacity: 1;">France</div>
+	<div class="right-describe">
+		<p>
+			自創業以來因為引進歐美的先進技術而卓越成長並希望以此經驗技術可以對東南亞吃的文化帶來貢獻 。故於1985年進駐香港，之後在香港廣受各方好評，於1988年設立了中央工廠，自此開始了海外的連鎖烘焙事業。而後陸續在泰國、馬來西亞、新加坡都有展店，也都有不錯的成績。
+		<p>
+        1987年於台北市百貨公司成立台灣第一家麵包專賣店，為了提供給顧客更多元且完整的產品及服務，於2000年在板橋火車站開了第一家咖啡複合式店面，至今包含複合式店面已有多家分店分佈全台。未來更以積極培育當地人才，每年至少成立2家專賣店為目標，持續教育訓練以提高服務品質。</p>
+        <p>
+        自創始以來一直堅持慎選原料，每天現場烘焙提供最新鮮的產品，且不斷開發新產品，如：手工現做的三明治、柔軟的吐司、銅鑼燒、大福等多樣的日式風味的點心，讓顧客無論何時都可以買到自己喜愛的產品，享受美味的麵包。</p>
 	</div>
+	<div id="bottom-city">
+	    <div class="cloud cloud-1"></div>
+	    <div class="cloud cloud-2"></div>
+	    <div class="cloud cloud-3"></div>
+	    <div class="city"></div>
+	    <div class="marker marker-1"><img src="../img/store/browse/bread_marker5.png"></div>
+	    <div class="marker marker-2"><img src="../img/store/browse/bread_marker3.png"></div>
+	    <div class="marker marker-3"><img src="../img/store/browse/bread_marker2.png"></div>
+	    <div class="marker marker-4"><img src="../img/store/browse/bread_marker.png"></div>
+	</div>
+	<div id="screen1-trigger" class="spacer s0"></div>	
 </div>
-<div class="screen-bread-car-map">
-	<h2 class="title">胖小車路線圖</h2>
+<div class="screen screen-bread-car-map">
+	<div id="bread-car-trigger" class="spacer s0"></div>
+	<div class="perspective">
+	<div class="title">
+		<div class="front">胖小車路線圖</div>
+		<div class="down">
+			<h2>胖小車路線圖</h2>
+		</div>
+	</div>
+	</div>
 	<ul class="tabs">
 		<li class="item item-selected">
-			<a href="#">
-				<img class="tab-img" src="img/store/browse/tab-selected.png">
-				<div class="content">
-				<div class="icon"><img src="img/store/browse/tab-now.png"></div>
-				<p>即時位置</p>
-				</div>
-			</a>
+			<a href="#">即時位置</a>
 		</li>
 		<li class="item">
-			<a href="#">
-				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
-				<div class="content">
-				<div class="icon"><img src="img/store/browse/tab-date-non-selected.png"></div>
-				<p>禮拜一路線</p>
-				</div>
-			</a>
+			<a href="#">禮拜一路線</a>
 		</li>
 		<li class="item">
-			<a href="#">
-				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
-				<div class="content">
-				<div class="icon">
-				<img src="img/store/browse/tab-date-non-selected.png">
-				</div>
-				<p>禮拜三路線</p>
-				</div>
-			</a>
+			<a href="#">禮拜三路線</a>
 		</li>
 		<li class="item">
-			<a href="#">
-				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
-				<div class="content">
-				<div class="icon">
-				<img src="img/store/browse/tab-date-non-selected.png">
-				</div>
-				<p>禮拜日路線</p>
-				</div>
-			</a>
+			<a href="#">禮拜日路線</a>
 		</li>
 	</ul>
+	<div id="bread-car"></div>
 	<div id="map-now"></div>
 </div>
-<div class="screen-product">
-	<h2 class="title">商品</h2>
+<div class="screen screen-product">
+	<div id="product-trigger" class="spacer s0"></div>
+	<div id="product-trigger2" class="spacer s0"></div>
+	<div id="product-star-light-trigger" class="spacer s0"></div>
+	<div class="perspective">
+	<div class="title">
+		<div class="front">商品</div>
+		<div class="down">
+			<h2>商品</h2>
+		</div>
+	</div>
+	</div>
+	<div class="star-light"></div>
 	<div class="product">
-		<div class="image"><img src="img/store/browse/big_product1.png"></div>
-		<div class="describe">
-		<h3>烤焦三角麵包</h3>
-		<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p></div>
+		<div class="item">
+			<div class="image"><img src="img/store/browse/big_product1.png"></div>
+			<div class="describe">
+			<h3>烤焦三角麵包<button id="bread-detail">詳情</button></h3>
+
+			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="image"><img src="img/store/browse/big_product2.png"></div>
+			<div class="describe">
+			<h3>烤焦三角麵包</h3>
+			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="image"><img src="img/store/browse/big_product3.png"></div>
+			<div class="describe">
+			<h3>烤焦三角麵包</h3>
+			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="image"><img src="img/store/browse/big_product4.png"></div>
+			<div class="describe">
+			<h3>烤焦三角麵包</h3>
+			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="image"><img src="img/store/browse/big_product5.png"></div>
+			<div class="describe">
+			<h3>烤焦三角麵包</h3>
+			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
+			</div>
+		</div>
 	</div>
 	<div class="product-list">
-		<div class="item">
+		<div class="item col-xs-4">
 			<img src="img/store/browse/small_product1.png">
 			<p>name</p>
 		</div>
-		<div class="item">
+		<div class="item col-xs-4">
 			<img src="img/store/browse/small_product2.png">
 			<p>name</p>
 		</div>
-		<div class="item only-pc">
+		<div class="item col-xs-4">
 			<img src="img/store/browse/small_product3.png">
 			<p>name</p>
 		</div>
-		<div class="item only-pc">
+		<div class="item">
 			<img src="img/store/browse/small_product4.png">
 			<p>name</p>
 		</div>
+		<div class="item">
+			<img src="img/store/browse/small_product5.png">
+			<p>name</p>
+		</div>
 	</div>
-	<div class="switcher">
+<!-- 	<div class="switcher">
 		<div class="item selected"></div>
 		<div class="item"></div>
 		<div class="item"></div>
-	</div>
+	</div> -->
 </div>
-<div class="screen-activity">
-	<h2 class="title">體驗活動</h2>
+<div class="screen screen-activity">
+	<div id="activity-trigger" class="spacer s0"></div>
+	<div class="perspective">
+		<div class="title">
+			<div class="front">體驗活動</div>
+			<div class="down">
+				<h2>體驗活動</h2>
+			</div>
+		</div>
+	</div>
+	<div id="activity-parallax">
+		<div data-depth="1" class="layer">
+			<div class="parallax-item  egg"><img src="img/store/browse/activity_egg.png"></div>
+		</div>
+		<div data-depth="1.2" class="layer shadow">
+			<div class="parallax-item egg-shadow"><img src="img/store/browse/activity_egg_shadow.png"></div>
+		</div>
+		<div data-depth="0.2" class="layer">
+			<div class="parallax-item  board"><img src="img/store/browse/activity_board.png"></div>
+		</div>
+		<div data-depth="0.4" class="layer shadow">
+			<div class="parallax-item board-shadow"><img src="img/store/browse/activity_board_shadow.png"></div>
+		</div>
+		<div data-depth="1" class="layer">
+			<div class="parallax-item  spoon"><img src="img/store/browse/activity_spoon.png"></div>
+		</div>
+		<div data-depth="1.2" class="layer shadow">
+			<div class="parallax-item spoon-shadow"><img src="img/store/browse/activity_spoon_shadow.png"></div>
+		</div>
+		<div data-depth="0.2" class="layer">
+			<div class="parallax-item  tool"><img src="img/store/browse/activity_tool.png"></div>
+		</div>
+		<div data-depth="0.4" class="layer shadow">
+			<div class="parallax-item tool-shadow"><img src="img/store/browse/activity_tool_shadow.png"></div>
+		</div>
+	</div>
+
 	<div class="banner-area">
 		<div class="item">
 			<img src="img/store/browse/activity_banner1.png">
 		</div>
-		<div class="switcher">
-			<div class="item selected"></div>
-			<div class="item"></div>
-			<div class="item"></div>
-		</div>
 	</div>
 </div>
-<div class="screen-other-store">
-	<h2 class="title">其他店家推薦</h2>
+<div class="screen screen-other-store">
+	<div id="other-store-trigger" class="spacer s0"></div>
+	<div class="perspective">
+		<div class="title">
+			<div class="front">其他店家推薦</div>
+			<div class="down">
+				<h2>其他店家推薦</h2>
+			</div>
+		</div>
+	</div>
 	<div class="store-list">
 		<div class="top-list">
 			<div class="item">
-				<img src="img/store/browse/other_store1.png">
+				<div class="black-img"></div>
+				<div class="color-img"></div>
 			</div>
 			<div class="item">
-				<img src="img/store/browse/other_store1.png">
+				<div class="black-img"></div>
+				<div class="color-img"></div>
 			</div>
 			<div class="item only-pc">
-				<img src="img/store/browse/other_store1.png">
+				<div class="black-img"></div>
+				<div class="color-img"></div>
 			</div>
 		</div>
 		<div class="bottom-list">
 			<div class="item">
-				<img src="img/store/browse/other_store1.png">
+				<div class="black-img"></div>
+				<div class="color-img"></div>
 			</div>
 			<div class="item">
-				<img src="img/store/browse/other_store1.png">
+				<div class="black-img"></div>
+				<div class="color-img"></div>
 			</div>
 			<div class="item only-pc">
-				<img src="img/store/browse/other_store1.png">
+				<div class="black-img"></div>
+				<div class="color-img"></div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="screen-messages">
-	<h2 class="title">留言板</h2>
+<div class="screen screen-messages">
+	<div id="messages-trigger" class="spacer s0"></div>
+	<div class="perspective">
+		<div class="title">
+			<div class="front">留言板</div>
+			<div class="down">
+				<h2>留言板</h2>
+			</div>
+		</div>
+	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content"><textarea placeholder="登入後開始留言..." rows="5"></textarea></div>
+			<div class="mem-pic col-lg-2"><img src="img/store/browse/member_photo_test.png"></div>
+			<div class="content col-lg-10"><textarea placeholder="登入後開始留言..." rows="5"></textarea>
+			<button id="send-message-btn">留言</button>
+			</div>
 		</div>
 	</div>
 	<div class="messages-area">
 		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content">
-				<p class="name">小架純</p>
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
-				<div class="setting-area">
-					<div class="report">
-						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-<!-- 				<div class="reply-area">
-					<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-					<div class="content">
-					<p class="name">小架純</p>
-					<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
-					<div class="setting-area">
-						<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
-					</div>
-					</div>
-				</div> -->
-			</div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content">
-				<p class="name">小架純</p>
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+			<div class="mem-pic col-lg-2"><img src="img/store/browse/member_photo_test.png"></div>
+			<div class="content col-lg-10">
+				<p class="name">小架純<span class="datetime">2017/10/08 11:30</span></p>
+				<p>上次吃過這家滿好吃的!</p>
 				<div class="setting-area">
 					<div class="report">
 						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
@@ -315,55 +415,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content">
-				<p class="name">小架純</p>
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
-				<div class="setting-area">
-					<div class="report">
-						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content">
-				<p class="name">小架純</p>
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
-				<div class="setting-area">
-					<div class="report">
-						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content">
-				<p class="name">小架純</p>
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
-				<div class="setting-area">
-					<div class="report">
-						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
-			<div class="content">
-				<p class="name">小架純</p>
-				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
-				<div class="setting-area">
-					<div class="report">
-						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-		</div>
-
+		<div class="more-message">看更多...</div>
 	</div>
 </div>
 
@@ -412,13 +464,13 @@
 	</footer>
 	
 <script type="text/javascript">
-function initMap() {
+$(document).ready(function(){
+	initParallax("activity-parallax");
+	allSlickSetting();
+	initAllScrollMagicScene();
 	initBreadCarNowLocationMap("map-now");
-}
-animate_illustration("bottom-city", "start");
+	setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
+});	
 </script>
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYNlq7nKbzULI84W-62PA9ICijVFN6Qeg&callback=initMap">
-    </script>
 </body>
 </html>
