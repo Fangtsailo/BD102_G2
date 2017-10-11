@@ -40,26 +40,21 @@
 
     var bodyClass = document.body.classList,
     lastScrollY = 80;
-<<<<<<< HEAD
+
 
     var subtitleClass= document.getElementById("subtitle").classList;
 
 
-=======
->>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
+
 	window.addEventListener('scroll', function(){
  	 var st = this.scrollY;
   		if( st > lastScrollY) {
   	  		bodyClass.add('hideUp');
-<<<<<<< HEAD
   	  		subtitleClass.add('hideUp_sub');
   		}else{
     		bodyClass.remove('hideUp');
     		subtitleClass.remove('hideUp_sub');
-=======
-  		}else{
-    		bodyClass.remove('hideUp');
->>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
+
   		}
   		lastScrollY = st;
 	});
