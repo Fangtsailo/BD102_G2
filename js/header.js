@@ -39,14 +39,20 @@
 
 
     var bodyClass = document.body.classList,
-    lastScrollY = 0;
+    lastScrollY = 80;
+
+    var subtitleClass= document.getElementById("subtitle").classList;
+
+
 	window.addEventListener('scroll', function(){
  	 var st = this.scrollY;
  	 // 判斷是向上捲動，而且捲軸超過 200px
   		if( st > lastScrollY) {
-  	  		bodyClass.remove('hideUp');
+  	  		bodyClass.add('hideUp');
+  	  		subtitleClass.add('hideUp_sub');
   		}else{
-    		bodyClass.add('hideUp');
+    		bodyClass.remove('hideUp');
+    		subtitleClass.remove('hideUp_sub');
   		}
   		lastScrollY = st;
 	});
