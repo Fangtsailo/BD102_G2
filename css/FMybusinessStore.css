@@ -29,7 +29,7 @@ header {
   left: 0;
   top: 160px; }
   .LeftBusiness .nav-Group1 {
-    margin-top: 30px; }
+    margin-top: 50px; }
   .LeftBusiness div div:nth-child(1) {
     width: 200px;
     height: 57px;
@@ -53,20 +53,18 @@ header {
   .LeftBusiness div div:nth-child(2) {
     width: 180px;
     height: 60px;
-    background-color: #D9E8FF;
-    border-radius: 6px;
+    background-color: #4289FF;
     margin-top: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(2) h3 {
       position: absolute;
       line-height: 60px;
-      left: 60px;
+      left: 90px;
       top: 0;
       bottom: 0;
       margin: auto;
       font-size: 18px;
-      color: #fff;
-      color: #4289FF; }
+      color: #fff; }
     .LeftBusiness div div:nth-child(2) svg {
       display: inline-block;
       position: absolute;
@@ -74,8 +72,6 @@ header {
       bottom: 0;
       left: 30px;
       margin: auto; }
-      .LeftBusiness div div:nth-child(2) svg .cls-ar {
-        fill: #4289FF; }
       .LeftBusiness div div:nth-child(2) svg .cls-1 {
         fill: none; }
       .LeftBusiness div div:nth-child(2) svg .cls-2 {
@@ -85,20 +81,18 @@ header {
   .LeftBusiness div div:nth-child(3) {
     width: 180px;
     height: 60px;
-    background-color: #D9E8FF;
-    border-radius: 6px;
+    background-color: #4289FF;
     margin-top: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(3) h3 {
       position: absolute;
       line-height: 60px;
-      left: 60px;
+      left: 90px;
       top: 0;
       bottom: 0;
       margin: auto;
       font-size: 18px;
-      color: #fff;
-      color: #4289FF; }
+      color: #fff; }
     .LeftBusiness div div:nth-child(3) svg {
       display: inline-block;
       position: absolute;
@@ -106,8 +100,6 @@ header {
       bottom: 0;
       left: 30px;
       margin: auto; }
-      .LeftBusiness div div:nth-child(3) svg .cls-ar {
-        fill: #4289FF; }
       .LeftBusiness div div:nth-child(3) svg .cls-1 {
         fill: none; }
       .LeftBusiness div div:nth-child(3) svg .cls-2 {
@@ -117,20 +109,18 @@ header {
   .LeftBusiness div div:nth-child(4) {
     width: 180px;
     height: 60px;
-    background-color: #D9E8FF;
-    border-radius: 6px;
+    background-color: #4289FF;
     margin-top: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(4) h3 {
       position: absolute;
       line-height: 60px;
-      left: 60px;
+      left: 90px;
       top: 0;
       bottom: 0;
       margin: auto;
       font-size: 18px;
-      color: #fff;
-      color: #4289FF; }
+      color: #fff; }
     .LeftBusiness div div:nth-child(4) svg {
       display: inline-block;
       position: absolute;
@@ -138,8 +128,6 @@ header {
       bottom: 0;
       left: 30px;
       margin: auto; }
-      .LeftBusiness div div:nth-child(4) svg .cls-ar {
-        fill: #4289FF; }
       .LeftBusiness div div:nth-child(4) svg .cls-1 {
         fill: none; }
       .LeftBusiness div div:nth-child(4) svg .cls-2 {
@@ -150,11 +138,14 @@ header {
 .CenterBusiness {
   margin-top: 260px;
   width: 70%;
+  height: 1800px;
   margin: auto; }
   .CenterBusiness .subtitle {
-    height: 100px;
-    text-align: center;
-    padding-top: 20px; }
+    height: 100px; }
+    .CenterBusiness .subtitle h2 {
+      text-align: center;
+      line-height: 100px;
+      color: #4289FF; }
   .CenterBusiness .content-table table {
     width: 80%;
     background-color: #fff;
@@ -173,6 +164,7 @@ header {
         .CenterBusiness .content-table table tr th div {
           height: 40px;
           width: 80%;
+          min-width: 86px;
           background-color: #F2EBD4;
           margin-right: 0;
           margin-left: 0;
@@ -183,11 +175,10 @@ header {
         text-align: center;
         width: 80%;
         border-bottom: 1px solid #ccc; }
-      .CenterBusiness .content-table table tr:nth-child(1) th {
-        text-align: left;
-        padding-left: 20px;
-        color: #999;
-        font-size: 26px; }
+      .CenterBusiness .content-table table tr:nth-child(1) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
@@ -200,53 +191,50 @@ header {
         width: 90%;
         height: 40px;
         box-sizing: border-box; }
-      .CenterBusiness .content-table table tr:nth-child(5) td input {
+      .CenterBusiness .content-table table tr:nth-child(4) td input {
         width: 90%;
         height: 40px;
         box-sizing: border-box; }
-      .CenterBusiness .content-table table tr:nth-child(6) {
+      .CenterBusiness .content-table table tr:nth-child(5) {
         height: 100px; }
-        .CenterBusiness .content-table table tr:nth-child(6) th div {
+        .CenterBusiness .content-table table tr:nth-child(5) th div {
           height: 80px; }
-        .CenterBusiness .content-table table tr:nth-child(6) td div {
+        .CenterBusiness .content-table table tr:nth-child(5) td div {
           display: inline-block;
           width: 13%;
-          border: 1px solid #ddd; }
-          .CenterBusiness .content-table table tr:nth-child(6) td div:hover {
+          border: 1px solid #ddd;
+          min-width: 63px; }
+          .CenterBusiness .content-table table tr:nth-child(5) td div:hover {
             background-color: #4289FF;
             color: #fff;
             transition: 0.5s; }
-      .CenterBusiness .content-table table tr:nth-child(7) {
+      .CenterBusiness .content-table table tr:nth-child(6) {
         height: 100px; }
-        .CenterBusiness .content-table table tr:nth-child(7) th div {
+        .CenterBusiness .content-table table tr:nth-child(6) th div {
           height: 80px;
           line-height: 80px; }
-        .CenterBusiness .content-table table tr:nth-child(7) td label {
+        .CenterBusiness .content-table table tr:nth-child(6) td label {
           display: inline-block;
           margin: 20px; }
-      .CenterBusiness .content-table table tr:nth-child(8) {
+      .CenterBusiness .content-table table tr:nth-child(7) {
         height: 180px; }
-        .CenterBusiness .content-table table tr:nth-child(8) th div {
+        .CenterBusiness .content-table table tr:nth-child(7) th div {
           height: 160px;
           line-height: 160px; }
-        .CenterBusiness .content-table table tr:nth-child(8) td textarea {
+        .CenterBusiness .content-table table tr:nth-child(7) td textarea {
           display: block;
           margin-top: 0;
           margin-bottom: 0;
-          margin: auto;
-          width: 90%;
-          height: 140px;
-          border: 1px solid #ccc;
-          resize: none; }
-      .CenterBusiness .content-table table tr:nth-child(9) {
+          margin: auto; }
+      .CenterBusiness .content-table table tr:nth-child(8) {
         height: 220px; }
-        .CenterBusiness .content-table table tr:nth-child(9) th div {
+        .CenterBusiness .content-table table tr:nth-child(8) th div {
           height: 200px;
           line-height: 200px; }
-        .CenterBusiness .content-table table tr:nth-child(9) td {
+        .CenterBusiness .content-table table tr:nth-child(8) td {
           position: relative; }
-          .CenterBusiness .content-table table tr:nth-child(9) td div {
-            width: 90%;
+          .CenterBusiness .content-table table tr:nth-child(8) td div {
+            width: 50%;
             height: 160px;
             border: 1px solid #ccc;
             position: relative;
@@ -256,22 +244,21 @@ header {
             left: 0;
             margin: auto;
             padding-top: 5%; }
-            .CenterBusiness .content-table table tr:nth-child(9) td div div {
+            .CenterBusiness .content-table table tr:nth-child(8) td div div {
               height: 80%;
               width: 100%;
               border: none; }
-              .CenterBusiness .content-table table tr:nth-child(9) td div div input {
+              .CenterBusiness .content-table table tr:nth-child(8) td div div input {
                 display: none; }
-              .CenterBusiness .content-table table tr:nth-child(9) td div div img {
+              .CenterBusiness .content-table table tr:nth-child(8) td div div img {
                 display: block;
                 margin: auto; }
-              .CenterBusiness .content-table table tr:nth-child(9) td div div span {
+              .CenterBusiness .content-table table tr:nth-child(8) td div div span {
                 display: block;
                 font-size: 8px; }
   .CenterBusiness .commit {
     text-align: center;
-    padding-top: 50px;
-    margin-bottom: 100px; }
+    padding-top: 50px; }
     .CenterBusiness .commit input {
       border: none;
       width: 150px;
@@ -281,47 +268,15 @@ header {
         margin-right: 10px;
         border: 1px solid #F06428;
         background-color: #fff;
-        color: #F06428;
-        display: inline-block; }
-        .CenterBusiness .commit input:nth-child(1):hover {
-          color: #fff;
-          background-color: #F06428;
-          transition: 0.5s; }
+        color: #F06428; }
       .CenterBusiness .commit input:nth-child(2) {
         margin-left: 10px;
         border: 1px solid #F06428;
         background-color: #F06428;
-        color: #fff;
-        display: inline-block; }
-        .CenterBusiness .commit input:nth-child(2):hover {
-          color: #F06428;
-          background-color: #fff;
-          transition: 0.5s; }
+        color: #fff; }
 
 footer {
   width: 100vw;
   height: 50px;
   position: fixed;
   bottom: 0; }
-
-@media screen and (max-width: 940px) {
-  .LeftBusiness {
-    display: none; } }
-@media screen and (max-width: 767px) {
-  .CenterBusiness {
-    width: 90%; }
-    .CenterBusiness .content-table table {
-      width: 100%; }
-      .CenterBusiness .content-table table tr th {
-        width: 30%; }
-        .CenterBusiness .content-table table tr th div {
-          min-width: 10px; }
-      .CenterBusiness .content-table table tr td {
-        width: 70%; }
-      .CenterBusiness .content-table table tr:nth-child(6) td div {
-        font-size: 14px; } }
-@media screen and (max-width: 912px) {
-  .CenterBusiness {
-    width: 90%; }
-    .CenterBusiness .content-table table tr th div {
-      font-size: 14px; } }
