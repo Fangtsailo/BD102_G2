@@ -28,35 +28,48 @@
 
     //   //當高度小於100時，關閉區塊 
     //   	if($this_Top < 100){
-    //     　　　$('.globalHead').stop().animate({top:"-80px"});
+    //     　　　$('.globalHead').stop().animate({top:"-80px"},';linear');
     //     　　}
     //     if($this_Top > 100){
-    //     　　　$('.globalHead').stop().animate({top:"0px"});
+    //     　　　$('.globalHead').stop().animate({top:"0px"},'linear');
     //     　　}
     //     　　
     // }).scroll();
 
-
+    // console.log('12345');
 
     var bodyClass = document.body.classList,
     lastScrollY = 80;
+<<<<<<< HEAD
 
     var subtitleClass= document.getElementById("subtitle").classList;
 
 
+=======
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	window.addEventListener('scroll', function(){
  	 var st = this.scrollY;
- 	 // 判斷是向上捲動，而且捲軸超過 200px
   		if( st > lastScrollY) {
   	  		bodyClass.add('hideUp');
+<<<<<<< HEAD
   	  		subtitleClass.add('hideUp_sub');
   		}else{
     		bodyClass.remove('hideUp');
     		subtitleClass.remove('hideUp_sub');
+=======
+  		}else{
+    		bodyClass.remove('hideUp');
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
   		}
   		lastScrollY = st;
 	});
 
+
+   $("#burgerBtn").click(function (e) { //點擊選單按鈕時
+            e.preventDefault(); //停止
+            $("#menu").toggleClass("show");
+            $(".burgerMenu").toggleClass("active"); //在#menu增加Class
+        });
 
 
 

@@ -381,6 +381,9 @@ header.globalHead {
   header.globalHead .burgerMenu {
     display: none; }
 
+#menu {
+  display: none; }
+
 footer {
   width: 100%;
   height: 200px;
@@ -618,4 +621,95 @@ footer {
       top: 0;
       bottom: 0;
       left: 0;
-      margin: auto; } }
+      margin: auto; }
+      header.globalHead .burgerMenu span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        left: 15px;
+        background-color: #fbf8f1;
+        border-radius: 4px;
+        position: absolute;
+        margin: auto;
+        transition: .3s ease; }
+        header.globalHead .burgerMenu span:nth-of-type(1) {
+          top: 5px; }
+        header.globalHead .burgerMenu span:nth-of-type(2) {
+          top: 16px; }
+        header.globalHead .burgerMenu span:nth-of-type(3) {
+          top: 27px; }
+      header.globalHead .burgerMenu.active {
+        transition: .3s ease; }
+        header.globalHead .burgerMenu.active span:nth-of-type(1) {
+          transform: rotate(-45deg);
+          transition: .3s ease;
+          top: 20px; }
+        header.globalHead .burgerMenu.active span:nth-of-type(2) {
+          display: none; }
+        header.globalHead .burgerMenu.active span:nth-of-type(3) {
+          transform: rotate(45deg);
+          top: 20px;
+          transition: .3s ease; }
+    header.globalHead #menu {
+      display: block;
+      position: fixed;
+      top: 80px;
+      background-color: rgba(0, 0, 0, 0.5); }
+      header.globalHead #menu.hideMenu {
+        left: -375px;
+        transition: all 0.3s ease; }
+      header.globalHead #menu.show {
+        left: 0;
+        transition: all 0.3s ease; }
+      header.globalHead #menu ul {
+        display: block;
+        width: 375px;
+        min-width: 320px;
+        background: rgba(128, 89, 52, 0.9);
+        /* Old browsers */
+        background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* IE10+ */
+        background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+        /* IE6-9 */ }
+        header.globalHead #menu ul li {
+          display: block;
+          padding: 10px;
+          color: #fbf8f1; }
+          header.globalHead #menu ul li.closeMenu span {
+            width: 30px;
+            display: block;
+            float: right;
+            fill: #fbf8f1; }
+          header.globalHead #menu ul li.memPart {
+            height: 60px; }
+            header.globalHead #menu ul li.memPart .memPic {
+              width: 30%;
+              height: 100%;
+              float: left; }
+              header.globalHead #menu ul li.memPart .memPic img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%; }
+            header.globalHead #menu ul li.memPart span {
+              width: 70%;
+              height: 100%;
+              display: block;
+              float: left;
+              margin: auto;
+              line-height: 50px;
+              text-align: center; }
+          header.globalHead #menu ul li.listTitle {
+            font-size: 1.2em; }
+          header.globalHead #menu ul li a {
+            color: #fbf8f1;
+            font-weight: 400; } }

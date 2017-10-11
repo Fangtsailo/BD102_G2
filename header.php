@@ -180,25 +180,46 @@
 <!-- 頁首RWD手機版版面 -->
 		
 
-	<!-- 右側搜尋icon -->
+<!-- 右側搜尋icon -->
 	<div class="rwd_headerSearch">
 		<div class="svg">
 			<svg  width="32" height="32" viewBox="0 0 38 38"><path  width="30" height="30" class="searchIcon" d="M37.4,36.7L36,38.1L24.9,26.9c2.8-2.4,4.6-5.9,4.6-9.9c0-7.2-5.8-13-13-13s-13,5.8-13,13s5.8,13,13,13c2.5,0,4.8-0.7,6.8-1.9l1.4,1.4c-2.4,1.6-5.2,2.5-8.2,2.5c-8.3,0-15-6.7-15-15s6.7-15,15-15s15,6.7,15,15c0,3.8-1.4,7.2-3.7,9.9L37.4,36.7z"/></svg>
 		</div>
 	</div>
 	
-	<!-- 左側漢堡選單 -->
-	<div class="burgerMenu">
-		<div class="svg">
-			<svg width="32" height="32"  viewBox="0 0 317.825 317.825" >
-				<g style="width: 32px; height: 32px;">
-				<path d="M301.934,143.021H15.891C7.119,143.021,0,150.14,0,158.912c0,8.772,7.119,15.891,15.891,15.891      h286.042c8.74,0,15.891-7.119,15.891-15.891C317.825,150.14,310.674,143.021,301.934,143.021z" fill="#FFFFFF"/>
-				<path d="M15.891,79.456h286.042c8.74,0,15.891-7.119,15.891-15.891s-7.151-15.891-15.891-15.891H15.891      C7.119,47.674,0,54.793,0,63.565S7.119,79.456,15.891,79.456z" fill="#FFFFFF"/>
-				<path d="M301.934,238.369H15.891C7.119,238.369,0,245.52,0,254.26c0,8.74,7.119,15.891,15.891,15.891      h286.042c8.74,0,15.891-7.151,15.891-15.891C317.825,245.52,310.674,238.369,301.934,238.369z" fill="#FFFFFF"/>
-			</g>
-			</svg>
-		</div>
+<!-- 左側漢堡選單 -->
+	<div class="burgerMenu" id="burgerBtn">
+			<span></span>
+			<span></span>
+			<span></span>
 	</div>
+	<nav id="menu" class="hideMenu">	
+	<ul>
+		<!-- <li class="closeMenu">
+			<span>
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+			<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+				</svg>
+			</span>
+			<div class="clearfix"></div>
+		</li> -->
+		<li class="memPart">
+			<div class="memPic">
+				<img id="memPic" src="img/homepage/user.png">
+			</div>
+			<span id="memId">Bakery Boss</span>
+			<div class="clearfix"></div>
+		</li>
+		<li class="listTitle">會員專區</li>
+		<li class="navItem"><a href="#">基本資料</a></li>
+		<li class="navItem"><a href="#">我的追蹤</a></li>
+		<li class="navItem"><a href="#">我的留言</a></li>
+		<li class="navItem"><a href="#">我的報名</a></li>
+		<li class="navItem"><a href="#">成為店長</a></li>
+		<li class="navItem"><a href="#">登出</a></li>
+	</ul>
+	</nav>
 
 	</header>
 <!-- ======================================================header 頁首結束========================================================= -->	
