@@ -470,7 +470,7 @@
 
 <!-- ==============right fixed content================== -->
 
-	<div class="CoverRightMy">
+	<div class="CoverRightMy" id="CoverRightMy">
 		
 		<ul>
 			<li>會員專區</li>

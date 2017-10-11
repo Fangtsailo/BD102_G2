@@ -43,7 +43,7 @@
 
 
     var subtitleClass= document.getElementById("subtitle").classList;
-
+    var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
 
 
 	window.addEventListener('scroll', function(){
@@ -51,10 +51,11 @@
   		if( st > lastScrollY) {
   	  		bodyClass.add('hideUp');
   	  		subtitleClass.add('hideUp_sub');
+  	  		CoverRightMyClass.add('hideUp_sub_burger');
   		}else{
     		bodyClass.remove('hideUp');
     		subtitleClass.remove('hideUp_sub');
-
+    		CoverRightMyClass.remove('hideUp_sub_burger');
   		}
   		lastScrollY = st;
 	});
