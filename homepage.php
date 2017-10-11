@@ -168,7 +168,7 @@ require_once("header.php");
 			</div>
 		</div>
 		
-		<div class="chooseBtn">看下一家</div>
+	<!-- 	<div class="chooseBtn">看下一家</div> -->
 	</section>
 
 
@@ -339,14 +339,14 @@ require_once("header.php");
 		<div class="clearfix"></div>
 	</section>
 
-	<ul id="navBtn">
+	<!-- <ul id="navBtn">
 		<li class="section1-click"><a href="#section1"></a></li>
 		<li class="section2-click"><a href="#section2"></a></li>
 		<li class="section3-click"><a href="#section3"></a></li>
 		<li class="section4-click"><a href="#section4"></a></li>
 		<li class="section5-click"><a href="#section5"></a></li>
 		<li class="section6-click"><a href="#section6"></a></li>
-	</ul>
+	</ul> -->
 
 
  	<?php 
