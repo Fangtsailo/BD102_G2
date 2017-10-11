@@ -219,7 +219,7 @@ new ScrollMagic.Scene({
 				.addTo(controller);
 
 new ScrollMagic.Scene({
-					triggerElement: "#product-trigger", duration: 300
+					triggerElement: "#product-trigger", duration: 300, offset:-50
 				})
 				.setTween([TweenMax.to($(".screen-product .perspective .title"),
 		        1, {
@@ -270,7 +270,7 @@ new ScrollMagic.Scene({
 				.addIndicators({name: "1 (product: 0)"})
 				.addTo(controller);
 new ScrollMagic.Scene({
-					triggerElement: "#activity-trigger", duration: 300, offset: -100
+					triggerElement: "#activity-trigger", duration: 300, offset: -250
 				})
 				.setTween([TweenMax.to($(".screen-activity .perspective .title"),
 		        1, {
@@ -289,7 +289,7 @@ new ScrollMagic.Scene({
 				.addIndicators({name: "activity"})
 				.addTo(controller);
 new ScrollMagic.Scene({
-					triggerElement: "#other-store-trigger", duration: 300
+					triggerElement: "#other-store-trigger", duration: 300, offset:-200
 				})
 				.setTween([TweenMax.to($(".screen-other-store .perspective .title"),
 		        1, {
@@ -308,7 +308,7 @@ new ScrollMagic.Scene({
 				.addIndicators({name: "other-store"})
 				.addTo(controller);
 new ScrollMagic.Scene({
-					triggerElement: "#messages-trigger", duration: 300
+					triggerElement: "#messages-trigger", duration: 300, offset: -230
 				})
 				.setTween([TweenMax.to($(".screen-messages .perspective .title"),
 		        1, {

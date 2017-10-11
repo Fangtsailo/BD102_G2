@@ -1,9 +1,19 @@
 /*===========================================================*/
+button {
+  cursor: pointer; }
+
+.pointer {
+  cursor: pointer; }
+
+.clear {
+  clear: both; }
+
 .perspective {
   width: 200px;
   height: 50px;
   margin: auto;
-  perspective: 500px; }
+  perspective: 500px;
+  margin-bottom: 50px; }
 
 .overflow {
   overflow: hidden; }
@@ -26,7 +36,9 @@ img {
 .screen {
   padding-top: 150px;
   box-sizing: border-box;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 100vh;
+  padding-bottom: 50px; }
 
 .screen-1 {
   height: 100vh;
@@ -41,8 +53,6 @@ img {
     animation: banners-slide 18s 2s infinite; }
 @keyframes banners-slide {
   0% {
-    background-image: url("../img/store/browse/screen1-bg.png"); }
-  16.66% {
     background-image: url("../img/store/browse/screen1-bg.png"); }
   33.33% {
     background-image: url("../img/store/browse/screen1-bg2.jpg"); }
@@ -70,6 +80,8 @@ img {
       margin: auto;
       width: 150px;
       margin-top: -50px; }
+      .screen-1 .detail-box .store-logo img {
+        width: 100%; }
     .screen-1 .detail-box .store-name {
       text-align: center;
       font-size: 36px;
@@ -216,7 +228,7 @@ img {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #fbf8f1;
+    background-color: transparent;
     font-size: 28px;
     color: #9e693d;
     transform-style: preserve-3d;
@@ -296,7 +308,7 @@ img {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #9e693d;
+    background-color: transparent;
     font-size: 28px;
     color: #fbf8f1;
     transform-style: preserve-3d;
@@ -331,7 +343,6 @@ img {
     margin: auto;
     background-image: url("../img/store/browse/star_light.png"); }
   .screen-product .product {
-    padding: 30px 0px;
     overflow: hidden;
     max-width: 800px;
     width: 100%;
@@ -491,7 +502,7 @@ img {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #fbf8f1;
+    background-color: transparent;
     font-size: 28px;
     color: #9e693d;
     transform-style: preserve-3d;
@@ -516,7 +527,6 @@ img {
       background-color: #fbf8f1;
       color: #9e693d; }
   .screen-activity .banner-area {
-    padding-top: 50px;
     max-width: 700px;
     width: 100%;
     margin: auto;
@@ -546,7 +556,7 @@ img {
       background-size: 100%; }
 
 .screen-other-store {
-  height: 100vh;
+  padding-bottom: 50px;
   background-color: #9e693d; }
   .screen-other-store img {
     width: 100%;
@@ -557,7 +567,7 @@ img {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #9e693d;
+    background-color: transparent;
     font-size: 28px;
     color: #fbf8f1;
     transform-style: preserve-3d;
@@ -585,21 +595,48 @@ img {
     max-width: 1000px;
     margin: auto; }
     .screen-other-store .top-list .item, .screen-other-store .bottom-list .item {
+      overflow: hidden;
       width: 33.333333%;
-      display: inline-block; }
+      display: inline-block;
+      position: relative;
+      padding: 0; }
+      .screen-other-store .top-list .item img, .screen-other-store .bottom-list .item img {
+        transition: transform 2s; }
+      .screen-other-store .top-list .item:hover img, .screen-other-store .bottom-list .item:hover img {
+        transform: scale(2); }
+      .screen-other-store .top-list .item .detail, .screen-other-store .bottom-list .item .detail {
+        font-size: 16px;
+        position: absolute;
+        color: #996633;
+        background-color: rgba(0, 0, 0, 0.5);
+        bottom: 0;
+        width: 100%;
+        min-height: 50px;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box; }
+        .screen-other-store .top-list .item .detail p, .screen-other-store .bottom-list .item .detail p {
+          color: #ccc; }
+        .screen-other-store .top-list .item .detail h3, .screen-other-store .bottom-list .item .detail h3 {
+          margin-bottom: 10px;
+          color: #fbf8f1; }
 
 .screen-messages {
-  height: 100vh;
-  background-color: black; }
+  position: relative;
+  background-color: #E6B98F; }
   .screen-messages img {
     width: 100%; }
+  .screen-messages .small-icon {
+    width: 50px; }
+  .screen-messages .normal-icon {
+    width: 100px; }
   .screen-messages .title {
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #fbf8f1;
+    background-color: transparent;
     font-size: 28px;
-    color: #9e693d;
+    color: #fbf8f1;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     position: relative; }
@@ -610,8 +647,8 @@ img {
       position: absolute;
       top: 0;
       left: 0;
-      color: #fbf8f1;
-      background-color: #9e693d; }
+      color: rgba(51, 153, 255, 0.3);
+      background-color: #fbf8f1; }
     .screen-messages .title .front {
       width: 100%;
       height: 100%;
@@ -619,18 +656,23 @@ img {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: #fbf8f1;
-      color: #9e693d; }
+      background-color: rgba(51, 153, 255, 0.3);
+      color: #fbf8f1; }
+  .screen-messages .message-icons {
+    position: absolute; }
   .screen-messages .send-message-area {
     padding-top: 50px; }
   .screen-messages .messages-area {
-    height: 70vh;
     margin: auto;
     max-width: 781px;
     width: 100%;
     box-sizing: border-box; }
     .screen-messages .messages-area .more-message {
-      text-align: center; }
+      text-align: center;
+      width: 100px;
+      padding: 10px;
+      margin: auto;
+      background-color: #3399ff; }
   .screen-messages .messages-area textarea, .screen-messages .send-message-area textarea {
     width: 100%;
     border: 0;
@@ -638,7 +680,6 @@ img {
     resize: none; }
   .screen-messages .messages-area .message-box, .screen-messages .send-message-area .message-box {
     box-sizing: border-box;
-    overflow: hidden;
     max-width: 770px;
     width: 100%;
     padding-right: 10px;
@@ -650,21 +691,32 @@ img {
       border: 1px solid #f2ebd4;
       width: 50px;
       height: 30px;
-      color: #3399ff; }
-    .screen-messages .messages-area .message-box .mem-pic img, .screen-messages .send-message-area .message-box .mem-pic img {
-      width: 70px;
-      height: 70px; }
+      color: #3399ff;
+      float: right; }
+      .screen-messages .messages-area .message-box #send-message-btn:hover, .screen-messages .send-message-area .message-box #send-message-btn:hover {
+        color: white;
+        background-color: #3399ff; }
     .screen-messages .messages-area .message-box .content, .screen-messages .send-message-area .message-box .content {
       background-color: #fbf8f1;
       position: relative;
       border-radius: 3px;
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
       font-size: 15px;
+      /* firefox 19+ */
+      /* ie */
       padding: 10px; }
+      .screen-messages .messages-area .message-box .content ::-webkit-input-placeholder, .screen-messages .send-message-area .message-box .content ::-webkit-input-placeholder {
+        font-size: 16px; }
+      .screen-messages .messages-area .message-box .content ::-moz-placeholder, .screen-messages .send-message-area .message-box .content ::-moz-placeholder {
+        font-size: 16px; }
+      .screen-messages .messages-area .message-box .content :-ms-input-placeholder, .screen-messages .send-message-area .message-box .content :-ms-input-placeholder {
+        font-size: 16px; }
+      .screen-messages .messages-area .message-box .content input:-moz-placeholder, .screen-messages .send-message-area .message-box .content input:-moz-placeholder {
+        font-size: 16px; }
       .screen-messages .messages-area .message-box .content .datetime, .screen-messages .send-message-area .message-box .content .datetime {
         float: right;
         font-size: 12px;
-        color: #ccc; }
+        color: #b5b1b1; }
       .screen-messages .messages-area .message-box .content p, .screen-messages .send-message-area .message-box .content p {
         max-width: 570px;
         width: 100%;
@@ -683,7 +735,8 @@ img {
         top: 18px; }
       .screen-messages .messages-area .message-box .content .name, .screen-messages .send-message-area .message-box .content .name {
         color: #603813;
-        font-size: 16px; }
+        font-size: 16px;
+        margin-bottom: 10px; }
       .screen-messages .messages-area .message-box .content .setting-area, .screen-messages .send-message-area .message-box .content .setting-area {
         width: 100px;
         float: right;
@@ -815,7 +868,11 @@ img {
     width: 25%; }
 
   #bread-detail {
-    display: none; } }
+    display: none; }
+
+  .screen-messages .send-message-area .message-box .mem-pic img, .screen-messages .messages-area .message-box .mem-pic img {
+    width: 70px;
+    height: 70px; } }
 @media screen and (max-width: 767px) {
   .col-xs-1 {
     float: left;
@@ -908,8 +965,6 @@ img {
         margin-top: -50px;
         height: 100px;
         float: left; }
-        .screen-1 .detail-box .store-logo img {
-          width: 100%; }
       .screen-1 .detail-box .detail {
         padding: 0; }
         .screen-1 .detail-box .detail .trace {
@@ -929,6 +984,8 @@ img {
   .screen:not(:first-of-type) {
     padding-top: 100px; }
 
+  .screen-bread-car-map .perspective {
+    margin-bottom: 0px; }
   .screen-bread-car-map #bread-car {
     height: 40px; }
 
@@ -1010,4 +1067,20 @@ img {
   .screen-activity #activity-parallax .tool-shadow {
     width: 130px;
     right: -20vw;
-    top: 52vh; } }
+    top: 52vh; }
+
+  .screen-messages .send-message-area .message-box, .screen-messages .messages-area .message-box {
+    background-color: #fbf8f1;
+    position: relative;
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px;
+    width: auto; }
+    .screen-messages .send-message-area .message-box .mem-pic img, .screen-messages .messages-area .message-box .mem-pic img {
+      width: 50px;
+      height: 50px; }
+    .screen-messages .send-message-area .message-box .content, .screen-messages .messages-area .message-box .content {
+      overflow: hidden; }
+      .screen-messages .send-message-area .message-box .content:before, .screen-messages .messages-area .message-box .content:before {
+        display: none; } }

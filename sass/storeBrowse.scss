@@ -7,7 +7,7 @@
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	background-color: $bgColor;
+	background-color: transparent;
 	font-size: $globalh2Size;
 	color: $color;
 	transform-style: preserve-3d;
@@ -34,12 +34,22 @@
 	    color: $color;
     }
 }
+button {
+	cursor: pointer;
+}
+.pointer {
+	cursor: pointer;
+}
+.clear {
+	clear: both;
+}
 //3d透視點
 .perspective {
 	width: 200px;
 	height: 50px;
 	margin: auto;
 	perspective: 500px;
+	margin-bottom: 50px;
 }
 //透明主色背景, 主要在說明文
 @mixin describeBg {
@@ -67,6 +77,8 @@ img {
 	padding-top: 150px;
 	box-sizing: border-box;
 	overflow: hidden;
+	min-height: 100vh;
+	padding-bottom: 50px;
 }
 .screen-1 {
 	height: $storeBrowseScreenHeight;
@@ -95,7 +107,6 @@ img {
 	}
 	@keyframes banners-slide {
 		0% { background-image:url("../img/store/browse/screen1-bg.png")}
-		16.66% { background-image: url("../img/store/browse/screen1-bg.png")}
 		33.33% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
 		46.99% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
 		66.66% { background-image: url("../img/store/browse/screen1-bg3.png")}
@@ -118,6 +129,9 @@ img {
 			}
 		}
 		.store-logo {
+		img {
+			width: 100%;
+		}
 			margin: auto;
 			width: 150px;
 			margin-top: -50px;
@@ -378,7 +392,6 @@ img {
 		background-image: url("../img/store/browse/star_light.png");
 	}
 	.product {
-		padding: 30px 0px;
 		overflow: hidden;
 		max-width: 800px;
 		width: 100%;
@@ -567,7 +580,6 @@ img {
 		@include title($globalBgColor, $globalHdColor02);
 	}
 	.banner-area {
-		padding-top: 50px;
 		max-width: 700px;
 		width: 100%;
 		margin: auto;
@@ -600,7 +612,7 @@ img {
 	}
 }
 .screen-other-store {
-	height: $storeBrowseScreenHeight;
+	padding-bottom:50px;
 	background-color: $globalHdColor02;
 	img {
 		width: 100%;
@@ -616,32 +628,77 @@ img {
 		max-width: 1000px;
 		margin: auto;
 		.item {
+			overflow: hidden;
 			width: 33.333333%;
 			display: inline-block;
-
+			position: relative;
+			padding: 0;
+			img {
+				transition: transform 2s;
+			}
+			&:hover img{
+				transform: scale(2);
+			}
+			&:hover .detail {
+				
+			}
+			.detail {
+				font-size: 16px;
+				position: absolute;
+				color: #996633;
+				background-color: rgba(0,0,0,0.5);
+				bottom: 0;
+				width: 100%;
+				min-height: 50px;
+				text-align: center;
+				padding: 10px;
+				box-sizing: border-box;
+				p {
+					color: #ccc;	
+				}
+				h3 {
+					margin-bottom: 10px;
+					color: $globalBgColor;
+				}
+			}
 		}
 	}
 }
 .screen-messages {
-	height: $storeBrowseScreenHeight;
-	background-color: black;
+	position: relative;
+	background-color: #E6B98F;
 	img {
 		width: 100%;
 	}
+	.small-icon {
+		width: 50px;
+	}
+	.normal-icon {
+		width: 100px;
+	}
+	@keyframes icon-scale {
+		
+	}
 	.title {
-		@include title($globalBgColor, $globalHdColor02);
+		@include title(rgba(51, 153, 255, 0.3), $globalBgColor);
+	}
+	.message-icons {
+		position: absolute;
 	}
 	.send-message-area {
 		padding-top: 50px;
 	}
 	.messages-area {
-	    height: 70vh;
 	    margin: auto;
 	    max-width: 781px;
 	    width: 100%;
 	    box-sizing: border-box;
 	    .more-message {
 	    	text-align: center;
+	    	width: 100px;
+	    	padding: 10px;
+	    	margin: auto;
+	    	background-color:#3399ff;
 	    }
 	}
 	.messages-area, .send-message-area {
@@ -653,7 +710,6 @@ img {
 		}
 		.message-box {
 			box-sizing: border-box;
-			overflow: hidden;
 			max-width: 770px;
 			width: 100%;
 			padding-right: 10px;
@@ -666,11 +722,10 @@ img {
 				width: 50px;
 				height: 30px;
 				color:$globalLinkColor;
-			}
-			.mem-pic {
-				img {
-					width: 70px;
-					height: 70px;
+				float: right;
+				&:hover {
+					color: white;
+					background-color: $globalLinkColor;
 				}
 			}
 			.content {
@@ -679,11 +734,15 @@ img {
 			    border-radius: 3px;
 			    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 			    font-size: 15px;
+				::-webkit-input-placeholder { font-size: 16px; }
+				::-moz-placeholder { font-size: 16px; } /* firefox 19+ */
+				:-ms-input-placeholder { font-size: 16px; } /* ie */
+				input:-moz-placeholder { font-size: 16px; }
 			    padding: 10px;
 			    .datetime {
 			    	float: right;
 			    	font-size: 12px;
-			    	color: #ccc;
+			    	color: #b5b1b1;
 			    }
 				p {
 					max-width: 570px;
@@ -706,6 +765,7 @@ img {
 				.name {
 					color: #603813;
 					font-size: 16px;
+					margin-bottom: 10px;
 				}
 				.setting-area {
 					width: 100px;
@@ -773,6 +833,18 @@ img {
 	#bread-detail {
 		display: none;
 	}
+	.screen-messages {
+		.send-message-area, .messages-area {
+			.message-box {
+			    .mem-pic {
+			    	img {
+			    		width: 70px;
+    					height: 70px;
+    				}
+			    }
+			}
+		}
+	}
 }
 // rwd=========================================
 @include rwd("mobile") {
@@ -807,9 +879,6 @@ img {
 			width: 100%;
 			top: auto;
 			.store-logo {
-				img {
-					width: 100%;
-				}
 			    margin: 10px;
 			    width: 100px;
 			    margin-top: -50px;
@@ -840,6 +909,9 @@ img {
 		padding-top: 100px;
 	}
 	.screen-bread-car-map {
+		.perspective {
+			margin-bottom: 0px;
+		}
 		#bread-car {
 			height: 40px;
 		}
@@ -954,6 +1026,32 @@ img {
 				width: 130px;
 				right: -20vw;
 				top: 52vh;
+			}
+		}
+	}
+	.screen-messages {
+		.send-message-area, .messages-area {
+			.message-box {
+				background-color: $globalBgColor;
+			    position: relative;
+			    border-radius: 3px;
+			    // box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+			    font-size: 15px;
+			    padding: 10px;
+			    margin: 10px;
+			    width: auto;
+			    .mem-pic {
+			    	img {
+				    	width: 50px;
+	    				height: 50px;
+    				}
+			    }
+			    .content {
+			    	overflow: hidden;
+			    	&:before {
+			    		display: none;
+			    	}
+			    }
 			}
 		}
 	}
