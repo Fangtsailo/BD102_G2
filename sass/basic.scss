@@ -498,6 +498,13 @@ header.globalHead {
 
 
 }
+	//RWD漢堡選單樣式
+	#menu {
+		display: none;
+	}
+
+
+
 
     
 //--------------------------footer樣式-------------------------
@@ -697,6 +704,116 @@ footer {
 			bottom: 0;
 			left: 0;
 			margin: auto;
+			span {
+				display: block;
+				width: 30px;
+				height: 4px;
+				left: 15px;
+				background-color: $globalBgColor;
+				border-radius: 4px;
+				position: absolute;
+				margin: auto;
+				transition: .3s ease;
+				&:nth-of-type(1){
+					top: 5px;
+				}
+				&:nth-of-type(2){
+					top: 16px;
+				}
+				&:nth-of-type(3){
+					top: 27px;
+				}
+			}
+			&.active {
+				// transform: rotate(360deg);
+				transition: .3s ease;
+				span {
+					&:nth-of-type(1){
+						transform: rotate(-45deg);
+						transition: .3s ease;
+						top: 20px;
+					}
+					&:nth-of-type(2){
+						display: none;
+					}
+					&:nth-of-type(3){
+						transform: rotate(45deg);
+						top: 20px;
+						transition: .3s ease;
+					}
+				}
+			}
+		}
+		#menu {
+			display: block;
+			position: fixed;
+			top: 80px;
+			
+			
+			background-color: rgba(0,0,0,0.5);
+			&.hideMenu {
+				left: -375px;
+				transition: all 0.3s ease;
+			}
+			&.show {
+				left: 0;
+				transition: all 0.3s ease;
+			}
+			ul {
+				display: block;
+				width: 375px;
+				min-width: 320px;
+				@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
+
+				
+
+				li {
+					display:block;
+					padding: 10px;
+					color:$globalBgColor;
+					
+					&.closeMenu {	
+							span {
+								width: 30px;
+								display: block;
+								float: right;
+								fill:$globalBgColor;
+							}
+					}
+					&.memPart {
+						height: 60px;
+						.memPic {
+							width: 30%;
+							height: 100%;
+							float: left;
+							img {
+								width: 50px;
+								height: 50px;
+								border-radius: 50%;
+							}
+						}
+						span {
+							width: 70%;
+							height: 100%;
+							display: block;
+							float: left;
+							margin: auto;
+							line-height: 50px;
+							text-align: center;
+						}
+						
+					}
+					&.listTitle {
+						font-size: 1.2em;	
+					}
+
+					a {
+						color:$globalBgColor;
+						font-weight: 400;
+			
+					}
+				}
+			}
 		}
 
 	}

@@ -43,6 +43,13 @@ header {
       background-color: #cfa972;
       transition: 0.5s; }
 
+.coverNavition {
+  width: 200px;
+  height: 100vh;
+  float: left;
+  position: relative;
+  left: 0; }
+
 .tableArea {
   height: 100vh;
   position: relative;

@@ -4,8 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>TREPUN</title>
+	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
+	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+	<script type="text/javascript" src="libs/page-scroll-effects/js/modernizr.js"></script>
+
+	
 </head>
 <body>
 	<?php 
@@ -23,7 +32,7 @@ require_once("header.php");
 
 
 <!-- ======================================================1st首頁搜尋========================================================= -->	
-	<section class="homeSearchBar">
+	<section class="homeSearchBar" id="section1-move">
 		
 		<!-- <img src="img/homepage/homepage_bg1.png"> -->
 		
@@ -31,14 +40,14 @@ require_once("header.php");
 			<div class="bigLogo">
 				<img src="img/trepunLogoWhite.svg">
 			</div>
-			<h2>尋找台灣巷弄間的麵包香</h2>
+			<h2 class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
 				<ul class="tabs">
-					<li class="tab_contents" id="searchShops">
-						<a href="#">店家</a>
+					<li class="tab_contents active" id="searchShops">
+						店家
 					</li>
 					<li class="tab_contents" id="searchVans">
-						<a href="#">胖小車</a>
+						胖小車
 					</li>
 				</ul>
 				<div class="searchContent">
@@ -65,47 +74,96 @@ require_once("header.php");
 					</div>
 				</div>
 			</div>
-			
-
-
 		</div>
 
 
 
 	</section>
-
+	<div id="trigger1"></div>
 
 
 
 
 <!-- ======================================================2nd首頁熱門店家========================================================= -->
-	<section class="homeTopChart">
+	<section class="homeTopChart" id="section2-move">
+
 		<p class="topChartDescrp">為您篩選出各地區的熱門麵包香，<br>尋找附近地區最熱門的麵包小店！</p>
 		<div class="titleGrp">
 			<img src="img/homepage/topChartIcon.png">
 			<h1 class="topChartTitle">精選熱門店家</h1>
 		</div>
-		<div class="shopItem">
-			<div class="shopPic">
-				<img src="img/homepage/shop1.jpg">
-				<h3>巴奇手做麵包</h3>
-				<div class="shopInfo">
-					<ul>
-						<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
-						<li><img src="img/icon/star.svg"><span>4顆星</span></li>
-						<li><img src="img/icon/follow.svg"><span>235人追蹤</span></li>
-					</ul>
+		<div id="trigger2"></div>
+		<div class="shopItemGrp">
+			<div class="shopItem">
+				<div class="shopPic">
+					<img src="img/homepage/shop1.jpg">
+					<h3>巴奇手做麵包</h3>
+					<div class="shopInfo">
+						<ul>
+							<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
+							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow.svg"><span>235人追蹤</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="shopMessage">
+					<div class="memPic">
+						<img src="">
+					</div>
+					<span>Chris</span>
+					<span id="messageTime">2小時前</span>
+					<div class="clearfix"></div>
+					<div class="message">
+						<p>居然還有自製果醬，跟他們家的白土司是絕配啊！</p>
+					</div>
 				</div>
 			</div>
-			<div class="shopMessage">
-				<div class="memPic">
-					<img src="">
+			<div class="shopItem">
+				<div class="shopPic">
+					<img src="img/homepage/shop1.jpg">
+					<h3>巴奇手做麵包</h3>
+					<div class="shopInfo">
+						<ul>
+							<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
+							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow.svg"><span>235人追蹤</span></li>
+						</ul>
+					</div>
 				</div>
-				<span>Chris</span>
-				<span id="messageTime">2小時前</span>
-				<div class="clearfix"></div>
-				<div class="message">
-					<p>居然還有自製果醬，跟他們家的白土司是絕配啊！</p>
+				<div class="shopMessage">
+					<div class="memPic">
+						<img src="">
+					</div>
+					<span>Steven</span>
+					<span id="messageTime">2小時前</span>
+					<div class="clearfix"></div>
+					<div class="message">
+						<p>我們家小孩好喜歡你們家的麵包，一直吵著要我買一整條回去...</p>
+					</div>
+				</div>
+			</div>
+			<div class="shopItem">
+				<div class="shopPic">
+					<img src="img/homepage/shop1.jpg">
+					<h3>巴奇手做麵包</h3>
+					<div class="shopInfo">
+						<ul>
+							<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
+							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow.svg"><span>235人追蹤</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="shopMessage">
+					<div class="memPic">
+						<img src="">
+					</div>
+					<span>Tiffany</span>
+					<span id="messageTime">2小時前</span>
+					<div class="clearfix"></div>
+					<div class="message">
+						<p>全麥麵包很好吃，但對我來說是有點貴貴啦QAQ</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -116,7 +174,7 @@ require_once("header.php");
 
 <!-- ======================================================3rd首頁胖小車地圖========================================================= -->
 
-	<section class="homeCarMap">
+	<section class="homeCarMap" id="section3-move">
 		<div class="carMap">
 			<h1 class="mapTitle">胖小車地圖</h1>
 			<div class="carList">
@@ -127,7 +185,7 @@ require_once("header.php");
 
 <!-- ======================================================4th首頁活動體驗========================================================= -->
 
-	<section class="homeActivity">
+	<section class="homeActivity" id="section4-move">
 		<div class="activityTitle">
 			<img src="img/homepage/actIcon.png">
 			<h1>體驗活動精選</h1>
@@ -156,34 +214,106 @@ require_once("header.php");
 		</div>
 	</section>
 <!-- ======================================================5th首頁新進店家========================================================= -->
-	<section class="homeNewshop">
+	<section class="homeNewshop" id="section5-move">
 		<div class="newShopTitle">
 			<img src="img/homepage/titleDecor1.png">
 			<h1>新進店家精選</h1>
 			<img src="img/homepage/titleDecor2.png">
 		</div>
-		<div class="newShops">
-				<div class="newShopItem">
-					<img src="img/homepage/shop1.jpg">
-					<div class="shopContent">
-						<h2>裕馥西點麵包店</h2>
-						<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-						<ul>
-							<li>
-								<img src="img/icon/mappointer1.svg">
-								<span class="newShopPlace">新北市 永和</span>
-							</li>
-							<li>
-								<img src="img/icon/reply.svg">
-								<span class="postTime">2小時前</span>
-							</li>
-							<div class="clearfix"></div>
-						</ul>
-						<a class="exploreBtn" href="#">探索更多</a>
+		<div class="newShopGrp">
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
 					</div>
+					<div class="clearfix"></div>
+				</div>   
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>   
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
-			</div>   
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>  
+			<div class="clearfix"></div>  
 		</div>
 
 	</section>
@@ -192,7 +322,7 @@ require_once("header.php");
 	
 
 
-	<section class="homeContact">
+	<section class="homeContact" id="section6-move">
 		<div class="addShop">
 				
 			<p>想跟全世界分享吃到好麵包的感動？</p>
@@ -209,12 +339,23 @@ require_once("header.php");
 		<div class="clearfix"></div>
 	</section>
 
+	<ul id="navBtn">
+		<li class="section1-click"><a href="#section1"></a></li>
+		<li class="section2-click"><a href="#section2"></a></li>
+		<li class="section3-click"><a href="#section3"></a></li>
+		<li class="section4-click"><a href="#section4"></a></li>
+		<li class="section5-click"><a href="#section5"></a></li>
+		<li class="section6-click"><a href="#section6"></a></li>
+	</ul>
 
 
  	<?php 
 
 require_once("footer.php");
  	 ?>
+<script type="text/javascript" src="slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="libs/page-scroll-effects/js/velocity.min.js"></script>
+<script type="text/javascript" src="libs/page-scroll-effects/js/velocity.ui.min.js"></script>
 <script type="text/javascript" src="js/header.js"></script>
 <script type="text/javascript" src="js/homepage.js"></script>
 

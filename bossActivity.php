@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>店長專區-活動管理</title>
-	<link rel="stylesheet" type="text/css" href="css/bossActivity.css">
+	<link rel="stylesheet" type="text/css" href="css/bossAcitivity.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 
 </head>

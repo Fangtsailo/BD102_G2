@@ -51,6 +51,12 @@
 	});
 
 
+   $("#burgerBtn").click(function (e) { //點擊選單按鈕時
+            e.preventDefault(); //停止
+            $("#menu").toggleClass("show");
+            $(".burgerMenu").toggleClass("active"); //在#menu增加Class
+        });
+
 
 
 
