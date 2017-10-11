@@ -17,7 +17,7 @@
 				</div>
 				<img src="img/trepun2.svg">
 				<p>歡迎登入找麥方麵包平台</p>	
-			</div>   
+			</div>
 			<div class="globalFormContent">
 
 				<div class="globalFormInput">

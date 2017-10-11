@@ -1,6 +1,9 @@
 
 @import 'basic/setting'; 
+<<<<<<< HEAD
 @import "../libs/bootstrap-sass/assets/stylesheets/bootstrap";
+=======
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 
 * {
 	padding: 0;
@@ -28,10 +31,17 @@ a {
 
 
 
+<<<<<<< HEAD
  
 
 .SHOPB_SHOP{
 	// width: 100%;
+=======
+
+
+.SHOPB_SHOP{
+	// width: 100vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	// height: 100vh;
 	//background-image: url("../img/店家-MONO.jpg");
 	//background-size: cover;
@@ -40,6 +50,7 @@ a {
 	//opacity: .9;
 	position: relative;
 }
+<<<<<<< HEAD
 // .banners>img{
 // 	display: block;
 // 	width: 100%;
@@ -88,6 +99,16 @@ a {
 
 #SPNAME{
 	//width: 100%;
+=======
+.SHOPB_SHOP>img{
+	display: block;
+	width: 100%;
+	height: 50vw;
+		}
+
+#SPNAME{
+	//width: 100vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	height:6vw;
 	line-height: 6vw;
 	background-color: rgba(0,0,0,1);
@@ -115,7 +136,11 @@ a {
 }
 
 #SPGRADE{
+<<<<<<< HEAD
 	width: 20vw;
+=======
+	width: 16vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	height:3.5vw;
 	padding:0.5vw;
 	box-sizing:border-box;
@@ -127,6 +152,7 @@ a {
 	//line-height: 2vw;
 	position: absolute;
 	top:28vw ;
+<<<<<<< HEAD
 	left:9vw ;
 }
 .star1{float: left; width: 3vw;}
@@ -139,6 +165,10 @@ a {
 
 
 
+=======
+	left:13vw ;
+}
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 #SPFOLLOW{
 	width: 3.5vw;
 	height:3.5vw;
@@ -157,24 +187,41 @@ a {
 #SPFOLLOW img{width: 100%;}
 #SPSTORY{
 	height:18vw;
+<<<<<<< HEAD
 	width: 40vw;
 	padding:1vw;
+=======
+	padding:1.5vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	box-sizing:border-box;
 	//line-height: 6vw;
 	background-color: rgba(236,225,203,.7);
 	color: #333;
+<<<<<<< HEAD
 	font-size: 18px;
 	line-height: 30px;
 	position: absolute;
 	top:19vw ;
 	left:53vw ;
+=======
+	//text-align: center;
+	font-size: 2.2vmin;
+	line-height: 4vmin;
+	position: absolute;
+	top:20vw ;
+	left:58vw ;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 
 }
 
 #SPHAPPY{
 	position: absolute;
+<<<<<<< HEAD
 	bottom: 1vw;
 	left: 7vw;
+=======
+	bottom: 0;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 }
 
 #SPHAPPY img{
@@ -183,6 +230,7 @@ a {
 	// bottom:0;
 	// left:4.5vw ;
 }
+<<<<<<< HEAD
 #SPHAPPYDON	{
 	position: absolute;
 	bottom: 8vw;
@@ -193,11 +241,21 @@ a {
 }
 
 .SPSTORYRWD{display: none;}
+=======
+	
+
+
+
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 
 
 
 .SHOPB_GUOGUOCHUNG{
+<<<<<<< HEAD
 	width: 100%;
+=======
+	width: 100vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	height: 4vw;
 	position: relative;
 }
@@ -207,7 +265,11 @@ a {
 	background-color: rgba(188,140,92,.8);
 	position: absolute;
 	top: 0vw;
+<<<<<<< HEAD
 	left: 0.8vw;
+=======
+	left: 0vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 }
 .RRR{
 	width: 60vw;
@@ -215,7 +277,11 @@ a {
 	background-color: rgba(236,225,203,1);
 	position: absolute;
 	top: 1.5vw;
+<<<<<<< HEAD
 	right: 0.8vw;
+=======
+	right: 0vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 }
 
 
@@ -255,18 +321,30 @@ a {
 	position: absolute;
 	top: 7vw;
 	left: 44vw;
+<<<<<<< HEAD
 	color: #f2ebd4;
+=======
+	color: #000;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	font-size: 2.2vmin;
 }
 #pd1 img{border-radius: 50%;
+<<<<<<< HEAD
 		 width: 90%;
 		 position: relative;}
+=======
+		 width: 90%;}
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 #pd2{
 	position: absolute;
 	top: 10vw;
 	left: 22vw;
+<<<<<<< HEAD
 	color: #f2ebd4;
+=======
+	color: #000;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	font-size: 2.2vmin;
 }
@@ -276,7 +354,11 @@ a {
 	position: absolute;
 	top: 24vw;
 	left: 26vw;
+<<<<<<< HEAD
 	color: #f2ebd4;
+=======
+	color: #000;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	font-size: 2.2vmin;
 }
@@ -286,7 +368,11 @@ a {
 	position: absolute;
 	top: 30vw;
 	left: 44vw;
+<<<<<<< HEAD
 	color: #f2ebd4;
+=======
+	color: #000;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	font-size: 2.2vmin;
 }
@@ -296,7 +382,11 @@ a {
 	position: absolute;
 	top: 24vw;
 	left: 63vw;
+<<<<<<< HEAD
 	color: #f2ebd4;
+=======
+	color: #000;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	font-size: 2.2vmin;
 }
@@ -306,13 +396,18 @@ a {
 	position: absolute;
 	top: 10vw;
 	left: 66vw;
+<<<<<<< HEAD
 	color: #f2ebd4;
+=======
+	color: #000;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	font-size: 2.2vmin;
 }
 #pd6 img{border-radius: 50%;
 		 width: 60%;}
 
+<<<<<<< HEAD
 .pd1_DTL{
 	background-color: rgba(255,255,255,.7);
 	width: 270px;
@@ -426,11 +521,14 @@ a {
 
 
 
+=======
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 
 
 
 
 .SHOPB_ACT{
+<<<<<<< HEAD
 	width: 100%;
 	height: 38vw;
 	position: relative;
@@ -441,6 +539,12 @@ a {
 	height: 50vw;
 	opacity: .8;
 		}
+=======
+	width: 100vw;
+	height: 38vw;
+	position: relative;
+}
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 #BOTTOMAREA{
 	width: 35vw;
 	height: 20vw;
@@ -488,7 +592,11 @@ a {
 	margin: 0vw 0vw 2vw 0vw;
 }
 #myMap{
+<<<<<<< HEAD
 	width: 100%;
+=======
+	width: 100vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	height: 30vw;
 }
 
@@ -497,6 +605,10 @@ a {
 
 .SHOPB_MSG{
 	width: 90vw;
+<<<<<<< HEAD
+=======
+	height: 40vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	background-color: #DDC;
 	margin: 2vw 5vw 0vw 5vw;
 	padding: 3vw;
@@ -505,11 +617,16 @@ a {
 .MSG_CON{
 	margin: 0vw 8vw 2vw 8vw;
 }
+<<<<<<< HEAD
 .MSG_PROFILE{
+=======
+#MSG_PROFILE{
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	display: inline-block;
 	width: 12%;
 	float: left;
 }
+<<<<<<< HEAD
 .MSG_PROFILE img{
 	border-radius: 50%;
 }
@@ -542,6 +659,20 @@ a {
 	margin: 1vw;
 }
 .MSG_TXT input{
+=======
+#MSG_PROFILE img{
+	border-radius: 50%;
+}
+#MSG_TXT{
+	display: inline-block;
+	background-color: rgba(255,255,255,.8);
+	width: 88%;
+	height: 100px;
+	float: left;
+	color: #666;
+}
+#MSG_TXT input{
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	height: 100px;
 	width: 100%;
 	background-color: rgba(255,255,255,.8);
@@ -551,6 +682,7 @@ a {
 
 
 
+<<<<<<< HEAD
 .MSG_RES{
 	margin: 2vw 0vw 0vw 3vw;
 }
@@ -586,6 +718,8 @@ a {
 
 
 
+=======
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 
 
 
@@ -593,13 +727,18 @@ a {
 	margin-bottom: 7vw;
 }
 .OTHERSTITLE {
+<<<<<<< HEAD
 	width: 100%;
+=======
+	width: 100vw;
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	text-align: center;
 	margin-top: 7vw;
 	margin-bottom: 2vw;
 	font-size: 3vmin;
 	color: #614935; 
 }
+<<<<<<< HEAD
 .OTHERSPHOTOS{overflow: hidden;}
 
 
@@ -760,6 +899,12 @@ a {
 
 
 }
+=======
+
+
+
+
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 
 
 @media screen and (max-width: 767px) {
@@ -768,6 +913,7 @@ a {
 		top: 0;
 	}
 	.SHOPB_SHOP{
+<<<<<<< HEAD
 		margin-top: 80px;
 	}
 
@@ -777,6 +923,11 @@ a {
 
 	#SPINFO{
 		width: 53vw;
+=======
+		margin-top: 27vw;
+	}
+	#SPINFO{
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 		height: 25vw;
 	}
 	#SPGRADE{
@@ -799,6 +950,7 @@ a {
 		display: none;
 	}
 
+<<<<<<< HEAD
 
 
 	.bar{
@@ -809,6 +961,8 @@ a {
 	height: 6vw;
 	background-color: rgba(0,0,0,.4);
 }
+=======
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	#pd1{
 		width: 25%;
 		top: 12vw;
@@ -819,7 +973,10 @@ a {
 
 	}
 	#pd1 img{width: 68%;}
+<<<<<<< HEAD
 	#pd1 p{position: unset;}
+=======
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	#pd2{
 		width: 25%;
 		top: 12vw;
@@ -827,9 +984,15 @@ a {
 		color: rgba(240,230,210,1);
 		text-shadow: 1px 1px 1px #666;
 		font-size: 1vmin;
+<<<<<<< HEAD
 	}
 	#pd2 img{width: 68%;}
 	#pd2 p{position: unset;}
+=======
+
+	}
+	#pd2 img{width: 68%;}
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	#pd3{
 		width: 25%;
 		top: 12vw;
@@ -904,7 +1067,13 @@ a {
 	
 
 
+<<<<<<< HEAD
 	
+=======
+	.SHOPB_MSG{
+		height: 100vw;
+	}
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 	.MSG_CON{
 		margin: 0vw 8vw 5vw 8vw;
 	}
@@ -931,6 +1100,11 @@ a {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 }
 
 
@@ -956,6 +1130,16 @@ a {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+>>>>>>> e6a9192fed9a1bc195c8d6a4a850afafe1c35cd0
 // --------------------------表單樣式--------------------------
 
 .globalForm {

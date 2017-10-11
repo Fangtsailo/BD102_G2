@@ -107,9 +107,7 @@ $(function(){
 $('.shopItemGrp').slick({
   dots: true,
   infinite: true,
-  speed: 1000,
-  autoplay: true,
-  autoplaySpeed: 2000,
+  speed: 500,
   fade: true,
   cssEase: 'linear'
 });
@@ -147,12 +145,13 @@ $('.newShopGrp').slick({
   ]
 });
 
-// for (var i = 1; i <= 6; i++) {
-// 	$('.section'+i+'-click').click(function(){
-// 		let i = j;
-// 			 $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);
-//     });
-// }
+for (var i = 1; i <= 6; i++) {
+	$('.section'+i+'-click').click(function(){
+		for (var j = 1; j <= 6; j++) {
+			 $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);
+		}
+    });
+}
 
  
 
