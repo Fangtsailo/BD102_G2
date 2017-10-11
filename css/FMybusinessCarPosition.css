@@ -40,7 +40,7 @@ header {
   .LeftBusiness .nav-Group1 {
     margin-top: 30px; }
     .LeftBusiness .nav-Group1 svg .cls-ma-1 {
-      fill: #00c853; }
+      fill: #7ac943; }
     .LeftBusiness .nav-Group1 svg .cls-ma-2 {
       fill: #fff; }
   .LeftBusiness div div:nth-child(1) {
@@ -66,19 +66,18 @@ header {
   .LeftBusiness div div:nth-child(2) {
     width: 180px;
     height: 60px;
-    background-color: #D9E8FF;
-    border-radius: 2px;
+    background-color: #4289FF;
+    margin-top: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(2) h3 {
       position: absolute;
       line-height: 60px;
-      left: 60px;
+      left: 90px;
       top: 0;
       bottom: 0;
       margin: auto;
       font-size: 18px;
-      color: #fff;
-      color: #4289FF; }
+      color: #fff; }
     .LeftBusiness div div:nth-child(2) svg {
       display: inline-block;
       position: absolute;
@@ -86,8 +85,6 @@ header {
       bottom: 0;
       left: 30px;
       margin: auto; }
-      .LeftBusiness div div:nth-child(2) svg .cls-ar {
-        fill: #4289FF; }
       .LeftBusiness div div:nth-child(2) svg .cls-1 {
         fill: none; }
       .LeftBusiness div div:nth-child(2) svg .cls-2 {
@@ -97,19 +94,18 @@ header {
   .LeftBusiness div div:nth-child(3) {
     width: 180px;
     height: 60px;
-    background-color: #D9E8FF;
-    border-radius: 2px;
+    background-color: #4289FF;
+    margin-top: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(3) h3 {
       position: absolute;
       line-height: 60px;
-      left: 60px;
+      left: 90px;
       top: 0;
       bottom: 0;
       margin: auto;
       font-size: 18px;
-      color: #fff;
-      color: #4289FF; }
+      color: #fff; }
     .LeftBusiness div div:nth-child(3) svg {
       display: inline-block;
       position: absolute;
@@ -117,8 +113,6 @@ header {
       bottom: 0;
       left: 30px;
       margin: auto; }
-      .LeftBusiness div div:nth-child(3) svg .cls-ar {
-        fill: #4289FF; }
       .LeftBusiness div div:nth-child(3) svg .cls-1 {
         fill: none; }
       .LeftBusiness div div:nth-child(3) svg .cls-2 {
@@ -128,19 +122,18 @@ header {
   .LeftBusiness div div:nth-child(4) {
     width: 180px;
     height: 60px;
-    background-color: #D9E8FF;
-    border-radius: 2px;
+    background-color: #4289FF;
+    margin-top: 2px;
     position: relative; }
     .LeftBusiness div div:nth-child(4) h3 {
       position: absolute;
       line-height: 60px;
-      left: 60px;
+      left: 90px;
       top: 0;
       bottom: 0;
       margin: auto;
       font-size: 18px;
-      color: #fff;
-      color: #4289FF; }
+      color: #fff; }
     .LeftBusiness div div:nth-child(4) svg {
       display: inline-block;
       position: absolute;
@@ -148,8 +141,6 @@ header {
       bottom: 0;
       left: 30px;
       margin: auto; }
-      .LeftBusiness div div:nth-child(4) svg .cls-ar {
-        fill: #4289FF; }
       .LeftBusiness div div:nth-child(4) svg .cls-1 {
         fill: none; }
       .LeftBusiness div div:nth-child(4) svg .cls-2 {
