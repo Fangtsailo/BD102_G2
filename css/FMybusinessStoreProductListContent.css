@@ -1,112 +1,461 @@
-/*
-Error: Undefined mixin 'tdInputTextForm'.
-        on line 201 of sass/FMybusinessStoreProductListContent.scss, in `tdInputTextForm'
-        from line 201 of sass/FMybusinessStoreProductListContent.scss
+@keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+body {
+  background-color: #fbf8f1; }
 
-196: 					}
-197: 				}
-198: 
-199: 				
-200: 				&:nth-child(2){
-201: 					@include tdInputTextForm();
-202: 				}
-203: 
-204: 
-205: 				&:nth-child(3){
-206: 					@include tdInputTextForm();
+.coverHeader {
+  height: 80px; }
 
-Backtrace:
-sass/FMybusinessStoreProductListContent.scss:201:in `tdInputTextForm'
-sass/FMybusinessStoreProductListContent.scss:201
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:98:in `block in with_mixin'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:98:in `with_mixin'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block (2 levels) in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:444:in `block in visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:442:in `visit_rule'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:20:in `render'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:290:in `render'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:400:in `run'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:22:in `load'
-/usr/local/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined mixin 'tdInputTextForm'.\A         on line 201 of sass/FMybusinessStoreProductListContent.scss, in `tdInputTextForm'\A         from line 201 of sass/FMybusinessStoreProductListContent.scss\A \A 196: 					}\A 197: 				}\A 198: \A 199: 				\A 200: 				&:nth-child(2){\A 201: 					@include tdInputTextForm();\A 202: 				}\A 203: \A 204: \A 205: 				&:nth-child(3){\A 206: 					@include tdInputTextForm();"; }
+header {
+  z-index: 3; }
+
+.coverSubtitile {
+  height: 44px; }
+  .coverSubtitile .subtitle {
+    height: 44px;
+    width: 100vw;
+    position: fixed;
+    top: 80px;
+    z-index: 3; }
+    .coverSubtitile .subtitle h2 {
+      line-height: 44px;
+      font-size: 20px;
+      background-color: #4289FF;
+      padding-left: 20px;
+      color: #fff; }
+
+.coverHeader {
+  height: 100px; }
+
+.container {
+  width: 100%; }
+
+.LeftBusiness {
+  width: 200px;
+  height: 500px;
+  position: fixed;
+  left: 0;
+  top: 160px; }
+  .LeftBusiness .nav-Group1 {
+    margin-top: 30px; }
+  .LeftBusiness div div:nth-child(1) {
+    width: 200px;
+    height: 57px;
+    margin-top: 10px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(1) .cls-1 {
+      fill: #4289FF; }
+    .LeftBusiness div div:nth-child(1) .cls-2 {
+      fill: #bbb; }
+    .LeftBusiness div div:nth-child(1) .cls-3 {
+      fill: #999; }
+    .LeftBusiness div div:nth-child(1) h2 {
+      position: absolute;
+      line-height: 60px;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff; }
+  .LeftBusiness div div:nth-child(2) {
+    width: 180px;
+    height: 60px;
+    background-color: #D9E8FF;
+    border-radius: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(2) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 60px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff;
+      color: #4289FF; }
+    .LeftBusiness div div:nth-child(2) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(2) svg .cls-ar {
+        fill: #4289FF; }
+      .LeftBusiness div div:nth-child(2) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(2) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(2) svg .cls-3 {
+        fill: #999; }
+  .LeftBusiness div div:nth-child(3) {
+    width: 180px;
+    height: 60px;
+    background-color: #D9E8FF;
+    border-radius: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(3) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 60px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff;
+      color: #4289FF; }
+    .LeftBusiness div div:nth-child(3) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(3) svg .cls-ar {
+        fill: #4289FF; }
+      .LeftBusiness div div:nth-child(3) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(3) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(3) svg .cls-3 {
+        fill: #999; }
+  .LeftBusiness div div:nth-child(4) {
+    width: 180px;
+    height: 60px;
+    background-color: #D9E8FF;
+    border-radius: 2px;
+    position: relative; }
+    .LeftBusiness div div:nth-child(4) h3 {
+      position: absolute;
+      line-height: 60px;
+      left: 60px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 18px;
+      color: #fff;
+      color: #4289FF; }
+    .LeftBusiness div div:nth-child(4) svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin: auto; }
+      .LeftBusiness div div:nth-child(4) svg .cls-ar {
+        fill: #4289FF; }
+      .LeftBusiness div div:nth-child(4) svg .cls-1 {
+        fill: none; }
+      .LeftBusiness div div:nth-child(4) svg .cls-2 {
+        fill: #bbb; }
+      .LeftBusiness div div:nth-child(4) svg .cls-3 {
+        fill: #999; }
+
+.CenterBusiness {
+  margin-top: 260px;
+  width: 70%;
+  margin: auto; }
+  .CenterBusiness .subtitle {
+    height: 100px;
+    text-align: center;
+    padding-top: 20px; }
+    .CenterBusiness .subtitle svg .line {
+      fill: none;
+      stroke-width: 1;
+      stroke: #4b7cbf;
+      animation: letterleaf 1s ease forwards; }
+      .CenterBusiness .subtitle svg .line .line-g {
+        opacity: 1;
+        stroke-dasharray: 340;
+        stroke-dashoffset: 340;
+        animation: letterDraw 3s ease forwards; }
+  .CenterBusiness .content-table table {
+    width: 80%;
+    background-color: #fff;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto; }
+    .CenterBusiness .content-table table span, .CenterBusiness .content-table table div, .CenterBusiness .content-table table input {
+      color: #999; }
+    .CenterBusiness .content-table table tr {
+      height: 70px; }
+      .CenterBusiness .content-table table tr th {
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        font-weight: normal;
+        width: 20%; }
+        .CenterBusiness .content-table table tr th div {
+          height: 40px;
+          width: 80%;
+          background-color: #F2EBD4;
+          margin-right: 0;
+          margin-left: 0;
+          margin: auto;
+          line-height: 40px;
+          border-radius: 6px; }
+      .CenterBusiness .content-table table tr td {
+        text-align: center;
+        width: 80%;
+        border-bottom: 1px solid #ccc; }
+      .CenterBusiness .content-table table tr:nth-child(1) th {
+        text-align: left;
+        padding-left: 20px;
+        color: #999;
+        font-size: 26px; }
+      .CenterBusiness .content-table table tr:nth-child(2) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(3) td input {
+        width: 90%;
+        height: 40px;
+        box-sizing: border-box; }
+      .CenterBusiness .content-table table tr:nth-child(4) {
+        height: 180px; }
+        .CenterBusiness .content-table table tr:nth-child(4) th div {
+          height: 160px;
+          line-height: 160px; }
+        .CenterBusiness .content-table table tr:nth-child(4) td textarea {
+          display: block;
+          margin-top: 0;
+          margin-bottom: 0;
+          margin: auto;
+          width: 90%;
+          height: 140px;
+          border: 1px solid #ccc;
+          resize: none; }
+          .CenterBusiness .content-table table tr:nth-child(4) td textarea::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #999;
+            font-size: 13px;
+            text-indent: 1px;
+            font-family: "Noto Sans CJK TC"; }
+      .CenterBusiness .content-table table tr:nth-child(5) {
+        height: 220px; }
+        .CenterBusiness .content-table table tr:nth-child(5) th div {
+          height: 200px;
+          line-height: 200px; }
+        .CenterBusiness .content-table table tr:nth-child(5) td {
+          position: relative; }
+          .CenterBusiness .content-table table tr:nth-child(5) td div {
+            width: 90%;
+            height: 160px;
+            border: 1px solid #ccc;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .CenterBusiness .content-table table tr:nth-child(5) td div div {
+              height: 90%;
+              width: 90%;
+              border: none;
+              margin: auto;
+              margin-top: 0;
+              margin-bottom: 0; }
+              .CenterBusiness .content-table table tr:nth-child(5) td div div input {
+                display: none; }
+              .CenterBusiness .content-table table tr:nth-child(5) td div div button {
+                display: block;
+                margin: auto;
+                border: none;
+                width: 20%;
+                height: 25px;
+                border-radius: 4px;
+                background-color: #ccc;
+                color: #fff; }
+                .CenterBusiness .content-table table tr:nth-child(5) td div div button:hover {
+                  color: #ccc;
+                  background-color: #fff;
+                  border: 1px solid #ccc;
+                  transition: 0.3s; }
+              .CenterBusiness .content-table table tr:nth-child(5) td div div img {
+                display: block;
+                margin: auto; }
+              .CenterBusiness .content-table table tr:nth-child(5) td div div span {
+                width: 30%;
+                display: block;
+                font-size: 8px;
+                margin: auto; }
+  .CenterBusiness .commit {
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 100px; }
+    .CenterBusiness .commit input {
+      border: none;
+      width: 150px;
+      height: 50px;
+      border-radius: 25px; }
+      .CenterBusiness .commit input:nth-child(1) {
+        margin-right: 10px;
+        border: 1px solid #F06428;
+        background-color: #fff;
+        color: #F06428;
+        display: inline-block; }
+        .CenterBusiness .commit input:nth-child(1):hover {
+          color: #fff;
+          background-color: #F06428;
+          transition: 0.5s; }
+      .CenterBusiness .commit input:nth-child(2) {
+        margin-left: 10px;
+        border: 1px solid #F06428;
+        background-color: #F06428;
+        color: #fff;
+        display: inline-block; }
+        .CenterBusiness .commit input:nth-child(2):hover {
+          color: #F06428;
+          background-color: #fff;
+          transition: 0.5s; }
+
+footer {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  bottom: 0; }
+
+@media screen and (max-width: 645px) {
+  .CenterBusiness {
+    margin-top: 260px;
+    width: 70%;
+    margin: auto; }
+    .CenterBusiness .subtitle {
+      height: 100px;
+      text-align: center;
+      padding-top: 20px; }
+    .CenterBusiness .content-table table {
+      width: 80%;
+      background-color: #fff;
+      margin-left: 0;
+      margin-right: 0;
+      margin: auto; }
+      .CenterBusiness .content-table table span, .CenterBusiness .content-table table div, .CenterBusiness .content-table table input {
+        color: #999; }
+      .CenterBusiness .content-table table tr {
+        height: 70px; }
+        .CenterBusiness .content-table table tr th {
+          border-bottom: 1px solid #ccc;
+          text-align: center;
+          font-weight: normal;
+          width: 20%; }
+          .CenterBusiness .content-table table tr th div {
+            height: 40px;
+            width: 80%;
+            background-color: #F2EBD4;
+            margin-right: 0;
+            margin-left: 0;
+            margin: auto;
+            line-height: 40px;
+            border-radius: 6px; }
+        .CenterBusiness .content-table table tr td {
+          text-align: center;
+          width: 80%;
+          border-bottom: 1px solid #ccc; }
+        .CenterBusiness .content-table table tr:nth-child(1) th {
+          text-align: left;
+          padding-left: 20px;
+          color: #999;
+          font-size: 26px; }
+        .CenterBusiness .content-table table tr:nth-child(2) td input {
+          width: 90%;
+          height: 40px;
+          box-sizing: border-box; }
+        .CenterBusiness .content-table table tr:nth-child(3) td input {
+          width: 90%;
+          height: 40px;
+          box-sizing: border-box; }
+        .CenterBusiness .content-table table tr:nth-child(4) {
+          height: 180px; }
+          .CenterBusiness .content-table table tr:nth-child(4) th div {
+            height: 160px;
+            line-height: 160px; }
+          .CenterBusiness .content-table table tr:nth-child(4) td textarea {
+            display: block;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin: auto;
+            width: 90%;
+            height: 140px;
+            border: 1px solid #ccc;
+            resize: none; }
+            .CenterBusiness .content-table table tr:nth-child(4) td textarea::-webkit-input-placeholder {
+              /* WebKit browsers */
+              color: #999;
+              font-size: 13px;
+              text-indent: 1px;
+              font-family: "Noto Sans CJK TC"; }
+        .CenterBusiness .content-table table tr:nth-child(5) {
+          height: 220px; }
+          .CenterBusiness .content-table table tr:nth-child(5) th div {
+            height: 200px;
+            line-height: 200px; }
+          .CenterBusiness .content-table table tr:nth-child(5) td {
+            position: relative; }
+            .CenterBusiness .content-table table tr:nth-child(5) td div {
+              width: 90%;
+              height: 160px;
+              border: 1px solid #ccc;
+              position: relative;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              margin: auto;
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+              .CenterBusiness .content-table table tr:nth-child(5) td div div {
+                height: 90%;
+                width: 90%;
+                border: none;
+                margin: auto;
+                margin-top: 0;
+                margin-bottom: 0; }
+                .CenterBusiness .content-table table tr:nth-child(5) td div div input {
+                  display: none; }
+                .CenterBusiness .content-table table tr:nth-child(5) td div div button {
+                  display: block;
+                  margin: auto;
+                  border: none;
+                  width: 50%;
+                  height: 25px;
+                  border-radius: 4px;
+                  background-color: #ccc;
+                  color: #fff; }
+                .CenterBusiness .content-table table tr:nth-child(5) td div div img {
+                  display: block;
+                  margin: auto; }
+                .CenterBusiness .content-table table tr:nth-child(5) td div div span {
+                  width: 30%;
+                  display: none;
+                  font-size: 8px;
+                  margin: auto; } }
+@media screen and (max-width: 940px) {
+  .LeftBusiness {
+    display: none; } }
+@media screen and (max-width: 767px) {
+  .CenterBusiness {
+    width: 90%; }
+    .CenterBusiness .content-table table {
+      width: 100%; }
+      .CenterBusiness .content-table table tr th {
+        width: 30%; }
+        .CenterBusiness .content-table table tr th div {
+          min-width: 10px; }
+      .CenterBusiness .content-table table tr td {
+        width: 70%; }
+      .CenterBusiness .content-table table tr:nth-child(6) td div {
+        font-size: 14px; } }
+@media screen and (max-width: 912px) {
+  .CenterBusiness {
+    width: 90%; }
+    .CenterBusiness .content-table table tr th div {
+      font-size: 14px; } }

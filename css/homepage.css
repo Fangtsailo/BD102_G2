@@ -1,74 +1,1484 @@
-/*
-Error: Invalid CSS after "...102_G2/homepage": expected "{", was "}"
-        on line 582 of sass/basic.scss
-        from line 1 of sass/homepage.scss
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0; }
 
-577: 		}
-578: <<<<<<< HEAD
-579: 
-580: =======
-581: >>>>>>> BD102_G2/homepage
-582: 	}
-583: }
+body {
+  background-color: #fbf8f1;
+  font-family: "Noto Sans CJK TC"; }
 
-Backtrace:
-sass/basic.scss:582
-sass/homepage.scss:1
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1278:in `expected'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1208:in `expected'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1203:in `tok!'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:677:in `block'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:697:in `block_child'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:678:in `block'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:697:in `block_child'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:678:in `block'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:257:in `include_directive'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:234:in `special_directive'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:209:in `directive'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:696:in `block_child'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:137:in `stylesheet'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:41:in `parse'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:414:in `_to_tree'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:321:in `to_tree'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:20:in `render'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:290:in `render'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:400:in `run'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
-/usr/local/lib/ruby/gems/2.4.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:22:in `load'
-/usr/local/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...102_G2/homepage\": expected \"{\", was \"}\"\A         on line 582 of sass/basic.scss\A         from line 1 of sass/homepage.scss\A \A 577: 		}\A 578: <<<<<<< HEAD\A 579: \A 580: =======\A 581: >>>>>>> BD102_G2/homepage\A 582: 	}\A 583: }"; }
+input {
+  font-family: "Noto Sans CJK TC"; }
+
+a {
+  text-decoration: none;
+  color: #3399ff; }
+
+li {
+  list-style: none; }
+
+.globalForm {
+  width: 50%;
+  background-color: #fbf8f1;
+  border: 1px solid #ccc;
+  margin: auto; }
+  .globalForm .globalFormHeader {
+    width: 100%;
+    padding: 5% 5%;
+    position: relative;
+    box-sizing: border-box;
+    background: #805934;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, #805934 0%, #9e693d 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
+    /* IE6-9 */ }
+    .globalForm .globalFormHeader h1 {
+      font-size: 24px;
+      color: #fbf8f1; }
+    .globalForm .globalFormHeader p {
+      font-size: 16px;
+      color: #fbf8f1;
+      font-weight: 300;
+      margin-top: 10px; }
+    .globalForm .globalFormHeader .st0 {
+      fill: #fbf8f1; }
+    .globalForm .globalFormHeader .svg {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 10px;
+      top: 10px; }
+  .globalForm .globalFormContent {
+    width: 100%;
+    padding-top: 10px; }
+    .globalForm .globalFormContent .globalFormInput {
+      width: 80%;
+      height: 50px;
+      margin: 0px auto; }
+      .globalForm .globalFormContent .globalFormInput input {
+        display: block;
+        float: right;
+        width: 65%;
+        height: 100%;
+        padding-left: 10px;
+        margin: auto;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #bbb; }
+        .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+          color: #bbb;
+          font-weight: 300; }
+      .globalForm .globalFormContent .globalFormInput label {
+        display: block;
+        width: 35% -10px;
+        float: left;
+        height: 100%;
+        line-height: 50px;
+        color: #663300;
+        font-weight: 300; }
+        .globalForm .globalFormContent .globalFormInput label span {
+          color: #f06428; }
+      .globalForm .globalFormContent .globalFormInput textarea {
+        display: block;
+        float: right;
+        width: 65%;
+        padding-left: 10px;
+        padding-top: 10px;
+        height: 100%;
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #bbb; }
+    .globalForm .globalFormContent .globalFormBtns {
+      width: 80%;
+      margin: 30px auto;
+      text-align: center; }
+      .globalForm .globalFormContent .globalFormBtns .globalOkBtn, .globalForm .globalFormContent .globalFormBtns .globalCancelBtn {
+        display: inline-block;
+        margin: 0px 5px;
+        text-decoration: none;
+        cursor: pointer; }
+
+.hideUp header.globalHead {
+  top: -80px; }
+
+header.globalHead {
+  width: 100%;
+  height: 80px;
+  background: rgba(128, 89, 52, 0.9);
+  /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+  /* IE6-9 */
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  transition: top .3s ease-in-out; }
+  header.globalHead .headLoginBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: none; }
+    header.globalHead .headLoginBox .globalForm {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 600px;
+      height: 80vh;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+      header.globalHead .headLoginBox .globalForm .globalFormHeader {
+        text-align: center; }
+        header.globalHead .headLoginBox .globalForm .globalFormHeader img {
+          width: 160px; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+        font-size: 16px; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0px; }
+        header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
+          border-bottom: 1px solid #3399ff; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px; }
+        header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+          display: inline-block;
+          width: 50%;
+          height: 50px;
+          background: #3B5998;
+          /* Old browsers */
+          background: -moz-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #3B5998), color-stop(100%, #283D69));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* IE10+ */
+          background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
+          /* IE6-9 */
+          border-radius: 5px;
+          text-align: center;
+          color: #fbf8f1;
+          line-height: 50px;
+          font-weight: 300; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center; }
+        header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
+          text-align: center;
+          color: #663300;
+          cursor: pointer; }
+          header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
+            border-bottom: 1px solid #663300; }
+  header.globalHead .headRegisterBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: none; }
+    header.globalHead .headRegisterBox .globalForm {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 600px;
+      height: 80vh;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+      header.globalHead .headRegisterBox .globalForm .globalFormHeader {
+        text-align: center; }
+        header.globalHead .headRegisterBox .globalForm .globalFormHeader img {
+          width: 160px; }
+      header.globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+        font-size: 16px; }
+      header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px; }
+        header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
+          display: inline-block;
+          width: 50%;
+          height: 50px;
+          background: #3B5998;
+          /* Old browsers */
+          background: -moz-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #3B5998), color-stop(100%, #283D69));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* IE10+ */
+          background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
+          /* IE6-9 */
+          border-radius: 5px;
+          text-align: center;
+          color: #fbf8f1;
+          line-height: 50px;
+          font-weight: 300; }
+      header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center; }
+        header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
+          text-align: center;
+          color: #663300;
+          cursor: pointer; }
+          header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
+            border-bottom: 1px solid #663300; }
+  header.globalHead .headLogo {
+    width: 10vw;
+    padding: 10px 20px;
+    display: inline-block; }
+    header.globalHead .headLogo img {
+      display: inline-block;
+      height: 65px; }
+  header.globalHead .headerRight {
+    padding: 5px 0px;
+    float: right;
+    box-sizing: border-box; }
+    header.globalHead .headerRight .headSearch {
+      float: left;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      text-align: right; }
+      header.globalHead .headerRight .headSearch span {
+        margin-right: 10px;
+        color: #fbf8f1;
+        font-weight: 300; }
+      header.globalHead .headerRight .headSearch #headSearch {
+        width: 20%;
+        height: 30px;
+        display: inline-block;
+        margin: 0px 5px;
+        border: 1px solid #fff;
+        padding-left: 10px;
+        outline: none;
+        box-sizing: border-box;
+        vertical-align: top; }
+      header.globalHead .headerRight .headSearch select {
+        display: inline-block;
+        width: 80px;
+        height: 30px;
+        color: #fbf8f1;
+        background-color: transparent;
+        border: 1px solid #fbf8f1;
+        margin: 0px 5px;
+        font-size: 16px;
+        outline: none;
+        border-radius: 2px;
+        box-sizing: border-box; }
+      header.globalHead .headerRight .headSearch button {
+        width: 80px;
+        display: inline-block;
+        height: 30px;
+        color: #fbf8f1;
+        background-color: transparent;
+        border: 1px solid #fbf8f1;
+        margin: 0px 5px;
+        font-size: 16px;
+        border-radius: 2px; }
+        header.globalHead .headerRight .headSearch button:focus {
+          background-color: #fbf8f1;
+          color: #805934;
+          outline: none;
+          box-sizing: border-box; }
+      header.globalHead .headerRight .headSearch #headSearchSubmit {
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        color: #663300;
+        background-color: #f2ebd4;
+        border: none;
+        margin-left: 5px;
+        font-size: 16px;
+        border-radius: 2px;
+        outline: none;
+        box-sizing: border-box; }
+        header.globalHead .headerRight .headSearch #headSearchSubmit:active {
+          background-color: #663300;
+          color: #fbf8f1; }
+    header.globalHead .headerRight .headAccount {
+      width: 100px;
+      float: left; }
+      header.globalHead .headerRight .headAccount #headMemStatus {
+        display: none; }
+        header.globalHead .headerRight .headAccount #headMemStatus #headMemPic {
+          width: 100%;
+          height: 70px; }
+      header.globalHead .headerRight .headAccount #headMemLogin {
+        width: 100%;
+        height: 70px; }
+        header.globalHead .headerRight .headAccount #headMemLogin .loginGrp {
+          width: 50%;
+          margin: auto;
+          height: 70px;
+          position: relative; }
+        header.globalHead .headerRight .headAccount #headMemLogin .loginBtn {
+          padding: 7px 0px; }
+        header.globalHead .headerRight .headAccount #headMemLogin #loginIcon {
+          width: 32px;
+          height: 32px;
+          display: block;
+          margin: auto;
+          fill: #fbf8f1; }
+        header.globalHead .headerRight .headAccount #headMemLogin #loginTxt {
+          text-align: center;
+          color: #fbf8f1;
+          display: block;
+          margin: auto;
+          font-weight: 300; }
+  header.globalHead .rwd_headerSearch {
+    display: none; }
+  header.globalHead .burgerMenu {
+    display: none; }
+
+#menu {
+  display: none; }
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: #f2ebd4;
+  text-align: center; }
+  footer .globalFtBtn {
+    display: inline-block;
+    margin: 15px;
+    cursor: pointer; }
+    footer .globalFtBtn .svg {
+      width: 50px;
+      height: 50px;
+      margin: 10px auto; }
+      footer .globalFtBtn .svg path, footer .globalFtBtn .svg polygon {
+        fill: #bbb; }
+    footer .globalFtBtn a {
+      color: #bbb;
+      text-decoration: none; }
+    footer .globalFtBtn:hover path {
+      fill: #f06428; }
+    footer .globalFtBtn:hover polygon {
+      fill: #f06428; }
+    footer .globalFtBtn:hover a {
+      color: #f06428; }
+  footer p {
+    color: #663300;
+    margin-top: 10px; }
+
+.clearfix {
+  clear: both; }
+
+.globalOkBtn {
+  width: 150px;
+  height: 45px;
+  border-radius: 22.5px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  border: 1px solid #f06428;
+  color: #f06428;
+  background-color: #fbf8f1;
+  transition: .3s ease; }
+  .globalOkBtn:hover {
+    background-color: #f06428;
+    color: #fbf8f1;
+    transition: .3s ease;
+    cursor: pointer; }
+
+.globalCancelBtn {
+  width: 150px;
+  height: 45px;
+  border-radius: 22.5px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  border: 1px solid #3399ff;
+  color: #3399ff;
+  transition: .3s ease; }
+  .globalCancelBtn:hover {
+    background-color: #3399ff;
+    color: #fbf8f1;
+    transition: .3s ease;
+    text-decoration: none;
+    cursor: pointer; }
+
+.col-sm-1 {
+  padding: 0 10px;
+  float: left;
+  width: 8.3333%; }
+
+/*12欄*/
+.col-sm-2 {
+  padding: 0 10px;
+  float: left;
+  width: 16.6666%; }
+
+/*6欄*/
+.col-sm-3 {
+  padding: 0 10px;
+  float: left;
+  width: 25%; }
+
+/*4欄*/
+.col-sm-4 {
+  padding: 0 10px;
+  float: left;
+  width: 33.3333%; }
+
+/*3欄*/
+.col-sm-5 {
+  padding: 0 10px;
+  float: left;
+  width: 41.6666%; }
+
+.col-sm-6 {
+  padding: 0 10px;
+  float: left;
+  width: 50%; }
+
+/*2欄*/
+.col-sm-7 {
+  padding: 0 10px;
+  float: left;
+  width: 58.3333%; }
+
+.col-sm-8 {
+  padding: 0 10px;
+  float: left;
+  width: 66.6666%; }
+
+.col-sm-9 {
+  padding: 0 10px;
+  float: left;
+  width: 75%; }
+
+.col-sm-10 {
+  padding: 0 10px;
+  float: left;
+  width: 83.3333%; }
+
+.col-sm-11 {
+  padding: 0 10px;
+  float: left;
+  width: 91.6666%; }
+
+.col-sm-12 {
+  padding: 0 10px;
+  float: left;
+  width: 100%; }
+
+/*1欄*/
+@media screen and (max-width: 767px) {
+  .col-xs-1 {
+    padding: 0 10px;
+    float: left;
+    width: 8.3333%; }
+
+  /*12欄*/
+  .col-xs-2 {
+    padding: 0 10px;
+    float: left;
+    width: 16.6666%; }
+
+  /*6欄*/
+  .col-xs-3 {
+    padding: 0 10px;
+    float: left;
+    width: 25%; }
+
+  /*4欄*/
+  .col-xs-4 {
+    padding: 0 10px;
+    float: left;
+    width: 33.3333%; }
+
+  /*3欄*/
+  .col-xs-5 {
+    padding: 0 10px;
+    float: left;
+    width: 41.6666%; }
+
+  .col-xs-6 {
+    padding: 0 10px;
+    float: left;
+    width: 50%; }
+
+  /*2欄*/
+  .col-xs-7 {
+    padding: 0 10px;
+    float: left;
+    width: 58.3333%; }
+
+  .col-xs-8 {
+    padding: 0 10px;
+    float: left;
+    width: 66.6666%; }
+
+  .col-xs-9 {
+    padding: 0 10px;
+    float: left;
+    width: 75%; }
+
+  .col-xs-10 {
+    padding: 0 10px;
+    float: left;
+    width: 83.3333%; }
+
+  .col-xs-11 {
+    padding: 0 10px;
+    float: left;
+    width: 91.6666%; }
+
+  .col-xs-12 {
+    padding: 0 10px;
+    float: left;
+    width: 100%; }
+
+  /*1欄*/
+  .globalForm {
+    width: 80%;
+    margin: auto; }
+    .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
+      width: 40%; } }
+@media screen and (max-width: 900px) {
+  header.globalHead {
+    text-align: center; }
+    header.globalHead .headLogo {
+      min-width: 150px;
+      width: 20vw;
+      margin: auto;
+      display: inline-block;
+      text-align: center; }
+      header.globalHead .headLogo img {
+        width: 100%; }
+    header.globalHead .headerRight {
+      display: none; }
+    header.globalHead .rwd_headerSearch {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0px;
+      right: 20px;
+      bottom: 0;
+      margin: auto; }
+      header.globalHead .rwd_headerSearch .searchIcon {
+        width: 20vw;
+        height: 40px;
+        fill: #fbf8f1; }
+    header.globalHead .burgerMenu {
+      display: inline-block;
+      width: 20%;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; }
+      header.globalHead .burgerMenu span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        left: 15px;
+        background-color: #fbf8f1;
+        border-radius: 4px;
+        position: absolute;
+        margin: auto;
+        transition: .3s ease; }
+        header.globalHead .burgerMenu span:nth-of-type(1) {
+          top: 5px; }
+        header.globalHead .burgerMenu span:nth-of-type(2) {
+          top: 16px; }
+        header.globalHead .burgerMenu span:nth-of-type(3) {
+          top: 27px; }
+      header.globalHead .burgerMenu.active {
+        transition: .3s ease; }
+        header.globalHead .burgerMenu.active span:nth-of-type(1) {
+          transform: rotate(-45deg);
+          transition: .3s ease;
+          top: 20px; }
+        header.globalHead .burgerMenu.active span:nth-of-type(2) {
+          display: none; }
+        header.globalHead .burgerMenu.active span:nth-of-type(3) {
+          transform: rotate(45deg);
+          top: 20px;
+          transition: .3s ease; }
+    header.globalHead #menu {
+      display: block;
+      position: fixed;
+      top: 80px;
+      background-color: rgba(0, 0, 0, 0.5); }
+      header.globalHead #menu.hideMenu {
+        left: -375px;
+        transition: all 0.3s ease; }
+      header.globalHead #menu.show {
+        left: 0;
+        transition: all 0.3s ease; }
+      header.globalHead #menu ul {
+        display: block;
+        width: 375px;
+        min-width: 320px;
+        background: rgba(128, 89, 52, 0.9);
+        /* Old browsers */
+        background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* IE10+ */
+        background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+        /* IE6-9 */ }
+        header.globalHead #menu ul li {
+          display: block;
+          padding: 10px;
+          color: #fbf8f1; }
+          header.globalHead #menu ul li.closeMenu span {
+            width: 30px;
+            display: block;
+            float: right;
+            fill: #fbf8f1; }
+          header.globalHead #menu ul li.memPart {
+            height: 60px; }
+            header.globalHead #menu ul li.memPart .memPic {
+              width: 30%;
+              height: 100%;
+              float: left; }
+              header.globalHead #menu ul li.memPart .memPic img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%; }
+            header.globalHead #menu ul li.memPart span {
+              width: 70%;
+              height: 100%;
+              display: block;
+              float: left;
+              margin: auto;
+              line-height: 50px;
+              text-align: center; }
+          header.globalHead #menu ul li.listTitle {
+            font-size: 1.2em; }
+          header.globalHead #menu ul li a {
+            color: #fbf8f1;
+            font-weight: 400; } }
+* {
+  box-sizing: border-box; }
+
+body {
+  background-image: url("../img/homepage/homepage_bg0.png");
+  background-size: contain; }
+
+section {
+  width: 100%;
+  height: 100vh; }
+
+.homeSearchBar {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/homepage/homepage_bg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom; }
+  .homeSearchBar .itemGrp {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    padding-top: 150px;
+    max-width: 720px; }
+    .homeSearchBar .itemGrp .bigLogo {
+      width: 100%;
+      height: 30%; }
+      .homeSearchBar .itemGrp .bigLogo img {
+        width: 100%;
+        height: 100%; }
+    .homeSearchBar .itemGrp h2 {
+      text-align: center;
+      color: #fbf8f1;
+      font-size: 24px;
+      margin: 10px 0px;
+      text-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5); }
+    .homeSearchBar .itemGrp .searchPart {
+      width: 100%; }
+      .homeSearchBar .itemGrp .searchPart .tabs {
+        width: 100%;
+        box-sizing: border-box; }
+        .homeSearchBar .itemGrp .searchPart .tabs .tab_contents {
+          width: 100px;
+          float: left;
+          text-align: center;
+          background-color: #805934;
+          padding: 10px;
+          box-sizing: border-box;
+          color: #fbf8f1;
+          cursor: pointer; }
+          .homeSearchBar .itemGrp .searchPart .tabs .tab_contents.active {
+            background-color: #E7E6E6;
+            color: #9e693d; }
+      .homeSearchBar .itemGrp .searchPart .searchContent {
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        border-radius: 0px 3px 3px 3px;
+        background-color: #E7E6E6;
+        text-align: center; }
+        .homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 10px 0px;
+          color: #996633; }
+        .homeSearchBar .itemGrp .searchPart .searchContent .filter {
+          display: inline-block;
+          padding: 5px 20px;
+          margin: 10px 10px;
+          background-color: rgba(255, 255, 255, 0.9);
+          color: #996633;
+          font-size: 16px;
+          border-radius: 2px;
+          outline: none;
+          border: none; }
+          .homeSearchBar .itemGrp .searchPart .searchContent .filter select {
+            font-size: 16px;
+            color: #996633;
+            border: none; }
+        .homeSearchBar .itemGrp .searchPart .searchContent button.filter {
+          cursor: pointer; }
+          .homeSearchBar .itemGrp .searchPart .searchContent button.filter:focus {
+            background-color: #996633;
+            color: #fbf8f1; }
+        .homeSearchBar .itemGrp .searchPart .searchContent .searchbar {
+          width: 100%;
+          display: block;
+          box-sizing: border-box;
+          background-color: #fff;
+          text-align: left;
+          border-radius: 0px 0px 3px 3px; }
+          .homeSearchBar .itemGrp .searchPart .searchContent .searchbar input {
+            width: 80%;
+            height: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: transparent;
+            border: none;
+            display: inline-block;
+            box-sizing: border-box;
+            outline: none; }
+          .homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
+            display: inline-block;
+            width: 19%;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            box-sizing: border-box;
+            background-color: transparent;
+            outline: none; }
+
+@media screen and (max-width: 768px) {
+  section.homeSearchBar .itemGrp {
+    width: 100%;
+    padding: 150px 10px 0px 10px; }
+    section.homeSearchBar .itemGrp .bigLogo {
+      width: 50%;
+      height: 30%;
+      margin: auto; }
+      section.homeSearchBar .itemGrp .bigLogo img {
+        width: 100%;
+        height: 100%; } }
+@media screen and (max-width: 500px) {
+  section.homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
+    width: 100%; }
+  section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar input {
+    width: 70%; }
+  section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
+    width: 20%; } }
+.homeTopChart {
+  position: relative; }
+  .homeTopChart p.topChartDescrp {
+    width: 90%;
+    text-align: center;
+    margin: 50px auto;
+    font-size: 1.5em;
+    color: #663300;
+    line-height: 1.5;
+    font-weight: 500; }
+  .homeTopChart .titleGrp {
+    width: 90%;
+    margin: 10px auto;
+    text-align: center; }
+    .homeTopChart .titleGrp img {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 10px; }
+    .homeTopChart .titleGrp .topChartTitle {
+      text-align: center;
+      margin: 10px auto;
+      display: inline-block;
+      color: #663300;
+      font-size: 2em; }
+  .homeTopChart .shopItem {
+    width: 100%;
+    height: 70vh; }
+    .homeTopChart .shopItem .shopPic {
+      width: 100%;
+      max-width: 720px;
+      height: 60%;
+      margin: auto;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56); }
+      .homeTopChart .shopItem .shopPic img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        z-index: -15;
+        object-fit: cover; }
+      .homeTopChart .shopItem .shopPic h3 {
+        width: 100%;
+        height: 55px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        right: 0;
+        margin: auto;
+        color: #fbf8f1;
+        letter-spacing: 2px;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+        font-size: 36px; }
+      .homeTopChart .shopItem .shopPic .shopInfo {
+        width: 100%;
+        height: 20%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 1%;
+        background-color: rgba(75, 75, 75, 0.8); }
+        .homeTopChart .shopItem .shopPic .shopInfo ul {
+          width: 100%;
+          height: 100%;
+          text-align: center; }
+          .homeTopChart .shopItem .shopPic .shopInfo ul li {
+            width: 33%;
+            float: left;
+            height: 100%; }
+            .homeTopChart .shopItem .shopPic .shopInfo ul li img {
+              width: 4vh;
+              height: 100%;
+              float: left;
+              margin-right: 10px; }
+            .homeTopChart .shopItem .shopPic .shopInfo ul li span {
+              float: left;
+              height: 100%;
+              color: #fbf8f1;
+              font-size: 20px;
+              vertical-align: top;
+              padding: 10px 0; }
+    .homeTopChart .shopItem .shopMessage {
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+      height: 30%;
+      background-color: #f2ebd4;
+      box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
+      border-radius: 10px;
+      padding: 10px; }
+      .homeTopChart .shopItem .shopMessage .memPic {
+        width: 32px;
+        height: 32px;
+        max-width: 50px;
+        max-height: 50px;
+        border-radius: 50%;
+        background-color: #ccc;
+        float: left;
+        margin: 20px; }
+      .homeTopChart .shopItem .shopMessage span {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        height: 32px;
+        line-height: 32px;
+        margin: 20px 0px; }
+      .homeTopChart .shopItem .shopMessage #messageTime {
+        float: right;
+        text-align: center; }
+      .homeTopChart .shopItem .shopMessage .message {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        position: relative; }
+        .homeTopChart .shopItem .shopMessage .message:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 15px solid transparent;
+          border-right: 15px solid #fff;
+          position: absolute;
+          top: -15px;
+          left: 15px; }
+  .homeTopChart .chooseBtn {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+    margin: auto;
+    font-size: 18px;
+    border: 1px solid #f06428;
+    color: #f06428;
+    background-color: #fbf8f1;
+    transition: .3s ease; }
+    .homeTopChart .chooseBtn:hover {
+      background-color: #f06428;
+      color: #fbf8f1;
+      transition: .3s ease;
+      cursor: pointer; }
+
+@media screen and (max-width: 768px) {
+  .homeTopChart {
+    height: 110vh; }
+    .homeTopChart p.topChartDescrp {
+      width: 90%;
+      text-align: center;
+      margin: 50px auto;
+      font-size: 1.2em;
+      color: #663300;
+      line-height: 1.5;
+      font-weight: 500; }
+    .homeTopChart .titleGrp {
+      width: 90%;
+      margin: 10px auto;
+      text-align: center; }
+      .homeTopChart .titleGrp img {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10px; }
+      .homeTopChart .titleGrp .topChartTitle {
+        text-align: center;
+        margin: 10px auto;
+        display: inline-block;
+        color: #663300; }
+    .homeTopChart .shopItem {
+      width: 100%;
+      height: 70vh;
+      padding: 10px; }
+      .homeTopChart .shopItem .shopPic {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56); }
+        .homeTopChart .shopItem .shopPic img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          z-index: -15;
+          object-fit: cover; }
+        .homeTopChart .shopItem .shopPic h3 {
+          width: 100%;
+          height: 50px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 10px;
+          right: 0;
+          margin: auto;
+          color: #fbf8f1;
+          letter-spacing: 2px;
+          text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); }
+        .homeTopChart .shopItem .shopPic .shopInfo {
+          width: 100%;
+          height: 50px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          padding: 1%; }
+          .homeTopChart .shopItem .shopPic .shopInfo:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(75, 75, 75, 0.5);
+            z-index: -1;
+            background-size: cover;
+            background-attachment: fixed;
+            -webkit-filter: blur(20px);
+            overflow: hidden; }
+          .homeTopChart .shopItem .shopPic .shopInfo ul {
+            width: 100%;
+            height: 100%;
+            text-align: center; }
+            .homeTopChart .shopItem .shopPic .shopInfo ul li {
+              width: 33%;
+              float: left;
+              height: 100%; }
+              .homeTopChart .shopItem .shopPic .shopInfo ul li img {
+                width: 4vw;
+                height: 4vmin;
+                min-height: 20px;
+                float: left;
+                object-fit: cover;
+                display: inline-block;
+                margin: 10px 0;
+                margin-right: 5px; }
+              .homeTopChart .shopItem .shopPic .shopInfo ul li span {
+                float: left;
+                color: #fbf8f1;
+                font-size: 16px; }
+      .homeTopChart .shopItem .shopMessage {
+        width: 100%;
+        height: 40%;
+        background-color: #f2ebd4;
+        box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
+        border-radius: 10px;
+        padding: 10px; }
+        .homeTopChart .shopItem .shopMessage .memPic {
+          width: 32px;
+          height: 32px;
+          max-width: 50px;
+          max-height: 50px;
+          border-radius: 50%;
+          background-color: #ccc;
+          float: left;
+          margin: 10px; }
+        .homeTopChart .shopItem .shopMessage span {
+          display: inline-block;
+          float: left;
+          width: 30%;
+          height: 32px;
+          line-height: 32px;
+          margin: 10px 0px; }
+        .homeTopChart .shopItem .shopMessage #messageTime {
+          float: right;
+          text-align: center; }
+        .homeTopChart .shopItem .shopMessage .message {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          background-color: #fff;
+          border-radius: 10px; }
+    .homeTopChart .chooseBtn {
+      width: 150px;
+      height: 40px;
+      border-radius: 20px;
+      text-align: center;
+      line-height: 40px;
+      margin: auto;
+      font-size: 18px;
+      border: 1px solid #f06428;
+      color: #f06428;
+      background-color: #fbf8f1;
+      transition: .3s ease; }
+      .homeTopChart .chooseBtn:hover {
+        background-color: #f06428;
+        color: #fbf8f1;
+        transition: .3s ease;
+        cursor: pointer; } }
+section.homeCarMap {
+  background-image: url("../img/homepage/homepage_bg3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5vw;
+  box-sizing: border-box; }
+  section.homeCarMap .carMap {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-image: url("../img/homepage/homepage_bg6.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+    section.homeCarMap .carMap h1.mapTitle {
+      width: 30vmin;
+      height: 100px;
+      font-size: 5vmin;
+      color: #663300;
+      background-color: #fbf8f1;
+      text-align: center;
+      line-height: 100px; }
+
+.homeActivity {
+  background-image: url("../img/homepage/homepage_bg4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+  position: relative; }
+  .homeActivity .activityTitle {
+    background-color: rgba(96, 56, 19, 0.32);
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    padding: 20px;
+    width: 20%; }
+    .homeActivity .activityTitle img {
+      display: block;
+      width: 70px;
+      margin: 30px auto; }
+    .homeActivity .activityTitle h1 {
+      width: 90%;
+      margin: auto;
+      font-size: 36px;
+      text-align: center;
+      color: #fbf8f1;
+      letter-spacing: 1.8px;
+      text-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5); }
+    .homeActivity .activityTitle p {
+      width: 90%;
+      text-align: left;
+      color: #fbf8f1;
+      padding-top: 50px;
+      font-size: 24px;
+      margin: auto; }
+  .homeActivity .activityItem {
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin-right: 10%; }
+    .homeActivity .activityItem .activityRight {
+      width: 100%;
+      height: 100%;
+      margin: auto; }
+    .homeActivity .activityItem #chooseActUp {
+      width: 80px;
+      height: 20%;
+      margin: auto;
+      vertical-align: top;
+      position: relative; }
+      .homeActivity .activityItem #chooseActUp .svg {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        fill: #fbf8f1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+    .homeActivity .activityItem #actBanner {
+      max-width: 600px;
+      width: 100%;
+      height: 60%;
+      margin: auto;
+      background-color: #fbf8f1;
+      border-radius: 90% 90% 90% 90%; }
+    .homeActivity .activityItem #chooseActDown {
+      width: 80px;
+      height: 20%;
+      margin: auto;
+      position: relative; }
+      .homeActivity .activityItem #chooseActDown .svg {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        fill: #fbf8f1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+
+@media screen and (max-width: 768px) {
+  .homeActivity .activityTitle {
+    position: static;
+    width: 100%; }
+    .homeActivity .activityTitle img {
+      width: 70px;
+      margin: 10px auto; }
+    .homeActivity .activityTitle h1 {
+      width: 70%;
+      margin: 10px auto;
+      font-size: 36px;
+      text-align: center;
+      color: #fbf8f1;
+      letter-spacing: 1.8px;
+      text-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5); }
+    .homeActivity .activityTitle p {
+      display: block;
+      text-align: center;
+      color: #fbf8f1;
+      padding-top: 10px;
+      font-size: 24px;
+      margin: auto; }
+  .homeActivity .activityItem {
+    width: 100%;
+    height: 50%;
+    margin: auto; }
+    .homeActivity .activityItem .svg {
+      position: static; }
+    .homeActivity .activityItem #chooseActUp {
+      margin: auto;
+      vertical-align: top; }
+    .homeActivity .activityItem #actBanner {
+      max-width: 600px;
+      width: 70%;
+      height: 60vw;
+      background-color: #fbf8f1;
+      border-radius: 10%;
+      margin: auto; }
+    .homeActivity .activityItem #chooseActDown {
+      margin: auto; } }
+.homeNewshop {
+  background-image: url("../img/homepage/homepage_bg5.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: -20px; }
+  .homeNewshop .newShopTitle {
+    width: 70%;
+    margin: auto;
+    padding: 100px 0px 50px 0px;
+    clear: both;
+    text-align: center; }
+    .homeNewshop .newShopTitle img {
+      display: inline-block; }
+    .homeNewshop .newShopTitle h1 {
+      display: inline-block;
+      color: #fbf8f1;
+      font-size: 48px;
+      text-align: center;
+      letter-spacing: 1.8;
+      vertical-align: top;
+      text-shadow: 0px 0px 10px 2px black; }
+  .homeNewshop .newShopGrp {
+    width: 90%;
+    margin: auto; }
+    .homeNewshop .newShopGrp .newShops {
+      width: 30%;
+      float: left;
+      margin: auto 10px;
+      padding: 10px;
+      text-align: center;
+      background-color: #fbf8f1;
+      border-radius: 20px;
+      box-shadow: 0px 0px 10px 2px #222; }
+      .homeNewshop .newShopGrp .newShops .newShopItem {
+        width: 100%;
+        height: 100%; }
+        .homeNewshop .newShopGrp .newShops .newShopItem img {
+          display: block;
+          width: 100%;
+          height: 50%;
+          object-fit: cover;
+          border: 5px solid #fff;
+          border-radius: 20px; }
+        .homeNewshop .newShopGrp .newShops .newShopItem .shopContent {
+          width: 100%;
+          height: 50%;
+          padding: 5%; }
+          .homeNewshop .newShopGrp .newShops .newShopItem .shopContent h2 {
+            width: 100%;
+            text-align: left;
+            font-size: 28px;
+            color: #663300;
+            margin: 10px 0px; }
+          .homeNewshop .newShopGrp .newShops .newShopItem .shopContent p {
+            width: 100%;
+            text-align: left;
+            margin: 10px 0px;
+            word-wrap: wrap;
+            color: #999;
+            font-size: 18px; }
+          .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul {
+            width: 100%;
+            padding: 10px; }
+            .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul li {
+              margin-right: 10px; }
+              .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul li img {
+                width: 4vw;
+                display: inline-block;
+                height: 4vw;
+                border: none;
+                max-width: 40px;
+                max-height: 40px; }
+              .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul li span {
+                display: inline-block;
+                height: 4vw;
+                max-height: 40px;
+                line-height: 4vw;
+                font-size: 18px; }
+          .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn {
+            display: block;
+            width: 120px;
+            height: 40px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 40px;
+            margin: auto;
+            font-size: 16px;
+            border: 1px solid #f06428;
+            color: #f06428;
+            background-color: #fbf8f1;
+            transition: .3s ease; }
+            .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn:hover {
+              background-color: #f06428;
+              color: #fbf8f1;
+              transition: .3s ease;
+              cursor: pointer; }
+
+@media screen and (max-width: 900px) {
+  .homeNewshop .newShopTitle {
+    width: 90%;
+    margin: auto;
+    padding: 30px 0px 30px 0px;
+    clear: both;
+    text-align: center; }
+    .homeNewshop .newShopTitle img {
+      width: 10vw;
+      display: inline-block; }
+    .homeNewshop .newShopTitle h1 {
+      display: inline-block;
+      color: #fbf8f1;
+      font-size: 36px;
+      text-align: center;
+      letter-spacing: 1.8;
+      vertical-align: top; }
+  .homeNewshop .newShopGrp .newShops {
+    display: block;
+    width: 90%; }
+    .homeNewshop .newShopGrp .newShops .newShopItem img {
+      width: 100%;
+      height: 50%; }
+    .homeNewshop .newShopGrp .newShops .newShopItem .shopContent {
+      width: 100%; }
+      .homeNewshop .newShopGrp .newShops .newShopItem .shopContent p {
+        font-size: 16px; }
+      .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn {
+        display: block;
+        width: 120px;
+        height: 40px;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 40px;
+        margin: auto;
+        font-size: 16px;
+        border: 1px solid #f06428;
+        color: #f06428;
+        background-color: #fbf8f1;
+        transition: .3s ease; }
+        .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn:hover {
+          background-color: #f06428;
+          color: #fbf8f1;
+          transition: .3s ease;
+          cursor: pointer; } }
+.homeContact {
+  width: 100%;
+  height: 50vh;
+  clear: both; }
+  .homeContact img {
+    width: 15%;
+    height: 15%;
+    display: block;
+    margin: auto; }
+  .homeContact p {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 4vmin;
+    color: #663300;
+    font-weight: 700; }
+  .homeContact h3 {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 3vmin;
+    color: #663300; }
+  .homeContact .addShop {
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box; }
+  .homeContact .contactUs {
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box; }
+
+@media screen and (max-width: 768px) {
+  .homeContact {
+    height: 70vh; }
+    .homeContact p {
+      font-size: 5vw; }
+    .homeContact h3 {
+      font-size: 4vmin; }
+    .homeContact .addShop {
+      width: 100%;
+      height: 50%; }
+    .homeContact .contactUs {
+      width: 100%;
+      height: 50%; } }
+#navBtn {
+  width: 10px;
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  right: 20px;
+  margin: auto; }
+  #navBtn li {
+    height: 10px;
+    width: 10px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background-color: #ccc; }

@@ -168,11 +168,7 @@ require_once("header.php");
 			</div>
 		</div>
 		
-<<<<<<< HEAD
 		<div class="chooseBtn">看下一家</div>
-=======
-	<!-- 	<div class="chooseBtn">看下一家</div> -->
->>>>>>> BD102_G2/homepage
 	</section>
 
 
@@ -343,22 +339,14 @@ require_once("header.php");
 		<div class="clearfix"></div>
 	</section>
 
-<<<<<<< HEAD
 	<ul id="navBtn">
-=======
-	<!-- <ul id="navBtn">
->>>>>>> BD102_G2/homepage
 		<li class="section1-click"><a href="#section1"></a></li>
 		<li class="section2-click"><a href="#section2"></a></li>
 		<li class="section3-click"><a href="#section3"></a></li>
 		<li class="section4-click"><a href="#section4"></a></li>
 		<li class="section5-click"><a href="#section5"></a></li>
 		<li class="section6-click"><a href="#section6"></a></li>
-<<<<<<< HEAD
 	</ul>
-=======
-	</ul> -->
->>>>>>> BD102_G2/homepage
 
 
  	<?php 

@@ -1,0 +1,511 @@
+@import 'basic.scss';
+
+/* ===================================================*/
+/* ===================================================*/
+/* ===================================================*/
+	
+	$dough_color_1 : #FFF8D7;
+	$dough_color_2 : #ebb78f;
+
+
+
+
+	.activity_banner{
+		
+		width:100%;
+		height:100%;
+		background: url('../img/acty_background.png') center center ;
+		background-size:cover;
+		// -moz-background-size: cover;
+		// overflow: hidden;
+		height: 136vh;
+
+		#acty_Dough{
+			min-width:250+px;
+			max-width:300+px;
+			width:28.5vw;
+			// margin:30vh auto 0;
+			margin: auto;
+    		padding: 30vh 0 0;
+			position:relative;
+			
+	
+				img{
+					width:100%;
+				}
+					
+				.acty_h1{
+					width:100%;
+					position:absolute;
+					bottom: 18%;
+					left:0%;
+					text-align:center;
+					h1{
+						color:$globalTitleColor;
+						font-size:$globalh2Size;
+								
+					}
+				}
+
+		}   //#acty_Dough
+		.clear{
+			clear:both;
+		}
+		.activity_board{
+			
+			max-width:380+px;
+			min-width:320+px;
+			position:relative;
+			bottom:0;
+			.acty_stirrer{
+				min-width: 76+px;
+				max-width:90+px;
+				width:15+vw;
+				position:absolute;
+				top:-45%;
+				
+			}
+			img{
+				width:100%;
+
+			}					
+			.acty_board_p{
+				font-size:18+px;
+				padding:4%;
+				width:82%;
+				position:absolute;
+				top:0;
+				left:0;
+				color:$globalFontColor;
+			}
+		}			
+		.activity_detail{
+			min-width:250 +px;
+			// width:25 +vw;
+			padding:1%;
+			// float:right;
+			// margin:2vw 5vw ;
+			background-color: rgba(246, 146, 30, .4);
+			box-sizing:border-box;
+			ul{
+				list-style-type:none;
+				color:$globalBgColor;
+				li{  
+					text-shadow: 1+px 1+px 1+px rgba(0, 0, 0, .6);
+					 font-size:16+px;
+					 line-height:25+px;
+				}
+			}
+
+		}
+	
+	}  //activity_banner
+
+/* .activity_banner rwd ==========================
+==================================================
+================================================== */
+	
+	@media all and (min-width:$tablet_min) {
+			.activity_detail{
+				width:25 +vw;
+				float:right;
+				margin:15vw 10vw 8vw 0;
+
+			}
+
+
+
+		}
+
+
+	@media all and (max-width:$mobile){
+			.activity_detail{
+				margin:auto;
+				width: 80%;
+				display:block;
+			}
+			.acty_stirrer{
+					left:-7%;
+				}
+		}
+
+
+
+	@media all and (max-width:959+px){
+			.activity_board{
+				width: 80+px;
+				display: block;
+				margin: 20+px auto;
+				float:none;
+				.acty_stirrer{
+					left:-10%;
+				}
+			}
+			.activity_detail{
+				margin:auto;
+				float:none;
+			}
+		}
+	@media all and (max-width:$mobile){
+			.activity_detail{
+				
+				width: 80%;
+				display:block;
+			}
+			.acty_stirrer{
+					left:-7%;
+				}
+
+		}
+
+
+	@media all and (min-width:960+px){
+			.activity_board{
+				width:40vw;
+				margin: 15vh 8vw 5vw 10vh;
+				float:left;
+				.acty_stirrer{
+					left:-10%;
+				}
+
+			}
+
+		}
+
+/*---------- .activity_banner rwd end -----------
+=====================================================
+===================================================== */
+
+
+	@keyframes dough1{
+	0%{border-radius: 30% 30% 40% 60% / 50% 55% 45% 50% ;
+		
+	}
+	100%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
+	}
+
+
+		
+	.activity_content{
+		background: url("../img/acty_background_2.png") center center;
+		background-size:cover;
+		padding-top: 120 +px;
+		padding-bottom: 50 +px;
+		position:relative;
+		// height:200vh;
+		// overflow:hidden;
+
+		width:100%;
+		.activity_pot{	
+
+			position:relative;
+			z-index:2;
+			max-width:350+px;
+			// min-width:250+px;
+			width:40%;
+			top:20vw;
+			img{
+				width:100%;
+
+			}
+			.activity_dough_change{
+				width:75%;
+				height:100%;
+				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
+				@include topBottomGradient($dough_color_1,$dough_color_2);
+				position:absolute;
+				top:-40%;
+				left:20%;
+				z-index:-2;
+			}
+			h2{
+				position:absolute;
+				top:40%;
+				left:10%;
+				width:80%;
+				font-size:2.5vmin;
+				text-align:center;
+				color:$globalHdColor02;
+			}
+		}
+		.content_1{
+			width:50%;
+			float:left;
+		}
+
+
+
+
+		.content_2{
+			width:50%;
+			float:left;
+		}
+		.activity_pot_b{
+			
+			position:absolute;
+			top:-25%;
+			left:5+px;
+			z-index:-5;
+		}
+		.activity_dough_1{
+			// float:right;
+			// margin: 3vw 30vw 2vw 0vw;
+			width:320+px;
+			height:250+px;
+			background: url('../img/acty_bread.png');
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			position:relative;
+			// right:-5vw;
+			top:-2vw;
+
+		}
+		.activity_dough_2{
+			// float:right;
+			
+			// margin-top:10+px;
+			
+			width:250+px;
+			height:230+px;
+			@include topBottomGradient($dough_color_1,$dough_color_2);
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			animation: dough1 2s linear infinite alternate;
+    		transition: 1s;
+    		box-sizing:border-box;
+    		padding: 30 +px;
+    		
+    		p{	
+    			color:$globalTitleColor;
+    			font-size: 18+px;
+    			margin-top: 30+px;
+    			text-shadow:1+px 1+px 1+px rgba(90, 88, 86, .2);
+    		}
+		}
+		.activity_dough_3{
+			
+			width:350+px;
+			height:300+px;
+			padding:60+px 35+px;
+			box-sizing:border-box;
+			@include topBottomGradient($dough_color_1,$dough_color_2);
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			p{
+				color:#5a5856;
+				margin:30+px auto;
+				vertical-align:middle;
+				// padding:40+px;
+			}
+			
+		}  //.activity_dough_3
+		.activity_dough_4_all{
+				text-align:center;
+			.activity_dough_4{
+				width:150+px;
+				height:130+px;
+				background-size:cover;
+				
+				   		
+						
+			}
+			.pic_1{
+				background: url('../img/acty_pic1.png') no-repeat center center;
+				background-size:cover;
+				
+				
+				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			}	
+			.pic_2{
+				background: url('../img/acty_pic2.png') no-repeat center center;
+				background-size:cover;
+				
+				
+				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			}
+			.pic_3{
+					
+				background: url('../img/acty_pic3.png') no-repeat center center;
+				background-size:cover;
+				
+				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			}	
+
+		}
+
+		.activity_dough_5{	
+			width:320+px;
+			height:250+px;
+			background: url('../img/acty_pic4.png');
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			
+		}
+		.activity_dough_6{
+			
+			margin: 3vw auto ;
+			width:320+px;
+			height:250+px;
+			background: url('../img/acty_pic5.png');
+			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+			
+			
+		}
+
+		
+	} //.activity_content
+
+/*===========content   rwd ====================
+================================================
+===============================================*/
+	@include rwd(mobile){   //767以下
+		.activity_pot{
+			display:block;
+			margin:5vw auto;
+			
+		}
+		.activity_dough_1{
+			margin: auto;
+			display:block;
+			right:0;
+		}
+		.activity_dough_2{
+			margin: 10vw auto;
+			float:none;
+
+		}
+		.activity_dough_3{
+			float:none;
+			margin:auto;
+		}
+		.pic_3{
+			margin:10+px auto;
+						
+		}
+		// .pic_1{
+		// 	margin:0 5%;
+		// }
+		.activity_dough_4_all{
+			margin:auto;
+			width:100%;
+		}
+		.activity_dough_4{
+			float:none;
+			display:inline-block;
+			margin: 2% 3%;
+		} 
+		.activity_dough_5{
+			float:none;
+			margin:auto;
+		} 
+		.activity_dough_5{
+			float:none;
+		}
+		
+	}	
+
+	@media all and (min-width:$tablet_min){   //768以上
+		
+		.activity_pot{
+			
+			margin-left:12vw;
+			float:left;
+		}
+		.activity_dough_1{
+			 margin: 3vw 30vw 2vw 0vw;
+			 float:right;
+			 right:-5vw;
+		}
+		.activity_dough_2{
+			float:right;
+			margin-bottom:10+px;
+			margin-right:10vw;
+
+		}
+		.activity_dough_3{
+			float:right;
+			margin-top:5vw;
+			margin-right:20vw;
+		} 
+		.pic_3{
+			margin:0 3%;
+			
+		}   
+		.pic_2{
+			margin: 5% 0;
+		}
+		.activity_dough_4_all{
+			width:85%;
+		 	margin-right: 8vw
+		}
+		.activity_dough_4{
+			float:right;
+		} 
+		.activity_dough_5{
+			float:right;
+			margin: 15vw 8vw 0vw 0vw;
+		} 
+		.activity_dough_6{
+			float:right;
+		}
+
+
+	}
+/*===========content   rwd  end====================
+================================================
+===============================================*/
+
+
+.activity_application{
+
+	background:url('../img/acty_background_3.png') center ;
+	overflow:hidden;
+	background-size:cover;
+	padding:8vw 5vw 5vw;
+	.activity_final{
+		width:50%;
+		float:left;
+		text-align:center;
+		.activity_fin_pic{
+			float:right;
+			background-color:rgba(246, 146, 30, .8);
+			width:200+px;
+			height:10vw;
+			max-height:165+px;
+			overflow:hidden;
+			img{
+				width:100%;
+				
+				vertical-align:top;
+			}
+		}
+	
+		.activity_bread{
+
+			margin:90+px auto 0;
+			width: 200+px;
+			img{
+				width:100%;
+			}
+		}
+			
+	}
+
+
+
+	.activity_form{
+		
+		float:left;
+		width:50%;
+		.globalForm{
+			width:85%;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+}

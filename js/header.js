@@ -7,9 +7,8 @@
 
 	$('.registerLink span').click(function(){
 		$('#RegisterBox').css('display','block');
-		$('#loginBox').css('display','none');  
+		$('#loginBox').css('display','none');
 	});
-  
 	$('.loginLink span').click(function(){
 		$('#RegisterBox').css('display','none');
 		$('#loginBox').css('display','block');

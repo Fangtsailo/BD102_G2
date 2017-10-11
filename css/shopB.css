@@ -1,0 +1,831 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #fbf8f1;
+  font-family: "Noto Sans CJK TC"; }
+
+input {
+  font-family: "Noto Sans CJK TC"; }
+
+a {
+  text-decoration: none;
+  color: #3399ff; }
+
+.SHOPB_SHOP {
+  position: relative; }
+
+.SHOPB_SHOP > img {
+  display: block;
+  width: 100%;
+  height: 50vw; }
+
+#SPNAME {
+  height: 6vw;
+  line-height: 6vw;
+  background-color: black;
+  color: #FFF;
+  text-align: center;
+  font-size: 5.5vmin;
+  position: absolute;
+  top: 7vw;
+  left: 9vw; }
+
+#SPINFO {
+  height: 13vw;
+  padding: 1.5vw;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-size: 2.1vmin;
+  line-height: 3.5vmin;
+  position: absolute;
+  top: 14.5vw;
+  left: 9vw; }
+
+#SPGRADE {
+  width: 16vw;
+  height: 3.5vw;
+  padding: 0.5vw;
+  box-sizing: border-box;
+  line-height: 2.5vw;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  text-align: center;
+  font-size: 1.1vw;
+  position: absolute;
+  top: 28vw;
+  left: 13vw; }
+
+#SPFOLLOW {
+  width: 3.5vw;
+  height: 3.5vw;
+  padding: 0.5vw;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-size: 1.1vw;
+  position: absolute;
+  top: 28vw;
+  left: 30vw; }
+
+#SPFOLLOW img {
+  width: 100%; }
+
+#SPSTORY {
+  height: 18vw;
+  padding: 1.5vw;
+  box-sizing: border-box;
+  background-color: rgba(236, 225, 203, 0.7);
+  color: #333;
+  font-size: 2.2vmin;
+  line-height: 4vmin;
+  position: absolute;
+  top: 20vw;
+  left: 58vw; }
+
+#SPHAPPY {
+  position: absolute;
+  bottom: 0; }
+
+#SPHAPPY img {
+  width: 90%; }
+
+.SHOPB_GUOGUOCHUNG {
+  width: 100vw;
+  height: 4vw;
+  position: relative; }
+
+.LLL {
+  width: 60vw;
+  height: 2.5vw;
+  background-color: rgba(188, 140, 92, 0.8);
+  position: absolute;
+  top: 0vw;
+  left: 0vw; }
+
+.RRR {
+  width: 60vw;
+  height: 2.5vw;
+  background-color: #ece1cb;
+  position: absolute;
+  top: 1.5vw;
+  right: 0vw; }
+
+.SHOPB_PRODUCT {
+  position: relative; }
+
+.SHOPB_PRODUCT > img {
+  display: block;
+  width: 100%;
+  height: 45vw;
+  opacity: .8; }
+
+.SHOPB_PRODUCT_title {
+  color: #AAA;
+  font-size: 5.2vmin;
+  line-height: 8vmin; }
+
+.SHOPB_PRODUCT_title p {
+  position: absolute;
+  top: 3vw;
+  left: 8vw; }
+
+.bar {
+  position: absolute;
+  top: 5vw;
+  left: 6vw;
+  width: 15vw;
+  height: 4vw;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+#pd1 {
+  position: absolute;
+  top: 7vw;
+  left: 44vw;
+  color: #000;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#pd1 img {
+  border-radius: 50%;
+  width: 90%; }
+
+#pd2 {
+  position: absolute;
+  top: 10vw;
+  left: 22vw;
+  color: #000;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#pd2 img {
+  border-radius: 50%;
+  width: 60%; }
+
+#pd3 {
+  position: absolute;
+  top: 24vw;
+  left: 26vw;
+  color: #000;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#pd3 img {
+  border-radius: 50%;
+  width: 60%; }
+
+#pd4 {
+  position: absolute;
+  top: 30vw;
+  left: 44vw;
+  color: #000;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#pd4 img {
+  border-radius: 50%;
+  width: 60%; }
+
+#pd5 {
+  position: absolute;
+  top: 24vw;
+  left: 63vw;
+  color: #000;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#pd5 img {
+  border-radius: 50%;
+  width: 60%; }
+
+#pd6 {
+  position: absolute;
+  top: 10vw;
+  left: 66vw;
+  color: #000;
+  text-align: center;
+  font-size: 2.2vmin; }
+
+#pd6 img {
+  border-radius: 50%;
+  width: 60%; }
+
+.SHOPB_ACT {
+  width: 100vw;
+  height: 38vw;
+  position: relative; }
+
+#BOTTOMAREA {
+  width: 35vw;
+  height: 20vw;
+  background-color: #9e693d;
+  position: absolute;
+  top: 5vw;
+  left: 15vw; }
+
+#ACTIMG {
+  position: absolute;
+  top: 2vw;
+  left: 40vw; }
+
+#ACTIMG img {
+  width: 100%;
+  opacity: .9; }
+
+#SKINAREA {
+  width: 40vw;
+  height: 20vw;
+  background-color: rgba(236, 225, 203, 0.9);
+  position: absolute;
+  top: 10vw;
+  left: 21vw; }
+
+#ACTTXT #tt {
+  color: #FFF;
+  font-size: 4vmin;
+  position: absolute;
+  top: 6vw;
+  left: 17vw;
+  text-shadow: 1px 2px 2px #666; }
+
+#ACTTXT #cc {
+  color: #654;
+  font-size: 2.8vmin;
+  position: absolute;
+  top: 13vw;
+  left: 25vw; }
+
+.SHOPB_MAP {
+  margin: 0vw 0vw 2vw 0vw; }
+
+#myMap {
+  width: 100vw;
+  height: 30vw; }
+
+.SHOPB_MSG {
+  width: 90vw;
+  height: 40vw;
+  background-color: #DDC;
+  margin: 2vw 5vw 0vw 5vw;
+  padding: 3vw;
+  box-sizing: border-box; }
+
+.MSG_CON {
+  margin: 0vw 8vw 2vw 8vw; }
+
+#MSG_PROFILE {
+  display: inline-block;
+  width: 12%;
+  float: left; }
+
+#MSG_PROFILE img {
+  border-radius: 50%; }
+
+#MSG_TXT {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 88%;
+  height: 100px;
+  float: left;
+  color: #666; }
+
+#MSG_TXT input {
+  height: 100px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); }
+
+.SHOPB_OTHERS {
+  margin-bottom: 7vw; }
+
+.OTHERSTITLE {
+  width: 100vw;
+  text-align: center;
+  margin-top: 7vw;
+  margin-bottom: 2vw;
+  font-size: 3vmin;
+  color: #614935; }
+
+@media screen and (max-width: 767px) {
+  header.globalHead {
+    top: 0; }
+
+  .SHOPB_SHOP {
+    margin-top: 27vw; }
+
+  #SPINFO {
+    height: 25vw; }
+
+  #SPGRADE {
+    top: 42vw;
+    left: 9vw;
+    width: 25vw; }
+
+  #SPFOLLOW {
+    top: 42vw;
+    left: 35vw;
+    width: 5vw; }
+
+  #SPFOLLOW img {
+    width: 90%; }
+
+  #SPSTORY {
+    left: 46vw;
+    top: 27vw; }
+
+  #SPSTORY #story2 {
+    display: none; }
+
+  #pd1 {
+    width: 25%;
+    top: 12vw;
+    left: 5vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 1vmin; }
+
+  #pd1 img {
+    width: 68%; }
+
+  #pd2 {
+    width: 25%;
+    top: 12vw;
+    left: 27vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 1vmin; }
+
+  #pd2 img {
+    width: 68%; }
+
+  #pd3 {
+    width: 25%;
+    top: 12vw;
+    left: 49vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 1vmin; }
+
+  #pd3 img {
+    width: 68%; }
+
+  #pd6 {
+    width: 25%;
+    top: 12vw;
+    left: 70vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 1vmin; }
+
+  #pd6 img {
+    width: 68%; }
+
+  #pd5 {
+    display: none; }
+
+  #pd4 {
+    display: none; }
+
+  .SHOPB_ACT {
+    height: 45vw;
+    position: relative; }
+
+  #BOTTOMAREA {
+    height: 28vw;
+    background-color: #9e693d;
+    position: absolute;
+    top: 5vw;
+    left: 8vw; }
+
+  #ACTIMG {
+    position: absolute;
+    top: 2vw;
+    left: 38vw;
+    right: 2vw; }
+
+  #SKINAREA {
+    width: 45vw;
+    height: 28vw;
+    background-color: rgba(236, 225, 203, 0.9);
+    position: absolute;
+    top: 13vw;
+    left: 15vw; }
+
+  #ACTTXT #tt {
+    color: #FFF;
+    font-size: 4vmin;
+    position: absolute;
+    left: 12vw;
+    text-shadow: 1px 2px 2px #000; }
+
+  #ACTTXT #cc {
+    color: #654;
+    font-size: 3vmin;
+    position: absolute;
+    top: 15vw;
+    left: 19vw; }
+
+  .SHOPB_MAP {
+    margin: 2vw 0vw 5vw 0vw; }
+
+  #myMap {
+    height: 55vw; }
+
+  .SHOPB_MSG {
+    height: 100vw; }
+
+  .MSG_CON {
+    margin: 0vw 8vw 5vw 8vw; }
+
+  #MSG_PROFILE img {
+    width: 120%; }
+
+  #MSG_TXT {
+    width: 82%;
+    height: 100px;
+    color: #666;
+    margin: 0vw  0vw  0vw  4vw; }
+
+  #MSG_TXT p {
+    font-size: 3vmin; }
+
+  .OTHERSTITLE p {
+    font-size: 5vmin; } }
+.globalForm {
+  width: 50%;
+  background-color: #fbf8f1;
+  border: 1px solid #ccc;
+  margin: auto; }
+  .globalForm .globalFormHeader {
+    width: 100%;
+    padding: 5% 5%;
+    position: relative;
+    box-sizing: border-box;
+    background: #805934;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, #805934 0%, #9e693d 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
+    /* IE6-9 */ }
+    .globalForm .globalFormHeader h1 {
+      font-size: 24px;
+      color: #fbf8f1; }
+    .globalForm .globalFormHeader p {
+      font-size: 16px;
+      color: #fbf8f1;
+      font-weight: 300;
+      margin-top: 10px; }
+    .globalForm .globalFormHeader .st0 {
+      fill: #fbf8f1; }
+    .globalForm .globalFormHeader .svg {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 10px;
+      top: 10px; }
+  .globalForm .globalFormContent {
+    width: 100%;
+    padding-top: 10px; }
+    .globalForm .globalFormContent .globalFormInput {
+      width: 80%;
+      height: 50px;
+      margin: 0px auto; }
+      .globalForm .globalFormContent .globalFormInput input {
+        display: block;
+        float: right;
+        width: 65%;
+        height: 100%;
+        padding-left: 10px;
+        margin: auto;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #bbb; }
+        .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+          color: #bbb;
+          font-weight: 300; }
+      .globalForm .globalFormContent .globalFormInput label {
+        display: block;
+        width: 35% -10px;
+        float: left;
+        height: 100%;
+        line-height: 50px;
+        color: #663300;
+        font-weight: 300; }
+        .globalForm .globalFormContent .globalFormInput label span {
+          color: #f06428; }
+      .globalForm .globalFormContent .globalFormInput textarea {
+        display: block;
+        float: right;
+        width: 65%;
+        padding-left: 10px;
+        padding-top: 10px;
+        height: 100%;
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #bbb; }
+    .globalForm .globalFormContent .globalFormBtns {
+      width: 80%;
+      margin: 30px auto;
+      text-align: center; }
+      .globalForm .globalFormContent .globalFormBtns .globalOkBtn, .globalForm .globalFormContent .globalFormBtns .globalCancelBtn {
+        display: inline-block;
+        margin: 0px 5px;
+        text-decoration: none;
+        cursor: pointer; }
+
+header.globalHead {
+  width: 100%;
+  height: 100px;
+  background: #805934;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #805934 0%, #9e693d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
+  /* IE6-9 */
+  position: fixed;
+  opacity: .8;
+  z-index: 1; }
+  header.globalHead .headLoginBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: none; }
+    header.globalHead .headLoginBox .globalForm {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 600px;
+      height: 80vh;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+      header.globalHead .headLoginBox .globalForm .globalFormHeader {
+        text-align: center; }
+        header.globalHead .headLoginBox .globalForm .globalFormHeader img {
+          width: 160px; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+        font-size: 16px; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0px; }
+        header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
+          border-bottom: 1px solid #3399ff; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px; }
+        header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+          display: inline-block;
+          width: 50%;
+          height: 50px;
+          background: #3B5998;
+          /* Old browsers */
+          background: -moz-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #3B5998), color-stop(100%, #283D69));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* IE10+ */
+          background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
+          /* IE6-9 */
+          border-radius: 5px;
+          text-align: center;
+          color: #fbf8f1;
+          line-height: 50px;
+          font-weight: 300; }
+      header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center; }
+        header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink a {
+          text-align: center;
+          color: #663300; }
+          header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink a:hover {
+            border-bottom: 1px solid #663300; }
+  header.globalHead .headLogo {
+    width: 10%;
+    height: 80px;
+    padding: 10px;
+    display: inline-block; }
+    header.globalHead .headLogo img {
+      display: block;
+      width: 160px;
+      height: 80px; }
+  header.globalHead .headerRight {
+    width: 50%;
+    height: 80px;
+    padding: 10px 0px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    header.globalHead .headerRight .headSearch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 80px;
+      border: 1px solid #ccc; }
+    header.globalHead .headerRight .headAccount {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 80px;
+      border: 1px solid #ccc; }
+      header.globalHead .headerRight .headAccount #headMemStatus {
+        display: none; }
+        header.globalHead .headerRight .headAccount #headMemStatus #headMemPic {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          padding: 10px 0px; }
+      header.globalHead .headerRight .headAccount #headMemLogin {
+        display: inline-block;
+        width: 100px;
+        height: 80px;
+        padding: 10px 0px; }
+        header.globalHead .headerRight .headAccount #headMemLogin span {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          padding: 0px 5%;
+          fill: #fbf8f1; }
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: #f2ebd4;
+  text-align: center; }
+  footer .globalFtBtn {
+    display: inline-block;
+    margin: 15px; }
+    footer .globalFtBtn .svg {
+      width: 50px;
+      height: 50px;
+      margin: 10px auto; }
+      footer .globalFtBtn .svg path, footer .globalFtBtn .svg polygon {
+        fill: #bbb; }
+    footer .globalFtBtn a {
+      color: #bbb;
+      text-decoration: none; }
+    footer .globalFtBtn:hover path {
+      fill: #f06428; }
+    footer .globalFtBtn:hover polygon {
+      fill: #f06428; }
+    footer .globalFtBtn:hover a {
+      color: #f06428; }
+  footer p {
+    color: #663300;
+    margin-top: 10px; }
+
+.clearfix {
+  clear: both; }
+
+.globalOkBtn {
+  width: 150px;
+  height: 45px;
+  border-radius: 22.5px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  border: 1px solid #f06428;
+  color: #f06428;
+  background-color: #fbf8f1;
+  transition: .3s ease; }
+  .globalOkBtn:hover {
+    background-color: #f06428;
+    color: #fbf8f1;
+    transition: .3s ease;
+    cursor: pointer; }
+
+.globalCancelBtn {
+  width: 150px;
+  height: 45px;
+  border-radius: 22.5px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  border: 1px solid #3399ff;
+  color: #3399ff;
+  transition: .3s ease; }
+  .globalCancelBtn:hover {
+    background-color: #3399ff;
+    color: #fbf8f1;
+    transition: .3s ease;
+    text-decoration: none;
+    cursor: pointer; }
+
+@media screen and (max-width: 767px) {
+  header.globalHead .headLogo img {
+    width: 30vw; }
+
+  .globalForm {
+    width: 80%;
+    margin: auto; }
+    .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
+      width: 40%; } }
+@media screen and (max-width: 767px) {
+  .col-xs-1 {
+    width: 8.333333%; }
+
+  .col-xs-2 {
+    width: 16.666666%; }
+
+  .col-xs-3 {
+    width: 25%; }
+
+  .col-xs-4 {
+    width: 33.333333%; }
+
+  .col-xs-5 {
+    width: 41.666666%; }
+
+  .col-xs-6 {
+    width: 50%; }
+
+  .col-xs-7 {
+    width: 58.333333%; }
+
+  .col-xs-8 {
+    width: 66.666666%; }
+
+  .col-xs-9 {
+    width: 75%; }
+
+  .col-xs-10 {
+    width: 83.333333%; }
+
+  .col-xs-11 {
+    width: 91.666666%; }
+
+  .col-xs-12 {
+    width: 100%; } }
+@media screen and (min-width: 768px) {
+  .col-sm-1 {
+    width: 8.333333%; }
+
+  .col-sm-2 {
+    width: 16.666666%; }
+
+  .col-sm-3 {
+    width: 25%; }
+
+  .col-sm-4 {
+    width: 33.333333%; }
+
+  .col-sm-5 {
+    width: 41.666666%; }
+
+  .col-sm-6 {
+    width: 50%; }
+
+  .col-sm-7 {
+    width: 58.333333%; }
+
+  .col-sm-8 {
+    width: 66.666666%; }
+
+  .col-sm-9 {
+    width: 75%; }
+
+  .col-sm-10 {
+    width: 83.333333%; }
+
+  .col-sm-11 {
+    width: 91.666666%; }
+
+  .col-sm-12 {
+    width: 100%; } }
