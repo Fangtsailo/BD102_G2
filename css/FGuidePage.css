@@ -1,94 +1,116 @@
 body {
   position: relative; }
-  body .GuideBgimg {
-    display: block;
+
+h2 {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  color: #663300; }
+
+.GuideBgimg {
+  display: block;
+  width: 100%;
+  height: 100vh; }
+
+.house {
+  width: 46%;
+  position: absolute;
+  z-index: 1;
+  bottom: 9%;
+  left: 23%; }
+  .house img {
     width: 100%;
-    height: 100vh; }
-  body .house {
-    width: 62%;
-    position: absolute;
-    z-index: 1;
-    bottom: 10%;
-    left: 10%; }
-    body .house img {
-      width: 100%;
-      max-height: 506px;
-      max-width: 886px; }
-  body .sign {
-    width: 14%;
-    position: absolute;
-    z-index: 2;
-    bottom: 5%;
-    left: 5%; }
-    body .sign img {
-      width: 100%;
-      max-height: 270px;
-      max-width: 200px; }
-  body .car {
-    width: 47%;
-    position: absolute;
-    z-index: 2;
-    bottom: 5%;
-    right: 5%;
-    text-align: right; }
-    body .car img {
-      width: 100%;
-      max-height: 417px;
-      max-width: 682px; }
-  body .logo {
-    width: 47%;
-    max-width: 363px;
-    position: absolute;
-    z-index: 2;
-    top: 8%;
-    right: 0;
-    left: 0;
-    margin: auto; }
-    body .logo img {
-      width: 100%;
-      max-width: 363px;
-      max-height: 168px; }
-  body .left-bread {
-    width: 12%;
+    max-height: 376px;
+    max-width: 663px; }
+
+.sign {
+  width: 10%;
+  position: absolute;
+  z-index: 2;
+  bottom: 3%;
+  left: 17%; }
+  .sign img {
+    width: 100%;
+    max-height: 220px;
+    max-width: 147px; }
+
+.car {
+  width: 35%;
+  position: absolute;
+  z-index: 2;
+  bottom: 3%;
+  right: 15%;
+  text-align: right; }
+  .car img {
+    width: 100%;
+    max-height: 325px;
+    max-width: 511px; }
+
+.logo {
+  width: 31%;
+  max-width: 440px;
+  min-width: 300px;
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  right: 0;
+  left: 0;
+  margin: auto; }
+  .logo img {
+    width: 100%;
+    max-width: 440px;
+    max-height: 225px; }
+
+.left-bread {
+  width: 12%;
+  max-width: 160px;
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  left: 16%;
+  margin: auto; }
+  .left-bread img {
+    width: 100%;
     max-width: 160px;
-    position: absolute;
-    z-index: 2;
-    top: 8%;
-    left: 8%;
-    margin: auto; }
-    body .left-bread img {
-      width: 100%;
-      max-width: 160px;
-      max-height: 160px; }
-  body .right-bread {
-    width: 12%;
+    max-height: 160px; }
+
+.right-bread {
+  width: 12%;
+  max-width: 160px;
+  position: absolute;
+  z-index: 2;
+  top: 14%;
+  right: 16%;
+  margin: auto; }
+  .right-bread img {
+    width: 100%;
     max-width: 160px;
-    position: absolute;
-    z-index: 2;
-    top: 8%;
-    right: 8%;
-    margin: auto; }
-    body .right-bread img {
-      width: 100%;
-      max-width: 160px;
-      max-height: 160px; }
-  body .rwdBread {
-    display: none;
-    width: 80%;
-    height: 25vh;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 3; }
-    body .rwdBread .rwd-left-bread {
-      width: 20%;
-      min-width: 80px; }
-    body .rwdBread .rwd-right-bread {
-      width: 20%;
-      min-width: 80px; }
+    max-height: 160px; }
+
+.rwdBread {
+  display: none;
+  width: 80%;
+  height: 25vh;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 3; }
+  .rwdBread .rwd-left-bread {
+    width: 20%;
+    min-width: 80px; }
+  .rwdBread .rwd-right-bread {
+    width: 20%;
+    min-width: 80px; }
 
 @media screen and (max-width: 767px) {
   .left-bread, .right-bread {
