@@ -40,11 +40,51 @@ a {
 	//opacity: .9;
 	position: relative;
 }
-.SHOPB_SHOP>img{
-	display: block;
-	width: 100%;
-	height: 50vw;
-		}
+// .banners>img{
+// 	display: block;
+// 	width: 100%;
+// 	height: 50vw;
+// 		}
+
+
+	.banners {
+		background-size: cover;
+		width: 100%;
+		height: 50vw;
+		background-image: url("../img/SHOPB/BN_01.JPG");			
+		animation: banners-slide 18s 2s infinite;
+	}
+	@keyframes banners-slide {
+		0% { background-image:url("../img/SHOPB/BN_01.JPG")}
+		16.66% { background-image: url("../img/SHOPB/BN_01.JPG")}
+		33.33% { background-image: url("../img/SHOPB/BN_02.JPG")}
+		46.99% { background-image: url("../img/SHOPB/BN_02.JPG")}
+		66.66% { background-image: url("../img/SHOPB/BN_03.JPG")}
+		83.33% { background-image: url("../img/SHOPB/BN_03.JPG")}
+		100% { background-image: url("../img/SHOPB/BN_01.JPG")}
+	}
+
+
+
+
+
+
+
+
+// .owl-carousel{
+// 	//z-index: 2;
+// 	width: 100%;
+// 	height: 50vw;
+// 	position: absolute;
+// 	top: 0vw;
+// 	left: 0vw;
+// }
+// .item>img{
+// 	display: block;
+// 	width: 100%;
+// 	height: 50vw;
+// 		}
+
 
 #SPNAME{
 	//width: 100%;
@@ -75,7 +115,7 @@ a {
 }
 
 #SPGRADE{
-	width: 16vw;
+	width: 20vw;
 	height:3.5vw;
 	padding:0.5vw;
 	box-sizing:border-box;
@@ -87,8 +127,18 @@ a {
 	//line-height: 2vw;
 	position: absolute;
 	top:28vw ;
-	left:13vw ;
+	left:9vw ;
 }
+.star1{float: left; width: 3vw;}
+.star2{float: left; width: 3vw;}
+.star3{float: left; width: 3vw;}
+.star4{float: left; width: 3vw;}
+.star5{float: left; width: 3vw;}
+#SPGRADE img{
+	width: 45%;}
+
+
+
 #SPFOLLOW{
 	width: 3.5vw;
 	height:3.5vw;
@@ -123,7 +173,8 @@ a {
 
 #SPHAPPY{
 	position: absolute;
-	bottom: 0;
+	bottom: 1vw;
+	left: 7vw;
 }
 
 #SPHAPPY img{
@@ -134,10 +185,11 @@ a {
 }
 #SPHAPPYDON	{
 	position: absolute;
-	bottom: 9vw;
+	bottom: 8vw;
+	left: 23vw;
 }
 #SPHAPPYDON img{
-	width: 3%;
+	width: 22%;
 }
 
 .SPSTORYRWD{display: none;}
@@ -155,7 +207,7 @@ a {
 	background-color: rgba(188,140,92,.8);
 	position: absolute;
 	top: 0vw;
-	left: 0vw;
+	left: 0.8vw;
 }
 .RRR{
 	width: 60vw;
@@ -163,7 +215,7 @@ a {
 	background-color: rgba(236,225,203,1);
 	position: absolute;
 	top: 1.5vw;
-	right: 0vw;
+	right: 0.8vw;
 }
 
 
@@ -208,7 +260,8 @@ a {
 	font-size: 2.2vmin;
 }
 #pd1 img{border-radius: 50%;
-		 width: 90%;}
+		 width: 90%;
+		 position: relative;}
 #pd2{
 	position: absolute;
 	top: 10vw;
@@ -259,6 +312,119 @@ a {
 }
 #pd6 img{border-radius: 50%;
 		 width: 60%;}
+
+.pd1_DTL{
+	background-color: rgba(255,255,255,.7);
+	width: 270px;
+	height: 270px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 5%;
+	color: $globalFontColor;
+	display: none;
+	}
+.pd1_DTL h3{
+	font-size: $globalh3Size;
+	margin-top: 30%;}
+.pd1_DTL p{font-size: $globalBtnSize;}
+
+#pd1:hover .pd1_DTL{
+			display: inline;
+		}
+#pd1:hover #dis{
+			display: none;
+		}
+
+
+
+.pd2_DTL,.pd3_DTL,.pd4_DTL,.pd5_DTL,.pd6_DTL{
+	background-color: rgba(255,255,255,.7);
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 20%;
+	color: $globalFontColor;
+	display: none;
+	}
+.pd2_DTL h3{
+	font-size: $globalBtnSize;
+	margin-top: 25%;}
+.pd2_DTL p{font-size: $globalContentSize}
+
+#pd2:hover .pd2_DTL{
+			display: inline;
+		}
+#pd2:hover #dis{
+			display: none;
+		}
+
+.pd3_DTL h3{
+	font-size: $globalBtnSize;
+	margin-top: 25%;}
+.pd3_DTL p{font-size: $globalContentSize}
+
+#pd3:hover .pd3_DTL{
+			display: inline;
+		}
+#pd3:hover #dis{
+			display: none;
+		}
+
+.pd4_DTL h3{
+	font-size: $globalBtnSize;
+	margin-top: 25%;}
+.pd4_DTL p{font-size: $globalContentSize}
+
+#pd4:hover .pd4_DTL{
+			display: inline;
+		}
+#pd4:hover #dis{
+			display: none;
+		}
+
+.pd5_DTL h3{
+	font-size: $globalBtnSize;
+	margin-top: 25%;}
+.pd5_DTL p{font-size: $globalContentSize}
+
+#pd5:hover .pd5_DTL{
+			display: inline;
+		}
+#pd5:hover #dis{
+			display: none;
+		}
+
+.pd6_DTL h3{
+	font-size: $globalBtnSize;
+	margin-top: 25%;}
+.pd6_DTL p{font-size: $globalContentSize}
+
+#pd6:hover .pd6_DTL{
+			display: inline;
+		}
+#pd6:hover #dis{
+			display: none;
+		}
+
+
+
+// #pd1{animation: TRY 1.7s 0.3s alternate;}
+// #pd2{animation: TRY 1.7s 0.5s alternate;}
+// #pd3{animation: TRY 1.7s 1s alternate;}
+// #pd4{animation: TRY 1.7s 1.5s alternate;}
+// #pd5{animation: TRY 1.7s 2s alternate;}
+// #pd6{animation: TRY 1.7s 2.5s alternate;}
+
+// @keyframes TRY{
+// 			  0%{ transform: scale(1);}
+// 			  50%{ transform: scale(1.1);}
+// 			100%{ transform: scale(1);}
+// 		}
+
+
 
 
 
@@ -434,7 +600,7 @@ a {
 	font-size: 3vmin;
 	color: #614935; 
 }
-
+.OTHERSPHOTOS{overflow: hidden;}
 
 
 
@@ -454,7 +620,12 @@ a {
 	width: 42vw;
 	top:15vw ;
 	left:48vw ;
-}
+	}
+	
+	#SPHAPPYDON{
+		display: none;
+	}
+
 
 
 	#pd1{
@@ -568,9 +739,6 @@ a {
 		//line-height: 6vw;
 		background-color: rgba(236,225,203,.7);
 		color: #333;
-		//position: absolute;
-		//top:19vw ;
-		//left:53vw ;
 	}
 
 
@@ -602,7 +770,13 @@ a {
 	.SHOPB_SHOP{
 		margin-top: 80px;
 	}
+
+	#SPNAME {
+		width: 53vw;
+	}
+
 	#SPINFO{
+		width: 53vw;
 		height: 25vw;
 	}
 	#SPGRADE{

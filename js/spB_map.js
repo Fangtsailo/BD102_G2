@@ -11,7 +11,7 @@ function doFirst(){
 	var marker = new google.maps.Marker({
 		position: myPosition,
 		map: map,
-		icon: 'img/iconBOLO.png',
+		icon: 'img/SHOPB/iconBOLO.png',
 		title: '哪裡有好吃麵包店!'
 	});
 }
