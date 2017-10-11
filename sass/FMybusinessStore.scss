@@ -1,10 +1,22 @@
 @import "member/myBusiness/store/_FMybusinessStorVar.scss";
 @import "member/myBusiness/store/_FMybusinessStorMixin.scss";
 
+@keyframes letterDraw {
+  		to {
+  			stroke-dashoffset: 0;
+  		}
+  	}
+
+
+@keyframes letterleaf {
+  		to {
+  			fill: #4b7cbf;
+  		}
+  	}
 
 .coverHeader{
 	// width: 100vw;
-	height: 100px;
+	height: 80px;
 }
 
 header{
@@ -14,13 +26,13 @@ header{
 .coverSubtitile{
 	height: 60px;
 	.subtitle{
-		height: 60px;
+		height:44px;
 		width: 100vw;
 		position: fixed;
-		top: 100px;
+		top: 80px;
 		z-index: 3;
 		h2{
-			line-height: 60px;
+			line-height: 44px;
 			font-size: 20px;
 			background-color:$MybusinessStore-subtitle-bgColor;
 			padding-left: 20px;
@@ -85,10 +97,31 @@ width: 100%;
 	.subtitle{
 		height: 100px;
 		// border: 1px solid #ccc;
+<<<<<<< HEAD
+		text-align: center;
+		padding-top: 20px;
+		svg{
+			
+			.line {
+		  		fill: none;
+		  		stroke-width:  1;
+		  		stroke: #4b7cbf;
+		  		animation:letterleaf 1s ease forwards; 
+		 		
+			  	.line-g {
+				opacity: 1;
+				stroke-dasharray: 340;
+				stroke-dashoffset: 340;
+				animation: letterDraw 3s ease forwards;
+	  			}
+	  		}
+	  		
+=======
 		h2{
 			text-align: center;
 			line-height: 100px;
 			color:$MybusinessStore-subtitle-bgColor;
+>>>>>>> fcc4a5b46455b70b481741d2b804e78443a477f0
 		}
 
 	}

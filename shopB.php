@@ -27,6 +27,7 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="css/shopB.css">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
 </head>
 <body>
 
