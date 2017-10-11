@@ -13,10 +13,6 @@ module.exports = function (grunt) {
         files: ['*.html'],
         task: ['watchTask']
       },
-      php: {
-        files: ['*.php'],
-        task: ['watchTask']
-      },
       js: {
         files: ['js/*.js']
       }
@@ -44,19 +40,19 @@ module.exports = function (grunt) {
           src: [
             'css/*.css',
             '*.html',
-            '*.php',
             'js/*.js'
           ]
         },
         options: {
           watchTask: true,
+          browser: "chrome",
           server: {
             baseDir: './',
             index: 'index.html'
-          } //server
-        } //option
-      } //dev
-    } //browserSync
+          }
+        }
+      }
+    }
   });
 
   //Load the plugin that provides the "watch sass browserSync" task.
