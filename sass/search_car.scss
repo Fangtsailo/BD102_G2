@@ -26,6 +26,7 @@ img{
 		}
 	}	//h1
 	.tag-fa{
+		    height: 35px;
 		margin-top:5px;
 		display:inline-block;
 		.tag{
@@ -36,8 +37,10 @@ img{
 			color:$globalBgColor ;
 			background-color:$globalStarColor;
 			position:relative;
-			height:35px;
-			border-radius:5px;
+			height: 29px;
+    		border-radius: 5px;
+    		display: inline-block;
+			
 		}
 	
 
@@ -205,6 +208,9 @@ img{
 		}
 		.search_result{
 			margin:0 auto 10px ;
+			.tag-fa{
+				width:100%;
+			}
 		}
 		.search_mapcar{
 			overflow:-webkit-paged-x;

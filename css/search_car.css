@@ -729,6 +729,7 @@ img {
     .search_result h1 #numberOf {
       color: #f06428; }
   .search_result .tag-fa {
+    height: 35px;
     margin-top: 5px;
     display: inline-block; }
     .search_result .tag-fa .tag {
@@ -739,8 +740,9 @@ img {
       color: #fbf8f1;
       background-color: #f6921E;
       position: relative;
-      height: 35px;
-      border-radius: 5px; }
+      height: 29px;
+      border-radius: 5px;
+      display: inline-block; }
     .search_result .tag-fa .head {
       top: 0;
       position: absolute;
@@ -847,6 +849,8 @@ img {
     margin-top: 12vh; }
   .search_content .search_result {
     margin: 0 auto 10px; }
+    .search_content .search_result .tag-fa {
+      width: 100%; }
   .search_content .search_mapcar {
     overflow: -webkit-paged-x; }
     .search_content .search_mapcar #map-now1 {
