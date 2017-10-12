@@ -455,7 +455,6 @@ img {
       background-color: #000; }
 
 .screen-activity {
-  height: 100vh;
   background-color: #fbf8f1;
   overflow: hidden;
   position: relative; }
@@ -476,46 +475,54 @@ img {
       z-index: 1; }
     .screen-activity #activity-parallax .parallax-item {
       width: 200px;
-      position: absolute; }
+      position: absolute;
+      opacity: 0.8; }
       .screen-activity #activity-parallax .parallax-item img {
         width: 100%; }
     .screen-activity #activity-parallax .shadow {
       z-index: 0; }
+    .screen-activity #activity-parallax .parallax-item:not(.shadow) {
+      z-index: 1; }
     .screen-activity #activity-parallax .egg {
       width: 150px;
-      left: 15vw;
-      top: 0px; }
+      left: 0px;
+      top: -10vh; }
     .screen-activity #activity-parallax .egg-shadow {
       width: 150px;
-      left: 15vw;
-      top: 80px; }
+      left: 0px;
+      top: 15vh; }
     .screen-activity #activity-parallax .board {
       width: 130px;
       left: 15vw;
-      top: 400px;
+      top: 50vh;
       transform: rotateZ(-70deg); }
     .screen-activity #activity-parallax .board-shadow {
       width: 130px;
       left: 15vw;
-      top: 430px;
+      top: 60vh;
       transform: rotateZ(-70deg); }
     .screen-activity #activity-parallax .spoon {
-      right: 15vw;
-      top: 0px; }
+      right: 2vw;
+      top: -10vh; }
     .screen-activity #activity-parallax .spoon-shadow {
-      right: 15vw;
-      top: 80px; }
+      right: 2vw;
+      top: 15vh; }
     .screen-activity #activity-parallax .tool {
-      right: 15vw;
-      top: 400px; }
+      left: 30vw;
+      top: 50vh; }
     .screen-activity #activity-parallax .tool-shadow {
-      right: 15vw;
-      top: 420px; }
+      left: 30vw;
+      top: 53vh; }
 @keyframes tool-move {
   0% {
     transform: translateX(0px); }
   100% {
-    transform: translateX(20px); } }
+    transform: translateX(20vw); } }
+@keyframes tool-move-long {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(30vw); } }
   .screen-activity .title {
     width: 100%;
     height: 100%;
@@ -545,33 +552,28 @@ img {
       background-color: #fbf8f1;
       color: #9e693d; }
   .screen-activity .banner-area {
-    max-width: 700px;
-    width: 100%;
+    max-width: 900px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin: auto;
     position: relative;
-    z-index: 0; }
-    .screen-activity .banner-area:before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 50px;
-      height: 100px;
-      left: -100px;
-      top: 40vh;
-      background-image: url("../img/store/browse/black_left.png");
-      background-repeat: no-repeat;
-      background-size: 100%; }
-    .screen-activity .banner-area:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 50px;
-      height: 100px;
-      right: -100px;
-      top: 40vh;
-      background-image: url("../img/store/browse/black_right.png");
-      background-repeat: no-repeat;
-      background-size: 100%; }
+    z-index: 0;
+    overflow: hidden; }
+    .screen-activity .banner-area h2 {
+      color: #94664f; }
+    .screen-activity .banner-area .item {
+      overflow: hidden; }
+    .screen-activity .banner-area .row {
+      overflow: hidden;
+      color: #d38754;
+      margin-bottom: 10px; }
+    .screen-activity .banner-area .detail {
+      margin-top: 10vh;
+      padding: 0; }
+      .screen-activity .banner-area .detail div {
+        padding-left: 0; }
+      .screen-activity .banner-area .detail .content {
+        color: #663300; }
 
 .screen-other-store {
   padding-bottom: 50px;
@@ -619,14 +621,16 @@ img {
       position: relative;
       padding: 0; }
       .screen-other-store .top-list .item img, .screen-other-store .bottom-list .item img {
-        transition: transform 2s; }
+        transition: all 2s;
+        opacity: 0.5; }
       .screen-other-store .top-list .item:hover img, .screen-other-store .bottom-list .item:hover img {
-        transform: scale(2); }
+        transform: scale(1.5);
+        opacity: 1; }
       .screen-other-store .top-list .item .detail, .screen-other-store .bottom-list .item .detail {
         font-size: 16px;
         position: absolute;
         color: #996633;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.3);
         bottom: 0;
         width: 100%;
         min-height: 50px;
@@ -682,18 +686,33 @@ img {
     height: 100%; }
     .screen-messages .message-icons .icon {
       position: absolute; }
+    .screen-messages .message-icons .small-icon {
+      animation: dialog-bubble 1s infinite alternate; }
+    .screen-messages .message-icons .normal-icon {
+      animation: dialog-bubble 3s infinite alternate; }
     .screen-messages .message-icons .icon:first-child {
       top: 100px;
       left: 100px; }
     .screen-messages .message-icons .icon:nth-child(2) {
       top: 100px;
       right: 100px; }
-    .screen-messages .message-icons .icon:first-child {
-      top: 100px;
+    .screen-messages .message-icons .icon:nth-child(3) {
+      top: 350px;
+      left: 150px; }
+    .screen-messages .message-icons .icon:nth-child(4) {
+      top: 350px;
+      right: 200px; }
+    .screen-messages .message-icons .icon:nth-child(5) {
+      top: 650px;
       left: 100px; }
-    .screen-messages .message-icons .icon:first-child {
-      top: 100px;
-      left: 100px; }
+    .screen-messages .message-icons .icon:nth-child(6) {
+      top: 650px;
+      right: 100px; }
+@keyframes dialog-bubble {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.5); } }
   .screen-messages .send-message-area {
     padding-top: 50px; }
   .screen-messages .messages-area {
@@ -1063,43 +1082,54 @@ img {
   .screen-other-store .top-list .only-pc, .screen-other-store .bottom-list .only-pc {
     display: none; }
 
-  .screen-activity .banner-area:before, .screen-activity .banner-area:after {
+  .screen-activity .banner-area {
+    padding-left: 10px;
+    padding-right: 10px; }
+    .screen-activity .banner-area h2 {
+      text-align: center; }
+    .screen-activity .banner-area .detail {
+      margin-top: 0; }
+    .screen-activity .banner-area .banner {
+      padding: 0; }
+  .screen-activity #activity-parallax {
     display: none; }
-  .screen-activity #activity-parallax .egg {
-    width: 100px;
-    left: -5vw;
-    top: 0px; }
-  .screen-activity #activity-parallax .egg-shadow {
-    width: 100px;
-    left: -5vw;
-    top: 50px; }
-  .screen-activity #activity-parallax .board {
-    width: 80px;
-    left: -15vw;
-    top: 50vh;
-    transform: rotateZ(-70deg); }
-  .screen-activity #activity-parallax .board-shadow {
-    width: 80px;
-    left: -15vw;
-    top: 52vh;
-    transform: rotateZ(-70deg); }
-  .screen-activity #activity-parallax .spoon {
-    width: 100px;
-    right: -15vw;
-    top: 0px; }
-  .screen-activity #activity-parallax .spoon-shadow {
-    width: 100px;
-    right: -15vw;
-    top: 30px; }
-  .screen-activity #activity-parallax .tool {
-    width: 130px;
-    right: -20vw;
-    top: 50vh; }
-  .screen-activity #activity-parallax .tool-shadow {
-    width: 130px;
-    right: -20vw;
-    top: 52vh; }
+    .screen-activity #activity-parallax .egg {
+      width: 100px;
+      left: -5vw;
+      top: 0px; }
+    .screen-activity #activity-parallax .egg-shadow {
+      width: 100px;
+      left: -5vw;
+      top: 50px; }
+    .screen-activity #activity-parallax .board {
+      width: 80px;
+      left: -15vw;
+      top: 50vh;
+      transform: rotateZ(-70deg); }
+    .screen-activity #activity-parallax .board-shadow {
+      width: 80px;
+      left: -15vw;
+      top: 52vh;
+      transform: rotateZ(-70deg); }
+    .screen-activity #activity-parallax .spoon {
+      width: 100px;
+      right: -15vw;
+      top: 0px; }
+    .screen-activity #activity-parallax .spoon-shadow {
+      width: 100px;
+      right: -15vw;
+      top: 30px; }
+    .screen-activity #activity-parallax .tool {
+      width: 130px;
+      right: -20vw;
+      top: 50vh; }
+    .screen-activity #activity-parallax .tool-shadow {
+      width: 130px;
+      right: -20vw;
+      top: 52vh; }
 
+  .screen-messages .message-icons {
+    display: none; }
   .screen-messages .send-message-area .message-box, .screen-messages .messages-area .message-box {
     background-color: #fbf8f1;
     position: relative;

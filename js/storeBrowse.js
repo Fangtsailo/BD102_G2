@@ -329,14 +329,12 @@ new ScrollMagic.Scene({
 new ScrollMagic.Scene({
 					triggerElement: "#messages-icon-trigger"
 				})
-				.setTween(TweenMax.to($(".screen-messages .message-icons .icon"),
-		        1, {
-		            css: {
-		                scale: 1.5
-		            },
-		            ease: Linear.easeNone
-		        }))
-				.addIndicators({name: "messages-icon-trigger"})
-				.addTo(controller);	
+				.setTween(TweenMax.staggerFromTo('.screen-messages .message-icons .icon', 3, {
+				    opacity: 0,
+				}, {
+				    opacity: 1,
+				}))
+				.addIndicators({name: "messages)"})
+				.addTo(controller);
 						
 }

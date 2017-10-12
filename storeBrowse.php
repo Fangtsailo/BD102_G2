@@ -18,11 +18,7 @@
     <script src="js/storeBrowse.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
-    <style type="text/css">
-    	header.globalHead {
-    		opacity: 0.7;
-    	}
-    </style>
+    <script src="js/header.js"></script>
 </head>
 <body>
 
@@ -200,34 +196,64 @@
 	</div>
 	<div id="activity-parallax">
 		<div data-depth="1" class="layer">
-			<div class="parallax-item  egg"><img alt="activity_egg.png" src="img/store/browse/activity_egg.png"></div>
+			<div class="parallax-item normail-move egg"><img alt="activity_egg.png" src="img/store/browse/activity_egg.png"></div>
 		</div>
 		<div data-depth="1.2" class="layer shadow">
-			<div class="parallax-item egg-shadow"><img alt="activity_egg_shadow.png" src="img/store/browse/activity_egg_shadow.png"></div>
+			<div class="normail-move parallax-item egg-shadow shadow"><img alt="activity_egg_shadow.png" src="img/store/browse/activity_egg_shadow.png"></div>
 		</div>
-		<div data-depth="0.2" class="layer">
-			<div class="parallax-item  board"><img alt="activity_board.png" src="img/store/browse/activity_board.png"></div>
+<!-- 		<div data-depth="0.2" class="layer">
+			<div class="depth-move parallax-item  board"><img alt="activity_board.png" src="img/store/browse/activity_board.png"></div>
 		</div>
 		<div data-depth="0.4" class="layer shadow">
-			<div class="parallax-item board-shadow"><img alt="activity_board_shadow.png" src="img/store/browse/activity_board_shadow.png"></div>
-		</div>
+			<div class="depth-move parallax-item board-shadow"><img alt="activity_board_shadow.png" src="img/store/browse/activity_board_shadow.png"></div>
+		</div> -->
 		<div data-depth="1" class="layer">
-			<div class="parallax-item  spoon"><img alt="activity_spoon.png" src="img/store/browse/activity_spoon.png"></div>
+			<div class="normail-move parallax-item  spoon"><img alt="activity_spoon.png" src="img/store/browse/activity_spoon.png"></div>
 		</div>
 		<div data-depth="1.2" class="layer shadow">
-			<div class="parallax-item spoon-shadow"><img alt="activity_spoon_shadow.png" src="img/store/browse/activity_spoon_shadow.png"></div>
+			<div class="normail-move parallax-item spoon-shadow shadow"><img alt="activity_spoon_shadow.png" src="img/store/browse/activity_spoon_shadow.png"></div>
 		</div>
 		<div data-depth="0.2" class="layer">
-			<div class="parallax-item  tool"><img alt="activity_tool.png" src="img/store/browse/activity_tool.png"></div>
+			<div class="depth-move parallax-item  tool"><img alt="activity_tool.png" src="img/store/browse/activity_tool.png"></div>
 		</div>
 		<div data-depth="0.4" class="layer shadow">
-			<div class="parallax-item tool-shadow"><img alt="activity_tool_shadow.png" src="img/store/browse/activity_tool_shadow.png"></div>
+			<div class="depth-move parallax-item tool-shadow shadow"><img alt="activity_tool_shadow.png" src="img/store/browse/activity_tool_shadow.png"></div>
 		</div>
 	</div>
 
 	<div class="banner-area">
 		<div class="item">
-			<img alt="activity_banner1.png" src="img/store/browse/activity_banner1.png">
+			<div class="detail col-lg-6 col-xs-12">
+				<h2>牛角麵包簡單學</h2>
+				<div class="row">
+					<div class="label col-lg-3 col-xs-4">地點:</div>
+					<div class="content col-lg-9 col-xs-8">桃園市中壢區中央路55號  
+           烘焙王麵包坊</div>
+       			</div>
+				<div class="row">
+				<div class="label col-lg-3 col-xs-4">時間:</div>
+				<div class="content col-lg-9 col-xs-8">105.9.29  下午1:00(預計3小時)</div>
+       			</div>
+				<div class="row">
+				<div class="label col-lg-3 col-xs-4">人數限制:</div>
+				<div class="content col-lg-9 col-xs-8">10~12人</div>
+       			</div>
+				<div class="row">
+				<div class="label col-lg-3 col-xs-4">聯絡方式:</div>
+				<div class="content col-lg-9 col-xs-8">(03)3335567</div>
+       			</div>
+				<div class="row">
+				<div class="label col-lg-3 col-xs-4">材料:</div>
+				<div class="content col-lg-9 col-xs-8">麵包坊提供</div>
+       			</div>
+				<div class="row">
+				<div class="label col-lg-3 col-xs-4">費用:</div>
+				<div class="content col-lg-9 col-xs-8">報名費與材料一共1000元(現場收費)</div>
+       			</div>
+			</div>
+			<div class="banner col-lg-6 col-xs-12">
+				<img alt="activity_banner2.png" src="img/store/browse/activity_banner.png">
+			</div>
 		</div>
 	</div>
 </div>
@@ -237,6 +263,8 @@
 	<div class="message-icons">
 		<img alt="comment.svg" class="icon small-icon" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
 		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
+		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
+		<img alt="comment.svg" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
 		<img alt="comment.svg" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
 		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
 	</div>
