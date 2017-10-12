@@ -14,15 +14,15 @@
 			<a href="#"><li>會員專區</li></a>
 			<li>麵包店
 				<ul>
-					<a href="#"><li>基本資料</li></a>
-					<a href="#"><li>商品</li></a>
+					<a href="FMybusinessStore.php"><li>基本資料</li></a>
+					<a href="FMybusinessStoreProductList.php"><li>商品</li></a>
 				</ul>
 			</li>
 			<li>胖小車
 				<ul>
-					<a href="#"><li>定位位置</li></a>
-					<a href="#"><li>基本資料</li></a>
-					<a href="#"><li>商品</li></a>
+					<a href="FMybusinessCarPosition.php"><li>定位位置</li></a>
+					<a href="FMybusinessStore.php"><li>基本資料</li></a>
+					<a href="FMybusinessStoreProductListContent.php"><li>商品</li></a>
 				</ul>
 			</li>
 			<a href="#"><li>活動管理</li></a>
