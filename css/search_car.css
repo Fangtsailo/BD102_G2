@@ -713,7 +713,7 @@ img {
   vertical-align: top; }
 
 .search_title {
-  margin-top: 6vw;
+  margin-top: 8vw;
   color: #996633;
   text-align: center; }
 
@@ -739,6 +739,7 @@ img {
       color: #fbf8f1;
       background-color: #f6921E;
       position: relative;
+      height: 35px;
       border-radius: 5px; }
     .search_result .tag-fa .head {
       top: 0;
@@ -775,10 +776,7 @@ img {
   z-index: 5;
   background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
-  top: 0;
-  right: 3%;
-  max-width: 800px;
-  max-height: 44vw; }
+  right: 3%; }
   .search_store .search_storeOne {
     width: 90%;
     margin: 25px auto;
@@ -846,29 +844,33 @@ img {
     max-height: 200px; } }
 @media screen and (max-width: 767px) {
   .search_content .search_title {
-    margin-top: 25vw; }
+    margin-top: 12vh; }
   .search_content .search_result {
-    margin: 5vw auto 10vw; }
+    margin: 0 auto 10px; }
   .search_content .search_mapcar {
     overflow: -webkit-paged-x; }
     .search_content .search_mapcar #map-now1 {
-      height: 80vw; }
+      height: 80vh; }
     .search_content .search_mapcar .search_store {
-      right: 0;
-      width: 80%;
-      position: relative;
-      margin: 10vw auto;
-      overflow: none; }
+      bottom: 0%;
+      width: 95%;
+      margin: auto;
+      overflow: auto;
+      max-height: 200px; }
       .search_content .search_mapcar .search_store .search_storeOne {
-        width: 100%; }
+        width: 100%;
+        margin: auto; }
         .search_content .search_mapcar .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
           display: inline; } }
 @media screen and (min-width: 768px) {
   .search_store {
-    overflow: auto; }
+    overflow: auto;
+    max-height: 44vw;
+    top: 0;
+    max-width: 800px; }
 
   .search_mapcar {
     height: 50vw; }
 
   .search_store {
-    width: 33%; } }
+    width: 35%; } }

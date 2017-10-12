@@ -6,7 +6,7 @@ img{
 	vertical-align:top;
 }
 .search_title{
-	margin-top:6vw;
+	margin-top:8vw;
 	color:$globalTitleColor;
 	text-align:center;
 }
@@ -36,7 +36,7 @@ img{
 			color:$globalBgColor ;
 			background-color:$globalStarColor;
 			position:relative;
-
+			height:35px;
 			border-radius:5px;
 		}
 	
@@ -88,11 +88,10 @@ img{
 	z-index:5;
 	background-color:rgba(255, 255, 255, .7);
 	position:absolute;
-	top:0;
 	right:3%;
-	max-width:800px;
+	
 
-	max-height:44vw;
+	
 	.search_storeOne{
 		width:90%;
 		margin:25px auto;
@@ -202,25 +201,26 @@ img{
 	
 	.search_content {
 		.search_title{
-			margin-top:25vw;
+			margin-top:12vh;
 		}
 		.search_result{
-			margin:5vw auto 10vw;
+			margin:0 auto 10px ;
 		}
 		.search_mapcar{
 			overflow:-webkit-paged-x;
 			// height:none;
 			#map-now1{
-				height:80vw;
+				height:80vh;
 			}
 			.search_store{
-				right:0;
-				width:80%;
-				position:relative;
-				margin:10vw auto;
-				overflow:none;
+				bottom:0%;
+				width:95%;
+				margin:auto;
+				overflow: auto;
+    			max-height: 200px;
 				.search_storeOne{
 					width:100%;
+					margin:auto;
 				.search_storeMap{
 					
 				}	
@@ -240,11 +240,14 @@ img{
 @media screen and (min-width:768+px){
  	.search_store{
  		overflow:auto;
+ 		max-height:44vw;
+ 		top:0;
+ 		max-width:800px;
  	}
  	.search_mapcar{
  		     height: 50vw; 
  	}
  	.search_store{
-		width:33%;
+		width:35%;
 	}
 }
