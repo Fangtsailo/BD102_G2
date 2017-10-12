@@ -1,83 +1,39 @@
-/*
-Error: Invalid CSS after "...enHeight: 100vh": expected "{", was ";		//screen 高度"
-        on line 41 of sass/basic/_var.scss
-        from line 1 of sass/basic/_setting.scss
-        from line 2 of sass/memHome.scss
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
 
-36: //版面縮排，最大到1200px
-37: $globalMaxWidth:1200px; //最大寬度為1200px
-38: 
-39: <<<<<<< HEAD
-40: //瀏覽商家頁面
-41: $storeBrowseScreenHeight: 100vh;		//screen 高度
-42: 
-43: //會員專區按鈕陰影
-44: $boxShadow : 0 2 2 rgba(0,0,0,0.2);
-45: =======
-46: 
+body {
+  background-color: #f2ebd4; }
 
-Backtrace:
-sass/basic/_var.scss:41
-sass/basic/_setting.scss:1
-sass/memHome.scss:2
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1278:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1208:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1203:in `tok!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:677:in `block'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:670:in `ruleset'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:696:in `block_child'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:137:in `stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:41:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:414:in `_to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:321:in `to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:329:in `block (2 levels) in visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:329:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:329:in `block in visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:290:in `render'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:400:in `run'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
-C:/Ruby24-x64/bin/sass:22:in `load'
-C:/Ruby24-x64/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...enHeight: 100vh\": expected \"{\", was \";		//screen 高度\"\A         on line 41 of sass/basic/_var.scss\A         from line 1 of sass/basic/_setting.scss\A         from line 2 of sass/memHome.scss\A \A 36: //版面縮排，最大到1200px\A 37: $globalMaxWidth:1200px; //最大寬度為1200px\A 38: \A 39: <<<<<<< HEAD\A 40: //瀏覽商家頁面\A 41: $storeBrowseScreenHeight: 100vh;		//screen 高度\A 42: \A 43: //會員專區按鈕陰影\A 44: $boxShadow : 0 2 2 rgba(0,0,0,0.2);\A 45: =======\A 46: "; }
+.container {
+  width: 100%;
+  height: 76vh;
+  text-align: center;
+  background-image: url("../img/memHome.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  /*靠左 靠上*/
+  background-size: cover;
+  /*背景圖縮小至容器內*/
+  background-origin: border-box;
+  /*將背景定位在外邊框*/ }
+  .container img {
+    width: 100%; }
+  .container .memHome {
+    width: 100%; }
+    .container .memHome .memTitle {
+      height: 15%;
+      margin: 0px 35.4166% 30px 35.4166%;
+      padding-top: 85px; }
+  .container .memHomeItemGroup {
+    margin: 0 14%; }
+    .container .memHomeItemGroup .memHomeItem {
+      width: 200px;
+      margin: 0px 4%;
+      float: left; }
+      .container .memHomeItemGroup .memHomeItem span {
+        color: #f2ebd4;
+        font-size: 24px; }
+      .container .memHomeItemGroup .memHomeItem img {
+        box-shadow: 0 2 2 rgba(0, 0, 0, 0.2); }

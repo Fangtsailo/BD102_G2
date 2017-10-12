@@ -14,7 +14,10 @@
 
 
 @mixin button-hover() {
-
+	
+	background-color:#7e4a1d;
+	color:#fff;
+	transition:0.3s;
 	&:hover{
         				background-color:#ffffff;
         				color:#7e4a1d;
@@ -28,7 +31,7 @@
 
 	width: 200px;
 	height:  $store-nav-bar-height;
-	background-color:$MybusinessStore-subtitle-bgColor;
+	background-color:#00c853;
 	margin-top:10px; 
 		
 }
@@ -66,7 +69,20 @@
 		margin: auto;
 		font-size: 18px;
 		color: #fff;
-	}	
+	}
+
+	// svg{
+
+	// 	display: inline-block;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	right: 0px;
+	// 	margin: auto;
+	
+
+	// }
+
 }
 
 
@@ -79,18 +95,20 @@
 
 	width: 180px;
 	height: $store-nav-bar-height;
-	background-color:$MybusinessStore-subtitle-bgColor;
-	margin-top: 2px;
+	background-color:#D9E8FF;
+	border-radius: 2px;
+	// margin-top: 2px;
 	position: relative;
 	h3{
 		position: absolute;
 		line-height:$store-nav-bar-height;
-		left: 90px;
+		left: 60px;
 		top: 0;
 		bottom: 0;
 		margin: auto;
 		font-size: 18px;
 		color: #fff;
+		color:$MybusinessStore-subtitle-bgColor;
 	}
 	svg{
 
@@ -100,11 +118,29 @@
 		bottom: 0;
 		left: 30px;
 		margin: auto;
+		.cls-ar{fill:$MybusinessStore-subtitle-bgColor;}
 		.cls-1{fill:none;}
 		.cls-2{fill:#bbb;}
 		.cls-3{fill:#999;}
 
 	}
+
+
+}
+
+
+
+
+@mixin tdInputTextForm() {
+
+
+	td{
+						input{
+							width: 90%;
+							height: 40px;
+							box-sizing: border-box;
+						}
+					}
 
 
 }

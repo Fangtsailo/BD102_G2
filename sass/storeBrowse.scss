@@ -34,8 +34,17 @@
 	    color: $color;
     }
 }
-button {
+.button {
+	text-align: center;
+	background-color: transparent;
+	border: 1px solid #f2ebd4;
+	color: #3399ff;
+   	transition: background-color, color .5s;
 	cursor: pointer;
+	&:hover {
+		background-color: #3399ff;
+		color: $globalBgColor;
+	}
 }
 .pointer {
 	cursor: pointer;
@@ -74,7 +83,7 @@ img {
 	z-index: 10;
 }
 .screen {
-	padding-top: 150px;
+	padding-top: 80px;
 	box-sizing: border-box;
 	overflow: hidden;
 	min-height: 100vh;
@@ -107,6 +116,7 @@ img {
 	}
 	@keyframes banners-slide {
 		0% { background-image:url("../img/store/browse/screen1-bg.png")}
+		16.66% { background-image: url("../img/store/browse/screen1-bg.png")}
 		33.33% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
 		46.99% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
 		66.66% { background-image: url("../img/store/browse/screen1-bg3.png")}
@@ -119,7 +129,7 @@ img {
 		max-width: 400px;
 		width: 30%;
 		padding: 10px 10px;
-		background-color: rgba(255,255,255,0.5);
+		background-color: rgba(255,255,255,0.7);
 		text-align: justify;
 		margin-left: 50px;
 		margin-top: 150px;
@@ -146,6 +156,7 @@ img {
 			padding: 0px 20px;
 			.follow {
 				margin: 10px 0px;
+				float: left;
 				.star {
 					width: 30px;
 					display: inline-block;
@@ -154,7 +165,11 @@ img {
 					}
 				}
 			}
+			.trace {
+				float: right;
+			}
 			.info-box {
+				clear: both;
 				.title {
 					padding: 0;
 					font-weight: bold;
@@ -313,12 +328,15 @@ img {
 		margin-top: 30px;
 		font-size: 0;
 		text-align: center;
+		max-width: 500px;
+		margin: auto;
 		.item {
 			font-size: 16px;
 			display: inline-block;
 			border: 1px solid $globalHdColor02;
 			border-radius: 50px;
 			margin: 0px 10px;
+			max-width: 500px;
 			a {
 				display: block;
 				padding: 6px;
@@ -680,10 +698,31 @@ img {
 		
 	}
 	.title {
-		@include title(rgba(51, 153, 255, 0.3), $globalBgColor);
+		@include title(#E6B98F, $globalBgColor);
 	}
 	.message-icons {
 		position: absolute;
+		width: 100%;
+		height: 100%;
+		.icon {
+			position: absolute;
+		}
+		.icon:first-child {
+			top: 100px;
+			left: 100px;
+		}
+		.icon:nth-child(2) {
+			top: 100px;
+			right: 100px;
+		}
+		.icon:first-child {
+			top: 100px;
+			left: 100px;
+		}
+		.icon:first-child {
+			top: 100px;
+			left: 100px;
+		}
 	}
 	.send-message-area {
 		padding-top: 50px;
@@ -693,12 +732,21 @@ img {
 	    max-width: 781px;
 	    width: 100%;
 	    box-sizing: border-box;
+	    position: relative;
 	    .more-message {
 	    	text-align: center;
 	    	width: 100px;
-	    	padding: 10px;
+	    	padding: 5px;
 	    	margin: auto;
-	    	background-color:#3399ff;
+	    	// background-color: #E6B98F;
+	    	// border: 1px solid #f2ebd4;
+	    	// color: #3399ff;
+	    	// transition: background-color .5s;
+	    	// cursor: pointer;
+	    	// &:hover {
+	    	// 	background-color: #3399ff;
+	    	// 	color: $globalBgColor;
+	    	// }
 	    }
 	}
 	.messages-area, .send-message-area {
@@ -717,16 +765,10 @@ img {
 			padding-left: 10px;
 			margin-bottom: 10px;
 			#send-message-btn {
-				background-color: transparent;
 				border: 1px solid $globalFtColor;
 				width: 50px;
 				height: 30px;
-				color:$globalLinkColor;
 				float: right;
-				&:hover {
-					color: white;
-					background-color: $globalLinkColor;
-				}
 			}
 			.content {
 				background-color: $globalBgColor;
@@ -906,11 +948,11 @@ img {
 		}
 	}
 	.screen:not(:first-of-type){
-		padding-top: 100px;
+		padding-top: 50px;
 	}
 	.screen-bread-car-map {
 		.perspective {
-			margin-bottom: 0px;
+			margin-bottom: 20px;
 		}
 		#bread-car {
 			height: 40px;
@@ -971,6 +1013,11 @@ img {
 		.top-list, .bottom-list {
 			.item {
 				width: 50%;
+				.detail {
+					p {
+						display: none;
+					}
+				}
 			}
 			.only-pc {
 				display: none;
