@@ -10,6 +10,7 @@
 body {
 	background-color: $globalBgColor;
 	font-family:$globalFont;
+	overflow-x:hidden;
 }
 
 input {
@@ -153,9 +154,16 @@ li {
 .hideUp_sub_burger{
 	top: 44px  !important;
 	// transition: 0.3s ease-in-out !important; 
+<<<<<<< HEAD
 }
 
 header.globalHead {
+=======
+
+}
+
+.globalHead {
+>>>>>>> 3deddc453c4a269ef066dba19e3bb377ed273496
 	width: 100%;
 	height: 80px;
 	@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
@@ -506,6 +514,9 @@ header.globalHead {
 	.burgerMenu {
 		display: none;
 	}
+	.rwdSearchBar {
+		display: none;
+	}
 
 
 }
@@ -513,6 +524,7 @@ header.globalHead {
 	#menu {
 		display: none;
 	}
+	
 
 
 
@@ -575,6 +587,7 @@ footer {
 //-------------------------- "確認"按鈕樣式--------------------------
 
 .globalOkBtn { 
+	display: block;
 	width: 150px;
 	height: 45px;
 	border-radius:22.5px;
@@ -597,6 +610,7 @@ footer {
 //--------------------------"取消"按鈕樣式--------------------------
 
 .globalCancelBtn {
+	display: block;
 	width: 150px;
 	height: 45px;
 	border-radius:22.5px;
@@ -673,7 +687,7 @@ footer {
 @media screen and (max-width:900px){
 
 	// --------------------------頁首RWD樣式--------------------------
-	header.globalHead{
+	.globalHead{
 		text-align: center;
 		.headLogo {
 			min-width: 150px;
@@ -716,43 +730,51 @@ footer {
 			left: 0;
 			margin: auto;
 			span {
+				width: 40px;
+				height: 40px;
 				display: block;
-				width: 30px;
-				height: 4px;
-				left: 15px;
-				background-color: $globalBgColor;
-				border-radius: 4px;
-				position: absolute;
 				margin: auto;
-				transition: .3s ease;
-				&:nth-of-type(1){
-					top: 5px;
-				}
-				&:nth-of-type(2){
-					top: 16px;
-				}
-				&:nth-of-type(3){
-					top: 27px;
-				}
+				fill:$globalBgColor;
 			}
+			// span {
+			// 	display: block;
+			// 	width: 30px;
+			// 	height: 4px;
+			// 	left: 15px;
+			// 	background-color: $globalBgColor;
+			// 	border-radius: 4px;
+			// 	position: absolute;
+			// 	margin: auto;
+			// 	transition: .3s ease;
+			// 	&:nth-of-type(1){
+			// 		top: 5px;
+			// 	}
+			// 	&:nth-of-type(2){
+			// 		top: 16px;
+			// 	}
+			// 	&:nth-of-type(3){
+			// 		top: 27px;
+			// 	}
+			// }
+
 			&.active {
 				// transform: rotate(360deg);
 				transition: .3s ease;
-				span {
-					&:nth-of-type(1){
-						transform: rotate(-45deg);
-						transition: .3s ease;
-						top: 20px;
-					}
-					&:nth-of-type(2){
-						display: none;
-					}
-					&:nth-of-type(3){
-						transform: rotate(45deg);
-						top: 20px;
-						transition: .3s ease;
-					}
-				}
+				// span {
+				// 	&:nth-of-type(1){
+				// 		transform: rotate(-45deg);
+				// 		transition: .3s ease;
+				// 		top: 20px;
+				// 	}
+				// 	&:nth-of-type(2){
+				// 		display: none;
+				// 	}
+				// 	&:nth-of-type(3){
+				// 		transform: rotate(45deg);
+				// 		top: 20px;
+				// 		transition: .3s ease;
+				// 	}
+				// }
 			}
 		}
 		#menu {
@@ -763,7 +785,7 @@ footer {
 			
 			background-color: rgba(0,0,0,0.5);
 			&.hideMenu {
-				left: -375px;
+				left: -120%;
 				transition: all 0.3s ease;
 			}
 			&.show {
@@ -775,8 +797,6 @@ footer {
 				width: 375px;
 				min-width: 320px;
 				@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
-
-				
 
 				li {
 					display:block;
@@ -826,7 +846,64 @@ footer {
 				}
 			}
 		}
+		.rwdSearchBar {
+			@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
+			width: 100%;
+			position: fixed;
+			top: 80px;
+			right: -100%;
+			height: 80px;
+			transition: .3s;
+			display: block;
+			.rwdsearchItem {
+				width: 90%;
+				height: 30px;
+				margin: 5px auto;
+				select {
+					width: 25%;
+					height: 100%;
+					float: left;
+					text-align: center;
+					border:1px solid $globalBgColor;
+					background-color: transparent;
+					color:$globalBgColor;
+					outline: none;
+					border-radius: 2px;
+					font-size: 16px;
+				}
+				button {
+					width: 25%;
+					height: 100%;
+					float: left;
+					text-align: center;
+					color:$globalBgColor;
+					background-color: transparent;
+					border: 1px solid #fbf8f1;
+					border-radius: 2px;
+					outline: none;
+					font-size: 16px;
+					&:focus {
+						background-color: $globalBgColor;
+						color:$globalHdColor01;
+						outline: none;
+						
+					}
+				}
+			}
+			input {
+				width: 100%;
+				height: 40px;
+				outline: none;
+				border:none;
+			
+			}
+			&.activeSearch {
+				top: 80px;
+				right: 0;
+				transition: .3s;
+			}
 
+		}
 	}
 
 
