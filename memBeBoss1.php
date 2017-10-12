@@ -81,7 +81,7 @@
                             <input type="text" name="店名" placeholder="請輸入完整店名">
                         </div>
 
-                        <a href="#" class="nextStep">下一步</a>
+                        <a href="memBeBoss2.php" class="nextStep">下一步</a>
                     </div>
                 </form>
             </section>

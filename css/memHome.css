@@ -26,14 +26,16 @@ body {
   .container img {
     width: 100%; }
   .container .memHome {
-    width: 100%;
+    max-width: 1000px;
+    width: 69.4444%;
+    margin: 0 auto;
     height: 76vh; }
     .container .memHome .memTitle {
       margin: 0px 35.4166% 30px 35.4166%; }
   .container .memHomeItemGroup {
     margin: 0 14%; }
     .container .memHomeItemGroup .memHomeItem {
-      width: 200px;
+      width: 185px;
       margin: 0px 4%;
       float: left; }
       .container .memHomeItemGroup .memHomeItem span {

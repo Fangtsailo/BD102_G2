@@ -120,7 +120,7 @@
 
                 <div class="action">
                     <a href="#" class="memaddshop"><img src="img/memimg/memaddshop.svg"></a>
-                    <a href="#" class="nextStep">是的! 下一步</a>
+                    <a href="memBeBoss3.php" class="nextStep">是的! 下一步</a>
                 </div>
             </section>
         </div>

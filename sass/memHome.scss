@@ -61,7 +61,9 @@ body{
 	}
 
 	.memHome{
-		width: 100%;
+		max-width: 1000px;
+		width: 69.4444%;
+		margin: 0 auto;
 		height: 76vh;
 
 		.memTitle{
@@ -73,7 +75,7 @@ body{
 		margin: 0 14%;
 
 		.memHomeItem{
-			width: 200px;
+			width: 185px;
 			margin: 0px 4%;
 			float: left;
 
