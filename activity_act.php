@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>Trepun</title>
+	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/activity.css">
 	<!-- js區 -->
 	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
-
+	<script type="text/javascript" src="js/header.js"></script>
 	<!-- 	scrollmagic 用 -->
 	<script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
@@ -24,9 +24,7 @@
 
 <!-- ======================================================開始寫========================================================= -->
 
-
-<!-- 
-	<?php require_once("header.php");?> -->
+	<?php require_once("header.php");?>
 
 
 
@@ -191,7 +189,7 @@
 
 
 			
-		<section class="section_6">
+		<section class="section_6"><a name="apply">
 			<div class="activity_application trigger7">
 				<div class="activity_final">
 					<div class="activity_fin_pic fin_1">
@@ -210,7 +208,7 @@
 						<p>邊吃邊學好好玩</p>
 					</div>
 					<div class="activity_fin_pic fin_3">
-					
+						
 					</div>
 					
 					<div class="activity_fin_pic">
@@ -228,7 +226,7 @@
 						<div class="globalForm" >
 							 
 							<form action="" method="">
-								<a name="apply">
+								
 								<div class="globalFormHeader">
 								
 
@@ -265,12 +263,13 @@
 
 				</div><!-- =================表單樣式===================== -->
 					<div class="clearfix"></div>
-					<div class="activity_bread">
+					<div class="activity_bread ">
 							<img src="img/acty_finish_bread.png">
 					</div>
 					<div class="activity_bread2 rwd_none">
 							<img src="img/acty_finish_bread.png">
 					</div>
+
 				</div> <!-- activity_application -->
 			</section>
    		</div><!-- activity -->
@@ -281,7 +280,9 @@
 
 
 
-<!-- <?php require_once("footer.php");?> -->
+<?php require_once("footer.php");?>
+
+
 
 
 	 <script type="text/javascript" src="js/activity_tweenmax.js"></script>
