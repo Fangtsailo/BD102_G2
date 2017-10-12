@@ -4,41 +4,156 @@
 
 $(function(){
 
-    jQuery('img.svg').each(function(){   
-        var $img = jQuery(this);   
-        var imgID = $img.attr('id');   
-        var imgClass = $img.attr('class');   
-        var imgURL = $img.attr('src');   
-      
-        jQuery.get(imgURL, function(data) {   
-            // Get the SVG tag, ignore the rest   
-            var $svg = jQuery(data).find('svg');   
-      
-            // Add replaced image's ID to the new SVG   
-            if(typeof imgID !== 'undefined') {   
-                $svg = $svg.attr('id', imgID);   
-            }   
-            // Add replaced image's classes to the new SVG   
-            if(typeof imgClass !== 'undefined') {   
-                $svg = $svg.attr('class', imgClass+' replaced-svg');   
-            }   
-      
-            // Remove any invalid XML tags as per http://validator.w3.org   
-            $svg = $svg.removeAttr('xmlns:a');   
-      
-            // Check if the viewport is set, if the viewport is not set the SVG wont't scale.   
-            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {   
-                $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))   
-            }   
-      
-            // Replace image with new SVG   
-            $img.replaceWith($svg);   
-      
-        }, 'xml');   
-      
+// Scroll Magic
+	var controller = new ScrollMagic.Controller();
+
+
+
+
+
+// 第一屏文字敘述
+	var tween_1 = TweenMax.fromTo(".itemGrp .descrp ", 1 ,{
+		opacity : 0,
+		x : -100,
+		ease: Back.easeOut.config(1.7)
+	
+	},{
+		opacity : 1,
+		x : 0
+
+	});
+
+
+// 第一屏篩選
+	$(".tab_contents").click(function(){
+
+		$(this).toggleClass("active");
+		$(this).siblings(".active").removeClass("active");
+
+	});
+
+
+// 第二屏文字
+
+	var tween_2 = TweenMax.staggerFromTo('.topChartDescrp',1,{
+			opacity : 0,
+			y: -50
+	},{
+			opacity : 1,
+			y:0
+	});
+
+	var scene_1 = new ScrollMagic.Scene({ 
+		//觸發點
+		triggerElement: "#trigger1 ",
+		duration:100, 
+		offset: 0 
+	})
+	.setTween(tween_2)
+	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+		name:'scene_01'
+	})
+	.addTo(controller);	
+
+
+	var tween_3 = TweenMax.staggerFromTo('.titleGrp',1,{
+			opacity : 0,
+			x: -50
+	},{
+			opacity : 1,
+			x:0
+	});
+
+	var scene_2 = new ScrollMagic.Scene({ 
+		//觸發點
+		triggerElement: "#trigger1 ",
+		duration:200, 
+		offset: 20 
+	})
+	.setTween(tween_3)
+	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+		name:'scene_02'
+	})
+	.addTo(controller);	
+
+
+//熱門店家卡片跳出
+	
+	var tween_4 = TweenMax.staggerFromTo('.shopItemGrp',0.5,{
+			opacity : 0,
+			y: 100
+	},{
+			opacity : 1,
+			y:0,
+			ease: Back.easeOut
+	},0.5);
+
+	var scene_3 = new ScrollMagic.Scene({ 
+		//觸發點
+		triggerElement: "#trigger2 ",
+		duration:200, 
+		offset: 0 
+	})
+	.setTween(tween_4)
+	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+		name:'scene_03'
+	})
+	.addTo(controller);	
+	
+
+
+//熱門店家卡片輪播
+
+$('.shopItemGrp').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+});
+
+
+
+
+
+//新進店家輪播
+$('.newShopGrp').slick({
+  infinite: false,
+  slidesToShow: 3,
+  slidesToScroll: 2,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+
+for (var i = 1; i <= 6; i++) {
+	$('.section'+i+'-click').click(function(){
+		for (var j = 1; j <= 6; j++) {
+			 $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);
+		}
     });
+}
 
-
+ 
 
 
 });

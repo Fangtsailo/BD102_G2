@@ -36,11 +36,14 @@ $tablet_max:1024px;
 	
 	@if $breakpoint == "mobile" {
 
+// <<<<<<< HEAD
 		@media screen and (max-width:$mobile){
 			@content;
-		}
-	}
-	@else if $breakpoint =="desktop"{
+
+	   }
+	
+  }
+  @else if $breakpoint =="desktop"{
 		@media screen and (min-width:$tablet_min) and (max-width:$tablet_max){
 			@content;
 		}

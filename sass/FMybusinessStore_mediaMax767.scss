@@ -1,0 +1,136 @@
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+
+
+@media screen and (max-width : 940px) {
+
+	.LeftBusiness{
+		display: none;
+	}
+ 
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width : 767px) {
+
+	
+
+	.CenterBusiness{ 
+			
+			width:90%;
+
+			// .subtitle{
+			// 			display: none;
+			// }
+
+
+
+			.content-table{
+				table{
+
+					width: 100%;
+
+					tr{
+
+
+						th{
+							
+							width: 30%;
+							div{
+								min-width: 10px;
+							}
+
+						}
+
+						td{
+
+							width: 70%;
+
+						}
+
+					&:nth-child(6){
+
+						td{
+							div{
+								font-size: 14px;
+							}
+						}
+
+					}	
+					
+
+					}
+				
+
+				}
+
+
+
+		}//content-table
+
+
+
+		
+	}//CenterBusiness
+	 
+}
+
+
+
+@media screen and (max-width : 912px) {
+
+	.CenterBusiness{ 
+			
+			width:90%;
+
+			// .subtitle{
+			// 			display: none;
+			// }
+
+
+
+			.content-table{
+				table{
+
+					
+
+					tr{
+
+
+						th{
+							
+							
+							div{
+								font-size: 14px;
+							}
+
+						}
+
+						td{
+
+							
+
+						}
+					
+
+					}
+				
+
+				}
+
+
+
+		}//content-table
+
+
+
+		
+	}//CenterBusiness
+ 
+}
