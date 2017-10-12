@@ -6628,7 +6628,7 @@ a {
 .clearfix {
   clear: both; }
 
-@media all and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   header.globalHead .headLogo img {
     width: 30vw; }
 

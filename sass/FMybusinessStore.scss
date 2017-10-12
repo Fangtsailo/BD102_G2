@@ -14,6 +14,7 @@
   		}
   	}
 
+
 .coverHeader{
 	// width: 100vw;
 	height: 80px;
@@ -58,7 +59,7 @@ width: 100%;
 		top: 160px;
 		// background-color: #ccc;
 		.nav-Group1{
-			margin-top: 50px;
+			margin-top: 30px;
 		}
 		div{
 			div{
@@ -90,14 +91,13 @@ width: 100%;
 .CenterBusiness{
 	margin-top:260px ;
 	width: 70%;
-	height: 1800px;
+	// height: 1800px;
 	// border: 2px solid #f00;
 	// display: inline-block;
 	margin: auto;
 	.subtitle{
 		height: 100px;
 		// border: 1px solid #ccc;
-<<<<<<< HEAD
 		text-align: center;
 		padding-top: 20px;
 		svg{
@@ -116,12 +116,6 @@ width: 100%;
 	  			}
 	  		}
 	  		
-=======
-		h2{
-			text-align: center;
-			line-height: 100px;
-			color:$MybusinessStore-subtitle-bgColor;
->>>>>>> fcc4a5b46455b70b481741d2b804e78443a477f0
 		}
 
 	}
@@ -152,7 +146,7 @@ width: 100%;
 					div{
 						height: 40px;
 						width: 80%;
-						min-width: 86px;
+						// min-width: 86px;
 						background-color: #F2EBD4;
 						margin-right: 0;
 						margin-left: 0;
@@ -177,69 +171,39 @@ width: 100%;
 				}
 
 
+				&:nth-child(1){
+					th{
+						
+						text-align: left;
+						padding-left: 20px;
+						color: #999;
+						font-size: 26px;
 
+					}
+				}
 
 				
-				&:nth-child(1){
-					td{
-						input{
-							width: 90%;
-							height: 40px;
-							box-sizing: border-box;
-						}
-					}
-				}
-
-
 				&:nth-child(2){
-					td{
-						input{
-							width: 90%;
-							height: 40px;
-							box-sizing: border-box;
-						}
-					}
+					@include tdInputTextForm();
 				}
+
 
 				&:nth-child(3){
-					td{
-						input{
-							width: 90%;
-							height: 40px;
-							box-sizing: border-box;
-						}
-					}
+					@include tdInputTextForm();
 				}
-
 
 				&:nth-child(4){
-					td{
-						input{
-							width: 90%;
-							height: 40px;
-							box-sizing: border-box;
-						}
-					}
+					@include tdInputTextForm();
 				}
-
-
-
-				&:nth-child(4){
-					
-
-
-					td{
-						input{
-							width: 90%;
-							height: 40px;
-							box-sizing: border-box;
-						}
-					}
-				}
-
 
 
 				&:nth-child(5){
+					@include tdInputTextForm();
+				}
+
+
+
+				&:nth-child(6){
 
 					height: 100px;					
 
@@ -257,7 +221,9 @@ width: 100%;
 							display: inline-block;
 							width: 13%;
 							border:1px solid #ddd;
-							min-width: 63px;
+							// min-width: 63px;
+
+
 							&:hover{
 								background-color: #4289FF;
 								color:#fff;
@@ -271,7 +237,7 @@ width: 100%;
 
 
 
-				&:nth-child(6){
+				&:nth-child(7){
 
 					height: 100px;					
 
@@ -297,7 +263,7 @@ width: 100%;
 					}
 				}
 
-				&:nth-child(7){
+				&:nth-child(8){
 
 					height: 180px;					
 
@@ -317,6 +283,10 @@ width: 100%;
 							margin-top: 0;
 							margin-bottom: 0;
 							margin: auto;
+							width: 90%;
+							height: 140px;
+							border:1px solid #ccc;
+							resize : none;
 						}
 
 					}
@@ -325,7 +295,7 @@ width: 100%;
 
 
 
-				&:nth-child(8){
+				&:nth-child(9){
 
 					height: 220px;					
 
@@ -342,7 +312,7 @@ width: 100%;
 						position: relative;
 						div{
 							
-							width: 50%;
+							width: 90%;
 							height: 160px;
 							border: 1px solid #ccc;
 							position: relative;
@@ -398,6 +368,7 @@ width: 100%;
 	.commit{
 		text-align: center;
 		padding-top: 50px;
+		margin-bottom: 100px;
 		input{
 			border: none;
 			width: 150px;
@@ -408,12 +379,24 @@ width: 100%;
 				border: 1px solid #F06428;
 				background-color: #fff;
 				color:#F06428;
+				display: inline-block;
+				&:hover{
+					color:#fff;
+					background-color:#F06428;
+					transition:0.5s;
+				}
 			}
 			&:nth-child(2){
 				margin-left: 10px;
 				border: 1px solid #F06428;
 				background-color:#F06428;
 				color:#fff;
+				display: inline-block;
+				&:hover{
+					color:#F06428;
+					background-color:#fff;
+					transition:0.5s;
+				}
 			}
 		}
 	}
@@ -468,3 +451,6 @@ footer{
 	position: fixed;
 	bottom: 0;
 }
+
+
+@import "FMybusinessStore_mediaMax767.scss";

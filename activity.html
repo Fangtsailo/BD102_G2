@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>TEMPLATE</title>
+	<link rel="stylesheet" type="text/css" href="css/activity.css">
+	<!-- js區 -->
+	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
+
+	<!-- 	scrollmagic 用 -->
+	<script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
+
+	<!-- paralla 用 -->
+	<script type="text/javascript" src="js/parallax.min.js"></script>
+
+</head>
+<body>
+
+<!-- ======================================================header 頁首========================================================= -->
+	<header class="globalHead">
+
+	<div class="headLoginBox" id="loginBox">
+		
+
+
+		<div class="globalForm">
+		<form action="" method="">
+			<div class="globalFormHeader">
+				<div class="svg">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+					<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
+						L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
+						s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+					</svg>
+				</div>
+				<img src="img/trepun2.svg">
+				<p>歡迎登入找麥方麵包平台</p>	
+			</div>
+			<div class="globalFormContent">
+
+				<div class="globalFormInput">
+					<label>會員帳號</label><input type="text" name="" placeholder="請輸入會員帳號或信箱">
+				</div>
+
+				<div class="globalFormInput">
+					<label>會員密碼</label><input type="text" name="" placeholder="密碼">
+				</div>
+				<div class="forgetPsw">
+					<a href="#">忘記密碼？</a>
+				</div>
+				<div class="clearfix"></div>
+				
+				<div class="globalFormBtns">
+					<div class="globalCancelBtn">取消</div>
+					<input type="submit" name="" class="globalOkBtn" value="登入">					
+				</div>
+				
+				<div class="facebookLogin">
+					<a href="#">
+					<!-- <span class="svg">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
+		L22,0z"/><path d="M23.3,17.5c0-0.8,0.3-1.5,1.5-1.5h1.5v-3h-2.5c-3,0-4,1-4,4v2h-2v3h2v9h3.5v-9h2.5l0.5-3h-3V17.5z"/></g></svg>
+					</span> -->
+					
+					Facebook帳號登入</a>
+				</div>
+				
+				<div class="registerLink">
+					<a href="#">還沒有帳號？ 註冊成為PUN友</a>
+				</div>
+
+			</div>
+		</form>
+		</div>
+			
+	</div>
+
+
+
+
+	<!-- logo區塊 -->
+		<div class="headLogo">
+			<div class="svg">
+				<img src="img/trepunLogoWhite.svg">
+			</div>	
+		</div>	
+
+
+	
+	
+		
+
+	
+		
+		
+
+
+
+	<div class="headerRight">
+		<!-- 頁首搜尋區塊 -->
+			<div class="headSearch">
+		
+			</div>
+		
+		<!-- 頁首會員區塊 -->
+			<div class="headAccount">
+				<div id="headMemStatus">
+					<div id="headMemPic">
+					</div>
+				</div>
+				<div id="headMemLogin">
+					<span id="registerBtn">
+						註冊
+					</span>
+		
+					<span id="loginBtn">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><g>
+						<path class="st0" d="M28.4,28.2c-0.5-3.6-1.8-4.1-3.7-4.9c-0.3-0.1-0.7-0.3-1.1-0.5c-0.2-0.1-0.3-0.2-0.5-0.2c-1.1-0.5-1.4-0.8-1.4-1.3c1.4-1,2.2-2.6,2.2-4.1v-6.4L23.3,11c-0.4,0.1-0.7,0.1-1,0.1c-0.8,0-1.3-0.1-1.9-0.3c-0.5-0.1-1.1-0.3-1.9-0.3c-0.9,0-1.6,0.4-2.1,1.1l0.9,0.7c0.3-0.4,0.7-0.6,1.2-0.6c0.7,0,1.1,0.1,1.7,0.2c0.6,0.1,1.2,0.3,2.1,0.3c0.2,0,0.3,0,0.5,0v5.1c0,1.9-1.4,3.9-3.9,3.9c-2.4,0-3.9-2-3.9-3.9v-5.9C15.3,11,16,9,18.6,9c0.9,0,1.5,0.2,2.1,0.3c0.5,0.1,1,0.2,1.6,0.2c0.6,0,1.2-0.1,1.6-0.3V8.1c-0.4,0.1-1,0.4-1.6,0.4c-0.5,0-0.9-0.1-1.4-0.2c-0.7-0.2-1.4-0.3-2.4-0.3c-2.9,0-4.2,2.1-4.5,3.3l0,6.1c0,1.5,0.8,3.2,2.2,4.1c-0.1,0.5-0.3,0.8-1.4,1.3c-0.1,0.1-0.3,0.1-0.5,0.2c-0.4,0.2-0.7,0.3-1.1,0.5c-1.8,0.8-3.2,1.3-3.7,4.9l-0.1,0.6h19L28.4,28.2z M10.8,27.8c0.4-2.4,1.3-2.7,2.9-3.4c0.3-0.1,0.7-0.3,1.1-0.5c0.3-0.1,0.5-0.2,0.8-0.4c0.8-0.4,1.4-0.9,1.6-1.6c0.5,0.2,1.1,0.3,1.8,0.3c0.6,0,1.2-0.1,1.8-0.3c0.2,0.7,0.8,1.2,1.6,1.6c0.2,0.1,0.5,0.2,0.8,0.4c0.4,0.2,0.8,0.3,1.1,0.5c1.6,0.7,2.4,1,2.9,3.4H10.8z"/>
+						<path class="st1" d="M36,19c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15S27.3,4,19,4S4,10.7,4,19c0,0.3,0,0.7,0.1,1H2v-1C2,9.6,9.6,2,19,2S36,9.6,36,19z"/></g></svg>
+					</span>
+				</div>
+			</div>
+	</div>
+
+
+	</header>
+	
+
+
+
+<!-- ======================================================開始寫========================================================= -->
+
+
+
+
+
+	<div class="container-template">
+		
+	  <div class="activity">
+   		<div class="activity_banner">   <!-- 第一層 -->
+   				  <!-- 背景在這層 -->
+   					
+   			<div id="acty_Dough"> <!--  麵團區 -->
+   				<img src="img/acty_Dough.png">
+   				<div class="acty_h1">
+   					<h1>牛角麵包簡單學</h1>	
+   				</div>	
+   			</div>
+   			<div class="clear">
+   				
+   			</div>
+   			
+
+   			<div class="activity_board">
+   				<img src="img/acty_stirrer.png" class="acty_stirrer">
+   				<img src="img/acty_board.png">
+   				<div class="acty_board_p"><p>由烘焙王工房，麵包師傅親自講解說明步驟，一步一步帶著你一起做，讓你在家也能輕鬆做出好吃牛角，還有師傅獨門配方秘密大公開!</p>
+   				</div>
+
+   			</div>			
+   			<div class="activity_detail">
+   				<ul>
+   					<li>體驗地點 : 桃園市中壢區中央路55號(烘焙王麵包坊)</li>
+	   				<li>時間 : 105.9.29  下午1:00(預計3小時)</li>
+	   				<li>人數限制 : 10~12人</li>
+	   				<li>聯絡方式 : (03)3335567</li>
+	   				<li>材料 : 麵包坊提供</li>
+	   				<li>費用 : 報名費與材料一共1000元(現場收費)</li>
+	   			</ul>
+   			</div>	
+					
+
+   			
+   		</div>   <!-- activity_banner -->
+
+		<section class="section_2"><div class="trigger1"><!-- 麵團跑 -->
+			
+		<div class="activity_content">   <!-- 第二大層 -->
+			
+		<section class="section_3"><div class="trigger2">  <!-- 鍋起始 -->	
+		<div class="content_1">	
+			<div class="activity_pot">
+				<img src="img/acty_pot.png">  <!-- 外鍋 -->
+				<div class="activity_pot_b">  <!-- 最裡層 -->
+					<img src="img/acty_pot_b.png">
+				</div>
+
+	
+				<div class="activity_dough_change"></div>   <!-- 麵團 -->
+				<h2>烘焙王麵包坊<br>
+				最受歡迎牛角麵包製作</h2>
+			</div>
+		</div>
+		<div class="content_2">
+			<div class="activity_dough_1"></div>
+				<div class="clearfix"></div>
+				
+				<div class="activity_dough_2">
+				<p>牛角麵包如何捲的漂亮?
+					如何讓麵包又鬆又軟?
+					如何挑選好的麵包食材?
+					麵包師傅直接回答你 !</p>
+			</div>
+
+			<div class="clearfix"></div>
+			<div class="activity_dough_3">
+				<p>麵粉選用 : 頂級美國小麥研磨出的小麥粉，使麵包又鬆軟又綿密 ;
+				雞蛋選用: 安心牧場當天直送新鮮雞蛋，通過認證，保證食品安全 ;
+				奶油選用 : 澳洲頂級奶油，讓麵包烤出香而不膩</p>
+
+	
+			</div>
+			<div class="clearfix"></div>
+
+
+				</div></section>  <!-- 鍋停止 -->      
+			
+
+			<div class="activity_dough_4_all">
+				<div class="activity_dough_4 pic_1">
+					
+				</div>
+				<div class="activity_dough_4 pic_2">
+					
+				</div>
+				<div class="activity_dough_4 pic_3">
+					
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div class="activity_dough_5"></div>
+			<div class="activity_dough_6"></div>
+			<div class="clearfix"></div>
+
+			
+				</div></section>  <!-- ....trigger1 -->
+		</div><!-- content_2 -->
+			
+		</div>   <!-- activity_content -->
+
+
+
+
+
+
+
+			<div class="activity_application">
+				<div class="activity_final">
+					<div class="activity_fin_pic fin_1">
+						<img src="img/acty_fin-1.png">
+					</div>
+					<div class="activity_fin_pic">
+						
+					</div>
+					<div class="activity_fin_pic fin_2">
+						<img src="img/acty_fin-2.png">
+					</div>
+					<div class="activity_fin_pic">
+						
+					</div>
+					<div class="activity_fin_pic fin_3">
+						<img src="img/acty_fin-3.png">
+					</div>
+					<div class="activity_fin_pic">
+						
+					</div>
+						<div class="clearfix"></div>
+					<div class="activity_bread">
+						<img src="img/acty_finish_bread.png">
+					</div>
+
+						
+
+
+				</div>
+				<div class="activity_form">
+					<!-- =================表單樣式===================== -->
+						<div class="globalForm">
+							<form action="" method="">
+								<div class="globalFormHeader">
+								
+
+									<h1>報名去</h1>
+									<p>快來一起參與烘培體驗吧 !會員只要填寫基本資料，就能成功報名囉! <br> 名額有限速速行動~~</p>
+								</div>
+								<div class="globalFormContent">
+
+									
+
+									<div class="globalFormInput">
+										<label><span>*</span>姓名</label><input type="text" name="" placeholder="提醒字">
+									</div>
+									
+									<div class="globalFormInput">
+										<label><span>*</span>聯絡電話</label><input type="tel" name="" placeholder="提醒字">
+									</div>
+									
+									<div class="globalFormInput">
+										<label><span>*</span>信箱</label><input type="email" name="" placeholder="提醒字" required>
+									</div>
+
+									
+									<div class="clearfix"></div>
+									<div class="globalFormBtns">
+										<div class="globalCancelBtn">取消</div>
+										<input type="submit" name="" class="globalOkBtn" value="送出">					
+									</div>
+								</div>
+							</form>
+						</div>
+	
+
+
+
+				</div><!-- =================表單樣式===================== -->
+
+
+			</div>
+
+
+
+
+
+   		</div><!-- activity -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>  <!-- container-template -->
+	
+
+
+
+
+
+
+
+
+	 <script type="text/javascript" src="js/activity_tweenmax.js"></script>
+
+</body>
+</html>
