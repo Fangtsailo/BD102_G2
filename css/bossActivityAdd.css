@@ -763,7 +763,7 @@ footer {
       .globalHead .rwdSearchBar.activeSearch {
         top: 80px;
         right: 0;
-        transition: .33s; } }
+        transition: .3s; } }
 .container {
   padding-top: 80px;
   width: 100%; }
