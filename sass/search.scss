@@ -26,6 +26,8 @@ img{
 		}
 	}	//h1
 	.tag-fa{
+		height: 35px;
+		
 		margin-top:5px;
 		display:inline-block;
 		.tag{
@@ -36,8 +38,9 @@ img{
 			color:$globalBgColor ;
 			background-color:$globalStarColor;
 			position:relative;
-
-			border-radius:5px;
+			height: 29px;
+    		border-radius: 5px;
+    		display: inline-block;
 		}
 	
 

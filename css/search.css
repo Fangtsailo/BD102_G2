@@ -729,6 +729,7 @@ img {
     .search_result h1 #numberOf {
       color: #f06428; }
   .search_result .tag-fa {
+    height: 35px;
     margin-top: 5px;
     display: inline-block; }
     .search_result .tag-fa .tag {
@@ -739,7 +740,9 @@ img {
       color: #fbf8f1;
       background-color: #f6921E;
       position: relative;
-      border-radius: 5px; }
+      height: 29px;
+      border-radius: 5px;
+      display: inline-block; }
     .search_result .tag-fa .head {
       top: 0;
       position: absolute;
