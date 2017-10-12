@@ -44,32 +44,27 @@ $(function(){
 
 var bodyClass = document.body.classList,
     lastScrollY = 80;
-<<<<<<< HEAD
 
 
-    var subtitleClass= document.getElementById("subtitle").classList;
-    var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
+
+    
 
 
 	window.addEventListener('scroll', function(){
  	 var st = this.scrollY;
   		if( st > lastScrollY) {
   	  		bodyClass.add('hideUp');
-  	  		subtitleClass.add('hideUp_sub');
-  	  		CoverRightMyClass.add('hideUp_sub_burger');
+  	  		
   		}else{
     		bodyClass.remove('hideUp');
-    		subtitleClass.remove('hideUp_sub');
-    		CoverRightMyClass.remove('hideUp_sub_burger');
+    		
   		}
   		lastScrollY = st;
 	});
-=======
->>>>>>> 3deddc453c4a269ef066dba19e3bb377ed273496
 
 
-    // var subtitleClass= document.getElementById("subtitle").classList;
-    // var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
+
+   
 
 
   window.addEventListener('scroll', function(){
