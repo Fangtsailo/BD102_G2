@@ -12,7 +12,10 @@ h2 {
   text-align: center;
   width: 100%;
   height: 50px;
-  color: #663300; }
+  color: #663300;
+  font-size: 30px;
+  z-index: 6;
+  transition: .5s; }
 
 .GuideBgimg {
   display: block;
@@ -76,10 +79,17 @@ h2 {
   top: 14%;
   left: 16%;
   margin: auto; }
+  .left-bread:hover img {
+    transform: rotate(15deg) !important;
+    transition: .3s; }
+  .left-bread:hover h2 {
+    font-size: 34px;
+    transition: .3s; }
   .left-bread img {
     width: 100%;
     max-width: 160px;
-    max-height: 160px; }
+    max-height: 160px;
+    transition: .5s; }
 
 .right-bread {
   width: 12%;
@@ -89,10 +99,17 @@ h2 {
   top: 14%;
   right: 16%;
   margin: auto; }
+  .right-bread:hover img {
+    transform: rotate(15deg) !important;
+    transition: .3s; }
+  .right-bread:hover h2 {
+    font-size: 34px;
+    transition: .3s; }
   .right-bread img {
     width: 100%;
     max-width: 160px;
-    max-height: 160px; }
+    max-height: 160px;
+    transition: .5s; }
 
 .rwdBread {
   display: none;
