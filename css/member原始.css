@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #f2ebd4;
+  background: -webkit-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -o-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -moz-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: radial-gradient(ellipse, #fbf8f1, #f2ebd4); }
+
+.container {
+  max-width: 83.3333%;
+  padding-top: 124px;
+  text-align: center;
+  margin: 0 auto;
+  outline: 1px dotted #000; }
+  .container img {
+    width: 100%; }
+  .container .memBeBoss .memTitle {
+    margin: 0px 35.4166% 30px 35.4166%; }
+  .container .memBeBoss .memsection1 {
+    width: 100%;
+    text-align: center;
+    outline: 1px solid #f00; }
+    .container .memBeBoss .memsection1 .memfigure {
+      width: 25%;
+      display: inline-block;
+      margin: 0 auto;
+      outline: 1px dotted #0f0; }
+      .container .memBeBoss .memsection1 .memfigure figure {
+        width: 53.3333%;
+        padding: 15px 70px;
+        outline: 1px dotted #00f; }
+      .container .memBeBoss .memsection1 .memfigure figcaption {
+        /*width: 160px;*/
+        padding: 0px 15px 20px 15px;
+        text-align: left;
+        outline: 1px dotted #00f; }
+
+.container:after {
+  content: '';
+  display: block;
+  clear: both; }

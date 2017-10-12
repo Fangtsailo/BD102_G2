@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>會員專區_首頁</title>
+	<title>會員專區_成為店長</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
-	<link rel="stylesheet" type="text/css" href="css/memHome.css">
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
 </head>
 <body>
 <!-- ======================================================header 頁首========================================================= -->
@@ -120,58 +121,87 @@
     </div> -->
 
 
-<!-- ======================================================container 內容========================================================= -->
+
+<!-- ======================================================container 內容格線========================================================= -->
     <div class="container">
-        <div class="memHome">
-            <div class="memTitle">
-                <img src="img/memhometl.svg" alt="歡迎進入會員專區">
+        <div class="memBeBoss">
+            <div class="memTitle col-xs-12 col-sm-12">
+                <img src="img/memimg/mytl.svg" alt="編輯個人資料">
             </div>
 
-            <div class="memHomeItemGroup">
-                <div class="memHomeItem">
-                    <div class="hidden">
-                        <span>我的追蹤</span>
-                        <img src="img/memhometlmyfollow.svg" alt="我的追蹤">
+            <section class="memsection5">
+                <form action="" method="post">
+                    <div class="memFormContent col-xs-12 col-sm-12">
+                        <div class="memPic"></div>
+                        <div class="memFormInput">
+                            <label>變更頭像</label>
+                            <a class="memPic">上傳照片</a>
+                            <input type="file" id="MEM_PIC">
+                        </div>
+                        <div class="memFormInput">
+                            <label>帳號</label>
+                            <input type="text" name="MEM_ID" maxlength="8" class="unChange">
+                            <span class="note">已註冊帳號無法變更</span>
+                        </div>
+                        <div class="memFormInput">
+                            <label>姓名</label>
+                            <input type="text" name="MEM_NAME" maxlength="4" placeholder="請輸入真實姓名">
+                        </div>
+                        <div class="memFormInput">
+                            <label>信箱</label>
+                            <input type="email" name="MEM_EMAIL???" class="unChange">
+                            <span class="note">已註冊信箱無法變更</span>
+                        </div>
+                        <div class="memFormInput">
+                            <label>手機</label>
+                            <input type="tel" name="MEM_PHONE" maxlength="10" placeholder="輸入格式:034257387">
+                        </div>
+                        <a class="changePsw">變更密碼</a>
+                        <button type="submit">送出</button>
                     </div>
-                    <div class="bread">
-                        <img src="img/memhomebread.png">
-                    </div>
-                </div>
-                
-                <div class="memHomeItem">
-                    <div class="hidden">
-                        <span>我的留言</span>
-                        <img src="img/memhometlmycomment.svg" alt="我的留言">
-                    </div>
-                    <div class="bread">
-                        <img src="img/memhomebread.png">
-                    </div>
-                </div>
-                
-                <div class="memHomeItem">
-                    <div class="hidden">
-                        <span>我的報名</span>
-                        <img src="img/memhometlmyentry.svg" alt="我的報名">
-                    </div>
-                    <div class="bread">
-                        <img src="img/memhomebread.png">
-                    </div>
-                </div>
-                
-                <div class="memHomeItem">
-                    <div class="hidden">
-                        <span>成為店長</span>
-                        <img src="img/memhometlbeboss.svg" alt="成為店長">
-                    </div>
-                    <div class="bread">
-                        <img src="img/memhomebread.png">
-                    </div>
-                </div>
-                <!-- ------------------------ clear清除浮動------------------------ -->
-                <div class="clearfix"></div>
-            </div>
+
+
+                    <!-- ******************重寫無效************************** -->
+                    <!-- <div class="memInfo">    
+                        <ul class="memInfoList">
+                            <li class="memInfoItem">
+                                <label class="th">變更頭像</label>
+                                <div class="memPic"></div>
+                                <a class="file">上傳照片
+                                    <input type="file" id="MEM_PIC"> 
+                                </a>
+                            </li>
+                            <li class="memInfoItem">
+                                <label class="th">帳號</label>
+                                <input type="text" name="MEM_ID" maxlength="8" class="unChange">
+                                <span class="note">已註冊帳號無法變更</span>
+                            </li>
+
+                            <li class="memInfoItem">
+                                <label class="th">姓名</label>
+                                <input type="text" name="MEM_NAME" maxlength="4" placeholder="請輸入真實姓名">
+                            </li>
+
+                            <li class="memInfoItem">
+                                <label class="th">信箱</label>
+                                <input type="email" name="MEM_EMAIL???" class="unChange">
+                                <span class="note">已註冊信箱無法變更</span>
+                            </li>
+
+                            <li class="memInfoItem">
+                                <label class="th">手機</label>
+                                <input type="tel" name="MEM_PHONE" maxlength="10" placeholder="輸入格式:034257387">
+                            </li>
+                        </ul>
+                        <a class="changePsw">變更密碼</a>
+                        <button type="submit">儲存設定</button>
+                    </div> -->
+                        <!-- ******************************************** -->
+                </form>
+            </section>
         </div>
     </div>
+
 
 
 <!-- ======================================================footer 頁尾========================================================= -->
