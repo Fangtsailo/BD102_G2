@@ -67,7 +67,7 @@
 		<p>
 			自創業以來因為引進歐美的先進技術而卓越成長並希望以此經驗技術可以對東南亞吃的文化帶來貢獻 。故於1985年進駐香港，之後在香港廣受各方好評，於1988年設立了中央工廠，自此開始了海外的連鎖烘焙事業。而後陸續在泰國、馬來西亞、新加坡都有展店，也都有不錯的成績。
 		<p>
-        1987年於台北市百貨公司成立台灣第一家麵包專賣店，為了提供給顧客更多元且完整的產品及服務，於2000年在板橋火車站開了第一家咖啡複合式店面，至今包含複合式店面已有多家分店分佈全台。未來更以積極培育當地人才，每年至少成立2家專賣店為目標，持續教育訓練以提高服務品質。</p>
+        1987年於台北市百貨公司成立台灣麵包專賣店，為了提供給顧客更多元且完整的產品及服務，於2000年在板橋火車站開了咖啡複合式店面，至今包含複合式店面已有多家分店分佈全台。未來更以積極培育當地人才，每年至少成立2家專賣店為目標，持續教育訓練以提高服務品質。</p>
         <p>
         自創始以來一直堅持慎選原料，每天現場烘焙提供最新鮮的產品，且不斷開發新產品，如：手工現做的三明治、柔軟的吐司、銅鑼燒、大福等多樣的日式風味的點心，讓顧客無論何時都可以買到自己喜愛的產品，享受美味的麵包。</p>
 	</div>
@@ -95,16 +95,16 @@
 	</div>
 	<ul class="tabs">
 		<li class="item item-selected">
-			<a href="#">即時位置</a>
+			即時位置
 		</li>
 		<li class="item">
-			<a href="#">禮拜一路線</a>
+			禮拜一路線
 		</li>
 		<li class="item">
-			<a href="#">禮拜三路線</a>
+			禮拜三路線
 		</li>
 		<li class="item">
-			<a href="#">禮拜日路線</a>
+			禮拜日路線
 		</li>
 	</ul>
 	<div id="bread-car"></div>
@@ -135,28 +135,28 @@
 		<div class="item">
 			<div class="image"><img alt="big_product2.png" src="img/store/browse/big_product2.png"></div>
 			<div class="describe">
-			<h3>烤焦三角麵包</h3>
+			<h3>圖騰麵包</h3>
 			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
 			</div>
 		</div>
 		<div class="item">
 			<div class="image"><img alt="big_product3.png" src="img/store/browse/big_product3.png"></div>
 			<div class="describe">
-			<h3>烤焦三角麵包</h3>
+			<h3>綜合派</h3>
 			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
 			</div>
 		</div>
 		<div class="item">
 			<div class="image"><img alt="big_product4.png" src="img/store/browse/big_product4.png"></div>
 			<div class="describe">
-			<h3>烤焦三角麵包</h3>
+			<h3>香蔥</h3>
 			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
 			</div>
 		</div>
 		<div class="item">
 			<div class="image"><img alt="big_product5.png" src="img/store/browse/big_product5.png"></div>
 			<div class="describe">
-			<h3>烤焦三角麵包</h3>
+			<h3>黃金牛角</h3>
 			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
 			</div>
 		</div>
@@ -164,23 +164,23 @@
 	<div class="product-list">
 		<div class="item col-xs-4">
 			<img alt="small_product1.png" src="img/store/browse/small_product1.png">
-			<p>name</p>
+			<p>烤焦三角</p>
 		</div>
 		<div class="item col-xs-4">
 			<img alt="small_product2.png" src="img/store/browse/small_product2.png">
-			<p>name</p>
+			<p>圖騰</p>
 		</div>
 		<div class="item col-xs-4">
 			<img alt="small_product3.png" src="img/store/browse/small_product3.png">
-			<p>name</p>
+			<p>綜合派</p>
 		</div>
 		<div class="item">
 			<img alt="small_product4.png" src="img/store/browse/small_product4.png">
-			<p>name</p>
+			<p>香蔥</p>
 		</div>
 		<div class="item">
 			<img alt="small_product5.png" src="img/store/browse/small_product5.png">
-			<p>name</p>
+			<p>黃金牛角</p>
 		</div>
 	</div>
 </div>

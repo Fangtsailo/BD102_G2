@@ -337,40 +337,10 @@ img {
 			border-radius: 50px;
 			margin: 0px 10px;
 			max-width: 500px;
-			a {
-				display: block;
-				padding: 6px;
-				position: relative;
-				text-align: center;
-				text-decoration: none;
-				color: $globalHdColor02;
-				.tab-img {
-					width: 100%;
-				}
-				.content {
-					.icon {
-						width: 30px;
-						margin: auto;
-						img {
-							width: 100%;
-						}
-					}
-					position: absolute;
-					left: 0;
-					right: 0;
-					margin: auto;
-					top: 60px;
-					color: rgba(244,248,241,0.5);
-				}
-			}
-		}
-		.item.item-selected {
-			a {
-				.content {
-					color: $globalFontColor;
-					font-size: 17px;
-				}
-			}
+			padding: 6px;
+			position: relative;
+			text-align: center;
+			color: $globalHdColor02;
 		}
 	}
 	#bread-car {
@@ -475,6 +445,7 @@ img {
 				left: 0;
 				right: 0;
 				margin: auto;
+				color: $globalBgColor;
 			}
 		}
 		.slick-next:before {
@@ -611,7 +582,7 @@ img {
 		@include title($globalBgColor, $globalHdColor02);
 	}
 	.banner-area {
-		max-width: 900px;
+		max-width: 1000px;
 		padding-left: 50px;
 		padding-right: 50px;
 		margin: auto;
@@ -630,7 +601,7 @@ img {
 			margin-bottom: 10px;
 		}
 		.detail {
-			margin-top: 10vh;
+			margin-top: 8vw;
 			padding: 0;
 			div {
 				padding-left: 0;
@@ -960,6 +931,9 @@ img {
 	, .screen-other-store, .screen-messages{
 		// height: auto;
 	}
+	.perspective {
+		margin-bottom: 20px;
+	}
 	.screen-1 {
 		position: relative;
 		#bottom-city {
@@ -1005,9 +979,6 @@ img {
 		padding-top: 50px;
 	}
 	.screen-bread-car-map {
-		.perspective {
-			margin-bottom: 20px;
-		}
 		#bread-car {
 			height: 40px;
 		}

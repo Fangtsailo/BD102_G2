@@ -279,31 +279,11 @@ img {
       border: 1px solid #9e693d;
       border-radius: 50px;
       margin: 0px 10px;
-      max-width: 500px; }
-      .screen-bread-car-map .tabs .item a {
-        display: block;
-        padding: 6px;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        color: #9e693d; }
-        .screen-bread-car-map .tabs .item a .tab-img {
-          width: 100%; }
-        .screen-bread-car-map .tabs .item a .content {
-          position: absolute;
-          left: 0;
-          right: 0;
-          margin: auto;
-          top: 60px;
-          color: rgba(244, 248, 241, 0.5); }
-          .screen-bread-car-map .tabs .item a .content .icon {
-            width: 30px;
-            margin: auto; }
-            .screen-bread-car-map .tabs .item a .content .icon img {
-              width: 100%; }
-    .screen-bread-car-map .tabs .item.item-selected a .content {
-      color: #663300;
-      font-size: 17px; }
+      max-width: 500px;
+      padding: 6px;
+      position: relative;
+      text-align: center;
+      color: #9e693d; }
   .screen-bread-car-map #bread-car {
     height: 80px;
     background-size: contain;
@@ -419,7 +399,8 @@ img {
         width: 100px;
         left: 0;
         right: 0;
-        margin: auto; }
+        margin: auto;
+        color: #fbf8f1; }
     .screen-product .product-list .slick-next:before {
       content: '';
       display: block;
@@ -552,7 +533,7 @@ img {
       background-color: #fbf8f1;
       color: #9e693d; }
   .screen-activity .banner-area {
-    max-width: 900px;
+    max-width: 1000px;
     padding-left: 50px;
     padding-right: 50px;
     margin: auto;
@@ -568,7 +549,7 @@ img {
       color: #d38754;
       margin-bottom: 10px; }
     .screen-activity .banner-area .detail {
-      margin-top: 10vh;
+      margin-top: 8vw;
       padding: 0; }
       .screen-activity .banner-area .detail div {
         padding-left: 0; }
@@ -994,6 +975,9 @@ img {
     box-sizing: border-box;
     padding: 0 10px; }
 
+  .perspective {
+    margin-bottom: 20px; }
+
   .screen-1 {
     position: relative; }
     .screen-1 #bottom-city {
@@ -1032,8 +1016,6 @@ img {
   .screen:not(:first-of-type) {
     padding-top: 50px; }
 
-  .screen-bread-car-map .perspective {
-    margin-bottom: 20px; }
   .screen-bread-car-map #bread-car {
     height: 40px; }
 

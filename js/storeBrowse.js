@@ -181,7 +181,7 @@ new ScrollMagic.Scene({
 							animate_illustration("bottom-city", "start");
 						}
 					})
-				.addIndicators({name: "0 (duration: 0)"})
+				// .addIndicators({name: "0 (duration: 0)"})
 				.addTo(controller);
 
 new ScrollMagic.Scene({
@@ -194,7 +194,7 @@ new ScrollMagic.Scene({
 		            },
 		            ease: Linear.easeNone
 		        }))
-				.addIndicators({name: "1 (duration: car)"})
+				// .addIndicators({name: "1 (duration: car)"})
 				.addTo(controller);
 
 
@@ -215,7 +215,7 @@ new ScrollMagic.Scene({
 		            },
 		            ease: Linear.easeNone
 		        })])
-				.addIndicators({name: "1 (duration: 0)"})
+				// .addIndicators({name: "1 (duration: 0)"})
 				.addTo(controller);
 
 new ScrollMagic.Scene({
@@ -236,7 +236,7 @@ new ScrollMagic.Scene({
 		            ease: Linear.easeNone
 		        })
 		        ])
-				.addIndicators({name: "product)"})
+				// .addIndicators({name: "product)"})
 				.addTo(controller);			
 new ScrollMagic.Scene({
 					triggerElement: "#product-trigger2"
@@ -255,7 +255,7 @@ new ScrollMagic.Scene({
 				    opacity: 1,
 				    x: 0
 				})]	)
-				.addIndicators({name: "product)"})
+				// .addIndicators({name: "product)"})
 				.addTo(controller);
 new ScrollMagic.Scene({
 					triggerElement: "#product-star-light-trigger", duration: $(window).height()
@@ -267,7 +267,7 @@ new ScrollMagic.Scene({
 		            },
 		            ease: Linear.easeNone
 		        }))
-				.addIndicators({name: "1 (product: 0)"})
+				// .addIndicators({name: "1 (product: 0)"})
 				.addTo(controller);
 new ScrollMagic.Scene({
 					triggerElement: "#activity-trigger", duration: 300, offset: -200
@@ -286,7 +286,7 @@ new ScrollMagic.Scene({
 		            },
 		            ease: Linear.easeNone
 		        })])
-				.addIndicators({name: "activity"})
+				// .addIndicators({name: "activity"})
 				.addTo(controller);
 new ScrollMagic.Scene({
 					triggerElement: "#other-store-trigger", duration: 300, offset:-200
@@ -305,7 +305,7 @@ new ScrollMagic.Scene({
 		            },
 		            ease: Linear.easeNone
 		        })])
-				.addIndicators({name: "other-store"})
+				// .addIndicators({name: "other-store"})
 				.addTo(controller);
 new ScrollMagic.Scene({
 					triggerElement: "#messages-trigger", duration: 300, offset: -230
@@ -324,7 +324,7 @@ new ScrollMagic.Scene({
 		            },
 		            ease: Linear.easeNone
 		        })])
-				.addIndicators({name: "other-store"})
+				// .addIndicators({name: "other-store"})
 				.addTo(controller);	
 new ScrollMagic.Scene({
 					triggerElement: "#messages-icon-trigger"
@@ -334,7 +334,7 @@ new ScrollMagic.Scene({
 				}, {
 				    opacity: 1,
 				}))
-				.addIndicators({name: "messages)"})
+				// .addIndicators({name: "messages)"})
 				.addTo(controller);
 						
 }
