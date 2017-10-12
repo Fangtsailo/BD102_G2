@@ -154,6 +154,7 @@ li {
 .hideUp_sub_burger{
 	top: 44px  !important;
 	// transition: 0.3s ease-in-out !important; 
+<<<<<<< HEAD
 
 }
 
@@ -161,6 +162,11 @@ li {
 
 .globalHead {
 
+=======
+}
+
+header.globalHead {
+>>>>>>> 19544ebc3865e8aafe08984d63c925e12f3eecc3
 	width: 100%;
 	height: 80px;
 	@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
