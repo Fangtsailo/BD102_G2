@@ -47,26 +47,6 @@ var bodyClass = document.body.classList,
 
 
 
-    
-
-
-	window.addEventListener('scroll', function(){
- 	 var st = this.scrollY;
-  		if( st > lastScrollY) {
-  	  		bodyClass.add('hideUp');
-  	  		
-  		}else{
-    		bodyClass.remove('hideUp');
-    		
-  		}
-  		lastScrollY = st;
-	});
-
-
-
-   
-
-
   window.addEventListener('scroll', function(){
    var st = this.scrollY;
       if( st > lastScrollY) {
