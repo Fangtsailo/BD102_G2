@@ -97,7 +97,7 @@ TweenMax.fromTo( ["#SPGRADE","#SPFOLLOW"] , 1 , {
     var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 720, offset: 470})
             .setPin("#target")
             .setTween(tween)
-            .addIndicators() // add indicators (requires plugin)
+            //.addIndicators() // add indicators (requires plugin)
             .addTo(controller);
 
 
@@ -125,9 +125,9 @@ var scene_t = new ScrollMagic.Scene({
       offset: 0,
     })
     .setTween(pd_show)
-    .addIndicators({
-            name: 'scene 02'
-        })
+    // .addIndicators({
+    //         name: 'scene 02'
+    //     })
     .addTo(controller);
 
 

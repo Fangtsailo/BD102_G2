@@ -43,19 +43,13 @@
 
 
 <div id="trigger1"></div>
-	<section class="SHOPB_SHOP col-xs-12 col-sm-12">
+	<section class="SHOPB_SHOP">
 		
 		<div class="banners">
 		<!-- <img src="img/SHOPB/店家-MONO-扁.jpg"> -->
 		<!-- <img src="img/SHOPB/BN_02.JPG">
 		<img src="img/SHOPB/BN_03.JPG"> -->
 		</div>
-
-		<!-- <div class="owl-carousel">
-		<div class="item"><img src="https://api.fnkr.net/testimg/1800x900/FEE/FFF/?text=111"></div>
-		<div class="item"><img src="https://api.fnkr.net/testimg/1800x900/EFE/FFF/?text=222"></div>
-		<div class="item"><img src="https://api.fnkr.net/testimg/1800x900/EEF/FFF/?text=333"></div>
-		</div> -->
 
 
 
@@ -202,18 +196,22 @@
 		</div>
 		<div id="SKINAREA"></div>
 		<div id="ACTTXT">
-			<p id="tt">好吃到流淚的神之麥香麵包自己做</p>
+			<p id="tt">牛角麵包簡單學</p>
 			<p id="cc">
-				胖老蘇烘焙教室<br>
-				桃園市中壢區中央路123號<br>
-				活動人數 30人<br>
-				材料由烘焙教室準備
+				體驗地點 : 桃園市中壢區中央路55號<br>  
+           		烘焙王麵包坊<br>
+				時間 : 105.9.29  下午1:00(預計3小時)<br>
+				人數限制 : 10~12人<br>
+				聯絡方式 : (03)3335567<br>
+				材料 : 麵包坊提供<br>
+				費用 : 報名費與材料一共1000元(現場收費)
 			</p>
+			<input type="button" id="ACTBT" name="" value="報名活動">
 		</div>
 	</section>
 
 
-
+	<div class="clearfix"></div>
 	<section class="SHOPB_MAP col-xs-12 col-sm-12">
 		<div id="myMap"></div>
 	</section>
@@ -241,6 +239,8 @@
 			<div class="MSG_TXT">
 				<p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在，調查基金來看中央選擇進來開口很，浪費未來傳來女性品種每個人結束無人。
 				</p>
+				<span id="respit">回覆</span>
+				<span id="repoit">檢舉</span>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -253,13 +253,15 @@
 			<div class="MSG_TXT">
 				<p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在，調查基金來看中央選擇進來開口很，浪費未來傳來女性品種每個人結束無人。
 				</p>
+				<span id="respit">回覆</span>
+				<span id="repoit">檢舉</span>
 				
 				<div class="MSG_RES">
 					<div class="MSG_RES_PROFILE">
 						<img src="img/SHOPB/PROFILE2.png">
 					</div>
 					<div class="MSG_RES_TXT">
-					<p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在，調查基金來看中央選擇進來開口很，浪費未來傳來女性品種每個人結束無人。
+					<p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在。
 					</p>
 					</div>					
 				</div> <!-- MSG_RES -->
@@ -269,7 +271,7 @@
 						<img src="img/SHOPB/PROFILE2.png">
 					</div>
 					<div class="MSG_RES_TXT">
-					<p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在，調查基金來看中央選擇進來開口很，浪費未來傳來女性品種每個人結束無人。
+					<p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽。
 					</p>					
 				</div> <!-- MSG_RES -->
 
