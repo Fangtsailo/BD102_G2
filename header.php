@@ -106,7 +106,7 @@
 
 <!-- logo區塊 -->
 		<div class="headLogo">
-			<div class="svg">
+			<div class="svg" onclick="location.href='homepage.php'">
 				<img src="img/trepunLogoWhite.svg">
 			</div>	
 		</div>	
@@ -225,11 +225,11 @@
 			<div class="clearfix"></div>
 		</li>
 		<li class="listTitle">會員專區</li>
-		<li class="navItem"><a href="#">基本資料</a></li>
-		<li class="navItem"><a href="#">我的追蹤</a></li>
-		<li class="navItem"><a href="#">我的留言</a></li>
-		<li class="navItem"><a href="#">我的報名</a></li>
-		<li class="navItem"><a href="#">成為店長</a></li>
+		<li class="navItem"><a href="memedit.php">基本資料</a></li>
+		<li class="navItem"><a href="memfollow.php">我的追蹤</a></li>
+		<li class="navItem"><a href="memcomment.php">我的留言</a></li>
+		<li class="navItem"><a href="mementry.php">我的報名</a></li>
+		<li class="navItem"><a href="memBeBoss1.php">成為店長</a></li>
 		<li class="navItem"><a href="#">登出</a></li>
 		</ul>
 	</nav>

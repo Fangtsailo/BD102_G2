@@ -230,7 +230,7 @@ require_once("header.php");
 					<li class="tab_contents active" id="searchShops">
 						店家
 					</li>
-					<li class="tab_contents" id="searchVans">
+					<li class="tab_contents" id="searchVans" onclick="location.href='search_car.php'">
 						胖小車
 					</li>
 				</ul>
@@ -254,7 +254,7 @@ require_once("header.php");
 					</button>
 					<div class="searchbar">
 					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
-					<button type="submit">搜尋</button>
+					<button type="submit" onclick="location.href='search.php'">搜尋</button>
 					</div>
 				</div>
 			</div>
