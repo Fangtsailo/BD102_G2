@@ -25,33 +25,33 @@ header{
 	z-index: 3;
 }
 
-.coverSubtitile{
-	height: 60px;
-	.subtitle{
-		height:44px;
-		width: 100vw;
-		position: fixed;
-		top: 80px;
-		z-index: 3;
-		transition: 0.3s ease-in-out; 
+// .coverSubtitile{
+// 	height: 60px;
+// 	.subtitle{
+// 		height:44px;
+// 		width: 100vw;
+// 		position: fixed;
+// 		top: 80px;
+// 		z-index: 3;
+// 		transition: 0.3s ease-in-out; 
 
-		h2{
-			line-height: 44px;
-			font-size: 20px;
-			background-color:$MybusinessStore-subtitle-bgColor;
-			padding-left: 20px;
-			color:#fff;
-		}
-		.burger{
-			display:none;
-			position: absolute;
-			right: 0;
-			top: 0;
-			width: 40px;
-			height: 40px;
-		}
-	}
-}
+// 		h2{
+// 			line-height: 44px;
+// 			font-size: 20px;
+// 			background-color:$MybusinessStore-subtitle-bgColor;
+// 			padding-left: 20px;
+// 			color:#fff;
+// 		}
+// 		.burger{
+// 			display:none;
+// 			position: absolute;
+// 			right: 0;
+// 			top: 0;
+// 			width: 40px;
+// 			height: 40px;
+// 		}
+// 	}
+// }
 
 
 .container{
@@ -62,40 +62,40 @@ width: 100%;
 
 
 
-	.LeftBusiness{
-		width: 200px;
-		height: 500px;
-		position: fixed;
-		left: 0;
-		top: 160px;
-		// background-color: #ccc;
-		.nav-Group1{
-			margin-top: 30px;
-		}
-		div{
-			div{
-				&:nth-child(1){
-					@include member-nav-bar-mainTitle-propity();
-					// margin-top:150px;
+	// .LeftBusiness{
+	// 	width: 200px;
+	// 	height: 500px;
+	// 	position: fixed;
+	// 	left: 0;
+	// 	top: 160px;
+	// 	// background-color: #ccc;
+	// 	.nav-Group1{
+	// 		margin-top: 30px;
+	// 	}
+	// 	div{
+	// 		div{
+	// 			&:nth-child(1){
+	// 				@include member-nav-bar-mainTitle-propity();
+	// 				// margin-top:150px;
 
-				}
-				&:nth-child(2){
-					@include member-nav-bar-subTitle-propity();
+	// 			}
+	// 			&:nth-child(2){
+	// 				@include member-nav-bar-subTitle-propity();
 					
-				}
-				&:nth-child(3){
-					@include member-nav-bar-subTitle-propity();
+	// 			}
+	// 			&:nth-child(3){
+	// 				@include member-nav-bar-subTitle-propity();
 					
-				}
-				&:nth-child(4){
-					@include member-nav-bar-subTitle-propity();
+	// 			}
+	// 			&:nth-child(4){
+	// 				@include member-nav-bar-subTitle-propity();
 					
-				}
+	// 			}
 
 				
-			}
-		}
-	}
+	// 		}
+	// 	}
+	// }
 
 
 

@@ -5,11 +5,9 @@
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
-	<link rel="stylesheet" type="text/css" href="css/FMybusinessStore.css">
+	<link rel="stylesheet" type="text/css" href="css/FMybusinessStoreProductListContent.css">
 
-
-
-	<!-- =====header==== -->
+		<!-- =====header==== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
@@ -28,36 +26,28 @@
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 
-	
-	
 
-	
+
 </head>
 <body>
 
 <!-- ======================================================header 頁首========================================================= -->
 	<div class="coverHeader">
-	<?php 
+			<?php 
 
 		require_once('header.php');
 
-	 ?>
+	 		?>
+
 	</div>
 	
 
 
-	<?php 
+<?php 
 
 		require_once('subtitle.php');
 
 	 ?>
-
-<!-- <div class="coverSubtitile" >
-	<div class="subtitle" Id="subtitle">
-				<h2>店長專區</h2>
-				<img class="burger" src="https://api.fnkr.net/testimg/44x44/00CED1/FFF/?text=img+placeholder">
-	</div>
-</div> -->
 
 
 
@@ -71,9 +61,6 @@
 
 
 <!-- ==============left fixed content================== -->
-
-
-
 		<div class="LeftBusiness">
 
 			
@@ -84,7 +71,7 @@
 			 ?>
 
 
-			
+		
 		</div> <!-- LeftBusiness -->
 		
 	
@@ -124,71 +111,28 @@
 			<table>
 				
 				<tr class="tabletitle" >
-					<th colspan="2">資本資料</th>
+					<th colspan="2">新增商品</th>
 				</tr>
 
 				<tr>
-				<th><div>狀態</div></th>
-				<td><input type="text" name="" value="上架中"></td>
-				</tr>
-
-
-				<tr>
-				<th><div>店名</div></th>
-				<td><input type="text" name="" value="小木屋鬆餅"></td>
+				<th><div>品名</div></th>
+				<td><input type="text" name="" value="請輸入商品名稱"></td>
 				</tr>
 
 
 				<tr>
-				<th><div>電話</div></th>
-				<td><input type="text" name="" value="03-4265214"></td>
+				<th><div>價格</div></th>
+				<td><input type="text" name="" value="請輸入字數"></td>
 				</tr>
 
 
-				<tr>
-				<th><div>地址</div></th>
-				<td><input type="text" name="" value="桃園市中大路300號"></td>
-				</tr>
-
-
-				<tr>
-				<th><div>公休日<br>(複選)</div></th>
-				<td>
-					<div>
-						<a href="#"><div>星期一</div></a>
-						<a href="#"><div>星期二</div></a>
-						<a href="#"><div>星期三</div></a>
-						<a href="#"><div>星期四</div></a>
-					</div>
-					<div>
-						<a href="#"><div>星期五</div></a>
-						<a href="#"><div>星期六</div></a>
-						<a href="#"><div>星期日</div></a>
-						<a href="#"><div>國定假</div></a><samp></samp>
-					</div>
-				</td>
-				</tr>
-
-
-				<tr>
-				<th><div>營業時間</div></th>
-				<td>
-					<label>
-						<span>開始</span>
-						<input type="time" name="" value="">
-					</label>
-					<label>
-						<span>結束</span>
-						<input type="time" name="" value="">
-					</label>
-				</td>
-				</tr>
+				
 
 
 				<tr>
 				<th><div>故事</div></th>
 				<td>
-					<textarea placeholder=""></textarea>
+					<textarea placeholder="限500字"></textarea>
 				</td>
 				</tr>
 
@@ -201,8 +145,10 @@
 					<div>
 						<div>
 							<img src="img/icon/camera.png">
+							<!-- <input type="file"> -->
+							<span class="ifForPic">建議寬高大於1440像素</span>
 							<input type="file">
-							<span>點擊上傳店頭照片<br>建議寬、高大於1440像素</span>
+							<button class="ifForBtn">新增照片</button>
 						</div>
 					</div>
 				</td>
@@ -283,30 +229,17 @@
 
 <!-- ==============right fixed content================== -->
 
-	<!-- <div class="CoverRightMy" id="CoverRightMy">
+	<!-- <div class="CoverRightMy">
 		
-		<ul>
-			<li>會員專區</li>
-			<li>麵包店
-				<ul>
-					<li>基本資料</li>
-					<li>商品</li>
-				</ul>
-			</li>
-			<li>胖小車
-				<ul>
-					<li>定位位置</li>
-					<li>基本資料</li>
-					<li>商品</li>
-				</ul>
-			</li>
-			<li>活動管理</li>
-			<li>留言管理</li>
-		</ul>
+		<div class="RightMy">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 		
-	</div>
- -->
-	
+	</div> -->
 
 
 <!-- ==============right fixed content======END======= -->
@@ -315,7 +248,7 @@
 
 
 
-</div><!-- container -->
+</div>
 <!-- ==============middle content======END======= -->
 
 
@@ -329,20 +262,47 @@
 
 
 <!-- ======================================================footer 頁尾========================================================= -->
-	<?php 
+	<footer>
+	<!-- <div class="globalFtgroup">
+		<div class="globalFtBtn">
+			<div class="svg">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
+				<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/>
+				<path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
+				</svg>
+			</div>
+			<a href="#">客服中心</a>
 
-	require_once('footer.php');
+		</div>
+		<div class="globalFtBtn">
+			<div class="svg">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
+	<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
+		L22,0z"/>
+	<path d="M23.3,17.5c0-0.8,0.3-1.5,1.5-1.5h1.5v-3h-2.5c-3,0-4,1-4,4v2h-2v3h2v9h3.5v-9h2.5l0.5-3h-3V17.5z"/></g>
+				</svg>
 
-	 ?>
+			</div>
+			<a href="#">TrePun粉絲專頁</a>
 
-	<!-- 
-<script>
-$(document).ready(function(){
-    $(".burger").click(function(){
-        $(".CoverRightMy").toggleClass("moveToLeft");
-    });
-});
-</script>	 -->
+		</div>
+		<div class="globalFtBtn">
+			<div class="svg">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 
+			13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 
+			22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
+			L22,0z"/>
+	</g>
+</g>
+</svg>
+			</div>
+			<a href="#">新增店家</a>
+
+		</div>
+		<p>© 2017 找麥方TrePun - 設計製作</p>
+	</div> -->
+	</footer>
+	
 
 </body>
 </html>
