@@ -8,6 +8,7 @@
 	<!-- js區 -->
 	 <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
 	 	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	 	<script type="text/javascript" src="js/header.js"></script>
 	<!-- map區 -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
 </head>

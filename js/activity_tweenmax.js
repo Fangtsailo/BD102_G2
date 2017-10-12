@@ -67,9 +67,9 @@ var controller = new ScrollMagic.Controller();
         })
         .setPin('.activity_pot')
         .setTween(tween_4)
-        .addIndicators({
-            name: 'sticky'
-        })
+        // .addIndicators({
+        //     name: 'sticky'
+        // })
         .addTo(controller);
 
 
@@ -99,11 +99,11 @@ var controller = new ScrollMagic.Controller();
     })
     .setTween(tween_2)  //要跑的動畫  ，要先設var
 
-    .addIndicators({
-            name: 'scene 02'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene 02'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 
 //掉麵團  end
@@ -219,11 +219,11 @@ var controller = new ScrollMagic.Controller();
     })
     .setTween(tween_6)  //要跑的動畫  ，要先設var
 
-    .addIndicators({
-            name: 'scene6'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene6'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 
 
