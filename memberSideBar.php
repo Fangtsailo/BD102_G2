@@ -53,7 +53,7 @@
 
 				
 					<div>
-						<a href="#">
+						<a href="FMybusinessStore.php">
 							<h3>基本資料</h3>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 								<defs>
@@ -68,7 +68,7 @@
 
 
 				<div>
-					<a href="#">
+					<a href="FMybusinessStoreProductList.php">
 						<h3>商品</h3>
 						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 							<defs>
@@ -118,7 +118,7 @@
 				</a>
 				
 				<div>
-					<a href="">
+					<a href="FMybusinessCarPosition.php">
 						<h3>定位位置</h3>
 						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 							<defs>
@@ -133,7 +133,7 @@
 
 
 				<div>
-					<a href="">
+					<a href="FMybusinessStore.php">
 						<h3>基本資料</h3>
 						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 							<defs>
@@ -147,7 +147,7 @@
 
 
 				<div>
-					<a href="">
+					<a href="FMybusinessStoreProductList.php">
 						<h3>商品</h3>
 						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 							<defs>
@@ -204,7 +204,7 @@
              <div> <!-- Group4 -->
 
 
-				<a href="">
+				<a href="FMybusinessMessage.php">
 					<div>
 						<h2>留言管理</h2>
 						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60">

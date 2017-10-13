@@ -26,7 +26,7 @@
 				</ul>
 			</li>
 			<a href="#"><li>活動管理</li></a>
-			<a href="#"><li>留言管理</li></a>
+			<a href="FMybusinessMessage.php"><li>留言管理</li></a>
 		</ul>
 		
 </div>
