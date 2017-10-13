@@ -1,72 +1,906 @@
-/*
-Error: Invalid CSS after "<<<<<<< HEAD": expected "{", was "}"
-        on line 159 of sass/basic.scss
-        from line 1 of sass/search.scss
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0; }
 
-154: .hideUp_sub_burger{
-155: 	top: 44px  !important;
-156: 	// transition: 0.3s ease-in-out !important; 
-157: <<<<<<< HEAD
-158: 
-159: }
-160: 
-161: 
-162: 
-163: .globalHead {
-164: 
+body {
+  background-color: #fbf8f1;
+  font-family: "Noto Sans CJK TC";
+  overflow-x: hidden; }
 
-Backtrace:
-sass/basic.scss:159
-sass/search.scss:1
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1278:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1208:in `expected'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1203:in `tok!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:677:in `block'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:697:in `block_child'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:678:in `block'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:670:in `ruleset'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:696:in `block_child'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:689:in `block_contents'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:137:in `stylesheet'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:41:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:414:in `_to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:321:in `to_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:327:in `block in visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:326:in `visit_import'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/engine.rb:290:in `render'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:400:in `run'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
-C:/Ruby24-x64/bin/sass:22:in `load'
-C:/Ruby24-x64/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"<<<<<<< HEAD\": expected \"{\", was \"}\"\A         on line 159 of sass/basic.scss\A         from line 1 of sass/search.scss\A \A 154: .hideUp_sub_burger{\A 155: 	top: 44px  !important;\A 156: 	// transition: 0.3s ease-in-out !important; \A 157: <<<<<<< HEAD\A 158: \A 159: }\A 160: \A 161: \A 162: \A 163: .globalHead {\A 164: "; }
+input {
+  font-family: "Noto Sans CJK TC"; }
+
+a {
+  text-decoration: none;
+  color: #3399ff; }
+
+li {
+  list-style: none; }
+
+.globalForm {
+  width: 50%;
+  background-color: #fbf8f1;
+  border: 1px solid #ccc;
+  margin: auto; }
+  .globalForm .globalFormHeader {
+    width: 100%;
+    padding: 5% 5%;
+    position: relative;
+    box-sizing: border-box;
+    background: #805934;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, #805934 0%, #9e693d 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
+    /* IE6-9 */ }
+    .globalForm .globalFormHeader h1 {
+      font-size: 24px;
+      color: #fbf8f1; }
+    .globalForm .globalFormHeader p {
+      font-size: 16px;
+      color: #fbf8f1;
+      font-weight: 300;
+      margin-top: 10px; }
+    .globalForm .globalFormHeader .st0 {
+      fill: #fbf8f1; }
+    .globalForm .globalFormHeader .svg {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 10px;
+      top: 10px; }
+  .globalForm .globalFormContent {
+    width: 100%;
+    padding-top: 10px; }
+    .globalForm .globalFormContent .globalFormInput {
+      width: 80%;
+      height: 50px;
+      margin: 0px auto; }
+      .globalForm .globalFormContent .globalFormInput input {
+        display: block;
+        float: right;
+        width: 65%;
+        height: 100%;
+        padding-left: 10px;
+        margin: auto;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #bbb; }
+        .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+          color: #bbb;
+          font-weight: 300; }
+      .globalForm .globalFormContent .globalFormInput label {
+        display: block;
+        width: 35% -10px;
+        float: left;
+        height: 100%;
+        line-height: 50px;
+        color: #663300;
+        font-weight: 300; }
+        .globalForm .globalFormContent .globalFormInput label span {
+          color: #f06428; }
+      .globalForm .globalFormContent .globalFormInput textarea {
+        display: block;
+        float: right;
+        width: 65%;
+        padding-left: 10px;
+        padding-top: 10px;
+        height: 100%;
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #bbb; }
+    .globalForm .globalFormContent .globalFormBtns {
+      width: 80%;
+      margin: 30px auto;
+      text-align: center; }
+      .globalForm .globalFormContent .globalFormBtns .globalOkBtn, .globalForm .globalFormContent .globalFormBtns .globalCancelBtn {
+        display: inline-block;
+        margin: 0px 5px;
+        text-decoration: none;
+        cursor: pointer; }
+
+.hideUp header.globalHead {
+  top: -80px; }
+
+.hideUp_sub {
+  top: 0px  !important;
+  transition: 0.3s ease-in-out !important; }
+
+.hideUp_sub_burger {
+  top: 44px  !important; }
+
+.globalHead {
+  width: 100%;
+  height: 80px;
+  background: rgba(128, 89, 52, 0.9);
+  /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+  /* IE6-9 */
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  transition: top .3s ease-in-out; }
+  .globalHead .headLoginBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: none; }
+    .globalHead .headLoginBox .globalForm {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 600px;
+      height: 80vh;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+      .globalHead .headLoginBox .globalForm .globalFormHeader {
+        text-align: center; }
+        .globalHead .headLoginBox .globalForm .globalFormHeader img {
+          width: 160px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+        font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0px; }
+        .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
+          border-bottom: 1px solid #3399ff; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px; }
+        .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+          display: inline-block;
+          width: 50%;
+          height: 50px;
+          background: #3B5998;
+          /* Old browsers */
+          background: -moz-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #3B5998), color-stop(100%, #283D69));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* IE10+ */
+          background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
+          /* IE6-9 */
+          border-radius: 5px;
+          text-align: center;
+          color: #fbf8f1;
+          line-height: 50px;
+          font-weight: 300; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center; }
+        .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
+          text-align: center;
+          color: #663300;
+          cursor: pointer; }
+          .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
+            border-bottom: 1px solid #663300; }
+  .globalHead .headRegisterBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.5);
+    display: none; }
+    .globalHead .headRegisterBox .globalForm {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 600px;
+      height: 80vh;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+      .globalHead .headRegisterBox .globalForm .globalFormHeader {
+        text-align: center; }
+        .globalHead .headRegisterBox .globalForm .globalFormHeader img {
+          width: 160px; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+        font-size: 16px; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
+          display: inline-block;
+          width: 50%;
+          height: 50px;
+          background: #3B5998;
+          /* Old browsers */
+          background: -moz-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #3B5998), color-stop(100%, #283D69));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
+          /* IE10+ */
+          background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
+          /* IE6-9 */
+          border-radius: 5px;
+          text-align: center;
+          color: #fbf8f1;
+          line-height: 50px;
+          font-weight: 300; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
+        width: 100%;
+        padding: 10px 0px;
+        text-align: center; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
+          text-align: center;
+          color: #663300;
+          cursor: pointer; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
+            border-bottom: 1px solid #663300; }
+  .globalHead .headLogo {
+    width: 10vw;
+    padding: 10px 20px;
+    display: inline-block; }
+    .globalHead .headLogo img {
+      display: inline-block;
+      height: 65px; }
+  .globalHead .headerRight {
+    padding: 5px 0px;
+    float: right;
+    box-sizing: border-box; }
+    .globalHead .headerRight .headSearch {
+      float: left;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      text-align: right; }
+      .globalHead .headerRight .headSearch span {
+        margin-right: 10px;
+        color: #fbf8f1;
+        font-weight: 300; }
+      .globalHead .headerRight .headSearch #headSearch {
+        width: 20%;
+        height: 30px;
+        display: inline-block;
+        margin: 0px 5px;
+        border: 1px solid #fff;
+        padding-left: 10px;
+        outline: none;
+        box-sizing: border-box;
+        vertical-align: top; }
+      .globalHead .headerRight .headSearch select {
+        display: inline-block;
+        width: 80px;
+        height: 30px;
+        color: #fbf8f1;
+        background-color: transparent;
+        border: 1px solid #fbf8f1;
+        margin: 0px 5px;
+        font-size: 16px;
+        outline: none;
+        border-radius: 2px;
+        box-sizing: border-box; }
+      .globalHead .headerRight .headSearch button {
+        width: 80px;
+        display: inline-block;
+        height: 30px;
+        color: #fbf8f1;
+        background-color: transparent;
+        border: 1px solid #fbf8f1;
+        margin: 0px 5px;
+        font-size: 16px;
+        border-radius: 2px; }
+        .globalHead .headerRight .headSearch button:focus {
+          background-color: #fbf8f1;
+          color: #805934;
+          outline: none;
+          box-sizing: border-box; }
+      .globalHead .headerRight .headSearch #headSearchSubmit {
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        color: #663300;
+        background-color: #f2ebd4;
+        border: none;
+        margin-left: 5px;
+        font-size: 16px;
+        border-radius: 2px;
+        outline: none;
+        box-sizing: border-box; }
+        .globalHead .headerRight .headSearch #headSearchSubmit:active {
+          background-color: #663300;
+          color: #fbf8f1; }
+    .globalHead .headerRight .headAccount {
+      width: 100px;
+      float: left; }
+      .globalHead .headerRight .headAccount #headMemStatus {
+        display: none; }
+        .globalHead .headerRight .headAccount #headMemStatus #headMemPic {
+          width: 100%;
+          height: 70px; }
+      .globalHead .headerRight .headAccount #headMemLogin {
+        width: 100%;
+        height: 70px; }
+        .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
+          width: 50%;
+          margin: auto;
+          height: 70px;
+          position: relative; }
+        .globalHead .headerRight .headAccount #headMemLogin .loginBtn {
+          padding: 7px 0px; }
+        .globalHead .headerRight .headAccount #headMemLogin #loginIcon {
+          width: 32px;
+          height: 32px;
+          display: block;
+          margin: auto;
+          fill: #fbf8f1; }
+        .globalHead .headerRight .headAccount #headMemLogin #loginTxt {
+          text-align: center;
+          color: #fbf8f1;
+          display: block;
+          margin: auto;
+          font-weight: 300; }
+  .globalHead .rwd_headerSearch {
+    display: none; }
+  .globalHead .burgerMenu {
+    display: none; }
+  .globalHead .rwdSearchBar {
+    display: none; }
+
+#menu {
+  display: none; }
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: #f2ebd4;
+  text-align: center; }
+  footer .globalFtBtn {
+    display: inline-block;
+    margin: 15px;
+    cursor: pointer; }
+    footer .globalFtBtn .svg {
+      width: 50px;
+      height: 50px;
+      margin: 10px auto; }
+      footer .globalFtBtn .svg path, footer .globalFtBtn .svg polygon {
+        fill: #bbb; }
+    footer .globalFtBtn a {
+      color: #bbb;
+      text-decoration: none; }
+    footer .globalFtBtn:hover path {
+      fill: #f06428; }
+    footer .globalFtBtn:hover polygon {
+      fill: #f06428; }
+    footer .globalFtBtn:hover a {
+      color: #f06428; }
+  footer p {
+    color: #663300;
+    margin-top: 10px; }
+
+.clearfix {
+  clear: both; }
+
+.globalOkBtn {
+  display: block;
+  width: 150px;
+  height: 45px;
+  border-radius: 22.5px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  border: 1px solid #f06428;
+  color: #f06428;
+  background-color: #fbf8f1;
+  transition: .3s ease; }
+  .globalOkBtn:hover {
+    background-color: #f06428;
+    color: #fbf8f1;
+    transition: .3s ease;
+    cursor: pointer; }
+
+.globalCancelBtn {
+  display: block;
+  width: 150px;
+  height: 45px;
+  border-radius: 22.5px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 18px;
+  border: 1px solid #3399ff;
+  color: #3399ff;
+  transition: .3s ease; }
+  .globalCancelBtn:hover {
+    background-color: #3399ff;
+    color: #fbf8f1;
+    transition: .3s ease;
+    text-decoration: none;
+    cursor: pointer; }
+
+.col-sm-1 {
+  padding: 0 10px;
+  float: left;
+  width: 8.3333%; }
+
+/*12欄*/
+.col-sm-2 {
+  padding: 0 10px;
+  float: left;
+  width: 16.6666%; }
+
+/*6欄*/
+.col-sm-3 {
+  padding: 0 10px;
+  float: left;
+  width: 25%; }
+
+/*4欄*/
+.col-sm-4 {
+  padding: 0 10px;
+  float: left;
+  width: 33.3333%; }
+
+/*3欄*/
+.col-sm-5 {
+  padding: 0 10px;
+  float: left;
+  width: 41.6666%; }
+
+.col-sm-6 {
+  padding: 0 10px;
+  float: left;
+  width: 50%; }
+
+/*2欄*/
+.col-sm-7 {
+  padding: 0 10px;
+  float: left;
+  width: 58.3333%; }
+
+.col-sm-8 {
+  padding: 0 10px;
+  float: left;
+  width: 66.6666%; }
+
+.col-sm-9 {
+  padding: 0 10px;
+  float: left;
+  width: 75%; }
+
+.col-sm-10 {
+  padding: 0 10px;
+  float: left;
+  width: 83.3333%; }
+
+.col-sm-11 {
+  padding: 0 10px;
+  float: left;
+  width: 91.6666%; }
+
+.col-sm-12 {
+  padding: 0 10px;
+  float: left;
+  width: 100%; }
+
+/*1欄*/
+@media screen and (max-width: 767px) {
+  .col-xs-1 {
+    padding: 0 10px;
+    float: left;
+    width: 8.3333%; }
+
+  /*12欄*/
+  .col-xs-2 {
+    padding: 0 10px;
+    float: left;
+    width: 16.6666%; }
+
+  /*6欄*/
+  .col-xs-3 {
+    padding: 0 10px;
+    float: left;
+    width: 25%; }
+
+  /*4欄*/
+  .col-xs-4 {
+    padding: 0 10px;
+    float: left;
+    width: 33.3333%; }
+
+  /*3欄*/
+  .col-xs-5 {
+    padding: 0 10px;
+    float: left;
+    width: 41.6666%; }
+
+  .col-xs-6 {
+    padding: 0 10px;
+    float: left;
+    width: 50%; }
+
+  /*2欄*/
+  .col-xs-7 {
+    padding: 0 10px;
+    float: left;
+    width: 58.3333%; }
+
+  .col-xs-8 {
+    padding: 0 10px;
+    float: left;
+    width: 66.6666%; }
+
+  .col-xs-9 {
+    padding: 0 10px;
+    float: left;
+    width: 75%; }
+
+  .col-xs-10 {
+    padding: 0 10px;
+    float: left;
+    width: 83.3333%; }
+
+  .col-xs-11 {
+    padding: 0 10px;
+    float: left;
+    width: 91.6666%; }
+
+  .col-xs-12 {
+    padding: 0 10px;
+    float: left;
+    width: 100%; }
+
+  /*1欄*/
+  .globalForm {
+    width: 80%;
+    margin: auto; }
+    .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
+      width: 40%; } }
+@media screen and (max-width: 900px) {
+  .globalHead {
+    text-align: center; }
+    .globalHead .headLogo {
+      min-width: 150px;
+      width: 20vw;
+      margin: auto;
+      display: inline-block;
+      text-align: center; }
+      .globalHead .headLogo img {
+        width: 100%; }
+    .globalHead .headerRight {
+      display: none; }
+    .globalHead .rwd_headerSearch {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0px;
+      right: 20px;
+      bottom: 0;
+      margin: auto; }
+      .globalHead .rwd_headerSearch .searchIcon {
+        width: 20vw;
+        height: 40px;
+        fill: #fbf8f1; }
+    .globalHead .burgerMenu {
+      display: inline-block;
+      width: 20%;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; }
+      .globalHead .burgerMenu span {
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin: auto;
+        fill: #fbf8f1; }
+      .globalHead .burgerMenu.active {
+        transition: .3s ease; }
+    .globalHead #menu {
+      display: block;
+      position: fixed;
+      top: 80px;
+      background-color: rgba(0, 0, 0, 0.5); }
+      .globalHead #menu.hideMenu {
+        left: -120%;
+        transition: all 0.3s ease; }
+      .globalHead #menu.show {
+        left: 0;
+        transition: all 0.3s ease; }
+      .globalHead #menu ul {
+        display: block;
+        width: 375px;
+        min-width: 320px;
+        background: rgba(128, 89, 52, 0.9);
+        /* Old browsers */
+        background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* IE10+ */
+        background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+        /* IE6-9 */ }
+        .globalHead #menu ul li {
+          display: block;
+          padding: 10px;
+          color: #fbf8f1; }
+          .globalHead #menu ul li.closeMenu span {
+            width: 30px;
+            display: block;
+            float: right;
+            fill: #fbf8f1; }
+          .globalHead #menu ul li.memPart {
+            height: 60px; }
+            .globalHead #menu ul li.memPart .memPic {
+              width: 30%;
+              height: 100%;
+              float: left; }
+              .globalHead #menu ul li.memPart .memPic img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%; }
+            .globalHead #menu ul li.memPart span {
+              width: 70%;
+              height: 100%;
+              display: block;
+              float: left;
+              margin: auto;
+              line-height: 50px;
+              text-align: center; }
+          .globalHead #menu ul li.listTitle {
+            font-size: 1.2em; }
+          .globalHead #menu ul li a {
+            color: #fbf8f1;
+            font-weight: 400; }
+    .globalHead .rwdSearchBar {
+      background: rgba(128, 89, 52, 0.9);
+      /* Old browsers */
+      background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* IE10+ */
+      background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+      /* IE6-9 */
+      width: 100%;
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      height: 80px;
+      transition: .3s;
+      display: block; }
+      .globalHead .rwdSearchBar .rwdsearchItem {
+        width: 90%;
+        height: 30px;
+        margin: 5px auto; }
+        .globalHead .rwdSearchBar .rwdsearchItem select {
+          width: 25%;
+          height: 100%;
+          float: left;
+          text-align: center;
+          border: 1px solid #fbf8f1;
+          background-color: transparent;
+          color: #fbf8f1;
+          outline: none;
+          border-radius: 2px;
+          font-size: 16px; }
+        .globalHead .rwdSearchBar .rwdsearchItem button {
+          width: 25%;
+          height: 100%;
+          float: left;
+          text-align: center;
+          color: #fbf8f1;
+          background-color: transparent;
+          border: 1px solid #fbf8f1;
+          border-radius: 2px;
+          outline: none;
+          font-size: 16px; }
+          .globalHead .rwdSearchBar .rwdsearchItem button:focus {
+            background-color: #fbf8f1;
+            color: #805934;
+            outline: none; }
+      .globalHead .rwdSearchBar input {
+        width: 100%;
+        height: 40px;
+        outline: none;
+        border: none; }
+      .globalHead .rwdSearchBar.activeSearch {
+        top: 80px;
+        right: 0;
+        transition: .3s; } }
+img {
+  vertical-align: top; }
+
+.search_title {
+  margin-top: 12vw;
+  color: #996633;
+  text-align: center; }
+
+.search_result {
+  margin: 2vw auto 2vw;
+  text-align: center; }
+  .search_result h1 {
+    font-size: 26px;
+    margin-right: 10px;
+    display: inline-block;
+    font-weight: 600;
+    color: #663300; }
+    .search_result h1 #numberOf {
+      color: #f06428; }
+  .search_result .tag-fa {
+    margin-top: 5px;
+    display: inline-block; }
+    .search_result .tag-fa .tag {
+      margin: 0 10px 0 15px;
+      padding: 3px 15px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #fbf8f1;
+      background-color: #f6921E;
+      position: relative;
+      border-radius: 5px; }
+    .search_result .tag-fa .head {
+      top: 0;
+      position: absolute;
+      left: -20px;
+      width: 50px;
+      height: 35px;
+      background-color: #f6921E;
+      border-radius: 50%;
+      z-index: -1; }
+      .search_result .tag-fa .head:before {
+        content: '';
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fbf8f1; }
+    .search_result .tag-fa .tag-fa:last-child {
+      margin-right: 5px; }
+
+.search_store {
+  margin: 5vw auto 300px;
+  max-width: 800px; }
+  .search_store .search_storeOne {
+    width: 100%;
+    margin: 25px auto;
+    overflow: hidden;
+    border: #bbb solid 1px; }
+    .search_store .search_storeOne .search_storeImg {
+      float: left;
+      overflow: hidden;
+      height: 200px;
+      box-sizing: border-box;
+      background: url("../img/search-1.png") center center;
+      background-size: cover; }
+      .search_store .search_storeOne .search_storeImg img {
+        width: 100%; }
+    .search_store .search_storeOne .search_storeContent {
+      float: left;
+      padding: 10px 10px;
+      box-sizing: border-box; }
+      .search_store .search_storeOne .search_storeContent h2 {
+        float: left; }
+      .search_store .search_storeOne .search_storeContent .search_follow {
+        float: left;
+        width: 30px;
+        padding: 0 0 0 20px; }
+        .search_store .search_storeOne .search_storeContent .search_follow img {
+          vertical-align: -webkit-baseline-middle; }
+      .search_store .search_storeOne .search_storeContent #search_map1 {
+        display: none;
+        position: absolute;
+        top: 0px;
+        right: 0; }
+      .search_store .search_storeOne .search_storeContent #search_followNum {
+        color: #bbb;
+        float: left;
+        font-size: 16px;
+        padding: 6px; }
+      .search_store .search_storeOne .search_storeContent .search_storeStar {
+        height: 20px;
+        margin-top: 40px;
+        margin-bottom: 10px; }
+        .search_store .search_storeOne .search_storeContent .search_storeStar li {
+          display: inline-block;
+          width: 20px; }
+          .search_store .search_storeOne .search_storeContent .search_storeStar li img {
+            height: 100%; }
+      .search_store .search_storeOne .search_storeContent .search_storeInfor {
+        line-height: 20px; }
+        .search_store .search_storeOne .search_storeContent .search_storeInfor ul {
+          position: relative; }
+    .search_store .search_storeOne .search_storeMap {
+      box-sizing: border-box;
+      float: left;
+      padding: 0;
+      height: 200px; }
+      .search_store .search_storeOne .search_storeMap #map-now {
+        height: 100%; }
+  .search_store #map-now2 {
+    height: 100%; }
+
+@media screen and (min-width: 960px) {
+  .search_store {
+    width: 65%; }
+
+  .search_storeOne {
+    min-height: 150px;
+    max-height: 200px; } }
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  .search_store {
+    width: 90%; }
+
+  .search_storeOne {
+    min-height: 150px;
+    max-height: 200px; } }
+@media screen and (max-width: 767px) {
+  .search_store {
+    width: 80%; }
+
+  .search_content .search_title {
+    margin-top: 25vw; }
+  .search_content .search_result {
+    margin: 5vw auto 2vw; }
+  .search_content .search_store .search_storeOne .search_storeMap {
+    display: none; }
+  .search_content .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
+    display: inline; } }
