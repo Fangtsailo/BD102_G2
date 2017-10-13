@@ -35,8 +35,6 @@ $tablet_max:1024px;
 @mixin rwd($breakpoint){
 	
 	@if $breakpoint == "mobile" {
-
-// <<<<<<< HEAD
 		@media screen and (max-width:$mobile){
 			@content;
 

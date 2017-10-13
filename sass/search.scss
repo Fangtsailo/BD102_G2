@@ -13,8 +13,8 @@ img{
 .search_result{
 	
 	margin:2vw auto 2vw;
-	text-align:center;
-	
+	text-align:center; 
+	  
 	h1{
 		font-size: 26px;
 		margin-right: 10px;
@@ -23,7 +23,7 @@ img{
 		color:$globalFontColor ;
 		#numberOf{
 			color:#f06428;
-		}
+		}   
 	}	//h1
 	.tag-fa{
 		height: 35px;

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@import "basic/setting";
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: $globalFtColor;
+	background: -webkit-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+}
+
+// .coverHeader{
+// 	// width: 100vw;
+// 	height: 100px;
+// }
+
+// header{
+// 	z-index: 3;
+// }
+
+// .coverSubtitile{
+// 	height: 60px;
+// 	.subtitle{
+// 		height: 60px;
+// 		width: 100vw;
+// 		position: fixed;
+// 		top: 100px;
+// 		z-index: 3;
+// 		h2{
+// 			line-height: 60px;
+// 			font-size: 20px;
+// 			background-color:$MybusinessStore-subtitle-bgColor;
+// 			padding-left: 20px;
+// 			color:#fff;
+// 		}
+// 	}
+// }
+
+//--------------------------container樣式-------------------------
+
+.container{
+	max-width: 83.3333%;
+	padding-top:124px;
+	text-align:center;
+	margin: 0 auto;
+	outline: 1px dotted #000;
+	
+	img{
+		width: 100%;
+	}
+
+	.memBeBoss{
+    	// width: 100%;
+
+		.memTitle{
+	      margin: 0px 35.4166% 30px 35.4166%;
+	    }
+
+	    .memsection1{
+	    	// margin: 0 14%;
+	    	width: 100%;
+    		
+    		text-align:center;
+    		outline: 1px solid #f00;
+			
+			.memfigure{
+			    width: 25%;
+			    display: inline-block;
+			    margin: 0 auto;
+    			outline: 1px dotted #0f0;
+    			
+
+			    figure{
+				    width: 53.3333%;
+				    padding: 15px 70px;
+    				outline: 1px dotted #00f;
+				}//figure end
+
+				figcaption{
+    			/*width: 160px;*/
+    			
+    			padding: 0px 15px 20px 15px;
+    			text-align:left;
+    			outline: 1px dotted #00f;
+				}//figcaption end
+			}//memfigure end
+
+		}//memsection1 end
+
+	}//memsection1 end
+}//container end
+
+.container:after{
+  content: '';
+  display: block;
+  clear: both;  
+}

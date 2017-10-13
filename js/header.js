@@ -1,24 +1,28 @@
-	$(function(){
-
+$(function(){
+  //點選登入按鈕
 	$('#headMemLogin').click(function(){
 		$('#loginBox').fadeIn(500).css('display','block');
 	
 	});
 
-	$('.registerLink span').click(function(){
+//切換至註冊燈箱
+	$('#changeToRegister').click(function(){
 		$('#RegisterBox').css('display','block');
 		$('#loginBox').css('display','none');
 	});
-	$('.loginLink span').click(function(){
+
+//切換至登入燈箱
+	$('#changeToLogin').click(function(){
 		$('#RegisterBox').css('display','none');
 		$('#loginBox').css('display','block');
 	});
 
-
-	$('.svg').click(function(){
+//關閉燈箱按鈕
+	$('.closeBtn').click(function(){
 			$('#loginBox').css('display','none');
 			$('#RegisterBox').css('display','none');
-		});
+		
+  });
    
 
 	
@@ -38,27 +42,39 @@
 
     // console.log('12345');
 
-    var bodyClass = document.body.classList,
+var bodyClass = document.body.classList,
     lastScrollY = 80;
-	window.addEventListener('scroll', function(){
- 	 var st = this.scrollY;
-  		if( st > lastScrollY) {
-  	  		bodyClass.add('hideUp');
-  		}else{
-    		bodyClass.remove('hideUp');
-  		}
-  		lastScrollY = st;
-	});
 
 
-   $("#burgerBtn").click(function (e) { //點擊選單按鈕時
+
+  window.addEventListener('scroll', function(){
+   var st = this.scrollY;
+      if( st > lastScrollY) {
+          bodyClass.add('hideUp');
+          $("#menu").removeClass("show");
+          $(".burgerMenu").removeClass("active");
+          $(".rwdSearchBar").removeClass("activeSearch");
+      }else{
+        bodyClass.remove('hideUp');
+      }
+      lastScrollY = st;
+  });
+
+    $("#burgerBtn").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
             $("#menu").toggleClass("show");
             $(".burgerMenu").toggleClass("active"); //在#menu增加Class
+            $(".rwdSearchBar").removeClass("activeSearch");
+            $('#closeBurger').click(function(){
+                $("#menu").removeClass("show");
+            });
+
         });
-
-
-
+    $(".rwd_headerSearch").click(function (e) { //點擊選單按鈕時
+            e.preventDefault(); //停止
+            // $(".rwdSearchBar").toggleClass("activeSearch");
+            $(".rwdSearchBar").toggleClass("activeSearch"); //在#menu增加Class
+        });
 
 });
 
