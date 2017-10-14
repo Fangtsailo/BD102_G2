@@ -1,0 +1,71 @@
+body {
+  background-color: #e6e0d9; }
+
+.coverHeader {
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  left: 0;
+  top: 0; }
+  .coverHeader .Backheader {
+    background-color: #805934;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    top: 0; }
+    .coverHeader .Backheader p {
+      text-align: center;
+      color: #fff;
+      line-height: 80px;
+      font-size: 28px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto; }
+    .coverHeader .Backheader .logoimg {
+      width: 120px;
+      height: 80px;
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: 7px;
+      z-index: 10;
+      line-height: 80px; }
+      .coverHeader .Backheader .logoimg img {
+        width: 100%; }
+
+.headerCenter {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  color: #fff; }
+
+.navition {
+  background-color: #ddcdb5;
+  width: 200px;
+  float: left;
+  height: 100vh;
+  position: fixed;
+  z-index: 3; }
+  .navition ul:first-child {
+    border-top: 1px solid #aaaaaa; }
+  .navition ul:last-child {
+    border-bottom: 1px solid #aaaaaa; }
+  .navition ul li {
+    width: 200px;
+    height: 60px;
+    background-color: #aa815d;
+    border: 1px solid #aaaaaa;
+    box-sizing: border-box;
+    color: #ffffff;
+    line-height: 60px;
+    padding-left: 20px;
+    font-size: 18px; }
+    .navition ul li:hover {
+      color: #000000;
+      background-color: #cfa972;
+      transition: 0.5s; }

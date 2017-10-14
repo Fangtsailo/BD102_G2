@@ -1,0 +1,107 @@
+@import "backstage/authority/_BStgBasicVar.scss";
+@import "backstage/authority/_BStgBasicMixin.scss";
+@import "basic/_var.scss";
+
+
+body{
+	background-color:#e6e0d9;
+}
+
+
+
+.coverHeader{
+
+	
+	height: $header-height;
+	overflow: hidden;
+	// float: left;
+	position: relative;
+	z-index: 1;
+	left:0;
+	top: 0;
+	.Backheader{
+		background-color:$globalHdColor01;
+		width: 100%;
+		height: 80px;
+		position: fixed;
+		left:0;
+		top: 0;
+		p{
+			text-align: center;
+			color:#fff;
+			line-height: 80px;
+			font-size:28px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin:auto;
+
+		}
+		.logoimg{
+			width: 120px;
+			height: 80px;
+			display: block;
+			position: absolute;
+			left: 10px;
+			top: 7px;
+			
+			z-index: 10;
+			line-height: 80px;
+			img{
+				width: 100%;
+			}
+		}
+
+	}
+
+}
+
+
+
+.headerCenter{
+	// float: left;
+	position: absolute;
+	// top: 0;
+	// bottom: 0;
+ 	top:30%; 
+ 	left:50%;
+ 	color:#fff;
+}
+
+
+
+
+
+.navition{
+// padding-top: $header-height;
+background-color: #ddcdb5;
+width: $navition-width;
+float: left;
+height: 100vh;
+position: fixed;
+	z-index:3;
+	ul{
+
+		&:first-child{
+			border-top: 1px solid #aaaaaa;
+		}
+		&:last-child{
+			border-bottom: 1px solid #aaaaaa;
+		}
+		li{
+			width:$navition-width;
+			height:$navition-li-height;
+			background-color: $navition-li-bgColor;
+			border: 1px solid #aaaaaa;
+			box-sizing: border-box;
+			color:#ffffff;
+			line-height: $navition-li-height;
+			padding-left: 20px;
+			font-size:$navition-li-fontSize;
+			@include navition-hover();
+		}
+	}
+}
+
