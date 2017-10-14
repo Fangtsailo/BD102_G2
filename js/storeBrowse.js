@@ -43,15 +43,27 @@ function allSlickSetting() {
 	  focusOnSelect: true
   });
    $('.screen-bread-car-map .tabs').slick({
-	  slidesToShow: 1,
+	  slidesToShow: 3,
 	  slidesToScroll: 1,
 	  arrows: false,
 	  dots: true,
 	  centerMode: true,
 	  focusOnSelect: true,
 	  // variableWidth: true,
-	  infinite: false
+	  infinite: false,
+	  responsive: [
+	    {
+	      breakpoint: 767,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
   });
+   $('.screen-bread-car-map .tabs').on('afterChange', function(event, slick, direction){
+  		// console.log(direction);
+	});
 }
 //screen1 animation, like a paper
 function animate_illustration(a, b) {

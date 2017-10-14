@@ -40,13 +40,13 @@
 		</div>
 		<div class="detail">
 			<ul class="follow col-xs-9">
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 			</ul>
-			<div class="trace col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(123)</div>
+			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(123)</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">地址:</p>
@@ -94,16 +94,16 @@
 	</div>
 	</div>
 	<ul class="tabs">
-		<li class="item item-selected">
+		<li class="item pointer item-selected">
 			即時位置
 		</li>
-		<li class="item">
+		<li class="item pointer">
 			禮拜一路線
 		</li>
-		<li class="item">
+		<li class="item pointer">
 			禮拜三路線
 		</li>
-		<li class="item">
+		<li class="item pointer">
 			禮拜日路線
 		</li>
 	</ul>
@@ -162,23 +162,23 @@
 		</div>
 	</div>
 	<div class="product-list">
-		<div class="item col-xs-4">
+		<div class="item pointer col-xs-4">
 			<img alt="small_product1.png" src="img/store/browse/small_product1.png">
 			<p>烤焦三角</p>
 		</div>
-		<div class="item col-xs-4">
+		<div class="item pointer col-xs-4">
 			<img alt="small_product2.png" src="img/store/browse/small_product2.png">
 			<p>圖騰</p>
 		</div>
-		<div class="item col-xs-4">
+		<div class="item pointer col-xs-4">
 			<img alt="small_product3.png" src="img/store/browse/small_product3.png">
 			<p>綜合派</p>
 		</div>
-		<div class="item">
+		<div class="item pointer">
 			<img alt="small_product4.png" src="img/store/browse/small_product4.png">
 			<p>香蔥</p>
 		</div>
-		<div class="item">
+		<div class="item pointer">
 			<img alt="small_product5.png" src="img/store/browse/small_product5.png">
 			<p>黃金牛角</p>
 		</div>
@@ -198,7 +198,7 @@
 		<div data-depth="1" class="layer">
 			<div class="parallax-item normail-move egg"><img alt="activity_egg.png" src="img/store/browse/activity_egg.png"></div>
 		</div>
-		<div data-depth="1.2" class="layer shadow">
+		<div data-depth="1" class="layer shadow">
 			<div class="normail-move parallax-item egg-shadow shadow"><img alt="activity_egg_shadow.png" src="img/store/browse/activity_egg_shadow.png"></div>
 		</div>
 <!-- 		<div data-depth="0.2" class="layer">
@@ -294,7 +294,6 @@
 				<div class="setting-area">
 					<div class="report pointer">
 						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -307,7 +306,6 @@
 				<div class="setting-area">
 					<div class="report pointer">
 						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -320,7 +318,6 @@
 				<div class="setting-area">
 					<div class="report pointer">
 						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -333,7 +330,6 @@
 				<div class="setting-area">
 					<div class="report pointer">
 						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -346,7 +342,6 @@
 				<div class="setting-area">
 					<div class="report pointer">
 						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -366,21 +361,21 @@
 	</div>
 	<div class="store-list">
 		<div class="top-list">
-			<div class="item col-lg-4 col-xs-6 col-xs-6">
+			<div class="item pointer col-lg-4 col-xs-6 col-xs-6">
 				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
 				<div class="detail">
 					<h3 class="name">山上麵包</h3>
 					<p class="describe">新興店家，主推自家創意麵包...</p>
 				</div>
 			</div>
-			<div class="item col-lg-4 col-xs-6">
+			<div class="item pointer col-lg-4 col-xs-6">
 				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
 				<div class="detail">
 					<h3 class="name">山上麵包</h3>
 					<p class="describe">新興店家，主推自家創意麵包...</p>
 				</div>
 			</div>
-			<div class="item col-lg-4 col-xs-6">
+			<div class="item pointer col-lg-4 col-xs-6">
 				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
 				<div class="detail">
 					<h3 class="name">山上麵包</h3>
@@ -389,21 +384,21 @@
 			</div>
 		</div>
 		<div class="bottom-list">
-			<div class="item col-lg-4 col-xs-6">
+			<div class="item pointer col-lg-4 col-xs-6">
 				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
 				<div class="detail">
 					<h3 class="name">山上麵包</h3>
 					<p class="describe">新興店家，主推自家創意麵包...</p>
 				</div>
 			</div>
-			<div class="item col-lg-4 col-xs-6">
+			<div class="item pointer col-lg-4 col-xs-6">
 				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
 				<div class="detail">
 					<h3 class="name">山上麵包</h3>
 					<p class="describe">新興店家...</p>
 				</div>
 			</div>
-			<div class="item col-lg-4 col-xs-6">
+			<div class="item pointer col-lg-4 col-xs-6">
 				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
 				<div class="detail">
 					<h3 class="name">山上麵包</h3>
