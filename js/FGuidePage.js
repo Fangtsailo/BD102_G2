@@ -88,8 +88,17 @@ $(function () {
 
 
 
-    // var scence = document.getElementById('scenes');
-    // var parallax = new Parallax(scence);
+    var scenes_house = document.getElementById('scenes_house');
+    var parallax = new Parallax(scenes_house);
+
+    var scenes_sign = document.getElementById('scenes_sign');
+    var parallax = new Parallax(scenes_sign);
+
+    var scenes_car = document.getElementById('scenes_car');
+    var parallax = new Parallax(scenes_car);
+
+    var scenes_logo = document.getElementById('scenes_logo');
+    var parallax = new Parallax(scenes_logo);
 
 
 
