@@ -13,6 +13,168 @@ section {
 	width: 100%;
 	height: 100vh;
 }
+//================= 首頁導覽列 ================================
+
+@keyframes shake {
+	0%{transform:scale(1,1);}
+	100%{transform:scale(1.2,1.2);}
+}
+
+
+.headerLink {
+	width: 60%;
+	height: 100%;
+	display: inline-block;
+	margin-left: 20px;
+	.burger {
+		display: none;
+	}
+	a {
+		display: block;
+		float: left;
+		width: 130px;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 40px;
+			padding-top: 10px;
+			display: inline-block;
+			text-align: center;
+			transition:.3s;
+			
+		}
+		span {
+			display: block;
+			width: 100%;
+			font-size: 16px;
+			text-align: center;
+			color:$globalBgColor;
+			font-weight: 300;
+		}
+		&:hover {
+			background-color: $globalTitleColor;
+			transition:.3s;	
+			img{
+				animation:shake .5s ease infinite alternate;
+				transition:.3s;
+				}
+		}
+	}
+}
+.rwd-HeaderLink {
+	display: none;
+}
+.left-burgerBtn {
+	display: none;
+}
+
+@media screen and (max-width:900px){
+	.headerLink {
+		display: none;
+	// 	top: 80px;
+	// 	width: 100vw;
+	// 	height: 80px;
+	// 	margin-left: 0;
+	// 	a {
+	// 		width: 25%;
+
+	// 	}
+	// }
+	}
+	.left-burgerBtn {
+		display: inline-block;
+			width: 20%;
+			height: 40px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 20px;
+			margin: auto;
+		span {
+				display: block;
+				width: 30px;
+				height: 4px;
+				left: 15px;
+				background-color: $globalBgColor;
+				border-radius: 4px;
+				position: absolute;
+				margin: auto;
+				transition: .3s ease;
+				&:nth-of-type(1){
+					top: 5px;
+				}
+				&:nth-of-type(2){
+					top: 16px;
+				}
+				&:nth-of-type(3){
+					top: 27px;
+				}
+			}
+		&.active {
+				// transform: rotate(360deg);
+				transition: .3s ease;
+				span {
+					&:nth-of-type(1){
+						transform: rotate(-45deg);
+						transition: .3s ease;
+						top: 20px;
+					}
+					&:nth-of-type(2){
+						display: none;
+					}
+					&:nth-of-type(3){
+						transform: rotate(45deg);
+						top: 20px;
+						transition: .3s ease;
+					}
+				}
+		}
+	}
+	.rwd-HeaderLink {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		left: -100%;
+		transition:.3s;
+		@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
+		a {
+			width: 50%;
+			height: 30%;
+			display: block;
+			position: relative;
+			float: left;
+			padding: 10%;
+			img {
+				display: block;
+				max-width: 100px;
+				max-height: 100px;
+				width: 10vw;
+				height: 10vw;
+				margin: auto;
+			}
+			span {
+				display: block;
+				width: 100%;
+				color:$globalBgColor;
+				margin-top: 10px;
+				font-size: 5vw;
+			}
+		}
+		&.showMenu {
+			left: 0;
+			transition:.3s;
+		}
+	}
+	
+}
+
+
+
+
+
+
 
 
 //================= 1st搜尋板塊 ================================
@@ -804,9 +966,26 @@ section.homeCarMap {
 					background-color: $globalBgColor;
 					border-radius: 10%;
 					margin: auto;
-					
-					
+					.actContent {
+						h2 {
+						width: 100%;
+						font-size: 1.5em;
+						margin: 10px auto;
+						margin-top: 10%;
+						text-align: center;
+						color:$globalBgColor;
+						}
+						p {
+							text-align: center;
+							color:$globalBgColor;
+							margin: 10px auto;	
+						}
+						a {
+							margin: auto;
+						}
+					}		
 			}
+
 			#chooseActDown {
 				 	margin: auto;
 				 	
@@ -1122,61 +1301,6 @@ section.homeCarMap {
 		background-color: #ccc;
 	}
 }
-#addShopBox {
-	position: fixed;
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(50,50,50,.5);
-	display: none;
-	.globalForm {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				max-width:600px;
-				height: 75%;
-				border:none;
-				border-radius: 5px;
-				box-shadow:0px 0px 20px 0px rgba(50,50,50,.5);
-		.chooseType {
-			input {
-				width: 20px;
-				height: 100%;
-			}
-			.chooseBtn {
-				float: right;
-				margin: 0px 10px;
-			}
-		}
-	}
-}
 
-
-
-
-#serviceCenter {
-	position: fixed;
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(50,50,50,.5);
-	display: none;
-	.globalForm {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				margin: auto;
-				max-width:600px;
-				height: 75%;
-				border:none;
-				border-radius: 5px;
-				box-shadow:0px 0px 20px 0px rgba(50,50,50,.5);
-	}
-}
 
 

@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>TREPUN</title>
-	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
@@ -19,112 +19,13 @@
 <body>
 	<?php 
 
-require_once("header.php");
+require_once("headerForHomePage.php");
 
  ?>
 
 <!-- ======================================================內頁開始========================================================= -->	
 
-<!-- ========================新增店家燈箱===================== -->
-	<div id="addShopBox">
-		<div class="globalForm">
-			<form action="" method="">
-				<div class="globalFormHeader">
-					<div class="svg" id="closeBtn01">
-						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
-						<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
-							L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
-							s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
-						</svg>
-					</div>
 
-					<h1>新增店家</h1>
-					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
-				</div>
-				<div class="globalFormContent">
-					<div class="globalFormInput chooseType">
-						<label><span>*</span>選擇店型</label>
-							<label class="chooseBtn">胖小車<input type="radio" value="car" name="chooseType"></label>
-							<label class="chooseBtn">麵包店<input type="radio" value="shop" name="chooseType"></label>
-							<div class="clearfix"></div>
-					</div>
-					<div class="globalFormInput">
-						<label><span>*</span>主旨</label><input type="text" name="" placeholder="提醒字">
-					</div>
-
-					<div class="globalFormInput">
-						<label><span>*</span>輸入店名</label><input type="text" name="" placeholder="提醒字">
-					</div>
-					
-					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="" placeholder="提醒字">
-					</div>
-					
-					<div class="globalFormInput">
-						<label><span>*</span>商家地址</label><input type="email" name="" placeholder="提醒字" required>
-					</div>
-
-					<div class="globalFormInput">
-						<label>故事介紹</label><textarea></textarea>
-					</div>
-					<div class="clearfix"></div>
-					<div class="globalFormBtns">
-						<div class="globalCancelBtn">取消</div>
-						<input type="submit" name="" class="globalOkBtn" value="送出">					
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-
-<!-- ========================客服中心燈箱===================== -->
-	<div id="serviceCenter">
-		<div class="globalForm">
-			<form action="" method="">
-				<div class="globalFormHeader">
-					<div class="svg" id="closeBtn02">
-						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
-						<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
-							L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
-							s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
-						</svg>
-					</div>
-
-					<h1>客服中心</h1>
-					<p>感謝您對TrePun的支持！<br>如對本站有任何問題，請提供寶貴意見，我們將儘速與您聯繫。</p>
-				</div>
-				<div class="globalFormContent">
-
-					<div class="globalFormInput">
-						<label><span>*</span>主旨</label><input type="text" name="" placeholder="提醒字">
-					</div>
-
-					<div class="globalFormInput">
-						<label><span>*</span>姓名</label><input type="text" name="" placeholder="提醒字">
-					</div>
-					
-					<div class="globalFormInput">
-						<label><span>*</span>聯絡電話</label><input type="tel" name="" placeholder="提醒字">
-					</div>
-					
-					<div class="globalFormInput">
-						<label><span>*</span>信箱</label><input type="email" name="" placeholder="提醒字" required>
-					</div>
-
-					<div class="globalFormInput">
-						<label>內文</label><textarea></textarea>
-					</div>
-					<div class="clearfix"></div>
-					<div class="globalFormBtns">
-						<div class="globalCancelBtn">取消</div>
-						<input type="submit" name="" class="globalOkBtn" value="送出">					
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
 
 
 
@@ -230,7 +131,7 @@ require_once("header.php");
 					<li class="tab_contents active" id="searchShops">
 						店家
 					</li>
-					<li class="tab_contents" id="searchVans">
+					<li class="tab_contents" id="searchVans" onclick="location.href='search_car.php'">
 						胖小車
 					</li>
 				</ul>
@@ -254,7 +155,7 @@ require_once("header.php");
 					</button>
 					<div class="searchbar">
 					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
-					<button type="submit">搜尋</button>
+					<button type="submit" onclick="location.href='search.php'">搜尋</button>
 					</div>
 				</div>
 			</div>
@@ -386,13 +287,13 @@ require_once("header.php");
 					</div>
 				</div>
 				<div id="actBanner">
-					<img src="img/acty_fin-1.png">
+					<img src="img/acty_fin1.png">
 					<div class="actContent">
 						<h2>牛角麵包簡單學</h2>
 						<p><span class="itemTitle">地點</span>桃園市中壢區中大路300號</p>
 						<p><span class="itemTitle">時間</span>2017.09.29 下午一點</p>
 						<p><span class="itemTitle">參加人數</span><span>15</span>/30人</p>
-						<a href="#" class="globalOkBtn" >活動詳情</a>
+						<a href="activity_act.php" class="globalOkBtn" >活動詳情</a>
 					</div>
 
 				</div>
@@ -509,6 +410,8 @@ require_once("header.php");
 				</div>  
 			<div class="clearfix"></div>  
 		</div>
+		
+
 
 	</section>
 
@@ -549,7 +452,7 @@ require_once("header.php");
 require_once("footer.php");
  	 ?>
 <script type="text/javascript" src="js/header.js"></script>
-<script type="text/javascript" src="slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="libs/slick-1.8.0/slick/slick.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/velocity.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/velocity.ui.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/modernizr.js"></script>

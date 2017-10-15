@@ -58,9 +58,9 @@ $(function(){
 		offset: 0 
 	})
 	.setTween(tween_2)
-	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
-		name:'scene_01'
-	})
+	// .addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+	// 	name:'scene_01'
+	// })
 	.addTo(controller);	
 
 
@@ -79,9 +79,9 @@ $(function(){
 		offset: 20 
 	})
 	.setTween(tween_3)
-	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
-		name:'scene_02'
-	})
+	// .addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+	// 	name:'scene_02'
+	// })
 	.addTo(controller);	
 
 
@@ -103,9 +103,9 @@ $(function(){
 		offset: 0 
 	})
 	.setTween(tween_4)
-	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
-		name:'scene_03'
-	})
+	// .addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+	// 	name:'scene_03'
+	// })
 	.addTo(controller);	
 	
 
@@ -127,7 +127,7 @@ $('.shopItemGrp').slick({
 $('.newShopGrp').slick({
   infinite: false,
   slidesToShow: 3,
-  slidesToScroll: 2,
+  slidesToScroll: 3,
   autoplay: true,
   autoplaySpeed: 2000,
   responsive: [
@@ -154,16 +154,16 @@ $('.newShopGrp').slick({
 
 
 $('#addShopBtn').click(function(){
-	$("#addShopBox").css('display','block');
+	$("#addShopBox").show(500);
 });
 $('#serviceBtn').click(function(){
-	$("#serviceCenter").css('display','block');
+	$("#serviceCenter").show(500)
 });
 $("#closeBtn01").click(function(){
-	$("#addShopBox").css('display','none');
+	$("#addShopBox").hide(500);
 });
 $("#closeBtn02").click(function(){
-	$("#serviceCenter").css('display','none');
+	$("#serviceCenter").hide(500);
 });
 // for (var i = 1; i <= 6; i++) {
 // 	$('.section'+i+'-click').click(function(){
