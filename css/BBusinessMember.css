@@ -1,3 +1,7 @@
+input {
+  outline: none;
+  cursor: pointer; }
+
 header {
   z-index: 1; }
 
@@ -8,13 +12,12 @@ header {
   left: 0; }
 
 .search {
-  width: 70%;
-  margin-right: 0;
-  margin-left: 0;
+  width: 90%;
   margin: auto;
   position: fixed;
   z-index: 3;
-  left: 20vw;
+  left: 0;
+  right: 0;
   text-align: center;
   margin-top: 20px; }
   .search input {
@@ -31,12 +34,11 @@ header {
   position: relative;
   background-color: #e6e0d9; }
   .tableHeaderCover .tableHeader {
-    width: 70%;
-    margin-right: 0;
-    margin-left: 0;
+    width: 90%;
     margin: auto;
     position: fixed;
-    left: 20vw;
+    left: 0;
+    right: 0;
     overflow: hidden;
     border-spacing: 0px; }
     .tableHeaderCover .tableHeader tr {
@@ -70,7 +72,7 @@ header {
           width: 10%; }
 
 .tableContent {
-  width: 70%;
+  width: 90%;
   margin-right: 0;
   margin-left: 0;
   margin: auto;
@@ -166,3 +168,7 @@ footer {
         margin: 0;
         padding: 0;
         border: none; }
+
+.dutyColorChange {
+  background-color: #00c853 !important;
+  transition: .5s; }

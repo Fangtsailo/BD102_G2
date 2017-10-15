@@ -2,7 +2,10 @@
 @import "backstage/authority/_BStgBasicMixin.scss";
 @import "basic/_var.scss";
 
-
+input{
+	outline: none;
+	cursor:pointer;
+}
 
 
 header{
@@ -256,6 +259,7 @@ header{
 					border-radius: 10px;
 					box-shadow:0 0 0;
 					border: none;
+					transition:.5s ;
 					&#addAuthority{
 						background-color: $globalAccountColor;
 					}
@@ -329,6 +333,7 @@ footer{
 					margin: 0;
         			padding: 0;
         			border: none;
+        			cursor:pointer;
 
 				}
 
@@ -338,4 +343,12 @@ footer{
 	
 	}
 }
+
+
+
+.dutyColorChange{
+	background-color:$globalAccountColor !important;
+	transition:.5s ;
+}
+
 

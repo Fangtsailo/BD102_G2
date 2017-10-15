@@ -7,10 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/BAuthority.css">
 
+	
+	
+
 
 
 	<!-- =======header&sideBar======= -->
 	<link rel="stylesheet" type="text/css" href="css/BackStageHeaderSidebar.css">
+
+
+	<!-- =======inputChange======= -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/inputChange.js"></script>
 
 
 </head>
@@ -70,100 +78,107 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID125</td>
 						<td>最高管理員</td>
 						<td>正常</td>
-						<td><input id="addAuthority" type="button" name="" value="新增"></td>
+						<td><input id="addAuthority" type="button" name="" value="新增" style="cursor:pointer"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
 						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
+					</tr>
+					<tr>
+						<td>100</td>
+						<td>ID125</td>
+						<td>一般管理員</td>
+						<td>正常</td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
+					</tr>
+					<tr>
+						<td>100</td>
+						<td>ID125</td>
+						<td>一般管理員</td>
+						<td>正常</td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
+					</tr>
+					<tr>
+						<td>100</td>
+						<td>ID125</td>
+						<td>一般管理員</td>
+						<td>正常</td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
+					</tr>
+					<tr>
+						<td>100</td>
+						<td>ID125</td>
+						<td>一般管理員</td>
+						<td>正常</td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
+					</tr>
+					<tr>
+						<td>100</td>
+						<td>ID125</td>
+						<td>一般管理員</td>
+						<td>正常</td>
+						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					
-					<tr>
-						<td>100</td>
-						<td>ID125</td>
-						<td>一般管理員</td>
-						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
-					</tr>
-					<tr>
-						<td>100</td>
-						<td>ID125</td>
-						<td>一般管理員</td>
-						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
-					</tr>
-					<tr>
-						<td>100</td>
-						<td>ID125</td>
-						<td>一般管理員</td>
-						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
-					</tr>
-					<tr>
-						<td>101</td>
-						<td>ID125</td>
-						<td>一般管理員</td>
-						<td>正常</td>
-						<td><input type="button" name="" value="停權"></td>
-					</tr>
 				</table>
 			<!-- </section> -->
 			<!-- =====表格內容===== end-->
@@ -214,9 +229,7 @@ require_once("BackStageHeaderSidebar.php");
 			</section>
 	</footer> -->
 	<script type="text/javascript">
-		// function $id(id){
-		// 	return document.getElementById("id");
-		// }
+		
 
 		function init(){
 

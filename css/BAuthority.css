@@ -1,3 +1,7 @@
+input {
+  outline: none;
+  cursor: pointer; }
+
 header {
   z-index: 1; }
 
@@ -161,7 +165,8 @@ header {
           background-color: #af6363;
           border-radius: 10px;
           box-shadow: 0 0 0;
-          border: none; }
+          border: none;
+          transition: .5s; }
           .tableContent tr td:nth-child(5) input#addAuthority {
             background-color: #00c853; }
 
@@ -210,4 +215,9 @@ footer {
         width: 300px;
         margin: 0;
         padding: 0;
-        border: none; }
+        border: none;
+        cursor: pointer; }
+
+.dutyColorChange {
+  background-color: #00c853 !important;
+  transition: .5s; }

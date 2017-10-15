@@ -1,7 +1,12 @@
 @import "backstage/member/businessMember/_BStgBusinessVar.scss";
 @import "backstage/member/businessMember/_BStgBusinessMixin.scss";
+@import "basic/_var.scss";
 
 
+input{
+	outline: none;
+	cursor:pointer;
+}
 
 
 header{
@@ -37,12 +42,12 @@ header{
 
 .search{
 		width: $tableContent-width;
-		margin-right: 0;
-		margin-left: 0;
+		
 		margin: auto;
 		position: fixed;
 		z-index: 3;
-		left: 20vw;
+		left: 0;
+		right: 0;
 		text-align: center;
 		margin-top: 20px;
 		input{
@@ -66,11 +71,11 @@ header{
 	.tableHeader{
 		width: $tableContent-width;
 		// padding-top: 20px;
-		margin-right: 0;
-		margin-left: 0;
+		
 		margin: auto;
 		position: fixed;
-		left: 20vw;
+		left: 0;
+		right: 0;
 		// margin-bottom: 10px;
 		overflow: hidden;
 		border-spacing: 0px;
@@ -270,3 +275,7 @@ footer{
 	}
 }
 
+.dutyColorChange{
+	background-color:$globalAccountColor !important;
+	transition:.5s ;
+}

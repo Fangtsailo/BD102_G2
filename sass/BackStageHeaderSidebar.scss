@@ -26,6 +26,7 @@ body{
 		position: fixed;
 		left:0;
 		top: 0;
+		z-index: 900;
 		p{
 			text-align: left;
 			padding-left: 150px;
@@ -84,6 +85,7 @@ body{
 	bottom: 0;
 	margin: auto;
 	font-size: 20px;
+	z-index: 999;
 	
 	
 
@@ -95,7 +97,7 @@ body{
 		text-align: center;
 		line-height: 50px;
 		margin: 15px 0px;
-		background-color:$globalHdColor01;
+		background-color:$globalHdColor02;
 		border-radius: 4px;
 		&:hover{
 			color:$globalStarColor;
@@ -149,11 +151,13 @@ body{
 			right: 0;
 			left: 0;
 			margin: auto;
+			z-index: 999;
 
 
 			li{
-				background-color:$globalHdColor01;
+				background-color:$globalHdColor02;
 				margin: 0;
+				z-index: 999;
 			}
 
 		}
