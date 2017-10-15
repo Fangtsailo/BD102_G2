@@ -16,7 +16,8 @@ body {
     left: 0;
     top: 0; }
     .coverHeader .Backheader p {
-      text-align: center;
+      text-align: left;
+      padding-left: 150px;
       color: #fff;
       line-height: 80px;
       font-size: 28px;
@@ -45,27 +46,46 @@ body {
   color: #fff; }
 
 .navition {
-  background-color: #ddcdb5;
-  width: 200px;
-  float: left;
-  height: 100vh;
-  position: fixed;
-  z-index: 3; }
-  .navition ul:first-child {
-    border-top: 1px solid #aaaaaa; }
-  .navition ul:last-child {
-    border-bottom: 1px solid #aaaaaa; }
-  .navition ul li {
-    width: 200px;
-    height: 60px;
-    background-color: #aa815d;
-    border: 1px solid #aaaaaa;
-    box-sizing: border-box;
-    color: #ffffff;
-    line-height: 60px;
-    padding-left: 20px;
-    font-size: 18px; }
-    .navition ul li:hover {
-      color: #000000;
-      background-color: #cfa972;
-      transition: 0.5s; }
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 20px; }
+  .navition li {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    width: 120px;
+    text-align: center;
+    line-height: 50px;
+    margin: 15px 0px;
+    background-color: #805934;
+    border-radius: 4px; }
+    .navition li:hover {
+      color: #f6921E; }
+    .navition li:hover span {
+      color: #f6921E; }
+    .navition li.memMan ul {
+      display: none; }
+    .navition li.memMan:hover ul {
+      display: block; }
+      .navition li.memMan:hover ul li:hover {
+        color: #f6921E; }
+    .navition li.bsnMan ul {
+      display: none; }
+    .navition li.bsnMan:hover ul {
+      display: block; }
+      .navition li.bsnMan:hover ul li:hover {
+        color: #f6921E; }
+    .navition li span {
+      color: #fff; }
+    .navition li ul {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      margin: auto; }
+      .navition li ul li {
+        background-color: #805934;
+        margin: 0; }

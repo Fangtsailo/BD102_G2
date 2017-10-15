@@ -99,7 +99,7 @@ header {
   position: relative;
   background-color: #e6e0d9; }
   .tableHeaderCover .tableHeader {
-    width: 70%;
+    width: 90%;
     right: 0;
     left: 0;
     margin: auto;
@@ -129,7 +129,7 @@ header {
           width: 20%; }
 
 .tableContent {
-  width: 70%;
+  width: 90%;
   margin-right: 0;
   margin-left: 0;
   margin: auto;

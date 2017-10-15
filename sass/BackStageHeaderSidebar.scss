@@ -27,7 +27,8 @@ body{
 		left:0;
 		top: 0;
 		p{
-			text-align: center;
+			text-align: left;
+			padding-left: 150px;
 			color:#fff;
 			line-height: 80px;
 			font-size:28px;
@@ -74,34 +75,132 @@ body{
 
 
 
-.navition{
-// padding-top: $header-height;
-background-color: #ddcdb5;
-width: $navition-width;
-float: left;
-height: 100vh;
-position: fixed;
-	z-index:3;
-	ul{
 
-		&:first-child{
-			border-top: 1px solid #aaaaaa;
+.navition{
+
+	position: absolute;
+	right: 10px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	font-size: 20px;
+	
+	
+
+	li{
+		display: inline-block;
+		position: relative;
+		color:#fff;
+		width: 120px;
+		text-align: center;
+		line-height: 50px;
+		margin: 15px 0px;
+		background-color:$globalHdColor01;
+		border-radius: 4px;
+		&:hover{
+			color:$globalStarColor;
 		}
-		&:last-child{
-			border-bottom: 1px solid #aaaaaa;
+
+		&:hover span{
+			color:$globalStarColor;
 		}
-		li{
-			width:$navition-width;
-			height:$navition-li-height;
-			background-color: $navition-li-bgColor;
-			border: 1px solid #aaaaaa;
-			box-sizing: border-box;
-			color:#ffffff;
-			line-height: $navition-li-height;
-			padding-left: 20px;
-			font-size:$navition-li-fontSize;
-			@include navition-hover();
+
+
+
+		&.memMan{
+			ul{
+				display: none;
+			}
+			&:hover ul{
+				display: block;
+				li{
+					&:hover{
+						color:$globalStarColor;
+					}
+				}
+				
+			}
 		}
-	}
+
+
+		&.bsnMan{
+			ul{
+				display: none;
+			}
+			&:hover ul{
+				display: block;
+				li{
+					&:hover{
+						color:$globalStarColor;
+					}
+				}
+				
+			}
+		}
+
+		span{
+			color:#fff;
+
+		}
+
+		ul{
+			position: absolute;
+			top: 50px;
+			right: 0;
+			left: 0;
+			margin: auto;
+
+
+			li{
+				background-color:$globalHdColor01;
+				margin: 0;
+			}
+
+		}
+
+	}	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+// 側邊欄版本
+// .navition{
+
+// background-color: #ddcdb5;
+// width: $navition-width;
+// float: left;
+// height: 100vh;
+// position: fixed;
+// 	z-index:3;
+// 	ul{
+
+// 		&:first-child{
+// 			border-top: 1px solid #aaaaaa;
+// 		}
+// 		&:last-child{
+// 			border-bottom: 1px solid #aaaaaa;
+// 		}
+// 		li{
+// 			width:$navition-width;
+// 			height:$navition-li-height;
+// 			background-color: $navition-li-bgColor;
+// 			border: 1px solid #aaaaaa;
+// 			box-sizing: border-box;
+// 			color:#ffffff;
+// 			line-height: $navition-li-height;
+// 			padding-left: 20px;
+// 			font-size:$navition-li-fontSize;
+// 			@include navition-hover();
+// 		}
+// 	}
+// }
 
