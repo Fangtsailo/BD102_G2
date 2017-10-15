@@ -1,11 +1,13 @@
 @import "basic/_var.scss";
 
 body{
-
+	width: 100vw;
+	height: 100vh;
 	position: relative;
 	// width: 100vw;
 	// height: 100vh;
-	// background-image: url("img/GuidePage/GuideBgimg.png");
+	background-image: url("../img/GuidePage/GuideBgimg.png");
+	background-position: center center;
 	// background-size: 100% 100%;
 
 }//body
@@ -31,7 +33,7 @@ h2{
 	.GuideBgimg{
 	display: block;
 	width: 100%;
-	height: 100vh;
+	// height: auto;
 	}
 
 	.house{
