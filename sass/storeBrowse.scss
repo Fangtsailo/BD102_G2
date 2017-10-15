@@ -787,7 +787,8 @@ img {
 	    position: relative;
 	    .more-message {
 	    	text-align: center;
-	    	width: 100px;
+	    	box-sizing: border-box;
+	    	width: 15vw;
 	    	padding: 5px;
 	    	margin: auto;
 	    }
@@ -947,6 +948,10 @@ img {
 	.screen-1, .screen-bread-car-map, .screen-product, .screen-activity
 	, .screen-other-store, .screen-messages{
 		// height: auto;
+	}
+	.button {
+		background-color: $globalHdColor02;
+		color: $globalBgColor;
 	}
 	.perspective {
 		margin-bottom: 20px;
@@ -1132,6 +1137,7 @@ img {
 			display: none;
 		}
 		.send-message-area, .messages-area {
+			padding: 10px;
 			.message-box {
 				background-color: $globalBgColor;
 			    position: relative;
@@ -1139,7 +1145,6 @@ img {
 			    // box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 			    font-size: 15px;
 			    padding: 10px;
-			    margin: 10px;
 			    width: auto;
 			    .mem-pic {
 			    	img {
@@ -1154,6 +1159,9 @@ img {
 			    	}
 			    }
 			}
+			.more-message {
+		    	width: 100%;
+		    }
 		}
 	}
 }
