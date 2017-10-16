@@ -210,11 +210,35 @@ header {
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(2) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(3) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(3) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(4) {
         height: 180px; }
         .CenterBusiness .content-table table tr:nth-child(4) th div {
@@ -367,11 +391,35 @@ footer {
         .CenterBusiness .content-table table tr:nth-child(2) td input {
           width: 90%;
           height: 40px;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          text-indent: 4px;
+          font-size: 14px;
+          outline: none; }
+        .CenterBusiness .content-table table tr:nth-child(2) td p {
+          color: #999;
+          height: 40px;
+          line-height: 40px;
+          width: 90%;
+          text-align: left;
+          margin: auto;
+          font-size: 18px;
+          padding-left: 4px; }
         .CenterBusiness .content-table table tr:nth-child(3) td input {
           width: 90%;
           height: 40px;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          text-indent: 4px;
+          font-size: 14px;
+          outline: none; }
+        .CenterBusiness .content-table table tr:nth-child(3) td p {
+          color: #999;
+          height: 40px;
+          line-height: 40px;
+          width: 90%;
+          text-align: left;
+          margin: auto;
+          font-size: 18px;
+          padding-left: 4px; }
         .CenterBusiness .content-table table tr:nth-child(4) {
           height: 180px; }
           .CenterBusiness .content-table table tr:nth-child(4) th div {
@@ -440,7 +488,10 @@ footer {
                   margin: auto; } }
 @media screen and (max-width: 940px) {
   .LeftBusiness {
-    display: none; } }
+    display: none; }
+
+  .coverSubtitile .subtitle .burger {
+    display: block; } }
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -452,9 +503,10 @@ footer {
           min-width: 10px; }
       .CenterBusiness .content-table table tr td {
         width: 70%; }
-      .CenterBusiness .content-table table tr:nth-child(6) td div {
-        font-size: 14px; } }
-@media screen and (max-width: 912px) {
+      .CenterBusiness .content-table table tr:nth-child(6) td div div {
+        font-size: 14px;
+        margin: 10px 0; } }
+@media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }
     .CenterBusiness .content-table table tr th div {

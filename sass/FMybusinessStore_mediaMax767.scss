@@ -7,6 +7,16 @@
 	.LeftBusiness{
 		display: none;
 	}
+
+	.coverSubtitile{
+		.subtitle{
+			.burger{
+				display: block;
+			}
+		}
+	}
+
+	
  
 }
 
@@ -58,7 +68,10 @@
 
 						td{
 							div{
+								div{
 								font-size: 14px;
+								margin: 10px 0;
+								}
 							}
 						}
 
@@ -83,7 +96,7 @@
 
 
 
-@media screen and (max-width : 912px) {
+@media screen and (max-width : 940px) {
 
 	.CenterBusiness{ 
 			

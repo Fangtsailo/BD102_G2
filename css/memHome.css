@@ -4,13 +4,18 @@
   padding: 0; }
 
 body {
-  background-color: #f2ebd4; }
+  background-color: #f2ebd4;
+  background: -webkit-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -o-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -moz-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: radial-gradient(ellipse, #fbf8f1, #f2ebd4); }
 
 .container {
   width: 100%;
-  height: 76vh;
+  padding-top: 124px;
   text-align: center;
-  background-image: url("../img/memHome.png");
+  margin: 0 auto;
+  background-image: url("../img/memimg/memHome.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   /*靠左 靠上*/
@@ -21,15 +26,16 @@ body {
   .container img {
     width: 100%; }
   .container .memHome {
-    width: 100%; }
+    max-width: 1000px;
+    width: 69.4444%;
+    margin: 0 auto;
+    height: 76vh; }
     .container .memHome .memTitle {
-      height: 15%;
-      margin: 0px 35.4166% 30px 35.4166%;
-      padding-top: 85px; }
+      margin: 0px 35.4166% 30px 35.4166%; }
   .container .memHomeItemGroup {
     margin: 0 14%; }
     .container .memHomeItemGroup .memHomeItem {
-      width: 200px;
+      width: 185px;
       margin: 0px 4%;
       float: left; }
       .container .memHomeItemGroup .memHomeItem span {
@@ -37,3 +43,12 @@ body {
         font-size: 24px; }
       .container .memHomeItemGroup .memHomeItem img {
         box-shadow: 0 2 2 rgba(0, 0, 0, 0.2); }
+    .container .memHomeItemGroup .hidden {
+      visible: hidden; }
+      .container .memHomeItemGroup .hidden:hover {
+        transform-origin: 0 33px;
+        transform: rotate(60deg);
+        transition: .3s;
+        opacity: 0; }
+    .container .memHomeItemGroup .clearfix {
+      clear: both; }

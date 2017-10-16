@@ -50,7 +50,7 @@
 
 
 
-		<div class="col-xs-10 col-sm-3" id="SPNAME">MONOCLE 麵包屋</div>
+		<div class="col-xs-10 col-sm-3" id="SPNAME">MONOCLEp44 麵包屋</div>
 		<div class="col-xs-10 col-sm-3" id="SPINFO">
 			<p>桃園市中壢區中央路123號</p>
 			<p>週二 - 週六 09:30 - 22:30</p>

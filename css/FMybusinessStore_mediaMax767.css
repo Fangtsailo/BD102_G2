@@ -1,6 +1,9 @@
 @media screen and (max-width: 940px) {
   .LeftBusiness {
-    display: none; } }
+    display: none; }
+
+  .coverSubtitile .subtitle .burger {
+    display: block; } }
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -12,9 +15,10 @@
           min-width: 10px; }
       .CenterBusiness .content-table table tr td {
         width: 70%; }
-      .CenterBusiness .content-table table tr:nth-child(6) td div {
-        font-size: 14px; } }
-@media screen and (max-width: 912px) {
+      .CenterBusiness .content-table table tr:nth-child(6) td div div {
+        font-size: 14px;
+        margin: 10px 0; } }
+@media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }
     .CenterBusiness .content-table table tr th div {

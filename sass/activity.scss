@@ -6,7 +6,21 @@
 	
 	$dough_color_1 : #FFF8D7;
 	$dough_color_2 : #ebb78f;
+	
 
+	@keyframes dough1{
+	0%{border-radius: 30% 30% 40% 60% / 50% 55% 45% 50% ;
+		
+	}
+	50%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
+	}
+	
+	@keyframes dough2{
+	0%{border-radius: 40% 40% 40% 40% / 55% 55% 45% 35% ;
+		
+	}
+	50%{border-radius: 45% 45% 45% 55% / 60% 45% 55% 40% ;}
+	}
 
 
 
@@ -16,88 +30,156 @@
 		height:100%;
 		background: url('../img/acty_background.png') center center ;
 		background-size:cover;
-		// -moz-background-size: cover;
-		// overflow: hidden;
-		height: 136vh;
+		text-align:center;
+		height: 135vh;
+		overflow:hidden;
+	.activity_Dough{
+		margin:  auto ;
+		height:20%;
+		padding-top:20%;
 
 		#acty_Dough{
-			min-width:250+px;
-			max-width:300+px;
-			width:28.5vw;
-			// margin:30vh auto 0;
-			margin: auto;
-    		padding: 30vh 0 0;
+			animation: dough1 2s linear infinite alternate;
+			margin:auto;
+			min-width:280+px;
+			max-width:320+px;
+			width:25%;
+			height:250+px;
 			position:relative;
-			
-	
+			border-radius:38% 67% 34% 43% / 60% 67% 34% 43%;
+			@include topBottomGradient($dough_color_1,$dough_color_2);
 				img{
-					width:100%;
+				
+					position:absolute;
+					left:16%;
+					top:20%;
 				}
-					
-				.acty_h1{
+				h1{
+					position:absolute;
+					left:30%;
+					top:27%;
+					font-size:28px;
+					color:$globalStarColor;
+				}
+				.acty_h2{
 					width:100%;
 					position:absolute;
-					bottom: 18%;
+					bottom: 32%;
 					left:0%;
 					text-align:center;
-					h1{
+					h2{
 						color:$globalTitleColor;
-						font-size:$globalh2Size;
+						font-size:32px;
 								
 					}
-				}
+				}			
+			}
 
-		}   //#acty_Dough
-		.clear{
-			clear:both;
-		}
-		.activity_board{
-			
-			max-width:380+px;
-			min-width:320+px;
+
+		 } //#acty_Dough
+	
+		.activityDough{
+		margin:  auto ;
+		height:20%;
+		padding-top:30%;
+
+		#acty_Dough{
+			animation: dough1 2s linear infinite alternate;
+			margin:auto;
+			min-width:250+px;
+			max-width:320+px;
+			width:25%;
+			height:250+px;
 			position:relative;
-			bottom:0;
+			border-radius:38% 67% 34% 43% / 60% 67% 34% 43%;
+			@include topBottomGradient($dough_color_1,$dough_color_2);
+				img{
+					width:31px;
+					position:absolute;
+					left:16%;
+					top:20%;
+				}
+				h1{
+					position:absolute;
+					left:30%;
+					top:27%;
+					font-size:28+px;
+					color:$globalStarColor;
+				}
+				.acty_h2{
+					width:100%;
+					position:absolute;
+					bottom: 32%;
+					left:0%;
+					text-align:center;
+					h2{
+						color:$globalTitleColor;
+						font-size:32px;
+								
+					}
+				}			
+			}
+
+
+		 }
+		.activity_board{
+			z-index:0;
+			box-sizing:box-sizing;
+					
+			.acty_board{
+			position:relative;
+			min-width:335+px;
+			max-width:400+px;	
+			}
 			.acty_stirrer{
-				min-width: 76+px;
-				max-width:90+px;
+				min-width: 67+px;
+				max-width:85+px;
 				width:15+vw;
 				position:absolute;
-				top:-45%;
-				
+				top:-40%;
+				left:-5%;
 			}
 			img{
+				// position:absolute;
 				width:100%;
 
 			}					
 			.acty_board_p{
-				font-size:18+px;
-				padding:4%;
-				width:82%;
+				font-size:20+px;
+				box-sizing:border-box;
 				position:absolute;
 				top:0;
-				left:0;
+				padding:5% 13% 0 5%;
 				color:$globalFontColor;
+				p{
+					text-align:left;
+					min-width:255+px;
+					max-width:310+px;
+				}
 			}
-		}			
+		}  //activity_board
+
+
 		.activity_detail{
-			min-width:250 +px;
-			// width:25 +vw;
-			padding:1%;
-			// float:right;
-			// margin:2vw 5vw ;
-			background-color: rgba(246, 146, 30, .4);
+			z-index:4;
+			max-width: 362px;
+			min-width:340 +px;
+			width:37.5%;
+			
+			background-color: rgba(246, 146, 30, .6);
 			box-sizing:border-box;
 			ul{
 				list-style-type:none;
 				color:$globalBgColor;
 				li{  
+					text-align:left;
 					text-shadow: 1+px 1+px 1+px rgba(0, 0, 0, .6);
-					 font-size:16+px;
+					 font-size:18+px;
 					 line-height:25+px;
 				}
 			}
 
-		}
+		}  //activity_detail
 	
 	}  //activity_banner
 
@@ -105,84 +187,83 @@
 ==================================================
 ================================================== */
 	
-	@media all and (min-width:$tablet_min) {
-			.activity_detail{
-				width:25 +vw;
-				float:right;
-				margin:15vw 10vw 8vw 0;
 
+		@media screen and (max-width:960+px){
+			.activity_Dough{
+				display:none;
 			}
 
 
-
-		}
-
-
-	@media all and (max-width:$mobile){
-			.activity_detail{
-				margin:auto;
-				width: 80%;
-				display:block;
-			}
-			.acty_stirrer{
-					left:-7%;
-				}
-		}
-
-
-
-	@media all and (max-width:959+px){
 			.activity_board{
-				width: 80+px;
-				display: block;
-				margin: 20+px auto;
-				float:none;
-				.acty_stirrer{
-					left:-10%;
-				}
-			}
-			.activity_detail{
 				margin:auto;
-				float:none;
+				position:relative;
+				width:90%;
+			
 			}
-		}
-	@media all and (max-width:$mobile){
+			.acty_board{
+				margin:10% auto;
+			}
+		
 			.activity_detail{
-				
-				width: 80%;
-				display:block;
-			}
-			.acty_stirrer{
-					left:-7%;
-				}
+				margin:10% auto;
+				padding:4%;
+			}	
 
 		}
-
-
-	@media all and (min-width:960+px){
+		@media screen and (min-width:961+px){
+			.activityDough{
+				display:none;
+			}
+		}
+		@media screen and (min-width:961+px) and (max-width:1259+px){
+			
 			.activity_board{
-				width:40vw;
-				margin: 15vh 8vw 5vw 10vh;
-				float:left;
-				.acty_stirrer{
-					left:-10%;
-				}
-
+			position:absolute;
+			top:50%;
+			left:2%;
+			width:37.5%;	
+			}
+		
+			
+			.activity_detail{
+			position:absolute;
+			right:2%;
+			margin:auto;
+			top:72%;
+			padding:1%;
 			}
 
 		}
+		@media screen and (min-width:1260+px){
+			.activity_board{
+			position:absolute;
+			top:50%;
+			left:7vw;
+			width:37.5%;	
+			}
+		
+			
+			.activity_detail{
+			position:absolute;
+			right:12%;
+			margin:auto;
+			top:72%;
+			padding:1%;
+			}
+
+		
+		}
+	
+		
+	
+		
+
 
 /*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
 
 
-	@keyframes dough1{
-	0%{border-radius: 30% 30% 40% 60% / 50% 55% 45% 50% ;
-		
-	}
-	100%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
-	}
 
 
 		
@@ -190,322 +271,534 @@
 		background: url("../img/acty_background_2.png") center center;
 		background-size:cover;
 		padding-top: 120 +px;
-		padding-bottom: 50 +px;
-		position:relative;
-		// height:200vh;
-		// overflow:hidden;
-
+		
 		width:100%;
-		.activity_pot{	
+		position:relative;
+	
+		overflow:hidden;
+		.activity_content_inner{
+			width:100%;
+			margin:auto;
+			text-align:center;
+			
+		}
 
-			position:relative;
-			z-index:2;
-			max-width:350+px;
-			// min-width:250+px;
-			width:40%;
-			top:20vw;
+		.activity_pot{	
+			position:absolute;
+			right:0;
+			left:0;
+			float:left;
+			margin:auto;
+			z-index:0;
+		
+			width:350+px;
+			height:10vw;
+
+			.acty_out_pot{
+				position:relative;
+			}
+			// float:left;
 			img{
 				width:100%;
 
 			}
+		
 			.activity_dough_change{
-				width:75%;
-				height:100%;
+				width:280+px;
+				height:250+px;
 				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
 				@include topBottomGradient($dough_color_1,$dough_color_2);
 				position:absolute;
-				top:-40%;
-				left:20%;
+				bottom: 10%;
+    			left: 10%;
 				z-index:-2;
+					.activity_dough_change_js{
+				background:linear-gradient(red, yellow);
+			}
 			}
 			h2{
 				position:absolute;
 				top:40%;
 				left:10%;
 				width:80%;
-				font-size:2.5vmin;
+				font-size:22+px;
 				text-align:center;
 				color:$globalHdColor02;
 			}
 		}
-		.content_1{
-			width:50%;
-			float:left;
-		}
+		
 
-
-
-
-		.content_2{
-			width:50%;
-			float:left;
-		}
 		.activity_pot_b{
 			
 			position:absolute;
+			// top:-25%;
 			top:-25%;
 			left:5+px;
 			z-index:-5;
+			img{
+				width:100%;
+			}
 		}
-		.activity_dough_1{
-			// float:right;
-			// margin: 3vw 30vw 2vw 0vw;
-			width:320+px;
-			height:250+px;
-			background: url('../img/acty_bread.png');
-			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+/*---------------------------------------------------------
+	-------------------RWD麵團-----------------------------------
+	=======================================================
+*/		
+		.activityPot{
 			position:relative;
-			// right:-5vw;
-			top:-2vw;
+			right:0;
+			left:0;
+			z-index:0;
+			max-width:368+px;
+			width:300+px;
+			height:10vw;
 
+			.acty_out_pot{
+				position:relative;
+			}
+			// float:left;
+			img{
+				width:100%;
+
+			}
+			.activity_dough_change{
+				width:250+px;
+				height:200+px;
+				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
+				@include topBottomGradient($dough_color_1,$dough_color_2);
+				position:absolute;
+				bottom: 10%;
+    			left: 8%;
+				z-index:-2;
+			
+			}
+			h2{
+				position:absolute;
+				top:40%;
+				left:10%;
+				width:80%;
+				font-size:22+px;
+				text-align:center;
+				color:$globalHdColor02;
+			}
+		}
+
+/*---------------------------------------------------------
+	-------------------RWD麵團 END-----------------------------------
+	=======================================================
+*/
+		.activity_dough_1{
+			width:25%;
+			min-width:240px;
+			height:20vw;
+			min-height:200px;
+			background: url('../img/acty_bread.png');
+			border-radius:60% 45% 40% 60% / 50% 55% 45% 50%;
+			background-size:cover;
+			animation: dough2 2s linear infinite alternate;
+			position:relative;
+			
+			z-index:2
 		}
 		.activity_dough_2{
-			// float:right;
-			
-			// margin-top:10+px;
-			
-			width:250+px;
-			height:230+px;
+					
+			margin-top:-2;
+			min-width:280+px;
+			max-width:350+px;
+			width:23%;
+			height:260+px;
 			@include topBottomGradient($dough_color_1,$dough_color_2);
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
-			animation: dough1 2s linear infinite alternate;
+			animation: dough2 3s linear infinite alternate;
     		transition: 1s;
     		box-sizing:border-box;
-    		padding: 30 +px;
+    		padding: 35 +px;
     		
     		p{	
+    			text-align:left;
+    			padding-bottom:10px;
     			color:$globalTitleColor;
     			font-size: 18+px;
     			margin-top: 30+px;
     			text-shadow:1+px 1+px 1+px rgba(90, 88, 86, .2);
     		}
+    		.act_btn {	
+    			text-align:center;
+    			margin:auto;
+    			a{  border-radius:15px;
+					background-color: $globalBtnColor;
+					color:$globalBgColor;
+					padding:2px 50px;
+				}
+    			&:hover a {
+    				background-color:$globalBgColor;
+    				color:$globalBtnColor;
+    			}
+    		}
 		}
+
+
 		.activity_dough_3{
-			
-			width:350+px;
+			width:370+px;
 			height:300+px;
 			padding:60+px 35+px;
+			z-index:2;
 			box-sizing:border-box;
 			@include topBottomGradient($dough_color_1,$dough_color_2);
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
-			p{
+			animation: dough2 3s linear infinite alternate;
+			h2{
+				color: #9e693d;
+				text-align:center;
+				line-height:20px
+			}
+			p{  
+				text-align:left;
+				font-size: 18px;
 				color:#5a5856;
-				margin:30+px auto;
+				margin: 10px auto;
 				vertical-align:middle;
-				// padding:40+px;
 			}
 			
 		}  //.activity_dough_3
+		
 		.activity_dough_4_all{
+				z-index:2;
 				text-align:center;
 			.activity_dough_4{
-				width:150+px;
-				height:130+px;
+				min-width:180px;
+				width:30%;
+				min-height:200px;
+				height:20%;
 				background-size:cover;
-				
-				   		
 						
 			}
 			.pic_1{
 				background: url('../img/acty_pic1.png') no-repeat center center;
 				background-size:cover;
-				
-				
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+				animation: dough2 3s linear infinite alternate;	
 			}	
 			.pic_2{
 				background: url('../img/acty_pic2.png') no-repeat center center;
 				background-size:cover;
-				
-				
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+				animation: dough1 3s linear infinite alternate;
 			}
 			.pic_3{
 					
 				background: url('../img/acty_pic3.png') no-repeat center center;
 				background-size:cover;
-				
+
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
+				animation: dough2 3s linear infinite alternate;
 			}	
-
 		}
 
-		.activity_dough_5{	
-			width:320+px;
-			height:250+px;
-			background: url('../img/acty_pic4.png');
+
+		.section_5{ 
+			width:100%;
+			height:50%;	
+		}
+		
+		.bake_bread{
+			position:relative;
+			transition-duration: 0.5s;
+        	transition-timing-function: linear;
+        	text-align: center;
+       		
+			width:100%;
+			height:100%;
+			z-index:10;
+			}
+		.activity_dough_5{
+			
+			
+			width:30%;
+			height:20vw;
+			min-width:320+px;
+			min-height:250+px;
+			background: url('../img/acty_pic4.png') center center;
+			background-size:cover;
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
-			
+			animation: dough2 3s linear infinite alternate;
 		}
-		.activity_dough_6{
+		.activity_dough_6{			
 			
-			margin: 3vw auto ;
-			width:320+px;
-			height:250+px;
+			
+			width:25%;
+			height:20vw;
 			background: url('../img/acty_pic5.png');
+			background-size:cover;
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
-			
-			
+			min-width:320+px;
+			min-height:250+px;
+			animation: dough1 3s linear infinite alternate;
 		}
-
 		
 	} //.activity_content
 
 /*===========content   rwd ====================
 ================================================
 ===============================================*/
-	@include rwd(mobile){   //767以下
-		.activity_pot{
-			display:block;
-			margin:5vw auto;
-			
-		}
-		.activity_dough_1{
-			margin: auto;
-			display:block;
-			right:0;
-		}
-		.activity_dough_2{
-			margin: 10vw auto;
-			float:none;
 
+@media screen and (min-width:1201px){
+
+		.activity_dough_2{
+			float: left;
+			margin-left:13%;	
 		}
 		.activity_dough_3{
-			float:none;
-			margin:auto;
+			float:right;
+			margin:5% 10% 5% 0;
+			
+		}
+
+		.activity_dough_4_all{
+			float:left;
+			margin-top:-15%;
+			margin-left:10%;
+		}
+
+
+}
+@media screen and (min-width:961px) and (max-width:1200px){
+
+		.activity_dough_2{
+			margin-left:5%;		
+			float: left;
+		}
+		.activity_dough_3{
+			float:right;
+			margin:5% 0% 5% 0;
+			
+		}
+			.activity_dough_4_all{
+			float:left;
+			margin-top:-15%;
+			margin-left:5%;
+		}
+}
+
+@media screen and (min-width:961px){
+		.activity_dough_1{
+			top:-2vw;
+			margin-right:8%;
+			float:right;
+		}
+
+		.activityPot{
+			display:none
+		}
+		
+		.pic_1{
+			margin-left:50%;
 		}
 		.pic_3{
-			margin:10+px auto;
-						
+				margin-left:90%;
+				margin-top:-50%;
 		}
-		// .pic_1{
-		// 	margin:0 5%;
-		// }
+		.bake_bread{
+			background: radial-gradient(rgba(241, 94,36, .7), rgba(255, 165, 0, 0));
+		}
+		.activity_dough_5{
+			float:right;
+			margin: 3vw 5% 0 0;	
+		}
+		.activity_dough_6{
+			float:left;
+			margin: 15vw 0 10% 10% ;
+		}
+		.activity_bread{
+			display:block;
+		}
+		
+}
+
+@media screen and (max-width:960px){
+		.activity_dough_1{
+			float:none;
+			margin:10vw 10px 0;
+			display:inline-block;
+		}
+		.activity_pot{
+			display:none;
+		}
+		.activityPot{
+			display:block;
+			margin: 0 auto 110px;
+		}
+		.activity_dough_2{
+			float:none;
+			margin: 30px 10px;
+			display:inline-block;		
+		}
+		.rwd_none{
+			display:none;
+		}
+		.section_5{
+			text-align:center;
+		}	
+		.activity_dough_3{
+			float:none;
+			margin: 100px  0;
+			text-align:center;
+			display:inline-block;
+		}
 		.activity_dough_4_all{
-			margin:auto;
-			width:100%;
+			float:none;
+			margin: 20px auto;
 		}
-		.activity_dough_4{
+
+		.pic_1,.pic_2,.pic_3{
+			margin:2px;
+			display:inline-block;
+		}
+		.bake_bread{
+			background-color: transparent;
+		}
+		.activity_dough_5{
 			float:none;
 			display:inline-block;
-			margin: 2% 3%;
-		} 
-		.activity_dough_5{
-			float:none;
-			margin:auto;
-		} 
-		.activity_dough_5{
-			float:none;
+			margin:3vw 0 0;
 		}
-		
-	}	
-
-	@media all and (min-width:$tablet_min){   //768以上
-		
-		.activity_pot{
-			
-			margin-left:12vw;
-			float:left;
-		}
-		.activity_dough_1{
-			 margin: 3vw 30vw 2vw 0vw;
-			 float:right;
-			 right:-5vw;
-		}
-		.activity_dough_2{
-			float:right;
-			margin-bottom:10+px;
-			margin-right:10vw;
-
-		}
-		.activity_dough_3{
-			float:right;
-			margin-top:5vw;
-			margin-right:20vw;
-		} 
-		.pic_3{
-			margin:0 3%;
-			
-		}   
-		.pic_2{
-			margin: 5% 0;
-		}
-		.activity_dough_4_all{
-			width:85%;
-		 	margin-right: 8vw
-		}
-		.activity_dough_4{
-			float:right;
-		} 
-		.activity_dough_5{
-			float:right;
-			margin: 15vw 8vw 0vw 0vw;
-		} 
 		.activity_dough_6{
-			float:right;
+			float:none;
+			display:inline-block;
+			margin:3vw 0 10%;
 		}
+		.activity_bread{
+			display:none;
+		}
+}
 
 
-	}
+
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/
 
 
 .activity_application{
-
 	background:url('../img/acty_background_3.png') center ;
 	overflow:hidden;
 	background-size:cover;
-	padding:8vw 5vw 5vw;
+	padding-top:10vw;
+	padding-bottom:2vw;
 	.activity_final{
-		width:50%;
-		float:left;
 		text-align:center;
+		    max-width: 798px;
 		.activity_fin_pic{
-			float:right;
+			text-align:center;
 			background-color:rgba(246, 146, 30, .8);
-			width:200+px;
-			height:10vw;
-			max-height:165+px;
+			height:13.75vw;
+			min-height:150px;
+			max-height:210+px;
 			overflow:hidden;
+			p{
+				position:relative;
+				top:45%;
+				color:$globalBgColor ;
+				font-size:20px;
+			}
 			img{
 				width:100%;
 				
 				vertical-align:top;
 			}
 		}
-	
-		.activity_bread{
+		.fin_1{
+			background:url('../img/acty_bread1.jpg');
+			background-size:cover;
+		}
+		.fin_2{
+			background:url('../img/acty_bread2.jpg');
+			background-size:cover;
+		}
+		.fin_3{
+			background:url('../img/acty_bread3.jpg');
+			background-size:cover;
+		}
+	}
 
-			margin:90+px auto 0;
-			width: 200+px;
+	.activity_bread{
+			margin: auto ;
+			width: 300+px;
 			img{
 				width:100%;
 			}
 		}
-			
+	.activity_bread2{
+		margin: auto ;
+			width: 200+px;
+			img{
+				width:100%;
+			}
 	}
-
-
 
 	.activity_form{
+		margin:0 auto 60px;
 		
-		float:left;
 		width:50%;
 		.globalForm{
-			width:85%;
+			width:70%;
 		}
 	}
+	.globalFormBtns{
+		margin-top:10+px;
+	}
+	.btnTop{
+		margin-top:10px;
+	}
+
+/*===========activity_application   rwd  end====================
+================================================
+===============================================*/
+@media screen and (max-width:960px){
+	.activity_final{
+		width:90%;
+		float:none;
+		margin:20px auto 0;
+		font-size: 0;
+	}
+	.activity_form{
+		width:100%;
+		float:none;
+		margin-top:50px;
+	}
+	.activity_fin_pic{
+		float:none;
+		display:inline-block;
+		width:155px;
+	}
+	.activity_form .globalForm{
+		width:80%;
+	}
+	.activity_bread2{
+		display:block;
+	}
+}
+@media screen and (min-width:961px){
+	.activity_final{
+		width:50%;
+		float:left;
+	}
+	.activity_form{
+		
+		width:50%;
+		float:left;
+	}
+	.activity_fin_pic{
+		float:right;
+		width:200px;
+	}
+	.activity_bread2{
+		display:none;
+	}
+}
 
 
-
-
-
-
-
-
-
-
+/*===========activity_application   rwd  end====================
+================================================
+===============================================*/
 
 }

@@ -9,7 +9,11 @@
 }
 
 body{
-	background-color: $globalFtColor ;
+	background-color: $globalFtColor;
+	background: -webkit-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 }
 
 // .coverHeader{
@@ -39,15 +43,14 @@ body{
 // 	}
 // }
 
-//--------------------------container樣式-------------------------
-
-
+//--------------------------會員首頁_container樣式-------------------------
 
 .container{
 	width: 100%;
-	height: 76vh;
+	padding-top:124px;
 	text-align:center;
-	background-image: url("../img/memHome.png");
+	margin: 0 auto;
+	background-image: url("../img/memimg/memHome.png");
 	background-repeat: no-repeat;
 	background-position: center bottom; /*靠左 靠上*/
 	background-size: cover; /*背景圖縮小至容器內*/
@@ -58,12 +61,13 @@ body{
 	}
 
 	.memHome{
-		width: 100%;
+		max-width: 1000px;
+		width: 69.4444%;
+		margin: 0 auto;
+		height: 76vh;
 
 		.memTitle{
-			height: 15%;
 			margin: 0px 35.4166% 30px 35.4166%;
-			padding-top: 85px;
 		}
 	}
 
@@ -71,7 +75,7 @@ body{
 		margin: 0 14%;
 
 		.memHomeItem{
-			width: 200px;
+			width: 185px;
 			margin: 0px 4%;
 			float: left;
 
@@ -83,6 +87,20 @@ body{
 			img{
 				box-shadow: $boxShadow;
 			}
+		}
+
+		.hidden{
+			visible: hidden;
+			&:hover {
+				transform-origin: 0 33px;
+				transform: rotate(60deg);
+    			transition: .3s;
+    			opacity: 0
+    		}
+    	}
+
+		.clearfix{
+			clear:both;
 		}
 	}
 }

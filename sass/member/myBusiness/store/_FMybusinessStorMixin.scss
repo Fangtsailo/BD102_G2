@@ -135,12 +135,27 @@
 
 
 	td{
-						input{
-							width: 90%;
-							height: 40px;
-							box-sizing: border-box;
-						}
-					}
+		input{
+			width: 90%;
+			height: 40px;
+			box-sizing: border-box;
+			text-indent: 4px;
+			font-size: 14px;
+			outline:none;
+		}
+
+		p{
+			color: #999;
+			height: 40px;
+			line-height: 40px;
+			width: 90%;
+			text-align: left;
+			margin: auto;
+			font-size: 18px;
+			padding-left: 4px;
+		}
+
+	}
 
 
 }

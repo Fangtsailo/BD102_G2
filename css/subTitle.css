@@ -1,0 +1,75 @@
+.coverSubtitile {
+  height: 60px; }
+  .coverSubtitile .subtitle {
+    height: 44px;
+    width: 100vw;
+    position: fixed;
+    top: 80px;
+    z-index: 3;
+    transition: top 0.3s ease-in-out; }
+    .coverSubtitile .subtitle h2 {
+      line-height: 44px;
+      font-size: 20px;
+      background-color: #4289FF;
+      padding-left: 20px;
+      color: #fff; }
+    .coverSubtitile .subtitle .burger {
+      display: none;
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      width: 30px;
+      height: 30px; }
+
+.CoverRightMy {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  top: 44px;
+  right: -200px;
+  transition: .2s;
+  background-color: #f2ebd4; }
+  .CoverRightMy ul li {
+    background-color: #4289ff;
+    width: 200px;
+    padding: 8px 0;
+    color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    display: block; }
+    .CoverRightMy ul li:hover {
+      color: #f6921E;
+      transition: 0.5s; }
+    .CoverRightMy ul li ul li {
+      background-color: #4289ff;
+      width: 200px;
+      color: #eef;
+      text-align: left;
+      display: block;
+      padding: 2px 20px;
+      border-bottom: 1px solid #4b7cbf; }
+      .CoverRightMy ul li ul li:hover {
+        color: #f06428;
+        transition: 0.5s; }
+
+.moveToLeft {
+  right: -70px;
+  transition: .2s; }
+
+.moveToLeftTop {
+  top: 44px;
+  right: -70px;
+  transition: right .2s; }
+
+.hide {
+  display: none; }
+
+@media screen and (min-width: 941px) {
+  .CoverRightMy {
+    display: none; } }
+@media screen and (max-width: 940px) {
+  .LeftBusiness {
+    display: none; }
+
+  .coverSubtitile .subtitle .burger {
+    display: block; } }

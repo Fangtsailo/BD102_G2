@@ -5,7 +5,8 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC";
+  overflow-x: hidden; }
 
 input {
   font-family: "Noto Sans CJK TC"; }
@@ -121,7 +122,7 @@ li {
 .hideUp_sub_burger {
   top: 44px  !important; }
 
-header.globalHead {
+.globalHead {
   width: 100%;
   height: 80px;
   background: rgba(128, 89, 52, 0.9);
@@ -145,13 +146,13 @@ header.globalHead {
   top: 0;
   box-sizing: border-box;
   transition: top .3s ease-in-out; }
-  header.globalHead .headLoginBox {
+  .globalHead .headLoginBox {
     position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
-    header.globalHead .headLoginBox .globalForm {
+    .globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
       left: 0;
@@ -163,23 +164,23 @@ header.globalHead {
       border: none;
       border-radius: 5px;
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-      header.globalHead .headLoginBox .globalForm .globalFormHeader {
+      .globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
-        header.globalHead .headLoginBox .globalForm .globalFormHeader img {
+        .globalHead .headLoginBox .globalForm .globalFormHeader img {
           width: 160px; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
         text-align: center;
         padding: 20px 0px; }
-        header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
+        .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
           border-bottom: 1px solid #3399ff; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
         width: 100%;
         text-align: center;
         padding: 10px 0px; }
-        header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
           display: inline-block;
           width: 50%;
           height: 50px;
@@ -204,23 +205,23 @@ header.globalHead {
           color: #fbf8f1;
           line-height: 50px;
           font-weight: 300; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
+      .globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
         width: 100%;
         padding: 10px 0px;
         text-align: center; }
-        header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
+        .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
           text-align: center;
           color: #663300;
           cursor: pointer; }
-          header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
+          .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
             border-bottom: 1px solid #663300; }
-  header.globalHead .headRegisterBox {
+  .globalHead .headRegisterBox {
     position: fixed;
     width: 100%;
     height: 100%;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
-    header.globalHead .headRegisterBox .globalForm {
+    .globalHead .headRegisterBox .globalForm {
       position: absolute;
       top: 0;
       left: 0;
@@ -232,17 +233,17 @@ header.globalHead {
       border: none;
       border-radius: 5px;
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-      header.globalHead .headRegisterBox .globalForm .globalFormHeader {
+      .globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
-        header.globalHead .headRegisterBox .globalForm .globalFormHeader img {
+        .globalHead .headRegisterBox .globalForm .globalFormHeader img {
           width: 160px; }
-      header.globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
-      header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
+      .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
         padding: 10px 0px; }
-        header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
+        .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
           display: inline-block;
           width: 50%;
           height: 50px;
@@ -267,37 +268,37 @@ header.globalHead {
           color: #fbf8f1;
           line-height: 50px;
           font-weight: 300; }
-      header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
+      .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
         width: 100%;
         padding: 10px 0px;
         text-align: center; }
-        header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
+        .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
           text-align: center;
           color: #663300;
           cursor: pointer; }
-          header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
+          .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
             border-bottom: 1px solid #663300; }
-  header.globalHead .headLogo {
+  .globalHead .headLogo {
     width: 10vw;
     padding: 10px 20px;
     display: inline-block; }
-    header.globalHead .headLogo img {
+    .globalHead .headLogo img {
       display: inline-block;
       height: 65px; }
-  header.globalHead .headerRight {
+  .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
     box-sizing: border-box; }
-    header.globalHead .headerRight .headSearch {
+    .globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
       box-sizing: border-box;
       text-align: right; }
-      header.globalHead .headerRight .headSearch span {
+      .globalHead .headerRight .headSearch span {
         margin-right: 10px;
         color: #fbf8f1;
         font-weight: 300; }
-      header.globalHead .headerRight .headSearch #headSearch {
+      .globalHead .headerRight .headSearch #headSearch {
         width: 20%;
         height: 30px;
         display: inline-block;
@@ -307,7 +308,7 @@ header.globalHead {
         outline: none;
         box-sizing: border-box;
         vertical-align: top; }
-      header.globalHead .headerRight .headSearch select {
+      .globalHead .headerRight .headSearch select {
         display: inline-block;
         width: 80px;
         height: 30px;
@@ -319,7 +320,7 @@ header.globalHead {
         outline: none;
         border-radius: 2px;
         box-sizing: border-box; }
-      header.globalHead .headerRight .headSearch button {
+      .globalHead .headerRight .headSearch button {
         width: 80px;
         display: inline-block;
         height: 30px;
@@ -329,12 +330,12 @@ header.globalHead {
         margin: 0px 5px;
         font-size: 16px;
         border-radius: 2px; }
-        header.globalHead .headerRight .headSearch button:focus {
+        .globalHead .headerRight .headSearch button:focus {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
           box-sizing: border-box; }
-      header.globalHead .headerRight .headSearch #headSearchSubmit {
+      .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
         height: 30px;
@@ -346,42 +347,44 @@ header.globalHead {
         border-radius: 2px;
         outline: none;
         box-sizing: border-box; }
-        header.globalHead .headerRight .headSearch #headSearchSubmit:active {
+        .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-    header.globalHead .headerRight .headAccount {
+    .globalHead .headerRight .headAccount {
       width: 100px;
       float: left; }
-      header.globalHead .headerRight .headAccount #headMemStatus {
+      .globalHead .headerRight .headAccount #headMemStatus {
         display: none; }
-        header.globalHead .headerRight .headAccount #headMemStatus #headMemPic {
+        .globalHead .headerRight .headAccount #headMemStatus #headMemPic {
           width: 100%;
           height: 70px; }
-      header.globalHead .headerRight .headAccount #headMemLogin {
+      .globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
         height: 70px; }
-        header.globalHead .headerRight .headAccount #headMemLogin .loginGrp {
+        .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
           width: 50%;
           margin: auto;
           height: 70px;
           position: relative; }
-        header.globalHead .headerRight .headAccount #headMemLogin .loginBtn {
+        .globalHead .headerRight .headAccount #headMemLogin .loginBtn {
           padding: 7px 0px; }
-        header.globalHead .headerRight .headAccount #headMemLogin #loginIcon {
+        .globalHead .headerRight .headAccount #headMemLogin #loginIcon {
           width: 32px;
           height: 32px;
           display: block;
           margin: auto;
           fill: #fbf8f1; }
-        header.globalHead .headerRight .headAccount #headMemLogin #loginTxt {
+        .globalHead .headerRight .headAccount #headMemLogin #loginTxt {
           text-align: center;
           color: #fbf8f1;
           display: block;
           margin: auto;
           font-weight: 300; }
-  header.globalHead .rwd_headerSearch {
+  .globalHead .rwd_headerSearch {
     display: none; }
-  header.globalHead .burgerMenu {
+  .globalHead .burgerMenu {
+    display: none; }
+  .globalHead .rwdSearchBar {
     display: none; }
 
 #menu {
@@ -419,6 +422,7 @@ footer {
   clear: both; }
 
 .globalOkBtn {
+  display: block;
   width: 150px;
   height: 45px;
   border-radius: 22.5px;
@@ -436,6 +440,7 @@ footer {
     cursor: pointer; }
 
 .globalCancelBtn {
+  display: block;
   width: 150px;
   height: 45px;
   border-radius: 22.5px;
@@ -591,19 +596,19 @@ footer {
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
 @media screen and (max-width: 900px) {
-  header.globalHead {
+  .globalHead {
     text-align: center; }
-    header.globalHead .headLogo {
+    .globalHead .headLogo {
       min-width: 150px;
       width: 20vw;
       margin: auto;
       display: inline-block;
       text-align: center; }
-      header.globalHead .headLogo img {
+      .globalHead .headLogo img {
         width: 100%; }
-    header.globalHead .headerRight {
+    .globalHead .headerRight {
       display: none; }
-    header.globalHead .rwd_headerSearch {
+    .globalHead .rwd_headerSearch {
       display: inline-block;
       width: 40px;
       height: 40px;
@@ -612,11 +617,11 @@ footer {
       right: 20px;
       bottom: 0;
       margin: auto; }
-      header.globalHead .rwd_headerSearch .searchIcon {
+      .globalHead .rwd_headerSearch .searchIcon {
         width: 20vw;
         height: 40px;
         fill: #fbf8f1; }
-    header.globalHead .burgerMenu {
+    .globalHead .burgerMenu {
       display: inline-block;
       width: 20%;
       height: 40px;
@@ -625,46 +630,26 @@ footer {
       bottom: 0;
       left: 0;
       margin: auto; }
-      header.globalHead .burgerMenu span {
+      .globalHead .burgerMenu span {
+        width: 40px;
+        height: 40px;
         display: block;
-        width: 30px;
-        height: 4px;
-        left: 15px;
-        background-color: #fbf8f1;
-        border-radius: 4px;
-        position: absolute;
         margin: auto;
+        fill: #fbf8f1; }
+      .globalHead .burgerMenu.active {
         transition: .3s ease; }
-        header.globalHead .burgerMenu span:nth-of-type(1) {
-          top: 5px; }
-        header.globalHead .burgerMenu span:nth-of-type(2) {
-          top: 16px; }
-        header.globalHead .burgerMenu span:nth-of-type(3) {
-          top: 27px; }
-      header.globalHead .burgerMenu.active {
-        transition: .3s ease; }
-        header.globalHead .burgerMenu.active span:nth-of-type(1) {
-          transform: rotate(-45deg);
-          transition: .3s ease;
-          top: 20px; }
-        header.globalHead .burgerMenu.active span:nth-of-type(2) {
-          display: none; }
-        header.globalHead .burgerMenu.active span:nth-of-type(3) {
-          transform: rotate(45deg);
-          top: 20px;
-          transition: .3s ease; }
-    header.globalHead #menu {
+    .globalHead #menu {
       display: block;
       position: fixed;
       top: 80px;
       background-color: rgba(0, 0, 0, 0.5); }
-      header.globalHead #menu.hideMenu {
-        left: -375px;
+      .globalHead #menu.hideMenu {
+        left: -120%;
         transition: all 0.3s ease; }
-      header.globalHead #menu.show {
+      .globalHead #menu.show {
         left: 0;
         transition: all 0.3s ease; }
-      header.globalHead #menu ul {
+      .globalHead #menu ul {
         display: block;
         width: 375px;
         min-width: 320px;
@@ -684,26 +669,26 @@ footer {
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
-        header.globalHead #menu ul li {
+        .globalHead #menu ul li {
           display: block;
           padding: 10px;
           color: #fbf8f1; }
-          header.globalHead #menu ul li.closeMenu span {
+          .globalHead #menu ul li.closeMenu span {
             width: 30px;
             display: block;
             float: right;
             fill: #fbf8f1; }
-          header.globalHead #menu ul li.memPart {
+          .globalHead #menu ul li.memPart {
             height: 60px; }
-            header.globalHead #menu ul li.memPart .memPic {
+            .globalHead #menu ul li.memPart .memPic {
               width: 30%;
               height: 100%;
               float: left; }
-              header.globalHead #menu ul li.memPart .memPic img {
+              .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%; }
-            header.globalHead #menu ul li.memPart span {
+            .globalHead #menu ul li.memPart span {
               width: 70%;
               height: 100%;
               display: block;
@@ -711,11 +696,74 @@ footer {
               margin: auto;
               line-height: 50px;
               text-align: center; }
-          header.globalHead #menu ul li.listTitle {
+          .globalHead #menu ul li.listTitle {
             font-size: 1.2em; }
-          header.globalHead #menu ul li a {
+          .globalHead #menu ul li a {
             color: #fbf8f1;
-            font-weight: 400; } }
+            font-weight: 400; }
+    .globalHead .rwdSearchBar {
+      background: rgba(128, 89, 52, 0.9);
+      /* Old browsers */
+      background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* IE10+ */
+      background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+      /* IE6-9 */
+      width: 100%;
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      height: 80px;
+      transition: .3s;
+      display: block; }
+      .globalHead .rwdSearchBar .rwdsearchItem {
+        width: 90%;
+        height: 30px;
+        margin: 5px auto; }
+        .globalHead .rwdSearchBar .rwdsearchItem select {
+          width: 25%;
+          height: 100%;
+          float: left;
+          text-align: center;
+          border: 1px solid #fbf8f1;
+          background-color: transparent;
+          color: #fbf8f1;
+          outline: none;
+          border-radius: 2px;
+          font-size: 16px; }
+        .globalHead .rwdSearchBar .rwdsearchItem button {
+          width: 25%;
+          height: 100%;
+          float: left;
+          text-align: center;
+          color: #fbf8f1;
+          background-color: transparent;
+          border: 1px solid #fbf8f1;
+          border-radius: 2px;
+          outline: none;
+          font-size: 16px; }
+          .globalHead .rwdSearchBar .rwdsearchItem button:focus {
+            background-color: #fbf8f1;
+            color: #805934;
+            outline: none; }
+      .globalHead .rwdSearchBar input {
+        width: 100%;
+        height: 40px;
+        outline: none;
+        border: none; }
+      .globalHead .rwdSearchBar.activeSearch {
+        top: 80px;
+        right: 0;
+        transition: .3s; } }
 .container {
   padding-top: 80px;
   width: 100%; }

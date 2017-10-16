@@ -1,0 +1,95 @@
+body {
+  background-color: #e6e0d9; }
+
+.coverHeader {
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  left: 0;
+  top: 0; }
+  .coverHeader .Backheader {
+    background-color: #805934;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 900; }
+    .coverHeader .Backheader p {
+      text-align: left;
+      padding-left: 150px;
+      color: #fff;
+      line-height: 80px;
+      font-size: 28px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto; }
+    .coverHeader .Backheader .logoimg {
+      width: 120px;
+      height: 80px;
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: 7px;
+      z-index: 10;
+      line-height: 80px; }
+      .coverHeader .Backheader .logoimg img {
+        width: 100%; }
+
+.headerCenter {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  color: #fff; }
+
+.navition {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 20px;
+  z-index: 999; }
+  .navition li {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    width: 120px;
+    text-align: center;
+    line-height: 50px;
+    margin: 15px 0px;
+    background-color: #9e693d;
+    border-radius: 4px; }
+    .navition li:hover {
+      color: #f6921E; }
+    .navition li:hover span {
+      color: #f6921E; }
+    .navition li.memMan ul {
+      display: none; }
+    .navition li.memMan:hover ul {
+      display: block; }
+      .navition li.memMan:hover ul li:hover {
+        color: #f6921E; }
+    .navition li.bsnMan ul {
+      display: none; }
+    .navition li.bsnMan:hover ul {
+      display: block; }
+      .navition li.bsnMan:hover ul li:hover {
+        color: #f6921E; }
+    .navition li span {
+      color: #fff; }
+    .navition li ul {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      z-index: 999; }
+      .navition li ul li {
+        background-color: #9e693d;
+        margin: 0;
+        z-index: 999; }

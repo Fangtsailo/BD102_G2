@@ -26,8 +26,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$top}', endColorstr='#{$bottom}', GradientType=0 ); /* IE6-9 */
 }
 
-
-
 //RWD斷點
 
 $mobile: 767px;
@@ -37,8 +35,6 @@ $tablet_max:1024px;
 @mixin rwd($breakpoint){
 	
 	@if $breakpoint == "mobile" {
-
-// <<<<<<< HEAD
 		@media screen and (max-width:$mobile){
 			@content;
 
