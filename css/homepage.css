@@ -961,6 +961,11 @@ section {
     transform: scale(1, 1); }
   100% {
     transform: scale(1.2, 1.2); } }
+@keyframes moveDown {
+  0% {
+    transform: translate(0px, 5px); }
+  100% {
+    transform: translate(0px, 0px); } }
 .headerLink {
   width: 60%;
   height: 100%;
@@ -1200,18 +1205,45 @@ section {
               background-color: #f06428;
               color: #fbf8f1;
               transition: .3s; }
+    .homeSearchBar .itemGrp .sectionBetween {
+      margin-top: 30px; }
+      .homeSearchBar .itemGrp .sectionBetween p {
+        color: #fbf8f1;
+        font-size: 20px;
+        text-align: center;
+        text-shadow: 0px 0px 30px black; }
+      .homeSearchBar .itemGrp .sectionBetween img {
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 10px auto;
+        animation: moveDown .5s ease infinite alternate;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%; }
 
 @media screen and (max-width: 768px) {
   section.homeSearchBar .itemGrp {
     width: 100%;
-    padding: 150px 10px 0px 10px; }
+    padding: 100px 10px 0px 10px; }
     section.homeSearchBar .itemGrp .bigLogo {
       width: 50%;
       height: 30%;
       margin: auto; }
       section.homeSearchBar .itemGrp .bigLogo img {
         width: 100%;
-        height: 100%; } }
+        height: 100%; }
+    section.homeSearchBar .itemGrp .sectionBetween {
+      width: 100%; }
+      section.homeSearchBar .itemGrp .sectionBetween p {
+        color: #fbf8f1;
+        text-align: center;
+        font-size: 16px; }
+      section.homeSearchBar .itemGrp .sectionBetween img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: auto; } }
 @media screen and (max-width: 500px) {
   section.homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
     width: 100%;
@@ -1295,9 +1327,10 @@ section {
             float: left;
             height: 100%; }
             .homeTopChart .shopItem .shopPic .shopInfo ul li img {
-              width: 4vh;
-              height: 100%;
+              width: 30px;
+              height: 30px;
               float: left;
+              margin: 10px 0px;
               margin-right: 10px; }
             .homeTopChart .shopItem .shopPic .shopInfo ul li span {
               float: left;
@@ -1468,7 +1501,7 @@ section {
                 font-size: 16px; }
       .homeTopChart .shopItem .shopMessage {
         width: 100%;
-        height: 40%;
+        height: 30%;
         background-color: #f2ebd4;
         box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
         border-radius: 10px;
@@ -1515,6 +1548,9 @@ section {
         color: #fbf8f1;
         transition: .3s ease;
         cursor: pointer; } }
+.slick-dots {
+  bottom: 0px; }
+
 section.homeCarMap {
   background-image: url("../img/homepage/homepage_bg3.png");
   background-repeat: no-repeat;

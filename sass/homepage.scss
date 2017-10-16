@@ -13,12 +13,21 @@ section {
 	width: 100%;
 	height: 100vh;
 }
-//================= 首頁導覽列 ================================
+
 
 @keyframes shake {
 	0%{transform:scale(1,1);}
 	100%{transform:scale(1.2,1.2);}
 }
+
+
+@keyframes moveDown {
+	0%{ transform:translate(0px,5px); }
+	100%{ transform:translate(0px,0px); }
+}
+//================= 首頁導覽列 ================================
+
+
 
 
 .headerLink {
@@ -320,6 +329,25 @@ section {
 
 
 		}
+		.sectionBetween {
+			margin-top: 30px;
+			p {
+					color:$globalBgColor;
+					font-size: 20px;
+					text-align: center;
+					text-shadow:0px 0px 30px rgba(0,0,0,1);
+				}
+				img {
+					display: block;
+					width: 60px;
+					height: 60px;
+					margin: 10px auto;
+					animation:moveDown .5s ease infinite alternate;
+					cursor:pointer;
+					background-color: rgba(0,0,0,.7);
+					border-radius: 50%;
+				}
+		}
 
 	}
 
@@ -329,7 +357,7 @@ section {
 	section.homeSearchBar{
 		.itemGrp {
 			width: 100%;
-			padding:150px 10px 0px 10px;
+			padding:100px 10px 0px 10px;
 			.bigLogo {
 			width: 50%;
 			height: 30%;
@@ -341,7 +369,21 @@ section {
 
 				}
 			}
-			  
+			.sectionBetween {
+				width: 100%;
+				p {
+					color:$globalBgColor;
+					text-align: center;
+					font-size: 16px;
+				}
+				img {
+					display: block;
+					width: 40px;
+					height: 40px;
+					margin: auto;
+				}
+
+			} 
 
 		}
 	}
@@ -365,6 +407,7 @@ section {
 					}
 				}
 			}
+
 		}
 	}
 }
@@ -457,10 +500,10 @@ section {
 							float: left;
 							height: 100%;
 							img {
-								width:4vh;
-								// height: 1em;
-								height: 100%;
+								width:30px;
+								height: 30px;
 								float: left;
+								margin: 10px 0px; 
 								margin-right: 10px;
 							}
 							span {
@@ -671,7 +714,7 @@ section {
 			}
 			.shopMessage {
 				width: 100%;
-				height: 40%;
+				height: 30%;
 				background-color: $globalFtColor;
 				box-shadow:0px 11px 24px rgba(165,160,148,0.56);
 				border-radius:10px;
@@ -734,7 +777,9 @@ section {
 	}
 
 }
-
+.slick-dots {
+	bottom: 0px;
+}
 
 
 

@@ -158,7 +158,13 @@ require_once("headerForHomePage.php");
 					<button type="submit" onclick="location.href='search.php'">搜尋</button>
 					</div>
 				</div>
+				<div class="clearfix"></div>
 			</div>
+			<div class="sectionBetween">
+				<p>不知從何找起？<br>那就先來看看我們為您精選的熱門店家！</p>
+				<img src="img/icon/scrolldown.svg" class="section2-click">
+			</div>
+
 		</div>
 
 
@@ -186,8 +192,8 @@ require_once("headerForHomePage.php");
 					<div class="shopInfo">
 						<ul>
 							<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
-							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
-							<li><img src="img/icon/follow.svg"><span>265人追蹤</span></li>
+							<li><img src="img/icon/star2.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow3.svg"><span>265人追蹤</span></li>
 						</ul>
 					</div>
 				</div>
@@ -210,8 +216,8 @@ require_once("headerForHomePage.php");
 					<div class="shopInfo">
 						<ul>
 							<li><img src="img/icon/mappointer1.svg"><span>台北市</span></li>
-							<li><img src="img/icon/star.svg"><span>4.5顆星</span></li>
-							<li><img src="img/icon/follow.svg"><span>900人追蹤</span></li>
+							<li><img src="img/icon/star2.svg"><span>4.5顆星</span></li>
+							<li><img src="img/icon/follow3.svg"><span>900人追蹤</span></li>
 						</ul>
 					</div>
 				</div>
@@ -234,8 +240,8 @@ require_once("headerForHomePage.php");
 					<div class="shopInfo">
 						<ul>
 							<li><img src="img/icon/mappointer1.svg"><span>台中市</span></li>
-							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
-							<li><img src="img/icon/follow.svg"><span>460人追蹤</span></li>
+							<li><img src="img/icon/star2.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow3.svg"><span>460人追蹤</span></li>
 						</ul>
 					</div>
 				</div>
