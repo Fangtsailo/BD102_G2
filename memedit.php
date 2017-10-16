@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memtry.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
 </head>
@@ -62,9 +63,9 @@
 						<label for="MEM_PHONE">手機</label>
 						<input type="tel" name="MEM_PHONE" pattern="\d{10}" placeholder="輸入格式:0900888888">
 					</p>
-					<p>
-						<input type="checkbox" id="check">
-						<label for="check"><button>變更密碼</button></label>
+					<div>
+						<input type="checkbox" id="check" name="check">
+						<label for="check"><a>變更密碼</a></label>
 						<input type="submit" value="儲存">
 					
 					<!-- 變更密碼光箱 -->
@@ -86,7 +87,7 @@
 								<label for="check"><img src="img/memimg/micon_cancel3.svg"></label>
 					    	</div>
 					    </div>
-					</p>
+					</div>
 				</form>
 			</section>
 

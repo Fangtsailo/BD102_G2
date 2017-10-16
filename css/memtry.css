@@ -76,6 +76,7 @@ img{
 .content{
 	max-width: 1000px;
 	width: 69.4444%;
+	height: 64vh;
 	margin: 0 auto;
 }
 .content h1 img{
@@ -488,7 +489,8 @@ input[type="file"]{
 }
 
 #check{
-	display: none;
+	height: 50px;
+	/*display: none;*/
 }
 
 .box .changepsw{
@@ -501,8 +503,8 @@ input[type="file"]{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	/*opacity: 0;
-	transition: opacity 1.5s;*/
+	opacity: 0;
+	transition: opacity 1.5s;
 }
 
 .box .changepsw p{
