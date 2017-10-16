@@ -49,8 +49,8 @@ a {
 		background-size: cover;
 		width: 100%;
 		height: 50vw;
-		background-image: url("../img/SHOPB/BN_01.JPG");			
-		animation: banners-slide 18s 2s infinite;
+		//background-image: url("../img/SHOPB/BN_01.JPG");			
+		animation: banners-slide 18s 0s infinite;
 	}
 	@keyframes banners-slide {
 		0% { background-image:url("../img/SHOPB/BN_01.JPG")}
@@ -92,46 +92,70 @@ a {
 }
 
 #SPGRADE{
-	width: 20vw;
-	height:3.5vw;
+	width: 17vw;
+	height:3vw;
 	padding:0.5vw;
 	box-sizing:border-box;
-	line-height: 2.5vw;
+	line-height: 2vw;
 	background-color: rgba(255,255,255,.7);
 	color: #333;
 	text-align: center;
 	font-size: 1.1vw;
-	//line-height: 2vw;
 	position: absolute;
 	top:28vw ;
 	left:9vw ;
 }
-.star1{float: left; width: 3vw;}
-.star2{float: left; width: 3vw;}
-.star3{float: left; width: 3vw;}
-.star4{float: left; width: 3vw;}
-.star5{float: left; width: 3vw;}
+.star1{float: left; width: 2.5vw;}
+.star2{float: left; width: 2.5vw;}
+.star3{float: left; width: 2.5vw;}
+.star4{float: left; width: 2.5vw;}
+.star5{float: left; width: 2.5vw;}
 #SPGRADE img{
-	width: 45%;}
+	width: 55%;}
 
-
-
-#SPFOLLOW{
+#GIVESTAR{
+	float: left;
 	width: 3.5vw;
-	height:3.5vw;
-	padding:0.5vw;
-	box-sizing:border-box;
-	//line-height: 6vw;
+	line-height: 2.4vw;
+}
+#GIVESTAR a{
+	text-decoration: none;
+	color: $globalAltColor;
+}
+#GIVESTAR a:hover{
+	text-decoration: none;
+	color: #333;
+}
+#getstar{
+	width: 7vw;
+	height: 3vw;
+	line-height: 3vw;
 	background-color: rgba(255,255,255,.7);
 	color: #333;
-	//text-align: center;
-	font-size: 1.1vw;
-	//line-height: 2vw;
+	text-align: center;
+	font-size: 1vw;
 	position: absolute;
 	top:28vw ;
-	left:30.3vw ;
+	left:26.8vw ;
 }
-#SPFOLLOW img{width: 100%;}
+
+#SPFOLLOW{
+	width: 3vw;
+	height:3vw;
+	line-height: 0.5vw;
+	//background-color: rgba(255,255,255,.7);
+	color: #333;
+	font-size: 1.1vw;
+	position: absolute;
+	top: 23.7vw ;
+	left:30vw ;
+}
+#SPFOLLOW img{width: 80%;
+			margin-left: 10%;}
+#getfollow{font-size: 14px;
+		text-align: center;}
+
+
 #SPSTORY{
 	height:18vw;
 	width: 40vw;
@@ -145,7 +169,6 @@ a {
 	position: absolute;
 	top:19vw ;
 	left:53vw ;
-
 }
 
 #SPHAPPY{
@@ -433,7 +456,8 @@ a {
 	left: 40vw;
 }
 #ACTIMG img{
-	width: 100%;
+	height: 33vw;
+	width: 87%;
 	opacity: .9;
 }
 #SKINAREA{
@@ -469,6 +493,11 @@ a {
 	bottom: 10vw;
 	right: 40vw;
 	border: none;
+}
+#ACTBT:hover{
+	background-color: #fff;
+	color: #f06428;
+	border: 1px solid #f06428;
 }
 
 

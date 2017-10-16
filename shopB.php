@@ -46,9 +46,6 @@
 	<section class="SHOPB_SHOP">
 		
 		<div class="banners">
-		<!-- <img src="img/SHOPB/店家-MONO-扁.jpg"> -->
-		<!-- <img src="img/SHOPB/BN_02.JPG">
-		<img src="img/SHOPB/BN_03.JPG"> -->
 		</div>
 
 
@@ -61,16 +58,38 @@
 			<p>每週一公休</p>
 			<p>03 - 1234567</p>
 		</div>
-		<div id="SPGRADE">
-			<div class="star1"><img src="img/SHOPB/star2.svg"></div>
-			<div class="star2"><img src="img/SHOPB/star2.svg"></div>
-			<div class="star3"><img src="img/SHOPB/star2.svg"></div>
-			<div class="star4"><img src="img/SHOPB/star.svg"></div>
-			<div class="star5"><img src="img/SHOPB/star.svg"></div>
-			<span>3.5</span>
+		<div id="SPGRADE" >
+			<div class="star star1">
+				<img src="img/SHOPB/star.svg">
+				<img src="img/SHOPB/star2.svg">
+			</div>
+			<div class="star star2"><img src="img/SHOPB/star.svg"></div>
+			<div class="star star3"><img src="img/SHOPB/star.svg"></div>
+			<div class="star star4"><img src="img/SHOPB/star.svg"></div>
+			<div class="star star5"><img src="img/SHOPB/star.svg"></div>
+			<div id="GIVESTAR">
+			<a href="#"><input  type="hidden" name="" value="" placeholder="">送出</a>
+			</div>
+		</div>
+
+<!-- <script>
+	 $(function(){ 
+	 $(".star").mouseenter(function(){
+	 $(".star").css("background","#f60");
+	 $(this).css("background","#f60");
+	 $(this).nextAll().css("background","#ccc");
+ })
+});
+</script> -->
+
+		<div id="getstar">
+			<span>好評</span>
+			<span>&nbsp3.5&nbsp</span>
+			<span>分</span>
 		</div>
 		<div id="SPFOLLOW">
 			<img src="img/SHOPB/heart.png" id="heart" title="收藏到口袋！">
+			<p id="getfollow">(123)</p>
 		</div>
 
 		<script>
