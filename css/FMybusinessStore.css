@@ -7,6 +7,9 @@
 .coverHeader {
   height: 80px; }
 
+.week_checkBox {
+  display: none; }
+
 header {
   z-index: 3; }
 
@@ -67,19 +70,67 @@ header {
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(2) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(3) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(3) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(4) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(4) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(5) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(5) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(6) {
         height: 100px; }
         .CenterBusiness .content-table table tr:nth-child(6) th div {
@@ -89,11 +140,8 @@ header {
           width: 19%;
           border: 1px solid #ddd;
           margin: 10px;
-          padding: 5px 0; }
-          .CenterBusiness .content-table table tr:nth-child(6) td div div:hover {
-            background-color: #4289FF;
-            color: #fff;
-            transition: 0.5s; }
+          padding: 5px 0;
+          transition: .3s; }
       .CenterBusiness .content-table table tr:nth-child(7) {
         height: 100px; }
         .CenterBusiness .content-table table tr:nth-child(7) th div {
@@ -115,7 +163,8 @@ header {
           width: 90%;
           height: 140px;
           border: 1px solid #ccc;
-          resize: none; }
+          resize: none;
+          outline: none; }
       .CenterBusiness .content-table table tr:nth-child(9) {
         height: 220px; }
         .CenterBusiness .content-table table tr:nth-child(9) th div {
@@ -154,7 +203,8 @@ header {
       border: none;
       width: 150px;
       height: 50px;
-      border-radius: 25px; }
+      border-radius: 25px;
+      outline: none; }
       .CenterBusiness .commit input:nth-child(1) {
         margin-right: 10px;
         border: 1px solid #F06428;
@@ -210,6 +260,11 @@ header {
 .moveToLeft {
   right: -70px;
   transition: 1s; }
+
+.chooseWeek {
+  background-color: #4289FF;
+  color: #fff !important;
+  transition: .3s; }
 
 footer {
   width: 100vw;

@@ -2,6 +2,8 @@
 @import "member/myBusiness/store/_FMybusinessStorMixin.scss";
 @import "basic/_var.scss";
 
+
+
 @keyframes letterDraw {
   		to {
   			stroke-dashoffset: 0;
@@ -19,6 +21,10 @@
 .coverHeader{
 	// width: 100vw;
 	height: 80px;
+}
+
+.week_checkBox{
+	display: none;
 }
 
 header{
@@ -102,6 +108,7 @@ width: 100%;
 .CenterBusiness{
 	margin-top:260px ;
 	width: 70%;
+
 	// height: 1800px;
 	// border: 2px solid #f00;
 	// display: inline-block;
@@ -196,6 +203,7 @@ width: 100%;
 				
 				&:nth-child(2){
 					@include tdInputTextForm();
+
 				}
 
 
@@ -234,14 +242,16 @@ width: 100%;
 								border:1px solid #ddd;
 								margin: 10px;
 								padding: 5px 0;
+								transition:.3s;
+
 								// min-width: 63px;
 
 
-								&:hover{
-									background-color: #4289FF;
-									color:#fff;
-									transition:0.5s;
-								}
+								// &:hover{
+								// 	background-color: #4289FF;
+								// 	color:#fff;
+								// 	transition:0.5s;
+								// }
 
 							}
 
@@ -302,6 +312,7 @@ width: 100%;
 							height: 140px;
 							border:1px solid #ccc;
 							resize : none;
+							outline: none;
 						}
 
 					}
@@ -389,6 +400,7 @@ width: 100%;
 			width: 150px;
 			height: 50px;
 			border-radius: 25px;
+			outline: none;
 			&:nth-child(1){
 				margin-right: 10px;
 				border: 1px solid #F06428;
@@ -509,6 +521,11 @@ width: 100%;
 }
 
 
+.chooseWeek{
+	background-color: #4289FF;
+	color:#fff !important;
+	transition:.3s;
+}
 
 footer{
 	width: 100vw;

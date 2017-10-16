@@ -6,11 +6,14 @@
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStore.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 
 
 
 	<!-- =====header==== -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/FMybusinessStore.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
 
@@ -124,12 +127,12 @@
 			<table>
 				
 				<tr class="tabletitle" >
-					<th colspan="2">資本資料</th>
+					<th colspan="2">基本資料</th>
 				</tr>
 
 				<tr>
 				<th><div>狀態</div></th>
-				<td><input type="text" name="" value="上架中"></td>
+				<td><p>營運中</p></td>
 				</tr>
 
 
@@ -155,19 +158,28 @@
 				<th><div>公休日<br>(複選)</div></th>
 				<td>
 					<div>
-						<a href="#"><div>星期一</div></a>
-						<a href="#"><div>星期二</div></a>
-						<a href="#"><div>星期三</div></a>
-						<a href="#"><div>星期四</div></a>
+						<label for="weekCheck_0"><a href="#"><div class="week">星期一</div></a></label>
+						<label for="weekCheck_1"><a href="#"><div class="week">星期二</div></a></label>
+						<label for="weekCheck_2"><a href="#"><div class="week">星期三</div></a></label>
+						<label for="weekCheck_3"><a href="#"><div class="week">星期四</div></a></label>
 					</div>
 					<div>
-						<a href="#"><div>星期五</div></a>
-						<a href="#"><div>星期六</div></a>
-						<a href="#"><div>星期日</div></a>
-						<a href="#"><div>國定假</div></a><samp></samp>
+						<label for="weekCheck_4"><a href="#"><div class="week">星期五</div></a></label>
+						<label for="weekCheck_5"><a href="#"><div class="week">星期六</div></a></label>
+						<label for="weekCheck_6"><a href="#"><div class="week">星期日</div></a></label>
+						<label for="weekCheck_7"><a href="#"><div class="week">國定假</div></a></label>
 					</div>
 				</td>
 				</tr>
+
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_0" value="0">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_1" value="1">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_2" value="2">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_3" value="3">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_4" value="4">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_5" value="5">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_6" value="6">
+				<input type="checkbox" class="week_checkBox" name="weekCheck" id="weekCheck_7" value="7">
 
 
 				<tr>

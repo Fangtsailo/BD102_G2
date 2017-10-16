@@ -37,10 +37,10 @@
 	width: 200px;
 	height: 100%;
 
-	position: fixed;
-	top: 124px;
+	position: absolute;
+	top: 44px;
 	right: -200px;
-	transition:1s;
+	transition:.2s;
 	background-color: $globalFtColor;
 	// border:1px solid #f00;
 	ul{
@@ -85,6 +85,16 @@
 .moveToLeft{
 	right: -70px;
 	transition:.2s;
+}
+
+.moveToLeftTop{
+	top :44px;
+	right: -70px;
+	transition:right .2s;
+}
+
+.hide{
+	display: none;
 }
 
 

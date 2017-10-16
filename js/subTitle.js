@@ -14,22 +14,35 @@
     var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
 
 
+
 	window.addEventListener('scroll', function(){
  	 var st = this.scrollY;
   		if( st > lastScrollY) {
   	  		
   	  		subtitleClass.add('hideUp_sub');
-  	  		CoverRightMyClass.add('hideUp_sub_burger');
+  	  		CoverRightMyClass.remove('moveToLeft');
+
+          
   		}else{
     		
     		subtitleClass.remove('hideUp_sub');
-    		CoverRightMyClass.remove('hideUp_sub_burger');
+    		CoverRightMyClass.remove('moveToLeft');
   		}
   		lastScrollY = st;
 	});
 
+
+
     $(".burger").click(function(){
-        $(".CoverRightMy").toggleClass("moveToLeft");
+
+       
+
+          $(".CoverRightMy").toggleClass("moveToLeft");
+
+        
+
+
+
     });
 
 
