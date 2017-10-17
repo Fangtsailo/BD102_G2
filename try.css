@@ -10,6 +10,7 @@ body{
 	background: -o-radial-gradient(ellipse,#f2ebd4, #fbf8f1);
 	background: -moz-radial-gradient(ellipse,#f2ebd4, #fbf8f1);
 	background: radial-gradient(ellipse,#f2ebd4, #fbf8f1);
+	line-height: 1.3em;
 }
 
 ul{
@@ -434,6 +435,30 @@ a.del:after{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (max-width: 767px) {
+	.mycomment li{
+		width: 100%;
+	}
+	.mycomment li:nth-child(even){
+	left: 0;
+	}
+	.msg2{
+		margin: 0 0 0 40px;
+	}
+	.mycomment li:nth-child(odd) .msg2:before{
+		left: -15px;
+		border-left: none;
+		border-right: 16px solid #fff;
+	}
+	.msg2 time{
+		float: none;
+	}
+	#del{
+		padding: 0%;
+	    margin-top: -65px;
+	    margin-right: -10px;
+	}
+}
 /*===================我的報名===================*/
 .myentry{
 	width: 300px;
