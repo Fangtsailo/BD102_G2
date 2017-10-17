@@ -43,31 +43,34 @@ header {
   text-align: center;
   padding-top: 50px;
   margin-bottom: 100px; }
-  .commit input {
+  .commit a:nth-child(1) input {
     border: none;
     width: 80px;
     height: 40px;
-    border-radius: 25px; }
-    .commit input:nth-child(1) {
-      margin-right: 10px;
-      background-color: #53c453;
-      color: #fff;
-      display: inline-block; }
-      .commit input:nth-child(1):hover {
-        border: 1px solid #53c453;
-        color: #53c453;
-        background-color: #fff;
-        transition: 0.2s; }
-    .commit input:nth-child(2) {
-      margin-right: 10px;
-      background-color: #cc4e4e;
-      color: #fff;
-      display: inline-block; }
-      .commit input:nth-child(2):hover {
-        border: 1px solid #cc4e4e;
-        color: #cc4e4e;
-        background-color: #fff;
-        transition: 0.2s; }
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #cc4e4e;
+    color: #fff;
+    display: inline-block; }
+    .commit a:nth-child(1) input:hover {
+      border: 1px solid #cc4e4e;
+      color: #cc4e4e;
+      background-color: #fff;
+      transition: 0.2s; }
+  .commit a:nth-child(2) input {
+    border: none;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #53c453;
+    color: #fff;
+    display: inline-block; }
+    .commit a:nth-child(2) input:hover {
+      border: 1px solid #53c453;
+      color: #53c453;
+      background-color: #fff;
+      transition: 0.2s; }
 
 .dutyColorChange {
   background-color: #00c853 !important;

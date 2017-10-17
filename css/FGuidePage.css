@@ -3,7 +3,9 @@ body {
   height: 100vh;
   position: relative;
   background-image: url("../img/GuidePage/GuideBgimg.png");
-  background-position: center center; }
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 2000px auto; }
 
 h2 {
   position: absolute;
@@ -81,7 +83,8 @@ h2 {
   z-index: 2;
   top: 14%;
   left: 16%;
-  margin: auto; }
+  margin: auto;
+  cursor: pointer; }
   .left-bread:hover img {
     -webkit-transform: rotate(15deg) !important;
     -ms-transform: rotate(15deg) !important;
@@ -103,7 +106,8 @@ h2 {
   z-index: 2;
   top: 14%;
   right: 16%;
-  margin: auto; }
+  margin: auto;
+  cursor: pointer; }
   .right-bread:hover img {
     -webkit-transform: rotate(15deg) !important;
     -ms-transform: rotate(15deg) !important;

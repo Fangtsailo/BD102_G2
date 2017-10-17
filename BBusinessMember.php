@@ -61,7 +61,8 @@ require_once("BackStageHeaderSidebar.php");
 			<!-- <section> -->
 
 			<div class="search">
-					<input type="text" name="">
+					<input type="text" name="" placeholder="請輸入帳號或姓名搜尋">
+					<img src="img/icon/BS_search.png">
 			</div>
 
 
@@ -89,185 +90,211 @@ require_once("BackStageHeaderSidebar.php");
 						<td>711</td>
 						<td>ID125</td>
 						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
 						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
-						<td class="authorityName">正常</td>
-						<td>
-							<input type="button" class="dutyChange" name="" value="停權">
-						</td>
-					</tr>
-					<tr>
-						<td>711</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td class="aa">梁朝偉</td>
-						<td>0939318183</td>
-						<td>通過</td>
-						<td><input type="button" name="" value="內容"></td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
 						<td class="authorityName">正常</td>
 						<td>
 							<input type="button" class="dutyChange" name="" value="停權">
 						</td>
 					</tr>
 
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+
+					<tr>
+						<td>711</td>
+						<td>ID125</td>
+						<td>ID125@gmail.com</td>
+						<td>梁朝偉</td>
+						<td>0939318184</td>
+						<td>通過</td>
+						<td><a href="BBusinessMemberContent.php"><input type="button" name="" value="內容"></a></td>
+						<td class="authorityName">正常</td>
+						<td>
+							<input type="button" class="dutyChange" name="" value="停權">
+						</td>
+					</tr>
+					
 					
 				</table>
 			<!-- </section> -->

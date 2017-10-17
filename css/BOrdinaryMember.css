@@ -15,21 +15,31 @@ header {
   left: 0; }
 
 .search {
-  width: 90%;
-  margin: auto;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   left: 0;
   right: 0;
   text-align: center;
   margin-top: 20px; }
+  .search img {
+    position: absolute;
+    top: 4px;
+    outline: none;
+    cursor: pointer; }
   .search input {
     width: 600px;
     height: 40px;
     border-radius: 15px;
     border: none;
     background-color: #b5b5b5;
-    opacity: 0.35; }
+    opacity: 0.5;
+    text-indent: 10px; }
+    .search input::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #000;
+      font-size: 13px;
+      text-indent: 10px;
+      font-family: "Noto Sans CJK TC"; }
 
 .tableHeaderCover {
   width: 100%;

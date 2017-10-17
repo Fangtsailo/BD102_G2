@@ -56,7 +56,8 @@ require_once("BackStageHeaderSidebar.php");
 			<!-- <section> -->
 
 			<div class="search">
-					<input type="text" name="">
+					<input type="text" name="" placeholder="請輸入帳號或姓名搜尋">
+					<img src="img/icon/BS_search.png">
 			</div>
 
 
@@ -86,7 +87,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -96,7 +97,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -106,7 +107,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -116,7 +117,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -126,7 +127,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -136,7 +137,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -146,7 +147,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -156,7 +157,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -166,7 +167,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -176,7 +177,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -186,7 +187,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -196,7 +197,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -206,7 +207,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -216,7 +217,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
 					<tr>
@@ -226,30 +227,10 @@ require_once("BackStageHeaderSidebar.php");
 						<td>梁朝偉</td>
 						<td>0939318183</td>
 						<td>9</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
-					<tr>
-						<td>101</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td>梁朝偉</td>
-						<td>0939318183</td>
-						<td>9</td>
-						<td>正常</td>
-						<td><input type="button" class="dutyChange" name="" value="停權"></td>
-					</tr>
-					<tr>
-						<td>101</td>
-						<td>ID125</td>
-						<td>ID125@gmail.com</td>
-						<td>梁朝偉</td>
-						<td>0939318183</td>
-						<td>9</td>
-						<td>正常</td>
-						<td><input type="button" class="dutyChange" name="" value="停權"></td>
-					</tr>
-
+					
 
 					
 				</table>

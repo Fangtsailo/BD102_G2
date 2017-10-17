@@ -70,7 +70,7 @@ require_once("BackStageHeaderSidebar.php");
 
 
 				<tr>
-				<th>營利事業登記証</th>
+				<th>胖小車照片</th>
 				<td><img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder"></td>
 				</tr>
 
@@ -85,9 +85,13 @@ require_once("BackStageHeaderSidebar.php");
 		</div>  <!-- content-table -->
 			
 
-		<div class="commit">
-			<input type="button" name="" value="核准">
-			<input type="button" name="" value="駁回">
+		<div class="commit">		
+			<a href="BBusinessMember.php">
+				<input type="button" name="" value="駁回">
+			</a>
+			<a href="BBusinessMember.php">
+				<input type="button" name="" value="核准">
+			</a>
 		</div>
 			
 </div> <!-- tableArea -->
