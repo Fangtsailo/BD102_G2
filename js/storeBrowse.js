@@ -390,14 +390,14 @@ new ScrollMagic.Scene({
 		        })])
 				// .addIndicators({name: "other-store"})
 				.addTo(controller);	
-var scene = new ScrollMagic.Scene({triggerElement: "a#screen-bread-car-map", duration: 200, triggerHook: "onLeave"})
-					.setTween(tween)
-					.addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
+// var scene = new ScrollMagic.Scene({triggerElement: "a#screen-bread-car-map", duration: 200, triggerHook: "onLeave"})
+// 					.setTween(tween)
+// 					.addIndicators() // add indicators (requires plugin)
+// 					.addTo(controller);
 
-				// change behaviour of controller to animate scroll instead of jump
-				controller.scrollTo(function (newpos) {
-					TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
-				});
+// 				// change behaviour of controller to animate scroll instead of jump
+// 				controller.scrollTo(function (newpos) {
+// 					TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+// 				});
 						
 }

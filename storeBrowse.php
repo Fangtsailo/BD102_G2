@@ -24,7 +24,8 @@
 
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
-	require_once("header.php");
+	require_once("header.php");	
+	require_once("php/store/browse/storeDetail.php");
  ?>
 <div class="navigator">
 	<div class="item">
@@ -74,30 +75,52 @@
 		<div class="store-logo"><img alt="store-logo1.png" src="img/store/browse/store-logo1.png"></div>
 		<div class="title">
 			<div class="container">
-				<h1 class="store-name">山下麵包</h1>
+				<h1 class="store-name"><?php echo $storeName ?></h1>
 			</div>
 		</div>
 		<div class="detail">
 			<ul class="follow col-xs-9">
+				<?php 
+					// for ($i = 0; $i < 5; $i++) {
+					// 	if ($review > 0) {
+
+					// 	}
+					// 	$review--;
+					// }
+				 ?>
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 			</ul>
-			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(123)</div>
+			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $follow ?>)</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">地址:</p>
-					<p class="content col-lg-9 col-xs-8">桃園市中壢區中大路300號</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $address ?></p>
 				</div>
 				<div class="open-time overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">營業時間:</p>
-					<p class="content col-lg-9 col-xs-8">禮拜一至五 11:00-20:00</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $openStartTime ?>點 - <?php echo $openEndTime ?>點</p>
 				</div>
 				<div class="phone overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">電話:</p>
-					<p class="content col-lg-9 col-xs-8">03-1234567</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $phone ?></p>
+				</div>
+				<div class="close-day overflow col-xs-12">
+					<p class="title col-lg-3 col-xs-4">公休日:</p>
+					<p class="content col-lg-9 col-xs-8">
+					<?php 
+						for ($i = 0; $i < count($closeDarArr); $i++) {
+							if ($i != count($closeDarArr) - 1) {
+								echo "星期", $i, ", ";
+							} else {
+								echo "星期", $i;
+							}
+						}
+					 ?>
+					</p>
 				</div>
 			</div>
 		</div>
