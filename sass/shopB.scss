@@ -49,10 +49,10 @@ a {
 		background-size: cover;
 		width: 100%;
 		height: 50vw;
-		//background-image: url("../img/SHOPB/BN_01.JPG");			
-		animation: banners-slide 18s 0s infinite;
+		background-image: url("../img/SHOPB/BN_01.JPG");			
+		animation: bannersslide 18s -1s ease-in infinite;
 	}
-	@keyframes banners-slide {
+	@keyframes bannersslide {
 		0% { background-image:url("../img/SHOPB/BN_01.JPG")}
 		16.66% { background-image: url("../img/SHOPB/BN_01.JPG")}
 		33.33% { background-image: url("../img/SHOPB/BN_02.JPG")}
