@@ -63,19 +63,16 @@ input {
           border-radius: 10px;
           margin-right: 10px;
           font-size: 16px;
-          text-align: center;
-          padding-top: 10px; }
+          text-align: center; }
         .LightBox section .square_2 label input {
           border: none;
           width: 50%;
           max-width: 200px;
           border-radius: 10px;
-          height: 40px;
+          height: 30px;
           margin: 0;
           padding: 0;
-          border: none;
-          text-indent: 10px;
-          font-family: "Noto Sans CJK TC"; }
+          border: none; }
       .LightBox section .square_2 span input {
         border: none;
         display: block;

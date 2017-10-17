@@ -1,9 +1,19 @@
+@-webkit-keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+
 @keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
+
+@-webkit-keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+
 @keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
+
 body {
   background-color: #fbf8f1; }
 
@@ -64,7 +74,8 @@ header {
       font-size: 18px;
       color: #fff; }
   .LeftBusiness div div:nth-child(2) {
-    width: 180px;
+    display: block;
+    width: 160px;
     height: 60px;
     background-color: #D9E8FF;
     border-radius: 2px;
@@ -78,7 +89,7 @@ header {
       margin: auto;
       font-size: 18px;
       color: #fff;
-      color: #4289FF; }
+      color: #4289FF !important; }
     .LeftBusiness div div:nth-child(2) svg {
       display: inline-block;
       position: absolute;
@@ -95,7 +106,8 @@ header {
       .LeftBusiness div div:nth-child(2) svg .cls-3 {
         fill: #999; }
   .LeftBusiness div div:nth-child(3) {
-    width: 180px;
+    display: block;
+    width: 160px;
     height: 60px;
     background-color: #D9E8FF;
     border-radius: 2px;
@@ -109,7 +121,7 @@ header {
       margin: auto;
       font-size: 18px;
       color: #fff;
-      color: #4289FF; }
+      color: #4289FF !important; }
     .LeftBusiness div div:nth-child(3) svg {
       display: inline-block;
       position: absolute;
@@ -126,7 +138,8 @@ header {
       .LeftBusiness div div:nth-child(3) svg .cls-3 {
         fill: #999; }
   .LeftBusiness div div:nth-child(4) {
-    width: 180px;
+    display: block;
+    width: 160px;
     height: 60px;
     background-color: #D9E8FF;
     border-radius: 2px;
@@ -140,7 +153,7 @@ header {
       margin: auto;
       font-size: 18px;
       color: #fff;
-      color: #4289FF; }
+      color: #4289FF !important; }
     .LeftBusiness div div:nth-child(4) svg {
       display: inline-block;
       position: absolute;
@@ -169,11 +182,13 @@ header {
       fill: none;
       stroke-width: 1;
       stroke: #4b7cbf;
+      -webkit-animation: letterleaf 1s ease forwards;
       animation: letterleaf 1s ease forwards; }
       .CenterBusiness .subtitle svg .line .line-g {
         opacity: 1;
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
+        -webkit-animation: letterDraw 3s ease forwards;
         animation: letterDraw 3s ease forwards; }
   .CenterBusiness .content-table .tableHeader {
     width: 90%;
@@ -296,6 +311,7 @@ footer {
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; } }
+
 @media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }

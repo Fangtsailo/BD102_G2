@@ -17,6 +17,7 @@
 
 	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
 
 

@@ -52,38 +52,38 @@
 
 
 				
-					<div>
-						<a href="FMybusinessStore.php">
-							<h3>基本資料</h3>
-							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
-								<defs>
-
-								</defs>
-								<title>arrow</title>
-								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
-							</svg>
-						</a>
-					</div>
-
-
-
-				<div>
-					<a href="FMybusinessStoreProductList.php">
-						<h3>商品</h3>
-						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
-							<defs>
-
-							</defs>
-							<title>arrow</title>
-							<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
-						</svg>
-					</a>
-				</div>
-
-
-				
-
-
+					<div><!-- group sub -->
+						<div>
+							<a href="FMybusinessStore.php">
+								<h3>基本資料</h3>
+								<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+									<defs>
+						
+									</defs>
+									<title>arrow</title>
+									<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+								</svg>
+							</a>
+						</div><!-- 基本資料 -->
+						
+						
+						
+						<div>
+							<a href="FMybusinessStoreProductList.php">
+								<h3>商品</h3>
+								<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+									<defs>
+							
+									</defs>
+									<title>arrow</title>
+									<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+								</svg>
+							</a>
+						</div><!-- 商品 -->
+						
+						
+										
+						</div> <!-- group sub -->
 			</div><!-- Group1 -->
 
 
@@ -103,13 +103,12 @@
 						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60">
 							<defs>
 								<style>
-									.cls-bc-1{fill:#f1f6fc;}
+									.cls-bc-1{fill:none;}
 									.cls-bc-2{fill:#4289FF;}
 									.cls-bc-3{fill:#fff;}
 								</style>
 							</defs>
 							<title>breadCar</title>
-							<rect class="cls-bc-1" y="30" width="210" height="30"/>
 							<rect class="cls-bc-2" width="180" height="60"/>
 							<circle class="cls-bc-2" cx="180" cy="30" r="30"/>
 							<path class="cls-bc-3" d="M198.33,25.94h-20a4.82,4.82,0,0,0-5,5v13h-2v2h4V31a2.86,2.86,0,0,1,3-3h1v8h27.46a21.24,21.24,0,0,1,.54,5v2a.91.91,0,0,1-1,1h-1.1a5,5,0,0,0-9.8,0h-8.2a5,5,0,1,0,0,2h8.2a5,5,0,0,0,9.8,0h1.1a2.91,2.91,0,0,0,3-3v-2C209.33,26.11,198.44,25.94,198.33,25.94Zm-11,8h-6v-6h6Zm8,0h-6v-6h6Zm2,0v-6h1c.28,0,5.47.09,7.83,6Zm-15,14a3,3,0,1,1,3-3A3,3,0,0,1,182.33,47.94Zm18,0a3,3,0,1,1,3-3A3,3,0,0,1,200.33,47.94Z" transform="translate(-10.33 -7.94)"/>
@@ -117,53 +116,53 @@
 					</div>
 				</a>
 				
-				<div>
-					<a href="FMybusinessCarPosition.php">
-						<h3>定位位置</h3>
-						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
-							<defs>
-
-							</defs>
-							<title>arrow</title>
-							<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
-						</svg>
-					</a>
-				</div>
-
-
-
-				<div>
-					<a href="FMybusinessStore.php">
-						<h3>基本資料</h3>
-						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
-							<defs>
-
-							</defs>
-							<title>arrow</title>
-							<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
-						</svg>
-					</a>
-				</div>
-
-
-				<div>
-					<a href="FMybusinessStoreProductList.php">
-						<h3>商品</h3>
-						<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
-							<defs>
-
-							</defs>
-							<title>arrow</title>
-							<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
-						</svg>
-					</a>	
-				</div>
-
-
+				<div><!-- group sub -->
+					<div>
+						<a href="FMybusinessCarPosition.php">
+							<h3>定位位置</h3>
+							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+								<defs>
+					
+								</defs>
+								<title>arrow</title>
+								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+							</svg>
+						</a>
+					</div><!-- 定位位置 -->
+					
+					
+					
+					<div>
+						<a href="FMybusinessStore.php">
+							<h3>基本資料</h3>
+							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+								<defs>
+					
+								</defs>
+								<title>arrow</title>
+								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+							</svg>
+						</a>
+					</div><!-- 基本資料 -->
+					
+					
+					<div>
+						<a href="FMybusinessStoreProductList.php">
+							<h3>商品</h3>
+							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+								<defs>
+					
+								</defs>
+								<title>arrow</title>
+								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+							</svg>
+						</a>	
+					</div><!-- 商品 -->
+				</div> <!-- group sub -->
 				
 
 
-			</div><!-- Group2 -->
+</div><!-- Group2 -->
 
 
 

@@ -9,32 +9,37 @@
 		height: 500px;
 		position: fixed;
 		left: 0;
-		top: 120px;
+		top: 160px;
+		z-index: 99;
 		// background-color: #ccc;
 		.nav-Group1{
 			margin-top: 30px;
 		}
-		div{
-			div{
-				&:nth-child(1){
-					@include member-nav-bar-mainTitle-propity();
-					// margin-top:150px;
+		
+			div{ //aa
+				 div{ //bb
+					
+						@include member-nav-bar-mainTitle-propity();
+						// margin-top:150px;
 
-				}
-				&:nth-child(2){
-					@include member-nav-bar-subTitle-propity();
 					
-				}
-				&:nth-child(3){
-					@include member-nav-bar-subTitle-propity();
-					
-				}
-				&:nth-child(4){
-					@include member-nav-bar-subTitle-propity();
-					
-				}
 
-				
-			}
-		}
-	}
+					div{//cc
+						&:nth-child(2){
+							@include member-nav-bar-subTitle-propity();
+							
+						}
+						&:nth-child(3){
+							@include member-nav-bar-subTitle-propity();
+							
+						}
+						&:nth-child(4){
+							@include member-nav-bar-subTitle-propity();
+							
+						}
+					}//cc
+					
+				}//bb
+			}//aa
+		
+	}//LeftBusiness

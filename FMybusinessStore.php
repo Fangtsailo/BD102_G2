@@ -6,14 +6,9 @@
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStore.css">
+	
+		<!-- =====header==== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-
-
-
-	<!-- =====header==== -->
-	<script type="text/javascript" src="js/FMybusinessStore.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
 
@@ -22,6 +17,7 @@
 
 	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
 
 
@@ -31,12 +27,12 @@
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 
-	
-	
 
-	
+
 </head>
+
 <body>
+
 
 <!-- ======================================================header 頁首========================================================= -->
 	<div class="coverHeader">
