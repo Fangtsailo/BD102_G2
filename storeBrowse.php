@@ -26,8 +26,47 @@
 <?php 
 	require_once("header.php");
  ?>
-
-	
+<div class="navigator">
+	<div class="item">
+		<a href=""><p>123</p></a>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p><div class="point"></div>
+	</div>
+</div>
+</div>
+<!-- <div class="navigator">
+	<div class="nav-selected item pointer">
+		<div class="name"><p>店家故事</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>胖小車路線</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>商品</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>體驗活動</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>留言板</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>其他店家推薦</p></div>
+	</div>
+</div> -->	
 <div class="screen screen-1">
 	<div class="banners">
 	</div>
@@ -108,7 +147,13 @@
 		</li>
 	</ul>
 	<div id="bread-car"></div>
-	<div id="map-now"></div>
+	<div class="maps">
+		<div class="map" id="map-now"></div>
+		<div class="map" id="map-now2"></div>
+		<div class="map" id="map-now3"></div>
+		<div class="map" id="map-now4"></div>
+	</div>
+	
 </div>
 <div class="screen screen-product">
 	<div id="product-trigger" class="spacer s0"></div>
@@ -250,6 +295,7 @@
 				<div class="label col-lg-3 col-xs-4">費用:</div>
 				<div class="content col-lg-9 col-xs-8">報名費與材料一共1000元(現場收費)</div>
        			</div>
+       			<div class="activity-detail button">活動詳情</div>
 			</div>
 			<div class="banner col-lg-6 col-xs-12">
 				<img alt="activity_banner2.png" src="img/store/browse/activity_banner.png">
@@ -261,12 +307,12 @@
 	<div id="messages-trigger" class="spacer s0"></div>
 	<div id="messages-icon-trigger" class="spacer s0"></div>
 	<div class="message-icons">
-		<img alt="comment.svg" class="icon small-icon" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
+		<img alt="cloud.png" class="icon small-icon" class="icon small-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon normal-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon normal-icon" src="img/store/browse/cloud.png" alt="cloud.png">
+		<img alt="cloud.png" class="icon small-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon small-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon small-icon" src="img/store/browse/cloud.png">
 	</div>
 	<div class="perspective">
 		<div class="title">
@@ -421,6 +467,9 @@ $(document).ready(function(){
 	allSlickSetting();
 	initAllScrollMagicScene();
 	initBreadCarNowLocationMap("map-now");
+	initBreadCarRouteMap("map-now2","test",{lat: 24.960439, lng: 121.190096});
+	initBreadCarRouteMap("map-now3","test",{lat: 24.960439, lng: 121.190096});
+	initBreadCarRouteMap("map-now4","test",{lat: 24.960439, lng: 121.190096});
 	setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
 });	
 </script>
