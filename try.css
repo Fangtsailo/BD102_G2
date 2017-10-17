@@ -28,7 +28,7 @@ img{
 }
 input{
 	outline: none;
-	padding: 10px;
+	padding: 2px;
 }
 input:focus{
 	border: 1px solid rgba(240, 100, 40, 0.3);
@@ -88,7 +88,8 @@ input:focus{
     background-position: right center;
     position: absolute;
     right: 140px;
-    transition: right 1.5s;
+    transition: right 1.5s,
+    			background-color 1s;
 }
 .sidebar li a.mycommentsvg{
 	background-image: url(img/memimg/mycomment.svg);
@@ -346,9 +347,9 @@ a.del:after{
 /*===================我的留言===================*/
 .mycomment{
 	margin: auto;
-	border:1px solid #f00;
 	list-style-type: none;
 }
+/*用漸層設定綠色線段*/
 .mycomment{
 	background-image: linear-gradient(90deg, #00c853 10px, #00c853 10px );
 	background-size: 2px 100px;
@@ -458,6 +459,9 @@ a.del:after{
 	    margin-top: -65px;
 	    margin-right: -10px;
 	}
+	.storepic2{
+	left: -65px;
+	}
 }
 /*===================我的報名===================*/
 .myentry{
@@ -521,7 +525,11 @@ a.del:after{
 }
 
 @media screen and (max-width: 767px) {
+	.mycomment{
+		background-position: left top;
+	}
 	.myentry{
+		width: auto;
 		margin-bottom: 0px;
 		margin-top: 230px;
 		overflow: visible;
@@ -530,6 +538,7 @@ a.del:after{
 		margin-left: 0px;
 	}
 	.info{
+		width: auto;
 		position: unset;
 		background-color: rgba(0,0,0,0.9);
 		margin-top: -400px;
@@ -554,31 +563,15 @@ a.del:after{
 }
 
 /*===================編輯個人資料===================*/
-form p{
+form p, .checkbox{
 	width: 42%;
 	height: 50px;
 	line-height: 50px;
 	margin: 0 29%;
 	padding: 10px 0;
 }
-.userpic{
-	width: 80px;
-	height: 80px;
-	border-radius: 40px;
-	background-color: #ccc;
-	margin: 0 auto;
-	margin-bottom: -65px;
-    margin-right: 350px;
-    overflow: hidden;
-}
 
-.userpic img{
-	height: 100%;
-	max-width: none;
-	width: auto;
-	
-}
-label, input, strong, .upload{
+label, input, strong, a.upload{
 	text-align: left;
 	height: 100%;
 	display: inline-block;
@@ -610,15 +603,7 @@ input{
 	border-bottom: 1px solid #ccc;
 }
 
-input#MEM_PIC{
-	border:none;
-}
-
-label button{
-	background: transparent;
-}
-
-input[type="submit"], label button, a.upload{
+input[type="submit"], a.upload, .openlightbox{
 	width: 145px;
 	height: 50px;
 	border-radius: 25px;
@@ -626,40 +611,77 @@ input[type="submit"], label button, a.upload{
 	border: 1px solid #f06428;
 	color: #f06428;
 	cursor: pointer;
+	margin-right: 30px;
 }
 
 input[type="submit"]{
 	color: #fff;
 	background: #f06428;
+	float: none;
+	line-height: 50px;
 }
 
-label button:hover{
+/*上傳照片*/
+.userpic{
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	background-color: #ccc;
+	margin: 0 auto;
+	margin-bottom: -65px;
+    margin-right: 350px;
+    overflow: hidden;
+}
+.userpic img{
+	height: 100%;
+	max-width: none;
+	width: auto;
+}
+a.upload:hover,
+.openlightbox:hover{
 	color: #fff;
 	background: #f06428;
 	transition: .3s ease;
 }
-
 a.upload{
 	position: relative;
 	float: left;
 }
-
 input[type="file"]{
 	position: absolute;
 	opacity: 0;
-	filter: alpha(opacity=0);
-	top: 0;
-	right: 0;
-	width:100%;
-	height:100%;
+	top: 2px;
+    left: 28px;
+    width: 80px;
+	cursor: pointer;
 }
 
-#check{
+/*變更密碼光箱*/
+.checkbox{
+	margin-left: 34%;
+	overflow: hidden;
+	line-height: 50px;
+}
+.openlightbox{
+	float: none;
+}
+
+.box{
 	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(50, 50, 50, 0.5);
+	transition: width 0s 1s,
+				height 0s 1s,
+				background-color 1s;
 }
 
 .box .changepsw{
-	width: 420px;
+	width: 330px;
 	height: 360px;
 	background-color: #fbf8f1;
 	position: absolute;
@@ -668,37 +690,31 @@ input[type="file"]{
 	bottom: 0px;
 	left: 0px;
 	margin: auto;
-	/*opacity: 0;
-	transition: opacity 1.5s;*/
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .box .changepsw p{
 	margin: 0 auto;
-    width: 300px;
-    padding: 20px 0;
+    width: 290px;
+    padding: 20px;
 }
 
 .box .changepsw label{
-    width: 60px;
+    width: 18%;
 }
 
 .box .changepsw input{
-    width: 240px;
+    max-width: 235px;
 }
 
 .box .changepsw input[type="submit"]{
 	width: 145px;
-	height: 50px;
-	border-radius: 25px;
-	text-align: center;
-	border: 1px solid #f06428;
-	color: #f06428;
 	margin: 0 auto;
 }
 
 .box .changepsw h1{
 	width: 100%;
-    padding: 5% 5%;
+    padding: 10% 5%;
     text-align: left;
     color: #fbf8f1;
     position: relative;
@@ -720,28 +736,6 @@ input[type="file"]{
     right: 10px;
 }
 
-.box{
-	width: 0;
-	height: 0;
-	overflow: hidden;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background-color: rgba(0,0,0,0);
-	transition: width 0s 1s,
-				height 0s 1s,
-				background-color 1s;
-}
-#check:checked ~ .box{
-	width: 100%;
-	height: 100%;
-	background-color: #000;
-	transition: background-color 1s;
-}
-#check:checked ~ .box .changepsw{
-	opacity: 1;
-}
-
 @media screen and (max-width: 767px) {
 	form p{
 		width: 100%;
@@ -756,7 +750,7 @@ input[type="file"]{
 		margin: 0 auto;
 		margin-bottom: 15px;
 	}
-	input{
+	input, .openlightbox{
 		margin-bottom: 30px;
 	}
 	strong{
@@ -765,7 +759,18 @@ input[type="file"]{
 	span.note{
 		margin: -70px 0px;
 	}
-	input[type="submit"], label button{
-		width: 100px;
+	.checkbox {
+		width: 100%;
+		height: auto;
+    	margin: 0 auto;
+	}
+	.openlightbox, input[type="submit"], a.upload{
+		/*float: none;*/
+		width: 240px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	input[type="submit"]{
+		margin-bottom: 0px;
 	}
 }

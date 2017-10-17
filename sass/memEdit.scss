@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import "basic/setting";
-@import "member/myBusiness/store/_FMybusinessStorVar.scss";
-@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+// @import "member/myBusiness/store/_FMybusinessStorVar.scss";
+// @import "member/myBusiness/store/_FMybusinessStorMixin.scss";
 
 *{
 	margin: 0;
@@ -14,194 +14,188 @@ body{
 	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	font-family: $globalFont;
+	// font-weight: normal;
 }
-
-// .coverHeader{
-// 	// width: 100vw;
-// 	height: 100px;
-// }
-
-// header{
-// 	z-index: 3;
-// }
-
-// .coverSubtitile{
-// 	height: 60px;
-// 	.subtitle{
-// 		height: 60px;
-// 		width: 100vw;
-// 		position: fixed;
-// 		top: 100px;
-// 		z-index: 3;
-// 		h2{
-// 			line-height: 60px;
-// 			font-size: 20px;
-// 			background-color:$MybusinessStore-subtitle-bgColor;
-// 			padding-left: 20px;
-// 			color:#fff;
-// 		}
-// 	}
-// }
-
-//--------------------------���T_�ɞ���Lp2_container��ʽ-------------------------
-
+//===會員專區==================================================
 .container{
 	width: 100%;
-	text-align:center;
-	
-	img{
-		width: 100%;
-	}
+	text-align: center;
+	color: $globalFontColor;
+	margin: 0 auto;
+	position: relative;
 
-	h1 {
-		font-size:$globalh1Size;
-		color:$globalTitleColor;
-	}
-
-	h3 {
-		font-size:$globalh3Size;
-		color:$globalTitleColor;
-	}
-
-	p {
-		font-size:$globalBtnSize;
-		color:$globalFontColor;	
-		font-weight: 300;
-		margin-top: 10px;
-	}
 	ul{
 		list-style-type: none;
 	}
+	a{
+		text-decoration: none;
+		color: $globalLinkColor;
+	}
+	img{
+		max-width: 100%;
+		vertical-align: bottom;
+	}
+	input{
+		outline: none;
+		padding: 2px;
+	}
+	input:focus{
+		border: 1px solid rgba(240, 100, 40, 0.3);
+		box-shadow: 0 0 2px $globalStarColor;
+	}
 
+//===側邊欄==================================================
+	.sidebar{
+		width: 210px;
+		height: 310px;
+		position: absolute;
+		top: 184px;
+		left: 0;
+		z-index: 1;
+		li{
+			position: relative;
+			height: 60px;
+			margin-bottom: 2px;
+			a{
+				color: $globalBgColor;
+				width: 100%;
+				height: 60px;
+				line-height: 60px;
+				font-size: $globalBtnSize;
+				padding-left: 16px;
+			    padding-right: 80px;
+				text-align: right;
+				background-color: transparent;
+				border-bottom-right-radius: 30px;
+			    border-top-right-radius: 30px;
+			    background-image: url(../img/memimg/myfollow.svg);
+			    background-repeat: no-repeat;
+			    background-position: right center;
+			    position: absolute;
+			    right: 140px;
+			    transition: right 1.5s,
+			    			background-color 1s;
+			}//sidebar a end
+			a.mycommentsvg{
+				background-image: url(../img/memimg/mycomment.svg);
+			}
+			a.myentrysvg{
+				background-image: url(../img/memimg/myentry.svg);
+			}
+			a.myeditsvg{
+				background-image: url(../img/memimg/myedit.svg);
+			}
+			a.bebosssvg{
+				background-image: url(../img/memimg/beboss.svg);
+			}
+		}//sidebar li end
+		li:hover a{
+			background-color: #00c853;
+			right: 0px;
+		}
+		li:hover a{
+			background-image: url(../img/memimg/myfollow2.svg);
+		}
+		li:hover a.mycommentsvg{
+			background-image: url(../img/memimg/mycomment2.svg);
+		}
+		li:hover a.myentrysvg{
+			background-image: url(../img/memimg/myentry2.svg);
+		}
+		li:hover a.myeditsvg{
+			background-image: url(../img/memimg/myedit2.svg);
+		}
+		li:hover a.bebosssvg{
+			background-image: url(../img/memimg/beboss2.svg);
+		}
+	}//sidebar end
 
-	.memBeBoss{
+//===內容==================================================
+	.content{
 		max-width: 1000px;
 		width: 69.4444%;
 		margin: 0 auto;
-		padding-top:124px;
-		// outline: 1px dotted #000;
+		h1 img{
+			height: 100px;
+		}
+		section{
+			width: 100%;
+			margin: 0 auto 50px;
+		}
+		section:after{
+			content: '';
+			display: block;
+			clear: both;  
+		}
+//===我的追蹤==================================================
+	.myfollow{
+		width: 220px;
+		float: left;
+		overflow: hidden;
+		text-align: left;
+		line-height: 1.3;
+		position: relative;
+		background-color: #fff;
+		border-radius: 5px;
+		margin-bottom: 15px;
 
-		.memTitle{
-			width: 48%;
-	    	margin: 0 26%;
-	    	// outline: 1px dotted #ccc;
-	    	@media screen and (max-width: 767px) {
-	    		width: 100%;
-	    		margin: 0 auto;
-    		}
-		}//memTitle end
+		a{
+			display: block;
+		}
+		h2, address{
+			margin: 8px;
+		}
+	}//myfollow end	
+	.myfollow:nth-child(n+2){
+		margin-left: 30px;
+	}
+	.myfollow:hover{
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	}
 
+	//小按鈕樣式
+	.btn50{
+		width: 50px;
+		height: 50px;
+		text-align: center;
 		
-		.memsection5{
-	    	width: 50%;
-	    	margin: 0 auto;
-	    	margin-bottom: 80px;
-    		outline: 1px solid #999;
-    		@media screen and (max-width: 767px) {
-    			width: 100%;
-    		}
+		#cancelfollow{
+			float: right;
+			margin: -55px 2px 0 0;
+		}
+		&:after{
+			content: '取消追蹤';
+			font-size: 12px;
+			vertical-align: top;
+		}//取消追蹤
+		
+		#mappointer{
+			text-align: center;
+			display: block;
+		}
+		&:after{
+			content: '地圖';
+			font-size: 12px;
+			vertical-align: top;
+		}//地圖
+	}//btn50 end
 
-    		.memFormHeader{
-    			@media screen and (max-width: 767px) {
-					text-align:left;
-					h1{
-						font-size: $globalh3Size;
-					}
-    			}
-			}//memFormHeader end
+		//評價星星數
+		.myfollow > ul{
+			height: 16px;
+		    margin-left: 8px;
+		}
+		.star{
+			display: inline-block;
+		}
+		.star img{
+			width: 16px;
+			vertical-align: top;
+		}
+			
 
-    		.memFormContent{
-				padding-top:10px;
-				outline: 1px solid #999;
-				.memPic{
-					width: 80px;
-					height: 80px;
-					border-radius: 40px;
-					background-image: url("../img/memimg/followimg1.jpg");
-					background-position: center center;
-					background-size: 80px;
-					background-repeat:no-repeat;
-				}
-				.memFormInput{
-					width: 100%;
-					height: 60px;
-					margin: 0 auto;
-					color:$globalFontColor;
-					label{
-						display: block;
-						float: left;
-						height: 100%;
-						line-height: 60px;
-						font-weight: 300;
-						span{
-							color:$globalBtnColor;
-						}
-					}//label end
-					
-					input{
-						display: block;
-						float: right;
-						width: 65%;
-						height: 100%;
-						padding-left: 10px;	
-						margin: 0 auto;
-						background-color: transparent;
-						border:none;
-						border-bottom: 1px solid $globalUnclickColor;
-						&::-webkit-input-placeholder{
-							color: $globalUnclickColor;
-							font-weight: 300;
-						}
-					}//input end
-				}//memFormInput end
+	}//content end
 
 
-				button{
-					display: block;
-					margin: 50px auto 0 auto;
-    				width: 150px;
-					height: 45px;
-					border-radius:22.5px;
-					text-align: center;
-					line-height: 45px;
-					font-size: $globalBtnSize + 2px;
-					border: 1px solid $globalBtnColor;
-					background-color: transparent;
-					color:$globalBtnColor;
-					transition: .3s ease;
-					font-family: $globalFont;
-					&:hover {
-						background-color: $globalBtnColor;
-						color:$globalBgColor;
-						transition: .3s ease;
-						cursor: pointer;
-					}
-    			}
-
-				.memInfoList{
-					
-					.memInfoItem{
-						width: 100%;
-						padding: 20px 0;
-    					border-bottom: 1px solid $globalUnclickColor;
-						label{
-							width: 30%;
-							float:left;
-						}
-						.memPic{
-							width: 80px;
-							height: 80px;
-							color: $globalUnclickColor;
-						}
-						.memItem{
-							
-						}
-					}
-				}    			
-    		}//memFormContent end
-    	}//memsection5 end
-
-	}//memBeBoss end
 }//container end
-
-
