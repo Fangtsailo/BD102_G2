@@ -62,6 +62,8 @@ li {
       cursor: pointer;
       transition: .3s ease-in; }
       .globalForm .globalFormHeader .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
         transform: rotate(180deg);
         transition: .3s ease-in; }
   .globalForm .globalFormContent {
@@ -175,10 +177,13 @@ li {
           width: 160px; }
       .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        transition: .3s ease-in; }
       .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
         text-align: center;
-        padding: 20px 0px; }
+        padding: 10px 0px; }
         .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
           border-bottom: 1px solid #3399ff; }
       .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
@@ -244,6 +249,9 @@ li {
           width: 160px; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        transition: .3s ease-in; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
@@ -303,7 +311,8 @@ li {
       float: left;
       padding: 20px 10px;
       box-sizing: border-box;
-      text-align: right; }
+      text-align: right;
+      font-size: 0; }
       .globalHead .headerRight .headSearch span {
         margin-right: 10px;
         color: #fbf8f1;
@@ -329,7 +338,8 @@ li {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        vertical-align: top; }
       .globalHead .headerRight .headSearch button {
         width: 80px;
         display: inline-block;
@@ -344,7 +354,8 @@ li {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          vertical-align: top; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -356,20 +367,53 @@ li {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        vertical-align: top; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-@keyframes shake {
+
+@-webkit-keyframes shake {
   0% {
+    -webkit-transform: scale(1, 1);
     transform: scale(1, 1); }
   100% {
+    -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
+
+@keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@-webkit-keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+
+@keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+    .globalHead .headerRight .shake {
+      -webkit-animation: shake1 .2s linear 3 alternate;
+      animation: shake1 .2s linear 3 alternate; }
+    .globalHead .headerRight .activeStatus {
+      display: block; }
     .globalHead .headerRight .headAccount {
       width: 150px;
       float: left; }
       .globalHead .headerRight .headAccount #headMemStatus {
-        display: block;
+        display: none;
         width: 100%;
         height: 70px;
         padding: 5px;
@@ -392,6 +436,7 @@ li {
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
+                  -webkit-animation: shake .3s ease infinite alternate;
                   animation: shake .3s ease infinite alternate;
                   transition: .3s; }
             .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
@@ -455,7 +500,7 @@ li {
         width: 100%;
         height: 70px;
         cursor: pointer;
-        display: none; }
+        display: block; }
         .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
           width: 50%;
           margin: auto;
@@ -479,6 +524,7 @@ li {
           background-color: #996633;
           transition: .3s; }
           .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
+            -webkit-animation: shake .5s ease infinite alternate;
             animation: shake .5s ease infinite alternate;
             transition: .3s; }
   .globalHead .rwd_headerSearch {
@@ -518,6 +564,13 @@ footer {
   footer p {
     color: #663300;
     margin-top: 10px; }
+
+@media screen and (max-width: 400px) {
+  footer .globalFtBtn .svg {
+    width: 30px;
+    height: 30px; }
+  footer .globalFtBtn a {
+    font-size: 14px; } }
 
 .clearfix {
   clear: both; }
@@ -629,73 +682,62 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
-
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
-
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
-
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
-
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
-
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
-
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
-
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
-
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
-
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
-
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
-
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
-
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
+
 @media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
@@ -899,6 +941,31 @@ footer {
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer; } }
+
+@media screen and (max-width: 400px) {
+  .globalHead .headLoginBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headLoginBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      padding: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+      width: 60%; }
+  .globalHead .headRegisterBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headRegisterBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
+      width: 90%; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; } }
+
 #addShopBox {
   position: fixed;
   z-index: 999;
@@ -1016,14 +1083,15 @@ footer {
     width: 25vw;
     float: right;
     margin: 15vw 10vw 8vw 0; } }
+
 @media all and (max-width: 767px) {
   .activity_detail {
     margin: auto;
     width: 80%;
     display: block; }
-
   .acty_stirrer {
     left: -7%; } }
+
 @media all and (max-width: 959px) {
   .activity_board {
     width: 80px;
@@ -1032,17 +1100,17 @@ footer {
     float: none; }
     .activity_board .acty_stirrer {
       left: -10%; }
-
   .activity_detail {
     margin: auto;
     float: none; } }
+
 @media all and (max-width: 767px) {
   .activity_detail {
     width: 80%;
     display: block; }
-
   .acty_stirrer {
     left: -7%; } }
+
 @media all and (min-width: 960px) {
   .activity_board {
     width: 40vw;
@@ -1050,14 +1118,21 @@ footer {
     float: left; }
     .activity_board .acty_stirrer {
       left: -10%; } }
+
 /*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
+@-webkit-keyframes dough1 {
+  0% {
+    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+  100% {
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 @keyframes dough1 {
   0% {
-    border-radius: 30% 30% 40% 60%/50% 55% 45% 50%; }
+    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
   100% {
-    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+
 .activity_content {
   background: url("../img/acty_background_2.png") center center;
   background-size: cover;
@@ -1143,6 +1218,7 @@ footer {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
     /* IE6-9 */
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    -webkit-animation: dough1 2s linear infinite alternate;
     animation: dough1 2s linear infinite alternate;
     transition: 1s;
     box-sizing: border-box;
@@ -1215,77 +1291,62 @@ footer {
   .activity_pot {
     display: block;
     margin: 5vw auto; }
-
   .activity_dough_1 {
     margin: auto;
     display: block;
     right: 0; }
-
   .activity_dough_2 {
     margin: 10vw auto;
     float: none; }
-
   .activity_dough_3 {
     float: none;
     margin: auto; }
-
   .pic_3 {
     margin: 10px auto; }
-
   .activity_dough_4_all {
     margin: auto;
     width: 100%; }
-
   .activity_dough_4 {
     float: none;
     display: inline-block;
     margin: 2% 3%; }
-
   .activity_dough_5 {
     float: none;
     margin: auto; }
-
   .activity_dough_5 {
     float: none; } }
+
 @media all and (min-width: 768px) {
   .activity_pot {
     margin-left: 12vw;
     float: left; }
-
   .activity_dough_1 {
     margin: 3vw 30vw 2vw 0vw;
     float: right;
     right: -5vw; }
-
   .activity_dough_2 {
     float: right;
     margin-bottom: 10px;
     margin-right: 10vw; }
-
   .activity_dough_3 {
     float: right;
     margin-top: 5vw;
     margin-right: 20vw; }
-
   .pic_3 {
     margin: 0 3%; }
-
   .pic_2 {
     margin: 5% 0; }
-
   .activity_dough_4_all {
     width: 85%;
     margin-right: 8vw; }
-
   .activity_dough_4 {
     float: right; }
-
   .activity_dough_5 {
     float: right;
     margin: 15vw 8vw 0vw 0vw; }
-
   .activity_dough_6 {
     float: right; } }
+
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/

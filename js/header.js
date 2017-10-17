@@ -1,7 +1,39 @@
+
+
+
+
+
+//頁面開始動作
+
 $(function(){
+
+
+
+
+//導覽列上滑效果
+
+var bodyClass = document.body.classList,
+    lastScrollY = 80;
+
+  window.addEventListener('scroll', function(){
+   var st = this.scrollY;
+      if( st > lastScrollY) {
+          bodyClass.add('hideUp');
+          $("#menu").removeClass("show");
+          $("#burgerBtn").removeClass("active");
+          $("#rwdSearchBar").removeClass("activeSearch");
+          $("#rwd-HeaderLink").removeClass("showMenu");
+          $("#left-burgerBtn").removeClass("active");
+          $('#memStatusBar').slideUp(300);
+      }else{
+        bodyClass.remove('hideUp');
+      }
+      lastScrollY = st;
+  });
+
   //點選登入按鈕
 	$('#headMemLogin').click(function(){
-		$('#loginBox').fadeIn(500).css('display','block');
+		$('#loginBox').fadeIn(500);
 	
 	});
 
@@ -18,57 +50,70 @@ $(function(){
 	});
 
 //關閉燈箱按鈕
-	$('.closeBtn').click(function(){
-			$('#loginBox').hide(500).css('display','none');
+	$('.closeBtn,#cancelLogin').click(function(){
+			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
+            $("#loginForm")[0].reset();
 		
   });
-   
-
-	
-    // $(window).bind('scroll resize', function(){
-    //   var $this = $(this);
-    //   var $this_Top=$this.scrollTop();
-
-    //   //當高度小於100時，關閉區塊 
-    //   	if($this_Top < 100){
-    //     　　　$('.globalHead').stop().animate({top:"-80px"},';linear');
-    //     　　}
-    //     if($this_Top > 100){
-    //     　　　$('.globalHead').stop().animate({top:"0px"},'linear');
-    //     　　}
-    //     　　
-    // }).scroll();
-
-    // console.log('12345');
-//導覽列上滑效果
 
 
-var bodyClass = document.body.classList,
-    lastScrollY = 80;
+//按下登入檢查
+$("#submitLogin").click(function(){
+        checkform();
+        $(".globalForm").css("animation","none");
+});
+
+function changePanel(){
+    $("#headMemStatus").show(300);
+    $("#headMemLogin").hide(300);
+}
+function logOut(){
+    $("#headMemLogin").show(300);
+    $("#headMemStatus").hide(300);
+    $('#memStatusBar').hide(300);
+}   
+
+//登入檢查function
+    
+function checkform(){
+
+     // var myId = document.getElementById('memId');
+        // alert($("#memId").val());
+    if ( $("#memId").val().length < 6){
+        $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
+        alert("帳號不得低於六碼");
+        $("#memId").select();
+        return;
+    }
+    
+    
+    if ($("#memPsw").val().length <6 ){
+        $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
+        alert("密碼不得低於6碼");
+        $("#memPsw").select();
+        return;
+    }
+    //正確就送出
+   $("#loginForm").submit();
+   $('#loginBox').fadeOut(500);
+   changePanel();
+
+}
 
 
-    // var subtitleClass= document.getElementById("subtitle").classList;
-    // var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
+//登出
 
-  window.addEventListener('scroll', function(){
-   var st = this.scrollY;
-      if( st > lastScrollY) {
-          bodyClass.add('hideUp');
-          $("#menu").removeClass("show");
-          $(".burgerMenu").removeClass("active");
-          $(".rwdSearchBar").removeClass("activeSearch");
-          $(".rwd-HeaderLink").removeClass("showMenu");
-          $(".left-burgerBtn").removeClass("active");
-          $('.memStatusBar').slideUp(300);
-      }else{
-        bodyClass.remove('hideUp');
-      }
-      lastScrollY = st;
-  });
+$("#logOut").click(function(){
+    logOut();
+});
+
+
+
+
 //登入後會員專區顯示
      $("#headMemPic").click(function(){
-          $('.memStatusBar').slideToggle(300);
+          $('#memStatusBar').slideToggle(300);
      });
 
 //新增店家按鈕
@@ -95,10 +140,10 @@ var bodyClass = document.body.classList,
     $("#burgerBtn").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
             $("#menu").toggleClass("show");
-            $(".burgerMenu").toggleClass("active"); //在#menu增加Class
-            $(".rwdSearchBar").removeClass("activeSearch");
-            $(".rwd-HeaderLink").removeClass("showMenu");
-            $(".left-burgerBtn").removeClass("active");
+            $("#burgerBtn").toggleClass("active"); //在#menu增加Class
+            $("#rwdSearchBar").removeClass("activeSearch");
+            $("#rwd-HeaderLink").removeClass("showMenu");
+            $("#left-burgerBtn").removeClass("active");
             $('#closeBurger').click(function(){
               $("#menu").removeClass("show");
 
@@ -111,15 +156,15 @@ var bodyClass = document.body.classList,
     $(".rwd_headerSearch").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
             // $(".rwdSearchBar").toggleClass("activeSearch");
-            $(".rwdSearchBar").toggleClass("activeSearch"); 
+            $("#rwdSearchBar").toggleClass("activeSearch"); 
             $("#menu").removeClass("show");
         });
 
 
 //首頁導覽列漢堡選單
-    $(".left-burgerBtn").click(function(){
-          $(".left-burgerBtn").toggleClass("active");
-          $(".rwd-HeaderLink").toggleClass("showMenu");
+    $("#left-burgerBtn").click(function(){
+          $("#left-burgerBtn").toggleClass("active");
+          $("#rwd-HeaderLink").toggleClass("showMenu");
           $("#menu").removeClass("show");
     });
 
@@ -128,19 +173,13 @@ var bodyClass = document.body.classList,
       let j = i; 
       $('.section'+i+'-click').click(function(){
         console.log(j);
-        $(".rwd-HeaderLink").removeClass("showMenu");
+        $("#rwd-HeaderLink").removeClass("showMenu");
         $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);  
       });
     }
 
-
-
-
-
-
-
-
-
 });
+
+
 
 

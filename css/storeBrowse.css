@@ -360,9 +360,8 @@ img {
 
 @media screen and (max-width: 767px) {
   .screen-1, .screen-bread-car-map, .screen-product, .screen-activity
-  , .screen-other-store, .screen-messages {
+, .screen-other-store, .screen-messages {
     height: auto; }
-
   .screen-1 {
     position: relative;
     background-size: contain;
@@ -404,7 +403,6 @@ img {
       position: relative;
       top: 0;
       padding-bottom: 55px; }
-
   .screen-product .product-list .only-pc {
     display: none; }
   .screen-product .product-list:before, .screen-product .product-list:after {
@@ -425,11 +423,9 @@ img {
       box-sizing: border-box;
       margin-top: 0px;
       color: #8E8E8E; }
-
   .screen-other-store .top-list .item, .screen-other-store .bottom-list .item {
     width: 50%; }
   .screen-other-store .top-list .only-pc, .screen-other-store .bottom-list .only-pc {
     display: none; }
-
   .screen-activity .banner-area:before, .screen-activity .banner-area:after {
     display: none; } }

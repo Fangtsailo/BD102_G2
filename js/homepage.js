@@ -123,13 +123,48 @@ $('.shopItemGrp').slick({
 });
 
 
+//體驗活動輪播
+$(".actBannerGrp").slick({
+	// infinite: true,
+	slidesToShow: 1,
+	vertical:true,
+	prevArrow:"#chooseActUp .svg",
+	nextArrow:"#chooseActDown .svg",
+	responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    }
+  ]
+
+});
+
+
+
+
+
 //新進店家輪播
 $('.newShopGrp').slick({
   infinite: false,
   slidesToShow: 3,
   slidesToScroll: 3,
-  autoplay: true,
-  autoplaySpeed: 2000,
+
+  // autoplay: true,
+  // autoplaySpeed: 2000,
   responsive: [
     {
       breakpoint: 768,

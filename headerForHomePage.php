@@ -4,7 +4,7 @@
 	<div class="headLoginBox" id="loginBox">
 		
 		<div class="globalForm">
-		<form action="" method="">
+		<form id="loginForm" action="" method="">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -20,10 +20,10 @@
 			<div class="globalFormContent">
 
 				<div class="globalFormInput">
-					<label>會員帳號</label><input type="text" name="" placeholder="請輸入會員帳號或信箱">
+					<label>會員帳號</label><input type="text" name="memId" id="memId" placeholder="請輸入會員帳號或信箱">
 				</div>
 				<div class="globalFormInput">
-					<label>會員密碼</label><input type="text" name="" placeholder="密碼">
+					<label>會員密碼</label><input type="password" name="memPsw" id="memPsw" placeholder="密碼">
 				</div>
 				<div class="forgetPsw">
 					<a href="#">忘記密碼？</a>
@@ -31,8 +31,8 @@
 				<div class="clearfix"></div>
 				
 				<div class="globalFormBtns">
-					<div class="globalCancelBtn">取消</div>
-					<input type="submit" name="" class="globalOkBtn" value="登入">					
+					<div class="globalCancelBtn" id="cancelLogin">取消</div>
+					<input type="button" name="submit" class="globalOkBtn" id="submitLogin" value="登入">					
 				</div>
 				
 				<div class="facebookLogin">
@@ -131,13 +131,13 @@
 		</div>
 
 	<!--頁面錨點RWD -->
-		<div class="left-burgerBtn">
+		<div class="left-burgerBtn" id="left-burgerBtn">
 			<span class="burger"></span>
 			<span class="burger"></span>
 			<span class="burger"></span>
 		</div>
 
-		<div class="rwd-HeaderLink">
+		<div class="rwd-HeaderLink" id="rwd-HeaderLink">
 
 			<a href="#section2-move" class="section2-click">
 					<img src="img/homepage/hot.svg">
@@ -199,14 +199,14 @@
 						<div class="clearfix"></div>
 					</div>
 				</div>
-				<div class="memStatusBar">
+				<div class="memStatusBar" id="memStatusBar">
 					<ul>
 						<li><a href="#">金城武</a></li>
 						<li><a class="memLink" href="#">我的追蹤</a></li>
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
 						<li><a class="memLink" href="#">成為店長</a></li>
-						<li><a class="memLink" href="#">登出</a></li>
+						<li><a class="memLink" href="#" id="logOut">登出</a></li>
 					</ul>
 				</div>
 

@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
+	<!-- 套件區 -->
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
@@ -14,6 +15,9 @@
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
 	<script type="text/javascript" src="js/parallax.min.js"></script>
+	<!-- googlemap -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+
 
 </head>
 <body>
@@ -127,6 +131,7 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
+				<form>
 				<ul class="tabs">
 					<li class="tab_contents active" id="searchShops">
 						店家
@@ -134,18 +139,19 @@ require_once("headerForHomePage.php");
 					<li class="tab_contents" id="searchVans" onclick="location.href='search_car.php'">
 						胖小車
 					</li>
+					<li class="clearfix"></li>
 				</ul>
 				<div class="searchContent">
 					<span class="filterTitle">篩選條件</span>
 					
-					<div class="filter">
-						<select name="" id="filterArea">
+					
+						<select  class="filter" name="" id="filterArea">
 								<option>地區</option>
 								<option>台北市</option>
 								<option>新北市</option>
 								<option>桃園市</option>
 						</select>
-					</div>
+					
 				
 					<button class="filter" id="filterTops">
 						<span>熱門</span>
@@ -159,6 +165,7 @@ require_once("headerForHomePage.php");
 					</div>
 				</div>
 				<div class="clearfix"></div>
+				</form>
 			</div>
 			<div class="sectionBetween">
 				<p>不知從何找起？<br>那就先來看看我們為您精選的熱門店家！</p>
@@ -179,10 +186,12 @@ require_once("headerForHomePage.php");
 	<section class="homeTopChart" id="section2-move"  >
 	
 		<p class="topChartDescrp">為您篩選出各地區的熱門麵包香，<br>尋找附近地區最熱門的麵包小店！</p>
+		
 		<div class="titleGrp">
-			<img src="img/homepage/topChartIcon.png">
+			<img src="img/icon/bread.svg">
 			<h1 class="topChartTitle">精選熱門店家</h1>
 		</div>
+
 		<div id="trigger2"></div>
 		<div class="shopItemGrp">
 			<div class="shopItem" data-depth="1">
@@ -282,37 +291,113 @@ require_once("headerForHomePage.php");
 			<h1>體驗活動精選</h1>
 			<p>適合全家大小一起動手製作的烘焙課程</p>
 		</div>
+		<div class="act-bgd"></div>
 		<div class="activityItem">
-			
-			<div class="activityRight">
 				<div id="chooseActUp">
 					<div class="svg">
-						<svg width="100" height="100" viewBox="0 0 38 38" >
+						<svg width="50" height="50" viewBox="0 0 38 38" >
 						<polygon style="fill:#fbf8f1" points="19.4,14.4 28.2,25.4 26.6,26.6 19.4,17.6 12.2,26.6 10.6,25.4 "/>
 						</svg>
 					</div>
 				</div>
-				<div id="actBanner">
-					<img src="img/acty_fin1.png">
-					<div class="actContent">
-						<h2>牛角麵包簡單學</h2>
-						<p><span class="itemTitle">地點</span>桃園市中壢區中大路300號</p>
-						<p><span class="itemTitle">時間</span>2017.09.29 下午一點</p>
-						<p><span class="itemTitle">參加人數</span><span>15</span>/30人</p>
-						<a href="activity_act.php" class="globalOkBtn" >活動詳情</a>
+				<div class="actBannerGrp">
+					<div class="actBanner">
+						<div class="actDate">
+							<div class="dateItem">
+								<span>03</span>
+								<span>Nov</span>
+							</div>
+						</div>
+						<img src="img/homepage/acty-1.jpg">
+						<div class="actContent">
+							<div class="content-txt">
+								<h3>法式烤布蕾</h3>
+								<ul>
+									<li>
+										<span>店家名稱</span>
+										<p>勝利早點</p>
+									</li>
+									<li>
+										<span>活動地點</span>
+										<p>台南市安平區健康路55號</p>
+									</li>
+									<li>
+										<span>活動人數</span>
+										<p><span>20</span>/20人</p>
+									</li>
+								</ul>
+							</div>
+							<a href="activity_act.php" class="globalOkBtn" >立即體驗</a>
+						</div>
 					</div>
-
+					<div class="actBanner">
+						<div class="actDate">
+							<div class="dateItem">
+								<span>03</span>
+								<span>Nov</span>
+							</div>
+						</div>
+						<img src="img/acty_pic4.png">
+						<div class="actContent">
+							<div class="content-txt">
+								<h3>德國鄉村雜糧麵包</h3>
+								<ul>
+									<li>
+										<span>店家名稱</span>
+										<p>阿財麵包屋</p>
+									</li>
+									<li>
+										<span>活動地點</span>
+										<p>台北市信義區信義路五段一號</p>
+									</li>
+									<li>
+										<span>活動人數</span>
+										<p><span>0</span>/10人</p>
+									</li>
+								</ul>
+							</div>
+							<a href="activity_act.php" class="globalOkBtn" >活動詳情</a>
+						</div>
+					</div>
+					<div class="actBanner">
+						<div class="actDate">
+							<div class="dateItem">
+								<span>03</span>
+								<span>Nov</span>
+							</div>
+						</div>
+						<img src="img/homepage/acty-1.jpg">
+						<div class="actContent">
+							<div class="content-txt">
+								<h3>牛角麵包簡單做</h3>
+								<ul>
+									<li>
+										<span>店家名稱</span>
+										<p>烘焙王麵包坊</p>
+									</li>
+									<li>
+										<span>活動地點</span>
+										<p>桃園市中壢區中央路55號</p>
+									</li>
+									<li>
+										<span>活動人數</span>
+										<p><span>15</span>/20人</p>
+									</li>
+								</ul>
+							</div>
+							<a href="activity_act.php" class="globalOkBtn" >立即體驗</a>
+						</div>
+					</div>
 				</div>
 				<div id="chooseActDown">
 					<div class="svg">
-						<svg width="100" height="100" viewBox="0 0 38 38">
+						<svg width="50" height="50" viewBox="0 0 38 38">
 							<polygon style="fill:#fbf8f1" points="28.2,15.5 26.6,14.2 19.4,23.2 12.2,14.2 10.6,15.5 19.4,26.4 "/>
 						</svg>
 					</div>
 				</div>
-			</div>
-
 		</div>
+		<div class="clearfix"></div>
 	</section>
 <!-- ======================================================5th首頁新進店家========================================================= -->
 	<section class="homeNewshop" id="section5-move">
@@ -413,7 +498,53 @@ require_once("headerForHomePage.php");
 						<div class="clearfix"></div>
 					</div>
 					<div class="clearfix"></div>
-				</div>  
+				</div>
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>   
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
 			<div class="clearfix"></div>  
 		</div>
 		
@@ -427,16 +558,25 @@ require_once("headerForHomePage.php");
 
 	<section class="homeContact" id="section6-move">
 		<div class="addShop">
-				
 			<p>想跟全世界分享吃到好麵包的感動？</p>
-			<img src="img/icon/addshop.svg">
-			<h3>新增店家</h3>
+			<div class="sectionItem">
+					<span>
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/></g></g>
+						</svg>
+					</span>
+				<h3>新增店家</h3>
+			</div>
 			
 		</div>
 		<div class="contactUs">
 			<p>遇到問題無法解決，或有更多建議想讓我們知道？</p>
-			<img src="img/icon/report.svg">	
-			<h3>客服中心</h3>
+			<div class="sectionItem">
+				<span>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/><path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
+					</svg>
+				</span>
+				<h3>客服中心</h3>
+			</div>
 			
 		</div>
 		<div class="clearfix"></div>

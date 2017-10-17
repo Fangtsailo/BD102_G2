@@ -175,7 +175,7 @@ li {
 	transition: top .3s ease-in-out;
 	
 	
-	//會員登入燈箱
+	//-----------------會員登入燈箱----------------------
 	.headLoginBox {
 			position: fixed;
 			width: 100%;
@@ -207,6 +207,10 @@ li {
 						&::-webkit-input-placeholder {
 							font-size: $globalContentSize;
 						}
+						&:focus{
+							border-bottom:1px solid $globalBtnColor;
+							transition:.3s ease-in;
+						}
 					}
 				}
 
@@ -214,7 +218,7 @@ li {
 				.forgetPsw {
 					width: 100%;
 					text-align: center;
-					padding: 20px 0px;
+					padding: 10px 0px;
 					a:hover {
 						border-bottom:1px solid $globalLinkColor;
 					}
@@ -268,7 +272,7 @@ li {
 			
 		}//headLoginBox
 	
-	//註冊會員燈箱
+	//------------註冊會員燈箱--------------
 		.headRegisterBox {
 			position: fixed;
 			width: 100%;
@@ -299,6 +303,10 @@ li {
 					input {
 						&::-webkit-input-placeholder {
 							font-size: $globalContentSize;
+						}
+						&:focus{
+							border-bottom:1px solid $globalBtnColor;
+							transition:.3s ease-in;
 						}
 					}
 				}
@@ -357,7 +365,7 @@ li {
 
 
 
-	//頁首logo區塊
+	//-----------------頁首logo區塊-------------------
 	.headLogo {
 		height: 100%;
 		margin-left: 20px;
@@ -383,7 +391,8 @@ li {
 		
 
 
-		//頁首搜尋區塊
+//------------------頁首搜尋區塊-----------------------
+
 		.headSearch {
 			// width: 90%;
 			// height: 70px;
@@ -392,6 +401,7 @@ li {
 			// border:1px solid #ccc;
 			box-sizing:border-box;
 			text-align: right;
+			font-size: 0;
 			span {
 				margin-right: 10px;
 				color:$globalBgColor;
@@ -420,6 +430,7 @@ li {
 				outline: none;
 				border-radius:2px;
 				box-sizing:border-box;
+				vertical-align: top;
 				}
 			button {
 				width: 80px;
@@ -436,6 +447,7 @@ li {
 				color:$globalHdColor01;
 				outline: none;
 				box-sizing:border-box;
+				vertical-align: top;
 				}
 			}	
 			#headSearchSubmit {
@@ -451,6 +463,7 @@ li {
 				border-radius:2px;
 				outline: none;
 				box-sizing:border-box;
+				vertical-align: top;
 				&:active {
 					background-color:$globalFontColor ;
 					color:$globalBgColor;
@@ -465,7 +478,18 @@ li {
 	100%{transform:scale(1.2,1.2);}
 }
 
-		//頁首會員區塊
+@keyframes shake1 {
+	0%{transform:translate(15px,0px);}
+	100%{transform:translate(-15px,0px);}
+}
+.shake {
+	animation:shake1 .2s linear 3 alternate;
+}
+.activeStatus {
+	display: block;
+}
+//-------------------頁首會員區塊--------------------
+
 		.headAccount {
 
 			// width: 20%;
@@ -477,11 +501,12 @@ li {
 			
 
 			#headMemStatus {
-				display:block;
+				display:none;
 				width: 100%;
 				height: 70px;
 				padding: 5px;
 				box-sizing:border-box;
+
 				div {
 					width: 110px;
 					margin: 10px auto;
@@ -587,7 +612,7 @@ li {
 				width: 100%;
 				height: 70px;
 				cursor:pointer;
-				display: none;
+				display: block;
 				
 				.loginGrp {
 				width: 50%;
@@ -693,6 +718,19 @@ footer {
 		margin-top: 10px;
 	}
 
+}
+@media screen and (max-width:400px){
+	footer {
+		.globalFtBtn {
+			.svg {
+				width: 30px;
+				height: 30px;
+			}
+			a {
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 
@@ -1034,6 +1072,66 @@ footer {
 
 
 }
+	// --------------------------登入與註冊會員燈箱-手機版--------------------------
+@media screen and (max-width:400px){
+	.globalHead {
+		.headLoginBox{
+			.globalForm {
+				width: 100%;
+				margin-top: 80px;
+				height: 90vh;
+				.globalFormHeader {
+					img {
+						width: 120px;	
+					}
+				}
+				.globalFormContent {
+					.forgetPsw {
+						padding: 10px auto;
+					}
+					.globalFormBtns{
+						margin: 10px auto;
+					}
+					.facebookLogin {
+						a {
+							width: 60%;
+						}
+					}
+
+				}
+			}
+		}
+		
+
+		.headRegisterBox {
+
+			.globalForm {
+				width: 100%;
+				margin-top: 80px;
+				height: 90vh;
+				.globalFormHeader {
+					img {
+						width: 120px;	
+					}
+				}
+				.globalFormContent {
+					.globalFormInput{
+						width: 90%;
+
+					}
+					.globalFormBtns{
+						margin: 10px auto;
+					}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+
 	// --------------------------新增店家燈箱--------------------------
 
 #addShopBox {
