@@ -63,11 +63,11 @@ header{
 			border:none;
 			background-color: #b5b5b5;
 			opacity:0.5;
-			text-indent: 10px;
+			text-indent: 20px;
 			&::-webkit-input-placeholder { /* WebKit browsers */
 							    color:#000;
 							    font-size: 13px;
-							    text-indent: 10px;
+							    text-indent: 20px;
 							    font-family: $globalFont;
 							}
 		}//input

@@ -11,8 +11,10 @@
 	<script type="text/javascript" src="js/header.js"></script>
 
 
-		<!-- =====side bar==== -->
+	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
+
 
 
 
@@ -59,7 +61,7 @@
 
 
 
-		<div class="LeftBusiness">
+		<!-- <div class="LeftBusiness"> -->
 
 
 					<?php 
@@ -71,7 +73,7 @@
 
 
 			
-		</div> <!-- LeftBusiness -->
+		<!-- </div> --> <!-- LeftBusiness -->
 		
 	
 
