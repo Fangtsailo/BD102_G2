@@ -24,7 +24,8 @@
 
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
-	require_once("header.php");	
+	require_once("header.php");
+	require_once("php/common/globalVar.php");	
 	require_once("php/store/browse/storeDetail.php");
  ?>
 <div class="navigator">
@@ -347,7 +348,7 @@
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
+			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $memID, ".png" ?>"></div>
 			<div class="content col-lg-10"><textarea placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
@@ -355,66 +356,24 @@
 		</div>
 	</div>
 	<div class="messages-area">
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+		<?php 
+			foreach ($messageItemArr as $messageItem) {
+		?>
+					<div class="message-box" id="MSG123">
+						<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $messageItem[0], ".png" ?>"></div>
+						<div class="content col-lg-10">
+							<div class="name"><?php echo $messageItem[1] ?><span class="datetime"><?php echo $messageItem[2] ?></span></div>
+							<p><?php echo $messageItem[3] ?></p>
+							<div class="setting-area">
+								<div class="report pointer">
+									<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>	
+		<?php
+			}
+		 ?>
 		<div class="more-message button">看更多</div>
 	</div>
 </div>
@@ -430,50 +389,20 @@
 	</div>
 	<div class="store-list">
 		<div class="top-list">
-			<div class="item pointer col-lg-4 col-xs-6 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-			<div class="item pointer col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-			<div class="item pointer col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-		</div>
-		<div class="bottom-list">
-			<div class="item pointer col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-			<div class="item pointer col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家...</p>
-				</div>
-			</div>
-			<div class="item pointer col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>	
+			<?php 
+				foreach ($otherStoreItemArr as $otherStore) {
+			?>
+					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore[0]; ?>">
+						<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
+						<div class="detail">
+							<h3 class="name"><?php echo $otherStore[1]; ?></h3>
+							<p class="describe"><?php echo $otherStore[2]; ?></p>
+						</div>
+					</div>
+			<?php
+				}
+			 ?>
+
 		</div>
 	</div>
 </div>
