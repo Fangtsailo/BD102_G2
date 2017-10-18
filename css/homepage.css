@@ -528,62 +528,73 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
+
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
+
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
+
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
+
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
+
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
+
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
+
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
+
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
+
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
+
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
+
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
+
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-
 @media screen and (max-width: 900px) {
   .globalHead {
     text-align: center; }
@@ -753,7 +764,6 @@ footer {
         top: 80px;
         right: 0;
         transition: .3s; } }
-
 * {
   box-sizing: border-box; }
 
@@ -889,7 +899,6 @@ section {
       section.homeSearchBar .itemGrp .bigLogo img {
         width: 100%;
         height: 100%; } }
-
 @media screen and (max-width: 500px) {
   section.homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
     width: 100%;
@@ -898,7 +907,6 @@ section {
     width: 70%; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
     width: 20%; } }
-
 .homeTopChart {
   position: relative; }
   .homeTopChart p.topChartDescrp {
@@ -1194,7 +1202,6 @@ section {
         color: #fbf8f1;
         transition: .3s ease;
         cursor: pointer; } }
-
 section.homeCarMap {
   background-image: url("../img/homepage/homepage_bg3.png");
   background-repeat: no-repeat;
@@ -1367,7 +1374,6 @@ section.homeCarMap {
       margin: auto; }
     .homeActivity .activityItem #chooseActDown {
       margin: auto; } }
-
 .homeNewshop {
   background-image: url("../img/homepage/homepage_bg5.png");
   background-repeat: no-repeat;
@@ -1512,7 +1518,6 @@ section.homeCarMap {
           color: #fbf8f1;
           transition: .3s ease;
           cursor: pointer; } }
-
 .homeContact {
   width: 100%;
   height: 50vh;
@@ -1563,7 +1568,6 @@ section.homeCarMap {
     .homeContact .contactUs {
       width: 100%;
       height: 50%; } }
-
 #navBtn {
   width: 10px;
   position: fixed;

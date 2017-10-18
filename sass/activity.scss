@@ -9,18 +9,57 @@
 	
 
 	@keyframes dough1{
-	0%{border-radius: 30% 30% 40% 60% / 50% 55% 45% 50% ;
+	0%{border-radius: 30% 70% 40% 60% / 50% 55% 45% 50% ;
 		
 	}
 	50%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
 	}
 	
 	@keyframes dough2{
-	0%{border-radius: 40% 40% 40% 40% / 55% 55% 45% 35% ;
+	0%{border-radius: 40% 60% 60% 40% / 55% 55% 45% 45% ;
 		
 	}
-	50%{border-radius: 45% 45% 45% 55% / 60% 45% 55% 40% ;}
+	50%{border-radius: 45% 55% 45% 55% / 60% 45% 55% 40% ;}
 	}
+	@keyframes bigdoughChange {
+		0%{opacity: .8;}
+		50%{opacity: 0;}
+		100%{opacity: .5;}
+	}
+
+	@keyframes blow{
+		
+		0%{transform:translate(0px);}
+		100%{transform:translate(550px);}
+	}
+	@keyframes cloud {
+			0% {
+				bottom:-100px;
+				opacity: .5;
+				transform: scale(1);
+			}
+			
+			100% {
+				bottom: 100px;
+				opacity: 0.1;
+				transform: scale(1.5);
+			}
+	}
+		@keyframes cloud2 {
+			0% {
+				bottom: -100px;
+				opacity: .5;
+				transform: scale(1.5);
+			}
+			
+			100% {
+				bottom: 200px;
+				opacity: 0.1;
+				transform: scale(1.8);
+			}
+	}
+
+
 
 
 
@@ -46,7 +85,7 @@
 			width:25%;
 			height:250+px;
 			position:relative;
-			border-radius:38% 67% 34% 43% / 60% 67% 34% 43%;
+			border-radius:38% 62% 34% 66% / 60% 67% 33% 40%;
 			@include topBottomGradient($dough_color_1,$dough_color_2);
 				img{
 				
@@ -254,19 +293,11 @@
 		
 		}
 	
-		
-	
-		
-
 
 /*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
 
-
-
-
-		
 	.activity_content{
 		background: url("../img/acty_background_2.png") center center;
 		background-size:cover;
@@ -302,6 +333,20 @@
 				width:100%;
 
 			}
+
+			.bigDough{
+
+				animation:bigdoughChange 3s 1s linear 3 alternate;
+				opacity:0;
+				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
+				width:280+px;
+				height:250+px;
+				@include topBottomGradient($dough_color_1,$dough_color_2);
+				position:absolute;
+				bottom: 11%;
+    			left: 10%;
+    			z-index:-5;
+			}
 		
 			.activity_dough_change{
 				width:280+px;
@@ -309,12 +354,13 @@
 				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
 				@include topBottomGradient($dough_color_1,$dough_color_2);
 				position:absolute;
-				bottom: 10%;
+				bottom: 11%;
     			left: 10%;
 				z-index:-2;
 					.activity_dough_change_js{
 				background:linear-gradient(red, yellow);
 			}
+
 			}
 			h2{
 				position:absolute;
@@ -401,7 +447,7 @@
 		}
 		.activity_dough_2{
 					
-			margin-top:-2;
+			margin-top:-2%;
 			min-width:280+px;
 			max-width:350+px;
 			width:23%;
@@ -510,6 +556,29 @@
 			height:100%;
 			z-index:10;
 			}
+			.act_wind{
+				width:437px;
+				opacity:0;
+				position:absolute;
+    			margin: auto;
+				left:0;
+				right:0;
+				top:150px;
+				z-index:-8;
+    			.actShadow{
+    				width: 0px;
+    				left: 0%;
+    				position: absolute;
+    				height: 185px;
+    				margin: auto;
+    				animation:blow 1s  linear infinite;
+    				 box-shadow: 1px 0px 72px 36px rgba(248, 214, 191, .8);
+    				top: 0;
+    				background-color:rgba(248, 214, 191, .8);
+    				//background: radial-gradient(rgba(241, 94,36, .2), rgba(255, 165, 0, 0));
+    			}
+    			
+			}
 		.activity_dough_5{
 			
 			
@@ -549,13 +618,13 @@
 		}
 		.activity_dough_3{
 			float:right;
-			margin:5% 10% 5% 0;
+			margin:0 10% 5% 0;
 			
 		}
 
 		.activity_dough_4_all{
 			float:left;
-			margin-top:-15%;
+			margin-top:-17%;
 			margin-left:10%;
 		}
 
@@ -598,7 +667,8 @@
 				margin-top:-50%;
 		}
 		.bake_bread{
-			background: radial-gradient(rgba(241, 94,36, .7), rgba(255, 165, 0, 0));
+			background-color:rgba(241, 94,36, .2);
+			//background: radial-gradient(rgba(241, 94,36, .7), rgba(255, 165, 0, 0));
 		}
 		.activity_dough_5{
 			float:right;
@@ -606,7 +676,7 @@
 		}
 		.activity_dough_6{
 			float:left;
-			margin: 15vw 0 10% 10% ;
+			margin: 15vw 0 5% 10% ;
 		}
 		.activity_bread{
 			display:block;
@@ -669,6 +739,23 @@
 		.activity_bread{
 			display:none;
 		}
+		.container-template{
+			.activity{
+			.section_1{			.activity_content{
+				.activity_content_inner{
+					.section_5{
+						.trigger6{
+							.act_wind{
+								display:none;
+							}
+						}
+					}
+				}
+
+			}
+		}
+		}	
+	}
 }
 
 
@@ -684,6 +771,7 @@
 	background-size:cover;
 	padding-top:10vw;
 	padding-bottom:2vw;
+
 	.activity_final{
 		text-align:center;
 		    max-width: 798px;
@@ -721,6 +809,8 @@
 	}
 
 	.activity_bread{
+			z-index:2;
+			position:relative;
 			margin: auto ;
 			width: 300+px;
 			img{
@@ -737,7 +827,6 @@
 
 	.activity_form{
 		margin:0 auto 60px;
-		
 		width:50%;
 		.globalForm{
 			width:70%;
@@ -749,8 +838,42 @@
 	.btnTop{
 		margin-top:10px;
 	}
+	.activity_cloud{
+		position: absolute;
+    	top: -600px;
+    	width: 510px;
+    	height: 700px;
+    	overflow: hidden;
+    	left: -121px;
+	}
+	.act_cloud{
 
-/*===========activity_application   rwd  end====================
+		&:nth-child(1){
+			z-index:1;
+			position:absolute;
+		   left: 121px;
+		    animation:cloud  12s 5s linear infinite;
+		}
+		&:nth-child(2){
+			z-index:1;
+			position:absolute;
+		   
+		    right:50px;
+		    animation:cloud  8s 3s linear infinite;
+		}
+		&:nth-child(3){
+			z-index:-1;
+			position:absolute;
+		   
+		    left:200px;
+		    animation:cloud2 5s  linear infinite;
+		}	
+	}
+
+	
+
+
+/*===========activity_application   rwd  ====================
 ================================================
 ===============================================*/
 @media screen and (max-width:960px){
@@ -802,3 +925,6 @@
 ===============================================*/
 
 }
+
+
+

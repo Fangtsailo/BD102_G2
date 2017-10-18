@@ -107,6 +107,7 @@
 				 	<div class="activity_pot_b">  <!-- 最裡層 -->
 						<img src="img/acty_pot_b.png">
 					</div>
+					<div class="big"></div>
 					<div class="activity_dough_change"></div>   <!-- 麵團 -->
 				</div>
 				
@@ -114,14 +115,16 @@
 				
 			</div>
 
-			<div class="activityPot">
+			<div class="activityPot rwdw">
 				<div class="acty_out_pot">
 					<img src="img/acty_pot.png"><!-- 外鍋 -->
 					<h2>烘焙王麵包坊<br>最受歡迎牛角麵包製作</h2>
 				 	<div class="activity_pot_b">  <!-- 最裡層 -->
 						<img src="img/acty_pot_b.png">
 					</div>
-					<div class="activity_dough_change"></div>   <!-- 麵團 -->
+					
+					<div class="activity_dough_changes"></div>   <!-- 麵團 -->
+					
 				</div>
 				
 				
@@ -129,7 +132,7 @@
 			</div>
 			
 			
-			<div class="activity_dough_1 "></div>
+			<div class="activity_dough_1  "></div>
 				<div class="clearfix rwd_none"></div>
 				
 				<div class="activity_dough_2">
@@ -173,7 +176,12 @@
 			
 				
 				<div class="bgc trigger6">
+					
 				<div class="activity_dough_5  "></div>
+				<div class="act_wind">
+					<img src="img/act_wind.png">
+					<div class="actShadow"></div>
+				</div>
 				<div class="activity_dough_6"></div>
 				<div class="clearfix"></div>
 				</div>
@@ -261,14 +269,28 @@
 						</div>
 	
 
-				</div><!-- =================表單樣式===================== -->
+				</div><!-- =================表單樣式===end================== -->
 					<div class="clearfix"></div>
 					<div class="activity_bread ">
 							<img src="img/acty_finish_bread.png">
+							<div class="activity_cloud">
+								<div class="act_cloud">
+									<img alt="cloud.png" src="img/act/cloud.png">
+								</div>
+								<div class="act_cloud">
+									<img alt="cloud.png" src="img/act/cloud.png">
+								</div>
+								<div class="act_cloud">
+									<img alt="cloud.png" src="img/act/cloud.png">
+								</div>
+							</div>
+							
 					</div>
 					<div class="activity_bread2 rwd_none">
 							<img src="img/acty_finish_bread.png">
 					</div>
+
+					
 
 				</div> <!-- activity_application -->
 			</section>
