@@ -1,0 +1,161 @@
+// ========後台側邊導覽列HOVER效果
+@mixin navition-hover() {
+
+	&:hover{
+				color:#000000;
+				background-color: $navition-li-bgColor-hover;
+				transition:0.5s;
+
+			}
+	
+}
+
+
+
+
+@mixin button-hover() {
+	
+	background-color:#7e4a1d;
+	color:#fff;
+	transition:0.3s;
+	&:hover{
+        				background-color:#ffffff;
+        				color:#7e4a1d;
+        				transition:0.3s;
+        			}	
+	
+}
+
+
+@mixin store-nav-bar-propity() {
+
+	width: 200px;
+	height:  $store-nav-bar-height;
+	background-color:#00c853;
+	margin-top:10px; 
+		
+}
+
+
+@mixin member-nav-bar-propity() {
+
+	width: 200px;
+	height: $store-nav-bar-height;
+	background-color:#00C853;
+	margin-top:6px; 
+		
+}
+
+
+
+@mixin member-nav-bar-mainTitle-propity() {
+	width: 200px;
+	height: 57px;
+	margin-top:10px;
+	position: relative;
+	// border-bottom: 2px solid #00f;
+	.cls-1{
+		fill:$MybusinessStore-subtitle-bgColor;
+	}
+	.cls-2{fill:#bbb;}
+	.cls-3{fill:#999;}
+
+	h2{
+		position: absolute;
+		line-height:$store-nav-bar-height;
+		left: 20px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		font-size: 18px;
+		color: #fff;
+	}
+
+	// svg{
+
+	// 	display: inline-block;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	right: 0px;
+	// 	margin: auto;
+	
+
+	// }
+
+}
+
+
+
+
+
+
+
+@mixin member-nav-bar-subTitle-propity() {
+
+	width: 180px;
+	height: $store-nav-bar-height;
+	background-color:#D9E8FF;
+	border-radius: 2px;
+	// margin-top: 2px;
+	position: relative;
+	h3{
+		position: absolute;
+		line-height:$store-nav-bar-height;
+		left: 60px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		font-size: 18px;
+		color: #fff;
+		color:$MybusinessStore-subtitle-bgColor;
+	}
+	svg{
+
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 30px;
+		margin: auto;
+		.cls-ar{fill:$MybusinessStore-subtitle-bgColor;}
+		.cls-1{fill:none;}
+		.cls-2{fill:#bbb;}
+		.cls-3{fill:#999;}
+
+	}
+
+
+}
+
+
+
+
+@mixin tdInputTextForm() {
+
+
+	td{
+		input{
+			width: 90%;
+			height: 40px;
+			box-sizing: border-box;
+			text-indent: 4px;
+			font-size: 14px;
+			outline:none;
+		}
+
+		p{
+			color: #999;
+			height: 40px;
+			line-height: 40px;
+			width: 90%;
+			text-align: left;
+			margin: auto;
+			font-size: 18px;
+			padding-left: 4px;
+		}
+
+	}
+
+
+}

@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>審核新增商家</title>
+	<title>店家資訊</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
-	<link rel="stylesheet" type="text/css" href="css/shopManage.css">
+	<link rel="stylesheet" type="text/css" href="css/shopUp.css">
 
 	
 	
@@ -46,12 +46,12 @@ require_once("BackStageHeaderSidebar.php");
 			<div class="tableHeaderCover">
 				<table class="tableHeader">
 					<tr>
-						<td>商家編號</td>
-						<td>商家店名</td>
+						<td>店家編號</td>
+						<td>店家店名</td>
 						<td>店長ID</td>
 						<td>店長姓名</td>
-						<td>審核內容</td>
-						<td>審核狀態</td>
+						<td>店家資訊</td>
+						<td>店家狀態</td>
 					</tr>	
 				</table>
 			
@@ -61,10 +61,10 @@ require_once("BackStageHeaderSidebar.php");
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
-						<td>--</td>
-						<td>--</td>
+						<td>ID094187</td>
+						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -72,7 +72,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -80,7 +80,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -88,7 +88,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -96,7 +96,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -104,7 +104,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -112,7 +112,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -120,7 +120,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -128,7 +128,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -136,7 +136,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -144,7 +144,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -152,7 +152,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -160,7 +160,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -168,7 +168,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -176,7 +176,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -184,7 +184,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -192,7 +192,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -200,7 +200,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -208,7 +208,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
@@ -216,8 +216,9 @@ require_once("BackStageHeaderSidebar.php");
 						<td>ID094187</td>
 						<td>解師傅‧愛新覺羅</td>
 						<td><a href="#">內容</a></td>
-						<td>未審核</td>
+						<td>上架</td>
 					</tr>
+					
 					
 				</table>
 			<!-- </section> -->

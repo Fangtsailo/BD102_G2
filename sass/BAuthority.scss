@@ -23,29 +23,40 @@ header{
 
 
 .LightBox{
-	background-color: #ccc;
-	opacity:0.97;
+	// background-color: #ccc;
+	
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 3;
+	z-index: 8;
 	display: none;
+
+	#mask{
+		background-color: #ccc;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 2;
+		opacity:0.6;
+	}
 
 	
 		section{
 			background-color: #c5beb7;
 			width: 40vw;
 			height: 70vh;
+			min-height: 615px;
 			position: relative;
-			top: 100px;
+			top: 150px;
 			bottom: 0;
 			right: 0;
 			left: 0;
 			margin: auto;
 			opacity:1;
 			border-radius: 10px;
+			z-index: 3;
 			img{
 
 				&:nth-child(1){
@@ -261,7 +272,7 @@ header{
 					border: none;
 					transition:.5s ;
 					&#addAuthority{
-						background-color: $globalAccountColor;
+						background-color: #565894;
 					}
 				}
 			}

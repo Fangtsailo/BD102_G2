@@ -1,0 +1,179 @@
+@import "backstage/member/businessMember/_BStgBusinessContentVar.scss";
+@import "backstage/member/businessMember/_BStgBusinessContentMixin.scss";
+@import "basic/_var.scss";
+
+
+input{
+	outline: none;
+	cursor:pointer;
+}
+
+
+header{
+	z-index: 1;
+}
+
+
+// .container{
+// 	box-sizing: border-box;
+// 	position: relative;
+// 	left:0;
+// 	z-index: -6;
+	
+// }
+
+
+
+
+
+
+.tableArea{
+	// float: left;
+	// padding-top: $header-height;
+	// padding-left: $navition-width;
+	// width: $tableContent-width;
+	height: 100vh;
+	position: relative;
+	margin: auto;
+	// z-index: -1;
+	left:0;
+}
+
+
+
+
+
+
+
+
+	.content-table{
+		// background-color: #ccc;
+		table{
+			width: 80%;
+			// background-color: #fff;
+			margin-left: 0;
+			margin-right: 0;
+			margin:auto;
+
+			span,div,input{
+				color:#999;
+			}
+
+
+			tr{
+
+				height: 50px;
+				
+				th{
+					border-bottom: 1px solid #ccc;
+					text-align: center;
+					font-weight: normal;
+					width: 20%;
+					background-color: #d7cab4;
+					color:#502f0d;
+					
+				}
+
+				td{
+
+					padding-left: 20px;
+					text-align: left;
+					background-color: #fff;
+					color:#be9f80;
+					width: 80%;
+					border-bottom: 1px solid #ccc;
+					// &:nth-child(1){
+					// 	background-color: #000;
+					// 	input{
+					// 		width: 80%;
+					// 	}
+					// }
+
+				}
+
+				&:nth-child(6){
+
+					td{
+
+						padding: 10px 0 10px 20px;
+						
+
+					}
+					
+				}
+
+				&:nth-child(7){
+
+					td{
+
+						padding: 10px 0 10px 20px;
+						
+
+					}
+					
+				}				
+
+
+			} //tr
+		}//table
+	}//content-table
+
+
+
+	.commit{
+		text-align: center;
+		padding-top: 50px;
+		margin-bottom: 100px;
+
+		a{
+			&:nth-child(1){
+				input{
+					border: none;
+					width: 80px;
+					height: 40px;
+					border-radius: 10px;
+					margin-right: 10px;
+					background-color: #cc4e4e;
+					color:#fff;
+					display: inline-block;
+					&:hover{
+						border: 1px solid #cc4e4e;
+						color:#cc4e4e;
+						background-color:#fff;
+						transition:0.2s;
+					}//hover
+				}//input
+			}//  for a &:nth-child(1)
+		
+
+
+
+
+			&:nth-child(2){
+
+				input{
+
+					border: none;
+					width: 80px;
+					height: 40px;
+					border-radius: 10px;
+					margin-right: 10px;
+					background-color: #53c453;
+					color:#fff;
+					display: inline-block;
+					&:hover{
+						border: 1px solid #53c453;
+						color:#53c453;
+						background-color:#fff;
+						transition:0.2s;
+					}//hover
+				}//input
+			}//  for a &:nth-child(2)
+		}//a
+	}
+
+
+.dutyColorChange{
+	background-color:$globalAccountColor !important;
+	transition:.5s ;
+}

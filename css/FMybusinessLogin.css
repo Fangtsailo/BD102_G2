@@ -4,6 +4,9 @@ body {
 header {
   z-index: 1; }
 
+input {
+  outline: none; }
+
 .LightBox {
   position: relative; }
   .LightBox > img {
@@ -13,6 +16,7 @@ header {
     background-color: #c5beb7;
     width: 40vw;
     height: 70vh;
+    min-height: 675px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -59,21 +63,25 @@ header {
           border-radius: 10px;
           margin-right: 10px;
           font-size: 16px;
-          text-align: center; }
+          text-align: center;
+          padding-top: 10px; }
         .LightBox section .square_2 label input {
           border: none;
           width: 50%;
           max-width: 200px;
           border-radius: 10px;
-          height: 30px;
+          height: 40px;
           margin: 0;
           padding: 0;
-          border: none; }
+          border: none;
+          text-indent: 10px;
+          font-family: "Noto Sans CJK TC"; }
       .LightBox section .square_2 span input {
         border: none;
         display: block;
         margin: auto;
         margin-top: 30px;
+        cursor: pointer;
         width: 120px;
         height: 40px;
         color: #ffffff;

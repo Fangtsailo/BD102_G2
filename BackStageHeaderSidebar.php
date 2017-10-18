@@ -7,11 +7,11 @@
 			</div>
 			<p>後台管理系統</p>
 			<ul class="navition">
-				<a href="#"><li>後台管理</li></a>
-				<a href="#"><li class="memMan"><span>會員管理</span>
+				<a href="BAuthority.php"><li>後台管理</li></a>
+				<a href="BOrdinaryMember.php"><li class="memMan"><span>會員管理</span>
 					<ul>
-						<a href="#"><li>一般會員</li></a>
-						<a href="#"><li>店長會員</li></a>
+						<a href="BOrdinaryMember.php"><li>一般會員</li></a>
+						<a href="BBusinessMember.php"><li>店長會員</li></a>
 					</ul>
 				</li></a>
 				<a href="#"><li class="bsnMan"><span>商家管理</span>
