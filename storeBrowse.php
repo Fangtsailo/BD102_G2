@@ -1,3 +1,8 @@
+<?php 
+	ob_start();
+	// session_start();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +32,10 @@
 	require_once("header.php");
 	require_once("php/common/globalVar.php");	
 	require_once("php/store/browse/storeDetail.php");
+	// $storeId = $_REQUEST["storeId"];
+	$storeId = 2;
+	getStoreInfoById($storeId);
+	//胖小車路徑相關資料
  ?>
 <div class="navigator">
 	<div class="item">
@@ -73,10 +82,10 @@
 	<div class="banners">
 	</div>
 	<div class="detail-box">
-		<div class="store-logo"><img alt="store-logo1.png" src="img/store/browse/store-logo1.png"></div>
+		<div class="store-logo"><img alt="<?php echo $GLOBALS["store"]->storeLogo ?>" src="<?php echo GLOBAL_STORE_PIC_PATH, $GLOBALS["store"]->storeLogo ?>"></div>
 		<div class="title">
 			<div class="container">
-				<h1 class="store-name"><?php echo $storeName ?></h1>
+				<h1 class="store-name"><?php echo $GLOBALS["store"]->name ?></h1>
 			</div>
 		</div>
 		<div class="detail">
@@ -95,26 +104,26 @@
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 			</ul>
-			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $follow ?>)</div>
+			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $GLOBALS["store"]->follow ?>)</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">地址:</p>
-					<p class="content col-lg-9 col-xs-8"><?php echo $address ?></p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $GLOBALS["store"]->address ?></p>
 				</div>
 				<div class="open-time overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">營業時間:</p>
-					<p class="content col-lg-9 col-xs-8"><?php echo $openStartTime ?>點 - <?php echo $openEndTime ?>點</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $GLOBALS["store"]->openStartTime ?>點 - <?php echo $GLOBALS["store"]->openEndTime ?>點</p>
 				</div>
 				<div class="phone overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">電話:</p>
-					<p class="content col-lg-9 col-xs-8"><?php echo $phone ?></p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $GLOBALS["store"]->phone ?></p>
 				</div>
 				<div class="close-day overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">公休日:</p>
 					<p class="content col-lg-9 col-xs-8">
 					<?php 
-						for ($i = 0; $i < count($closeDarArr); $i++) {
-							if ($i != count($closeDarArr) - 1) {
+						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
+							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
 								echo "星期", $i, ", ";
 							} else {
 								echo "星期", $i;
@@ -127,12 +136,7 @@
 		</div>
 	</div>
 	<div class="right-describe">
-		<p>
-			自創業以來因為引進歐美的先進技術而卓越成長並希望以此經驗技術可以對東南亞吃的文化帶來貢獻 。故於1985年進駐香港，之後在香港廣受各方好評，於1988年設立了中央工廠，自此開始了海外的連鎖烘焙事業。而後陸續在泰國、馬來西亞、新加坡都有展店，也都有不錯的成績。
-		<p>
-        1987年於台北市百貨公司成立台灣麵包專賣店，為了提供給顧客更多元且完整的產品及服務，於2000年在板橋火車站開了咖啡複合式店面，至今包含複合式店面已有多家分店分佈全台。未來更以積極培育當地人才，每年至少成立2家專賣店為目標，持續教育訓練以提高服務品質。</p>
-        <p>
-        自創始以來一直堅持慎選原料，每天現場烘焙提供最新鮮的產品，且不斷開發新產品，如：手工現做的三明治、柔軟的吐司、銅鑼燒、大福等多樣的日式風味的點心，讓顧客無論何時都可以買到自己喜愛的產品，享受美味的麵包。</p>
+		<p><?php echo $GLOBALS["store"]->story ?></p>
 	</div>
 	<div id="bottom-city">
 	    <div class="cloud cloud-1"></div>

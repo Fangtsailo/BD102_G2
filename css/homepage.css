@@ -26,6 +26,7 @@ li {
     width: 100%;
     padding: 5% 5%;
     position: relative;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #805934;
     /* Old browsers */
@@ -39,6 +40,7 @@ li {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
     /* IE10+ */
+    background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
     background: linear-gradient(to right, #805934 0%, #9e693d 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
@@ -129,6 +131,7 @@ header.globalHead {
   /* Opera 11.10+ */
   background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* IE10+ */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
   background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -136,7 +139,10 @@ header.globalHead {
   z-index: 9999;
   position: fixed;
   top: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: top .3s ease-in-out;
+  -o-transition: top .3s ease-in-out;
   transition: top .3s ease-in-out; }
   header.globalHead .headLoginBox {
     position: fixed;
@@ -155,6 +161,7 @@ header.globalHead {
       height: 80vh;
       border: none;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       header.globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -188,6 +195,7 @@ header.globalHead {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
+          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -224,6 +232,7 @@ header.globalHead {
       height: 80vh;
       border: none;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       header.globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -251,6 +260,7 @@ header.globalHead {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
+          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -280,10 +290,12 @@ header.globalHead {
   header.globalHead .headerRight {
     padding: 5px 0px;
     float: right;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     header.globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       text-align: right; }
       header.globalHead .headerRight .headSearch span {
@@ -298,6 +310,7 @@ header.globalHead {
         border: 1px solid #fff;
         padding-left: 10px;
         outline: none;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       header.globalHead .headerRight .headSearch select {
@@ -311,6 +324,7 @@ header.globalHead {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
       header.globalHead .headerRight .headSearch button {
         width: 80px;
@@ -326,6 +340,7 @@ header.globalHead {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box; }
       header.globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
@@ -338,6 +353,7 @@ header.globalHead {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         header.globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
@@ -421,10 +437,14 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease;
     cursor: pointer; }
 
@@ -437,10 +457,14 @@ footer {
   font-size: 18px;
   border: 1px solid #3399ff;
   color: #3399ff;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
     color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease;
     text-decoration: none;
     cursor: pointer; }
@@ -627,6 +651,8 @@ footer {
         border-radius: 4px;
         position: absolute;
         margin: auto;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease; }
         header.globalHead .burgerMenu span:nth-of-type(1) {
           top: 5px; }
@@ -635,16 +661,26 @@ footer {
         header.globalHead .burgerMenu span:nth-of-type(3) {
           top: 27px; }
       header.globalHead .burgerMenu.active {
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease; }
         header.globalHead .burgerMenu.active span:nth-of-type(1) {
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+          -webkit-transition: .3s ease;
+          -o-transition: .3s ease;
           transition: .3s ease;
           top: 20px; }
         header.globalHead .burgerMenu.active span:nth-of-type(2) {
           display: none; }
         header.globalHead .burgerMenu.active span:nth-of-type(3) {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
           transform: rotate(45deg);
           top: 20px;
+          -webkit-transition: .3s ease;
+          -o-transition: .3s ease;
           transition: .3s ease; }
     header.globalHead #menu {
       display: block;
@@ -653,9 +689,13 @@ footer {
       background-color: rgba(0, 0, 0, 0.5); }
       header.globalHead #menu.hideMenu {
         left: -375px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       header.globalHead #menu.show {
         left: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       header.globalHead #menu ul {
         display: block;
@@ -673,6 +713,7 @@ footer {
         /* Opera 11.10+ */
         background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* IE10+ */
+        background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
         background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -710,6 +751,7 @@ footer {
             color: #fbf8f1;
             font-weight: 400; } }
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
@@ -749,6 +791,7 @@ section {
       width: 100%; }
       .homeSearchBar .itemGrp .searchPart .tabs {
         width: 100%;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         .homeSearchBar .itemGrp .searchPart .tabs .tab_contents {
           width: 100px;
@@ -756,6 +799,7 @@ section {
           text-align: center;
           background-color: #805934;
           padding: 10px;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           color: #fbf8f1;
           cursor: pointer; }
@@ -765,6 +809,7 @@ section {
       .homeSearchBar .itemGrp .searchPart .searchContent {
         width: 100%;
         float: left;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         border-radius: 0px 3px 3px 3px;
         background-color: #E7E6E6;
@@ -796,6 +841,7 @@ section {
         .homeSearchBar .itemGrp .searchPart .searchContent .searchbar {
           width: 100%;
           display: block;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           background-color: #fff;
           text-align: left;
@@ -808,6 +854,7 @@ section {
             background-color: transparent;
             border: none;
             display: inline-block;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             outline: none; }
           .homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
@@ -817,6 +864,7 @@ section {
             font-size: 16px;
             padding: 10px;
             border: none;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             background-color: transparent;
             outline: none; }
@@ -875,12 +923,14 @@ section {
       border-radius: 10px;
       overflow: hidden;
       position: relative;
+      -webkit-box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
       box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56); }
       .homeTopChart .shopItem .shopPic img {
         width: 100%;
         height: 100%;
         border-radius: 10px;
         z-index: -15;
+        -o-object-fit: cover;
         object-fit: cover; }
       .homeTopChart .shopItem .shopPic h3 {
         width: 100%;
@@ -931,6 +981,7 @@ section {
       margin: auto;
       height: 30%;
       background-color: #f2ebd4;
+      -webkit-box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
       box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
       border-radius: 10px;
       padding: 10px; }
@@ -981,10 +1032,14 @@ section {
     border: 1px solid #f06428;
     color: #f06428;
     background-color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease; }
     .homeTopChart .chooseBtn:hover {
       background-color: #f06428;
       color: #fbf8f1;
+      -webkit-transition: .3s ease;
+      -o-transition: .3s ease;
       transition: .3s ease;
       cursor: pointer; }
 
@@ -1023,12 +1078,14 @@ section {
         border-radius: 10px;
         overflow: hidden;
         position: relative;
+        -webkit-box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
         box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56); }
         .homeTopChart .shopItem .shopPic img {
           width: 100%;
           height: 100%;
           border-radius: 10px;
           z-index: -15;
+          -o-object-fit: cover;
           object-fit: cover; }
         .homeTopChart .shopItem .shopPic h3 {
           width: 100%;
@@ -1077,6 +1134,7 @@ section {
                 height: 4vmin;
                 min-height: 20px;
                 float: left;
+                -o-object-fit: cover;
                 object-fit: cover;
                 display: inline-block;
                 margin: 10px 0;
@@ -1089,6 +1147,7 @@ section {
         width: 100%;
         height: 40%;
         background-color: #f2ebd4;
+        -webkit-box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
         box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
         border-radius: 10px;
         padding: 10px; }
@@ -1128,10 +1187,14 @@ section {
       border: 1px solid #f06428;
       color: #f06428;
       background-color: #fbf8f1;
+      -webkit-transition: .3s ease;
+      -o-transition: .3s ease;
       transition: .3s ease; }
       .homeTopChart .chooseBtn:hover {
         background-color: #f06428;
         color: #fbf8f1;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease;
         cursor: pointer; } }
 section.homeCarMap {
@@ -1139,6 +1202,7 @@ section.homeCarMap {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 5vw;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
   section.homeCarMap .carMap {
     width: 100%;
@@ -1309,6 +1373,7 @@ section.homeCarMap {
       text-align: center;
       background-color: #fbf8f1;
       border-radius: 20px;
+      -webkit-box-shadow: 0px 0px 10px 2px #222;
       box-shadow: 0px 0px 10px 2px #222; }
       .homeNewshop .newShopGrp .newShops .newShopItem {
         width: 100%;
@@ -1317,6 +1382,7 @@ section.homeCarMap {
           display: block;
           width: 100%;
           height: 50%;
+          -o-object-fit: cover;
           object-fit: cover;
           border: 5px solid #fff;
           border-radius: 20px; }
@@ -1367,10 +1433,14 @@ section.homeCarMap {
             border: 1px solid #f06428;
             color: #f06428;
             background-color: #fbf8f1;
+            -webkit-transition: .3s ease;
+            -o-transition: .3s ease;
             transition: .3s ease; }
             .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn:hover {
               background-color: #f06428;
               color: #fbf8f1;
+              -webkit-transition: .3s ease;
+              -o-transition: .3s ease;
               transition: .3s ease;
               cursor: pointer; }
 
@@ -1413,10 +1483,14 @@ section.homeCarMap {
         border: 1px solid #f06428;
         color: #f06428;
         background-color: #fbf8f1;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease; }
         .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn:hover {
           background-color: #f06428;
           color: #fbf8f1;
+          -webkit-transition: .3s ease;
+          -o-transition: .3s ease;
           transition: .3s ease;
           cursor: pointer; } }
 .homeContact {
@@ -1449,11 +1523,13 @@ section.homeCarMap {
     width: 50%;
     height: 100%;
     float: left;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   .homeContact .contactUs {
     width: 50%;
     height: 100%;
     float: left;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
 
 @media screen and (max-width: 768px) {
@@ -1482,3 +1558,5 @@ section.homeCarMap {
     margin: 10px auto;
     border-radius: 50%;
     background-color: #ccc; }
+
+
