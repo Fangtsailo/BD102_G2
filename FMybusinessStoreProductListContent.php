@@ -17,6 +17,7 @@
 
 	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
 
 
@@ -61,7 +62,7 @@
 
 
 <!-- ==============left fixed content================== -->
-		<div class="LeftBusiness">
+		<!-- <div class="LeftBusiness"> -->
 
 			
 			<?php 
@@ -72,7 +73,7 @@
 
 
 		
-		</div> <!-- LeftBusiness -->
+		<!-- </div> --> <!-- LeftBusiness -->
 		
 	
 

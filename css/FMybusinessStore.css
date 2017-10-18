@@ -153,7 +153,8 @@ header {
           border: 1px solid #ddd;
           margin: 10px;
           padding: 5px 0;
-          transition: .3s; }
+          transition: .3s;
+          cursor: pointer; }
       .CenterBusiness .content-table table tr:nth-child(7) {
         height: 100px; }
         .CenterBusiness .content-table table tr:nth-child(7) th div {
@@ -277,12 +278,6 @@ header {
   background-color: #4289FF;
   color: #fff !important;
   transition: .3s; }
-
-footer {
-  width: 100vw;
-  height: 50px;
-  position: fixed;
-  bottom: 0; }
 
 @media screen and (max-width: 940px) {
   .LeftBusiness {

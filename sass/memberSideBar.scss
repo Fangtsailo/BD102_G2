@@ -12,34 +12,61 @@
 		top: 160px;
 		z-index: 99;
 		// background-color: #ccc;
+		transition:.3s;
 		.nav-Group1{
 			margin-top: 30px;
 		}
 		
-			div{ //aa
-				 div{ //bb
+			&>div{ //aa group 1
+				 &>div{ //bb
 					
-						@include member-nav-bar-mainTitle-propity();
+
+						&:nth-child(1){
+							@include member-nav-bar-mainTitle-propity();
 						// margin-top:150px;
-
+						}
 					
 
-					div{//cc
-						&:nth-child(2){
-							@include member-nav-bar-subTitle-propity();
+					
+						&:nth-child(2){//group sub
+
+							display:none;
+							div{//sub
+
+								&:nth-child(1){
+									@include member-nav-bar-subTitle-propity();
+																		
+								}
+								&:nth-child(2){
+									@include member-nav-bar-subTitle-propity();									
+								}
+								&:nth-child(3){
+									@include member-nav-bar-subTitle-propity();									
+								}
+
+
+							}//sub
 							
-						}
-						&:nth-child(3){
-							@include member-nav-bar-subTitle-propity();
 							
-						}
-						&:nth-child(4){
-							@include member-nav-bar-subTitle-propity();
-							
-						}
-					}//cc
+						}//:nth-child(2)  //group sub
+
+
+						
+				
 					
 				}//bb
 			}//aa
 		
 	}//LeftBusiness
+
+
+	.leftBarUp{
+		top:80px;
+		transition:.3s;
+	}
+
+
+
+
+
+

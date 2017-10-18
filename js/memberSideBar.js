@@ -1,49 +1,65 @@
 	$(function(){
 
 
+
+
+
+
+   $("#SB_breadStore").click(function(){
+
+      
+      
+      $("#SB_breadStoreList").slideToggle();
+      $("#SB_breadCarList").slideUp();
+
+   });
+
+
+   $("#SB_breadCar").click(function(){
+
+      
+      $("#SB_breadCarList").slideToggle();
+      $("#SB_breadStoreList").slideUp();;
+
+   });
+
    
+   var LeftBusinessClass = document.getElementById("LeftBusiness").classList;
+   var lastScrollY = 80;
 
-	
+   window.addEventListener('scroll', function(){
+   var st = this.scrollY;
 
+   console.log(123);
+      if( st > lastScrollY) {
 
-    var bodyClass = document.body.classList,
-    lastScrollY = 80;
-
-
-    var subtitleClass= document.getElementById("subtitle").classList;
-    var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
-
-
-
-	window.addEventListener('scroll', function(){
- 	 var st = this.scrollY;
-  		if( st > lastScrollY) {
-  	  		
-  	  		subtitleClass.add('hideUp_sub');
-  	  		CoverRightMyClass.remove('moveToLeft');
 
           
-  		}else{
-    		
-    		subtitleClass.remove('hideUp_sub');
-    		CoverRightMyClass.remove('moveToLeft');
-  		}
-  		lastScrollY = st;
-	});
+          LeftBusinessClass.add('leftBarUp');
+           console.log(456);
+          
+
+          
+      }else{
+        
+        LeftBusinessClass.remove('leftBarUp');
+        
+      }
+      lastScrollY = st;
+  });
 
 
 
-    $(".burger").click(function(){
 
-       
+	     
 
-          $(".CoverRightMy").toggleClass("moveToLeft");
 
+    
         
 
 
 
-    });
+   
 
 
    
