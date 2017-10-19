@@ -1,0 +1,404 @@
+@charset "UTF-8";
+@import "basic/setting";
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: $globalFtColor;
+	background: -webkit-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+}
+
+// .coverHeader{
+// 	// width: 100vw;
+// 	height: 100px;
+// }
+
+// header{
+// 	z-index: 3;
+// }
+
+// .coverSubtitile{
+// 	height: 60px;
+// 	.subtitle{
+// 		height: 60px;
+// 		width: 100vw;
+// 		position: fixed;
+// 		top: 100px;
+// 		z-index: 3;
+// 		h2{
+// 			line-height: 60px;
+// 			font-size: 20px;
+// 			background-color:$MybusinessStore-subtitle-bgColor;
+// 			padding-left: 20px;
+// 			color:#fff;
+// 		}
+// 	}
+// }
+
+//--------------------------會員_成為店長p2_container樣式-------------------------
+
+// .container{
+// 	width: 100%;
+// 	text-align:center;
+// 	overflow: hidden;
+	
+// 	img{
+// 		width: 100%;
+// 		vertical-align: top;
+// 	}
+
+// 	h1 {
+// 		font-size:$globalh1Size;
+// 		color:$globalTitleColor;
+// 	}
+
+// 	h3 {
+// 		font-size:$globalh3Size;
+// 		color:$globalTitleColor;
+// 	}
+
+// 	p {
+// 		font-size:$globalBtnSize;
+// 		color:$globalFontColor;	
+// 		font-weight: 300;
+// 		margin-top: 2px;
+// 	}
+
+// 	.memBeBoss{
+// 		max-width: 69.4444%;
+// 		margin: 0 auto;
+// 		padding-top:124px;
+// 		// outline: 1px dotted #000;
+// 		@media screen and (max-width: 767px) {
+//     		max-width: 83%;
+//     	}
+
+// 		.memTitle{
+// 			width: 40%;
+// 	    	margin: 0px 30% 30px 30%;
+// 	    	// outline: 1px dotted #ccc;
+// 	    	@media screen and (max-width: 767px) {
+// 	    		width: 100%;
+// 	    		margin: 0 auto;
+//     		}
+// 		}//memTitle end
+
+
+
+// 		.memsection3{
+// 	    	width: 40%;
+// 	    	margin: 80px 5%;
+// 	    	float: left;
+//     		// outline: 1px solid #f00;
+//     		@media screen and (max-width: 767px) {
+//     			width: 100%;
+// 	    		margin: 10px 0% 30px 0%;
+//     		}
+
+//     		.memFormHeader{
+// 				a{
+// 					display: block;
+// 					margin: 30px auto;
+// 				}
+
+// 				.memaddshop img{
+//     				width: 240px;
+//     			}
+//     			.nexttStep{
+//     				width: 150px;
+// 					height: 45px;
+// 					border-radius:22.5px;
+// 					text-align: center;
+// 					line-height: 45px;
+// 					font-size: $globalBtnSize + 2px;
+// 					border: 1px solid $globalBtnColor;
+// 					color:$globalBtnColor;
+// 					transition: .3s ease;
+// 					&:hover {
+// 						background-color: $globalBtnColor;
+// 						color:$globalBgColor;
+// 						transition: .3s ease;
+// 						cursor: pointer;
+// 					}
+//     			}
+    			
+//     			@media screen and (max-width: 767px) {
+//     				padding: 0 6%;
+// 					h1{
+// 						font-size: $globalh3Size;
+// 					}
+//     			}
+// 			}//memFormHeader end
+//     	}//memsection3 end
+
+//     	.memsection3:after{
+// 			content: '';
+// 			display: block;
+// 			clear: both;  
+// 		}
+
+
+// 		.memsection4{
+// 	    	width: 50%;
+// 	    	text-align:left;
+// 	    	float: right;
+//     		// outline: 1px solid #f00;
+//     		@media screen and (max-width: 767px) {
+//     			width: 100%;
+//     		}
+
+//     		.memFollows{
+//     			margin: 0 20%;
+//     			@media screen and (max-width: 767px) {
+//     				margin: 0 auto;
+//     			}
+//     			.memFollow{
+// 					width: 100%;
+// 					background-color: #fff;
+// 					box-shadow: $boxShadow;
+// 					border-radius: 2px;
+//     				.menFollowImg{
+
+//     				}//menFollowImg end
+//     				.menFollowInfo{
+//     					padding: 10px;
+// 						.left{
+// 							width: 76%;
+// 							float: left;
+// 							h3{
+// 								color: $globalLinkColor;
+// 							}
+// 							ul{
+// 								li{
+// 									display: inline-block;
+// 									width: 18px;
+// 								}
+// 							}
+// 						}
+// 						.btn50px{
+// 							width: 50px;
+// 						}
+// 						.follow{
+// 							float:right;
+// 						}
+// 						.mappointer1{
+// 							margin-top: 30px;
+// 						}
+// 						.mappointer1:after{
+// 							content: '地圖';
+// 							margin-left: 16%;
+// 							color: $globalFontColor;
+// 						}
+// 						.dateTime{
+//     						font-size: $globalCardSize;
+//     						color: $globalAltColor;
+//     						float: right;
+//     						margin-top: -20px;
+//     					}
+//     				}//menFollowInfo end
+//     			}//memFollow end
+//     		}//memFollows end
+// 		}//memsection4 end
+
+// 		.memsection4:after{
+// 			content: '';
+// 			display: block;
+// 			clear: both;  
+// 		}
+
+// 	}//memBeBoss end
+// }//container end
+
+
+//--------------------------會員_成為店長p2_container樣式二-------------------------
+.container{
+	width: 100%;
+	text-align:center;
+	overflow: hidden;
+	
+	img{
+		width: 100%;
+		vertical-align: top;
+	}
+
+	h1 {
+		font-size:$globalh1Size;
+		color:$globalTitleColor;
+	}
+
+	h3 {
+		font-size:$globalh3Size;
+		color:$globalTitleColor;
+	}
+
+	p {
+		font-size:$globalBtnSize;
+		color:$globalFontColor;	
+		font-weight: 300;
+		margin-top: 2px;
+	}
+
+	ul li{
+		list-style: none;
+		font-size:$globalContentSize;
+		color:$globalFontColor;	
+		font-weight: 300;
+	}
+
+	.memBeBoss{
+		max-width: 1000px;
+    	width: 69.4444%;
+    	margin: 0 auto;
+		padding-top:124px;
+		// outline: 1px dotted #000;
+
+		.memTitle{
+			width: 48%;
+	    	margin: 0 26%;
+	    	// outline: 1px dotted #ccc;
+	    	@media screen and (max-width: 767px) {
+	    		width: 100%;
+	    		margin: 0 auto;
+    		}
+		}//memTitle end
+
+
+
+		.memsection3{
+	    	width: 100%;
+	    	margin: 30px auto;
+    		// outline: 1px solid #f00;
+    		@media screen and (max-width: 767px) {
+	    		margin: 0;
+	    		h1{
+					font-size: $globalh3Size;
+				}
+    		}
+    	}//memsection3 end
+
+    	.memsection3:after{
+			content: '';
+			display: block;
+			clear: both;  
+		}
+
+
+		.memsection4{
+			margin-bottom: 80px;
+    		// outline: 1px solid #f00;
+    		@media screen and (max-width: 767px) {
+    			width: 100%;
+    		}
+
+    		.memFollows{
+    			width: 50%;
+    			margin: 0 auto;
+    			float: left;
+    			text-align:left;
+    			@media screen and (max-width: 767px) {
+    				width: 100%;
+    			}
+    			.memFollow{
+					width: 46%;
+					margin: 0 auto;
+					border-size: border-box;
+					background-color: #fff;
+					box-shadow: $boxShadow;
+					border-radius: 2px;
+    				@media screen and (max-width: 767px) {
+    				width: 100%;
+    				}
+    				.menFollowInfo{
+    					padding: 10px;
+						.left{
+							width: 100%;
+							h3{
+								color: $globalLinkColor;
+								font-size: $globalh3Size - 4px;
+							}
+							ul{
+								li{
+									display: inline-block;
+									width: 18px;
+								}
+							}
+						}
+						.btn50px{
+							width: 50px;
+						}
+						.follow{
+							float:right;
+						}
+						.mappointer1{
+							margin-top: 30px;
+						}
+						.mappointer1:after{
+							content: '地圖';
+							margin-left: 16%;
+							color: $globalFontColor;
+						}
+						.dateTime{
+    						font-size: $globalCardSize;
+    						color: $globalAltColor;
+    						float: right;
+    						margin-top: -20px;
+    					}
+    				}//menFollowInfo end
+    			}//memFollow end
+    		}//memFollows end
+
+
+    		.action{
+	    		width: 50%;
+    			float: left;
+    			text-align: center;
+    			margin: 6.4% 0;
+    			@media screen and (max-width: 767px) {
+    				width: 100%;
+    			}
+				a{
+					display: block;
+					margin: 50px auto 0 auto;
+				}
+
+				.memaddshop img{
+    				width: 240px;
+    			}
+    			.nextStep{
+    				width: 150px;
+					height: 45px;
+					border-radius:22.5px;
+					text-align: center;
+					line-height: 45px;
+					font-size: $globalBtnSize + 2px;
+					border: 1px solid $globalBtnColor;
+					color:$globalBtnColor;
+					transition: .3s ease;
+					&:hover {
+						background-color: $globalBtnColor;
+						color:$globalBgColor;
+						transition: .3s ease;
+						cursor: pointer;
+					}
+    			}
+			}//action end
+		}//memsection4 end
+
+		.memsection4:after{
+			content: '';
+			display: block;
+			clear: both;  
+		}
+
+	}//memBeBoss end
+}//container end
+
+

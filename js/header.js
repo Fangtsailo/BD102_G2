@@ -175,6 +175,7 @@ $("#submitLogin").click(function(){
             return;
         }
 
+<<<<<<< HEAD
         //正確就送出
         $("#loginForm").submit();
       
@@ -233,6 +234,8 @@ $("#submitRegister").click(function(){
 
 });
 
+=======
+>>>>>>> 230a948adfda63a43a514c549012066936ca63e6
 
 
 

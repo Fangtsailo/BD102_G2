@@ -167,8 +167,13 @@ require_once("headerForHomePage.php");
 						<span>評價</span>
 					</button>
 					<div class="searchbar">
+<<<<<<< HEAD
 					<input id="searchInput" type="search" name="searchStore" placeholder="尋找你附近的麵包香">
 					<button id="searchSubmit" type="submit" onclick="location.href='search.php'">搜尋</button>
+=======
+					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
+					<button type="submit" onclick="location.href='search.php'">搜尋</button>
+>>>>>>> 230a948adfda63a43a514c549012066936ca63e6
 					</div>
 				</div>
 				<div class="clearfix"></div>

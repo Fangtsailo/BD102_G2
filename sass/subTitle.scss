@@ -1,0 +1,127 @@
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+@import "basic/_var.scss";
+
+
+.coverSubtitile{
+	height: 60px;
+	.subtitle{
+		height:44px;
+		width: 100vw;
+		position: fixed;
+		top: 80px;
+		z-index: 3;
+		transition: top 0.3s ease-in-out; 
+
+		h2{
+			line-height: 44px;
+			font-size: 20px;
+			background-color:$MybusinessStore-subtitle-bgColor;
+			padding-left: 20px;
+			color:#fff;
+		}
+		.burger{
+			display:none;
+			position: absolute;
+			right: 7px;
+			top: 7px;
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+
+
+.CoverRightMy{
+	width: 200px;
+	height: 100%;
+
+	position: absolute;
+	top: 44px;
+	right: -200px;
+	transition:.2s;
+	background-color: $globalFtColor;
+	// border:1px solid #f00;
+	ul{
+		li{
+			background-color: $globalBossColor;
+			width: 200px;
+			// height: 44px;
+			padding: 8px 0;
+			color: #fff;
+			text-align: left;
+			padding-left: 20px;
+			display: block;
+
+			&:hover{
+				color:$globalStarColor;
+				transition:0.5s;
+			}
+			 ul{
+			 	li{
+			 		background-color:$globalBossColor;
+					width: 200px;
+					// height: 44px;
+					color: #eef;
+					text-align: left;
+					display: block;
+					padding: 2px 20px;
+					// padding-left: 20px;
+					border-bottom:1px solid #4b7cbf ;
+					&:hover{
+					color:$globalBtnColor;
+					transition:0.5s;
+					}
+			 	}
+			 }
+		}
+	}
+
+}
+
+
+
+.moveToLeft{
+	right: -70px;
+	transition:.2s;
+}
+
+.moveToLeftTop{
+	top :44px;
+	right: -70px;
+	transition:right .2s;
+}
+
+.hide{
+	display: none;
+}
+
+
+
+@media screen and (min-width : 941px){
+
+	.CoverRightMy{
+		display: none;
+	}
+
+}
+
+
+@media screen and (max-width : 940px) {
+
+	.LeftBusiness{
+		display: none ;
+	}
+
+	.coverSubtitile{
+		.subtitle{
+			.burger{
+				display: block;
+			}
+		}
+	}
+
+	
+ 
+}

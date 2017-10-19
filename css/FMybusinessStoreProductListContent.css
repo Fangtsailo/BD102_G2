@@ -465,8 +465,15 @@ footer {
 
 @media screen and (max-width: 940px) {
   .LeftBusiness {
+<<<<<<< HEAD
     display: none; } }
 
+=======
+    display: none; }
+
+  .coverSubtitile .subtitle .burger {
+    display: block; } }
+>>>>>>> 230a948adfda63a43a514c549012066936ca63e6
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -478,10 +485,17 @@ footer {
           min-width: 10px; }
       .CenterBusiness .content-table table tr td {
         width: 70%; }
+<<<<<<< HEAD
       .CenterBusiness .content-table table tr:nth-child(6) td div {
         font-size: 14px; } }
 
 @media screen and (max-width: 912px) {
+=======
+      .CenterBusiness .content-table table tr:nth-child(6) td div div {
+        font-size: 14px;
+        margin: 10px 0; } }
+@media screen and (max-width: 940px) {
+>>>>>>> 230a948adfda63a43a514c549012066936ca63e6
   .CenterBusiness {
     width: 90%; }
     .CenterBusiness .content-table table tr th div {
