@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 @charset "UTF-8";
+=======
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
 * {
   padding: 0;
   margin: 0; }
@@ -14,8 +17,14 @@ a {
   text-decoration: none;
   color: #3399ff; }
 
+<<<<<<< HEAD
 li {
   list-style: none; }
+=======
+.container-template {
+  width: 100%;
+  height: 1000px; }
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
 
 .globalForm {
   width: 50%;
@@ -58,12 +67,7 @@ li {
       height: 50px;
       position: absolute;
       right: 10px;
-      top: 10px;
-      cursor: pointer;
-      transition: .3s ease-in; }
-      .globalForm .globalFormHeader .svg:hover {
-        transform: rotate(180deg);
-        transition: .3s ease-in; }
+      top: 10px; }
   .globalForm .globalFormContent {
     width: 100%;
     padding-top: 10px; }
@@ -80,7 +84,10 @@ li {
         margin: auto;
         background-color: transparent;
         border: none;
+<<<<<<< HEAD
         outline: none;
+=======
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
         border-bottom: 1px solid #bbb; }
         .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
           color: #bbb;
@@ -116,17 +123,11 @@ li {
         text-decoration: none;
         cursor: pointer; }
 
+<<<<<<< HEAD
 .hideUp header.globalHead {
   top: -80px; }
 
-.hideUp_sub {
-  top: 0px  !important;
-  transition: 0.3s ease-in-out !important; }
-
-.hideUp_sub_burger {
-  top: 44px  !important; }
-
-.globalHead {
+header.globalHead {
   width: 100%;
   height: 80px;
   background: rgba(128, 89, 52, 0.9);
@@ -148,16 +149,37 @@ li {
   z-index: 9999;
   position: fixed;
   top: 0;
-  box-shadow: 0px 0px 15px 0px #382715;
   box-sizing: border-box;
   transition: top .3s ease-in-out; }
-  .globalHead .headLoginBox {
+=======
+header.globalHead {
+  width: 100%;
+  height: 100px;
+  background: #805934;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #805934 0%, #9e693d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
+  /* IE6-9 */
+  position: fixed; }
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
+  header.globalHead .headLoginBox {
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
-    .globalHead .headLoginBox .globalForm {
+    header.globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
       left: 0;
@@ -169,23 +191,23 @@ li {
       border: none;
       border-radius: 5px;
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-      .globalHead .headLoginBox .globalForm .globalFormHeader {
+      header.globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
-        .globalHead .headLoginBox .globalForm .globalFormHeader img {
+        header.globalHead .headLoginBox .globalForm .globalFormHeader img {
           width: 160px; }
-      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+      header.globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
-      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
         text-align: center;
         padding: 20px 0px; }
-        .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
+        header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
           border-bottom: 1px solid #3399ff; }
-      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
+      header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
         width: 100%;
         text-align: center;
         padding: 10px 0px; }
-        .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
           display: inline-block;
           width: 50%;
           height: 50px;
@@ -210,23 +232,24 @@ li {
           color: #fbf8f1;
           line-height: 50px;
           font-weight: 300; }
-      .globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
+      header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
         width: 100%;
         padding: 10px 0px;
         text-align: center; }
-        .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
+<<<<<<< HEAD
+        header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
           text-align: center;
           color: #663300;
           cursor: pointer; }
-          .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
+          header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
             border-bottom: 1px solid #663300; }
-  .globalHead .headRegisterBox {
+  header.globalHead .headRegisterBox {
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
-    .globalHead .headRegisterBox .globalForm {
+    header.globalHead .headRegisterBox .globalForm {
       position: absolute;
       top: 0;
       left: 0;
@@ -238,17 +261,17 @@ li {
       border: none;
       border-radius: 5px;
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-      .globalHead .headRegisterBox .globalForm .globalFormHeader {
+      header.globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
-        .globalHead .headRegisterBox .globalForm .globalFormHeader img {
+        header.globalHead .headRegisterBox .globalForm .globalFormHeader img {
           width: 160px; }
-      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+      header.globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
-      .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
+      header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
         padding: 10px 0px; }
-        .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
+        header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
           display: inline-block;
           width: 50%;
           height: 50px;
@@ -273,42 +296,37 @@ li {
           color: #fbf8f1;
           line-height: 50px;
           font-weight: 300; }
-      .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
+      header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
         width: 100%;
         padding: 10px 0px;
         text-align: center; }
-        .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
+        header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
           text-align: center;
           color: #663300;
           cursor: pointer; }
-          .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
+          header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
             border-bottom: 1px solid #663300; }
-  .globalHead .headLogo {
-    height: 100%;
-    margin-left: 20px;
-    float: left; }
-    .globalHead .headLogo a {
-      display: block;
-      width: 100%;
-      height: 80px;
-      padding: 10px 0px; }
-      .globalHead .headLogo a img {
-        display: inline-block;
-        height: 60px; }
-  .globalHead .headerRight {
+  header.globalHead .headLogo {
+    width: 10vw;
+    padding: 10px 20px;
+    display: inline-block; }
+    header.globalHead .headLogo img {
+      display: inline-block;
+      height: 65px; }
+  header.globalHead .headerRight {
     padding: 5px 0px;
     float: right;
     box-sizing: border-box; }
-    .globalHead .headerRight .headSearch {
+    header.globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
       box-sizing: border-box;
       text-align: right; }
-      .globalHead .headerRight .headSearch span {
+      header.globalHead .headerRight .headSearch span {
         margin-right: 10px;
         color: #fbf8f1;
         font-weight: 300; }
-      .globalHead .headerRight .headSearch #headSearch {
+      header.globalHead .headerRight .headSearch #headSearch {
         width: 20%;
         height: 30px;
         display: inline-block;
@@ -318,7 +336,7 @@ li {
         outline: none;
         box-sizing: border-box;
         vertical-align: top; }
-      .globalHead .headerRight .headSearch select {
+      header.globalHead .headerRight .headSearch select {
         display: inline-block;
         width: 80px;
         height: 30px;
@@ -330,7 +348,7 @@ li {
         outline: none;
         border-radius: 2px;
         box-sizing: border-box; }
-      .globalHead .headerRight .headSearch button {
+      header.globalHead .headerRight .headSearch button {
         width: 80px;
         display: inline-block;
         height: 30px;
@@ -340,12 +358,12 @@ li {
         margin: 0px 5px;
         font-size: 16px;
         border-radius: 2px; }
-        .globalHead .headerRight .headSearch button:focus {
+        header.globalHead .headerRight .headSearch button:focus {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
           box-sizing: border-box; }
-      .globalHead .headerRight .headSearch #headSearchSubmit {
+      header.globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
         height: 30px;
@@ -357,139 +375,101 @@ li {
         border-radius: 2px;
         outline: none;
         box-sizing: border-box; }
-        .globalHead .headerRight .headSearch #headSearchSubmit:active {
+        header.globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-@keyframes shake {
-  0% {
-    transform: scale(1, 1); }
-  100% {
-    transform: scale(1.2, 1.2); } }
-    .globalHead .headerRight .headAccount {
-      width: 150px;
+    header.globalHead .headerRight .headAccount {
+      width: 100px;
       float: left; }
-      .globalHead .headerRight .headAccount #headMemStatus {
-        display: block;
-        width: 100%;
-        height: 70px;
-        padding: 5px;
-        box-sizing: border-box; }
-        .globalHead .headerRight .headAccount #headMemStatus div {
-          width: 110px;
-          margin: 10px auto; }
-          .globalHead .headerRight .headAccount #headMemStatus div a {
-            display: block;
-            width: 40px;
-            height: 40px;
-            margin: auto;
-            float: left;
-            border: none; }
-            .globalHead .headerRight .headAccount #headMemStatus div a img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              border-radius: 50%; }
-              .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
-                transition: .3s; }
-                .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
-                  animation: shake .3s ease infinite alternate;
-                  transition: .3s; }
-            .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
-              margin-right: 10px; }
-            .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic {
-              position: relative; }
-              .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic:after {
-                content: '';
-                display: block;
-                width: 0;
-                height: 0;
-                border-top: 4px solid #fff;
-                border-left: 4px solid transparent;
-                border-right: 4px solid transparent;
-                position: absolute;
-                right: -10px;
-                bottom: 0; }
-      .globalHead .headerRight .headAccount .memStatusBar {
-        position: relative;
-        bottom: 15px;
-        right: 70px;
-        width: 180px;
-        padding: 10px;
+      header.globalHead .headerRight .headAccount #headMemStatus {
         display: none; }
-        .globalHead .headerRight .headAccount .memStatusBar ul {
-          width: 150px;
-          margin: auto;
-          background-color: #f2ebd4;
-          border-radius: 5px; }
-          .globalHead .headerRight .headAccount .memStatusBar ul:before {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-bottom: 10px solid #f2ebd4;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            position: absolute;
-            top: 2px;
-            right: 29px; }
-          .globalHead .headerRight .headAccount .memStatusBar ul li {
-            color: #663300;
-            width: 100%;
-            text-align: center; }
-            .globalHead .headerRight .headAccount .memStatusBar ul li:first-child a {
-              padding: 10px 0px;
-              font-weight: 600; }
-            .globalHead .headerRight .headAccount .memStatusBar ul li a {
-              display: block;
-              width: 100%;
-              padding: 5px 0px;
-              text-align: center;
-              font-weight: 500;
-              color: #663300;
-              transition: .3s; }
-              .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
-                background-color: #805934;
-                color: #fbf8f1;
-                transition: .3s; }
-      .globalHead .headerRight .headAccount #headMemLogin {
+        header.globalHead .headerRight .headAccount #headMemStatus #headMemPic {
+          width: 100%;
+          height: 70px; }
+      header.globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
-        height: 70px;
-        cursor: pointer;
-        display: none; }
-        .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
+        height: 70px; }
+        header.globalHead .headerRight .headAccount #headMemLogin .loginGrp {
           width: 50%;
           margin: auto;
           height: 70px;
           position: relative; }
-        .globalHead .headerRight .headAccount #headMemLogin .loginBtn {
+        header.globalHead .headerRight .headAccount #headMemLogin .loginBtn {
           padding: 7px 0px; }
-        .globalHead .headerRight .headAccount #headMemLogin #loginIcon {
+        header.globalHead .headerRight .headAccount #headMemLogin #loginIcon {
           width: 32px;
           height: 32px;
           display: block;
           margin: auto;
           fill: #fbf8f1; }
-        .globalHead .headerRight .headAccount #headMemLogin #loginTxt {
+        header.globalHead .headerRight .headAccount #headMemLogin #loginTxt {
           text-align: center;
           color: #fbf8f1;
           display: block;
           margin: auto;
           font-weight: 300; }
-        .globalHead .headerRight .headAccount #headMemLogin:hover {
-          background-color: #996633;
-          transition: .3s; }
-          .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
-            animation: shake .5s ease infinite alternate;
-            transition: .3s; }
-  .globalHead .rwd_headerSearch {
+  header.globalHead .rwd_headerSearch {
     display: none; }
-  .globalHead .burgerMenu {
-    display: none; }
-  .globalHead .rwdSearchBar {
+  header.globalHead .burgerMenu {
     display: none; }
 
 #menu {
   display: none; }
+=======
+        header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink a {
+          text-align: center;
+          color: #663300; }
+          header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink a:hover {
+            border-bottom: 1px solid #663300; }
+  header.globalHead .headLogo {
+    width: 10%;
+    height: 80px;
+    padding: 10px;
+    display: inline-block; }
+    header.globalHead .headLogo img {
+      display: block;
+      width: 160px;
+      height: 80px; }
+  header.globalHead .headerRight {
+    width: 50%;
+    height: 80px;
+    padding: 10px 0px;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    header.globalHead .headerRight .headSearch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 70%;
+      height: 80px;
+      border: 1px solid #ccc; }
+    header.globalHead .headerRight .headAccount {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 80px;
+      border: 1px solid #ccc; }
+      header.globalHead .headerRight .headAccount #headMemStatus {
+        display: none; }
+        header.globalHead .headerRight .headAccount #headMemStatus #headMemPic {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          padding: 10px 0px; }
+      header.globalHead .headerRight .headAccount #headMemLogin {
+        display: inline-block;
+        width: 100px;
+        height: 80px;
+        padding: 10px 0px; }
+        header.globalHead .headerRight .headAccount #headMemLogin span {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          padding: 0px 5%;
+          fill: #fbf8f1; }
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
 
 footer {
   width: 100%;
@@ -498,8 +478,12 @@ footer {
   text-align: center; }
   footer .globalFtBtn {
     display: inline-block;
+<<<<<<< HEAD
     margin: 15px;
     cursor: pointer; }
+=======
+    margin: 15px; }
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
     footer .globalFtBtn .svg {
       width: 50px;
       height: 50px;
@@ -523,7 +507,6 @@ footer {
   clear: both; }
 
 .globalOkBtn {
-  display: block;
   width: 150px;
   height: 45px;
   border-radius: 22.5px;
@@ -541,7 +524,6 @@ footer {
     cursor: pointer; }
 
 .globalCancelBtn {
-  display: block;
   width: 150px;
   height: 45px;
   border-radius: 22.5px;
@@ -558,6 +540,7 @@ footer {
     text-decoration: none;
     cursor: pointer; }
 
+<<<<<<< HEAD
 .col-sm-1 {
   padding: 0 10px;
   float: left;
@@ -691,73 +674,96 @@ footer {
     width: 100%; }
 
   /*1欄*/
+=======
+@media all and (max-width: 767px) {
+  header.globalHead .headLogo img {
+    width: 30vw; }
+
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-@media screen and (max-width: 980px) {
-  .globalHead {
+<<<<<<< HEAD
+@media screen and (max-width: 900px) {
+  header.globalHead {
     text-align: center; }
-    .globalHead .headLogo {
+    header.globalHead .headLogo {
       min-width: 150px;
       width: 20vw;
       margin: auto;
       display: inline-block;
-      text-align: center;
-      float: none; }
-      .globalHead .headLogo img {
+      text-align: center; }
+      header.globalHead .headLogo img {
         width: 100%; }
-    .globalHead .headerRight {
+    header.globalHead .headerRight {
       display: none; }
-    .globalHead .rwd_headerSearch {
+    header.globalHead .rwd_headerSearch {
       display: inline-block;
       width: 40px;
       height: 40px;
       position: absolute;
       top: 0px;
-      left: 20px;
+      right: 20px;
       bottom: 0;
       margin: auto; }
-      .globalHead .rwd_headerSearch .searchIcon {
+      header.globalHead .rwd_headerSearch .searchIcon {
         width: 20vw;
         height: 40px;
         fill: #fbf8f1; }
-    .globalHead .burgerMenu {
+    header.globalHead .burgerMenu {
       display: inline-block;
       width: 20%;
       height: 40px;
       position: absolute;
       top: 0;
       bottom: 0;
-      right: 20px;
+      left: 0;
       margin: auto; }
-      .globalHead .burgerMenu span {
-        width: 40px;
-        height: 40px;
+      header.globalHead .burgerMenu span {
         display: block;
+        width: 30px;
+        height: 4px;
+        left: 15px;
+        background-color: #fbf8f1;
+        border-radius: 4px;
+        position: absolute;
         margin: auto;
-        fill: #fbf8f1; }
-      .globalHead .burgerMenu.active {
         transition: .3s ease; }
-    .globalHead #headMemStatus {
-      display: none; }
-    .globalHead #menu {
+        header.globalHead .burgerMenu span:nth-of-type(1) {
+          top: 5px; }
+        header.globalHead .burgerMenu span:nth-of-type(2) {
+          top: 16px; }
+        header.globalHead .burgerMenu span:nth-of-type(3) {
+          top: 27px; }
+      header.globalHead .burgerMenu.active {
+        transition: .3s ease; }
+        header.globalHead .burgerMenu.active span:nth-of-type(1) {
+          transform: rotate(-45deg);
+          transition: .3s ease;
+          top: 20px; }
+        header.globalHead .burgerMenu.active span:nth-of-type(2) {
+          display: none; }
+        header.globalHead .burgerMenu.active span:nth-of-type(3) {
+          transform: rotate(45deg);
+          top: 20px;
+          transition: .3s ease; }
+    header.globalHead #menu {
       display: block;
       position: fixed;
       top: 80px;
-      height: 100vh;
-      width: 100%;
       background-color: rgba(0, 0, 0, 0.5); }
-      .globalHead #menu.hideMenu {
-        right: -120%;
+      header.globalHead #menu.hideMenu {
+        left: -375px;
         transition: all 0.3s ease; }
-      .globalHead #menu.show {
-        right: 0;
+      header.globalHead #menu.show {
+        left: 0;
         transition: all 0.3s ease; }
-      .globalHead #menu ul {
+      header.globalHead #menu ul {
         display: block;
-        width: 100%;
+        width: 375px;
+        min-width: 320px;
         background: rgba(128, 89, 52, 0.9);
         /* Old browsers */
         background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
@@ -774,173 +780,37 @@ footer {
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
-        .globalHead #menu ul li {
+        header.globalHead #menu ul li {
+          display: block;
+          padding: 10px;
           color: #fbf8f1; }
-          .globalHead #menu ul li.closeMenu span {
+          header.globalHead #menu ul li.closeMenu span {
             width: 30px;
             display: block;
             float: right;
             fill: #fbf8f1; }
-          .globalHead #menu ul li.memPart {
-            padding-bottom: 10px;
-            position: relative; }
-            .globalHead #menu ul li.memPart:after {
-              content: '';
-              display: block;
-              width: 50%;
-              height: 1px;
-              background-color: rgba(251, 248, 241, 0.5);
-              position: absolute;
-              bottom: 0;
-              left: 25%; }
-            .globalHead #menu ul li.memPart .memPic {
-              width: 100%;
-              height: 100%; }
-              .globalHead #menu ul li.memPart .memPic img {
+          header.globalHead #menu ul li.memPart {
+            height: 60px; }
+            header.globalHead #menu ul li.memPart .memPic {
+              width: 30%;
+              height: 100%;
+              float: left; }
+              header.globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%; }
-            .globalHead #menu ul li.memPart span {
-              width: 100%;
+            header.globalHead #menu ul li.memPart span {
+              width: 70%;
               height: 100%;
               display: block;
+              float: left;
+              margin: auto;
+              line-height: 50px;
               text-align: center; }
-          .globalHead #menu ul li a {
-            display: block;
-            width: 100%;
-            padding: 10px;
+          header.globalHead #menu ul li.listTitle {
+            font-size: 1.2em; }
+          header.globalHead #menu ul li a {
             color: #fbf8f1;
-            font-weight: 400;
-            transition: .3s; }
-            .globalHead #menu ul li a:focus {
-              background-color: rgba(158, 105, 61, 0.5);
-              transition: .3s; }
-          .globalHead #menu ul li.myActivity {
-            position: relative; }
-            .globalHead #menu ul li.myActivity:after {
-              content: '';
-              display: block;
-              width: 50%;
-              height: 1px;
-              background-color: rgba(251, 248, 241, 0.5);
-              position: absolute;
-              bottom: 0;
-              left: 25%; }
-    .globalHead .rwdSearchBar {
-      background: rgba(128, 89, 52, 0.9);
-      /* Old browsers */
-      background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
-      /* FF3.6+ */
-      background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
-      /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
-      /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
-      /* Opera 11.10+ */
-      background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
-      /* IE10+ */
-      background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
-      /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
-      /* IE6-9 */
-      width: 100%;
-      position: fixed;
-      top: 80px;
-      left: -100%;
-      height: 100vh;
-      transition: .3s;
-      display: block; }
-      .globalHead .rwdSearchBar .rwdsearchItem {
-        width: 90%;
-        height: 70%;
-        margin: 10px auto; }
-        .globalHead .rwdSearchBar .rwdsearchItem span {
-          display: block;
-          width: 100%;
-          color: #fbf8f1;
-          padding: 5px;
-          margin: 10px 0px;
-          font-size: 20px; }
-        .globalHead .rwdSearchBar .rwdsearchItem label {
-          display: inline-block;
-          margin: 0px 5px;
-          margin-bottom: 5px;
-          padding: 10px;
-          color: #fbf8f1;
-          border: 1px solid #fbf8f1;
-          outline: none;
-          border-radius: 5px; }
-          .globalHead .rwdSearchBar .rwdsearchItem label input {
-            display: none; }
-          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
-            background-color: #f06428; }
-        .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
-          width: 100%;
-          margin: auto; }
-      .globalHead .rwdSearchBar #rwdHeadSearch {
-        width: 90%;
-        margin: auto;
-        height: 40px;
-        outline: none;
-        border: none;
-        padding-left: 10px; }
-      .globalHead .rwdSearchBar.activeSearch {
-        top: 80px;
-        left: 0;
-        transition: .3s; }
-      .globalHead .rwdSearchBar input[type="submit"] {
-        display: block;
-        width: 50%;
-        height: 40px;
-        background-color: #f2ebd4;
-        margin: 10px auto;
-        color: #663300;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer; } }
-#addShopBox {
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 50, 50, 0.5);
-  display: none; }
-  #addShopBox .globalForm {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 600px;
-    height: 75%;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-    #addShopBox .globalForm .chooseType input {
-      width: 20px;
-      height: 100%; }
-    #addShopBox .globalForm .chooseType .chooseBtn {
-      float: right;
-      margin: 0px 10px; }
-
-#serviceCenter {
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 50, 50, 0.5);
-  display: none; }
-  #serviceCenter .globalForm {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 600px;
-    height: 75%;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+            font-weight: 400; } }
+=======
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214

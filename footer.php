@@ -3,7 +3,7 @@
 		<div class="clearfix"></div>
 	<div class="globalFtgroup">
 
-		<div class="globalFtBtn" id="serviceBtn">
+		<div class="globalFtBtn">
 			<div class="svg">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
 				<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/>
@@ -25,7 +25,7 @@
 			<a href="#">TrePun粉絲專頁</a>
 
 		</div>
-		<div class="globalFtBtn" id="addShopBtn">
+		<div class="globalFtBtn">
 			<div class="svg">
 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 
 			13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 
