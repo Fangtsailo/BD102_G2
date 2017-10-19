@@ -1,9 +1,4 @@
-	$(function(){
 
-<<<<<<< HEAD
-	$('#headMemLogin').click(function(){
-		$('#loginBox').fadeIn(500).css('display','block');
-=======
 
 //切換會員專區
 function changePanel(){
@@ -120,21 +115,24 @@ var bodyClass = document.body.classList,
 	$('#headMemLogin,#rwdLoginBtn').click(function(){
 		$('#loginBox').fadeIn(500);
         $("#menu").removeClass("show");
->>>>>>> d0ce7338c765e922018056b551425ef9f0c43150
 	
 	});
 
-	$('.registerLink span').click(function(){
+//切換至註冊燈箱
+	$('#changeToRegister').click(function(){
 		$('#RegisterBox').css('display','block');
 		$('#loginBox').css('display','none');
-	});
-	$('.loginLink span').click(function(){
-		$('#RegisterBox').css('display','none');
-		$('#loginBox').css('display','block');
+        $("#loginForm")[0].reset();
 	});
 
-<<<<<<< HEAD
-=======
+//切換至登入燈箱
+	$('#changeToLogin').click(function(){
+		$('#RegisterBox').css('display','none');
+		$('#loginBox').css('display','block');
+        $("#registerForm")[0].reset();
+        
+	});
+
 //關閉燈箱按鈕
 	$('.closeBtn,#cancelLogin').click(function(){
 			$('#loginBox').fadeOut(500);
@@ -188,53 +186,132 @@ $("#submitLogin").click(function(){
 
 
 //註冊檢查function
->>>>>>> d0ce7338c765e922018056b551425ef9f0c43150
-
-	$('.svg').click(function(){
-			$('#loginBox').css('display','none');
-			$('#RegisterBox').css('display','none');
-		});
-   
-
-	
-    // $(window).bind('scroll resize', function(){
-    //   var $this = $(this);
-    //   var $this_Top=$this.scrollTop();
-
-    //   //當高度小於100時，關閉區塊 
-    //   	if($this_Top < 100){
-    //     　　　$('.globalHead').stop().animate({top:"-80px"},';linear');
-    //     　　}
-    //     if($this_Top > 100){
-    //     　　　$('.globalHead').stop().animate({top:"0px"},'linear');
-    //     　　}
-    //     　　
-    // }).scroll();
-
-    // console.log('12345');
-
-    var bodyClass = document.body.classList,
-    lastScrollY = 80;
-	window.addEventListener('scroll', function(){
- 	 var st = this.scrollY;
-  		if( st > lastScrollY) {
-  	  		bodyClass.add('hideUp');
-  		}else{
-    		bodyClass.remove('hideUp');
-  		}
-  		lastScrollY = st;
-	});
 
 
-   $("#burgerBtn").click(function (e) { //點擊選單按鈕時
+$("#submitRegister").click(function(){
+
+  if ( $("#newMemId").val().length < 6 && $("#newMemId").val().length ==0 ){
+        $.sweetModal({
+            content: '帳號不得低於六碼',
+            icon: $.sweetModal.ICON_WARNING,
+            width: '300px',
+            theme: $.sweetModal.THEME_MIXED,
+            buttons: [
+                {
+                    label: '知道了',
+                    classes: 'brownB'
+                }
+            ]
+        });
+        $("#newMemId").select();
+        return;
+
+    }
+
+    //檢查email格式
+    var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if( filter.test($("#newMemMail").val())==false  ){
+        $.sweetModal({
+            content: '電子郵件格式不正確',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#newMemMail").select();
+        return;
+    }
+    
+    //檢查密碼不得空白
+    if ($("#newMemPsw").val().length < 6 && $("#newMemPsw").val().length >=0 ){
+        $.sweetModal({
+            content: '密碼長度不得低於六碼',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#newMemPsw").select();
+        return;
+    }
+
+  $("#registerForm").submit();
+
+});
+
+
+
+
+
+
+//登入後會員專區顯示
+     $("#headMemPic").click(function(){
+          $('#memStatusBar').slideToggle(300);
+     });
+
+//新增店家按鈕
+
+    $("#addShop1").click(function(){
+        $("#addShopBox").show(300);
+    });
+
+    $("#closeBtn01").click(function(){
+      $("#addShopBox").hide(500);
+    });
+
+    $("#closeBtn02").click(function(){
+      $("#serviceCenter").hide(500);
+    });
+
+    $('#addShopBtn').click(function(){
+      $("#addShopBox").show(500);
+    });
+
+    $('#serviceBtn').click(function(){
+      $("#serviceCenter").show(500)
+    });
+
+//mobile導覽列會員專區顯示
+
+    $("#burgerBtn").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
             $("#menu").toggleClass("show");
-            $(".burgerMenu").toggleClass("active"); //在#menu增加Class
+            $("#burgerBtn").toggleClass("active"); //在#menu增加Class
+            $("#rwdSearchBar").removeClass("activeSearch");
+            $("#rwd-HeaderLink").removeClass("showMenu");
+            $("#left-burgerBtn").removeClass("active");
+            $('#closeBurger,#closeBurger1').click(function(){
+              $("#menu").removeClass("show");
+            });
+
         });
+
+//導覽列搜尋區塊
+    
+    $(".rwd_headerSearch").click(function (e) { //點擊選單按鈕時
+            e.preventDefault(); //停止
+            // $(".rwdSearchBar").toggleClass("activeSearch");
+            $("#rwdSearchBar").toggleClass("activeSearch"); 
+            $("#menu").removeClass("show");
+        });
+
+
+//首頁導覽列漢堡選單
+    $("#left-burgerBtn").click(function(){
+          $("#left-burgerBtn").toggleClass("active");
+          $("#rwd-HeaderLink").toggleClass("showMenu");
+          $("#menu").removeClass("show");
+    });
+
+ 
+    for (var i = 1; i <= 6; i++) {
+      let j = i; 
+      $('.section'+i+'-click').click(function(){
+        console.log(j);
+        $("#rwd-HeaderLink").removeClass("showMenu");
+        $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);  
+      });
+    }
 
 
 
 
 });
+
+
 
 
