@@ -15,46 +15,7 @@ function logOut(){
     $('#memStatusBar').hide(300);
 }   
 
-//登入檢查function    
-    function checkform(){
-            
-        //檢查帳號不可小於六碼
-        if ( $("#memId").val().length < 6 && $("#memId").val().length ==0 ){
-            $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
-            $.sweetModal({
-                content: '帳號不得低於六碼',
-                icon: $.sweetModal.ICON_WARNING,
-                width: '300px',
-                theme: $.sweetModal.THEME_MIXED,
-                buttons: [
-                    {
-                        label: '知道了',
-                        classes: 'brownB'
-                    }
-                ]
-            });
-            $("#memId").select();
-           return;
-        }
-        
 
-        //檢查密碼不可超過六碼
-        if ($("#memPsw").val().length =="" ){
-            $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
-            $.sweetModal({
-                content: '密碼不得空白',
-                icon: $.sweetModal.ICON_WARNING
-            });
-            $("#memPsw").select();
-            return;
-        }
-
-        //正確就送出
-       $("#loginForm").submit();
-       $('#loginBox').fadeOut(500);
-       changePanel();
-
-    }
 
 //註冊檢查function
 
@@ -183,8 +144,41 @@ var bodyClass = document.body.classList,
 
 //按下登入檢查
 $("#submitLogin").click(function(){
-        checkform();
-        $(".globalForm").css("animation","none");
+         //檢查帳號不可小於六碼
+        if ( $("#memId").val().length < 6 && $("#memId").val().length ==0 ){
+            $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
+            $.sweetModal({
+                content: '帳號不得低於六碼',
+                icon: $.sweetModal.ICON_WARNING,
+                width: '300px',
+                theme: $.sweetModal.THEME_MIXED,
+                buttons: [
+                    {
+                        label: '知道了',
+                        classes: 'brownB'
+                    }
+                ]
+            });
+            $("#memId").select();
+           return;
+        }
+        
+
+        //檢查密碼不可超過六碼
+        if ($("#memPsw").val().length =="" ){
+            $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
+            $.sweetModal({
+                content: '密碼不得空白',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            $("#memPsw").select();
+            return;
+        }
+
+        //正確就送出
+        $("#loginForm").submit();
+      
+        
 });
 
 

@@ -18,7 +18,7 @@
 	<div class="headLoginBox" id="loginBox">
 		
 		<div class="globalForm">
-		<form id="loginForm" action="" method="">
+		<form id="loginForm" name="loginForm" action="logIn.php" method="post">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
