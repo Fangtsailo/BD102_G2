@@ -4,8 +4,6 @@
   background-color: transparent;
   border: 1px solid #9e693d;
   color: #9e693d;
-  -webkit-transition: all .5s;
-  -o-transition: all .5s;
   transition: all .5s;
   cursor: pointer;
   font-family: "Noto Sans CJK TC"; }
@@ -79,9 +77,7 @@ img {
         position: relative;
         padding: 5px;
         right: -250px;
-        -webkit-transition: -webkit-transform 0.5s;
         transition: -webkit-transform 0.5s;
-        -o-transition: transform 0.5s;
         transition: transform 0.5s;
         transition: transform 0.5s, -webkit-transform 0.5s;
         background-color: rgba(230, 185, 142, 0.9); }
@@ -94,7 +90,6 @@ img {
 
 .screen {
   padding-top: 80px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden;
   min-height: 100vh;
@@ -110,8 +105,9 @@ img {
     background-position: center center;
     height: 100vh;
     background-image: url("../img/store/browse/screen1-bg.png");
-    -webkit-animation: banners-slide 18s 2s infinite;
-    animation: banners-slide 18s 2s infinite; }
+    -webkit-animation: banners-slide 18s 2s infinite backwards;
+    animation: banners-slide 18s 2s infinite backwards; }
+
 @-webkit-keyframes banners-slide {
   0% {
     background-image: url("../img/store/browse/screen1-bg.png"); }
@@ -121,6 +117,7 @@ img {
     background-image: url("../img/store/browse/screen1-bg3.png"); }
   100% {
     background-image: url("../img/store/browse/screen1-bg.png"); } }
+
 @keyframes banners-slide {
   0% {
     background-image: url("../img/store/browse/screen1-bg.png"); }
@@ -249,6 +246,7 @@ img {
       background-size: contain;
       -webkit-animation: cloud-move 12s linear alternate infinite;
       animation: cloud-move 12s linear alternate infinite; }
+
 @-webkit-keyframes cloud-move {
   0% {
     -webkit-transform: translateX(-50px);
@@ -256,6 +254,7 @@ img {
   100% {
     -webkit-transform: translateX(250px);
     transform: translateX(250px); } }
+
 @keyframes cloud-move {
   0% {
     -webkit-transform: translateX(-50px);
@@ -275,8 +274,9 @@ img {
       left: 0;
       right: 0; }
     .screen-1 #bottom-city .marker {
-      -webkit-animation: marker-move 0.5s linear alternate infinite;
-      animation: marker-move 0.5s linear alternate infinite; }
+      -webkit-animation: marker-move .5s linear alternate infinite;
+      animation: marker-move .5s linear alternate infinite; }
+
 @-webkit-keyframes marker-move {
   0% {
     -webkit-transform: translateY(0px);
@@ -284,6 +284,7 @@ img {
   100% {
     -webkit-transform: translateY(10px);
     transform: translateY(10px); } }
+
 @keyframes marker-move {
   0% {
     -webkit-transform: translateY(0px);
@@ -373,8 +374,6 @@ img {
       position: relative;
       text-align: center;
       color: #9e693d;
-      -webkit-transition: all .5s;
-      -o-transition: all .5s;
       transition: all .5s; }
       .screen-bread-car-map .tabs .item:hover {
         background-color: rgba(158, 105, 61, 0.8);
@@ -483,7 +482,6 @@ img {
       outline: none;
       position: relative;
       height: 180px;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 0px 40px;
       display: inline-block;
@@ -491,9 +489,7 @@ img {
       font-size: 16px; }
       .screen-product .product-list .item img {
         opacity: 0.5;
-        -webkit-transition: -webkit-transform 1s;
         transition: -webkit-transform 1s;
-        -o-transition: transform 1s;
         transition: transform 1s;
         transition: transform 1s, -webkit-transform 1s;
         width: 30%;
@@ -615,6 +611,7 @@ img {
     .screen-activity #activity-parallax .tool-shadow {
       left: 30vw;
       top: 53vh; }
+
 @-webkit-keyframes tool-move {
   0% {
     -webkit-transform: translateX(0px);
@@ -622,6 +619,7 @@ img {
   100% {
     -webkit-transform: translateX(20vw);
     transform: translateX(20vw); } }
+
 @keyframes tool-move {
   0% {
     -webkit-transform: translateX(0px);
@@ -629,6 +627,7 @@ img {
   100% {
     -webkit-transform: translateX(20vw);
     transform: translateX(20vw); } }
+
 @-webkit-keyframes tool-move-long {
   0% {
     -webkit-transform: translateX(0px);
@@ -636,6 +635,7 @@ img {
   100% {
     -webkit-transform: translateX(30vw);
     transform: translateX(30vw); } }
+
 @keyframes tool-move-long {
   0% {
     -webkit-transform: translateX(0px);
@@ -754,8 +754,6 @@ img {
       position: relative;
       padding: 0; }
       .screen-other-store .top-list .item img, .screen-other-store .bottom-list .item img {
-        -webkit-transition: all 2s;
-        -o-transition: all 2s;
         transition: all 2s;
         opacity: 0.5; }
       .screen-other-store .top-list .item:hover img, .screen-other-store .bottom-list .item:hover img {
@@ -773,7 +771,6 @@ img {
         min-height: 50px;
         text-align: center;
         padding: 10px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         .screen-other-store .top-list .item .detail p, .screen-other-store .bottom-list .item .detail p {
           color: #ccc; }
@@ -790,7 +787,10 @@ img {
     width: 80px; }
   .screen-messages .normal-icon {
     width: 100px; }
-  .screen-messages .title {
+
+@-webkit-keyframes icon-scale {}
+
+@keyframes icon-scale {}  .screen-messages .title {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -862,36 +862,35 @@ img {
       left: 150px; }
     .screen-messages .message-icons .icon:nth-child(6) {
       right: 150px; }
+
 @-webkit-keyframes dialog-bubble {
   0% {
-    top: 100%;
+    top: -200px;
     opacity: 1; }
   100% {
-    top: -200px;
+    top: 100%;
     opacity: 1; } }
+
 @keyframes dialog-bubble {
   0% {
-    top: 100%;
+    top: -200px;
     opacity: 1; }
   100% {
-    top: -200px;
+    top: 100%;
     opacity: 1; } }
   .screen-messages .messages-area {
     margin: auto;
     max-width: 781px;
     width: 100%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative; }
     .screen-messages .messages-area .more-message {
       text-align: center;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       width: 15vw;
       padding: 5px;
       margin: auto; }
   .screen-messages .messages-area .message-box, .screen-messages .send-message-area .message-box {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 770px;
     width: 100%;
@@ -906,13 +905,13 @@ img {
     .screen-messages .messages-area .message-box .content, .screen-messages .send-message-area .message-box .content {
       background-color: #fbf8f1;
       position: relative;
+      z-index: 0;
       border-radius: 3px;
-      -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
       font-size: 15px;
       /* firefox 19+ */
       /* ie */
-      padding: 10px; }
+      padding: 0px; }
       .screen-messages .messages-area .message-box .content ::-webkit-input-placeholder, .screen-messages .send-message-area .message-box .content ::-webkit-input-placeholder {
         font-size: 16px; }
       .screen-messages .messages-area .message-box .content ::-moz-placeholder, .screen-messages .send-message-area .message-box .content ::-moz-placeholder {
@@ -940,30 +939,49 @@ img {
         border-bottom: 10px solid transparent;
         position: absolute;
         left: -18px;
-        top: 18px; }
-      .screen-messages .messages-area .message-box .content .name, .screen-messages .send-message-area .message-box .content .name {
-        color: #603813;
-        font-size: 16px;
-        margin-bottom: 10px; }
-      .screen-messages .messages-area .message-box .content .setting-area, .screen-messages .send-message-area .message-box .content .setting-area {
-        width: 100px;
-        float: right;
-        color: #bbbbbb;
-        font-size: 12px; }
-        .screen-messages .messages-area .message-box .content .setting-area img, .screen-messages .send-message-area .message-box .content .setting-area img {
-          width: auto; }
-        .screen-messages .messages-area .message-box .content .setting-area .reply, .screen-messages .messages-area .message-box .content .setting-area .report, .screen-messages .send-message-area .message-box .content .setting-area .reply, .screen-messages .send-message-area .message-box .content .setting-area .report {
-          width: 30px;
-          height: 30px;
-          float: right; }
-          .screen-messages .messages-area .message-box .content .setting-area .reply .img-icon, .screen-messages .messages-area .message-box .content .setting-area .report .img-icon, .screen-messages .send-message-area .message-box .content .setting-area .reply .img-icon, .screen-messages .send-message-area .message-box .content .setting-area .report .img-icon {
-            width: 22px;
-            height: 20px; }
+        top: 18px;
+        z-index: 0; }
+      .screen-messages .messages-area .message-box .content:after, .screen-messages .send-message-area .message-box .content:after {
+        content: '';
+        display: block;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-right: 18px solid rgba(0, 0, 0, 0.3);
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        position: absolute;
+        left: -16px;
+        top: 23px; }
+      .screen-messages .messages-area .message-box .content .container, .screen-messages .send-message-area .message-box .content .container {
+        z-index: 1;
+        padding: 10px;
+        background-color: #fbf8f1;
+        border-radius: 3px; }
+        .screen-messages .messages-area .message-box .content .container .name, .screen-messages .send-message-area .message-box .content .container .name {
+          color: #603813;
+          font-size: 16px;
+          margin-bottom: 10px; }
+        .screen-messages .messages-area .message-box .content .container .setting-area, .screen-messages .send-message-area .message-box .content .container .setting-area {
+          width: 100px;
+          float: right;
+          color: #bbbbbb;
+          font-size: 12px; }
+          .screen-messages .messages-area .message-box .content .container .setting-area img, .screen-messages .send-message-area .message-box .content .container .setting-area img {
+            width: auto; }
+          .screen-messages .messages-area .message-box .content .container .setting-area .reply, .screen-messages .messages-area .message-box .content .container .setting-area .report, .screen-messages .send-message-area .message-box .content .container .setting-area .reply, .screen-messages .send-message-area .message-box .content .container .setting-area .report {
+            width: 30px;
+            height: 30px;
+            float: right; }
+            .screen-messages .messages-area .message-box .content .container .setting-area .reply .img-icon, .screen-messages .messages-area .message-box .content .container .setting-area .report .img-icon, .screen-messages .send-message-area .message-box .content .container .setting-area .reply .img-icon, .screen-messages .send-message-area .message-box .content .container .setting-area .report .img-icon {
+              width: 22px;
+              height: 20px; }
   .screen-messages .send-message-area {
     position: relative; }
     .screen-messages .send-message-area .message-box .mem-pic {
       margin-bottom: 5px; }
     .screen-messages .send-message-area .message-box .content {
+      padding: 10px;
       background-color: rgba(0, 0, 0, 0.1); }
       .screen-messages .send-message-area .message-box .content textarea {
         outline: none;
@@ -973,6 +991,8 @@ img {
         font-family: "Noto Sans CJK TC"; }
       .screen-messages .send-message-area .message-box .content:before {
         border-right: 18px solid rgba(0, 0, 0, 0.1); }
+      .screen-messages .send-message-area .message-box .content:after {
+        display: none; }
 
 .only-pc {
   display: block; }
@@ -981,225 +1001,162 @@ img {
   .col-lg-1 {
     float: left;
     width: 8.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-2 {
     float: left;
     width: 16.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-3 {
     float: left;
     width: 25%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-4 {
     float: left;
     width: 33.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-5 {
     float: left;
     width: 41.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-6 {
     float: left;
     width: 50%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-7 {
     float: left;
     width: 58.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-8 {
     float: left;
     width: 66.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-9 {
     float: left;
     width: 75%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-10 {
     float: left;
     width: 83.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-11 {
     float: left;
     width: 91.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-12 {
     float: left;
     width: 100%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-lg-offset-1 {
     margin-left: 8.333333%; }
-
   .col-lg-offset-2 {
     margin-left: 16.666666%; }
-
   .col-lg-offset-3 {
     margin-left: 25%; }
-
   .col-lg-offset-4 {
     margin-left: 33.333333%; }
-
   .col-lg-offset-5 {
     margin-left: 41.666666%; }
-
   .col-lg-offset-6 {
     margin-left: 50%; }
-
   .col-lg-offset-7 {
     margin-left: 58.333333%; }
-
   .col-lg-offset-8 {
     margin-left: 66.666666%; }
-
   .col-lg-offset-9 {
     margin-left: 75%; }
-
   .col-lg-offset-10 {
     margin-left: 83.333333%; }
-
   .col-lg-offset-11 {
     margin-left: 91.666666%; }
-
   .col-lg-offset-12 {
     margin-left: 100%; }
-
   .screen-product .product-list .item {
     width: 25%; }
-
   #bread-detail {
     display: none; }
-
   .screen-messages .send-message-area .message-box .mem-pic img, .screen-messages .messages-area .message-box .mem-pic img {
     width: 70px;
     height: 70px; } }
+
 @media screen and (max-width: 767px) {
   .col-xs-1 {
     float: left;
     width: 8.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-2 {
     float: left;
     width: 16.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-3 {
     float: left;
     width: 25%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-4 {
     float: left;
     width: 33.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-5 {
     float: left;
     width: 41.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-6 {
     float: left;
     width: 50%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-7 {
     float: left;
     width: 58.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-8 {
     float: left;
     width: 66.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-9 {
     float: left;
     width: 75%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-10 {
     float: left;
     width: 83.333333%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-11 {
     float: left;
     width: 91.666666%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .col-xs-12 {
     float: left;
     width: 100%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
-
   .button {
     background-color: rgba(158, 105, 61, 0.7);
     border-color: transparent;
     color: #fbf8f1; }
-
   .perspective {
     margin-bottom: 20px; }
-
   .screen-1 {
     position: relative; }
     .screen-1 #bottom-city {
@@ -1210,7 +1167,6 @@ img {
       position: absolute;
       bottom: 0;
       left: 0;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       width: 100%;
       top: auto; }
@@ -1226,7 +1182,6 @@ img {
           padding-left: 0;
           padding-right: 0; }
     .screen-1 .right-describe {
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       width: 100%;
       background-color: rgba(128, 89, 52, 0.7);
@@ -1236,13 +1191,10 @@ img {
       position: relative;
       top: 0;
       padding-bottom: 55px; }
-
   .screen:not(:first-of-type) {
     padding-top: 50px; }
-
   .screen-bread-car-map #bread-car {
     height: 40px; }
-
   .screen-product .product-list .only-pc {
     display: none; }
   .screen-product .product-list:before, .screen-product .product-list:after {
@@ -1274,21 +1226,18 @@ img {
     .screen-product .product .describe {
       background-color: transparent;
       max-width: none;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       margin-top: 0px;
       color: #8E8E8E;
       text-align: center; }
     .screen-product .product p {
       display: none; }
-
   .screen-other-store .top-list .item, .screen-other-store .bottom-list .item {
     width: 50%; }
     .screen-other-store .top-list .item .detail p, .screen-other-store .bottom-list .item .detail p {
       display: none; }
   .screen-other-store .top-list .only-pc, .screen-other-store .bottom-list .only-pc {
     display: none; }
-
   .screen-activity .banner-area {
     padding-left: 10px;
     padding-right: 10px; }
@@ -1338,7 +1287,6 @@ img {
       width: 130px;
       right: -20vw;
       top: 52vh; }
-
   .screen-messages .message-icons .small-icon {
     display: none; }
   .screen-messages .send-message-area, .screen-messages .messages-area {
@@ -1362,5 +1310,3 @@ img {
           display: none; }
     .screen-messages .send-message-area .more-message, .screen-messages .messages-area .more-message {
       width: 100%; } }
-
-
