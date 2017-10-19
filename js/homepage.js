@@ -6,22 +6,30 @@ $(function(){
 
 // Scroll Magic
 	var controller = new ScrollMagic.Controller();
+//logo動畫
+	new Vivus('theLogo', {
+		duration: 200, 
+		type: 'delayed',
+		pathTimingFunction: Vivus.EASE_IN,
+    	animTimingFunction: Vivus.EASE
+	},function(obj){
+		obj.el.classList.add('finished');
+	});
 
 
-
-
+	
 
 // 第一屏文字敘述
 	var tween_1 = TweenMax.fromTo(".itemGrp .descrp ", 1 ,{
 		opacity : 0,
-		x : -100,
+		y : -100,
 		ease: Back.easeOut.config(1.7)
 	
 	},{
 		opacity : 1,
-		x : 0
+		y : 0
 
-	});
+	},2 );
 
 
 // 第一屏篩選
@@ -31,8 +39,13 @@ $(function(){
 		$(this).siblings(".active").removeClass("active");
 
 	});
-
-
+//第一屏搜尋
+	$("#searchInput").keyup(function(){
+		$(this).siblings("#searchSubmit").addClass('keyIn').text("GO");
+	});
+	$("#searchInput").blur(function(){
+		$(this).siblings("#searchSubmit").removeClass('keyIn').text("搜尋");
+	});
 // 第二屏文字
 
 	var tween_2 = TweenMax.staggerFromTo('.topChartDescrp',1,{
@@ -50,9 +63,9 @@ $(function(){
 		offset: 0 
 	})
 	.setTween(tween_2)
-	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
-		name:'scene_01'
-	})
+	// .addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+	// 	name:'scene_01'
+	// })
 	.addTo(controller);	
 
 
@@ -71,9 +84,9 @@ $(function(){
 		offset: 20 
 	})
 	.setTween(tween_3)
-	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
-		name:'scene_02'
-	})
+	// .addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+	// 	name:'scene_02'
+	// })
 	.addTo(controller);	
 
 
@@ -95,9 +108,9 @@ $(function(){
 		offset: 0 
 	})
 	.setTween(tween_4)
-	.addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
-		name:'scene_03'
-	})
+	// .addIndicators({ //debug用，顯示觸發點、起始點和結束點在畫面上
+	// 	name:'scene_03'
+	// })
 	.addTo(controller);	
 	
 
@@ -107,9 +120,42 @@ $(function(){
 $('.shopItemGrp').slick({
   dots: true,
   infinite: true,
-  speed: 500,
+  speed: 1000,
+  autoplay: true,
+  autoplaySpeed: 2000,
   fade: true,
   cssEase: 'linear'
+});
+
+
+//體驗活動輪播
+$(".actBannerGrp").slick({
+	// infinite: true,
+	slidesToShow: 1,
+	vertical:true,
+	prevArrow:"#chooseActUp .svg",
+	nextArrow:"#chooseActDown .svg",
+	responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    }
+  ]
+
 });
 
 
@@ -121,9 +167,16 @@ $('.newShopGrp').slick({
   infinite: false,
   slidesToShow: 3,
   slidesToScroll: 2,
-  autoplay: true,
-  autoplaySpeed: 2000,
+
+  // autoplay: true,
+  // autoplaySpeed: 2000,
   responsive: [
+  	{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2
+      }
+    },
     {
       breakpoint: 768,
       settings: {
@@ -145,13 +198,26 @@ $('.newShopGrp').slick({
   ]
 });
 
-for (var i = 1; i <= 6; i++) {
-	$('.section'+i+'-click').click(function(){
-		for (var j = 1; j <= 6; j++) {
-			 $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);
-		}
-    });
-}
+
+$('#addShopBtn').click(function(){
+	$("#addShopBox").show(500);
+});
+$('#serviceBtn').click(function(){
+	$("#serviceCenter").show(500)
+});
+$("#closeBtn01").click(function(){
+	$("#addShopBox").hide(500);
+});
+$("#closeBtn02").click(function(){
+	$("#serviceCenter").hide(500);
+});
+// for (var i = 1; i <= 6; i++) {
+// 	$('.section'+i+'-click').click(function(){
+// 		let j = i;	
+// 		$('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);
+		
+//     });
+// }
 
  
 
