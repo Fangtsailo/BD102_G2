@@ -35,10 +35,14 @@
 	@keyframes cloud {
 			0% {
 				bottom:-100px;
-				opacity: .5;
+				opacity: 0;
 				transform: scale(1);
 			}
-			
+			50% {
+				bottom: 0px;
+				opacity: 0.5;
+				transform: scale(1.2);
+			}
 			100% {
 				bottom: 100px;
 				opacity: 0.1;
@@ -48,10 +52,14 @@
 		@keyframes cloud2 {
 			0% {
 				bottom: -100px;
-				opacity: .5;
+				opacity: 0;
+				transform: scale(1);
+			}
+			50% {
+				bottom: 50px;
+				opacity: 0.5;
 				transform: scale(1.5);
 			}
-			
 			100% {
 				bottom: 200px;
 				opacity: 0.1;
@@ -843,7 +851,7 @@
     	top: -600px;
     	width: 510px;
     	height: 700px;
-    	overflow: hidden;
+    	// overflow: hidden;
     	left: -121px;
 	}
 	.act_cloud{

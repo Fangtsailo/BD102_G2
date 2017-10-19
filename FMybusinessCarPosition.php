@@ -17,6 +17,7 @@
 
 	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
 
 
@@ -71,7 +72,7 @@
 
 
 
-		<div class="LeftBusiness">
+		<!-- <div class="LeftBusiness"> -->
 
 						<?php 
 
@@ -80,7 +81,7 @@
 			 ?>
 
 			
-		</div> <!-- LeftBusiness -->
+		<!-- </div> --> <!-- LeftBusiness -->
 		
 	
 
@@ -126,7 +127,7 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<img src="http://fakeimg.pl/720x540/00CED1/FFF/?text=Map">
+							<img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map">
 							<div><img src="img/icon/mapAim.png"></div>
 						</td>
 					</tr>

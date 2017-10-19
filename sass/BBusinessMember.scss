@@ -41,24 +41,37 @@ header{
 
 
 .search{
-		width: $tableContent-width;
 		
-		margin: auto;
+		
+		// margin: auto;
 		position: fixed;
 		z-index: 3;
 		left: 0;
 		right: 0;
 		text-align: center;
 		margin-top: 20px;
+		img{
+			position: absolute;
+			top: 4px;
+			outline: none;
+			cursor:pointer;
+		}
 		input{
 			width: 600px;
 			height: 40px;
 			border-radius: 15px;
 			border:none;
 			background-color: #b5b5b5;
-			opacity:0.35;
-		}
-	}
+			opacity:0.5;
+			text-indent: 20px;
+			&::-webkit-input-placeholder { /* WebKit browsers */
+							    color:#000;
+							    font-size: 13px;
+							    text-indent: 20px;
+							    font-family: $globalFont;
+							}
+		}//input
+}// search
 
 
 
@@ -137,13 +150,15 @@ header{
 	margin-bottom: 160px;
 	padding-top: 50px;
 	tr{
+
+		background-color: #fff;
 		&:hover{
-		background-color:#000;
+		background-color:#e1ccb0;
 		}
 	
 		td{
 			color:$tableContent-word-color;
-			background-color: #ffffff;
+			// background-color: #ffffff;
 			height: 50px;
 			text-align: center;
 			// &:hover{
@@ -179,6 +194,14 @@ header{
 					border-radius: 10px;
 					box-shadow:0 0 0;
 					border: none;
+					transition:.2s;
+					&:hover{
+						color:#565894;
+						background-color: #fff;
+						border:1px solid #565894;
+						box-sizing: border-box; 
+					}
+
 				}
 			}
 			&:nth-child(8){

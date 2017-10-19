@@ -68,40 +68,7 @@ width: 100%;
 
 
 
-	// .LeftBusiness{
-	// 	width: 200px;
-	// 	height: 500px;
-	// 	position: fixed;
-	// 	left: 0;
-	// 	top: 160px;
-	// 	// background-color: #ccc;
-	// 	.nav-Group1{
-	// 		margin-top: 30px;
-	// 	}
-	// 	div{
-	// 		div{
-	// 			&:nth-child(1){
-	// 				@include member-nav-bar-mainTitle-propity();
-	// 				// margin-top:150px;
-
-	// 			}
-	// 			&:nth-child(2){
-	// 				@include member-nav-bar-subTitle-propity();
-					
-	// 			}
-	// 			&:nth-child(3){
-	// 				@include member-nav-bar-subTitle-propity();
-					
-	// 			}
-	// 			&:nth-child(4){
-	// 				@include member-nav-bar-subTitle-propity();
-					
-	// 			}
-
-				
-	// 		}
-	// 	}
-	// }
+	
 
 
 
@@ -243,6 +210,7 @@ width: 100%;
 								margin: 10px;
 								padding: 5px 0;
 								transition:.3s;
+								cursor: pointer;
 
 								// min-width: 63px;
 
@@ -528,10 +496,10 @@ width: 100%;
 }
 
 footer{
-	width: 100vw;
-	height: 50px;
-	position: fixed;
-	bottom: 0;
+	// width: 100vw;
+	// height: 50px;
+	// position: fixed;
+	// bottom: 0;
 }
 
 

@@ -9,8 +9,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
-		<!-- =====side bar==== -->
+	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
 
 		<!-- =====subTitle==== -->
@@ -57,7 +58,7 @@
 
 
 
-		<div class="LeftBusiness">
+<!-- 		<div class="LeftBusiness"> -->
 
 
 
@@ -70,7 +71,7 @@
 
 
 			
-		</div> <!-- LeftBusiness -->
+		<!-- </div> --> <!-- LeftBusiness -->
 		
 	
 

@@ -853,9 +853,14 @@ footer {
 @-webkit-keyframes cloud {
   0% {
     bottom: -100px;
-    opacity: .5;
+    opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
+  50% {
+    bottom: 0px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
   100% {
     bottom: 100px;
     opacity: 0.1;
@@ -865,9 +870,14 @@ footer {
 @keyframes cloud {
   0% {
     bottom: -100px;
-    opacity: .5;
+    opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
+  50% {
+    bottom: 0px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
   100% {
     bottom: 100px;
     opacity: 0.1;
@@ -877,7 +887,12 @@ footer {
 @-webkit-keyframes cloud2 {
   0% {
     bottom: -100px;
-    opacity: .5;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 50px;
+    opacity: 0.5;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); }
   100% {
@@ -889,7 +904,12 @@ footer {
 @keyframes cloud2 {
   0% {
     bottom: -100px;
-    opacity: .5;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 50px;
+    opacity: 0.5;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); }
   100% {
@@ -1597,7 +1617,6 @@ footer {
     top: -600px;
     width: 510px;
     height: 700px;
-    overflow: hidden;
     left: -121px; }
   .activity_application .act_cloud:nth-child(1) {
     z-index: 1;

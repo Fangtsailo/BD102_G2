@@ -92,8 +92,8 @@
 
 
 @mixin member-nav-bar-subTitle-propity() {
-
-	width: 180px;
+	display: block;
+	width: 160px;
 	height: $store-nav-bar-height;
 	background-color:#D9E8FF;
 	border-radius: 2px;
@@ -108,7 +108,7 @@
 		margin: auto;
 		font-size: 18px;
 		color: #fff;
-		color:$MybusinessStore-subtitle-bgColor;
+		color:$MybusinessStore-subtitle-bgColor !important;
 	}
 	svg{
 

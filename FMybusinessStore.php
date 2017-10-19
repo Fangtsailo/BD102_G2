@@ -22,6 +22,7 @@
 
 	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
+	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
 
 
@@ -77,18 +78,18 @@
 
 
 
-		<div class="LeftBusiness">
+		<!-- <div class="LeftBusiness" id="LeftBusiness"> -->
 
 			
 			<?php 
 
-		require_once('memberSideBar.php');
+				require_once('memberSideBar.php');
 
-			 ?>
+			?>
 
 
 			
-		</div> <!-- LeftBusiness -->
+		<!-- </div> --> <!-- LeftBusiness -->
 		
 	
 
@@ -158,16 +159,16 @@
 				<th><div>公休日<br>(複選)</div></th>
 				<td>
 					<div>
-						<label for="weekCheck_0"><a href="#"><div class="week">星期一</div></a></label>
-						<label for="weekCheck_1"><a href="#"><div class="week">星期二</div></a></label>
-						<label for="weekCheck_2"><a href="#"><div class="week">星期三</div></a></label>
-						<label for="weekCheck_3"><a href="#"><div class="week">星期四</div></a></label>
+						<label for="weekCheck_0"><div class="week">星期一</div></label>
+						<label for="weekCheck_1"><div class="week">星期二</div></label>
+						<label for="weekCheck_2"><div class="week">星期三</div></label>
+						<label for="weekCheck_3"><div class="week">星期四</div></label>
 					</div>
 					<div>
-						<label for="weekCheck_4"><a href="#"><div class="week">星期五</div></a></label>
-						<label for="weekCheck_5"><a href="#"><div class="week">星期六</div></a></label>
-						<label for="weekCheck_6"><a href="#"><div class="week">星期日</div></a></label>
-						<label for="weekCheck_7"><a href="#"><div class="week">國定假</div></a></label>
+						<label for="weekCheck_4"><div class="week">星期五</div></label>
+						<label for="weekCheck_5"><div class="week">星期六</div></label>
+						<label for="weekCheck_6"><div class="week">星期日</div></label>
+						<label for="weekCheck_7"><div class="week">國定假</div></label>
 					</div>
 				</td>
 				</tr>

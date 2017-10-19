@@ -84,100 +84,114 @@ require_once("BackStageHeaderSidebar.php");
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+
 					<tr>
 						<td>100</td>
 						<td>ID125</td>
 						<td>一般管理員</td>
-						<td>正常</td>
+						<td class="authorityName">正常</td>
 						<td><input type="button" class="dutyChange" name="" value="停權"></td>
 					</tr>
+					
 					
 				</table>
 			<!-- </section> -->
@@ -193,6 +207,8 @@ require_once("BackStageHeaderSidebar.php");
 		</div> <!-- tableArea -->
 
 		<div class="LightBox" id="LightBox">
+
+				<div id="mask"></div>
 			
 				<section>
 					<img src="img/icon/LogoColor.png">
@@ -239,6 +255,10 @@ require_once("BackStageHeaderSidebar.php");
 			},false);
 			
 			document.getElementById("LightBoxIncreaseBtn").addEventListener("click",function(){
+				document.getElementById("LightBox").style.display="none";
+			},false);
+
+			document.getElementById("mask").addEventListener("click",function(){
 				document.getElementById("LightBox").style.display="none";
 			},false);
 
