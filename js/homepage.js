@@ -39,8 +39,13 @@ $(function(){
 		$(this).siblings(".active").removeClass("active");
 
 	});
-
-
+//第一屏搜尋
+	$("#searchInput").keyup(function(){
+		$(this).siblings("#searchSubmit").addClass('keyIn').text("GO");
+	});
+	$("#searchInput").blur(function(){
+		$(this).siblings("#searchSubmit").removeClass('keyIn').text("搜尋");
+	});
 // 第二屏文字
 
 	var tween_2 = TweenMax.staggerFromTo('.topChartDescrp',1,{
@@ -161,11 +166,17 @@ $(".actBannerGrp").slick({
 $('.newShopGrp').slick({
   infinite: false,
   slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToScroll: 2,
 
   // autoplay: true,
   // autoplaySpeed: 2000,
   responsive: [
+  	{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2
+      }
+    },
     {
       breakpoint: 768,
       settings: {

@@ -1,3 +1,7 @@
+<?php 
+ob_start();
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +10,7 @@
 	<title>TREPUN</title>
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<!-- 套件區 -->
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -15,6 +20,8 @@
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
 	<script type="text/javascript" src="js/parallax.min.js"></script>
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
 	<!-- googlemap -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
 
@@ -160,8 +167,8 @@ require_once("headerForHomePage.php");
 						<span>評價</span>
 					</button>
 					<div class="searchbar">
-					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
-					<button type="submit" onclick="location.href='search.php'">搜尋</button>
+					<input id="searchInput" type="search" name="searchStore" placeholder="尋找你附近的麵包香">
+					<button id="searchSubmit" type="submit" onclick="location.href='search.php'">搜尋</button>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -597,7 +604,7 @@ require_once("headerForHomePage.php");
 
 require_once("footer.php");
  	 ?>
-<script type="text/javascript" src="js/header.js"></script>
+
 <script type="text/javascript" src="libs/slick-1.8.0/slick/slick.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/velocity.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/velocity.ui.min.js"></script>

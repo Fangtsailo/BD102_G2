@@ -147,7 +147,7 @@ li {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
   /* IE6-9 */
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   top: 0;
   box-shadow: 0px 0px 15px 0px #382715;
@@ -816,6 +816,8 @@ footer {
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
+        .globalHead #menu ul#memLoggedin {
+          display: none; }
         .globalHead #menu ul li {
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
@@ -868,6 +870,13 @@ footer {
               position: absolute;
               bottom: 0;
               left: 25%; }
+          .globalHead #menu ul li.needLogIn {
+            height: 80vh; }
+            .globalHead #menu ul li.needLogIn a {
+              width: 50%;
+              margin: auto;
+              padding: 0;
+              background-color: #f06428; }
     .globalHead .rwdSearchBar {
       background: rgba(128, 89, 52, 0.9);
       /* Old browsers */
@@ -898,11 +907,13 @@ footer {
         margin: 10px auto; }
         .globalHead .rwdSearchBar .rwdsearchItem span {
           display: block;
-          width: 100%;
+          width: 70%;
           color: #fbf8f1;
           padding: 5px;
-          margin: 10px 0px;
-          font-size: 20px; }
+          margin: 10px auto;
+          font-size: 20px;
+          background-color: #663300;
+          border-radius: 5px; }
         .globalHead .rwdSearchBar .rwdsearchItem label {
           display: inline-block;
           margin: 0px 5px;
@@ -1021,7 +1032,7 @@ body {
 
 section {
   width: 100%;
-  height: 100%; }
+  height: 100vh; }
 
 @keyframes shake {
   0% {
@@ -1288,6 +1299,10 @@ section {
             cursor: pointer;
             border-radius: 2px; }
             .homeSearchBar .itemGrp .searchPart .searchContent .searchbar button:hover {
+              background-color: #f06428;
+              color: #fbf8f1;
+              transition: .3s; }
+            .homeSearchBar .itemGrp .searchPart .searchContent .searchbar button.keyIn {
               background-color: #f06428;
               color: #fbf8f1;
               transition: .3s; }

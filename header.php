@@ -1,11 +1,24 @@
 <!-- ======================================================header 頁首========================================================= -->
+<?php 
+
+	//判斷是否有登入過網站
+	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
+		echo "<script type='text/javascript'>window.onload=changePanel;</script>";
+	}else { 
+		session_destroy();
+	}
+
+
+ ?>
+
+
 <header class="globalHead">
 
 <!-- “登入會員”燈箱 -->
 	<div class="headLoginBox" id="loginBox">
 		
 		<div class="globalForm">
-		<form id="loginForm" action="http://google.com" method="">
+		<form id="loginForm" action="" method="">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -56,7 +69,7 @@
 	<div class="headRegisterBox" id="RegisterBox">
 		
 		<div class="globalForm">
-		<form action="" method="">
+		<form id="registerForm" action="register.php" method="get" onSubmit="return checkFormRegister();">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -72,13 +85,13 @@
 			<div class="globalFormContent">
 
 				<div class="globalFormInput">
-					<label>註冊會員帳號</label><input type="text" name="registerMemId" placeholder="請輸入會員帳號">
+					<label>註冊會員帳號</label><input type="text" id="newMemId" name="newMemId" placeholder="請輸入會員帳號" required>
 				</div>
 				<div class="globalFormInput">
-					<label>註冊會員信箱</label><input type="text" name="registerMemMail" placeholder="請輸入會員信箱">
+					<label>註冊會員信箱</label><input type="email" id="newMemMail" name="newMemMail" placeholder="請輸入會員信箱" required>
 				</div>
 				<div class="globalFormInput">
-					<label>會員密碼</label><input type="text" name="registerMemPsw" placeholder="密碼">
+					<label>會員密碼</label><input type="password" id="newMemPsw"  name="newMemPsw" placeholder="密碼" required>
 				</div>
 				
 				<div class="clearfix"></div>
@@ -152,7 +165,7 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="#">金城武</a></li>
+						<li><a href="#"> <?php echo $_SESSION["memId"]; ?>  </a></li>
 						<li><a class="memLink" href="#">我的追蹤</a></li>
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
@@ -232,35 +245,47 @@
 								<path class="st1" d="M36,19c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15S27.3,4,19,4S4,10.7,4,19c0,0.3,0,0.7,0.1,1H2v-1C2,9.6,9.6,2,19,2S36,9.6,36,19z"/></g></svg>
 			</span>
 	</div>
-	<nav id="menu" class="hideMenu">	
-		<ul>
-		<li class="closeMenu">
-			<span id="closeBurger">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
-				<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
-				</svg>
-			</span>
-			<div class="clearfix"></div>
-		</li>
-		<li class="memPart">
-			<div class="memPic">
-				<a href="#"><img id="memPic" src="img/homepage/user.png"></a>
-			</div>
-			<span id="memId">Bakery Boss</span>
-			<div class="clearfix"></div>
-		</li>
-		<li class="navItem"><a href="#">我的追蹤</a></li>
-		<li class="navItem"><a href="#">我的留言</a></li>
-		<li class="navItem myActivity"><a href="#">我的報名</a></li>
-		<li class="navItem beBoss"><a href="#">成為店長</a></li>
-		<li class="navItem"><a href="#">登出</a></li>
+	<nav id="menu" class="hideMenu">
+		<ul id="visitor">
+			<li class="closeMenu">
+				<span id="closeBurger1">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+					<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+					</svg>
+				</span>
+				<div class="clearfix"></div>
+			</li>
+			<li class="navItem needLogIn"><a class="globalOkBtn" id="rwdLoginBtn" href="#">請先登入會員</a></li>
+		</ul>	
+		<ul id="memLoggedin">
+			<li class="closeMenu">
+				<span id="closeBurger">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+					<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+					</svg>
+				</span>
+				<div class="clearfix"></div>
+			</li>
+			<li class="memPart">
+				<div class="memPic">
+					<a href="#"><img id="memPic" src="img/homepage/user.png"></a>
+				</div>
+				<span id="memId">Bakery Boss</span>
+				<div class="clearfix"></div>
+			</li>
+			<li class="navItem"><a href="#">我的追蹤</a></li>
+			<li class="navItem"><a href="#">我的留言</a></li>
+			<li class="navItem myActivity"><a href="#">我的報名</a></li>
+			<li class="navItem beBoss"><a href="#">成為店長</a></li>
+			<li class="navItem"><a href="#">登出</a></li>
 		</ul>
 	</nav>
 	
 
 
-	<!-- ========================新增店家燈箱===================== -->
+<!-- ========================新增店家燈箱===================== -->
 	<div id="addShopBox">
 		<div class="globalForm">
 			<form action="" method="">
