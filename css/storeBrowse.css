@@ -110,8 +110,8 @@ img {
     background-position: center center;
     height: 100vh;
     background-image: url("../img/store/browse/screen1-bg.png");
-    -webkit-animation: banners-slide 18s 2s infinite backwards;
-    animation: banners-slide 18s 2s infinite backwards; }
+    -webkit-animation: banners-slide 18s 2s infinite;
+    animation: banners-slide 18s 2s infinite; }
 @-webkit-keyframes banners-slide {
   0% {
     background-image: url("../img/store/browse/screen1-bg.png"); }
@@ -864,17 +864,17 @@ img {
       right: 150px; }
 @-webkit-keyframes dialog-bubble {
   0% {
-    top: -200px;
+    top: 100%;
     opacity: 1; }
   100% {
-    top: 100%;
+    top: -200px;
     opacity: 1; } }
 @keyframes dialog-bubble {
   0% {
-    top: -200px;
+    top: 100%;
     opacity: 1; }
   100% {
-    top: 100%;
+    top: -200px;
     opacity: 1; } }
   .screen-messages .messages-area {
     margin: auto;
@@ -906,14 +906,13 @@ img {
     .screen-messages .messages-area .message-box .content, .screen-messages .send-message-area .message-box .content {
       background-color: #fbf8f1;
       position: relative;
-      z-index: 0;
       border-radius: 3px;
       -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
       box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
       font-size: 15px;
       /* firefox 19+ */
       /* ie */
-      padding: 0px; }
+      padding: 10px; }
       .screen-messages .messages-area .message-box .content ::-webkit-input-placeholder, .screen-messages .send-message-area .message-box .content ::-webkit-input-placeholder {
         font-size: 16px; }
       .screen-messages .messages-area .message-box .content ::-moz-placeholder, .screen-messages .send-message-area .message-box .content ::-moz-placeholder {
@@ -941,49 +940,30 @@ img {
         border-bottom: 10px solid transparent;
         position: absolute;
         left: -18px;
-        top: 18px;
-        z-index: 0; }
-      .screen-messages .messages-area .message-box .content:after, .screen-messages .send-message-area .message-box .content:after {
-        content: '';
-        display: block;
-        z-index: -1;
-        width: 0;
-        height: 0;
-        border-right: 18px solid rgba(0, 0, 0, 0.3);
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        position: absolute;
-        left: -16px;
-        top: 23px; }
-      .screen-messages .messages-area .message-box .content .container, .screen-messages .send-message-area .message-box .content .container {
-        z-index: 1;
-        padding: 10px;
-        background-color: #fbf8f1;
-        border-radius: 3px; }
-        .screen-messages .messages-area .message-box .content .container .name, .screen-messages .send-message-area .message-box .content .container .name {
-          color: #603813;
-          font-size: 16px;
-          margin-bottom: 10px; }
-        .screen-messages .messages-area .message-box .content .container .setting-area, .screen-messages .send-message-area .message-box .content .container .setting-area {
-          width: 100px;
-          float: right;
-          color: #bbbbbb;
-          font-size: 12px; }
-          .screen-messages .messages-area .message-box .content .container .setting-area img, .screen-messages .send-message-area .message-box .content .container .setting-area img {
-            width: auto; }
-          .screen-messages .messages-area .message-box .content .container .setting-area .reply, .screen-messages .messages-area .message-box .content .container .setting-area .report, .screen-messages .send-message-area .message-box .content .container .setting-area .reply, .screen-messages .send-message-area .message-box .content .container .setting-area .report {
-            width: 30px;
-            height: 30px;
-            float: right; }
-            .screen-messages .messages-area .message-box .content .container .setting-area .reply .img-icon, .screen-messages .messages-area .message-box .content .container .setting-area .report .img-icon, .screen-messages .send-message-area .message-box .content .container .setting-area .reply .img-icon, .screen-messages .send-message-area .message-box .content .container .setting-area .report .img-icon {
-              width: 22px;
-              height: 20px; }
+        top: 18px; }
+      .screen-messages .messages-area .message-box .content .name, .screen-messages .send-message-area .message-box .content .name {
+        color: #603813;
+        font-size: 16px;
+        margin-bottom: 10px; }
+      .screen-messages .messages-area .message-box .content .setting-area, .screen-messages .send-message-area .message-box .content .setting-area {
+        width: 100px;
+        float: right;
+        color: #bbbbbb;
+        font-size: 12px; }
+        .screen-messages .messages-area .message-box .content .setting-area img, .screen-messages .send-message-area .message-box .content .setting-area img {
+          width: auto; }
+        .screen-messages .messages-area .message-box .content .setting-area .reply, .screen-messages .messages-area .message-box .content .setting-area .report, .screen-messages .send-message-area .message-box .content .setting-area .reply, .screen-messages .send-message-area .message-box .content .setting-area .report {
+          width: 30px;
+          height: 30px;
+          float: right; }
+          .screen-messages .messages-area .message-box .content .setting-area .reply .img-icon, .screen-messages .messages-area .message-box .content .setting-area .report .img-icon, .screen-messages .send-message-area .message-box .content .setting-area .reply .img-icon, .screen-messages .send-message-area .message-box .content .setting-area .report .img-icon {
+            width: 22px;
+            height: 20px; }
   .screen-messages .send-message-area {
     position: relative; }
     .screen-messages .send-message-area .message-box .mem-pic {
       margin-bottom: 5px; }
     .screen-messages .send-message-area .message-box .content {
-      padding: 10px;
       background-color: rgba(0, 0, 0, 0.1); }
       .screen-messages .send-message-area .message-box .content textarea {
         outline: none;
@@ -993,8 +973,6 @@ img {
         font-family: "Noto Sans CJK TC"; }
       .screen-messages .send-message-area .message-box .content:before {
         border-right: 18px solid rgba(0, 0, 0, 0.1); }
-      .screen-messages .send-message-area .message-box .content:after {
-        display: none; }
 
 .only-pc {
   display: block; }
@@ -1130,7 +1108,6 @@ img {
     width: 70px;
     height: 70px; } }
 @media screen and (max-width: 767px) {
-<<<<<<< HEAD
   .col-xs-1 {
     float: left;
     width: 8.333333%;
@@ -1223,11 +1200,6 @@ img {
   .perspective {
     margin-bottom: 20px; }
 
-=======
-  .screen-1, .screen-bread-car-map, .screen-product, .screen-activity
-, .screen-other-store, .screen-messages {
-    height: auto; }
->>>>>>> 2d2663ebb866b97160ae602ede6885edce1032fa
   .screen-1 {
     position: relative; }
     .screen-1 #bottom-city {
@@ -1264,7 +1236,6 @@ img {
       position: relative;
       top: 0;
       padding-bottom: 55px; }
-<<<<<<< HEAD
 
   .screen:not(:first-of-type) {
     padding-top: 50px; }
@@ -1272,8 +1243,6 @@ img {
   .screen-bread-car-map #bread-car {
     height: 40px; }
 
-=======
->>>>>>> 2d2663ebb866b97160ae602ede6885edce1032fa
   .screen-product .product-list .only-pc {
     display: none; }
   .screen-product .product-list:before, .screen-product .product-list:after {
@@ -1308,22 +1277,17 @@ img {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       margin-top: 0px;
-<<<<<<< HEAD
       color: #8E8E8E;
       text-align: center; }
     .screen-product .product p {
       display: none; }
 
-=======
-      color: #8E8E8E; }
->>>>>>> 2d2663ebb866b97160ae602ede6885edce1032fa
   .screen-other-store .top-list .item, .screen-other-store .bottom-list .item {
     width: 50%; }
     .screen-other-store .top-list .item .detail p, .screen-other-store .bottom-list .item .detail p {
       display: none; }
   .screen-other-store .top-list .only-pc, .screen-other-store .bottom-list .only-pc {
     display: none; }
-<<<<<<< HEAD
 
   .screen-activity .banner-area {
     padding-left: 10px;
@@ -1400,7 +1364,3 @@ img {
       width: 100%; } }
 
 
-=======
-  .screen-activity .banner-area:before, .screen-activity .banner-area:after {
-    display: none; } }
->>>>>>> 2d2663ebb866b97160ae602ede6885edce1032fa
