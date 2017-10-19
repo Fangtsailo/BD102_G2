@@ -37,8 +37,7 @@ $tablet_max:1024px;
 @mixin rwd($breakpoint){
 	
 	@if $breakpoint == "mobile" {
-
-// <<<<<<< HEAD
+<<<<<<< HEAD
 		@media screen and (max-width:$mobile){
 			@content;
 
@@ -47,6 +46,15 @@ $tablet_max:1024px;
   }
   @else if $breakpoint =="desktop"{
 		@media screen and (min-width:$tablet_min) and (max-width:$tablet_max){
+=======
+
+		@media all and (max-width:$mobile){
+      @content;
+		}
+	}
+	@else if $breakpoint =="desktop"{
+		@media all and (min-width:$tablet_min) and (max-width:$tablet_max){
+>>>>>>> 5ec0b36758622029d82282567f2f86e2b7d06214
 			@content;
 		}
 	}
