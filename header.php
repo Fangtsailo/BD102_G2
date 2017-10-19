@@ -5,7 +5,11 @@
 	<div class="headLoginBox" id="loginBox">
 		
 		<div class="globalForm">
+<<<<<<< HEAD
 		<form action="" method="">
+=======
+		<form id="loginForm" name="loginForm" action="logIn.php" method="post">
+>>>>>>> d0ce7338c765e922018056b551425ef9f0c43150
 			<div class="globalFormHeader">
 				<div class="svg">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
