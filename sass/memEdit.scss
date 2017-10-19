@@ -14,13 +14,85 @@ body{
 	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
-	font-family: $globalFont;
+	font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
+	font-size: $globalContentSize;
+	font-weight: 300;
+	color: $globalFontColor;
 }
 
-//===會員專區==================================================
+//===會員專區共用的設定==================================================
 .container{
 	width: 100%;
 	position: relative;
+
+	h1 img{
+		height: 100px;
+	}
+
+	section{
+		width: 100%;
+		margin: 0 auto 50px;
+	}
+	section:after{
+		content: '';
+		display: block;
+		clear: both;  
+	}
+	h2 {
+		font-size: $globalh3Size - 2px;
+	}
+	h3 {
+		font-size: $globalBtnSize;
+	}
+	h2, h3 {
+		font-weight: 500;
+	}
+	address{
+		font-size: $globalContentSize - 2px;
+		line-height: 1.6em;
+	}
+	p{
+		padding: 5px 0;
+	}
+	ul{
+		list-style-type: none;
+	}
+	a{
+		text-decoration: none;
+		color: $globalLinkColor;
+	}
+	img{
+		max-width: 100%;
+		vertical-align: bottom;
+	}
+	input{
+		outline: none;
+		padding: 2px;
+		font-family: $globalFont;
+		font-weight: lighter;
+	}
+	//設定input placeholder樣式
+	input::-webkit-input-placeholder { /* WebKit browsers */
+		   color: $globalUnclickColor;
+	}
+	input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color: $globalUnclickColor;
+	}
+	input::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color: $globalUnclickColor;
+	}
+	input:-ms-input-placeholder { /* Internet Explorer 10+ */
+		   color: $globalUnclickColor;
+	}
+		
+	input:focus{
+		border: 1px solid rgba(240, 100, 40, 0.3);
+		box-shadow: 0 0 2px $globalStarColor;
+	}//設定input:focus樣式
+
+	.myfollow, .msg, .myentry{
+		transition: box-shadow 1s;
+	}//hover長陰影時間
 
 
 //===側邊欄==================================================
@@ -28,7 +100,7 @@ body{
 		width: 210px;
 		height: 310px;
 		position: absolute;
-		top: 184px;
+		top: 100px;
 		left: 0;
 		z-index: 1;
 		li{
@@ -85,6 +157,7 @@ body{
 			background-image: url(../img/memimg/myedit2.svg);
 		}
 		li:hover a.bebosssvg{
+			background-color: $globalBossColor;
 			background-image: url(../img/memimg/beboss2.svg);
 		}
 	}//sidebar end
@@ -100,70 +173,15 @@ body{
 		max-width: 1000px;
 		width: 69.4444%;
 		margin: 0 auto;
+		margin-top: 100px;
 		text-align: center;
-		color: $globalFontColor;
-
-		h1 img{
-			height: 100px;
-		}
-		section{
-			width: 100%;
-			margin: 0 auto 50px;
-		}
-		section:after{
-			content: '';
-			display: block;
-			clear: both;  
-		}
-		p{
-			padding: 5px 0;
-		}
-		ul{
-			list-style-type: none;
-		}
-		a{
-			text-decoration: none;
-			color: $globalLinkColor;
-		}
-		img{
-			max-width: 100%;
-			vertical-align: bottom;
-		}
-		input{
-			outline: none;
-			padding: 2px;
-			font-family: $globalFont;
-			font-size: $globalBtnSize;
-		}
-		//設定input placeholder樣式
-		input::-webkit-input-placeholder { /* WebKit browsers */
-		    color: $globalUnclickColor;
-		}
-		input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-		    color: $globalUnclickColor;
-		}
-		input::-moz-placeholder { /* Mozilla Firefox 19+ */
-		    color: $globalUnclickColor;
-		}
-		input:-ms-input-placeholder { /* Internet Explorer 10+ */
-		    color: $globalUnclickColor;
-		}
-		
-		input:focus{
-			border: 1px solid rgba(240, 100, 40, 0.3);
-			box-shadow: 0 0 2px $globalStarColor;
-		}//設定input:focus樣式
-
-		.myfollow, .msg, .myentry{
-			transition: box-shadow 1s;
-		}//hover長陰影時間
 
 //===我的追蹤==================================================
 	.myfollow{
 		width: 220px;
 		float: left;
 		overflow: hidden;
-		text-align: justify;
+		text-align: left;
 		line-height: 1.3;
 		position: relative;
 		background-color: $globalBgColor;
@@ -402,13 +420,12 @@ body{
 		margin-bottom: 15px;
 		h2, address{
 			margin: 8px;
-			font-weight: normal;
 		}
 		h2 > a{
 			color: $globalBgColor;
 		}
 		time{
-			margin: 30px 0 0 5px;
+			margin: 20px 0 0 5px;
 		}
 		.actpic{
 			height: 100%;
@@ -464,7 +481,7 @@ body{
 					margin: 80px 0;
 				}
 				time{
-					margin: 22px 0 0 8px;
+					margin: 12px 0 0 8px;
 					float: left;
 				}
 			}
@@ -490,7 +507,6 @@ body{
 			height: 100%;
 			display: inline-block;
 			box-sizing: border-box;
-			font-size: $globalBtnSize;
 		}
 		
 		span.note{
@@ -519,6 +535,7 @@ body{
 			height: 50px;
 			border-radius: 25px;
 			text-align: center;
+			font-size: $globalBtnSize;
 			border: 1px solid $globalBtnColor;
 			color: $globalBtnColor;
 			cursor: pointer;

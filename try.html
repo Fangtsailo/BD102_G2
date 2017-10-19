@@ -20,16 +20,6 @@
 
 	<!-- 會員專區 -->
 	<div class="container">
-		<!-- <p class="subtitle">會員專區</p> -->
-<!-- 		<div class="sidebar">
-			<ul>
-				<li><a href="#">我的追蹤<img src="../img/memimg/myfollow.svg"></a></li>
-				<li><a href="#">我的留言<img src="../img/memimg/myfollow.svg"></a></li>
-				<li><a href="#">我的報名<img src="../img/memimg/myfollow.svg"></a></li>
-				<li><a href="#">編輯個人資料<img src="../img/memimg/myfollow.svg"></a></li>
-				<li><a href="#">成為店長<img src="../img/memimg/myfollow.svg"></a></li>
-			</ul>
-		</div> -->
 		<div class="sidebar">
 			<ul>
 				<li><a href="#" class="myfollowsvg">我的追蹤</a></li>
@@ -43,7 +33,7 @@
 		<div class="content">
 			<!-- 我的追蹤 -->
 			<h1><img src="../img/memimg/myfollowtl.svg" alt="我的追蹤"></h1>
-			<section col-xs-12 col-sm-3">
+			<section class="col-xs-12 col-sm-3">
 				<div class="myfollow">
 					<a href="#"><img src="../img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
 					<ul>
@@ -151,7 +141,7 @@
 
 			<!-- 我的留言 -->
 			<h1><img src="../img/memimg/mycommenttl.svg" alt="我的留言"></h1>
-			<section col-xs-12 col-sm-4">
+			<section class="col-xs-12 col-sm-4">
 				<ul class="mycomment">
 					<li>
 						<div class="msg">
@@ -196,7 +186,7 @@
 
 			<!-- 我的報名 -->
 			<h1><img src="../img/memimg/myentrytl.svg" alt="我的報名"></h1>
-			<section col-xs-12 col-sm-4">
+			<section class="col-xs-12 col-sm-4">
 				<div class="myentry">
 					<img src="../img/memimg/followimg1.jpg" class="actpic">
 					<div class="info">
@@ -261,7 +251,7 @@
 
 			<!-- 編輯個人資料 -->
 			<h1><img src="../img/memimg/mytl.svg" alt="編輯個人資料"></h1>
-			<section col-xs-12 col-sm-12">
+			<section class="col-xs-12 col-sm-12">
 				<form class="form-horizontal" action="" method="post">
 					<div class="userpic">
 						<img src="../img/memimg/followimg1.jpg">
@@ -319,7 +309,64 @@
 			
 			<!-- 成為店長 -->
 			<h1><img src="../img/memimg/bebosstl.svg" alt="成為店長"></h1>
-			<section col-xs-12 col-sm-4">
+			<section class="col-xs-12 col-sm-3">
+				<div class="memfigure">
+					<figure>
+	                    <img src="img/memimg/memBk01.png" alt="免費申請">
+	                </figure>
+	                <figcaption>
+	                    <h2>免費24小時數位服務</h2>
+	                    <p>讓數位服務24小時幫你吸引人潮、增加營收、好感度！</p>
+	                </figcaption>
+	            </div>
+
+				<div class="memfigure">
+					<figure>
+	                    <img src="img/memimg/memBk02.png" alt="讓店更有吸引力">
+	                </figure>
+	                <figcaption>
+	                    <h2>讓您的店更有吸引力</h2>
+	                    <p>您可以輕鬆上傳店頭照片和美食照片，吸引網友上門。</p>
+	                </figcaption>
+	            </div>
+
+				<div class="memfigure">
+					<figure>
+	                    <img src="img/memimg/memBk03.png" alt="在Google找到">
+	                </figure>
+	                <figcaption>
+	                    <h2>容易在Google找到</h2>
+	                    <p>我們是Google合作夥伴，您的店會在Google map出現!</p>
+	                </figcaption>
+	            </div>
+
+				<div class="memfigure">
+					<figure>
+	                    <img src="img/memimg/memBk04.png" alt="讓更多人知道">
+	                </figure>
+	                <figcaption>
+	                    <h2>讓更多人知道您的店</h2>
+	                    <p>隨時更新店家簡介及位置資訊，讓網友即時接獲新訊。</p>
+	                </figcaption>
+	            </div>
+			</section>
+
+			<section class="col-xs-12 col-sm-12">
+				<h1>想和我們合作嗎？</h1>
+                <p>請填寫以下表單，<br>我們將有專人盡快與你聯繫！</p>
+
+                <div class="memFormInput">
+                	<label><span>*</span>選擇店型</label>
+                	<input type="radio" name="store" value="1" class="radio">麵包店
+                	<input type="radio" name="store" value="0" class="radio">麵包車
+            	</div>
+
+            	<div class="memFormInput">
+                 	<label><span>*</span>輸入店名</label>
+                 	<input type="text" name="店名" placeholder="請輸入完整店名">
+             	</div>
+
+             	<a href="#" class="nextStep">下一步</a>
 			</section>
 		</div>
 	</div>

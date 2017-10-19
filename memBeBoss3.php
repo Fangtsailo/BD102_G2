@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
     <link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memBeBoss3.css">
+    <script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
 </head>
 <body>
@@ -47,12 +48,12 @@
                             <input type="text" name="TAX_ID???" maxlength="8" placeholder="輸入格式:80088888">
                         </div>
                         <div class="memFormInput">
-                            <label><span>*</span>車牌號碼</label>
+                            <label onclick="location.href='FMybusinessStore.php'"><span>*</span>車牌號碼</label>
                             <input type="text" name="VAN_ID???" maxlength="7" placeholder="輸入格式:KAQ-230">
                         </div>
                         
                         <!-- <div class="memFormBtns"> -->
-                            <button type="submit">送出</button>
+                            <button  onclick="location.href='FMybusinessStore.php'">送出</button>
                         <!-- </div> -->
 
                     </div>

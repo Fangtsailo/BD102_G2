@@ -8,7 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memtry.css">
+<<<<<<< HEAD
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+=======
+	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+>>>>>>> be751a354b4549967bf45be3f100e72f80dd0ea3
 	<script type="text/javascript" src="js/header.js"></script>
 
 </head>

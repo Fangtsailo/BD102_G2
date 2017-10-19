@@ -6,6 +6,7 @@
 	<title>會員專區_首頁</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/memBeBoss2.css">
+    <script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
 </head>
 <body>
