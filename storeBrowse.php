@@ -35,7 +35,10 @@
 	// $storeId = $_REQUEST["storeId"];
 	$storeId = 2;
 	getStoreInfoById($storeId);
-	//胖小車路徑相關資料
+	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
+	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
+	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
+	echo print_r($GLOBALS["activityArr"]);
  ?>
 <div class="navigator">
 	<div class="item">
@@ -164,22 +167,26 @@
 		<li class="item pointer item-selected">
 			即時位置
 		</li>
-		<li class="item pointer">
-			禮拜一路線
-		</li>
-		<li class="item pointer">
-			禮拜三路線
-		</li>
-		<li class="item pointer">
-			禮拜日路線
-		</li>
+		<?php
+			foreach ($GLOBALS["breadCarPathArr"] as $path) {
+		?>
+			<li class="item pointer">
+				<?php echo $path->describe ?>
+			</li>
+		<?php
+			}
+		 ?>
 	</ul>
 	<div id="bread-car"></div>
 	<div class="maps">
 		<div class="map" id="map-now"></div>
-		<div class="map" id="map-now2"></div>
-		<div class="map" id="map-now3"></div>
-		<div class="map" id="map-now4"></div>
+		<?php
+			foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
+		?>
+			<div class="map" id="map-now<?php echo $key;?>"></div>
+		<?php
+			}
+		 ?>
 	</div>
 	
 </div>
@@ -197,64 +204,32 @@
 	</div>
 	<div class="star-light"></div>
 	<div class="product">
-		<div class="item">
-			<div class="image"><img alt="big_product1.png" src="img/store/browse/big_product1.png"></div>
-			<div class="describe">
-			<h3>烤焦三角麵包<button id="bread-detail">詳情</button></h3>
+		<?php 
+			foreach ($GLOBALS["produtsArr"] as $product) {
+		?>
+					<div class="item">
+						<div class="image"><img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>"></div>
+						<div class="describe">
+						<h3><?php echo $product->name; ?><button id="bread-detail">詳情</button></h3>
 
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product2.png" src="img/store/browse/big_product2.png"></div>
-			<div class="describe">
-			<h3>圖騰麵包</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product3.png" src="img/store/browse/big_product3.png"></div>
-			<div class="describe">
-			<h3>綜合派</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product4.png" src="img/store/browse/big_product4.png"></div>
-			<div class="describe">
-			<h3>香蔥</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product5.png" src="img/store/browse/big_product5.png"></div>
-			<div class="describe">
-			<h3>黃金牛角</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
+						<p><?php echo $product->description ?></p>
+						</div>
+					</div>
+		<?php
+			}
+		 ?>
 	</div>
 	<div class="product-list">
-		<div class="item pointer col-xs-4">
-			<img alt="small_product1.png" src="img/store/browse/small_product1.png">
-			<p>烤焦三角</p>
-		</div>
-		<div class="item pointer col-xs-4">
-			<img alt="small_product2.png" src="img/store/browse/small_product2.png">
-			<p>圖騰</p>
-		</div>
-		<div class="item pointer col-xs-4">
-			<img alt="small_product3.png" src="img/store/browse/small_product3.png">
-			<p>綜合派</p>
-		</div>
-		<div class="item pointer">
-			<img alt="small_product4.png" src="img/store/browse/small_product4.png">
-			<p>香蔥</p>
-		</div>
-		<div class="item pointer">
-			<img alt="small_product5.png" src="img/store/browse/small_product5.png">
-			<p>黃金牛角</p>
-		</div>
+		<?php 
+			foreach ($GLOBALS["produtsArr"] as $product) {
+		?>
+				<div class="item pointer col-xs-4">
+					<img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>">
+					<p><?php echo $product->name; ?></p>
+				</div>
+		<?php
+			}
+		 ?>
 	</div>
 </div>
 <div class="screen screen-activity">
@@ -274,12 +249,6 @@
 		<div data-depth="1" class="layer shadow">
 			<div class="normail-move parallax-item egg-shadow shadow"><img alt="activity_egg_shadow.png" src="img/store/browse/activity_egg_shadow.png"></div>
 		</div>
-<!-- 		<div data-depth="0.2" class="layer">
-			<div class="depth-move parallax-item  board"><img alt="activity_board.png" src="img/store/browse/activity_board.png"></div>
-		</div>
-		<div data-depth="0.4" class="layer shadow">
-			<div class="depth-move parallax-item board-shadow"><img alt="activity_board_shadow.png" src="img/store/browse/activity_board_shadow.png"></div>
-		</div> -->
 		<div data-depth="1" class="layer">
 			<div class="normail-move parallax-item  spoon"><img alt="activity_spoon.png" src="img/store/browse/activity_spoon.png"></div>
 		</div>
@@ -366,11 +335,14 @@
 					<div class="message-box" id="MSG123">
 						<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $messageItem[0], ".png" ?>"></div>
 						<div class="content col-lg-10">
-							<div class="name"><?php echo $messageItem[1] ?><span class="datetime"><?php echo $messageItem[2] ?></span></div>
-							<p><?php echo $messageItem[3] ?></p>
-							<div class="setting-area">
-								<div class="report pointer">
-									<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+							<div class="container">
+								<div class="name"><?php echo $messageItem[1] ?><span class="datetime"><?php echo $messageItem[2] ?></span></div>
+								<p><?php echo $messageItem[3] ?></p>
+								<div class="setting-area">
+									<div class="report pointer">
+										<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+								</div>
+								<div class="clear"></div>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -410,8 +382,6 @@
 		</div>
 	</div>
 </div>
-
-
 <!-- ======================================================footer 頁尾========================================================= -->
 <?php 
 	require_once("footer.php");
@@ -422,10 +392,14 @@ $(document).ready(function(){
 	initParallax("activity-parallax");
 	allSlickSetting();
 	initAllScrollMagicScene();
-	initBreadCarNowLocationMap("map-now");
-	initBreadCarRouteMap("map-now2","test",{lat: 24.960439, lng: 121.190096});
-	initBreadCarRouteMap("map-now3","test",{lat: 24.960439, lng: 121.190096});
-	initBreadCarRouteMap("map-now4","test",{lat: 24.960439, lng: 121.190096});
+	initBreadCarNowLocationMap("map-now", {lat: 24.960439, lng: 121.190096});
+	<?php
+	foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
+	?>
+		initBreadCarRouteMap("map-now<?php echo $key;?>",<?php echo $path->locationsStr ?>,<?php echo $path->nowLocation?>);
+	<?php
+		}
+	 ?>
 	setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
 });	
 </script>
