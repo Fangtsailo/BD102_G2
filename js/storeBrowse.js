@@ -32,15 +32,12 @@ function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
 	});    
 //init route service
     var waypts = [];
+	for (waypoint in LatLngArr) {
         waypts.push({
-          location: {lat: 24.963600, lng: 121.190621},
+          location: LatLngArr[waypoint],
           stopover: true
         });
-        waypts.push({
-          location: {lat: 24.967978, lng: 121.184825},
-          stopover: true
-        });
-
+	}
     directionsService.route({
       origin: {lat: 24.969882, lng: 121.191587},
       destination: {lat: 24.971531, lng: 121.178006},
