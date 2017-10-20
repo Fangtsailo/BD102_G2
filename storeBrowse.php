@@ -29,6 +29,7 @@
 
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
+try {
 	require_once("header.php");
 	require_once("php/common/globalVar.php");	
 	require_once("php/store/browse/storeDetail.php");
@@ -38,6 +39,12 @@
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
+	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
+	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId);
+} catch (Exception $e) {
+	echo "原因：",$ex->getMessage(),"<br>";
+	echo "行號：",$ex->getLine(),"<br>";
+}
  ?>
 <div class="navigator">
 	<div class="item">
@@ -321,7 +328,7 @@
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $memID, ".png" ?>"></div>
+			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
 			<div class="content col-lg-10"><textarea placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
@@ -330,14 +337,14 @@
 	</div>
 	<div class="messages-area">
 		<?php 
-			foreach ($messageItemArr as $messageItem) {
+			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
 					<div class="message-box" id="MSG123">
-						<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $messageItem[0], ".png" ?>"></div>
+						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $messageItem->memberPicName ?>"></div>
 						<div class="content col-lg-10">
 							<div class="container">
-								<div class="name"><?php echo $messageItem[1] ?><span class="datetime"><?php echo $messageItem[2] ?></span></div>
-								<p><?php echo $messageItem[3] ?></p>
+								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
+								<p><?php echo $messageItem->content ?></p>
 								<div class="setting-area">
 									<div class="report pointer">
 										<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>

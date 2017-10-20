@@ -6,26 +6,12 @@ try {
 	require_once("BreadCarPath.php");
 	require_once("Bread.php");
 	require_once("ActivityObj.php");
+	require_once("Message.php");
 	$GLOBALS["connectPDO"] = $connectPDO;
 	$GLOBALS["store"] = new Store();
 //會員基資======================================
-	$memID = "default";
-//留言板======================================
-	$messageItemArr = array(
-		array("default", "小架純1", "2017/10/08", "吃完之後回味無窮，值得再買一次"),
-		array("default", "小架純2", "2017/10/08", "吃完之後回味無窮，值得再買一次"),
-		array("default", "小架純3", "2017/10/08", "吃完之後回味無窮，值得再買一次"),
-		array("default", "小架純", "2017/10/08", "吃完之後回味無窮，值得再買一次"),
-		array("default", "小架純", "2017/10/08", "吃完之後回味無窮，值得再買一次")
-	);	
-//活動=======================================================
-	// $actTitle = "牛角麵包簡單學";
-	// $actAddress = "桃園市中壢區中央路55號 烘焙王麵包坊";
-	// $actTime = "105.9.29  下午1:00(預計3小時)";
-	// $actPeopleLimit = 10;
-	// $actPhone = "(03)3335567";
-	// $actIngredient = "麵包坊提供";
-	// $price = "報名費與材料一共1000元(現場收費)";
+	$memNum = 2;
+	$memPic = GLOBAL_MEM_PIC_PATH.$memNum.".png";
 //其他店家推薦======================================
 	$otherStoreItemArr = array(
 		array("123", "山上麵包", "新興店家，主推自家創意麵包..."),
@@ -40,6 +26,22 @@ try {
 	echo "行號 : " , $e->getLine(),"<br>";
 }
 
+	function getMessagesByStoreId($storeId) {
+		$messageArr = array();
+		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC";
+		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
+		$stmt->bindValue(":storeId", $storeId);
+		$stmt->execute();
+		if ($stmt->rowCount() == 0) {
+			return array();
+		} else {
+			while($row = $stmt->fetchObject()) {
+				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
+				array_push($messageArr, $message);
+			}
+			return $messageArr;
+		}
+	}
 	function getActivityInfoByStoreId($storeId) {
 		$activityArr = array();
 		$sql = "SELECT * FROM trepun.activity where AC_STORE_NUM=:storeId";
