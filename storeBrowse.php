@@ -1,3 +1,8 @@
+<?php 
+	ob_start();
+	// session_start();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,51 +30,113 @@
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
 	require_once("header.php");
+	require_once("php/common/globalVar.php");	
+	require_once("php/store/browse/storeDetail.php");
+	// $storeId = $_REQUEST["storeId"];
+	$storeId = 2;
+	getStoreInfoById($storeId);
+	//胖小車路徑相關資料
  ?>
-
-	
+<div class="navigator">
+	<div class="item">
+		<a href=""><p>123</p></a>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p></div><div class="point"></div>
+	</div>
+	<div class="item">
+		<div class="name"><p>123</p><div class="point"></div>
+	</div>
+</div>
+</div>
+<!-- <div class="navigator">
+	<div class="nav-selected item pointer">
+		<div class="name"><p>店家故事</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>胖小車路線</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>商品</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>體驗活動</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>留言板</p></div>
+	</div>
+	<div class="item pointer">
+		<div class="name"><p>其他店家推薦</p></div>
+	</div>
+</div> -->	
 <div class="screen screen-1">
 	<div class="banners">
 	</div>
 	<div class="detail-box">
-		<div class="store-logo"><img alt="store-logo1.png" src="img/store/browse/store-logo1.png"></div>
+		<div class="store-logo"><img alt="<?php echo $GLOBALS["store"]->storeLogo ?>" src="<?php echo GLOBAL_STORE_PIC_PATH, $GLOBALS["store"]->storeLogo ?>"></div>
 		<div class="title">
 			<div class="container">
-				<h1 class="store-name">山下麵包</h1>
+				<h1 class="store-name"><?php echo $GLOBALS["store"]->name ?></h1>
 			</div>
 		</div>
 		<div class="detail">
 			<ul class="follow col-xs-9">
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<?php 
+					// for ($i = 0; $i < 5; $i++) {
+					// 	if ($review > 0) {
+
+					// 	}
+					// 	$review--;
+					// }
+				 ?>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 			</ul>
-			<div class="trace col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(123)</div>
+			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $GLOBALS["store"]->follow ?>)</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">地址:</p>
-					<p class="content col-lg-9 col-xs-8">桃園市中壢區中大路300號</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $GLOBALS["store"]->address ?></p>
 				</div>
 				<div class="open-time overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">營業時間:</p>
-					<p class="content col-lg-9 col-xs-8">禮拜一至五 11:00-20:00</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $GLOBALS["store"]->openStartTime ?>點 - <?php echo $GLOBALS["store"]->openEndTime ?>點</p>
 				</div>
 				<div class="phone overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">電話:</p>
-					<p class="content col-lg-9 col-xs-8">03-1234567</p>
+					<p class="content col-lg-9 col-xs-8"><?php echo $GLOBALS["store"]->phone ?></p>
+				</div>
+				<div class="close-day overflow col-xs-12">
+					<p class="title col-lg-3 col-xs-4">公休日:</p>
+					<p class="content col-lg-9 col-xs-8">
+					<?php 
+						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
+							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
+								echo "星期", $i, ", ";
+							} else {
+								echo "星期", $i;
+							}
+						}
+					 ?>
+					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="right-describe">
-		<p>
-			自創業以來因為引進歐美的先進技術而卓越成長並希望以此經驗技術可以對東南亞吃的文化帶來貢獻 。故於1985年進駐香港，之後在香港廣受各方好評，於1988年設立了中央工廠，自此開始了海外的連鎖烘焙事業。而後陸續在泰國、馬來西亞、新加坡都有展店，也都有不錯的成績。
-		<p>
-        1987年於台北市百貨公司成立台灣麵包專賣店，為了提供給顧客更多元且完整的產品及服務，於2000年在板橋火車站開了咖啡複合式店面，至今包含複合式店面已有多家分店分佈全台。未來更以積極培育當地人才，每年至少成立2家專賣店為目標，持續教育訓練以提高服務品質。</p>
-        <p>
-        自創始以來一直堅持慎選原料，每天現場烘焙提供最新鮮的產品，且不斷開發新產品，如：手工現做的三明治、柔軟的吐司、銅鑼燒、大福等多樣的日式風味的點心，讓顧客無論何時都可以買到自己喜愛的產品，享受美味的麵包。</p>
+		<p><?php echo $GLOBALS["store"]->story ?></p>
 	</div>
 	<div id="bottom-city">
 	    <div class="cloud cloud-1"></div>
@@ -94,21 +161,27 @@
 	</div>
 	</div>
 	<ul class="tabs">
-		<li class="item item-selected">
+		<li class="item pointer item-selected">
 			即時位置
 		</li>
-		<li class="item">
+		<li class="item pointer">
 			禮拜一路線
 		</li>
-		<li class="item">
+		<li class="item pointer">
 			禮拜三路線
 		</li>
-		<li class="item">
+		<li class="item pointer">
 			禮拜日路線
 		</li>
 	</ul>
 	<div id="bread-car"></div>
-	<div id="map-now"></div>
+	<div class="maps">
+		<div class="map" id="map-now"></div>
+		<div class="map" id="map-now2"></div>
+		<div class="map" id="map-now3"></div>
+		<div class="map" id="map-now4"></div>
+	</div>
+	
 </div>
 <div class="screen screen-product">
 	<div id="product-trigger" class="spacer s0"></div>
@@ -162,23 +235,23 @@
 		</div>
 	</div>
 	<div class="product-list">
-		<div class="item col-xs-4">
+		<div class="item pointer col-xs-4">
 			<img alt="small_product1.png" src="img/store/browse/small_product1.png">
 			<p>烤焦三角</p>
 		</div>
-		<div class="item col-xs-4">
+		<div class="item pointer col-xs-4">
 			<img alt="small_product2.png" src="img/store/browse/small_product2.png">
 			<p>圖騰</p>
 		</div>
-		<div class="item col-xs-4">
+		<div class="item pointer col-xs-4">
 			<img alt="small_product3.png" src="img/store/browse/small_product3.png">
 			<p>綜合派</p>
 		</div>
-		<div class="item">
+		<div class="item pointer">
 			<img alt="small_product4.png" src="img/store/browse/small_product4.png">
 			<p>香蔥</p>
 		</div>
-		<div class="item">
+		<div class="item pointer">
 			<img alt="small_product5.png" src="img/store/browse/small_product5.png">
 			<p>黃金牛角</p>
 		</div>
@@ -198,7 +271,7 @@
 		<div data-depth="1" class="layer">
 			<div class="parallax-item normail-move egg"><img alt="activity_egg.png" src="img/store/browse/activity_egg.png"></div>
 		</div>
-		<div data-depth="1.2" class="layer shadow">
+		<div data-depth="1" class="layer shadow">
 			<div class="normail-move parallax-item egg-shadow shadow"><img alt="activity_egg_shadow.png" src="img/store/browse/activity_egg_shadow.png"></div>
 		</div>
 <!-- 		<div data-depth="0.2" class="layer">
@@ -250,6 +323,7 @@
 				<div class="label col-lg-3 col-xs-4">費用:</div>
 				<div class="content col-lg-9 col-xs-8">報名費與材料一共1000元(現場收費)</div>
        			</div>
+       			<div class="activity-detail button">活動詳情</div>
 			</div>
 			<div class="banner col-lg-6 col-xs-12">
 				<img alt="activity_banner2.png" src="img/store/browse/activity_banner.png">
@@ -261,12 +335,12 @@
 	<div id="messages-trigger" class="spacer s0"></div>
 	<div id="messages-icon-trigger" class="spacer s0"></div>
 	<div class="message-icons">
-		<img alt="comment.svg" class="icon small-icon" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon small-icon" src="img/icon/comment.svg" alt="comment.svg">
-		<img alt="comment.svg" class="icon normal-icon" src="img/icon/comment.svg" alt="comment.svg">
+		<img alt="cloud.png" class="icon small-icon" class="icon small-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon normal-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon normal-icon" src="img/store/browse/cloud.png" alt="cloud.png">
+		<img alt="cloud.png" class="icon small-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon small-icon" src="img/store/browse/cloud.png">
+		<img alt="cloud.png" class="icon small-icon" src="img/store/browse/cloud.png">
 	</div>
 	<div class="perspective">
 		<div class="title">
@@ -278,7 +352,7 @@
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
+			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $memID, ".png" ?>"></div>
 			<div class="content col-lg-10"><textarea placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
@@ -286,71 +360,24 @@
 		</div>
 	</div>
 	<div class="messages-area">
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="img/store/browse/member_photo_test.png"></div>
-			<div class="content col-lg-10">
-				<div class="name">小架純<span class="datetime">2017/10/08 11:30</span></div>
-				<p>吃完之後回味無窮，值得再買一次</p>
-				<div class="setting-area">
-					<div class="report pointer">
-						<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
-					<div class="reply pointer"><div class="img-icon"><img alt="reply.png" src="img/store/browse/reply.png"></div><p>回覆</p></div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
+		<?php 
+			foreach ($messageItemArr as $messageItem) {
+		?>
+					<div class="message-box" id="MSG123">
+						<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $messageItem[0], ".png" ?>"></div>
+						<div class="content col-lg-10">
+							<div class="name"><?php echo $messageItem[1] ?><span class="datetime"><?php echo $messageItem[2] ?></span></div>
+							<p><?php echo $messageItem[3] ?></p>
+							<div class="setting-area">
+								<div class="report pointer">
+									<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>	
+		<?php
+			}
+		 ?>
 		<div class="more-message button">看更多</div>
 	</div>
 </div>
@@ -366,50 +393,20 @@
 	</div>
 	<div class="store-list">
 		<div class="top-list">
-			<div class="item col-lg-4 col-xs-6 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-			<div class="item col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-			<div class="item col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-		</div>
-		<div class="bottom-list">
-			<div class="item col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>
-			<div class="item col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家...</p>
-				</div>
-			</div>
-			<div class="item col-lg-4 col-xs-6">
-				<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
-				<div class="detail">
-					<h3 class="name">山上麵包</h3>
-					<p class="describe">新興店家，主推自家創意麵包...</p>
-				</div>
-			</div>	
+			<?php 
+				foreach ($otherStoreItemArr as $otherStore) {
+			?>
+					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore[0]; ?>">
+						<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
+						<div class="detail">
+							<h3 class="name"><?php echo $otherStore[1]; ?></h3>
+							<p class="describe"><?php echo $otherStore[2]; ?></p>
+						</div>
+					</div>
+			<?php
+				}
+			 ?>
+
 		</div>
 	</div>
 </div>
@@ -426,6 +423,9 @@ $(document).ready(function(){
 	allSlickSetting();
 	initAllScrollMagicScene();
 	initBreadCarNowLocationMap("map-now");
+	initBreadCarRouteMap("map-now2","test",{lat: 24.960439, lng: 121.190096});
+	initBreadCarRouteMap("map-now3","test",{lat: 24.960439, lng: 121.190096});
+	initBreadCarRouteMap("map-now4","test",{lat: 24.960439, lng: 121.190096});
 	setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
 });	
 </script>

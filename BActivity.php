@@ -1,3 +1,14 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,16 +55,16 @@ require_once("BackStageHeaderSidebar.php");
 
 
 
-	<form method="" action="">
+	<form method="" action="php/backstage/activity/searchId.php.php">
 
 			<!-- =====表格內容===== -->
 			<!-- <section> -->
 			<div class="search">
-					<input type="text" name="" placeholder="請輸入帳號或姓名搜尋">
+					<input type="text" name="seachIdName" placeholder="請輸入活動編號或店家編號">
 					<img src="img/icon/BS_search.png">
 			</div>
 
-
+	</form>
 
 
 			<div class="tableHeaderCover">
@@ -207,7 +218,7 @@ require_once("BackStageHeaderSidebar.php");
 			
 			
 				
-		</form>
+		
 			
 		</div> <!-- tableArea -->
 

@@ -55,7 +55,7 @@ require_once("BackStageHeaderSidebar.php");
 
 			<!-- =====表格內容===== -->
 			<!-- <section> -->
-			<div class="tableHeaderCover">
+			<!-- <div class="tableHeaderCover">
 				<table class="tableHeader">
 					<tr>
 						<td>編號</td>
@@ -65,7 +65,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>權限修改</td>
 					</tr>	
 				</table>
-			
+			 -->
 				
 				<table class="tableContent">
 
@@ -81,20 +81,20 @@ require_once("BackStageHeaderSidebar.php");
 
 								require_once("php/pdo/connectPDO.php");
 
-								$emp_id=$_SESSION["emp_id"];
+								//$emp_id=$_SESSION["emp_id"];
+									
+								$sql_grade_Check = "select * from employee where EMP_ID=$emp_id ";
 
-								$sql_grade_Check = "select * from employee where EMP_ID='$emp_id' and EMP_GRADE = 1";
+								$employee_grade_Check = $connectPDO ->query($sql_grade_Check);
 
-								$employee_grade_Check = $pdo ->query($sql_grade_Check);
-
-								if($employee_grade_Check->rowCount() !== 0){
+								// if($employee_grade_Check->rowCount() !== 0){
 
 
-									$sql_high_grade = "select * from employee";
+								// 	$sql_high_grade = "select * from employee";
 
-									$employee_high_grade = $pdo ->query($sql_high_grade);
+								// 	$employee_high_grade = $pdo ->query($sql_high_grade);
 
-									$employee_high_grade_row = $employee_high_grade-> fetchObject();
+								// 	$employee_high_grade_row = $employee_high_grade-> fetchObject();
 
 
 
@@ -211,14 +211,14 @@ require_once("BackStageHeaderSidebar.php");
 
 					 		}// while
 
-					 	}// if($employee_grade_Check->rowCount() !== 0)
+					 	//} if($employee_grade_Check->rowCount() !== 0)
 
-					 	 else{
+					 	 // else{
 
 
 					 	 		$sql_normal = "select * from employee where not(EMP_GRADE = 1)";
 
-								$employee_normal = $pdo ->query($sql_normal);
+								$employee_normal = $connectPDO ->query($sql_normal);
 
 
 							while($employee_normal_row = $employee_normal -> fetchObject()){
@@ -237,7 +237,7 @@ require_once("BackStageHeaderSidebar.php");
 
 					 	 }//while
 
-					 	}//else 判斷是否為最高管理員
+					 	//}else 判斷是否為最高管理員
 
 
 							}catch( PDOException $ex){
@@ -335,9 +335,9 @@ require_once("BackStageHeaderSidebar.php");
 				document.getElementById("LightBox").style.display="none";
 			},false);
 
-			document.getElementById("addAuthority").addEventListener("click",function(){
-				document.getElementById("LightBox").style.display="block";
-			},false);
+			// document.getElementById("addAuthority").addEventListener("click",function(){
+			// 	document.getElementById("LightBox").style.display="block";
+			// },false);
 		}
 
 		window.onload=init;
