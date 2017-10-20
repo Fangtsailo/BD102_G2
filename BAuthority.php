@@ -157,7 +157,7 @@ require_once("BackStageHeaderSidebar.php");
 										} //else
 									 ?>
 
-								</td>
+								
 
 
 								<td>
