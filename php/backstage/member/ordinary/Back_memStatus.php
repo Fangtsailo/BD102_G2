@@ -42,9 +42,25 @@
 
       		header("Location:../../../../BOrdinaryMember.php");
 
-      }else if(isset($_GET["searchBar"])){
+      }else if( isset($_GET["searchBar"]) ){ //not proper add condition at else if???
 
-      		
+      		$searchBar = $_GET["searchBar"];
+
+
+      		$sql = "select * from member where MEM_ROLE=0 and ( MEM_ID='$searchBar' or MEM_NAME='$searchBar')";
+
+      		$memberSearch = $pdo->query($sql);
+
+      		if($memberSearch->rowCount()!==0){
+
+      		header("Location:../../../../BOrdinaryMember.php?searchBar=$searchBar");
+
+      		}else{
+      			header("Location:../../../../BOrdinaryMember.php");
+      		}
+
+
+
 
       }
 
