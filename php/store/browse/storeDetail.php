@@ -5,6 +5,7 @@ try {
 	require_once("Store.php");
 	require_once("BreadCarPath.php");
 	require_once("Bread.php");
+	require_once("ActivityObj.php");
 	$GLOBALS["connectPDO"] = $connectPDO;
 	$GLOBALS["store"] = new Store();
 //會員基資======================================
@@ -49,7 +50,7 @@ try {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$activity = new Bread($row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1);
+				$activity = new ActivityObj($row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1);
 				array_push($activityArr, $activity);
 			}
 			return $activityArr;

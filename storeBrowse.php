@@ -38,7 +38,6 @@
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
-	echo print_r($GLOBALS["activityArr"]);
  ?>
 <div class="navigator">
 	<div class="item">
@@ -264,40 +263,41 @@
 	</div>
 
 	<div class="banner-area">
+		<?php  
+			foreach ($GLOBALS["activityArr"] as $activity) {
+		?>
 		<div class="item">
 			<div class="detail col-lg-6 col-xs-12">
-				<h2>牛角麵包簡單學</h2>
+				<h2><?php echo $activity->title ?></h2>
 				<div class="row">
 					<div class="label col-lg-3 col-xs-4">地點:</div>
-					<div class="content col-lg-9 col-xs-8">桃園市中壢區中央路55號  
-           烘焙王麵包坊</div>
+					<div class="content col-lg-9 col-xs-8"><?php echo $activity->address ?></div>
        			</div>
 				<div class="row">
 				<div class="label col-lg-3 col-xs-4">時間:</div>
-				<div class="content col-lg-9 col-xs-8">105.9.29  下午1:00(預計3小時)</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->time ?></div>
        			</div>
 				<div class="row">
 				<div class="label col-lg-3 col-xs-4">人數限制:</div>
-				<div class="content col-lg-9 col-xs-8">10~12人</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->peopleLimit ?>人</div>
        			</div>
-				<div class="row">
-				<div class="label col-lg-3 col-xs-4">聯絡方式:</div>
-				<div class="content col-lg-9 col-xs-8">(03)3335567</div>
-       			</div>
-				<div class="row">
+       			<div class="row">
 				<div class="label col-lg-3 col-xs-4">材料:</div>
-				<div class="content col-lg-9 col-xs-8">麵包坊提供</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->ingredient ?></div>
        			</div>
 				<div class="row">
 				<div class="label col-lg-3 col-xs-4">費用:</div>
-				<div class="content col-lg-9 col-xs-8">報名費與材料一共1000元(現場收費)</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->price ?></div>
        			</div>
        			<div class="activity-detail button">活動詳情</div>
 			</div>
 			<div class="banner col-lg-6 col-xs-12">
-				<img alt="activity_banner2.png" src="img/store/browse/activity_banner.png">
+				<img alt="<?php echo $activity->bannerPicName ?>" src="<?php echo $activity->bannerfullPicName ?>">
 			</div>
 		</div>
+		<?php 
+		} 
+		?>
 	</div>
 </div>
 <div class="screen screen-messages">
