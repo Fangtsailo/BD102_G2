@@ -87,11 +87,11 @@ require_once("BackStageHeaderSidebar.php");
 
 							
 
-							if($( "#searchBar" ).val().length!=0){
+							//if($( "#searchBar" ).val().length!=0){
 
 						  		$( "#searchForm" ).submit();
 
-						  	}
+						  	//}
 						});
 					</script>
 
