@@ -28,18 +28,56 @@ header{
 
 
 
+.search{
+		
+		
+		// margin: auto;
+		position: fixed;
+		z-index: 3;
+		left: 0;
+		right: 0;
+		text-align: center;
+		padding-top: 20px;
+		background-color: #e6e0d9;
+		img{
+			position: absolute;
+			top: 24px;
+			outline: none;
+			cursor:pointer;
+		}
+		input{
+			width: 600px;
+			height: 40px;
+			border-radius: 15px;
+			border:none;
+			background-color: #b5b5b5;
+			opacity:0.5;
+			text-indent: 10px;
+			&::-webkit-input-placeholder { /* WebKit browsers */
+							    color:#000;
+							    font-size: 13px;
+							    text-indent: 10px;
+							    font-family: $globalFont;
+							}
+		}//input
+}// search
+
+
+
 .tableHeaderCover{
 	width: 100%;
 	height: 78px;
 	position: relative;
 	background-color: #e6e0d9;
+	// margin-top:80px;
 	.tableHeader{
 		width: $tableContent-width;
 		// padding-top: 20px;
-		right: 0;
-		left: 0;
 		margin: auto;
 		position: fixed;
+		right: 0;
+		left: 0;
+		margin-top: 50px;
 		// left: 20vw;
 		// margin-bottom: 10px;
 		overflow: hidden;
@@ -91,7 +129,8 @@ header{
 	margin-left: 0;
 	margin: auto;
 	margin-bottom: 160px;
-	padding-top: 80px;
+	margin-top: 50px;
+	// padding-top: 80px;
 	tr{
 		background-color: #ffffff;
 		&:hover{

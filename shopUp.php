@@ -43,6 +43,12 @@ require_once("BackStageHeaderSidebar.php");
 
 			<!-- =====表格內容===== -->
 			<!-- <section> -->
+
+			<div class="search">
+				<input type="text" name="" placeholder="請輸入帳號或姓名搜尋">
+				<img src="img/icon/BS_search.png">
+			</div>
+
 			<div class="tableHeaderCover">
 				<table class="tableHeader">
 					<tr>
@@ -54,6 +60,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>店家狀態</td>
 					</tr>	
 				</table>
+			</div>
 			
 				
 				<table class="tableContent">
@@ -62,160 +69,160 @@ require_once("BackStageHeaderSidebar.php");
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					<tr>
 						<td>A1234567</td>
 						<td>笑笑麵包</td>
 						<td>ID094187</td>
-						<td>解師傅‧愛新覺羅</td>
-						<td><a href="#">內容</a></td>
+						<td>解師傅‧咚咚咚咚咚</td>
+						<td><a href="shopUpContent.php">內容</a></td>
 						<td>上架</td>
 					</tr>
 					
@@ -230,7 +237,7 @@ require_once("BackStageHeaderSidebar.php");
 			
 
 			</form>
-			</div>
+			<!-- </div> -->
 		</div> <!-- tableArea -->
 
 

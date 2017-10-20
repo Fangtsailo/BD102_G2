@@ -44,23 +44,89 @@ a {
 // 	height: 50vw;
 // 		}
 
+	// .banners {
+	// 	background-size: cover;
+	// 	width: 100%;
+	// 	height: 50vw;
+	// 	background-image: url("../img/SHOPB/BN_01.JPG");			
+	// 	animation: bannersslide 18s 0s infinite;
+	// }
+	// @keyframes bannersslide {
+	// 	0% { background-image:url("../img/SHOPB/BN_01.JPG")}
+	// 	16.66% { background-image: url("../img/SHOPB/BN_01.JPG")}
+	// 	33.33% { background-image: url("../img/SHOPB/BN_02.JPG")}
+	// 	46.99% { background-image: url("../img/SHOPB/BN_02.JPG")}
+	// 	66.66% { background-image: url("../img/SHOPB/BN_03.JPG")}
+	// 	83.33% { background-image: url("../img/SHOPB/BN_03.JPG")}
+	// 	100% { background-image: url("../img/SHOPB/BN_01.JPG")}
+	// }
 
-	.banners {
+.banners {
 		background-size: cover;
 		width: 100%;
 		height: 50vw;
-		background-image: url("../img/SHOPB/BN_01.JPG");			
-		animation: bannersslide 18s -1s ease-in infinite;
+		overflow:hidden;
+		//background-image: url("../img/SHOPB/BN_01.JPG");
 	}
-	@keyframes bannersslide {
-		0% { background-image:url("../img/SHOPB/BN_01.JPG")}
-		16.66% { background-image: url("../img/SHOPB/BN_01.JPG")}
-		33.33% { background-image: url("../img/SHOPB/BN_02.JPG")}
-		46.99% { background-image: url("../img/SHOPB/BN_02.JPG")}
-		66.66% { background-image: url("../img/SHOPB/BN_03.JPG")}
-		83.33% { background-image: url("../img/SHOPB/BN_03.JPG")}
-		100% { background-image: url("../img/SHOPB/BN_01.JPG")}
-	}
+
+
+.banners img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 7s;
+}
+.banners img:first-child {
+  position: static;
+}
+.banners img.show {
+  opacity: 1;
+  visibility: visible;
+  transition:7s;
+  //transition-delay: 1s;
+}
+.banners .prev, .banners .next {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: rgba(0, 0, 0, 0.12);
+  padding: 14px 12px;
+}
+.banners .prev:hover, .banners .next:hover {
+  background-color: rgba(0, 0, 0, 0.24);
+}
+.banners .prev:after, .banners .next:after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.banners .prev {
+  left: 0;
+}
+.banners .prev:after {
+  transform: rotate(-135deg);
+  margin-left: 4px;
+}
+.banners .next {
+  right: 0;
+}
+.banners .next:after {
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
+
+
+
 
 
 #SPNAME{
@@ -105,13 +171,40 @@ a {
 	top:28vw ;
 	left:9vw ;
 }
-.star1{float: left; width: 2.5vw;}
-.star2{float: left; width: 2.5vw;}
-.star3{float: left; width: 2.5vw;}
-.star4{float: left; width: 2.5vw;}
-.star5{float: left; width: 2.5vw;}
-#SPGRADE img{
-	width: 55%;}
+
+
+  .rating {
+        font-size: 0;
+        display: inline-block;
+        float:left;
+    }
+
+    .rating > label {
+        color: #AAA;
+        float: right;
+    }
+
+    .rating > label:after {
+        padding: 5px 10px 5px 10px;
+        font-size: 26px;
+        line-height: 1em;
+        display: inline-block;
+        content: "★";
+    }
+
+    .rating > input:checked ~ label,
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: #FFD700;
+    }
+
+
+    .rating > input:checked ~ label:hover,
+    .rating > label:hover ~ input:checked ~ label,
+    .rating > input:checked ~ label:hover ~ label {
+        opacity: 0.5;
+    }
+
 
 #GIVESTAR{
 	float: left;
