@@ -142,34 +142,21 @@ img {
 	overflow: hidden;
 	padding-top: 0;
 	.banners {
-		// .item {
-			// background-size: cover;
-			// height: 100vh;
-		// }
-		// .item1 {
-		// 	background-image: url("../img/store/browse/screen1-bg.png");
-		// }
-		// .item2 {
-		// 	background-image: url("../img/store/browse/screen1-bg2.jpg");
-		// }
-		// .item3 {
-		// 	background-image: url("../img/store/browse/screen1-bg3.jpg");
-		// }
 		background-size: cover;
 		background-position: center center;
 		height: 100vh;
-		background-image: url("../img/store/browse/screen1-bg.png");			
-		animation: banners-slide 18s 2s infinite backwards;
+		// background-image: url("../img/store/browse/screen1-bg.png");			
+		// animation: banners-slide 18s 2s infinite backwards;
 	}
-	@keyframes banners-slide {
-		0% { background-image:url("../img/store/browse/screen1-bg.png")}
+	// @keyframes banners-slide {
+		// 0% { background-image:url("../img/store/browse/screen1-bg.png")}
 		// 16.66% { background-image: url("../img/store/browse/screen1-bg.png")}
-		33.33% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
+		// 33.33% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
 		// 46.99% { background-image: url("../img/store/browse/screen1-bg2.jpg")}
-		66.66% { background-image: url("../img/store/browse/screen1-bg3.png")}
+		// 66.66% { background-image: url("../img/store/browse/screen1-bg3.png")}
 		// 83.33% { background-image: url("../img/store/browse/screen1-bg3.png")}
-		100% { background-image: url("../img/store/browse/screen1-bg.png")}
-	}
+		// 100% { background-image: url("../img/store/browse/screen1-bg.png")}
+	// }
 	.detail-box {
 		position: absolute;
 	    top: 0;

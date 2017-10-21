@@ -35,15 +35,19 @@ try {
 	require_once("php/store/browse/storeDetail.php");
 	// $storeId = $_REQUEST["storeId"];
 	$storeId = 2;
+	//會員基資======================================
+	$memNum = 3;
+	$memPic = GLOBAL_MEM_PIC_PATH.$memNum.".png";
 	getStoreInfoById($storeId);
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
 	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId);
+	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
 } catch (Exception $e) {
-	echo "原因：",$ex->getMessage(),"<br>";
-	echo "行號：",$ex->getLine(),"<br>";
+	echo "原因：",$e->getMessage(),"<br>";
+	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
 <div class="navigator">
@@ -329,13 +333,13 @@ try {
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
 			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
-			<div class="content col-lg-10"><textarea placeholder="登入後開始留言..." rows="5"></textarea>
+			<div class="content col-lg-10"><textarea maxlength="250" placeholder="登入後開始留言..." rows="5" id="message-content"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
-	<div class="messages-area">
+	<div class="messages-area" id="messages-area">
 		<?php 
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
@@ -347,7 +351,7 @@ try {
 								<p><?php echo $messageItem->content ?></p>
 								<div class="setting-area">
 									<div class="report pointer">
-										<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+										<div class="img-icon" data-msg-id="<?php echo $messageItem->no ?>"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -357,7 +361,7 @@ try {
 		<?php
 			}
 		 ?>
-		<div class="more-message button">看更多</div>
+		<div class="more-message button" id="more-message">看更多</div>
 	</div>
 </div>
 <div class="screen screen-other-store">
@@ -373,13 +377,13 @@ try {
 	<div class="store-list">
 		<div class="top-list">
 			<?php 
-				foreach ($otherStoreItemArr as $otherStore) {
+				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
 			?>
-					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore[0]; ?>">
-						<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
+					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore->id; ?>">
+						<div class="color-img"><img alt="other_store1.png" src="<?php echo $otherStore->banner1 ?>"></div>
 						<div class="detail">
-							<h3 class="name"><?php echo $otherStore[1]; ?></h3>
-							<p class="describe"><?php echo $otherStore[2]; ?></p>
+							<h3 class="name"><?php echo $otherStore->name; ?></h3>
+							<p class="describe"><?php echo $otherStore->story ?></p>
 						</div>
 					</div>
 			<?php
@@ -408,6 +412,16 @@ $(document).ready(function(){
 		}
 	 ?>
 	setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
+	var messageLoadMore = document.getElementById("more-message");
+	//看更多留言事件--------------------
+	messageLoadMore.addEventListener("click", function() {
+		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>);
+	}, false);
+	//寄發留言-------------------------
+	$("#send-message-btn").click(function() {
+		var content = $('#message-content').val();
+		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
+	})
 });	
 </script>
 </body>

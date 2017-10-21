@@ -108,28 +108,7 @@ img {
   .screen-1 .banners {
     background-size: cover;
     background-position: center center;
-    height: 100vh;
-    background-image: url("../img/store/browse/screen1-bg.png");
-    -webkit-animation: banners-slide 18s 2s infinite backwards;
-    animation: banners-slide 18s 2s infinite backwards; }
-@-webkit-keyframes banners-slide {
-  0% {
-    background-image: url("../img/store/browse/screen1-bg.png"); }
-  33.33% {
-    background-image: url("../img/store/browse/screen1-bg2.jpg"); }
-  66.66% {
-    background-image: url("../img/store/browse/screen1-bg3.png"); }
-  100% {
-    background-image: url("../img/store/browse/screen1-bg.png"); } }
-@keyframes banners-slide {
-  0% {
-    background-image: url("../img/store/browse/screen1-bg.png"); }
-  33.33% {
-    background-image: url("../img/store/browse/screen1-bg2.jpg"); }
-  66.66% {
-    background-image: url("../img/store/browse/screen1-bg3.png"); }
-  100% {
-    background-image: url("../img/store/browse/screen1-bg.png"); } }
+    height: 100vh; }
   .screen-1 .detail-box {
     position: absolute;
     top: 0;

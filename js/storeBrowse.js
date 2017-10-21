@@ -1,3 +1,60 @@
+//留言
+function sendMessage(storeId, memId, content) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	       		location.reload();
+	       }else{
+	          consle.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxSendMessage.php?storeId=" + storeId + "&memId=" + memId + "&content=" + content;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );	
+}
+
+//抓取更多留言
+nowMessagePage = 0;
+function loadMoreMessage(storeId) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	        var messageListObj = JSON.parse(xhr.responseText);
+	        nowMessagePage++;
+	        var html = "";
+	        for (var key in messageListObj) {
+	        	html +=	'<div class="message-box">'
+					+	'	<div class="mem-pic col-lg-2"><img alt="'+ messageListObj[key].memberPicName +'" src="'+ messageListObj[key].memberPicName +'"></div>'
+					+	'	<div class="content col-lg-10">'
+					+	'		<div class="container">'
+					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
+					+	'			<p>'+ messageListObj[key].content +'</p>'
+					+	'			<div class="setting-area">'
+					+	'				<div class="report pointer">'
+					+	'					<div class="img-icon" data-msg-id="'+ messageListObj[key].no + '"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>'
+					+	'			</div>'
+					+	'			<div class="clear"></div>'
+					+	'		</div>'
+					+	'	</div>'
+					+	'	<div class="clear"></div>'
+					+	'</div>';
+	        }
+	        $('#messages-area').append(html);
+	        $('#messages-area').append($('#more-message'));
+	       }else{
+	          consle.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxLoadMoreMessage.php?messagePage=" + nowMessagePage + "&storeId=" + storeId;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );
+}
 	//胖小車即時位置地圖
 function initBreadCarNowLocationMap(id) {
 	var map = new google.maps.Map(document.getElementById(id), {

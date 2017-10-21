@@ -9,9 +9,6 @@ try {
 	require_once("Message.php");
 	$GLOBALS["connectPDO"] = $connectPDO;
 	$GLOBALS["store"] = new Store();
-//會員基資======================================
-	$memNum = 2;
-	$memPic = GLOBAL_MEM_PIC_PATH.$memNum.".png";
 //其他店家推薦======================================
 	$otherStoreItemArr = array(
 		array("123", "山上麵包", "新興店家，主推自家創意麵包..."),
@@ -25,10 +22,32 @@ try {
 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
 }
-
+	function getOtherStoreByRandom($StoreCountToGet) {
+		//隨機產生:  random(1,可以先得到店家總數-6) > SQL LIMIT x, x+6
+		$totalStoreCount = 0;
+		$randomStart = 1;
+		$sql = "SELECT count(*) count FROM store_imformation;";
+		$stmt = $GLOBALS["connectPDO"] ->query($sql);
+		while ($count = $stmt->fetchObject()) {
+			$totalStoreCount = $count->count;
+		}
+		if ($totalStoreCount - $StoreCountToGet > 0) {
+			$randomStart = rand(1, $totalStoreCount - $StoreCountToGet);
+		}
+		//start 找6家 random 店家
+		$otherStoreArr = array();
+		$sql = "SELECT * FROM store_imformation limit $randomStart, $StoreCountToGet";
+		$stmt = $GLOBALS["connectPDO"] ->query($sql);
+		while ($store = $stmt->fetchObject()) {
+			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, 3, 123, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
+			array_push($otherStoreArr, $otherStore);
+		}
+		return $otherStoreArr;
+	}
 	function getMessagesByStoreId($storeId) {
 		$messageArr = array();
-		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC";
+		$limitCount = 5;//一次載入5筆
+		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC limit $limitCount";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
@@ -83,12 +102,12 @@ try {
 			header("location:homepage.php");
 		} else {
 			$tmpStore = $stmt->fetchObject();
-			$GLOBALS["store"] = new Store($tmpStore->SI_NAME, $tmpStore->SI_LOGO, 3, 123, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE);
+			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, 3, 123, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3);
 		}
 	}
 	function getBreadCarPathByStoreId($storeId) {
 		$breadCarPathArr = array();
-		$sql = "select path.bcp_location,path.bcp_describe, store.si_lat, store.si_lng from trepun.bread_car_path path, trepun.store_imformation store where path.BCP_STORE_NUM = :storeId";
+		$sql = "select path.bcp_location,path.bcp_describe, store.si_lat, store.si_lng from trepun.bread_car_path path, trepun.store_imformation store where path.BCP_STORE_NUM = :storeId and path.bcp_store_num=store.si_num";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();

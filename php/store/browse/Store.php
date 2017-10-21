@@ -1,5 +1,6 @@
 <?php 
 class Store {
+	public $id = 0;
 	public $name = "";
 	public $storeLogo = "";
 	public $reviews = 0; //評價
@@ -12,8 +13,12 @@ class Store {
 	public $closeDayArr = array();
 	public $story = "";
 	public $type = 0;//0:店家, 1:胖小車
+	public $banner1 = "";//banner1 圖片名稱
+	public $banner2 = "";//banner2 圖片名稱
+	public $banner3 = "";//banner3 圖片名稱
 
-	function __construct($name="山下麵包", $storeLogo="default.png", $reviews=3, $follow=123, $address="桃園市中壢區中大路300號", $openStartTime=11, $openEndTime=22, $phone="1234567890", $closeDay="1,7", $story="story", $type=0) {
+	function __construct($id=0,$name="山下麵包", $storeLogo="default.png", $reviews=3, $follow=123, $address="桃園市中壢區中大路300號", $openStartTime=11, $openEndTime=22, $phone="1234567890", $closeDay="1,7", $story="story", $type=0, $banner1="", $banner2="", $banner3="") {
+		$this->id = $id;
 		$this->name = $name;
 		$this->storeLogo = $storeLogo;
 		$this->reviews = $reviews;
@@ -24,7 +29,10 @@ class Store {
 		$this->phone = $phone;
 		$this->closeDay = $closeDay;
 		$this->story = $story;	
-		$this->closeDayArr = explode(",", $closeDay);	
+		$this->closeDayArr = explode(",", $closeDay);
+		$this->banner1 = GLOBAL_STORE_BANNERS_PIC_PATH.$banner1;
+		$this->banner2 = GLOBAL_STORE_BANNERS_PIC_PATH.$banner2;
+		$this->banner3 = GLOBAL_STORE_BANNERS_PIC_PATH.$banner3;
 	}
 }
 
