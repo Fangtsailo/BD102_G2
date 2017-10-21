@@ -1,19 +1,9 @@
-@-webkit-keyframes letterDraw {
-  to {
-    stroke-dashoffset: 0; } }
-
 @keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
-
-@-webkit-keyframes letterleaf {
-  to {
-    fill: #4b7cbf; } }
-
 @keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
-
 body {
   background-color: #fbf8f1; }
 
@@ -56,13 +46,11 @@ header {
       fill: none;
       stroke-width: 1;
       stroke: #4b7cbf;
-      -webkit-animation: letterleaf 1s ease forwards;
       animation: letterleaf 1s ease forwards; }
       .CenterBusiness .subtitle svg .line .line-g {
         opacity: 1;
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
-        -webkit-animation: letterDraw 3s ease forwards;
         animation: letterDraw 3s ease forwards; }
   .CenterBusiness .content-table table {
     width: 80%;
@@ -166,14 +154,8 @@ header {
             right: 0;
             left: 0;
             margin: auto;
-            display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
             align-items: center;
-            -webkit-justify-content: center;
-            -ms-flex-pack: center;
             justify-content: center; }
             .CenterBusiness .content-table table tr:nth-child(5) td div div {
               height: 90%;
@@ -347,14 +329,8 @@ header {
               right: 0;
               left: 0;
               margin: auto;
-              display: -webkit-flex;
-              display: -ms-flexbox;
               display: flex;
-              -webkit-align-items: center;
-              -ms-flex-align: center;
               align-items: center;
-              -webkit-justify-content: center;
-              -ms-flex-pack: center;
               justify-content: center; }
               .CenterBusiness .content-table table tr:nth-child(5) td div div {
                 height: 90%;
@@ -382,13 +358,12 @@ header {
                   display: none;
                   font-size: 8px;
                   margin: auto; } }
-
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; }
+
   .coverSubtitile .subtitle .burger {
     display: block; } }
-
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -403,7 +378,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(6) td div div {
         font-size: 14px;
         margin: 10px 0; } }
-
 @media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }

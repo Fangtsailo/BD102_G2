@@ -96,7 +96,7 @@ require_once("BackStageHeaderSidebar.php");
 					</script>
 
 
-			</div>
+			</div><!-- search -->
 
 
 
