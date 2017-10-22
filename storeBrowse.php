@@ -23,6 +23,8 @@
     <script src="js/storeBrowse.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
+    <script src="libs/jquery-modal-master/jquery.modal.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/jquery-modal-master/jquery.modal.min.css">
     <script src="js/header.js"></script>
 </head>
 <body>
@@ -36,7 +38,7 @@ try {
 	// $storeId = $_REQUEST["storeId"];
 	$storeId = 2;
 	//會員基資======================================
-	$memNum = 3;
+	$memNum = 5;
 	$memPic = GLOBAL_MEM_PIC_PATH.$memNum.".png";
 	getStoreInfoById($storeId);
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
@@ -50,6 +52,10 @@ try {
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
+ <div id="review-modal" class="modal">
+  <p>Thanks for clicking. That felt good.</p>
+  <button onclick="alert('123');">456</button>
+</div>
 <div class="navigator">
 	<div class="item">
 		<a href=""><p>123</p></a>
@@ -93,6 +99,9 @@ try {
 </div> -->	
 <div class="screen screen-1">
 	<div class="banners">
+		<div id="banner1"></div>
+		<div id="banner2"></div>
+		<div id="banner3"></div>
 	</div>
 	<div class="detail-box">
 		<div class="store-logo"><img alt="<?php echo $GLOBALS["store"]->storeLogo ?>" src="<?php echo GLOBAL_STORE_PIC_PATH, $GLOBALS["store"]->storeLogo ?>"></div>
@@ -102,21 +111,21 @@ try {
 			</div>
 		</div>
 		<div class="detail">
-			<ul class="follow col-xs-9">
-				<?php 
-					// for ($i = 0; $i < 5; $i++) {
-					// 	if ($review > 0) {
+				<ul class="follow col-xs-9" id="review-btn">
+					<?php 
+						// for ($i = 0; $i < 5; $i++) {
+						// 	if ($review > 0) {
 
-					// 	}
-					// 	$review--;
-					// }
-				 ?>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-			</ul>
+						// 	}
+						// 	$review--;
+						// }
+					 ?>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				</ul>
 			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $GLOBALS["store"]->follow ?>)</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
@@ -422,6 +431,17 @@ $(document).ready(function(){
 		var content = $('#message-content').val();
 		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
 	})
+	//screen1 banner1 bgImg----------------
+	 $('#banner1').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner1;?>")');
+	 $('#banner2').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner2;?>")');
+	 $('#banner3').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner3;?>")');
+	 //評價-----------------------------
+	 $('#review-btn').on('click', function() {
+	 	$('#review-modal').modal({
+		 	fadeDuration: 100
+		 });
+	 })
+	 
 });	
 </script>
 </body>

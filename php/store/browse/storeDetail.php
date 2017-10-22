@@ -39,7 +39,7 @@ try {
 		$sql = "SELECT * FROM store_imformation limit $randomStart, $StoreCountToGet";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($store = $stmt->fetchObject()) {
-			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, 3, 123, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
+			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
 			array_push($otherStoreArr, $otherStore);
 		}
 		return $otherStoreArr;
@@ -102,7 +102,7 @@ try {
 			header("location:homepage.php");
 		} else {
 			$tmpStore = $stmt->fetchObject();
-			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, 3, 123, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3);
+			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3);
 		}
 	}
 	function getBreadCarPathByStoreId($storeId) {

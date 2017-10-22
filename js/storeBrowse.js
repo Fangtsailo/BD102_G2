@@ -124,6 +124,16 @@ function allSlickSetting() {
 	//   arrows: false,
 	//   fade: true
  //  });
+ //screen1 banner 輪播
+ screen1BannerImgDivNum = "1";
+ setInterval(function(){ 
+ 	var tmpNum = screen1BannerImgDivNum;
+ 	screen1BannerImgDivNum = (screen1BannerImgDivNum + 1) % 3;
+ 	screen1BannerImgDivNum = screen1BannerImgDivNum == 0?3:screen1BannerImgDivNum;
+ 	$('#banner' + screen1BannerImgDivNum).fadeIn(2000);
+ 	$('#banner' + tmpNum).fadeOut(2000);
+  }, 5000);
+
 	$('.product').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
