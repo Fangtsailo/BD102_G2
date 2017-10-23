@@ -6,6 +6,8 @@ function changePanel(){
     $("#headMemLogin").hide(300);
     $("#memLoggedin").show(300);
     $("#visitor").hide(300);
+    $('#showAddShopForm').css('display','block');
+    $('#visitorForm').css('display','none');
 }
 
 //登出會員專區
@@ -15,10 +17,9 @@ function logOut(){
     $('#memStatusBar').hide(300);
 }   
 //填寫表單燈箱切換
-function lightboxloggedIn(){
-    $('#showAddShopForm').css('display','block');
-    $('#visitorForm').css('display','none');
-}
+// function lightboxloggedIn(){
+    
+// }
 
 function addSuccess(e){
   $(this).submit();

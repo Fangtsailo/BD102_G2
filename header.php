@@ -5,7 +5,7 @@
 	//判斷是否有登入過網站
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
 		// echo "<script type='text/javascript'>window.onload=changePanel;</script>"; //更換會員專區面板
-		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);window.addEventListener('load',lightboxloggedIn,false);</script>"; //更換會員專區面板
+		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);</script>"; //更換會員專區面板
 		// echo "<script type='text/javascript'>window.onload=lightboxloggedIn;</script>"; 
 	}else { 
 		// session_destroy();

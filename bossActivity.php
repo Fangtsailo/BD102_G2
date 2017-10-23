@@ -273,8 +273,8 @@ session_start();
 			<h3>活動列表</h3>
 			<div class="addAct">
 				
-				<a href="#">
-				<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><style type="text/css">.st0{fill:#f06428;}</style><path class="st0" d="M36.4,19.9c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15s-6.7-15-15-15s-15,6.7-15,15c0,0.3,0,0.7,0.1,1H2.4v-1c0-9.4,7.6-17,17-17S36.4,10.5,36.4,19.9z M18.4,12.9v6h-6v2h6v6h2v-6h6v-2h-6v-6H18.4z"/></svg></span>新增活動
+				<a href="bossActivityAdd.php">
+				<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><style type="text/css">.plus{fill:#f06428;}</style><path class="plus" d="M36.4,19.9c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15s-6.7-15-15-15s-15,6.7-15,15c0,0.3,0,0.7,0.1,1H2.4v-1c0-9.4,7.6-17,17-17S36.4,10.5,36.4,19.9z M18.4,12.9v6h-6v2h6v6h2v-6h6v-2h-6v-6H18.4z"/></svg></span>新增活動
 				</a>
 			</div>
 			<div class="clearfix"></div>
@@ -292,19 +292,30 @@ session_start();
 <?php 
 	try{
 		require_once("php/PDO/connectPDO.php");
-		$memId = $_SESSION["memId"];
-		$selectActivitySQL = "SELECT a.AC_NO,a.AC_STORE_NUM,a.AC_NAME,a.AC_TIME,a.AC_CHECKSTAY,a.AC_MEM_COUNT,s.SI_NUM,s.SI_MEMNO FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM=s.SI_NUM WHERE s.SI_MEMNO=$memId " ;
+		$memNo = $_SESSION["memNo"];
+		$selectActivitySQL = "SELECT a.AC_NO,a.AC_STORE_NUM,a.AC_NAME,a.AC_TIME,a.AC_CHECKSTAY,a.AC_MEM_COUNT,s.SI_NUM,s.SI_MEMNO FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM=s.SI_NUM WHERE s.SI_MEMNO='$memNo' " ;
 		$activity = $connectPDO->query($selectActivitySQL);
 		while ($activityRow = $activity->fetchObject()) {
+			switch ($activityRow->AC_CHECKSTAY) {
+				case null:
+					$status = '未審核';
+					break;
+				case '0':
+					$status = '未通過審核';
+					break;
+				case '1':
+					$status = '審核通過';
+					break;
+			}
 ?>
 				<tr>
 					<td data-th="活動編號"><?php echo $activityRow->AC_NO ; ?></td>
 					<td data-th="活動名稱"><?php echo $activityRow->AC_NAME ; ?></td>
 					<td data-th="活動日期時間"><?php echo $activityRow->AC_TIME ; ?></td>
-					<td data-th="上架狀態"><?php echo $activityRow->AC_CHECKSTAY ; ?></td>
+					<td data-th="上架狀態"><?php echo $status ; ?></td>
 					<td data-th="參加人數"><?php echo $activityRow->AC_MEM_COUNT ; ?></td>
 					<td data-th="操作">
-						<a href="#" class="joinlist">
+						<a href="bossActivityList.php" class="joinlist">
 							<!-- <img src="img/icon/entryform.svg"> -->
 							<span class="tableIcon"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"><g><rect x="20.4" y="23" width="9.3" height="1.5"/><rect x="20.4" y="30.7" width="9.3" height="1.5"/><path d="M32,34.6H18V15.4h9.6c0.1,0,0.5,0,0.5,0.5v3.1h-7.8v1.5h13.2l-0.1-0.2c0-0.1-3.9-5.3-4.3-5.7c-0.4-0.5-1-0.8-1.6-0.8H16.5v22.2h17V21.7H32V34.6z M29.6,17.7l1,1.3h-1V17.7z"/><rect x="20.4" y="26.8" width="9.3" height="1.5"/></g></svg></span><span>名單</span>
 						</a>

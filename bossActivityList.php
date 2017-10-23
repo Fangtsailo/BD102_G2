@@ -12,6 +12,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/bossActivityList.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
 </head>
 <body>
 		<?php 
@@ -267,9 +268,20 @@ session_start();
 						<th>信箱</th>
 						<th>操作</th>
 					</tr>
+
+<?php 
+	try{
+		require_once("php/PDO/connectPDO.php");
+		$memNo = $_SESSION["memNo"];
+		$activityPartcipantSQL = "SELECT a.AC_NO,a.MEM_NO,m.MEM_PHONE,m.MEM_MAIL FROM ac_info a JOIN member m ON a.MEM_NO=m.MEM_NO WHERE a.MEM_NO='$memNo' " ;
+		$participants = $connectPDO->query($activityPartcipantSQL);
+		while ($participantsRow = $participants->fetchObject()) {
+?>
+
+
 					<tr>
-						<td data-th="活動編號">000001</td>
-						<td data-th="會員編號">bakeryboss</td>
+						<td data-th="活動編號"><?php echo $participantsRow->AC_NO ?></td>
+						<td data-th="會員編號"><?php echo $participantsRow->MEM_ID?></td>
 						<td data-th="電話">0912345678</td>
 						<td data-th="信箱">123@gmail.com</td>
 						<td data-th="操作">
@@ -281,6 +293,17 @@ session_start();
 							</a>
 						</td>
 					</tr>
+
+<?php
+	
+	} //while
+}catch(PDOException $ex){
+	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+	echo "行號：",$ex->getLine(),"<br>";
+}
+
+ ?>
+
 				</table>
 			</div>
 		</div>
@@ -300,7 +323,7 @@ session_start();
 	 	require_once('footer.php');
 
 	  ?>
-	  <script type="text/javascript" src="js/header.js"></script>
+	 
 </body>
 </body>
 </html>

@@ -12,6 +12,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/bossActivityAdd.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
 </head>
 <body>
 		<?php 
@@ -354,7 +355,7 @@ session_start();
 	 	require_once('footer.php');
 
 	  ?>
-	  <script type="text/javascript" src="js/header.js"></script>
+	  
 </body>
 </body>
 </html>
