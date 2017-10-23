@@ -46,7 +46,11 @@ body {
     .container .memHomeItemGroup .hidden {
       visible: hidden; }
       .container .memHomeItemGroup .hidden:hover {
+        -webkit-transform-origin: 0 33px;
+        -ms-transform-origin: 0 33px;
         transform-origin: 0 33px;
+        -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
         transform: rotate(60deg);
         transition: .3s;
         opacity: 0; }

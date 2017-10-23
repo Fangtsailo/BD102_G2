@@ -1,13 +1,15 @@
+
+<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
-
 	//判斷是否有登入過網站
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
-		echo "<script type='text/javascript'>window.onload=changePanel;</script>";
+		// echo "<script type='text/javascript'>window.onload=changePanel;</script>"; //更換會員專區面板
+		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);window.addEventListener('load',lightboxloggedIn,false);</script>"; //更換會員專區面板
+		// echo "<script type='text/javascript'>window.onload=lightboxloggedIn;</script>"; 
 	}else { 
-		session_destroy();
+		// session_destroy();
 	}
-
 
  ?>
 
@@ -18,7 +20,7 @@
 	<div class="headLoginBox" id="loginBox">
 		
 		<div class="globalForm">
-		<form id="loginForm" name="loginForm" action="logIn.php" method="post">
+		<form id="loginForm" name="loginForm" action="php/member/login/headerlogIn.php" method="post">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -46,7 +48,7 @@
 				
 				<div class="globalFormBtns">
 					<div class="globalCancelBtn" id="cancelLogin">取消</div>
-					<input type="button" name="submit" id="submitLogin" class="globalOkBtn" value="登入">					
+					<input type="button" name="submit" class="globalOkBtn" id="submitLogin" value="登入">
 				</div>
 				
 				<div class="facebookLogin">
@@ -69,7 +71,7 @@
 	<div class="headRegisterBox" id="RegisterBox">
 		
 		<div class="globalForm">
-		<form id="registerForm" action="register.php" method="get" onSubmit="return checkFormRegister();">
+		<form id="registerForm" action="php/member/register/headerRegister.php" method="get">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -98,7 +100,7 @@
 				
 				<div class="globalFormBtns">
 					<div class="globalCancelBtn">取消</div>
-					<input type="submit" name="SubmitRegister" class="globalOkBtn" value="註冊">					
+					<input id="submitRegister" type="button" name="SubmitRegister" class="globalOkBtn" value="註冊">					
 				</div>
 				
 				<div class="facebookRegister">
@@ -119,11 +121,7 @@
 
 <!-- logo區塊 -->
 		<div class="headLogo">
-<<<<<<< HEAD
 			<a href="homepage.php">
-=======
-			<div class="svg" onclick="location.href='homepage.php'">
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
 				<img src="img/trepunLogoWhite.svg">
 			</a>	
 		</div>		
@@ -169,12 +167,12 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="#"> <?php echo $_SESSION["memId"]; ?>  </a></li>
+						<li><a href="#"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : "" ; ?>  </a></li>
 						<li><a class="memLink" href="#">我的追蹤</a></li>
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
 						<li><a class="memLink" href="#">成為店長</a></li>
-						<li><a class="memLink" href="#" id="logOut">登出</a></li>
+						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
 
@@ -249,7 +247,6 @@
 								<path class="st1" d="M36,19c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15S27.3,4,19,4S4,10.7,4,19c0,0.3,0,0.7,0.1,1H2v-1C2,9.6,9.6,2,19,2S36,9.6,36,19z"/></g></svg>
 			</span>
 	</div>
-<<<<<<< HEAD
 	<nav id="menu" class="hideMenu">
 		<ul id="visitor">
 			<li class="closeMenu">
@@ -277,41 +274,14 @@
 				<div class="memPic">
 					<a href="#"><img id="memPic" src="img/homepage/user.png"></a>
 				</div>
-				<span id="memId">Bakery Boss</span>
+				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<li class="navItem"><a href="#">我的追蹤</a></li>
 			<li class="navItem"><a href="#">我的留言</a></li>
 			<li class="navItem myActivity"><a href="#">我的報名</a></li>
 			<li class="navItem beBoss"><a href="#">成為店長</a></li>
-			<li class="navItem"><a href="#">登出</a></li>
-=======
-	<nav id="menu" class="hideMenu">	
-		<ul>
-		<li class="closeMenu">
-			<span id="closeBurger">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
-			<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
-				</svg>
-			</span>
-			<div class="clearfix"></div>
-		</li>
-		<li class="memPart">
-			<div class="memPic">
-				<img id="memPic" src="img/homepage/user.png">
-			</div>
-			<span id="memId">Bakery Boss</span>
-			<div class="clearfix"></div>
-		</li>
-		<li class="listTitle">會員專區</li>
-		<li class="navItem"><a href="memedit.php">基本資料</a></li>
-		<li class="navItem"><a href="memfollow.php">我的追蹤</a></li>
-		<li class="navItem"><a href="memcomment.php">我的留言</a></li>
-		<li class="navItem"><a href="mementry.php">我的報名</a></li>
-		<li class="navItem"><a href="memBeBoss1.php">成為店長</a></li>
-		<li class="navItem"><a href="#">登出</a></li>
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
+			<li class="navItem"><a href="php/member/login/sessionLogOut.php" id="rwdLogout">登出</a></li>
 		</ul>
 	</nav>
 	
@@ -320,7 +290,7 @@
 <!-- ========================新增店家燈箱===================== -->
 	<div id="addShopBox">
 		<div class="globalForm">
-			<form action="" method="">
+			
 				<div class="globalFormHeader">
 					<div class="svg" id="closeBtn01">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -334,37 +304,38 @@
 					<h1>新增店家</h1>
 					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
 				</div>
-				<div class="globalFormContent">
+				<form action="php/store/add/lightboxAddStore.php" method="get" id="addstoreForm">
+				<div class="globalFormContent" id="showAddShopForm">
 					<div class="globalFormInput chooseType">
 						<label><span>*</span>選擇店型</label>
-							<label class="chooseBtn">胖小車<input type="radio" value="car" name="chooseType"></label>
-							<label class="chooseBtn">麵包店<input type="radio" value="shop" name="chooseType"></label>
+							<label class="chooseBtn">胖小車<input id="type1" type="radio" value="1" name="storeType" required></label>
+							<label class="chooseBtn">麵包店<input id="type2" type="radio" value="0" name="storeType" required></label>
 							<div class="clearfix"></div>
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>主旨</label><input type="text" name="" placeholder="提醒字">
+						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
-
 					<div class="globalFormInput">
-						<label><span>*</span>輸入店名</label><input type="text" name="" placeholder="提醒字">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
 					</div>
-					
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="" placeholder="提醒字">
+						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入地址/門牌號碼">
 					</div>
-					
 					<div class="globalFormInput">
-						<label><span>*</span>商家地址</label><input type="email" name="" placeholder="提醒字" required>
+						<label><span>*</span>營業時間</label><input type="number" name="startTime" max="24" min="0" maxlength="2"><span>點至</span><input type="number" name="endTime" max="24" min="0" maxlength="2"><span>點</span>
 					</div>
-
 					<div class="globalFormInput">
-						<label>故事介紹</label><textarea></textarea>
+						<label>故事介紹</label><textarea name="story"></textarea>
 					</div>
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">
 						<div class="globalCancelBtn">取消</div>
-						<input type="submit" name="" class="globalOkBtn" value="送出">					
+						<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
+						<input id="addstoreBtn" type="button" name="submitAddShop" class="globalOkBtn" value="送出">					
 					</div>
+				</div>
+				<div class="globalFormContent" id="visitorForm">
+					<a href="#" id="lightboxNeedlogIn" class="globalOkBtn">請先登入會員</a>
 				</div>
 			</form>
 		</div>

@@ -817,7 +817,7 @@ footer {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
         .globalHead #menu ul#memLoggedin {
-          display: none; }
+          display: block; }
         .globalHead #menu ul li {
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
@@ -1002,6 +1002,24 @@ footer {
     #addShopBox .globalForm .chooseType .chooseBtn {
       float: right;
       margin: 0px 10px; }
+    #addShopBox .globalForm #showAddShopForm {
+      display: none; }
+    #addShopBox .globalForm #visitorForm {
+      display: block;
+      position: relative;
+      padding-top: 50%; }
+      #addShopBox .globalForm #visitorForm a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto; }
+    #addShopBox .globalForm input[type="number"] {
+      width: 20%;
+      height: 100%;
+      float: none;
+      display: inline-block; }
 
 #serviceCenter {
   position: fixed;
@@ -1026,16 +1044,29 @@ footer {
 /* ===================================================*/
 /* ===================================================*/
 /* ===================================================*/
+@-webkit-keyframes dough1 {
+  0% {
+    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+  50% {
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 @keyframes dough1 {
   0% {
-    border-radius: 30% 30% 40% 60%/50% 55% 45% 50%; }
+    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
   50% {
-    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+
+@-webkit-keyframes dough2 {
+  0% {
+    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+  50% {
+    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+
 @keyframes dough2 {
   0% {
-    border-radius: 40% 40% 40% 40%/55% 55% 45% 35%; }
+    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
   50% {
-    border-radius: 45% 45% 45% 55%/60% 45% 55% 40%; } }
+    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+
 .activity_banner {
   width: 100%;
   height: 100%;
@@ -1049,6 +1080,7 @@ footer {
     height: 20%;
     padding-top: 20%; }
     .activity_banner .activity_Dough #acty_Dough {
+      -webkit-animation: dough1 2s linear infinite alternate;
       animation: dough1 2s linear infinite alternate;
       margin: auto;
       min-width: 280px;
@@ -1097,6 +1129,7 @@ footer {
     height: 20%;
     padding-top: 30%; }
     .activity_banner .activityDough #acty_Dough {
+      -webkit-animation: dough1 2s linear infinite alternate;
       animation: dough1 2s linear infinite alternate;
       margin: auto;
       min-width: 250px;
@@ -1187,112 +1220,52 @@ footer {
 /* .activity_banner rwd ==========================
 ==================================================
 ================================================== */
-<<<<<<< HEAD
-@media all and (min-width: 768px) {
-  .activity_detail {
-    width: 25vw;
-    float: right;
-    margin: 15vw 10vw 8vw 0; } }
-
-@media all and (max-width: 767px) {
-  .activity_detail {
-    margin: auto;
-    width: 80%;
-    display: block; }
-  .acty_stirrer {
-    left: -7%; } }
-
-@media all and (max-width: 959px) {
-  .activity_board {
-    width: 80px;
-    display: block;
-    margin: 20px auto;
-    float: none; }
-    .activity_board .acty_stirrer {
-      left: -10%; }
-=======
 @media screen and (max-width: 960px) {
   .activity_Dough {
     display: none; }
-
   .activity_board {
     margin: auto;
     position: relative;
     width: 90%; }
-
   .acty_board {
     margin: 10% auto; }
-
   .activity_detail {
     margin: 10% auto;
     padding: 4%; } }
+
 @media screen and (min-width: 961px) {
   .activityDough {
     display: none; } }
+
 @media screen and (min-width: 961px) and (max-width: 1259px) {
   .activity_board {
     position: absolute;
     top: 50%;
     left: 2%;
     width: 37.5%; }
-
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
   .activity_detail {
     position: absolute;
     right: 2%;
     margin: auto;
-<<<<<<< HEAD
-    float: none; } }
-
-@media all and (max-width: 767px) {
-  .activity_detail {
-    width: 80%;
-    display: block; }
-  .acty_stirrer {
-    left: -7%; } }
-
-@media all and (min-width: 960px) {
-  .activity_board {
-    width: 40vw;
-    margin: 15vh 8vw 5vw 10vh;
-    float: left; }
-    .activity_board .acty_stirrer {
-      left: -10%; } }
-
-/*---------- .activity_banner rwd end -----------
-=====================================================
-===================================================== */
-@-webkit-keyframes dough1 {
-  0% {
-    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
-  100% {
-    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
-@keyframes dough1 {
-  0% {
-    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
-  100% {
-    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
-
-=======
     top: 72%;
     padding: 1%; } }
+
 @media screen and (min-width: 1260px) {
   .activity_board {
     position: absolute;
     top: 50%;
     left: 7vw;
     width: 37.5%; }
-
   .activity_detail {
     position: absolute;
     right: 12%;
     margin: auto;
     top: 72%;
     padding: 1%; } }
+
 /*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
 .activity_content {
   background: url("../img/acty_background_2.png") center center;
   background-size: cover;
@@ -1301,13 +1274,13 @@ footer {
   position: relative;
   overflow: hidden;
   /*---------------------------------------------------------
-  	-------------------RWD麵團-----------------------------------
-  	=======================================================
-  */
+	-------------------RWD麵團-----------------------------------
+	=======================================================
+*/
   /*---------------------------------------------------------
-  	-------------------RWD麵團 END-----------------------------------
-  	=======================================================
-  */ }
+	-------------------RWD麵團 END-----------------------------------
+	=======================================================
+*/ }
   .activity_content .activity_content_inner {
     width: 100%;
     margin: auto;
@@ -1418,6 +1391,7 @@ footer {
     background: url("../img/acty_bread.png");
     border-radius: 60% 45% 40% 60% / 50% 55% 45% 50%;
     background-size: cover;
+    -webkit-animation: dough2 2s linear infinite alternate;
     animation: dough2 2s linear infinite alternate;
     position: relative;
     z-index: 2; }
@@ -1444,12 +1418,8 @@ footer {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
     /* IE6-9 */
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
-<<<<<<< HEAD
-    -webkit-animation: dough1 2s linear infinite alternate;
-    animation: dough1 2s linear infinite alternate;
-=======
+    -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate;
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
     transition: 1s;
     box-sizing: border-box;
     padding: 35px; }
@@ -1494,6 +1464,7 @@ footer {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
     /* IE6-9 */
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate; }
     .activity_content .activity_dough_3 h2 {
       color: #9e693d;
@@ -1518,16 +1489,19 @@ footer {
       background: url("../img/acty_pic1.png") no-repeat center center;
       background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+      -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_2 {
       background: url("../img/acty_pic2.png") no-repeat center center;
       background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+      -webkit-animation: dough1 3s linear infinite alternate;
       animation: dough1 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_3 {
       background: url("../img/acty_pic3.png") no-repeat center center;
       background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+      -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
   .activity_content .section_5 {
     width: 100%;
@@ -1548,6 +1522,7 @@ footer {
     background: url("../img/acty_pic4.png") center center;
     background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate; }
   .activity_content .activity_dough_6 {
     width: 25%;
@@ -1557,183 +1532,101 @@ footer {
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     min-width: 320px;
     min-height: 250px;
+    -webkit-animation: dough1 3s linear infinite alternate;
     animation: dough1 3s linear infinite alternate; }
 
 /*===========content   rwd ====================
 ================================================
 ===============================================*/
-<<<<<<< HEAD
-@media screen and (max-width: 767px) {
-  .activity_pot {
-    display: block;
-    margin: 5vw auto; }
-  .activity_dough_1 {
-    margin: auto;
-    display: block;
-    right: 0; }
-  .activity_dough_2 {
-    margin: 10vw auto;
-    float: none; }
-  .activity_dough_3 {
-    float: none;
-    margin: auto; }
-  .pic_3 {
-    margin: 10px auto; }
-  .activity_dough_4_all {
-    margin: auto;
-    width: 100%; }
-  .activity_dough_4 {
-    float: none;
-    display: inline-block;
-    margin: 2% 3%; }
-=======
 @media screen and (min-width: 1201px) {
   .activity_dough_2 {
     float: left;
     margin-left: 13%; }
-
   .activity_dough_3 {
     float: right;
     margin: 5% 10% 5% 0; }
-
   .activity_dough_4_all {
     float: left;
     margin-top: -15%;
     margin-left: 10%; } }
+
 @media screen and (min-width: 961px) and (max-width: 1200px) {
   .activity_dough_2 {
     margin-left: 5%;
     float: left; }
-
   .activity_dough_3 {
     float: right;
     margin: 5% 0% 5% 0; }
-
   .activity_dough_4_all {
     float: left;
     margin-top: -15%;
     margin-left: 5%; } }
+
 @media screen and (min-width: 961px) {
   .activity_dough_1 {
     top: -2vw;
     margin-right: 8%;
     float: right; }
-
   .activityPot {
     display: none; }
-
   .pic_1 {
     margin-left: 50%; }
-
   .pic_3 {
     margin-left: 90%;
     margin-top: -50%; }
-
   .bake_bread {
     background: radial-gradient(rgba(241, 94, 36, 0.7), rgba(255, 165, 0, 0)); }
-
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
   .activity_dough_5 {
     float: right;
     margin: 3vw 5% 0 0; }
-
   .activity_dough_6 {
     float: left;
     margin: 15vw 0 10% 10%; }
-
   .activity_bread {
     display: block; } }
+
 @media screen and (max-width: 960px) {
   .activity_dough_1 {
     float: none;
-<<<<<<< HEAD
-    margin: auto; }
-  .activity_dough_5 {
-    float: none; } }
-
-@media all and (min-width: 768px) {
-  .activity_pot {
-    margin-left: 12vw;
-    float: left; }
-  .activity_dough_1 {
-    margin: 3vw 30vw 2vw 0vw;
-    float: right;
-    right: -5vw; }
-  .activity_dough_2 {
-    float: right;
-    margin-bottom: 10px;
-    margin-right: 10vw; }
-  .activity_dough_3 {
-    float: right;
-    margin-top: 5vw;
-    margin-right: 20vw; }
-  .pic_3 {
-    margin: 0 3%; }
-  .pic_2 {
-    margin: 5% 0; }
-  .activity_dough_4_all {
-    width: 85%;
-    margin-right: 8vw; }
-  .activity_dough_4 {
-    float: right; }
-  .activity_dough_5 {
-    float: right;
-    margin: 15vw 8vw 0vw 0vw; }
-  .activity_dough_6 {
-    float: right; } }
-
-=======
     margin: 10vw 10px 0;
     display: inline-block; }
-
   .activity_pot {
     display: none; }
-
   .activityPot {
     display: block;
     margin: 0 auto 110px; }
-
   .activity_dough_2 {
     float: none;
     margin: 30px 10px;
     display: inline-block; }
-
   .rwd_none {
     display: none; }
-
   .section_5 {
     text-align: center; }
-
   .activity_dough_3 {
     float: none;
     margin: 100px  0;
     text-align: center;
     display: inline-block; }
-
   .activity_dough_4_all {
     float: none;
     margin: 20px auto; }
-
   .pic_1, .pic_2, .pic_3 {
     margin: 2px;
     display: inline-block; }
-
   .bake_bread {
     background-color: transparent; }
-
   .activity_dough_5 {
     float: none;
     display: inline-block;
     margin: 3vw 0 0; }
-
   .activity_dough_6 {
     float: none;
     display: inline-block;
     margin: 3vw 0 10%; }
-
   .activity_bread {
     display: none; } }
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
+
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/
@@ -1744,11 +1637,11 @@ footer {
   padding-top: 10vw;
   padding-bottom: 2vw;
   /*===========activity_application   rwd  end====================
-  ================================================
-  ===============================================*/
+================================================
+===============================================*/
   /*===========activity_application   rwd  end====================
-  ================================================
-  ===============================================*/ }
+================================================
+===============================================*/ }
   .activity_application .activity_final {
     text-align: center;
     max-width: 798px; }

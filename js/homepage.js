@@ -39,6 +39,17 @@ $(function(){
 		$(this).siblings(".active").removeClass("active");
 
 	});
+	$(".tab_contents").click(function(){
+		if( $("#searchVans").hasClass('active') ){
+			$(".homeSearchBar").addClass('vansBgd');
+			$(".homeSearchBar").removeClass('orginBgd');
+			$('#descrp').text('追蹤神出鬼沒的麵包小車');
+		}else{
+			$(".homeSearchBar").addClass('orginBgd');
+			$(".homeSearchBar").removeClass('vansBgd');
+			$('#descrp').text('尋找台灣巷弄間的麵包香');
+		}
+	});
 //第一屏搜尋
 	$("#searchInput").keyup(function(){
 		$(this).siblings("#searchSubmit").addClass('keyIn').text("GO");

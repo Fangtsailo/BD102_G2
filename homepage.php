@@ -18,12 +18,13 @@ session_start();
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script> -->
+	<script type="text/javascript" src="libs/vivus/vivus.min.js"></script>
 	<script type="text/javascript" src="js/parallax.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<!-- googlemap -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script> -->
 
 
 </head>
@@ -44,7 +45,6 @@ require_once("headerForHomePage.php");
 <!-- ======================================================1st首頁搜尋========================================================= -->	
 	<section class="homeSearchBar" id="section1-move">
 		
-		<!-- <img src="img/homepage/homepage_bg1.png"> -->
 		
 		<div class="itemGrp">
 			<div class="bigLogo">
@@ -136,14 +136,14 @@ require_once("headerForHomePage.php");
 					</g>
 					</svg>
 		</div>
-			<h2 class="descrp">尋找台灣巷弄間的麵包香</h2>
+			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
 				<form>
 				<ul class="tabs">
 					<li class="tab_contents active" id="searchShops">
 						店家
 					</li>
-					<li class="tab_contents" id="searchVans" onclick="location.href='search_car.php'">
+					<li class="tab_contents" id="searchVans">
 						胖小車
 					</li>
 					<li class="clearfix"></li>
@@ -152,11 +152,11 @@ require_once("headerForHomePage.php");
 					<span class="filterTitle">篩選條件</span>
 					
 					
-						<select  class="filter" name="" id="filterArea">
-								<option>地區</option>
-								<option>台北市</option>
-								<option>新北市</option>
-								<option>桃園市</option>
+						<select  class="filter" name="searchArea" id="filterArea">
+								<option value="default">地區</option>
+								<option value="taipei">台北市</option>
+								<option value="newTaipei">新北市</option>
+								<option value="taoyuan">桃園市</option>
 						</select>
 					
 				
@@ -167,13 +167,8 @@ require_once("headerForHomePage.php");
 						<span>評價</span>
 					</button>
 					<div class="searchbar">
-<<<<<<< HEAD
 					<input id="searchInput" type="search" name="searchStore" placeholder="尋找你附近的麵包香">
-					<button id="searchSubmit" type="submit" onclick="location.href='search.php'">搜尋</button>
-=======
-					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
-					<button type="submit" onclick="location.href='search.php'">搜尋</button>
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
+					<button id="searchSubmit" type="submit">搜尋</button>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -186,8 +181,6 @@ require_once("headerForHomePage.php");
 
 		</div>
 
-
-
 	</section>
 	<div id="trigger1"></div>
 
@@ -195,7 +188,7 @@ require_once("headerForHomePage.php");
 
 
 <!-- ======================================================2nd首頁熱門店家========================================================= -->
-	<section class="homeTopChart" id="section2-move"  >
+	<section class="homeTopChart" id="section2-move">
 	
 		<p class="topChartDescrp">為您篩選出各地區的熱門麵包香，<br>尋找附近地區最熱門的麵包小店！</p>
 		
@@ -206,15 +199,25 @@ require_once("headerForHomePage.php");
 
 		<div id="trigger2"></div>
 		<div class="shopItemGrp">
+
+<?php 
+try{
+	require_once("php/PDO/connectPDO.php");
+	$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
+	$topShops = $connectPDO->query($selectTopShopSQL);
+	while ($topShopsRow = $topShops->fetchObject()) {
+		
+?>
+
 			<div class="shopItem" data-depth="1">
 				<div class="shopPic">
 					<img src="img/homepage/shop1.jpg">
-					<h3>巴奇手做麵包</h3>
+					<h3><?php echo $topShopsRow->SI_NAME ?></h3>
 					<div class="shopInfo">
 						<ul>
-							<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
-							<li><img src="img/icon/star2.svg"><span>4顆星</span></li>
-							<li><img src="img/icon/follow3.svg"><span>265人追蹤</span></li>
+							<li><img src="img/icon/mappointer1.svg"><span><?php echo $topShopsRow->address ?></span></li>
+							<li><img src="img/icon/star2.svg"><span><?php echo $topShopsRow->reviews ?>顆星</span></li>
+							<li><img src="img/icon/follow3.svg"><span><?php echo $topShopsRow->followers ?>人追蹤</span></li>
 						</ul>
 					</div>
 				</div>
@@ -230,57 +233,19 @@ require_once("headerForHomePage.php");
 					</div>
 				</div>
 			</div>
-			<div class="shopItem">
-				<div class="shopPic">
-					<img src="img/homepage/shop2.jpg">
-					<h3>唔飽椿</h3>
-					<div class="shopInfo">
-						<ul>
-							<li><img src="img/icon/mappointer1.svg"><span>台北市</span></li>
-							<li><img src="img/icon/star2.svg"><span>4.5顆星</span></li>
-							<li><img src="img/icon/follow3.svg"><span>900人追蹤</span></li>
-						</ul>
-					</div>
-				</div>
-				<div class="shopMessage">
-					<div class="memPic">
-						<img src="">
-					</div>
-					<span>Steven</span>
-					<span id="messageTime">2小時前</span>
-					<div class="clearfix"></div>
-					<div class="message">
-						<p>我們家小孩好喜歡你們家的麵包，一直吵著要我買一整條回去...</p>
-					</div>
-				</div>
-			</div>
-			<div class="shopItem">
-				<div class="shopPic">
-					<img src="img/homepage/shop3.jpg">
-					<h3>田也麵包</h3>
-					<div class="shopInfo">
-						<ul>
-							<li><img src="img/icon/mappointer1.svg"><span>台中市</span></li>
-							<li><img src="img/icon/star2.svg"><span>4顆星</span></li>
-							<li><img src="img/icon/follow3.svg"><span>460人追蹤</span></li>
-						</ul>
-					</div>
-				</div>
-				<div class="shopMessage">
-					<div class="memPic">
-						<img src="">
-					</div>
-					<span>Tiffany</span>
-					<span id="messageTime">2小時前</span>
-					<div class="clearfix"></div>
-					<div class="message">
-						<p>全麥麵包很好吃，但對我來說是有點貴貴啦QAQ</p>
-					</div>
-				</div>
-			</div>
+			
+<?php
+	
+	} //while
+}catch(PDOException $ex){
+	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+	echo "行號：",$ex->getLine(),"<br>";
+}
+
+ ?>
+
 		</div>
 		
-		<!-- <div class="chooseBtn">看下一家</div> -->
 	</section>
 
 
@@ -312,94 +277,57 @@ require_once("headerForHomePage.php");
 						</svg>
 					</div>
 				</div>
+
 				<div class="actBannerGrp">
+
+<?php 
+try{
+	require_once("php/PDO/connectPDO.php");
+	$selectNewShopSQL = "SELECT a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM, s.SI_NUM, s.SI_NAME FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM ORDER BY RAND() LIMIT 6" ;
+	$showActivity = $connectPDO->query($selectNewShopSQL);
+	while ($showActivityRow = $showActivity->fetchObject()) {
+?>
+
 					<div class="actBanner">
 						<div class="actDate">
 							<div class="dateItem">
-								<span>03</span>
+								<span><?php echo $showActivityRow->AC_TIME ?></span>
 								<span>Nov</span>
 							</div>
 						</div>
 						<img src="img/homepage/acty-1.jpg">
 						<div class="actContent">
 							<div class="content-txt">
-								<h3>法式烤布蕾</h3>
+								<h3><?php echo $showActivityRow->AC_NAME ?></h3>
 								<ul>
 									<li>
 										<span>店家名稱</span>
-										<p>勝利早點</p>
+										<p><?php echo $showActivityRow->SI_NAME ?></p>
 									</li>
 									<li>
 										<span>活動地點</span>
-										<p>台南市安平區健康路55號</p>
+										<p><?php echo $showActivityRow->address ?></p>
 									</li>
 									<li>
 										<span>活動人數</span>
-										<p><span>20</span>/20人</p>
+										<p><span><?php echo $showActivityRow->AC_MEM_COUNT ?></span>人</p>
 									</li>
 								</ul>
 							</div>
-							<a href="activity_act.php" class="globalOkBtn" >立即體驗</a>
+							<a href="#" class="globalOkBtn" >立即體驗</a>
 						</div>
 					</div>
-					<div class="actBanner">
-						<div class="actDate">
-							<div class="dateItem">
-								<span>03</span>
-								<span>Nov</span>
-							</div>
-						</div>
-						<img src="img/acty_pic4.png">
-						<div class="actContent">
-							<div class="content-txt">
-								<h3>德國鄉村雜糧麵包</h3>
-								<ul>
-									<li>
-										<span>店家名稱</span>
-										<p>阿財麵包屋</p>
-									</li>
-									<li>
-										<span>活動地點</span>
-										<p>台北市信義區信義路五段一號</p>
-									</li>
-									<li>
-										<span>活動人數</span>
-										<p><span>0</span>/10人</p>
-									</li>
-								</ul>
-							</div>
-							<a href="activity_act.php" class="globalOkBtn" >活動詳情</a>
-						</div>
-					</div>
-					<div class="actBanner">
-						<div class="actDate">
-							<div class="dateItem">
-								<span>03</span>
-								<span>Nov</span>
-							</div>
-						</div>
-						<img src="img/homepage/acty-1.jpg">
-						<div class="actContent">
-							<div class="content-txt">
-								<h3>牛角麵包簡單做</h3>
-								<ul>
-									<li>
-										<span>店家名稱</span>
-										<p>烘焙王麵包坊</p>
-									</li>
-									<li>
-										<span>活動地點</span>
-										<p>桃園市中壢區中央路55號</p>
-									</li>
-									<li>
-										<span>活動人數</span>
-										<p><span>15</span>/20人</p>
-									</li>
-								</ul>
-							</div>
-							<a href="activity_act.php" class="globalOkBtn" >立即體驗</a>
-						</div>
-					</div>
+
+<?php
+	
+	} //while
+}catch(PDOException $ex){
+	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+	echo "行號：",$ex->getLine(),"<br>";
+}
+
+ ?>	
+
 				</div>
 				<div id="chooseActDown">
 					<div class="svg">
@@ -412,157 +340,61 @@ require_once("headerForHomePage.php");
 		<div class="clearfix"></div>
 	</section>
 <!-- ======================================================5th首頁新進店家========================================================= -->
+
+
+
 	<section class="homeNewshop" id="section5-move">
 		<div class="newShopTitle">
 			<img src="img/homepage/titleDecor1.png">
 			<h1>新進店家精選</h1>
 			<img src="img/homepage/titleDecor2.png">
 		</div>
-		<div class="newShopGrp">
-			<div class="newShops">
-					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
-						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-							<ul>
-								<li>
-									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
-								</li>
-								<li>
-									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
-								</li>
-								<div class="clearfix"></div>
-							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>   
-			<div class="newShops">
-					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
-						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-							<ul>
-								<li>
-									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
-								</li>
-								<li>
-									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
-								</li>
-								<div class="clearfix"></div>
-							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>   
-			<div class="newShops">
-					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
-						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-							<ul>
-								<li>
-									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
-								</li>
-								<li>
-									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
-								</li>
-								<div class="clearfix"></div>
-							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			<div class="newShops">
-					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
-						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-							<ul>
-								<li>
-									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
-								</li>
-								<li>
-									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
-								</li>
-								<div class="clearfix"></div>
-							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			<div class="newShops">
-					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
-						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-							<ul>
-								<li>
-									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
-								</li>
-								<li>
-									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
-								</li>
-								<div class="clearfix"></div>
-							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>   
-			<div class="newShops">
-					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
-						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
-							<ul>
-								<li>
-									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
-								</li>
-								<li>
-									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
-								</li>
-								<div class="clearfix"></div>
-							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			<div class="clearfix"></div>  
-		</div>
 		
+		<div class="newShopGrp">
+<?php 
+try{
+	require_once("php/PDO/connectPDO.php");
+	$selectNewShopSQL = "SELECT SI_NAME,SI_STORY,SUBSTRING(SI_ADDR,1,6) address,SI_ADDDATE FROM store_imformation ORDER BY SI_ADDDATE LIMIT 6" ;
+	$newShops = $connectPDO->query($selectNewShopSQL);
+	while ($newShopsRow = $newShops->fetchObject()) {
+?>
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2><?php echo $newShopsRow->SI_NAME ?></h2>
+							<p><?php echo $newShopsRow->SI_STORY ?></p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace"><?php echo $newShopsRow->address ?></span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime"><?php echo $newShopsRow->SI_ADDDATE ?></span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+			</div>
+			
+<?php
+	
+	} //while
+}catch(PDOException $ex){
+	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+	echo "行號：",$ex->getLine(),"<br>";
+}
 
-
+ ?>	
+ 			<div class="clearfix"></div>  
+		</div>
 	</section>
+
 
 <!-- ======================================================6th首頁聯絡我們========================================================= -->
 	
@@ -593,17 +425,6 @@ require_once("headerForHomePage.php");
 		</div>
 		<div class="clearfix"></div>
 	</section>
-	
-
-	<!-- <ul id="navBtn">
-		<li class="section1-click"><a href="#section1"></a></li>
-		<li class="section2-click"><a href="#section2"></a></li>
-		<li class="section3-click"><a href="#section3"></a></li>
-		<li class="section4-click"><a href="#section4"></a></li>
-		<li class="section5-click"><a href="#section5"></a></li>
-		<li class="section6-click"><a href="#section6"></a></li>
-	</ul> -->
-
 
  	<?php 
 

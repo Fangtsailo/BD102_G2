@@ -14,74 +14,15 @@ function logOut(){
     $("#headMemStatus").hide(300);
     $('#memStatusBar').hide(300);
 }   
+//填寫表單燈箱切換
+function lightboxloggedIn(){
+    $('#showAddShopForm').css('display','block');
+    $('#visitorForm').css('display','none');
+}
 
-
-
-//註冊檢查function
-
-    //檢查帳號是否可以使用
-    // function sendForm(){
-          
-    //       var memId = $("#memId").val();
-    //       var memPsw = $("#memPsw").val();
-    //       var memObj = {};
-    //       memObj.memId = memId;
-    //       memObj.memPsw = memPsw;
-    //       //================
-    //       var xhr = new XMLHttpRequest();
-    //       xhr.onreadystatechange = function(){
-    //         if(xhr.readyState == 4){
-    //           if( xhr.status == 200){//server端順利的執行完畢
-    //             console.log( xhr.responseText);
-    //             if( xhr.responseText == "error"){ //帳密錯誤
-    //                 $.sweetModal({
-    //                     content: '帳號密碼錯誤',
-    //                     icon: $.sweetModal.ICON_WARNING,
-    //                     width: '300px',
-    //                     theme: $.sweetModal.THEME_MIXED,
-    //                     buttons: [
-    //                         {
-    //                             label: '知道了',
-    //                             classes: 'brownB'
-    //                         }
-    //                     ]
-    //                 });
-                           
-    //             }else{//登入成功
-    //                 $.sweetModal({
-    //                     content: '登入成功',
-    //                     icon: $.sweetModal.ICON_WARNING,
-    //                     width: '300px',
-    //                     theme: $.sweetModal.THEME_MIXED,
-    //                     buttons: [
-    //                         {
-    //                             label: '知道了',
-    //                             classes: 'brownB'
-    //                         }
-    //                     ]
-    //                 });
-    //                 changePanel();
-    //             }  
-    //           }else{//server端無法順利的執行完畢,產生錯誤
-    //             alert( xhr.status );
-    //           }//xhr.status
-                
-    //         }//xhr.readyState==4
-    //       }//xhr.onreadystatechange
-
-    //       var data_info = "jsonStr=" + JSON.stringify(memObj);
-    //       console.log( data_info);
-    //       var url = "ajaxLogin.php?" + data_info;
-    //       xhr.open("Get", url, true);
-    //       xhr.send(null);
-
-    //       //=================  
-     
-    //     }
-
-
-
-
+function addSuccess(e){
+  $(this).submit();
+}
 
 
 //頁面開始動作
@@ -112,9 +53,10 @@ var bodyClass = document.body.classList,
   });
 
   //點選登入按鈕
-	$('#headMemLogin,#rwdLoginBtn').click(function(){
+	$('#headMemLogin,#rwdLoginBtn,#lightboxNeedlogIn').click(function(){
 		$('#loginBox').fadeIn(500);
-        $("#menu").removeClass("show");
+    $("#menu").removeClass("show");
+    $('#addShopBox').hide();
 	
 	});
 
@@ -145,8 +87,7 @@ var bodyClass = document.body.classList,
 //按下登入檢查
 $("#submitLogin").click(function(){
          //檢查帳號不可小於六碼
-        if ( $("#memId").val().length < 6 && $("#memId").val().length ==0 ){
-            $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
+        if ( $("#memId").val().length < 6 && $("#memId").val().length >=0  ){
             $.sweetModal({
                 content: '帳號不得低於六碼',
                 icon: $.sweetModal.ICON_WARNING,
@@ -160,13 +101,11 @@ $("#submitLogin").click(function(){
                 ]
             });
             $("#memId").select();
-           return;
+            return;
         }
-        
 
         //檢查密碼不可超過六碼
-        if ($("#memPsw").val().length =="" ){
-            $(".globalForm").css("animation","shake1 .2s 0 linear 3 alternate");
+        if ($("#memPsw").val().length < 6 && $("#memPsw").val().length>=0 ){
             $.sweetModal({
                 content: '密碼不得空白',
                 icon: $.sweetModal.ICON_WARNING
@@ -174,11 +113,66 @@ $("#submitLogin").click(function(){
             $("#memPsw").select();
             return;
         }
+       
+          //檢查帳號是否可以使用
+          var memId = $("#memId").val();
+          var memPsw = $("#memPsw").val();
+          var memObj = {};
+          memObj.memId = memId;
+          memObj.memPsw = memPsw;
+          //================
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+              if( xhr.status == 200){//server端順利的執行完畢
+                console.log( "xhr.responseText:" + xhr.responseText );
+                if( xhr.responseText.indexOf("error")!= -1 ){ //帳密錯誤
+                    $.sweetModal({
+                        content: '帳號密碼錯誤',
+                        icon: $.sweetModal.ICON_WARNING,
+                        width: '300px',
+                        theme: $.sweetModal.THEME_MIXED,
+                        buttons: [
+                            {
+                                label: '知道了',
+                                classes: 'brownB'
+                            }
+                        ]
+                    });
+                           
+                }else{//登入成功
+                    $("#loginBox").hide(300);
+                    $.sweetModal({
+                        content: '登入成功',
+                        icon: $.sweetModal.ICON_SUCCESS,
+                        width: '300px',
+                        theme: $.sweetModal.THEME_MIXED,
+                    });
+                    $("#showMemId").text(xhr.responseText);
 
-<<<<<<< HEAD
+                    changePanel();
+
+                }  
+              }else{//server端無法順利的執行完畢,產生錯誤
+                alert( xhr.status );
+              }//xhr.status
+                
+            }//xhr.readyState==4
+          }//xhr.onreadystatechange
+
+          var data_info = "jsonStr=" + JSON.stringify(memObj);
+          console.log( data_info);
+          var url = "php/member/login/headerlogIn.php?" + data_info;
+          xhr.open("Get", url, true);
+          xhr.send(null);
+
+          //================= 
+
+
         //正確就送出
-        $("#loginForm").submit();
-      
+
+        
+        console.log('登入成功');
         
 });
 
@@ -206,7 +200,6 @@ $("#submitRegister").click(function(){
         });
         $("#newMemId").select();
         return;
-
     }
 
     //檢查email格式
@@ -219,7 +212,7 @@ $("#submitRegister").click(function(){
         $("#newMemMail").select();
         return;
     }
-    
+
     //檢查密碼不得空白
     if ($("#newMemPsw").val().length < 6 && $("#newMemPsw").val().length >=0 ){
         $.sweetModal({
@@ -233,12 +226,6 @@ $("#submitRegister").click(function(){
   $("#registerForm").submit();
 
 });
-
-=======
->>>>>>> 230a948adfda63a43a514c549012066936ca63e6
-
-
-
 
 
 //登入後會員專區顯示
@@ -270,8 +257,8 @@ $("#submitRegister").click(function(){
 
 //mobile導覽列會員專區顯示
 
-    $("#burgerBtn").click(function (e) { //點擊選單按鈕時
-            e.preventDefault(); //停止
+    $("#burgerBtn").click(function () { //點擊選單按鈕時
+            
             $("#menu").toggleClass("show");
             $("#burgerBtn").toggleClass("active"); //在#menu增加Class
             $("#rwdSearchBar").removeClass("activeSearch");
@@ -284,7 +271,7 @@ $("#submitRegister").click(function(){
         });
 
 //導覽列搜尋區塊
-    
+
     $(".rwd_headerSearch").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
             // $(".rwdSearchBar").toggleClass("activeSearch");
@@ -300,7 +287,7 @@ $("#submitRegister").click(function(){
           $("#menu").removeClass("show");
     });
 
- 
+
     for (var i = 1; i <= 6; i++) {
       let j = i; 
       $('.section'+i+'-click').click(function(){
@@ -309,6 +296,62 @@ $("#submitRegister").click(function(){
         $('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);  
       });
     }
+
+
+//新增店家燈箱
+    $("#addstoreBtn").click(function(){
+
+      //店家型態為必選
+      if($("#type1,#type2").is(':checked') == false ){
+        
+        $.sweetModal({
+            content: '請選擇店家型態',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        
+        $("#type1").select();
+        
+        return;
+      }
+
+      //店家名稱為必選
+      if ($("#storeName").val().length ==0 ){
+        $.sweetModal({
+            content: '請填寫店家名稱',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#storeName").select();
+        return;
+      }
+
+      //店家地址為必選
+       if ($("#address").val().length ==0 ){
+        $.sweetModal({
+            content: '請填寫店家地址',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#address").select();
+        return;
+      }
+      console.log('新增成功');
+      $("#addShopBox").hide(300);
+      $.sweetModal({
+            content: '新增成功！',
+            icon: $.sweetModal.ICON_SUCCESS,
+            width: '300px',
+            theme: $.sweetModal.THEME_MIXED,
+            onClose: function(){
+             
+              $("#addstoreForm").submit();
+            }
+        });
+     
+     
+      
+      
+    });
+
+
 
 
 

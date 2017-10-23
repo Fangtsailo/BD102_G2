@@ -200,7 +200,15 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
-
+	&.vansBgd {
+		transition:.3s;
+		background-image: url("../img/homepage/homepage_bg7.png");
+		background-position: center top;	
+	}
+	&.orginBgd {
+		transition:.3s;
+		background-image: url("../img/homepage/homepage_bg1.png");	
+	}
 	.itemGrp {
 		width: 70%;
 		height: 100%;
