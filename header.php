@@ -1,3 +1,5 @@
+
+<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
 
@@ -5,7 +7,7 @@
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
 		echo "<script type='text/javascript'>window.onload=changePanel;</script>";
 	}else { 
-		session_destroy();
+		// session_destroy();
 	}
 
 
@@ -18,7 +20,7 @@
 	<div class="headLoginBox" id="loginBox">
 		
 		<div class="globalForm">
-		<form id="loginForm" name="loginForm" action="logIn.php" method="post">
+		<form id="loginForm" name="loginForm" action="php/member/login/headerlogIn.php" method="post">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -46,7 +48,7 @@
 				
 				<div class="globalFormBtns">
 					<div class="globalCancelBtn" id="cancelLogin">取消</div>
-					<input type="button" name="submit" id="submitLogin" class="globalOkBtn" value="登入">					
+					<input type="button" name="submit" class="globalOkBtn" id="submitLogin" value="登入">
 				</div>
 				
 				<div class="facebookLogin">
@@ -69,7 +71,7 @@
 	<div class="headRegisterBox" id="RegisterBox">
 		
 		<div class="globalForm">
-		<form id="registerForm" action="register.php" method="get" onSubmit="return checkFormRegister();">
+		<form id="registerForm" action="php/member/register/headerRegister.php" method="get">
 			<div class="globalFormHeader">
 				<div class="svg closeBtn">
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -98,7 +100,7 @@
 				
 				<div class="globalFormBtns">
 					<div class="globalCancelBtn">取消</div>
-					<input type="submit" name="SubmitRegister" class="globalOkBtn" value="註冊">					
+					<input id="submitRegister" type="button" name="SubmitRegister" class="globalOkBtn" value="註冊">					
 				</div>
 				
 				<div class="facebookRegister">
@@ -170,7 +172,7 @@
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
 						<li><a class="memLink" href="#">成為店長</a></li>
-						<li><a class="memLink" href="#" id="logOut">登出</a></li>
+						<li><a class="memLink" href="sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
 
@@ -272,14 +274,14 @@
 				<div class="memPic">
 					<a href="#"><img id="memPic" src="img/homepage/user.png"></a>
 				</div>
-				<span id="memId">Bakery Boss</span>
+				<span id="memId"><?php echo $_SESSION["memId"]; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<li class="navItem"><a href="#">我的追蹤</a></li>
 			<li class="navItem"><a href="#">我的留言</a></li>
 			<li class="navItem myActivity"><a href="#">我的報名</a></li>
 			<li class="navItem beBoss"><a href="#">成為店長</a></li>
-			<li class="navItem"><a href="#">登出</a></li>
+			<li class="navItem"><a href="sessionLogOut.php" id="rwdLogout">登出</a></li>
 		</ul>
 	</nav>
 	

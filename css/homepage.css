@@ -817,7 +817,7 @@ footer {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
         .globalHead #menu ul#memLoggedin {
-          display: none; }
+          display: block; }
         .globalHead #menu ul li {
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
@@ -1002,6 +1002,24 @@ footer {
     #addShopBox .globalForm .chooseType .chooseBtn {
       float: right;
       margin: 0px 10px; }
+    #addShopBox .globalForm #showAddShopForm {
+      display: none; }
+    #addShopBox .globalForm #visitorForm {
+      display: block;
+      position: relative;
+      padding-top: 50%; }
+      #addShopBox .globalForm #visitorForm a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto; }
+    #addShopBox .globalForm input[type="number"] {
+      width: 20%;
+      height: 100%;
+      float: none;
+      display: inline-block; }
 
 #serviceCenter {
   position: fixed;
@@ -1196,6 +1214,13 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom; }
+  .homeSearchBar.vansBgd {
+    transition: .3s;
+    background-image: url("../img/homepage/homepage_bg7.png");
+    background-position: center top; }
+  .homeSearchBar.orginBgd {
+    transition: .3s;
+    background-image: url("../img/homepage/homepage_bg1.png"); }
   .homeSearchBar .itemGrp {
     width: 70%;
     height: 100%;

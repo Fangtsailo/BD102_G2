@@ -922,7 +922,7 @@ footer {
 				width: 100%;
 				@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
 				&#memLoggedin {
-					display: none;
+					display: block;
 				}
 				li {
 					color:$globalBgColor;
@@ -1175,6 +1175,29 @@ footer {
 				float: right;
 				margin: 0px 10px;
 			}
+		}
+		#showAddShopForm{
+			display: none;
+		}
+		#visitorForm {
+			display: block;
+			position: relative;
+			padding-top: 50%;
+			a {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+		}
+		input[type="number"] {
+				width: 20%;
+				height: 100%;
+				float: none;
+				display: inline-block;
+
 		}
 	}
 }

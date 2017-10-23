@@ -18,12 +18,13 @@ session_start();
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script> -->
+	<script type="text/javascript" src="libs/vivus/vivus.min.js"></script>
 	<script type="text/javascript" src="js/parallax.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<!-- googlemap -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script> -->
 
 
 </head>
@@ -44,7 +45,6 @@ require_once("headerForHomePage.php");
 <!-- ======================================================1st首頁搜尋========================================================= -->	
 	<section class="homeSearchBar" id="section1-move">
 		
-		<!-- <img src="img/homepage/homepage_bg1.png"> -->
 		
 		<div class="itemGrp">
 			<div class="bigLogo">
@@ -136,14 +136,14 @@ require_once("headerForHomePage.php");
 					</g>
 					</svg>
 		</div>
-			<h2 class="descrp">尋找台灣巷弄間的麵包香</h2>
+			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
 				<form>
 				<ul class="tabs">
 					<li class="tab_contents active" id="searchShops">
 						店家
 					</li>
-					<li class="tab_contents" id="searchVans" onclick="location.href='search_car.php'">
+					<li class="tab_contents" id="searchVans">
 						胖小車
 					</li>
 					<li class="clearfix"></li>
@@ -152,11 +152,11 @@ require_once("headerForHomePage.php");
 					<span class="filterTitle">篩選條件</span>
 					
 					
-						<select  class="filter" name="" id="filterArea">
-								<option>地區</option>
-								<option>台北市</option>
-								<option>新北市</option>
-								<option>桃園市</option>
+						<select  class="filter" name="searchArea" id="filterArea">
+								<option value="default">地區</option>
+								<option value="taipei">台北市</option>
+								<option value="newTaipei">新北市</option>
+								<option value="taoyuan">桃園市</option>
 						</select>
 					
 				
@@ -168,7 +168,7 @@ require_once("headerForHomePage.php");
 					</button>
 					<div class="searchbar">
 					<input id="searchInput" type="search" name="searchStore" placeholder="尋找你附近的麵包香">
-					<button id="searchSubmit" type="submit" onclick="location.href='search.php'">搜尋</button>
+					<button id="searchSubmit" type="submit">搜尋</button>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -181,8 +181,6 @@ require_once("headerForHomePage.php");
 
 		</div>
 
-
-
 	</section>
 	<div id="trigger1"></div>
 
@@ -190,7 +188,7 @@ require_once("headerForHomePage.php");
 
 
 <!-- ======================================================2nd首頁熱門店家========================================================= -->
-	<section class="homeTopChart" id="section2-move"  >
+	<section class="homeTopChart" id="section2-move">
 	
 		<p class="topChartDescrp">為您篩選出各地區的熱門麵包香，<br>尋找附近地區最熱門的麵包小店！</p>
 		
@@ -275,7 +273,6 @@ require_once("headerForHomePage.php");
 			</div>
 		</div>
 		
-		<!-- <div class="chooseBtn">看下一家</div> -->
 	</section>
 
 
@@ -407,6 +404,15 @@ require_once("headerForHomePage.php");
 		<div class="clearfix"></div>
 	</section>
 <!-- ======================================================5th首頁新進店家========================================================= -->
+
+<?php 
+// try{
+// 	require_once("php/PDO/connectPDO.php");
+// 	$selectNewShopSQL = "SELECT * FROM store_imformation ORDER BY SI_ADDDATE " ;
+// 	$newShops = $connectPDO->query($selectNewShopSQL);
+// 	while ($newShopsRow = $newShops->fetchObject()) {
+?>
+
 	<section class="homeNewshop" id="section5-move">
 		<div class="newShopTitle">
 			<img src="img/homepage/titleDecor1.png">
@@ -441,16 +447,16 @@ require_once("headerForHomePage.php");
 					<div class="newShopItem">
 						<img src="img/homepage/shop1.jpg">
 						<div class="shopContent">
-							<h2>裕馥西點麵包店</h2>
-							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<h2>裕馥西點麵包店 <?php $newShopsRow->SI_NAME ?> </h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。<?php $newShopsRow->SI_STORY ?></p>
 							<ul>
 								<li>
 									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace">新北市 永和</span>
+									<span class="newShopPlace">新北市 永和<?php $newShopsRow->SI_ADDR ?></span>
 								</li>
 								<li>
 									<img src="img/icon/reply.svg">
-									<span class="postTime">2小時前</span>
+									<span class="postTime"><?php $newShopsRow->SI_ADDDATE ?> 2小時前</span>
 								</li>
 								<div class="clearfix"></div>
 							</ul>
@@ -559,6 +565,15 @@ require_once("headerForHomePage.php");
 
 	</section>
 
+<?php
+	
+// 	} //while
+// }catch(PDOException $ex){
+// 	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+// 	echo "行號：",$ex->getLine(),"<br>";
+// }
+
+ ?>
 <!-- ======================================================6th首頁聯絡我們========================================================= -->
 	
 
@@ -588,17 +603,6 @@ require_once("headerForHomePage.php");
 		</div>
 		<div class="clearfix"></div>
 	</section>
-	
-
-	<!-- <ul id="navBtn">
-		<li class="section1-click"><a href="#section1"></a></li>
-		<li class="section2-click"><a href="#section2"></a></li>
-		<li class="section3-click"><a href="#section3"></a></li>
-		<li class="section4-click"><a href="#section4"></a></li>
-		<li class="section5-click"><a href="#section5"></a></li>
-		<li class="section6-click"><a href="#section6"></a></li>
-	</ul> -->
-
 
  	<?php 
 

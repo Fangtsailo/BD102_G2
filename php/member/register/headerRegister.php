@@ -36,14 +36,14 @@ function StringValidate($theValue,$theType){
 <?php 
 
 try {
-		require_once("php/pdo/connectPDO.php");
+		require_once("../../PDO/connectPDO.php");
 		//啟動交易管理
 		$connectPDO->beginTransaction();
 		//寫入主檔
 		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,null,0,1,null,:email)";
 		$register = $connectPDO->prepare( $newMemberSQL );
 		$register->bindValue(":memId" , StringValidate( $_REQUEST["newMemId"],"string" )  );
-		$register->bindValue(":memPsw" , password_hash(  $_REQUEST["newMemPsw"], PASSWORD_DEFAULT ) );
+		$register->bindValue(":memPsw" ,$_REQUEST["newMemPsw"] );
 		$register->bindValue(":email" , StringValidate( $_REQUEST["newMemMail"], "email" ) );
 		$register->execute();
 		$connectPDO->commit(); //確認交易完成
@@ -62,7 +62,7 @@ try {
 	        $_SESSION["memName"] = $registerRow->MEM_NAME;
 	        $_SESSION["memRole"] = $registerRow->MEM_ROLE;
 
-		header("Location:homepage.php");
+		header("Location:../../../homepage.php");
 ?>
 
 
