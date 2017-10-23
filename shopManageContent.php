@@ -39,76 +39,117 @@ require_once("BackStageHeaderSidebar.php");
 			<table>
 				
 				<tr class="tabletitle" >
-					<!-- <th colspan="2">新增商品</th> -->
 				</tr>
+
+				<?php
+
+				$SI_NUM = $_REQUEST['SI_NUM'];
+
+				try{
+
+					require_once("php/pdo/connectPDO.php");
+
+					$sql = "select *
+							from store_imformation
+							left join product 
+							on store_imformation.SI_NUM = product.PD_SHOPNO
+							where SI_NUM=$SI_NUM
+							group by store_imformation.SI_NUM;";
+					
+					$store = $pdo->query( $sql );
+
+					while ( $store_row = $store->fetchObject() ) {
+						
+					
+					
+
+
+				
+
+				 ?>
 
 				<tr>
 				<th>商家名稱</th>
-				<td>麵包麵包店</td>
+				<td><?php echo $store_row->SI_NAME; ?></td>
 				</tr>
 
-				<tr>
+<!-- 				<tr>
 				<th>商家資訊</th>
-				<td>Lorem ipsum dolor sit amet, adipisicing elit. Quaerat  alias accusamus rem quas.</td>
-				</tr>
+				<td></td>
+				</tr> -->
 
 				<tr>
 				<th>店家地址</th>
-				<td>台北市信義區信義路119號</td>
+				<td><?php echo $store_row->SI_ADDR; ?></td>
 				</tr>
 
 				<tr>
 				<th>營業時間</th>
 				<td>
-				週二 - 週六 09:30 - 22:30<br>
-				週日 09:30 - 17:30<br>
-				每週一公休<br>
+					公休日　星期<?php echo $store_row->SI_RESTDAY; ?><br>
+					營業時間　<?php echo $store_row->SI_STARTTIME; ?>:00 - <?php echo $store_row->SI_ENDTIME; ?>:00
 				</td>
 				</tr>
 
 				<tr>
 				<th>商家電話</th>
-				<td>0939318183</td>
+				<td><?php echo $store_row->SI_PHONE; ?></td>
 				</tr>
 
-				<tr>
+<!-- 				<tr>
 				<th>出沒位置</th>
-				<td>
-				星期一   1. E121 20 30.5, N24 05 22.5   2.E121 20 30.5, N24 05 22.5 <br>
-				星期三   1. E121 20 30.5, N24 05 22.5   2.E121 20 30.5, N24 05 22.5<br>
-				星期五   1. E121 20 30.5, N24 05 22.5   2.E121 20 30.5, N24 05 22.5<br>
-				</td>
-				</tr>
+				<td></td>
+				</tr> -->
 
 				<tr>
 				<th>商家故事</th>
-				<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum inventore fuga dicta totam labore earum facere repellendus delectus doloribus neque!<br>
-				Consectetur adipisicing elit. Ipsum impedit laboriosam perspiciatis officiis numquam saepe, tenetur sit inventore enim fugit!<br>
-				Adipisicing elit. Similique repellat quos nemo, nobis culpa quas!<br>
-				</td>
+				<td><?php echo $store_row->SI_STORY; ?></td>
 				</tr>
 
-				<tr>
+				<!-- <tr>
 				<th>評價分數</th>
-				<td>4.0 <span>分</span></td>
+				<td>  <span>分</span></td>
 				</tr>
 
 				<tr>
 				<th>追蹤人數</th>
-				<td>123 <span>人</span></td>
+				<td>  <span>人</span></td>
+				</tr> -->
+
+				<tr>
+				<th>商品資訊</th>
+				<td>
+					<?php echo $store_row->PD_NO,"<br>";
+						echo $store_row->PD_PRICE,"<br>";
+						echo $store_row->PD_PIC,"<br>";
+						echo $store_row->PD_NAME,"<br>";
+						echo $store_row->PD_INTRO; }//while ?>
+				</td>
 				</tr>
 
 				<tr>
 				<th>商品資訊</th>
-				<td></td>
+				<td><?php $store_row = $store->fetchAll(PDO::FETCH_ASSOC);
+					foreach( $store_row as $i=>$store_row ){
+						echo $store_row["PD_NO"]; 
+						echo $store_row["PD_PRICE"];
+						echo $store_row["PD_PIC"];
+						echo $store_row["PD_NAME"];
+						echo $store_row["PD_INTRO"]; }
+				 ?></td>
 				</tr>
 
 
+			<?php 
 
+			echo "</table>";
 
-			</table>	
+			} catch (PDOException $e) {
+				echo "錯誤原因 : " , $e->getMessage(),"<br>";
+				echo "行號 : " , $e->getLine(),"<br>";	
+			}	
 
-
+			 ?>
 
 			
 

@@ -110,13 +110,15 @@ header {
           color: #ffffff;
           background-color: #565894;
           border-radius: 10px;
+          -webkit-box-shadow: 0 0 0;
           box-shadow: 0 0 0;
           border: none;
-          transition: 0.5s;
+          -webkit-transition: .5s;
+          -o-transition: .5s;
+          transition: .5s;
           display: block;
           line-height: 40px;
           text-align: center;
           margin: auto; }
       .tableContent tr td:nth-child(6) {
-        width: 15%;
-        color: #3d35e2; }
+        width: 15%; }
