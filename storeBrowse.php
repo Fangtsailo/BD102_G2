@@ -57,47 +57,32 @@ try {
   <button onclick="alert('123');">456</button>
 </div>
 <div class="navigator">
-	<div class="item">
-		<a href=""><p>123</p></a>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p><div class="point"></div>
-	</div>
+		<a href="#screen1" class="item selected">
+			<div class="name"><p>店家故事</p></div>
+			<div class="point selected"></div>
+		</a>
+		<a href="#screen-bread-car" class="item">
+			<div class="name"><p>胖小車路線</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-product" class="item">
+			<div class="name"><p>商品</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-activity" class="item">
+			<div class="name"><p>體驗活動</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-messages" class="item">
+			<div class="name"><p>留言板</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-other-store" class="item">
+			<div class="name"><p>其他店家推薦</p></div>
+			<div class="point"></div>
+		</a>
 </div>
-</div>
-<!-- <div class="navigator">
-	<div class="nav-selected item pointer">
-		<div class="name"><p>店家故事</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>胖小車路線</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>商品</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>體驗活動</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>留言板</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>其他店家推薦</p></div>
-	</div>
-</div> -->	
-<div class="screen screen-1">
+<div class="screen screen-1" id="screen1">
 	<div class="banners">
 		<div id="banner1"></div>
 		<div id="banner2"></div>
@@ -172,7 +157,7 @@ try {
 	</div>
 	<div id="screen1-trigger" class="spacer s0"></div>	
 </div>
-<div class="screen screen-bread-car-map">
+<div class="screen screen-bread-car-map" id="screen-bread-car">
 	<div id="bread-car-trigger" class="spacer s0"></div>
 	<div class="perspective">
 	<div class="title">
@@ -209,7 +194,7 @@ try {
 	</div>
 	
 </div>
-<div class="screen screen-product">
+<div class="screen screen-product" id="screen-product">
 	<div id="product-trigger" class="spacer s0"></div>
 	<div id="product-trigger2" class="spacer s0"></div>
 	<div id="product-star-light-trigger" class="spacer s0"></div>
@@ -251,7 +236,7 @@ try {
 		 ?>
 	</div>
 </div>
-<div class="screen screen-activity">
+<div class="screen screen-activity" id="screen-activity">
 	<div id="activity-trigger" class="spacer s0"></div>
 	<div class="perspective">
 		<div class="title">
@@ -320,7 +305,7 @@ try {
 		?>
 	</div>
 </div>
-<div class="screen screen-messages">
+<div class="screen screen-messages" id="screen-messages">
 	<div id="messages-trigger" class="spacer s0"></div>
 	<div id="messages-icon-trigger" class="spacer s0"></div>
 	<div class="message-icons">
@@ -373,7 +358,7 @@ try {
 		<div class="more-message button" id="more-message">看更多</div>
 	</div>
 </div>
-<div class="screen screen-other-store">
+<div class="screen screen-other-store" id="screen-other-store">
 	<div id="other-store-trigger" class="spacer s0"></div>
 	<div class="perspective">
 		<div class="title">
@@ -441,6 +426,7 @@ $(document).ready(function(){
 		 	fadeDuration: 100
 		 });
 	 })
+	 navigatorDotScroll();
 	 
 });	
 </script>

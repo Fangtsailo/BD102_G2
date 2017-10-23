@@ -1,3 +1,14 @@
+//dot scroll 
+function navigatorDotScroll() {
+	$('.navigator a').click(function(){
+       $('html, body').animate({
+         scrollTop: $( $.attr(this, 'href') ).offset().top
+       }, 700);
+       $('.navigator .item .point').removeClass('selected');
+       $('.point', this).addClass('selected');
+ 	});
+}
+
 //留言
 function sendMessage(storeId, memId, content) {
 	  var xhr = new XMLHttpRequest();

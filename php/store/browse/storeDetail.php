@@ -22,6 +22,16 @@ try {
 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
 }
+	
+	function getFollowCountByStoreId($storeId) {
+		$followCount = 0;
+		$sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId;"
+		$stmt = $GLOBALS["connectPDO"] ->query($sql);
+		while ($count = $stmt->fetchObject()) {
+			$followCount = $count->count;
+		}
+		return $followCount;
+	}
 	function getOtherStoreByRandom($StoreCountToGet) {
 		//隨機產生:  random(1,可以先得到店家總數-6) > SQL LIMIT x, x+6
 		$totalStoreCount = 0;
@@ -35,11 +45,19 @@ try {
 			$randomStart = rand(1, $totalStoreCount - $StoreCountToGet);
 		}
 		//start 找6家 random 店家
+		$followCount = 0;
 		$otherStoreArr = array();
 		$sql = "SELECT * FROM store_imformation limit $randomStart, $StoreCountToGet";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($store = $stmt->fetchObject()) {
 			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
+					$followCount = 0;
+			$sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId;"
+			$stmt = $GLOBALS["connectPDO"] ->query($sql);
+			while ($count = $stmt->fetchObject()) {
+				$followCount = $count->count;
+			}
+			$otherStore->follow = $count;
 			array_push($otherStoreArr, $otherStore);
 		}
 		return $otherStoreArr;
