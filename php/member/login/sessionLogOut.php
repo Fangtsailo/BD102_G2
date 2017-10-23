@@ -12,7 +12,7 @@ session_start();
 <body>
 <?php
 session_destroy();
-header("Location:homepage.php");
+header("Location:../../../homepage.php");
  ?>	
 </body>
 </html>

@@ -2,9 +2,7 @@
 ob_start();
 session_start();
 ?>
-
 <?php
-
 try{
 	require_once("../../PDO/connectPDO.php");
 	$login = "select * from member where MEM_ID =:memId and MEM_PSW =:memPsw " ;
@@ -17,12 +15,12 @@ try{
 	$memRow = $member->fetchObject();
 	if( $member->rowCount()== 0 ){
 		echo "error";
-
 	}else{
 		$_SESSION["memNo"] = $memRow->MEM_NO;
 		$_SESSION["memId"] = $memRow->MEM_ID;
 		$_SESSION["memName"] = $memRow->MEM_NAME;
 	    $_SESSION["memRole"] = $memRow->MEM_ROLE;
+	    echo $memRow->MEM_ID;
 	    // header("Location:../../../homepage.php");
 	}
 }catch(PDOException $ex){

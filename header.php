@@ -2,14 +2,14 @@
 <script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
-
 	//判斷是否有登入過網站
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
-		echo "<script type='text/javascript'>window.onload=changePanel;</script>";
+		// echo "<script type='text/javascript'>window.onload=changePanel;</script>"; //更換會員專區面板
+		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);window.addEventListener('load',lightboxloggedIn,false);</script>"; //更換會員專區面板
+		// echo "<script type='text/javascript'>window.onload=lightboxloggedIn;</script>"; 
 	}else { 
 		// session_destroy();
 	}
-
 
  ?>
 
@@ -167,12 +167,12 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="#"> <?php echo $_SESSION["memId"]; ?>  </a></li>
+						<li><a href="#"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : "" ; ?>  </a></li>
 						<li><a class="memLink" href="#">我的追蹤</a></li>
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
 						<li><a class="memLink" href="#">成為店長</a></li>
-						<li><a class="memLink" href="sessionLogOut.php" id="logOut">登出</a></li>
+						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
 
@@ -274,14 +274,14 @@
 				<div class="memPic">
 					<a href="#"><img id="memPic" src="img/homepage/user.png"></a>
 				</div>
-				<span id="memId"><?php echo $_SESSION["memId"]; ?></span>
+				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<li class="navItem"><a href="#">我的追蹤</a></li>
 			<li class="navItem"><a href="#">我的留言</a></li>
 			<li class="navItem myActivity"><a href="#">我的報名</a></li>
 			<li class="navItem beBoss"><a href="#">成為店長</a></li>
-			<li class="navItem"><a href="sessionLogOut.php" id="rwdLogout">登出</a></li>
+			<li class="navItem"><a href="php/member/login/sessionLogOut.php" id="rwdLogout">登出</a></li>
 		</ul>
 	</nav>
 	
@@ -290,7 +290,7 @@
 <!-- ========================新增店家燈箱===================== -->
 	<div id="addShopBox">
 		<div class="globalForm">
-			<form action="" method="">
+			
 				<div class="globalFormHeader">
 					<div class="svg" id="closeBtn01">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -304,37 +304,38 @@
 					<h1>新增店家</h1>
 					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
 				</div>
-				<div class="globalFormContent">
+				<form action="php/store/add/lightboxAddStore.php" method="get" id="addstoreForm">
+				<div class="globalFormContent" id="showAddShopForm">
 					<div class="globalFormInput chooseType">
 						<label><span>*</span>選擇店型</label>
-							<label class="chooseBtn">胖小車<input type="radio" value="car" name="chooseType"></label>
-							<label class="chooseBtn">麵包店<input type="radio" value="shop" name="chooseType"></label>
+							<label class="chooseBtn">胖小車<input id="type1" type="radio" value="1" name="storeType" required></label>
+							<label class="chooseBtn">麵包店<input id="type2" type="radio" value="0" name="storeType" required></label>
 							<div class="clearfix"></div>
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>主旨</label><input type="text" name="" placeholder="提醒字">
+						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
-
 					<div class="globalFormInput">
-						<label><span>*</span>輸入店名</label><input type="text" name="" placeholder="提醒字">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
 					</div>
-					
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="" placeholder="提醒字">
+						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入地址/門牌號碼">
 					</div>
-					
 					<div class="globalFormInput">
-						<label><span>*</span>商家地址</label><input type="email" name="" placeholder="提醒字" required>
+						<label><span>*</span>營業時間</label><input type="number" name="startTime" max="24" min="0" maxlength="2"><span>點至</span><input type="number" name="endTime" max="24" min="0" maxlength="2"><span>點</span>
 					</div>
-
 					<div class="globalFormInput">
-						<label>故事介紹</label><textarea></textarea>
+						<label>故事介紹</label><textarea name="story"></textarea>
 					</div>
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">
 						<div class="globalCancelBtn">取消</div>
-						<input type="submit" name="" class="globalOkBtn" value="送出">					
+						<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
+						<input id="addstoreBtn" type="button" name="submitAddShop" class="globalOkBtn" value="送出">					
 					</div>
+				</div>
+				<div class="globalFormContent" id="visitorForm">
+					<a href="#" id="lightboxNeedlogIn" class="globalOkBtn">請先登入會員</a>
 				</div>
 			</form>
 		</div>

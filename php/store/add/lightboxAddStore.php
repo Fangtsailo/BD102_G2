@@ -16,9 +16,9 @@ try {
 		//啟動交易管理
 		$connectPDO->beginTransaction();
 		//寫入主檔
-		$newShopSQL = "insert into store_imformation (SI_MEMNO,SI_NAME,SI_STORY,SI_ADDR,SI_STARTTIME,SI_ENDTIME,SI_TYPE,SI_PHONE) values (:memId,:storeName,:story,:address,:startTime,:endTime,:storeType,:tel)";
+		$newShopSQL = "insert into store_imformation (SI_MEMNO,SI_NAME,SI_STORY,SI_ADDR,SI_STARTTIME,SI_ENDTIME,SI_TYPE,SI_PHONE,SI_ADDDATE) values (:memNo,:storeName,:story,:address,:startTime,:endTime,:storeType,:tel,:addDate)";
 		$addShop = $connectPDO->prepare( $newShopSQL );
-		$addShop->bindValue(":memId" ,$_SESSION["memId"] );
+		$addShop->bindValue(":memNo" ,$_SESSION["memNo"] );
 		$addShop->bindValue(":storeName" ,$_REQUEST["storeName"] );
 		$addShop->bindValue(":story" ,$_REQUEST["story"] );
 		$addShop->bindValue(":address" ,$_REQUEST["address"] );
@@ -26,6 +26,7 @@ try {
 		$addShop->bindValue(":startTime" ,$_REQUEST["startTime"] );
 		$addShop->bindValue(":endTime" ,$_REQUEST["endTime"] );
 		$addShop->bindValue(":storeType" ,$_REQUEST["storeType"] );
+		$addShop->bindValue(":addDate" ,$_REQUEST["addShopDate"] );
 		$addShop->execute();
 		$connectPDO->commit(); //確認交易完成
 		header("Location:../../../homepage.php");

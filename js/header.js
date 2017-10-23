@@ -20,6 +20,9 @@ function lightboxloggedIn(){
     $('#visitorForm').css('display','none');
 }
 
+function addSuccess(e){
+  $(this).submit();
+}
 
 
 //頁面開始動作
@@ -123,7 +126,7 @@ $("#submitLogin").click(function(){
             if(xhr.readyState == 4){
               if( xhr.status == 200){//server端順利的執行完畢
                 console.log( "xhr.responseText:" + xhr.responseText );
-                if( xhr.responseText == "error"){ //帳密錯誤
+                if( xhr.responseText.indexOf("error")!= -1 ){ //帳密錯誤
                     $.sweetModal({
                         content: '帳號密碼錯誤',
                         icon: $.sweetModal.ICON_WARNING,
@@ -138,19 +141,17 @@ $("#submitLogin").click(function(){
                     });
                            
                 }else{//登入成功
+                    $("#loginBox").hide(300);
                     $.sweetModal({
                         content: '登入成功',
                         icon: $.sweetModal.ICON_SUCCESS,
                         width: '300px',
                         theme: $.sweetModal.THEME_MIXED,
-                        buttons: [
-                            {
-                                label: '知道了',
-                                classes: 'brownB'
-                            }
-                        ]
                     });
+                    $("#showMemId").text(xhr.responseText);
+
                     changePanel();
+
                 }  
               }else{//server端無法順利的執行完畢,產生錯誤
                 alert( xhr.status );
@@ -332,15 +333,22 @@ $("#submitRegister").click(function(){
         $("#address").select();
         return;
       }
-
+      console.log('新增成功');
+      $("#addShopBox").hide(300);
       $.sweetModal({
             content: '新增成功！',
             icon: $.sweetModal.ICON_SUCCESS,
             width: '300px',
-            theme: $.sweetModal.THEME_MIXED
+            theme: $.sweetModal.THEME_MIXED,
+            onClose: function(){
+             
+              $("#addstoreForm").submit();
+            }
         });
-      $("#addstoreForm").submit();
-      console.log('新增成功');
+     
+     
+      
+      
     });
 
 

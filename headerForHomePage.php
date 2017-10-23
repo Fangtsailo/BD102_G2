@@ -1,7 +1,8 @@
 <?php 
 	//判斷是否有登入過網站
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
-		echo "<script type='text/javascript'>window.onload=changePanel;</script>"; //更換會員專區面板
+		// echo "<script type='text/javascript'>window.onload=changePanel;</script>"; //更換會員專區面板
+		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);window.addEventListener('load',lightboxloggedIn,false);</script>"; //更換會員專區面板
 		// echo "<script type='text/javascript'>window.onload=lightboxloggedIn;</script>"; 
 	}else { 
 		// session_destroy();
@@ -203,12 +204,12 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="#"> <?php echo $_SESSION["memId"]; ?>  </a></li>
+						<li><a href="#" id="showMemId"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?>  </a></li>
 						<li><a class="memLink" href="#">我的追蹤</a></li>
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
 						<li><a class="memLink" href="#">成為店長</a></li>
-						<li><a class="memLink" href="sessionLogOut.php" id="logOut">登出</a></li>
+						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
 
@@ -271,14 +272,14 @@
 			<div class="memPic">
 				<img id="memPic" src="img/homepage/user.png">
 			</div>
-			<span id="memId"><?php echo $_SESSION["memId"]; ?></span>
+			<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 			<div class="clearfix"></div>
 		</li>
 		<li class="navItem"><a href="#">我的追蹤</a></li>
 		<li class="navItem"><a href="#">我的留言</a></li>
 		<li class="navItem myActivity"><a href="#">我的報名</a></li>
 		<li class="navItem beBoss"><a href="#">成為店長</a></li>
-		<li class="navItem"><a href="sessionLogOut.php">登出</a></li>
+		<li class="navItem"><a href="php/member/login/sessionLogOut.php">登出</a></li>
 		</ul>
 	</nav>
 	
@@ -325,6 +326,7 @@
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">
 						<div class="globalCancelBtn">取消</div>
+						<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
 						<input id="addstoreBtn" type="button" name="submitAddShop" class="globalOkBtn" value="送出">					
 					</div>
 				</div>
