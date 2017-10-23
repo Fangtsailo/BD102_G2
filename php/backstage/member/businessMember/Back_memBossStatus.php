@@ -30,7 +30,7 @@
 
       		$update = $pdo->query($sql);
 
-      		header("Location:../../../../BOrdinaryMember.php");
+      		header("Location:../../../../BBusinessMember.php");
 
       }else if(isset($_GET["dutyZero"])){
 
@@ -40,26 +40,48 @@
 
       		$update = $pdo->query($sql);
 
-      		header("Location:../../../../BOrdinaryMember.php");
+      		header("Location:../../../../BBusinessMember.php");
 
       }else if( isset($_GET["searchBar"]) ){ //not proper add condition at else if???
 
       		$searchBar = $_GET["searchBar"];
 
 
-      		$sql = "select * from member where MEM_ROLE=0 and ( MEM_ID='$searchBar' or MEM_NAME='$searchBar')";
+      		$sql = "select * from member where MEM_ROLE=1 and ( MEM_ID='$searchBar' or MEM_NAME='$searchBar')";
 
       		$memberSearch = $pdo->query($sql);
 
       		if($memberSearch->rowCount()!==0){
 
-      		header("Location:../../../../BOrdinaryMember.php?searchBar=$searchBar");
+      		header("Location:../../../../BBusinessMember.php?searchBar=$searchBar");
 
       		}else{
-      			header("Location:../../../../BOrdinaryMember.php");
+      			header("Location:../../../../BBusinessMember.php");
       		}
 
 
+
+
+      }else if(isset($_GET["storeChargeZero"])){
+
+      			$SI_NO=$_GET["storeChargeZero"];
+
+      			$sql = "UPDATE store_imformation set SI_CHECKSTAY=0 where SI_NUM ='$SI_NO' ";
+
+      			$update = $pdo->query($sql);
+
+      			header("Location:../../../../BBusinessMember.php");
+
+
+      }else if(isset($_GET["storeChargeOne"])){
+
+      			$SI_NO=$_GET["storeChargeOne"];
+
+      			$sql = "UPDATE store_imformation set SI_CHECKSTAY=1 where SI_NUM ='$SI_NO' ";
+
+      			$update = $pdo->query($sql);
+
+      			header("Location:../../../../BBusinessMember.php");
 
 
       }

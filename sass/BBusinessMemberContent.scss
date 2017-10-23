@@ -125,7 +125,8 @@ header{
 		padding-top: 50px;
 		margin-bottom: 100px;
 
-		a{
+		form{
+			display: inline-block;
 			&:nth-child(1){
 				input{
 					border: none;
@@ -136,12 +137,12 @@ header{
 					background-color: #cc4e4e;
 					color:#fff;
 					display: inline-block;
-					&:hover{
-						border: 1px solid #cc4e4e;
-						color:#cc4e4e;
-						background-color:#fff;
-						transition:0.2s;
-					}//hover
+					// &:hover{
+					// 	border: 1px solid #cc4e4e;
+					// 	color:#cc4e4e;
+					// 	background-color:#fff;
+					// 	transition:0.2s;
+					// }//hover
 				}//input
 			}//  for a &:nth-child(1)
 		
@@ -161,19 +162,24 @@ header{
 					background-color: #53c453;
 					color:#fff;
 					display: inline-block;
-					&:hover{
-						border: 1px solid #53c453;
-						color:#53c453;
-						background-color:#fff;
-						transition:0.2s;
-					}//hover
+					// &:hover{
+					// 	border: 1px solid #53c453;
+					// 	color:#53c453;
+					// 	background-color:#fff;
+					// 	transition:0.2s;
+					// }//hover
 				}//input
 			}//  for a &:nth-child(2)
-		}//a
+		}//form
 	}
 
 
 .dutyColorChange{
 	background-color:$globalAccountColor !important;
 	transition:.5s ;
+}
+
+.disableBtn{
+	background-color: #ccc !important;
+	transition:.2s ;
 }
