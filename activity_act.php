@@ -41,7 +41,7 @@ session_start();
 			<?php 
 
 				require_once("header.php");
-				$memNo=$session["MEM_NO"];
+				// $memNo=$_SESSION["memNo"];
 
 				$actNum=6;
 				if (isset($_REQUEST["actNum"])) {
@@ -102,7 +102,7 @@ session_start();
    			<section class="section_0">
    			<div class="activity_Dough trigger0"> <!--  麵團區 -->
    				<div id="acty_Dough">
-	   				<img src="img/acty_icon.png">
+	   				<img src="img/act/acty_icon.png">
 	   				<h1>烘培體驗</h1>
 	   				<div class="acty_h2">
 	   					<h2><?php echo $actRow->AC_NAME ?></h2>	
@@ -113,7 +113,7 @@ session_start();
 
 			<div class="activityDough "> <!--  麵團區 -->
    				<div id="acty_Dough">
-	   				<img src="img/acty_icon.png">
+	   				<img src="img/act/acty_icon.png">
 	   				<h1>烘培體驗</h1>
 	   				<div class="acty_h2">
 	   					<h2><?php echo $actRow->AC_NAME ?></h2>	
@@ -126,11 +126,11 @@ session_start();
    			<div class="activity_board"><!-- 介紹區 -->
    				 
    				<div class="acty_board">
-   					<img src="img/acty_board.png"> <!-- 板 -->
+   					<img src="img/act/acty_board.png"> <!-- 板 -->
    					<div class="acty_board_p"><p><?php echo $actRow->AC_DETAIL1 ?></p>
    					</div>
    					<div class="acty_stirrer">
-   						<img src="img/acty_stirrer.png">
+   						<img src="img/act/acty_stirrer.png">
    					</div>
    				</div>
    			
@@ -166,10 +166,10 @@ session_start();
 
 			<div class="activity_pot">
 				<div class="acty_out_pot">
-					<img src="img/acty_pot.png"><!-- 外鍋 -->
+					<img src="img/act/acty_pot.png"><!-- 外鍋 -->
 					<h2><?php echo $actRow->AC_SECOND_NAME ?></h2>
 				 	<div class="activity_pot_b">  <!-- 最裡層 -->
-						<img src="img/acty_pot_b.png">
+						<img src="img/act/acty_pot_b.png">
 					</div>
 					<div class="big"></div>
 					<div class="activity_dough_change"></div>   <!-- 麵團 -->
@@ -181,10 +181,10 @@ session_start();
 
 			<div class="activityPot rwdw">
 				<div class="acty_out_pot">
-					<img src="img/acty_pot.png"><!-- 外鍋 -->
+					<img src="img/act/acty_pot.png"><!-- 外鍋 -->
 					<h2><?php echo $actRow->AC_SECOND_NAME ?></h2>
 				 	<div class="activity_pot_b">  <!-- 最裡層 -->
-						<img src="img/acty_pot_b.png">
+						<img src="img/act/acty_pot_b.png">
 					</div>
 					
 					<div class="activity_dough_changes"></div>   <!-- 麵團 -->
@@ -238,7 +238,7 @@ session_start();
 					
 				<div class="activity_dough_5  "></div>
 				<div class="act_wind">
-					<img src="img/act_wind.png">
+					<img src="img/act/act_wind.png">
 					<div class="actShadow"></div>
 				</div>
 				<div class="activity_dough_6"></div>
@@ -303,25 +303,25 @@ session_start();
 				
 
 								<input type="hidden" name="acNo" value="<?php echo $actRow->AC_NO ?>">
-<?php 
-			
-		}catch(PDOException $e) {
-				echo "錯誤行號 : ", $e->getLine(), "<br>";
-				echo "錯誤訊息 : ", $e->getMessage(), "<br>";	
-				}
 
-	 ?>
-
-
+			<?php if (isset($memNo)) {
+						 $memNo=$_SESSION["memNo"];
+						?>
 
 								<div class="globalFormHeader">
 								
-
+		
+			
 									<h1>報名去</h1>
 									<p>快來一起參與烘培體驗吧!會員只要填寫基本資料，就能成功報名囉! <br> 名額有限速速行動~~ </p>
 								</div>
 								<div class="globalFormContent">
 
+					<?php 
+						$memsql="select * from ac_info where MEMNO=	$memNo; ";
+
+
+					 ?>
 									
 					
 									<div class="globalFormInput">
@@ -346,12 +346,30 @@ session_start();
 								</div>
 							</form>
 						</div>
-	
+	<?php  } else{?>
 
 				</div><!-- =================表單樣式===end================== -->
+
+
+			
+
+
+
+
+
+
+
+
+
+				<?php 
+
+				
+			}?>
+
+
 					<div class="clearfix"></div>
 					<div class="activity_bread ">
-							<img src="img/acty_finish_bread.png">
+							<img src="img/act/acty_finish_bread.png">
 							<div class="activity_cloud">
 								<div class="act_cloud">
 									<img alt="cloud.png" src="img/act/cloud.png">
@@ -366,7 +384,7 @@ session_start();
 							
 					</div>
 					<div class="activity_bread2 rwd_none">
-							<img src="img/acty_finish_bread.png">
+							<img src="img/act/acty_finish_bread.png">
 					</div>
 
 					
@@ -378,7 +396,14 @@ session_start();
 
 	</div>  <!-- container-template -->
 
+<?php 
+			
+		}catch(PDOException $e) {
+				echo "錯誤行號 : ", $e->getLine(), "<br>";
+				echo "錯誤訊息 : ", $e->getMessage(), "<br>";	
+				}
 
+	 ?>
 
 <?php require_once("footer.php");?>
 

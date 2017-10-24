@@ -5,8 +5,7 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC";
-  overflow-x: hidden; }
+  font-family: "Noto Sans CJK TC"; }
 
 input {
   font-family: "Noto Sans CJK TC"; }
@@ -61,7 +60,18 @@ li {
       height: 50px;
       position: absolute;
       right: 10px;
-      top: 10px; }
+      top: 10px;
+      cursor: pointer;
+      -webkit-transition: .3s ease-in;
+      -o-transition: .3s ease-in;
+      transition: .3s ease-in; }
+      .globalForm .globalFormHeader .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+        transition: .3s ease-in; }
   .globalForm .globalFormContent {
     width: 100%;
     padding-top: 10px; }
@@ -119,6 +129,8 @@ li {
 
 .hideUp_sub {
   top: 0px  !important;
+  -webkit-transition: 0.3s ease-in-out !important;
+  -o-transition: 0.3s ease-in-out !important;
   transition: 0.3s ease-in-out !important; }
 
 .hideUp_sub_burger {
@@ -144,9 +156,11 @@ li {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
   /* IE6-9 */
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   top: 0;
+  -webkit-box-shadow: 0px 0px 15px 0px #382715;
+  box-shadow: 0px 0px 15px 0px #382715;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: top .3s ease-in-out;
@@ -155,7 +169,7 @@ li {
   .globalHead .headLoginBox {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
     .globalHead .headLoginBox .globalForm {
@@ -177,10 +191,15 @@ li {
           width: 160px; }
       .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+        transition: .3s ease-in; }
       .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
         text-align: center;
-        padding: 20px 0px; }
+        padding: 10px 0px; }
         .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
           border-bottom: 1px solid #3399ff; }
       .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
@@ -226,7 +245,7 @@ li {
   .globalHead .headRegisterBox {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
     .globalHead .headRegisterBox .globalForm {
@@ -248,6 +267,11 @@ li {
           width: 160px; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+        transition: .3s ease-in; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
@@ -289,12 +313,17 @@ li {
           .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
             border-bottom: 1px solid #663300; }
   .globalHead .headLogo {
-    width: 10vw;
-    padding: 10px 20px;
-    display: inline-block; }
-    .globalHead .headLogo img {
-      display: inline-block;
-      height: 65px; }
+    height: 100%;
+    margin-left: 20px;
+    float: left; }
+    .globalHead .headLogo a {
+      display: block;
+      width: 100%;
+      height: 80px;
+      padding: 10px 0px; }
+      .globalHead .headLogo a img {
+        display: inline-block;
+        height: 60px; }
   .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
@@ -305,7 +334,8 @@ li {
       padding: 20px 10px;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      text-align: right; }
+      text-align: right;
+      font-size: 0; }
       .globalHead .headerRight .headSearch span {
         margin-right: 10px;
         color: #fbf8f1;
@@ -333,7 +363,8 @@ li {
         outline: none;
         border-radius: 2px;
         -webkit-box-sizing: border-box;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        vertical-align: top; }
       .globalHead .headerRight .headSearch button {
         width: 80px;
         display: inline-block;
@@ -349,7 +380,8 @@ li {
           color: #805934;
           outline: none;
           -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          vertical-align: top; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -362,21 +394,149 @@ li {
         border-radius: 2px;
         outline: none;
         -webkit-box-sizing: border-box;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        vertical-align: top; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@-webkit-keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+
+@keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+    .globalHead .headerRight .shake {
+      -webkit-animation: shake1 .2s linear 3 alternate;
+      animation: shake1 .2s linear 3 alternate; }
+    .globalHead .headerRight .activeStatus {
+      display: block; }
     .globalHead .headerRight .headAccount {
-      width: 100px;
+      width: 150px;
       float: left; }
       .globalHead .headerRight .headAccount #headMemStatus {
+        display: none;
+        width: 100%;
+        height: 70px;
+        padding: 5px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+        .globalHead .headerRight .headAccount #headMemStatus div {
+          width: 110px;
+          margin: 10px auto; }
+          .globalHead .headerRight .headAccount #headMemStatus div a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            float: left;
+            border: none; }
+            .globalHead .headerRight .headAccount #headMemStatus div a img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%; }
+              .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
+                -webkit-transition: .3s;
+                -o-transition: .3s;
+                transition: .3s; }
+                .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
+                  -webkit-animation: shake .3s ease infinite alternate;
+                  animation: shake .3s ease infinite alternate;
+                  -webkit-transition: .3s;
+                  -o-transition: .3s;
+                  transition: .3s; }
+            .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
+              margin-right: 10px; }
+            .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic {
+              position: relative; }
+              .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 4px solid #fff;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                position: absolute;
+                right: -10px;
+                bottom: 0; }
+      .globalHead .headerRight .headAccount .memStatusBar {
+        position: relative;
+        bottom: 15px;
+        right: 70px;
+        width: 180px;
+        padding: 10px;
         display: none; }
-        .globalHead .headerRight .headAccount #headMemStatus #headMemPic {
-          width: 100%;
-          height: 70px; }
+        .globalHead .headerRight .headAccount .memStatusBar ul {
+          width: 150px;
+          margin: auto;
+          background-color: #f2ebd4;
+          border-radius: 5px; }
+          .globalHead .headerRight .headAccount .memStatusBar ul:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid #f2ebd4;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            top: 2px;
+            right: 29px; }
+          .globalHead .headerRight .headAccount .memStatusBar ul li {
+            color: #663300;
+            width: 100%;
+            text-align: center; }
+            .globalHead .headerRight .headAccount .memStatusBar ul li:first-child a {
+              padding: 10px 0px;
+              font-weight: 600; }
+            .globalHead .headerRight .headAccount .memStatusBar ul li a {
+              display: block;
+              width: 100%;
+              padding: 5px 0px;
+              text-align: center;
+              font-weight: 500;
+              color: #663300;
+              -webkit-transition: .3s;
+              -o-transition: .3s;
+              transition: .3s; }
+              .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
+                background-color: #805934;
+                color: #fbf8f1;
+                -webkit-transition: .3s;
+                -o-transition: .3s;
+                transition: .3s; }
       .globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
-        height: 70px; }
+        height: 70px;
+        cursor: pointer;
+        display: block; }
         .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
           width: 50%;
           margin: auto;
@@ -396,6 +556,17 @@ li {
           display: block;
           margin: auto;
           font-weight: 300; }
+        .globalHead .headerRight .headAccount #headMemLogin:hover {
+          background-color: #996633;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
+          transition: .3s; }
+          .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
+            -webkit-animation: shake .5s ease infinite alternate;
+            animation: shake .5s ease infinite alternate;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s; }
   .globalHead .rwd_headerSearch {
     display: none; }
   .globalHead .burgerMenu {
@@ -433,6 +604,13 @@ footer {
   footer p {
     color: #663300;
     margin-top: 10px; }
+
+@media screen and (max-width: 400px) {
+  footer .globalFtBtn .svg {
+    width: 30px;
+    height: 30px; }
+  footer .globalFtBtn a {
+    font-size: 14px; } }
 
 .clearfix {
   clear: both; }
@@ -552,74 +730,63 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
-
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
-
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
-
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
-
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
-
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
-
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
-
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
-
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
-
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
-
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
-
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
-
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
     .globalHead .headLogo {
@@ -627,7 +794,8 @@ footer {
       width: 20vw;
       margin: auto;
       display: inline-block;
-      text-align: center; }
+      text-align: center;
+      float: none; }
       .globalHead .headLogo img {
         width: 100%; }
     .globalHead .headerRight {
@@ -638,7 +806,7 @@ footer {
       height: 40px;
       position: absolute;
       top: 0px;
-      right: 20px;
+      left: 20px;
       bottom: 0;
       margin: auto; }
       .globalHead .rwd_headerSearch .searchIcon {
@@ -652,75 +820,40 @@ footer {
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 0;
+      right: 20px;
       margin: auto; }
       .globalHead .burgerMenu span {
         width: 40px;
         height: 40px;
         display: block;
         margin: auto;
-<<<<<<< HEAD
         fill: #fbf8f1; }
       .globalHead .burgerMenu.active {
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease; }
+    .globalHead #headMemStatus {
+      display: none; }
     .globalHead #menu {
-=======
-        -webkit-transition: .3s ease;
-        -o-transition: .3s ease;
-        transition: .3s ease; }
-        header.globalHead .burgerMenu span:nth-of-type(1) {
-          top: 5px; }
-        header.globalHead .burgerMenu span:nth-of-type(2) {
-          top: 16px; }
-        header.globalHead .burgerMenu span:nth-of-type(3) {
-          top: 27px; }
-      header.globalHead .burgerMenu.active {
-        -webkit-transition: .3s ease;
-        -o-transition: .3s ease;
-        transition: .3s ease; }
-        header.globalHead .burgerMenu.active span:nth-of-type(1) {
-          -webkit-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-          -webkit-transition: .3s ease;
-          -o-transition: .3s ease;
-          transition: .3s ease;
-          top: 20px; }
-        header.globalHead .burgerMenu.active span:nth-of-type(2) {
-          display: none; }
-        header.globalHead .burgerMenu.active span:nth-of-type(3) {
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-          top: 20px;
-          -webkit-transition: .3s ease;
-          -o-transition: .3s ease;
-          transition: .3s ease; }
-    header.globalHead #menu {
->>>>>>> 98f266ad1ea474ec423417d49223b7bb087afed7
       display: block;
       position: fixed;
       top: 80px;
+      height: 100vh;
+      width: 100%;
       background-color: rgba(0, 0, 0, 0.5); }
-<<<<<<< HEAD
       .globalHead #menu.hideMenu {
-        left: -120%;
-=======
-      header.globalHead #menu.hideMenu {
-        left: -375px;
+        right: -120%;
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
->>>>>>> 98f266ad1ea474ec423417d49223b7bb087afed7
         transition: all 0.3s ease; }
       .globalHead #menu.show {
-        left: 0;
+        right: 0;
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu ul {
         display: block;
-        width: 375px;
-        min-width: 320px;
+        width: 100%;
         background: rgba(128, 89, 52, 0.9);
         /* Old browsers */
         background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
@@ -738,9 +871,9 @@ footer {
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
+        .globalHead #menu ul#memLoggedin {
+          display: block; }
         .globalHead #menu ul li {
-          display: block;
-          padding: 10px;
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
             width: 30px;
@@ -748,28 +881,61 @@ footer {
             float: right;
             fill: #fbf8f1; }
           .globalHead #menu ul li.memPart {
-            height: 60px; }
+            padding-bottom: 10px;
+            position: relative; }
+            .globalHead #menu ul li.memPart:after {
+              content: '';
+              display: block;
+              width: 50%;
+              height: 1px;
+              background-color: rgba(251, 248, 241, 0.5);
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
             .globalHead #menu ul li.memPart .memPic {
-              width: 30%;
-              height: 100%;
-              float: left; }
+              width: 100%;
+              height: 100%; }
               .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%; }
             .globalHead #menu ul li.memPart span {
-              width: 70%;
+              width: 100%;
               height: 100%;
               display: block;
-              float: left;
-              margin: auto;
-              line-height: 50px;
               text-align: center; }
-          .globalHead #menu ul li.listTitle {
-            font-size: 1.2em; }
           .globalHead #menu ul li a {
+            display: block;
+            width: 100%;
+            padding: 10px;
             color: #fbf8f1;
-            font-weight: 400; }
+            font-weight: 400;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s; }
+            .globalHead #menu ul li a:focus {
+              background-color: rgba(158, 105, 61, 0.5);
+              -webkit-transition: .3s;
+              -o-transition: .3s;
+              transition: .3s; }
+          .globalHead #menu ul li.myActivity {
+            position: relative; }
+            .globalHead #menu ul li.myActivity:after {
+              content: '';
+              display: block;
+              width: 50%;
+              height: 1px;
+              background-color: rgba(251, 248, 241, 0.5);
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
+          .globalHead #menu ul li.needLogIn {
+            height: 80vh; }
+            .globalHead #menu ul li.needLogIn a {
+              width: 50%;
+              margin: auto;
+              padding: 0;
+              background-color: #f06428; }
     .globalHead .rwdSearchBar {
       background: rgba(128, 89, 52, 0.9);
       /* Old browsers */
@@ -783,6 +949,7 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
       background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -790,49 +957,156 @@ footer {
       width: 100%;
       position: fixed;
       top: 80px;
-      right: -100%;
-      height: 80px;
+      left: -100%;
+      height: 100vh;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
       transition: .3s;
       display: block; }
       .globalHead .rwdSearchBar .rwdsearchItem {
         width: 90%;
-        height: 30px;
-        margin: 5px auto; }
-        .globalHead .rwdSearchBar .rwdsearchItem select {
-          width: 25%;
-          height: 100%;
-          float: left;
-          text-align: center;
-          border: 1px solid #fbf8f1;
-          background-color: transparent;
+        height: 70%;
+        margin: 10px auto; }
+        .globalHead .rwdSearchBar .rwdsearchItem span {
+          display: block;
+          width: 70%;
           color: #fbf8f1;
-          outline: none;
-          border-radius: 2px;
-          font-size: 16px; }
-        .globalHead .rwdSearchBar .rwdsearchItem button {
-          width: 25%;
-          height: 100%;
-          float: left;
-          text-align: center;
+          padding: 5px;
+          margin: 10px auto;
+          font-size: 20px;
+          background-color: #663300;
+          border-radius: 5px; }
+        .globalHead .rwdSearchBar .rwdsearchItem label {
+          display: inline-block;
+          margin: 0px 5px;
+          margin-bottom: 5px;
+          padding: 10px;
           color: #fbf8f1;
-          background-color: transparent;
           border: 1px solid #fbf8f1;
-          border-radius: 2px;
           outline: none;
-          font-size: 16px; }
-          .globalHead .rwdSearchBar .rwdsearchItem button:focus {
-            background-color: #fbf8f1;
-            color: #805934;
-            outline: none; }
-      .globalHead .rwdSearchBar input {
-        width: 100%;
+          border-radius: 5px; }
+          .globalHead .rwdSearchBar .rwdsearchItem label input {
+            display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
+            background-color: #f06428; }
+        .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
+          width: 100%;
+          margin: auto; }
+      .globalHead .rwdSearchBar #rwdHeadSearch {
+        width: 90%;
+        margin: auto;
         height: 40px;
         outline: none;
-        border: none; }
+        border: none;
+        padding-left: 10px; }
       .globalHead .rwdSearchBar.activeSearch {
         top: 80px;
+        left: 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
+      .globalHead .rwdSearchBar input[type="submit"] {
+        display: block;
+        width: 50%;
+        height: 40px;
+        background-color: #f2ebd4;
+        margin: 10px auto;
+        color: #663300;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer; } }
+
+@media screen and (max-width: 400px) {
+  .globalHead .headLoginBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headLoginBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      padding: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+      width: 60%; }
+  .globalHead .headRegisterBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headRegisterBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
+      width: 90%; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; } }
+
+#addShopBox {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none; }
+  #addShopBox .globalForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 600px;
+    height: 75%;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+    #addShopBox .globalForm .chooseType input {
+      width: 20px;
+      height: 100%; }
+    #addShopBox .globalForm .chooseType .chooseBtn {
+      float: right;
+      margin: 0px 10px; }
+    #addShopBox .globalForm #showAddShopForm {
+      display: none; }
+    #addShopBox .globalForm #visitorForm {
+      display: block;
+      position: relative;
+      padding-top: 50%; }
+      #addShopBox .globalForm #visitorForm a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
         right: 0;
-        transition: .3s; } }
+        margin: auto; }
+    #addShopBox .globalForm input[type="number"] {
+      width: 20%;
+      height: 100%;
+      float: none;
+      display: inline-block; }
+
+#serviceCenter {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none; }
+  #serviceCenter .globalForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 600px;
+    height: 75%;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -845,6 +1119,180 @@ section {
   width: 100%;
   height: 100vh; }
 
+@keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@-webkit-keyframes moveDown {
+  0% {
+    -webkit-transform: translate(0px, 5px);
+    transform: translate(0px, 5px); }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); } }
+
+@keyframes moveDown {
+  0% {
+    -webkit-transform: translate(0px, 5px);
+    transform: translate(0px, 5px); }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); } }
+
+.headerLink {
+  width: 60%;
+  height: 100%;
+  display: inline-block;
+  margin-left: 20px; }
+  .headerLink .burger {
+    display: none; }
+  .headerLink a {
+    display: block;
+    float: left;
+    width: 130px;
+    height: 100%; }
+    .headerLink a img {
+      width: 100%;
+      height: 40px;
+      padding-top: 10px;
+      display: inline-block;
+      text-align: center;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s; }
+    .headerLink a span {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      text-align: center;
+      color: #fbf8f1;
+      font-weight: 300; }
+    .headerLink a:hover {
+      background-color: #996633;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s; }
+      .headerLink a:hover img {
+        -webkit-animation: shake .5s ease infinite alternate;
+        animation: shake .5s ease infinite alternate;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
+
+.rwd-HeaderLink {
+  display: none; }
+
+.left-burgerBtn {
+  display: none; }
+
+@media screen and (max-width: 900px) {
+  .headerLink {
+    display: none; }
+  .left-burgerBtn {
+    display: inline-block;
+    width: 20%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin: auto; }
+    .left-burgerBtn span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      left: 15px;
+      background-color: #fbf8f1;
+      border-radius: 4px;
+      position: absolute;
+      margin: auto;
+      -webkit-transition: .3s ease;
+      -o-transition: .3s ease;
+      transition: .3s ease; }
+      .left-burgerBtn span:nth-of-type(1) {
+        top: 5px; }
+      .left-burgerBtn span:nth-of-type(2) {
+        top: 16px; }
+      .left-burgerBtn span:nth-of-type(3) {
+        top: 27px; }
+    .left-burgerBtn.active {
+      -webkit-transition: .3s ease;
+      -o-transition: .3s ease;
+      transition: .3s ease; }
+      .left-burgerBtn.active span:nth-of-type(1) {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+        top: 20px; }
+      .left-burgerBtn.active span:nth-of-type(2) {
+        display: none; }
+      .left-burgerBtn.active span:nth-of-type(3) {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 20px;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease; }
+  .rwd-HeaderLink {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    left: -100%;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    background: rgba(128, 89, 52, 0.9);
+    /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+    /* IE10+ */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
+    background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+    /* IE6-9 */ }
+    .rwd-HeaderLink a {
+      width: 50%;
+      height: 30%;
+      display: block;
+      position: relative;
+      float: left;
+      padding: 10%; }
+      .rwd-HeaderLink a img {
+        display: block;
+        max-width: 100px;
+        max-height: 100px;
+        width: 10vw;
+        height: 10vw;
+        margin: auto; }
+      .rwd-HeaderLink a span {
+        display: block;
+        width: 100%;
+        color: #fbf8f1;
+        margin-top: 10px;
+        font-size: 5vw; }
+    .rwd-HeaderLink.showMenu {
+      left: 0;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s; } }
+
 .homeSearchBar {
   width: 100%;
   height: 100vh;
@@ -852,6 +1300,17 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom; }
+  .homeSearchBar.vansBgd {
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    background-image: url("../img/homepage/homepage_bg7.png");
+    background-position: center top; }
+  .homeSearchBar.orginBgd {
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    background-image: url("../img/homepage/homepage_bg1.png"); }
   .homeSearchBar .itemGrp {
     width: 70%;
     height: 100%;
@@ -865,6 +1324,8 @@ section {
         width: 100%;
         height: 100%;
         fill-opacity: 0;
+        -webkit-transition: fill-opacity 1s;
+        -o-transition: fill-opacity 1s;
         transition: fill-opacity 1s; }
         .homeSearchBar .itemGrp .bigLogo #theLogo.finished {
           fill-opacity: 1; }
@@ -913,6 +1374,7 @@ section {
           background-color: rgba(255, 255, 255, 0.9);
           color: #996633;
           font-size: 16px;
+          height: 30px;
           border-radius: 2px;
           outline: none;
           border: none; }
@@ -956,33 +1418,77 @@ section {
             background-color: transparent;
             outline: none;
             color: #663300;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s;
             cursor: pointer;
             border-radius: 2px; }
             .homeSearchBar .itemGrp .searchPart .searchContent .searchbar button:hover {
               background-color: #f06428;
               color: #fbf8f1;
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
+            .homeSearchBar .itemGrp .searchPart .searchContent .searchbar button.keyIn {
+              background-color: #f06428;
+              color: #fbf8f1;
+              -webkit-transition: .3s;
+              -o-transition: .3s;
+              transition: .3s; }
+    .homeSearchBar .itemGrp .sectionBetween {
+      margin-top: 30px; }
+      .homeSearchBar .itemGrp .sectionBetween p {
+        color: #fbf8f1;
+        font-size: 20px;
+        text-align: center;
+        text-shadow: 0px 0px 30px black; }
+      .homeSearchBar .itemGrp .sectionBetween img {
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 10px auto;
+        -webkit-animation: moveDown .5s ease infinite alternate;
+        animation: moveDown .5s ease infinite alternate;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%; }
 
 @media screen and (max-width: 768px) {
   section.homeSearchBar .itemGrp {
     width: 100%;
-    padding: 150px 10px 0px 10px; }
+    padding: 100px 10px 0px 10px; }
     section.homeSearchBar .itemGrp .bigLogo {
       width: 50%;
       height: 30%;
       margin: auto; }
       section.homeSearchBar .itemGrp .bigLogo img {
         width: 100%;
-        height: 100%; } }
+        height: 100%; }
+    section.homeSearchBar .itemGrp .sectionBetween {
+      width: 100%; }
+      section.homeSearchBar .itemGrp .sectionBetween p {
+        color: #fbf8f1;
+        text-align: center;
+        font-size: 16px; }
+      section.homeSearchBar .itemGrp .sectionBetween img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: auto; } }
+
 @media screen and (max-width: 500px) {
+  section.homeSearchBar .itemGrp .descrp {
+    margin-top: 0; }
+  section.homeSearchBar .itemGrp .searchPart .searchContent .filter {
+    margin: 0px 5px 10px 0px; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
     width: 100%;
-    padding: 5px; }
+    padding: 0px; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar input {
     width: 70%; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
     width: 20%; } }
+
 .homeTopChart {
   position: relative; }
   .homeTopChart p.topChartDescrp {
@@ -994,22 +1500,28 @@ section {
     line-height: 1.5;
     font-weight: 500; }
   .homeTopChart .titleGrp {
-    width: 90%;
-    margin: 10px auto;
+    margin: 30px auto;
     text-align: center; }
     .homeTopChart .titleGrp img {
+      width: 40px;
+      height: 40px;
       display: inline-block;
-      vertical-align: top;
+      vertical-align: baseline;
       margin-right: 10px; }
     .homeTopChart .titleGrp .topChartTitle {
       text-align: center;
-      margin: 10px auto;
+      height: 40px;
       display: inline-block;
       color: #663300;
       font-size: 2em; }
+  .homeTopChart .shopItemGrp {
+    width: 80%;
+    margin: auto; }
   .homeTopChart .shopItem {
     width: 100%;
-    height: 70vh; }
+    height: 70vh;
+    outline: none;
+    cursor: pointer; }
     .homeTopChart .shopItem .shopPic {
       width: 100%;
       max-width: 720px;
@@ -1060,9 +1572,10 @@ section {
             float: left;
             height: 100%; }
             .homeTopChart .shopItem .shopPic .shopInfo ul li img {
-              width: 4vh;
-              height: 100%;
+              width: 30px;
+              height: 30px;
               float: left;
+              margin: 10px 0px;
               margin-right: 10px; }
             .homeTopChart .shopItem .shopPic .shopInfo ul li span {
               float: left;
@@ -1192,9 +1705,11 @@ section {
           left: 10px;
           right: 0;
           margin: auto;
+          font-size: 24px;
           color: #fbf8f1;
           letter-spacing: 2px;
-          text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); }
+          text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+          text-shadow: 1px 1px 4px #323232; }
         .homeTopChart .shopItem .shopPic .shopInfo {
           width: 100%;
           height: 50px;
@@ -1238,10 +1753,10 @@ section {
               .homeTopChart .shopItem .shopPic .shopInfo ul li span {
                 float: left;
                 color: #fbf8f1;
-                font-size: 16px; }
+                font-size: 14px; }
       .homeTopChart .shopItem .shopMessage {
         width: 100%;
-        height: 40%;
+        height: 35%;
         background-color: #f2ebd4;
         -webkit-box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
         box-shadow: 0px 11px 24px rgba(165, 160, 148, 0.56);
@@ -1268,10 +1783,13 @@ section {
           text-align: center; }
         .homeTopChart .shopItem .shopMessage .message {
           display: block;
+          margin-top: 10px;
           width: 100%;
           padding: 10px;
           background-color: #fff;
           border-radius: 10px; }
+          .homeTopChart .shopItem .shopMessage .message p {
+            font-size: 12px; }
     .homeTopChart .chooseBtn {
       width: 150px;
       height: 40px;
@@ -1293,6 +1811,10 @@ section {
         -o-transition: .3s ease;
         transition: .3s ease;
         cursor: pointer; } }
+
+.slick-dots {
+  bottom: 0px; }
+
 section.homeCarMap {
   background-image: url("../img/homepage/homepage_bg3.png");
   background-repeat: no-repeat;
@@ -1317,10 +1839,8 @@ section.homeCarMap {
       line-height: 100px; }
 
 .homeActivity {
-  background-image: url("../img/homepage/homepage_bg4.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fixed;
+  width: 100%;
+  height: 100vh;
   position: relative; }
   .homeActivity .activityTitle {
     background-color: rgba(96, 56, 19, 0.32);
@@ -1348,95 +1868,138 @@ section.homeCarMap {
       padding-top: 50px;
       font-size: 24px;
       margin: auto; }
+  .homeActivity .act-bgd {
+    width: 50%;
+    height: 100%;
+    background-image: url("../img/homepage/homepage_bg4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px 0px;
+    float: left; }
   .homeActivity .activityItem {
     width: 50%;
     height: 100%;
     float: right;
-    margin-right: 10%; }
-    .homeActivity .activityItem .activityRight {
-      width: 100%;
-      height: 100%;
-      margin: auto; }
+    padding: auto 0px;
+    background-color: rgba(50, 25, 0, 0.7); }
     .homeActivity .activityItem #chooseActUp {
       width: 80px;
-      height: 20%;
+      height: 15%;
       margin: auto;
       vertical-align: top;
       position: relative; }
       .homeActivity .activityItem #chooseActUp .svg {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         margin: auto;
         fill: #fbf8f1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0; }
-    .homeActivity .activityItem #actBanner {
-      max-width: 600px;
-      width: 100%;
-      height: 60%;
-      margin: auto;
-      background-color: #fbf8f1;
-      border-radius: 90% 90% 90% 90%;
-      overflow: hidden;
-      position: relative; }
-      .homeActivity .activityItem #actBanner img {
-        width: 100%;
-        height: 100%;
-        z-index: -1; }
-      .homeActivity .activityItem #actBanner .actContent {
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 99;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        margin: auto; }
-        .homeActivity .activityItem #actBanner .actContent h2 {
-          width: 50%;
-          font-size: 2em;
-          margin: 30px auto;
-          margin-top: 30%;
-          text-align: center;
-          color: #fbf8f1; }
-        .homeActivity .activityItem #actBanner .actContent p {
-          text-align: center;
-          color: #fbf8f1;
-          margin: 20px auto; }
-        .homeActivity .activityItem #actBanner .actContent a {
-          margin: auto; }
+        cursor: pointer; }
+    .homeActivity .activityItem .actBannerGrp {
+      width: 90%;
+      margin: auto; }
+      .homeActivity .activityItem .actBannerGrp .actBanner {
+        height: 500px;
+        padding: 15px;
+        background-color: #fbf8f1;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actDate {
+          width: 80px;
+          height: 80px;
+          background-color: #00c853;
+          border-radius: 50%;
+          position: absolute;
+          top: 10px;
+          right: 10px; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem span {
+              display: block;
+              width: 100%;
+              font-size: 18px;
+              text-align: center;
+              color: #fbf8f1; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem span:nth-child(2) {
+                font-weight: 600; }
+        .homeActivity .activityItem .actBannerGrp .actBanner img {
+          display: block;
+          width: 100%;
+          height: 60%;
+          -o-object-fit: cover;
+          object-fit: cover; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actContent {
+          width: 100%;
+          height: 40%;
+          background-color: #fbf8f1;
+          padding: 10px;
+          border-radius: 5px; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent h3 {
+            text-align: center;
+            color: #663300;
+            font-size: 24px; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul {
+            text-align: center; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li {
+              width: 90%;
+              display: inline-block; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li span {
+                float: left;
+                font-size: 16px;
+                font-weight: 600;
+                color: #663300; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li p {
+                float: left;
+                margin-left: 10px;
+                font-size: 16px;
+                text-align: center;
+                color: #999; }
+                .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li p span {
+                  color: #3399ff; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent a {
+            margin: auto; }
     .homeActivity .activityItem #chooseActDown {
       width: 80px;
-      height: 20%;
+      height: 15%;
       margin: auto;
       position: relative; }
       .homeActivity .activityItem #chooseActDown .svg {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
         margin: auto;
         fill: #fbf8f1;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0; }
+        bottom: 0;
+        cursor: pointer; }
 
 @media screen and (max-width: 768px) {
   .homeActivity .activityTitle {
-    position: static;
-    width: 100%; }
+    width: 100%;
+    height: 30%;
+    margin: 0;
+    left: 0; }
     .homeActivity .activityTitle img {
       width: 70px;
       margin: 10px auto; }
     .homeActivity .activityTitle h1 {
-      width: 70%;
       margin: 10px auto;
-      font-size: 36px;
+      font-size: 24px;
+      font-weight: 500;
       text-align: center;
       color: #fbf8f1;
       letter-spacing: 1.8px;
@@ -1446,26 +2009,148 @@ section.homeCarMap {
       text-align: center;
       color: #fbf8f1;
       padding-top: 10px;
-      font-size: 24px;
+      font-size: 18px;
       margin: auto; }
+  .homeActivity .act-bgd {
+    width: 100%;
+    height: 30%; }
   .homeActivity .activityItem {
     width: 100%;
-    height: 50%;
-    margin: auto; }
-    .homeActivity .activityItem .svg {
-      position: static; }
-    .homeActivity .activityItem #chooseActUp {
-      margin: auto;
-      vertical-align: top; }
-    .homeActivity .activityItem #actBanner {
-      max-width: 600px;
-      width: 70%;
-      height: 60vw;
-      background-color: #fbf8f1;
-      border-radius: 10%;
-      margin: auto; }
-    .homeActivity .activityItem #chooseActDown {
-      margin: auto; } }
+    height: 70%;
+    margin: 0; }
+    .homeActivity .activityItem #chooseActUp, .homeActivity .activityItem #chooseActDown {
+      height: 10%; }
+    .homeActivity .activityItem .actBannerGrp {
+      height: 70%; }
+      .homeActivity .activityItem .actBannerGrp .actBanner {
+        height: 400px; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actDate {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          position: absolute;
+          top: 10px;
+          right: 10px; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem span {
+              display: block;
+              width: 100%;
+              font-size: 12px;
+              text-align: center;
+              color: #fbf8f1; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem span:nth-child(2) {
+                font-weight: 600; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actContent h3 {
+          text-align: center;
+          color: #663300; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul {
+          text-align: center; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li {
+            width: 90%;
+            display: inline-block; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li span {
+              float: left;
+              font-size: 14px;
+              font-weight: 600;
+              color: #663300; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li p {
+              float: left;
+              margin-left: 10px;
+              font-size: 14px;
+              text-align: center;
+              color: #999; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li p span {
+                color: #3399ff; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actContent a {
+          height: 40px;
+          line-height: 40px;
+          font-size: 14px; } }
+
+@media screen and (max-width: 400px) {
+  .homeActivity .activityTitle {
+    height: 30%;
+    padding: 10px; }
+    .homeActivity .activityTitle h1 {
+      font-size: 36px;
+      font-weight: 700; }
+    .homeActivity .activityTitle img {
+      width: 40px; }
+    .homeActivity .activityTitle p {
+      width: 90%;
+      font-size: 14px; }
+  .homeActivity .act-bgd {
+    width: 100%;
+    height: 30%; }
+  .homeActivity .activityItem {
+    width: 100%;
+    height: 70%; }
+    .homeActivity .activityItem .actBannerGrp {
+      height: 75%; }
+      .homeActivity .activityItem .actBannerGrp .actBanner {
+        height: 300px;
+        padding: 0;
+        position: relative; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actDate {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          position: absolute;
+          top: 10px;
+          right: 10px; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem span {
+              display: block;
+              width: 100%;
+              font-size: 12px;
+              text-align: center;
+              color: #fbf8f1; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actDate .dateItem span:nth-child(2) {
+                font-weight: 600; }
+        .homeActivity .activityItem .actBannerGrp .actBanner img {
+          height: 50%; }
+        .homeActivity .activityItem .actBannerGrp .actBanner .actContent {
+          height: 30%; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent h3 {
+            text-align: center;
+            color: #663300;
+            font-size: 16px; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul {
+            text-align: center; }
+            .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li {
+              width: 90%;
+              display: inline-block; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li span {
+                float: left;
+                font-size: 12px;
+                font-weight: 600;
+                color: #663300; }
+              .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li p {
+                float: left;
+                margin-left: 10px;
+                font-size: 12px;
+                text-align: center;
+                color: #999; }
+                .homeActivity .activityItem .actBannerGrp .actBanner .actContent ul li p span {
+                  color: #3399ff; }
+          .homeActivity .activityItem .actBannerGrp .actBanner .actContent a {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px; } }
+
 .homeNewshop {
   background-image: url("../img/homepage/homepage_bg5.png");
   background-repeat: no-repeat;
@@ -1489,11 +2174,10 @@ section.homeCarMap {
       vertical-align: top;
       text-shadow: 0px 0px 10px 2px black; }
   .homeNewshop .newShopGrp {
-    width: 90%;
+    width: 80%;
     margin: auto; }
     .homeNewshop .newShopGrp .newShops {
       width: 30%;
-      height: 80vh;
       float: left;
       margin: auto 10px;
       padding: 10px;
@@ -1520,7 +2204,7 @@ section.homeCarMap {
           .homeNewshop .newShopGrp .newShops .newShopItem .shopContent h2 {
             width: 100%;
             text-align: left;
-            font-size: 28px;
+            font-size: 20px;
             color: #663300;
             margin: 10px 0px; }
           .homeNewshop .newShopGrp .newShops .newShopItem .shopContent p {
@@ -1529,25 +2213,30 @@ section.homeCarMap {
             margin: 10px 0px;
             word-wrap: wrap;
             color: #999;
-            font-size: 18px; }
+            font-size: 16px; }
           .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul {
             width: 100%;
-            padding: 10px; }
+            height: 30px;
+            text-align: center;
+            display: inline-block;
+            text-align: center; }
             .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul li {
-              margin-right: 10px; }
+              display: inline-block;
+              margin: auto;
+              margin-right: 10px;
+              height: 30px; }
               .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul li img {
-                width: 4vw;
                 display: inline-block;
-                height: 4vw;
                 border: none;
-                max-width: 40px;
-                max-height: 40px; }
+                width: 30px;
+                height: 30px; }
               .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul li span {
                 display: inline-block;
-                height: 4vw;
-                max-height: 40px;
-                line-height: 4vw;
-                font-size: 18px; }
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                vertical-align: top;
+                color: #663300; }
           .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn {
             display: block;
             width: 120px;
@@ -1597,7 +2286,7 @@ section.homeCarMap {
     .homeNewshop .newShopGrp .newShops .newShopItem .shopContent {
       width: 100%; }
       .homeNewshop .newShopGrp .newShops .newShopItem .shopContent p {
-        font-size: 16px; }
+        font-size: 14px; }
       .homeNewshop .newShopGrp .newShops .newShopItem .shopContent .exploreBtn {
         display: block;
         width: 120px;
@@ -1620,32 +2309,36 @@ section.homeCarMap {
           -o-transition: .3s ease;
           transition: .3s ease;
           cursor: pointer; } }
+
 .homeContact {
   width: 100%;
   height: 50vh;
   clear: both; }
-  .homeContact img {
-    width: 15%;
-    height: 15%;
-    display: block;
-    margin: auto; }
   .homeContact p {
     width: 80%;
     margin: auto;
     margin-top: 50px;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 4vmin;
+    font-size: 30px;
     color: #663300;
     font-weight: 700; }
-  .homeContact h3 {
-    width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 3vmin;
-    color: #663300; }
+  .homeContact .sectionItem {
+    width: 30%;
+    margin: auto; }
+    .homeContact .sectionItem span {
+      width: 60px;
+      height: 60px;
+      display: block;
+      margin: auto;
+      fill: #663300; }
+    .homeContact .sectionItem h3 {
+      margin: auto;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 18px;
+      color: #663300; }
   .homeContact .addShop {
     width: 50%;
     height: 100%;
@@ -1663,15 +2356,20 @@ section.homeCarMap {
   .homeContact {
     height: 70vh; }
     .homeContact p {
-      font-size: 5vw; }
+      font-size: 24px; }
     .homeContact h3 {
       font-size: 4vmin; }
     .homeContact .addShop {
       width: 100%;
-      height: 50%; }
+      height: 40%; }
     .homeContact .contactUs {
       width: 100%;
-      height: 50%; } }
+      height: 40%; } }
+
+@media screen and (max-width: 400px) {
+  .homeContact {
+    height: 100vh; } }
+
 #navBtn {
   width: 10px;
   position: fixed;
@@ -1685,53 +2383,3 @@ section.homeCarMap {
     margin: 10px auto;
     border-radius: 50%;
     background-color: #ccc; }
-
-<<<<<<< HEAD
-#addShopBox {
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 50, 50, 0.5);
-  display: none; }
-  #addShopBox .globalForm {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 600px;
-    height: 75%;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-    #addShopBox .globalForm .chooseType input {
-      width: 20px;
-      height: 100%; }
-    #addShopBox .globalForm .chooseType .chooseBtn {
-      float: right;
-      margin: 0px 10px; }
-
-#serviceCenter {
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(50, 50, 50, 0.5);
-  display: none; }
-  #serviceCenter .globalForm {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 600px;
-    height: 75%;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-=======
-
->>>>>>> 98f266ad1ea474ec423417d49223b7bb087afed7

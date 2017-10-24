@@ -118,11 +118,11 @@ var controller = new ScrollMagic.Controller();
     })
     
     .setClassToggle('.big','bigDough')
-    .addIndicators({
-            name: 'scene 08'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene 08'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 
 
@@ -159,11 +159,11 @@ var controller = new ScrollMagic.Controller();
     })
     .setTween(tween_5)  //要跑的動畫  ，要先設var
 
-    .addIndicators({
-            name: 'scene 04'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene 04'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 
 //翻轉  end
@@ -197,11 +197,11 @@ var controller = new ScrollMagic.Controller();
    
     .setTween(tween_3)  //要跑的動畫  ，要先設var
  .setClassToggle('.activity_dough_change','activity_dough_change_js')
-    .addIndicators({
-            name: 'scene 03'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene 03'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 //掉麵團2  end
 
@@ -226,9 +226,9 @@ var tween_8 = TweenMax.staggerFromTo('.act_wind', .2, {
         })
         .setTween(tween_8) 
         //.setClassToggle('.bgc' , 'bake_bread')
-        .addIndicators({
-            name: 'add_class'
-        })
+        // .addIndicators({
+        //     name: 'add_class'
+        // })
         .addTo(controller);
 
     var scene_bg = new ScrollMagic.Scene({
@@ -239,9 +239,9 @@ var tween_8 = TweenMax.staggerFromTo('.act_wind', .2, {
         })
         //.setTween(tween_8) 
         .setClassToggle('.bgc' , 'bake_bread')
-        .addIndicators({
-            name: 'add_bg'
-        })
+        // .addIndicators({
+        //     name: 'add_bg'
+        // })
         .addTo(controller);
 
 
@@ -270,11 +270,11 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
     })
     .setTween(tween_9)  //要跑的動畫  ，要先設var
 
-    .addIndicators({
-            name: 'scene9'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene9'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 
 
@@ -303,11 +303,11 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
     })
     .setTween(tween_6)  //要跑的動畫  ，要先設var
 
-    .addIndicators({
-            name: 'scene6'   
-            //除錯，並找位置,js外掛要加連結至html中
+    // .addIndicators({
+    //         name: 'scene6'   
+    //         //除錯，並找位置,js外掛要加連結至html中
 
-        })
+    //     })
    .addTo(controller);  //最開始設的場景
 
 

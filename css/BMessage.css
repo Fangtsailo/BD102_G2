@@ -137,8 +137,8 @@ header {
         .tableContent tr td:nth-child(8) .takeMeg {
           background-color: #00c853; }
           .tableContent tr td:nth-child(8) .takeMeg:hover {
-            border: 1px solid #53a053;
-            color: #00c871;
+            border: 1px solid #53c453;
+            color: #53c453;
             background-color: #fff;
             -webkit-transition: 0.2s;
             -o-transition: 0.2s;

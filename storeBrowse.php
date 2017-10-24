@@ -23,63 +23,70 @@
     <script src="js/storeBrowse.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
+    <script src="libs/jquery-modal-master/jquery.modal.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="libs/jquery-modal-master/jquery.modal.min.css">
     <script src="js/header.js"></script>
 </head>
 <body>
 
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
+try {
 	require_once("header.php");
 	require_once("php/common/globalVar.php");	
 	require_once("php/store/browse/storeDetail.php");
 	// $storeId = $_REQUEST["storeId"];
 	$storeId = 2;
+	//會員基資======================================
+	$memNum = 5;
+	$memPic = GLOBAL_MEM_PIC_PATH.$memNum.".png";
 	getStoreInfoById($storeId);
-	//胖小車路徑相關資料
+	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
+	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
+	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
+	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
+	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId);
+	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
+} catch (Exception $e) {
+	echo "原因：",$e->getMessage(),"<br>";
+	echo "行號：",$e->getLine(),"<br>";
+}
  ?>
+ <div id="review-modal" class="modal">
+  <p>Thanks for clicking. That felt good.</p>
+  <button onclick="alert('123');">456</button>
+</div>
 <div class="navigator">
-	<div class="item">
-		<a href=""><p>123</p></a>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p></div><div class="point"></div>
-	</div>
-	<div class="item">
-		<div class="name"><p>123</p><div class="point"></div>
-	</div>
+		<a href="#screen1" class="item selected">
+			<div class="name"><p>店家故事</p></div>
+			<div class="point selected"></div>
+		</a>
+		<a href="#screen-bread-car" class="item">
+			<div class="name"><p>胖小車路線</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-product" class="item">
+			<div class="name"><p>商品</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-activity" class="item">
+			<div class="name"><p>體驗活動</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-messages" class="item">
+			<div class="name"><p>留言板</p></div>
+			<div class="point"></div>
+		</a>
+		<a href="#screen-other-store" class="item">
+			<div class="name"><p>其他店家推薦</p></div>
+			<div class="point"></div>
+		</a>
 </div>
-</div>
-<!-- <div class="navigator">
-	<div class="nav-selected item pointer">
-		<div class="name"><p>店家故事</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>胖小車路線</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>商品</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>體驗活動</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>留言板</p></div>
-	</div>
-	<div class="item pointer">
-		<div class="name"><p>其他店家推薦</p></div>
-	</div>
-</div> -->	
-<div class="screen screen-1">
+<div class="screen screen-1" id="screen1">
 	<div class="banners">
+		<div id="banner1"></div>
+		<div id="banner2"></div>
+		<div id="banner3"></div>
 	</div>
 	<div class="detail-box">
 		<div class="store-logo"><img alt="<?php echo $GLOBALS["store"]->storeLogo ?>" src="<?php echo GLOBAL_STORE_PIC_PATH, $GLOBALS["store"]->storeLogo ?>"></div>
@@ -89,21 +96,21 @@
 			</div>
 		</div>
 		<div class="detail">
-			<ul class="follow col-xs-9">
-				<?php 
-					// for ($i = 0; $i < 5; $i++) {
-					// 	if ($review > 0) {
+				<ul class="follow col-xs-9" id="review-btn">
+					<?php 
+						// for ($i = 0; $i < 5; $i++) {
+						// 	if ($review > 0) {
 
-					// 	}
-					// 	$review--;
-					// }
-				 ?>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-				<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-			</ul>
+						// 	}
+						// 	$review--;
+						// }
+					 ?>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
+				</ul>
 			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $GLOBALS["store"]->follow ?>)</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
@@ -150,7 +157,7 @@
 	</div>
 	<div id="screen1-trigger" class="spacer s0"></div>	
 </div>
-<div class="screen screen-bread-car-map">
+<div class="screen screen-bread-car-map" id="screen-bread-car">
 	<div id="bread-car-trigger" class="spacer s0"></div>
 	<div class="perspective">
 	<div class="title">
@@ -164,26 +171,30 @@
 		<li class="item pointer item-selected">
 			即時位置
 		</li>
-		<li class="item pointer">
-			禮拜一路線
-		</li>
-		<li class="item pointer">
-			禮拜三路線
-		</li>
-		<li class="item pointer">
-			禮拜日路線
-		</li>
+		<?php
+			foreach ($GLOBALS["breadCarPathArr"] as $path) {
+		?>
+			<li class="item pointer">
+				<?php echo $path->describe ?>
+			</li>
+		<?php
+			}
+		 ?>
 	</ul>
 	<div id="bread-car"></div>
 	<div class="maps">
 		<div class="map" id="map-now"></div>
-		<div class="map" id="map-now2"></div>
-		<div class="map" id="map-now3"></div>
-		<div class="map" id="map-now4"></div>
+		<?php
+			foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
+		?>
+			<div class="map" id="map-now<?php echo $key;?>"></div>
+		<?php
+			}
+		 ?>
 	</div>
 	
 </div>
-<div class="screen screen-product">
+<div class="screen screen-product" id="screen-product">
 	<div id="product-trigger" class="spacer s0"></div>
 	<div id="product-trigger2" class="spacer s0"></div>
 	<div id="product-star-light-trigger" class="spacer s0"></div>
@@ -197,67 +208,35 @@
 	</div>
 	<div class="star-light"></div>
 	<div class="product">
-		<div class="item">
-			<div class="image"><img alt="big_product1.png" src="img/store/browse/big_product1.png"></div>
-			<div class="describe">
-			<h3>烤焦三角麵包<button id="bread-detail">詳情</button></h3>
+		<?php 
+			foreach ($GLOBALS["produtsArr"] as $product) {
+		?>
+					<div class="item">
+						<div class="image"><img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>"></div>
+						<div class="describe">
+						<h3><?php echo $product->name; ?><button id="bread-detail">詳情</button></h3>
 
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product2.png" src="img/store/browse/big_product2.png"></div>
-			<div class="describe">
-			<h3>圖騰麵包</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product3.png" src="img/store/browse/big_product3.png"></div>
-			<div class="describe">
-			<h3>綜合派</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product4.png" src="img/store/browse/big_product4.png"></div>
-			<div class="describe">
-			<h3>香蔥</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
-		<div class="item">
-			<div class="image"><img alt="big_product5.png" src="img/store/browse/big_product5.png"></div>
-			<div class="describe">
-			<h3>黃金牛角</h3>
-			<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p>
-			</div>
-		</div>
+						<p><?php echo $product->description ?></p>
+						</div>
+					</div>
+		<?php
+			}
+		 ?>
 	</div>
 	<div class="product-list">
-		<div class="item pointer col-xs-4">
-			<img alt="small_product1.png" src="img/store/browse/small_product1.png">
-			<p>烤焦三角</p>
-		</div>
-		<div class="item pointer col-xs-4">
-			<img alt="small_product2.png" src="img/store/browse/small_product2.png">
-			<p>圖騰</p>
-		</div>
-		<div class="item pointer col-xs-4">
-			<img alt="small_product3.png" src="img/store/browse/small_product3.png">
-			<p>綜合派</p>
-		</div>
-		<div class="item pointer">
-			<img alt="small_product4.png" src="img/store/browse/small_product4.png">
-			<p>香蔥</p>
-		</div>
-		<div class="item pointer">
-			<img alt="small_product5.png" src="img/store/browse/small_product5.png">
-			<p>黃金牛角</p>
-		</div>
+		<?php 
+			foreach ($GLOBALS["produtsArr"] as $product) {
+		?>
+				<div class="item pointer col-xs-4">
+					<img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>">
+					<p><?php echo $product->name; ?></p>
+				</div>
+		<?php
+			}
+		 ?>
 	</div>
 </div>
-<div class="screen screen-activity">
+<div class="screen screen-activity" id="screen-activity">
 	<div id="activity-trigger" class="spacer s0"></div>
 	<div class="perspective">
 		<div class="title">
@@ -274,12 +253,6 @@
 		<div data-depth="1" class="layer shadow">
 			<div class="normail-move parallax-item egg-shadow shadow"><img alt="activity_egg_shadow.png" src="img/store/browse/activity_egg_shadow.png"></div>
 		</div>
-<!-- 		<div data-depth="0.2" class="layer">
-			<div class="depth-move parallax-item  board"><img alt="activity_board.png" src="img/store/browse/activity_board.png"></div>
-		</div>
-		<div data-depth="0.4" class="layer shadow">
-			<div class="depth-move parallax-item board-shadow"><img alt="activity_board_shadow.png" src="img/store/browse/activity_board_shadow.png"></div>
-		</div> -->
 		<div data-depth="1" class="layer">
 			<div class="normail-move parallax-item  spoon"><img alt="activity_spoon.png" src="img/store/browse/activity_spoon.png"></div>
 		</div>
@@ -295,43 +268,44 @@
 	</div>
 
 	<div class="banner-area">
+		<?php  
+			foreach ($GLOBALS["activityArr"] as $activity) {
+		?>
 		<div class="item">
 			<div class="detail col-lg-6 col-xs-12">
-				<h2>牛角麵包簡單學</h2>
+				<h2><?php echo $activity->title ?></h2>
 				<div class="row">
 					<div class="label col-lg-3 col-xs-4">地點:</div>
-					<div class="content col-lg-9 col-xs-8">桃園市中壢區中央路55號  
-           烘焙王麵包坊</div>
+					<div class="content col-lg-9 col-xs-8"><?php echo $activity->address ?></div>
        			</div>
 				<div class="row">
 				<div class="label col-lg-3 col-xs-4">時間:</div>
-				<div class="content col-lg-9 col-xs-8">105.9.29  下午1:00(預計3小時)</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->time ?></div>
        			</div>
 				<div class="row">
 				<div class="label col-lg-3 col-xs-4">人數限制:</div>
-				<div class="content col-lg-9 col-xs-8">10~12人</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->peopleLimit ?>人</div>
        			</div>
-				<div class="row">
-				<div class="label col-lg-3 col-xs-4">聯絡方式:</div>
-				<div class="content col-lg-9 col-xs-8">(03)3335567</div>
-       			</div>
-				<div class="row">
+       			<div class="row">
 				<div class="label col-lg-3 col-xs-4">材料:</div>
-				<div class="content col-lg-9 col-xs-8">麵包坊提供</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->ingredient ?></div>
        			</div>
 				<div class="row">
 				<div class="label col-lg-3 col-xs-4">費用:</div>
-				<div class="content col-lg-9 col-xs-8">報名費與材料一共1000元(現場收費)</div>
+				<div class="content col-lg-9 col-xs-8"><?php echo $activity->price ?></div>
        			</div>
        			<div class="activity-detail button">活動詳情</div>
 			</div>
 			<div class="banner col-lg-6 col-xs-12">
-				<img alt="activity_banner2.png" src="img/store/browse/activity_banner.png">
+				<img alt="<?php echo $activity->bannerPicName ?>" src="<?php echo $activity->bannerfullPicName ?>">
 			</div>
 		</div>
+		<?php 
+		} 
+		?>
 	</div>
 </div>
-<div class="screen screen-messages">
+<div class="screen screen-messages" id="screen-messages">
 	<div id="messages-trigger" class="spacer s0"></div>
 	<div id="messages-icon-trigger" class="spacer s0"></div>
 	<div class="message-icons">
@@ -352,25 +326,28 @@
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $memID, ".png" ?>"></div>
-			<div class="content col-lg-10"><textarea placeholder="登入後開始留言..." rows="5"></textarea>
+			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
+			<div class="content col-lg-10"><textarea maxlength="250" placeholder="登入後開始留言..." rows="5" id="message-content"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
-	<div class="messages-area">
+	<div class="messages-area" id="messages-area">
 		<?php 
-			foreach ($messageItemArr as $messageItem) {
+			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
 					<div class="message-box" id="MSG123">
-						<div class="mem-pic col-lg-2"><img alt="member_photo_test.png" src="<?php echo GLOBAL_MEM_PIC_PATH, $messageItem[0], ".png" ?>"></div>
+						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $messageItem->memberPicName ?>"></div>
 						<div class="content col-lg-10">
-							<div class="name"><?php echo $messageItem[1] ?><span class="datetime"><?php echo $messageItem[2] ?></span></div>
-							<p><?php echo $messageItem[3] ?></p>
-							<div class="setting-area">
-								<div class="report pointer">
-									<div class="img-icon"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+							<div class="container">
+								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
+								<p><?php echo $messageItem->content ?></p>
+								<div class="setting-area">
+									<div class="report pointer">
+										<div class="img-icon" data-msg-id="<?php echo $messageItem->no ?>"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+								</div>
+								<div class="clear"></div>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -378,10 +355,10 @@
 		<?php
 			}
 		 ?>
-		<div class="more-message button">看更多</div>
+		<div class="more-message button" id="more-message">看更多</div>
 	</div>
 </div>
-<div class="screen screen-other-store">
+<div class="screen screen-other-store" id="screen-other-store">
 	<div id="other-store-trigger" class="spacer s0"></div>
 	<div class="perspective">
 		<div class="title">
@@ -394,13 +371,13 @@
 	<div class="store-list">
 		<div class="top-list">
 			<?php 
-				foreach ($otherStoreItemArr as $otherStore) {
+				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
 			?>
-					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore[0]; ?>">
-						<div class="color-img"><img alt="other_store1.png" src="img/store/browse/other_store1.png"></div>
+					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore->id; ?>">
+						<div class="color-img"><img alt="other_store1.png" src="<?php echo $otherStore->banner1 ?>"></div>
 						<div class="detail">
-							<h3 class="name"><?php echo $otherStore[1]; ?></h3>
-							<p class="describe"><?php echo $otherStore[2]; ?></p>
+							<h3 class="name"><?php echo $otherStore->name; ?></h3>
+							<p class="describe"><?php echo $otherStore->story ?></p>
 						</div>
 					</div>
 			<?php
@@ -410,8 +387,6 @@
 		</div>
 	</div>
 </div>
-
-
 <!-- ======================================================footer 頁尾========================================================= -->
 <?php 
 	require_once("footer.php");
@@ -422,11 +397,37 @@ $(document).ready(function(){
 	initParallax("activity-parallax");
 	allSlickSetting();
 	initAllScrollMagicScene();
-	initBreadCarNowLocationMap("map-now");
-	initBreadCarRouteMap("map-now2","test",{lat: 24.960439, lng: 121.190096});
-	initBreadCarRouteMap("map-now3","test",{lat: 24.960439, lng: 121.190096});
-	initBreadCarRouteMap("map-now4","test",{lat: 24.960439, lng: 121.190096});
+	initBreadCarNowLocationMap("map-now", {lat: 24.960439, lng: 121.190096});
+	<?php
+	foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
+	?>
+		initBreadCarRouteMap("map-now<?php echo $key;?>",<?php echo $path->locationsStr ?>,<?php echo $path->nowLocation?>);
+	<?php
+		}
+	 ?>
 	setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
+	var messageLoadMore = document.getElementById("more-message");
+	//看更多留言事件--------------------
+	messageLoadMore.addEventListener("click", function() {
+		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>);
+	}, false);
+	//寄發留言-------------------------
+	$("#send-message-btn").click(function() {
+		var content = $('#message-content').val();
+		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
+	})
+	//screen1 banner1 bgImg----------------
+	 $('#banner1').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner1;?>")');
+	 $('#banner2').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner2;?>")');
+	 $('#banner3').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner3;?>")');
+	 //評價-----------------------------
+	 $('#review-btn').on('click', function() {
+	 	$('#review-modal').modal({
+		 	fadeDuration: 100
+		 });
+	 })
+	 navigatorDotScroll();
+	 
 });	
 </script>
 </body>

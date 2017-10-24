@@ -15,7 +15,7 @@
 </head>
 <body>
 	<?php 	
-		$memNo=$session["MEM_NO"];
+		$memNo=$_SESSION["memNo"];
 		$memName=$_REQUEST["memName"];
 		$memPhone=$_REQUEST["memPhone"];
 		$memEmail=$_REQUEST["memEmail"];
@@ -24,7 +24,7 @@
 
 		try{
 			require_once("../../pdo/connectPDO.php");
-			$sql="update member  set MEM_REALNAME=:memName, MEM_MAIL=:memEmail, MEM_PHONE=:memPhone where MEM_NO='$memNo'"
+			$sql="update member  set MEM_REALNAME=:memName, MEM_MAIL=:memEmail, MEM_PHONE=:memPhone where MEM_NO='$memNo'";
 			$reset=$connectPDO->prepare($sql);
 			$reset->bindValue(':memName',$memName);
 			$reset->bindValue(':memPhone',$memPhone);

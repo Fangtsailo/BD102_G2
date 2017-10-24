@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import "basic/setting";
-@import "member/myBusiness/store/_FMybusinessStorVar.scss";
-@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
-
+@import "basic.scss"; //scss of header vs footer
 *{
 	margin: 0;
 	padding: 0;
@@ -14,194 +12,825 @@ body{
 	background: -o-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 	background: -moz-radial-gradient(ellipse,$globalBgColor, $globalFtColor);
 	background: radial-gradient(ellipse,$globalBgColor, $globalFtColor);
+	font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
+	font-size: $globalContentSize;
+	font-weight: 300;
+	color: $globalFontColor;
 }
 
-// .coverHeader{
-// 	// width: 100vw;
-// 	height: 100px;
-// }
+h1 {
+	font-size:$globalh1Size;
+	color:$globalTitleColor;
+}
+h2 {
+	font-size: $globalh3Size - 2px;
+}
+h3 {
+	font-size: $globalBtnSize;
+}
+h2, h3 {
+	font-weight: 500;
+}
+address{
+	font-size: $globalContentSize - 2px;
+	line-height: 1.6em;
+	font-style: normal;
+}
+p{
+	padding: 5px 0;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	color: $globalLinkColor;
+}
+img{
+	max-width: 100%;
+	vertical-align: bottom;
+}
+input{
+	outline: none;
+	padding: 2px;
+	font-family: $globalFont;
+	font-weight: lighter;
+}
+//³]©winput placeholder¼Ë¦¡
+input::-webkit-input-placeholder { /* WebKit browsers */
+	   color: $globalUnclickColor;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color: $globalUnclickColor;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color: $globalUnclickColor;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+	   color: $globalUnclickColor;
+}
+input:not(.radio):focus{
+	border: 1px solid rgba(240, 100, 40, 0.3);
+	box-shadow: 0 0 2px $globalStarColor;
+}//³]©winput:focus¼Ë¦¡
 
-// header{
-// 	z-index: 3;
-// }
+.myfollow, .msg, .myentry{
+	transition: box-shadow 1s;
+}//hoverªø³±¼v®É¶¡
 
-// .coverSubtitile{
-// 	height: 60px;
-// 	.subtitle{
-// 		height: 60px;
-// 		width: 100vw;
-// 		position: fixed;
-// 		top: 100px;
-// 		z-index: 3;
-// 		h2{
-// 			line-height: 60px;
-// 			font-size: 20px;
-// 			background-color:$MybusinessStore-subtitle-bgColor;
-// 			padding-left: 20px;
-// 			color:#fff;
-// 		}
-// 	}
-// }
-
-//--------------------------•þ†T_³ÉžéµêéLp2_container˜ÓÊ½-------------------------
-
+//===·|­û±M°Ï¦@¥Îªº³]©w==================================================
 .container{
-	width: 100%;
-	text-align:center;
+	position: relative;
+	margin: 0 auto;
+
+//===°¼ÃäÄæ==================================================
+	.sidebar{
+		width: 210px;
+		height: 310px;
+		position: absolute;
+		top: 100px;
+		left: 0;
+		z-index: 1;
+		li{
+			position: relative;
+			height: 60px;
+			margin-bottom: 2px;
+			a{
+				color: $globalBgColor;
+				width: 100%;
+				height: 60px;
+				line-height: 60px;
+				font-size: $globalBtnSize;
+				padding-left: 16px;
+			    padding-right: 80px;
+				text-align: right;
+				background-color: transparent;
+				border-bottom-right-radius: 30px;
+			    border-top-right-radius: 30px;
+			    background-image: url(../img/memimg/myfollow.svg);
+			    background-repeat: no-repeat;
+			    background-position: right center;
+			    position: absolute;
+			    right: 140px;
+			    transition: right 1.5s,
+			    			background-color 1s;
+			}//sidebar a end
+			a.mycommentsvg{
+				background-image: url(../img/memimg/mycomment.svg);
+			}
+			a.myentrysvg{
+				background-image: url(../img/memimg/myentry.svg);
+			}
+			a.myeditsvg{
+				background-image: url(../img/memimg/myedit.svg);
+			}
+			a.bebosssvg{
+				background-image: url(../img/memimg/beboss.svg);
+			}
+		}//sidebar li end
+		li:hover a{
+			background-color: $globalAccountColor;
+			right: 0px;
+		}
+		li:hover a{
+			background-image: url(../img/memimg/myfollow2.svg);
+		}
+		li:hover a.mycommentsvg{
+			background-image: url(../img/memimg/mycomment2.svg);
+		}
+		li:hover a.myentrysvg{
+			background-image: url(../img/memimg/myentry2.svg);
+		}
+		li:hover a.myeditsvg{
+			background-image: url(../img/memimg/myedit2.svg);
+		}
+		li:hover a.bebosssvg{
+			background-color: $globalBossColor;
+			background-image: url(../img/memimg/beboss2.svg);
+		}
+	}//sidebar end
 	
-	img{
-		width: 100%;
-	}
+	@media screen and (max-width: 767px) {
+		.sidebar{
+			display: none;
+		}
+	}//RWD end
 
-	h1 {
-		font-size:$globalh1Size;
-		color:$globalTitleColor;
-	}
+//===¤º®e¦@¥Îªº³]©w==================================================
 
-	h3 {
-		font-size:$globalh3Size;
-		color:$globalTitleColor;
-	}
-
-	p {
-		font-size:$globalBtnSize;
-		color:$globalFontColor;	
-		font-weight: 300;
-		margin-top: 10px;
-	}
-	ul{
-		list-style-type: none;
-	}
-
-
-	.memBeBoss{
-		max-width: 1000px;
-		width: 69.4444%;
+	.content{
+		max-width: 1200px;
+    	width: 83.3333%;
+    	min-height: 60vh; //¨¾¤îfooter©¹¤W¶]
 		margin: 0 auto;
-		padding-top:124px;
-		// outline: 1px dotted #000;
+		margin-top: 100px;
+		text-align: center;
 
-		.memTitle{
-			width: 48%;
-	    	margin: 0 26%;
-	    	// outline: 1px dotted #ccc;
-	    	@media screen and (max-width: 767px) {
-	    		width: 100%;
-	    		margin: 0 auto;
-    		}
-		}//memTitle end
+		h1 img{
+			height: 100px;
+		}
+
+		.section1000{
+			max-width: 1000px;
+    		width: 83.3333%;
+    		margin: 0 8.33335% 50px;
+    		padding: unset;
+    		float: none;
+		}
+		.section1000:after, .memBeBoss:after{
+			content: '';
+			display: block;
+			clear: both;  
+		}
+
+	input[type="submit"], .upload, label.openlightbox, .btn{
+		width: 145px;
+		height: 50px;
+		border-radius: 25px;
+		text-align: center;
+		font-size: $globalBtnSize;
+		border: 1px solid $globalBtnColor;
+		color: $globalBtnColor;
+		cursor: pointer;
+		line-height: 48px;
+		box-sizing: border-box;
+	}
+	.btn{
+		display: block;
+		margin: 0 auto;
+	}
+	input[type="submit"]{
+		color: $globalBgColor;
+		background: $globalBtnColor;
+		float: none;
+		line-height: 40px;
+		transition: box-shadow 1s;
+		margin: 0 auto;
+	}
+	input[type="file"]{
+		opacity: 0;
+	    width: 130px;
+		cursor: pointer;
+	}
+	.upload:hover, label.openlightbox:hover, .btn:hover{
+		color: $globalBgColor;
+		background: $globalBtnColor;
+		transition: .3s ease;
+	}
+	.upload{
+		position: relative;
+		float: left;
+	}
+	input[type="submit"]:hover{
+		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+	}
+
+	.box{
+		display: none;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		background-color: rgba(50, 50, 50, 0.5);
+		transition: width 0s 1s,
+					height 0s 1s,
+					background-color 1s;
+		.changepsw{
+			width: 330px;
+			height: 390px;
+			background-color: $globalBgColor;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			margin: auto;
+			box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+			p{
+				margin: 0 auto;
+			    width: 290px;
+			    padding: 20px;
+			    text-align: center;
+			}
+			label{
+			    width: 25%;
+			}
+			input{
+			    max-width: 75%;
+			}
+			input[type="submit"]{
+				margin: 0 auto;
+			}
+			h1{
+				width: 100%;
+			    padding: 5% 5% 15%;
+			    font-size: $globalh3Size - 2px;
+			    text-align: justify;
+			    color: $globalBgColor;
+			    position: relative;
+			    box-sizing: border-box;
+			    background: $globalHdColor01;
+			    background: -moz-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
+			    background: -webkit-gradient(linear, left left, left right, color-sleft(0%, $globalHdColor01), color-sleft(100%, $globalHdColor02));
+			    background: -webkit-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
+			    background: -o-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
+			    background: -ms-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
+			    background: linear-gradient(to right, $globalHdColor01 0%, $globalHdColor02 100%);
+			}
+			img{
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				top: 10px;
+			    right: 10px;
+			}
+		}//changepsw end
+	}//¥ú½cbox end
+
+//===§Úªº°lÂÜ==================================================
+	.myfollow{
+		width: 220px;
+		float: left;
+		overflow: hidden;
+		text-align: left;
+		position: relative;
+		background-color: #fff;
+		border-radius: 5px;
+		margin-bottom: 15px;
+
+		a{
+			display: block;
+		}
+		h2, address{
+			margin: 8px;
+		}
+	}//myfollow end
+
+	.myfollow:nth-child(n+2){
+		margin-left: 4%;
+	}
+	.myfollow:hover{
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	}//hoverªø³±¼v
+
+	//¤p«ö¶s¼Ë¦¡
+	.btn50{
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		color: $globalAltColor;
+	}//btn50 end	
 
 		
-		.memsection5{
-	    	width: 50%;
-	    	margin: 0 auto;
-	    	margin-bottom: 80px;
-    		outline: 1px solid #999;
-    		@media screen and (max-width: 767px) {
-    			width: 100%;
-    		}
+	#cancelfollow{
+		float: right;
+		margin: -55px 2px 0 0;
+		&:after{
+		content: '¨ú®ø°lÂÜ';
+		font-size: $globalCardSize;
+		vertical-align: top;
+		}
+	}//¨ú®ø°lÂÜ
 
-    		.memFormHeader{
-    			@media screen and (max-width: 767px) {
-					text-align:left;
-					h1{
-						font-size: $globalh3Size;
+	#mappointer{
+		text-align: center;
+		display: block;
+		&:after{
+		display: block;
+		content: '¦a¹Ï';
+		font-size: $globalCardSize;
+		vertical-align: top;
+		}
+	}//¦a¹Ï
+	
+		
+	.myfollow > ul{
+		height: 16px;
+		   margin-left: 8px;
+		.star{
+			display: inline-block;
+			img{
+			width: 16px;
+			vertical-align: top;
+			}
+		}
+	}//µû»ù¬P¬P¼Æ
+
+	time{
+		color: $globalUnclickColor;
+		font-size: $globalCardSize - 2px;
+		float: right;
+		margin: -20px 10px 0px;
+	}//¤é´Á®É¶¡¤p¦r¼Ë¦¡
+
+	@media screen and (max-width: 767px) {
+		.myfollow{
+			width: 100%;
+			margin-bottom: 30px;
+		}
+		.myfollow:nth-child(n+2){
+			margin-left: 0;
+		}
+		.btn50{
+			padding: 0 10%;
+		}
+		#cancelfollow{
+			position: absolute;
+	    	bottom: 28px;
+	    	right: 10px;
+	    	margin-top: 0px;
+		}
+		time{
+			margin: 5px 10px;
+			float: left;
+		}
+	}//RWD end
+
+//===§Úªº¯d¨¥==================================================
+	.mycomment{
+		/*¥Îº¥¼h³]©wºñ¦â½u¬q*/
+		background-image: linear-gradient(90deg, $globalAccountColor 10px, $globalAccountColor 10px );
+		background-size: 2px 100px;
+		background-position: center top;
+		background-repeat: repeat-y;
+
+		li{
+			width: 50%;
+			position: relative;
+			margin-bottom: 20px;
+			.msg{
+				padding: 10px;
+				min-height: 60px;
+			    text-align: justify;
+			    border-radius: 5px;
+				margin-right: 40px;
+				background-color:#fff;
+				position: relative;
+
+				time{
+					margin: 5px 50px 0 0;
+				}//¯d¨¥®É¶¡
+
+				.storepic{
+					width: 50px;
+					height: 50px;
+					border-radius: 25px;
+					overflow: hidden;
+					position: absolute;
+					right: -65px;
+					top: 8px;
+					img{
+						height: 100%;
+						max-width: none;
 					}
-    			}
-			}//memFormHeader end
+				}//·|­û¤jÀY·Ó
 
-    		.memFormContent{
-				padding-top:10px;
-				outline: 1px solid #999;
-				.memPic{
-					width: 80px;
-					height: 80px;
-					border-radius: 40px;
-					background-image: url("../img/memimg/followimg1.jpg");
-					background-position: center center;
-					background-size: 80px;
-					background-repeat:no-repeat;
+				.reply{
+					padding: 10px;
+				    margin-top: 32px;
+					border-radius: 2px;
+					background-color:#eee;
+					display: none;
+					time{
+						margin-right: 0;
+					}//©±ªø¦^ÂÐ®É¶¡
+				}//©±ªø¦^ÂÐ
+
+				#del{
+					padding: 0%;
+					position: absolute;
+					top: 0px;
+					right: 0;
+					&:after{
+						content: '§R°£';
+						font-size: 12px;
+						vertical-align: top;
+					}
+				}//§R°£¯d¨¥«ö¶s
+			}//msg end
+
+			.msg:before{
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				border-top: 10px solid  transparent;
+				border-bottom: 10px solid  transparent;
+				position: absolute;		
+				top: 20px;	
+			}//msg«e­±ªº¤p¤T¨¤§Î
+
+			.msg:hover {
+			    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+			}//hoverªø³±¼v
+		}//mycomment li end
+
+		li:nth-child(even){
+			left: 50%;
+			.msg{
+				margin-left: 40px;	
+				margin-right: 0;
+			}
+			.storepic{
+				left: -65px;
+			}
+			.msg:before{
+				left: -15px;
+				border-right: 16px solid #fff;
+			}
+		}//°¸¼ÆÄæ°¾²¾³]©w
+
+		li:nth-child(odd) .msg:before{
+			right: -15px;
+			border-left: 16px solid #fff;
+		}//©_¼ÆÄæ°¾²¾³]©w
+	}//mycomment end
+
+	@media screen and (max-width: 767px) {
+		.mycomment{
+			background-position: left top;
+			li{
+				width: 100%;
+				.msg{
+					margin: 0 0 0 40px;
+					time{
+						float: none;
+						margin: 0;
+					}
 				}
-				.memFormInput{
-					width: 100%;
-					height: 60px;
-					margin: 0 auto;
-					color:$globalFontColor;
-					label{
-						display: block;
-						float: left;
-						height: 100%;
-						line-height: 60px;
-						font-weight: 300;
-						span{
-							color:$globalBtnColor;
-						}
-					}//label end
-					
-					input{
-						display: block;
-						float: right;
-						width: 65%;
-						height: 100%;
-						padding-left: 10px;	
-						margin: 0 auto;
-						background-color: transparent;
-						border:none;
-						border-bottom: 1px solid $globalUnclickColor;
-						&::-webkit-input-placeholder{
-							color: $globalUnclickColor;
-							font-weight: 300;
-						}
-					}//input end
-				}//memFormInput end
+				.storepic{
+					left: -65px;
+				}
+			}//li end
 
+			li:nth-child(even){
+				left: 0;
+			}
+			li:nth-child(odd) .msg:before{
+				left: -15px;
+				border-left: none;
+				border-right: 16px solid $globalBgColor;
+			}
+		}//mycomment end
+	}//RWD end
 
-				button{
-					display: block;
-					margin: 50px auto 0 auto;
-    				width: 150px;
-					height: 45px;
-					border-radius:22.5px;
-					text-align: center;
-					line-height: 45px;
-					font-size: $globalBtnSize + 2px;
-					border: 1px solid $globalBtnColor;
-					background-color: transparent;
-					color:$globalBtnColor;
-					transition: .3s ease;
-					font-family: $globalFont;
-					&:hover {
-						background-color: $globalBtnColor;
-						color:$globalBgColor;
-						transition: .3s ease;
-						cursor: pointer;
-					}
-    			}
+//===§Úªº³ø¦W==================================================
+	.myentry{
+		width: 300px;
+		height: 200px;
+		float: left;
+		overflow: hidden;
+		text-align: justify;
+		position: relative;
+		border-radius: 5px;
+		margin-bottom: 15px;
+		h2, address{
+			margin: 8px;
+		}
+		h2 > a{
+			color: $globalBgColor;
+		}
+		h2:hover{
+			text-decoration: underline;
+		}
+		time{
+			margin: 20px 0 0 5px;
+		}
+		.actpic{
+			height: 100%;
+		}
+		.info{
+			width: 280px;
+			height: 180px;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.7);
+			color: $globalBgColor;
+			position: absolute;
+			top: 140px;
+		   	left: 0;
+		   	transition: 1s;
+		   	#cancelentry{
+				float: right;
+				margin: -50px 2px 0 0;
+			}
+			#cancelentry:after{
+				content: '¨ú®ø³ø¦W';
+				color: $globalBgColor;
+				font-size: 12px;
+				vertical-align: top;
+			}
+		}//info end
+	}//myentry end
+	.myentry:nth-child(n+2){
+		margin-left: 5%;
+	}
+	.myentry:hover{
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+	}
+	.myentry:hover .info{
+	   	top: 0;
+	}
 
-				.memInfoList{
-					
-					.memInfoItem{
-						width: 100%;
-						padding: 20px 0;
-    					border-bottom: 1px solid $globalUnclickColor;
-						label{
-							width: 30%;
-							float:left;
-						}
-						.memPic{
-							width: 80px;
-							height: 80px;
-							color: $globalUnclickColor;
-						}
-						.memItem{
-							
-						}
-					}
-				}    			
-    		}//memFormContent end
-    	}//memsection5 end
+	@media screen and (max-width: 767px) {
+		.myentry{
+			width: auto;
+			margin-bottom: 0px;
+			margin-top: 230px;
+			overflow: visible;
+			.info{
+				width: auto;
+				position: unset;
+				background-color: rgba(0,0,0,0.9);
+				margin-top: -400px;
+				.btn50{
+					padding: 0 10%;
+				}
+				#cancelentry{
+					padding: 0;
+					margin: 80px 0;
+				}
+				time{
+					margin: 12px 0 0 8px;
+					float: left;
+				}
+			}
+		}//myentry end
+		.myentry:nth-child(n+2){
+			margin-left: 0px;
+		}
+	}//RWD end
 
+//===½s¿è­Ó¤H¸ê®Æ==================================================
+	form{
+		p, .checkbox{
+			width: 42%;
+			height: 50px;
+			line-height: 50px;
+			margin: 0 29%;
+		}
+		p{
+			margin-bottom: 30px;
+			clear: both;
+		}
+		label, input, strong{
+			text-align: justify;
+			height: 100%;
+			display: inline-block;
+			box-sizing: border-box;
+		}
+		
+		span.note{
+			font-size: 12px;
+			color: $globalBtnColor;
+			margin: -28px 90px;
+			float: left;
+		}
+		label{
+			width: 90px;
+			float: left;
+		}
+		input, strong{
+			max-width: 320px;
+			width: 100%;
+			float: right;
+		}
+		a.upload{
+			float: right;
+		}
+		input{
+			border-radius: 2px;
+			background: transparent;
+			border:none;
+			border-bottom: 1px solid $globalUnclickColor;
+		}
+		.userpic{
+			width: 80px;
+			height: 80px;
+			border-radius: 40px;
+			background-color: $globalBtnColor;
+			margin: 0 auto;
+			margin-bottom: -75px;
+		    margin-right: 520px;
+		    overflow: hidden;
+		    img{
+				height: 100%;
+				max-width: none;
+				width: auto;
+			}
+		}//userpic
+		input[type="file"]{
+			position: absolute;
+			top: 1px;
+		    left: 8px;
+		}//¤W¶Ç·Ó¤ù
+		.checkbox{
+			margin-left: 34%;
+			overflow: hidden;
+			line-height: 50px;
+			padding: 10px 0;
+			.openlightbox{
+				float: none;
+				margin-right: 30px;
+			}
+		}//ÅÜ§ó±K½X¥ú½c«ö¶s
+
+	@media screen and (max-width: 767px) {
+		p{
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+			vertical-align: bottom;
+		}
+		.userpic{
+			width: 150px;
+			height: 150px;
+			border-radius: 75px;
+			margin: 0 auto 30px;
+		}
+		input, .openlightbox, a.upload{
+			margin-bottom: 30px;
+		}
+		strong{
+			margin-bottom: 45px;
+		}
+		span.note{
+			margin: -70px 0px;
+		}
+		.checkbox {
+			width: 100%;
+			height: auto;
+		    margin: 0 auto;
+		    label.openlightbox{
+		    	margin-right: unset;
+		    }
+		}
+		input[type="submit"], .upload{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		label.openlightbox{
+			margin-right: unset;
+		}
+		input[type="submit"]{
+			margin-bottom: 0px;
+		}
+	}//RWD end
+	}//form end
+
+//===¦¨¬°©±ªø_²Ä1­¶==================================================
+	.memBeBoss{
+		max-width: 1200px;
+		width: 120%;
+		margin: 0 auto 50px;
+		.memfigure{
+			width: 265px;
+			float: left;
+			padding: 0 15px;
+			margin-bottom: 50px;
+			figure{
+				width: 64%;
+				padding: 0 18%;
+			}
+			h2{
+				color:$globalTitleColor;
+			}
+		}//memfigure end
 	}//memBeBoss end
+	.memBeBoss1{
+		.radio{
+			width: 4%;
+    		margin: 0 5px;
+    		display: inline-block;
+    		float: none;
+    		vertical-align: top;
+    	}
+    	.radio:last-child{
+			margin-left: 20%;
+		}
+	}//memBeBoss1 end
+
+	.required{
+		color:$globalBtnColor;
+	}
+
+	@media screen and (max-width: 767px) {
+		.memBeBoss{
+			text-align: left;
+			max-width: 1000px;
+    		width: 83.3333%;
+    		margin: 0 8.33335% 50px;
+			.memfigure{
+				width: 100%;
+				padding: 0 0;
+			}
+		}//memBeBoss end
+		.memBeBoss1{
+			h1{
+				font-size: $globalh3Size - 2px;
+			}
+			h1, p{
+				text-align: left;
+			}
+			.radio{
+				width: 8%;
+				margin-left:0%;
+			}
+			.radio:last-child{
+				margin-left: 3%;
+			}
+			a.btn{
+				margin-top: 100px;
+			}
+		}//memBeBoss1 end
+	}//RWD end
+
+//===¦¨¬°©±ªø_²Ä2¡B3­¶==================================================
+	h1.find{
+		margin-bottom: 30px;
+	}
+	div.find{
+		width: 22%;
+		margin: 0 14%;
+	}
+	.action{
+		width: 30%;
+    	margin: 0 10%;
+    	float: right;
+    	img{
+    		margin: 60px 0;
+    	}
+		.openlightbox{
+			width: 100%;
+		    border: none;
+		    margin: 60px 0;
+		}
+	}//action end
+	
+	@media screen and (max-width: 767px) {
+		h1.find{
+			font-size: $globalh3Size - 2px;
+			text-align: left;
+		}
+		div.find, .action{
+			width: 100%;
+			margin: 0 auto;
+		}
+		.action{
+			.openlightbox{
+	    		margin: 30px 0;
+	    	}
+		}
+		h1{
+			font-size: $globalh3Size - 2px;
+		}
+		h1, p{
+			text-align: left;
+		}
+	}//RWD end
+
+
+	}//content end
 }//container end
-
-

@@ -120,7 +120,8 @@ header {
       text-align: center; }
       .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(1) {
         width: 60%;
-        padding-left: 30px; }
+        padding-left: 60px;
+        text-align: right; }
         .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(1) textarea {
           display: block;
           margin-top: 0;
@@ -128,32 +129,40 @@ header {
           margin: auto;
           width: 90%;
           height: 80px;
-          border: 1px solid #ccc;
+          border: 1px solid #805934;
+          border-radius: 4px;
           resize: none;
-          background-color: #FBF8F1; }
+          background-color: #FBF8F1;
+          text-indent: 6px;
+          line-height: 20px;
+          outline: none; }
           .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(1) textarea::-webkit-input-placeholder {
             /* WebKit browsers */
             color: #999;
             font-size: 13px;
-            text-indent: 1px;
             font-family: "Noto Sans CJK TC";
             background-color: #FBF8F1;
             text-indent: 6px;
             line-height: 20px; }
       .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) {
-        width: 30%; }
+        width: 30%;
+        text-align: center; }
         .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button {
           border: none;
-          width: 44px;
-          height: 30px;
+          width: 60px;
+          height: 40px;
           color: #fff;
           background-color: #805934;
           border-radius: 4px;
+          -webkit-transition: .5s;
+          -o-transition: .5s;
           transition: .5s; }
           .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button:hover {
             background-color: #fff;
             color: #805934;
             border: 1px solid #805934;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
             transition: .2s; }
 
 .commit {
@@ -174,6 +183,8 @@ header {
       .commit input:nth-child(1):hover {
         color: #fff;
         background-color: #F06428;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
     .commit input:nth-child(2) {
       margin-left: 10px;
@@ -184,6 +195,8 @@ header {
       .commit input:nth-child(2):hover {
         color: #F06428;
         background-color: #fff;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
 
 @media screen and (max-width: 940px) {
