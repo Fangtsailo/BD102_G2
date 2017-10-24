@@ -28,7 +28,7 @@
 
 
 
-	$sql="select * from activity where AC_NO=:searchIdName or AC_STORE_NUM=:searchIdName ";
+	$sql="select * from report where RE_NO=:searchIdName or SPMSG_NO=:searchIdName ";
 	$search=$connectPDO->prepare($sql);
 	$search->bindValue(':searchIdName',$searchIdName);
 	$search->execute();
@@ -36,11 +36,11 @@
 
       		if($search->rowCount()!==0){
 
-      		header("Location:../../../BActivity.php?searchIdName=$searchIdName");
+      		header("Location:../../../BMessage.php?searchIdName=$searchIdName");
 
       		}else{
 
-      			header("Location:../../../BActivity.php");
+      			header("Location:../../../BMessage.php");
 
       		}
 

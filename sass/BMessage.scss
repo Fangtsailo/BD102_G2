@@ -194,7 +194,7 @@ header{
 					width: 15%;
 				
 					text-align: center;
-					input{
+				input{
 					width: 80px;
 					height: 40px;
 					color:#ffffff;
@@ -202,9 +202,22 @@ header{
 					border-radius: 10px;
 					box-shadow:0 0 0;
 					border: none;
-				}
+					&:hover{
+						border: 1px solid #cc4e4e;
+						color:#cc4e4e;
+						background-color:#fff;
+						transition:0.2s;
+						}
+					}
+
 				.takeMeg{
 					background-color: #00c853;
+					&:hover{
+						border: 1px solid rgba(83, 160, 83, 1);
+						color:rgba(0, 200, 113, 1);
+						background-color:#fff;
+						transition:0.2s;
+					}
 				}
 
 			}

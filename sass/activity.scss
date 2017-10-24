@@ -34,34 +34,34 @@
 	}
 	@keyframes cloud {
 			0% {
-				bottom:-100px;
+				top:400px;
 				opacity: 0;
 				transform: scale(1);
 			}
 			50% {
-				bottom: 0px;
+				top: 200px;
 				opacity: 0.5;
 				transform: scale(1.2);
 			}
 			100% {
-				bottom: 100px;
+				top: 0px;
 				opacity: 0.1;
 				transform: scale(1.5);
 			}
 	}
 		@keyframes cloud2 {
 			0% {
-				bottom: -100px;
+				bottom: 100px;
 				opacity: 0;
 				transform: scale(1);
 			}
 			50% {
-				bottom: 50px;
+				bottom: 250px;
 				opacity: 0.5;
 				transform: scale(1.5);
 			}
 			100% {
-				bottom: 200px;
+				bottom: 400px;
 				opacity: 0.1;
 				transform: scale(1.8);
 			}
@@ -74,8 +74,8 @@
 	.activity_banner{
 		
 		width:100%;
-		height:100%;
-		background: url('../img/acty_background.png') center center ;
+		
+		//background: url('../img/acty_background.png') center center ;
 		background-size:cover;
 		text-align:center;
 		height: 135vh;
@@ -365,10 +365,7 @@
 				bottom: 11%;
     			left: 10%;
 				z-index:-2;
-					.activity_dough_change_js{
-				background:linear-gradient(red, yellow);
-			}
-
+				
 			}
 			h2{
 				position:absolute;
@@ -414,7 +411,7 @@
 				width:100%;
 
 			}
-			.activity_dough_change{
+			.activity_dough_changes{
 				width:250+px;
 				height:200+px;
 				border-radius:50% 45% 50% 50% / 64% 65% 35% 30%;
@@ -445,7 +442,7 @@
 			min-width:240px;
 			height:20vw;
 			min-height:200px;
-			background: url('../img/acty_bread.png');
+			//background: url('../img/acty_bread.png');
 			border-radius:60% 45% 40% 60% / 50% 55% 45% 50%;
 			background-size:cover;
 			animation: dough2 2s linear infinite alternate;
@@ -455,7 +452,7 @@
 		}
 		.activity_dough_2{
 					
-			margin-top:-2%;
+			
 			min-width:280+px;
 			max-width:350+px;
 			width:23%;
@@ -527,21 +524,21 @@
 						
 			}
 			.pic_1{
-				background: url('../img/acty_pic1.png') no-repeat center center;
-				background-size:cover;
+				//background: url('../img/acty_pic1.png') no-repeat center center;
+				//background-size:cover;
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 				animation: dough2 3s linear infinite alternate;	
 			}	
 			.pic_2{
-				background: url('../img/acty_pic2.png') no-repeat center center;
-				background-size:cover;
+				//background: url('../img/acty_pic2.png') no-repeat center center;
+				//background-size:cover;
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 				animation: dough1 3s linear infinite alternate;
 			}
 			.pic_3{
 					
-				background: url('../img/acty_pic3.png') no-repeat center center;
-				background-size:cover;
+				//background: url('../img/acty_pic3.png') no-repeat center center;
+				//background-size:cover;
 
 				border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 				animation: dough2 3s linear infinite alternate;
@@ -594,8 +591,8 @@
 			height:20vw;
 			min-width:320+px;
 			min-height:250+px;
-			background: url('../img/acty_pic4.png') center center;
-			background-size:cover;
+			//background: url('../img/acty_pic4.png') center center;
+			//background-size:cover;
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			animation: dough2 3s linear infinite alternate;
 		}
@@ -604,8 +601,8 @@
 			
 			width:25%;
 			height:20vw;
-			background: url('../img/acty_pic5.png');
-			background-size:cover;
+			//background: url('../img/acty_pic5.png');
+			//background-size:cover;
 			border-radius:60% 40% 40% 60% / 50% 55% 45% 50%;
 			min-width:320+px;
 			min-height:250+px;
@@ -689,6 +686,9 @@
 		.activity_bread{
 			display:block;
 		}
+		.activity_dough_2{
+			margin-top:-2%;
+		}
 		
 }
 
@@ -706,6 +706,7 @@
 			margin: 0 auto 110px;
 		}
 		.activity_dough_2{
+			margin-top:0;
 			float:none;
 			margin: 30px 10px;
 			display:inline-block;		
@@ -774,12 +775,22 @@
 
 
 .activity_application{
-	background:url('../img/acty_background_3.png') center ;
+	position:relative;
 	overflow:hidden;
-	background-size:cover;
 	padding-top:10vw;
 	padding-bottom:2vw;
-
+	&::after{
+		content:'';
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		//background:url('../img/acty_background_3.png') center ;
+		opacity:.6;
+		background-size:cover;
+		z-index:-20;
+	}
 	.activity_final{
 		text-align:center;
 		    max-width: 798px;
@@ -841,17 +852,18 @@
 		}
 	}
 	.globalFormBtns{
-		margin-top:10+px;
+		margin-top:10px;
 	}
+
 	.btnTop{
 		margin-top:10px;
 	}
 	.activity_cloud{
 		position: absolute;
-    	top: -600px;
+    	top: -300px;
     	width: 510px;
-    	height: 700px;
-    	// overflow: hidden;
+    	height: 550px;
+    	overflow: hidden;
     	left: -121px;
 	}
 	.act_cloud{
@@ -860,12 +872,13 @@
 			z-index:1;
 			position:absolute;
 		   left: 121px;
+		   top:-100px;
 		    animation:cloud  12s 5s linear infinite;
 		}
 		&:nth-child(2){
 			z-index:1;
 			position:absolute;
-		   
+		   top:-100px;
 		    right:50px;
 		    animation:cloud  8s 3s linear infinite;
 		}

@@ -265,7 +265,7 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
       //做事情
       triggerElement: ".trigger7",  //觸發點
       
-      offset: 400  ,  //離起始點多遠開始跑動畫
+      offset: 380  ,  //離起始點多遠開始跑動畫
       reverse: true,
     })
     .setTween(tween_9)  //要跑的動畫  ，要先設var

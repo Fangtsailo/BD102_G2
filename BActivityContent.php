@@ -1,3 +1,12 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +44,24 @@ require_once("BackStageHeaderSidebar.php");
 
 
 			<div class="content-table">
+
+
+			<?php 
+					try{
+						require_once("php/pdo/connectPDO.php");
+						$AcNo=$_REQUEST["AcNo"];
+						$sql="select * from activity,store_imformation where Ac_No='$AcNo'";
+						$activity=$connectPDO->query($sql);
+						$prodRow = $activity->fetchObject();
+
+
+
+
+
+
+
+			 ?>
+
 				
 			<table>
 				
@@ -44,74 +71,70 @@ require_once("BackStageHeaderSidebar.php");
 
 				<tr>
 				<th>申請商家</th>
-				<td>烘焙王</td>
+				<td><?php echo $prodRow->SI_NAME; ?></td>
 				</tr>
 
 				<tr>
 				<th>活動主題</th>
-				<td>牛角麵包簡單學</td>
+				<td><?php echo $prodRow->AC_NAME; ?></td>
 				</tr>
 
 				<tr>
 				<th>活動副標</th>
-				<td>烘焙王麵包坊，最受歡迎牛角麵包製作</td>
+				<td><?php echo $prodRow->AC_SECOND_NAME; ?></td>
 				</tr>
 
 
 
 				<tr>
 				<th>活動日期</th>
-				<td>105.9.29 下午1:00(預計3小時)</td>
+				<td><?php echo $prodRow->AC_TIME; ?></td>
 				</tr>
 
 				<tr>
 				<th>店家地址</th>
-				<td>桃園市中壢區中央路55號(烘焙王麵包坊)</td>
+				<td><?php echo $prodRow->AC_ADDRESS; ?></td>
 				</tr>
 
 				<tr>
 				<th>費用</th>
-				<td>報名費與材料一共1000元(現場收費)</td>
+				<td><?php echo $prodRow->AC_PRICE; ?></td>
 				</tr>
 			
 				<tr>
 				<th>人數</th>
-				<td>10~12人</td>
+				<td><?php echo $prodRow->AC_MEM_COUNT; ?>人</td>
 				</tr>
-
 
 				<tr>
 				<th>材料</th>
-				<td>麵包坊提供</td>
+				<td><?php echo $prodRow->AC_INGREDIENT; ?></td>
 				</tr>
 
 				<tr>
 				<th>目的</th>
-				<td>由烘焙王工房，麵包師傅親自講解說明步驟，一步一步帶著你一起做，讓你在家也能輕鬆做出好吃牛角，還有師傅獨門配方秘密大公開!</td>
+				<td><?php echo $prodRow->AC_DETAIL1; ?></td>
 				</tr>
 
 				<tr>
 				<th>詳情</th>
-				<td>牛角麵包如何捲的漂亮?
-					如何讓麵包又鬆又軟?
-					如何挑選好的麵包食材?
-					答案都在這次烘培體驗，讓你一次明瞭</td>
+				<td><?php echo $prodRow->AC_DETAIL2; ?></td>
 				</tr>
 
 				<tr>
 				<th>食材準備</th>
-				<td>麵粉選用 : 頂級美國小麥研磨出的小麥粉，使麵包又鬆軟又綿密 ;
-				雞蛋選用: 安心牧場當天直送新鮮雞蛋，通過認證，保證食品安全 ;
-				奶油選用 : 澳洲頂級奶油，讓麵包烤出香而不膩</td>
+				<td><?php echo $prodRow->AC_DETAIL3; ?></td>
 				</tr>
+
+				
 
 
 
 				<tr>
 					<th>宣傳背景</th>
 					<td>
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
+						<img src="img/store/activity/banner/<?php echo $prodRow->AC_BANNER1; ?>">
+						<img src="img/store/activity/banner/<?php echo $prodRow->AC_BANNER2; ?>">
 					</td>
 				</tr>
 
@@ -119,9 +142,9 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 					<th>活動相關照片</th>
 					<td>
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
+						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC; ?>">
+						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC2; ?>">
+						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC3; ?>">
 					</td>
 				</tr>
 
@@ -129,9 +152,9 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 					<th>成品照片</th>
 					<td>
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
+						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC; ?>">
+						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC2; ?>">
+						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC3; ?>">
 					</td>
 				</tr>
 
@@ -139,35 +162,60 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 				<th>材料照片</th>
 					<td>
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
-						<img src="https://api.fnkr.net/testimg/350x150/00CED1/FFF/?text=img+placeholder">
+						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC; ?>">
+						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC2; ?>">
+						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC3; ?>">
 					</td>
 				</tr>
 
 			
 			</table>	
 
-
-
-			
-
+		
 
 		</div>  <!-- content-table -->
 			
 
-		<div class="commit">		
-			<a href="BActivity.php">
-				<input type="button" name="" value="駁回">
-			</a>
-			<a href="BActivity.php">
-				<input type="button" name="" value="核准">
-			</a>
+		<div class="commit">
+			<form method="get" action="php/backstage/activity/commit.php" id="btnForm">
+
+				
+					<input type="submit" name="AcRebut" value="駁回" class="submit">
+				
+					<input type="submit" name="AcPass" value="核准" class="submit">
+				
+					<input type="hidden" name="AC_NO" value="<?php echo $prodRow->AC_NO ;?>">
+			</form>	
 		</div>
+
+
+			<?php
+					}catch (PDOException $e) {
+					echo "錯誤行號 : ", $e->getLine(), "<br>";
+					echo "錯誤訊息 : ", $e->getMessage(), "<br>";	
+					}
+
+			?>
+		
+
 			
 </div> <!-- tableArea -->
 
-	
+	<!-- <script type="text/javascript">
+					$(document).ready(function(){
+
+
+						$( ".submit" ).click(function() {
+
+							
+
+						  		$( "#btnForm" ).submit();
+
+						  	
+						});
+
+					});	
+				</script>  -->  <!-- 搜索輸入成功就送出 -->
 
 </body>
 </html>

@@ -28,26 +28,36 @@ header {
       background-color: #d7cab4;
       color: #502f0d; }
     .content-table table tr td {
-      padding-left: 20px;
+      padding: 0 20px;
       text-align: left;
       background-color: #fff;
       color: #be9f80;
       width: 80%;
       border-bottom: 1px solid #ccc; }
+      .content-table table tr td img {
+        max-width: 350px; }
     .content-table table tr:nth-child(16) td {
       padding: 10px 0 10px 20px; }
+      .content-table table tr:nth-child(16) td img {
+        max-width: 350px; }
     .content-table table tr:nth-child(13) td {
       padding: 10px 0 10px 20px; }
+      .content-table table tr:nth-child(13) td img {
+        max-width: 350px; }
     .content-table table tr:nth-child(14) td {
       padding: 10px 0 10px 20px; }
+      .content-table table tr:nth-child(14) td img {
+        max-width: 350px; }
     .content-table table tr:nth-child(15) td {
       padding: 10px 0 10px 20px; }
+      .content-table table tr:nth-child(15) td img {
+        max-width: 350px; }
 
 .commit {
   text-align: center;
   padding-top: 50px;
   margin-bottom: 100px; }
-  .commit a:nth-child(1) input {
+  .commit form input:nth-child(1) {
     border: none;
     width: 80px;
     height: 40px;
@@ -56,14 +66,14 @@ header {
     background-color: #cc4e4e;
     color: #fff;
     display: inline-block; }
-    .commit a:nth-child(1) input:hover {
+    .commit form input:nth-child(1):hover {
       border: 1px solid #cc4e4e;
       color: #cc4e4e;
       background-color: #fff;
       -webkit-transition: 0.2s;
       -o-transition: 0.2s;
       transition: 0.2s; }
-  .commit a:nth-child(2) input {
+  .commit form input:nth-child(2) {
     border: none;
     width: 80px;
     height: 40px;
@@ -72,7 +82,7 @@ header {
     background-color: #53c453;
     color: #fff;
     display: inline-block; }
-    .commit a:nth-child(2) input:hover {
+    .commit form input:nth-child(2):hover {
       border: 1px solid #53c453;
       color: #53c453;
       background-color: #fff;

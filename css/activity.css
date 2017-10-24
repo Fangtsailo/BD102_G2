@@ -852,76 +852,74 @@ footer {
 
 @-webkit-keyframes cloud {
   0% {
-    bottom: -100px;
+    top: 400px;
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
   50% {
-    bottom: 0px;
+    top: 200px;
     opacity: 0.5;
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
   100% {
-    bottom: 100px;
+    top: 0px;
     opacity: 0.1;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); } }
 
 @keyframes cloud {
   0% {
-    bottom: -100px;
+    top: 400px;
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
   50% {
-    bottom: 0px;
+    top: 200px;
     opacity: 0.5;
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
   100% {
-    bottom: 100px;
+    top: 0px;
     opacity: 0.1;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); } }
 
 @-webkit-keyframes cloud2 {
   0% {
-    bottom: -100px;
+    bottom: 100px;
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
   50% {
-    bottom: 50px;
+    bottom: 250px;
     opacity: 0.5;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); }
   100% {
-    bottom: 200px;
+    bottom: 400px;
     opacity: 0.1;
     -webkit-transform: scale(1.8);
     transform: scale(1.8); } }
 
 @keyframes cloud2 {
   0% {
-    bottom: -100px;
+    bottom: 100px;
     opacity: 0;
     -webkit-transform: scale(1);
     transform: scale(1); }
   50% {
-    bottom: 50px;
+    bottom: 250px;
     opacity: 0.5;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); }
   100% {
-    bottom: 200px;
+    bottom: 400px;
     opacity: 0.1;
     -webkit-transform: scale(1.8);
     transform: scale(1.8); } }
 
 .activity_banner {
   width: 100%;
-  height: 100%;
-  background: url("../img/acty_background.png") center center;
   background-size: cover;
   text-align: center;
   height: 135vh;
@@ -1207,11 +1205,6 @@ footer {
       bottom: 11%;
       left: 10%;
       z-index: -2; }
-      .activity_content .activity_pot .activity_dough_change .activity_dough_change_js {
-        background: -webkit-gradient(linear, left top, left bottom, from(red), to(yellow));
-        background: -webkit-linear-gradient(red, yellow);
-        background: -o-linear-gradient(red, yellow);
-        background: linear-gradient(red, yellow); }
     .activity_content .activity_pot h2 {
       position: absolute;
       top: 40%;
@@ -1239,7 +1232,7 @@ footer {
       position: relative; }
     .activity_content .activityPot img {
       width: 100%; }
-    .activity_content .activityPot .activity_dough_change {
+    .activity_content .activityPot .activity_dough_changes {
       width: 250px;
       height: 200px;
       border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
@@ -1277,7 +1270,6 @@ footer {
     min-width: 240px;
     height: 20vw;
     min-height: 200px;
-    background: url("../img/acty_bread.png");
     border-radius: 60% 45% 40% 60% / 50% 55% 45% 50%;
     background-size: cover;
     -webkit-animation: dough2 2s linear infinite alternate;
@@ -1285,7 +1277,6 @@ footer {
     position: relative;
     z-index: 2; }
   .activity_content .activity_dough_2 {
-    margin-top: -2%;
     min-width: 280px;
     max-width: 350px;
     width: 23%;
@@ -1381,20 +1372,14 @@ footer {
       height: 20%;
       background-size: cover; }
     .activity_content .activity_dough_4_all .pic_1 {
-      background: url("../img/acty_pic1.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_2 {
-      background: url("../img/acty_pic2.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough1 3s linear infinite alternate;
       animation: dough1 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_3 {
-      background: url("../img/acty_pic3.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
@@ -1439,16 +1424,12 @@ footer {
     height: 20vw;
     min-width: 320px;
     min-height: 250px;
-    background: url("../img/acty_pic4.png") center center;
-    background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate; }
   .activity_content .activity_dough_6 {
     width: 25%;
     height: 20vw;
-    background: url("../img/acty_pic5.png");
-    background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     min-width: 320px;
     min-height: 250px;
@@ -1503,7 +1484,9 @@ footer {
     float: left;
     margin: 15vw 0 5% 10%; }
   .activity_bread {
-    display: block; } }
+    display: block; }
+  .activity_dough_2 {
+    margin-top: -2%; } }
 
 @media screen and (max-width: 960px) {
   .activity_dough_1 {
@@ -1516,6 +1499,7 @@ footer {
     display: block;
     margin: 0 auto 110px; }
   .activity_dough_2 {
+    margin-top: 0;
     float: none;
     margin: 30px 10px;
     display: inline-block; }
@@ -1553,9 +1537,8 @@ footer {
 ================================================
 ===============================================*/
 .activity_application {
-  background: url("../img/acty_background_3.png") center;
+  position: relative;
   overflow: hidden;
-  background-size: cover;
   padding-top: 10vw;
   padding-bottom: 2vw;
   /*===========activity_application   rwd  ====================
@@ -1564,6 +1547,16 @@ footer {
   /*===========activity_application   rwd  end====================
 ================================================
 ===============================================*/ }
+  .activity_application::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-size: cover;
+    z-index: -20; }
   .activity_application .activity_final {
     text-align: center;
     max-width: 798px; }
@@ -1614,19 +1607,22 @@ footer {
     margin-top: 10px; }
   .activity_application .activity_cloud {
     position: absolute;
-    top: -600px;
+    top: -300px;
     width: 510px;
-    height: 700px;
+    height: 550px;
+    overflow: hidden;
     left: -121px; }
   .activity_application .act_cloud:nth-child(1) {
     z-index: 1;
     position: absolute;
     left: 121px;
+    top: -100px;
     -webkit-animation: cloud  12s 5s linear infinite;
     animation: cloud  12s 5s linear infinite; }
   .activity_application .act_cloud:nth-child(2) {
     z-index: 1;
     position: absolute;
+    top: -100px;
     right: 50px;
     -webkit-animation: cloud  8s 3s linear infinite;
     animation: cloud  8s 3s linear infinite; }
