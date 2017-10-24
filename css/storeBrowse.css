@@ -1,4 +1,52 @@
 /*===========================================================*/
+.textLightBox {
+  display: none;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.5); }
+  .textLightBox .content {
+    width: 50%;
+    min-height: 100px;
+    background-color: #fbf8f1;
+    position: relative;
+    top: 50%;
+    margin: auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 5px;
+    color: rgba(128, 89, 52, 0.7);
+    background-color: #fbf8f1; }
+    .textLightBox .content .header {
+      height: 60px;
+      background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
+      background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+      background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+      background: linear-gradient(to right, #805934 0%, #9e693d 100%); }
+    .textLightBox .content p {
+      padding: 10px; }
+    .textLightBox .content .svg {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      cursor: pointer;
+      -webkit-transition: .3s ease-in;
+      -o-transition: .3s ease-in;
+      transition: .3s ease-in; }
+      .textLightBox .content .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+        transition: .3s ease-in; }
+
 .button {
   text-align: center;
   background-color: transparent;
@@ -96,7 +144,8 @@ img {
         text-align: center;
         margin: 0;
         padding: 0 10px;
-        background-color: red; }
+        background-color: #E6B98F;
+        color: #fbf8f1; }
 
 .screen {
   padding-top: 80px;
@@ -162,7 +211,20 @@ img {
           .screen-1 .detail-box .detail .follow .star img {
             width: 100%; }
       .screen-1 .detail-box .detail .trace {
-        float: right; }
+        float: right;
+        margin: 10px 0px;
+        overflow: hidden;
+        width: 100px;
+        position: relative; }
+        .screen-1 .detail-box .detail .trace div {
+          float: left; }
+        .screen-1 .detail-box .detail .trace .icon {
+          width: 50%; }
+        .screen-1 .detail-box .detail .trace .count {
+          width: 50%;
+          font-size: 25px;
+          position: relative;
+          left: -10px; }
       .screen-1 .detail-box .detail .info-box {
         clear: both; }
         .screen-1 .detail-box .detail .info-box .title {
@@ -170,12 +232,6 @@ img {
           font-weight: bold; }
         .screen-1 .detail-box .detail .info-box .content {
           padding: 0; }
-    .screen-1 .detail-box .trace {
-      font-size: 18px;
-      padding-top: 10px;
-      height: 52px; }
-      .screen-1 .detail-box .trace img {
-        width: 30px; }
   .screen-1 .right-describe {
     max-width: 600px;
     width: 50vw;
@@ -681,12 +737,13 @@ img {
     padding-right: 50px;
     margin: auto;
     position: relative;
-    z-index: 0;
-    overflow: hidden; }
+    z-index: 0; }
     .screen-activity .banner-area h2 {
       color: #94664f; }
     .screen-activity .banner-area .item {
-      overflow: hidden; }
+      outline: none;
+      overflow: hidden;
+      padding: 0; }
     .screen-activity .banner-area .row {
       overflow: hidden;
       color: #d38754;
@@ -703,6 +760,29 @@ img {
         padding-left: 0; }
       .screen-activity .banner-area .detail .content {
         color: #663300; }
+    .screen-activity .banner-area .banner .item {
+      height: 25vh;
+      background-size: cover; }
+    .screen-activity .banner-area .slick-next:before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 100px;
+      left: -50px;
+      top: 20px;
+      background-image: url("../img/store/browse/black_right.png");
+      background-repeat: no-repeat;
+      background-size: 100%; }
+    .screen-activity .banner-area .slick-prev:before {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 100px;
+      left: -50px;
+      top: 20px;
+      background-image: url("../img/store/browse/black_left.png");
+      background-repeat: no-repeat;
+      background-size: 100%; }
 
 .screen-other-store {
   padding-bottom: 50px;
@@ -1123,7 +1203,7 @@ img {
   .screen-product .product-list .item {
     width: 25%; }
 
-  #bread-detail {
+  .bread-detail {
     display: none; }
 
   .screen-messages .send-message-area .message-box .mem-pic img, .screen-messages .messages-area .message-box .mem-pic img {
@@ -1276,7 +1356,8 @@ img {
   .screen-product .product {
     height: auto;
     padding-bottom: 0; }
-    .screen-product .product #bread-detail {
+    .screen-product .product .bread-detail {
+      outline: none;
       display: inline-block;
       color: #fbf8f1;
       border: 1px solid #fbf8f1;
@@ -1285,15 +1366,13 @@ img {
       padding: 0px 3px;
       vertical-align: middle;
       margin-left: 5px; }
-    .screen-product .product .image {
+    .screen-product .product .item .image {
       max-width: 250px;
       width: 50%;
       float: none;
       margin: auto;
-      height: auto; }
-      .screen-product .product .image img {
-        position: relative; }
-    .screen-product .product .describe {
+      height: 214px; }
+    .screen-product .product .item .describe {
       background-color: transparent;
       max-width: none;
       -webkit-box-sizing: border-box;
@@ -1301,7 +1380,7 @@ img {
       margin-top: 0px;
       color: #8E8E8E;
       text-align: center; }
-    .screen-product .product p {
+    .screen-product .product .item p {
       display: none; }
 
   .screen-other-store .top-list .item, .screen-other-store .bottom-list .item {

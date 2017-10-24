@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*手機*/
+@media screen and (max-width: 767px) {
+	.col-xs-1{ float: left;	width: 8.333333%; box-sizing: border-box; }
+	.col-xs-2{ float: left;	width: 16.666666%; box-sizing: border-box; }
+	.col-xs-3{ float: left;	width: 25%; box-sizing: border-box; }
+	.col-xs-4{ float: left;	width: 33.333333%; box-sizing: border-box; }
+	.col-xs-5{ float: left;	width: 41.666666%; box-sizing: border-box; }
+	.col-xs-6{ float: left;	width: 50%; box-sizing: border-box; }
+	.col-xs-7{ float: left;	width: 58.333333%; box-sizing: border-box; }
+	.col-xs-8{ float: left;	width: 66.666666%; box-sizing: border-box; }
+	.col-xs-9{ float: left;	width: 75%; box-sizing: border-box; }
+	.col-xs-10{ float: left; width: 83.333333%; box-sizing: border-box; }
+	.col-xs-11{ float: left; width: 91.666666%; box-sizing: border-box; }
+	.col-xs-12{ float: left; width: 100%; box-sizing: border-box; }
+}
+
+
+/*平板以上*/
+@media screen and (min-width: 768px) {
+	.col-sm-1{ float: left;	width: 8.333333%; box-sizing: border-box; }
+	.col-sm-2{ float: left;	width: 16.666666%; box-sizing: border-box; }
+	.col-sm-3{ float: left;	width: 25%; box-sizing: border-box; }
+	.col-sm-4{ float: left;	width: 33.333333%; box-sizing: border-box; }
+	.col-sm-5{ float: left;	width: 41.666666%; box-sizing: border-box; }
+	.col-sm-6{ float: left;	width: 50%; box-sizing: border-box; }
+	.col-sm-7{ float: left;	width: 58.333333%; box-sizing: border-box; }
+	.col-sm-8{ float: left;	width: 66.666666%; box-sizing: border-box; }
+	.col-sm-9{ float: left;	width: 75%; box-sizing: border-box; }
+	.col-sm-10{ float: left; width: 83.333333%; box-sizing: border-box; }
+	.col-sm-11{ float: left; width: 91.666666%; box-sizing: border-box; }
+	.col-sm-12{ float: left; width: 100%; box-sizing: border-box; }
+}
+
+
+/*平板橫向以上*/
+@media screen and (min-width: 992px) {
+	.col-md-1{ float: left;	width: 8.333333%; box-sizing: border-box; }
+	.col-md-2{ float: left;	width: 16.666666%; box-sizing: border-box; }
+	.col-md-3{ float: left;	width: 25%; box-sizing: border-box; }
+	.col-md-4{ float: left;	width: 33.333333%; box-sizing: border-box; }
+	.col-md-5{ float: left;	width: 41.666666%; box-sizing: border-box; }
+	.col-md-6{ float: left;	width: 50%; box-sizing: border-box; }
+	.col-md-7{ float: left;	width: 58.333333%; box-sizing: border-box; }
+	.col-md-8{ float: left;	width: 66.666666%; box-sizing: border-box; }
+	.col-md-9{ float: left;	width: 75%; box-sizing: border-box; }
+	.col-md-10{ float: left; width: 83.333333%; box-sizing: border-box; }
+	.col-md-11{ float: left; width: 91.666666%; box-sizing: border-box; }
+	.col-md-12{ float: left; width: 100%; box-sizing: border-box; }
+}
+
+
+/*桌機以上*/
+@media screen and (min-width: 1200px) {
+	.col-lg-1{ float: left;	width: 8.333333%; box-sizing: border-box; }
+	.col-lg-2{ float: left;	width: 16.666666%; box-sizing: border-box; }
+	.col-lg-3{ float: left;	width: 25%; box-sizing: border-box; }
+	.col-lg-4{ float: left;	width: 33.333333%; box-sizing: border-box; }
+	.col-lg-5{ float: left;	width: 41.666666%; box-sizing: border-box; }
+	.col-lg-6{ float: left;	width: 50%; box-sizing: border-box; }
+	.col-lg-7{ float: left;	width: 58.333333%; box-sizing: border-box; }
+	.col-lg-8{ float: left;	width: 66.666666%; box-sizing: border-box; }
+	.col-lg-9{ float: left;	width: 75%; box-sizing: border-box; }
+	.col-lg-10{ float: left; width: 83.333333%; box-sizing: border-box; }
+	.col-lg-11{ float: left; width: 91.666666%; box-sizing: border-box; }
+	.col-lg-12{ float: left; width: 100%; box-sizing: border-box; }
+}

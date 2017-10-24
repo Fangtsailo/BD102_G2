@@ -2,17 +2,192 @@
 
 *{
 	box-sizing : border-box;
+	// background: #000 !important;
+ //    color: #0f0 !important;
+ //    outline: solid #f00 1px !important;
 }
 
 body {
 	background-image: url("../img/homepage/homepage_bg0.png");
 	background-size: contain;
 	// overflow-x:hidden;
+
 }
 section {
 	width: 100%;
 	height: 100vh;
 }
+
+
+@keyframes shake {
+	0%{transform:scale(1,1);}
+	100%{transform:scale(1.2,1.2);}
+}
+
+
+@keyframes moveDown {
+	0%{ transform:translate(0px,5px); }
+	100%{ transform:translate(0px,0px); }
+}
+//================= 首頁導覽列 ================================
+
+
+
+
+.headerLink {
+	width: 60%;
+	height: 100%;
+	display: inline-block;
+	margin-left: 20px;
+	.burger {
+		display: none;
+	}
+	a {
+		display: block;
+		float: left;
+		width: 130px;
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 40px;
+			padding-top: 10px;
+			display: inline-block;
+			text-align: center;
+			transition:.3s;
+			
+		}
+		span {
+			display: block;
+			width: 100%;
+			font-size: 16px;
+			text-align: center;
+			color:$globalBgColor;
+			font-weight: 300;
+		}
+		&:hover {
+			background-color: $globalTitleColor;
+			transition:.3s;	
+			img{
+				animation:shake .5s ease infinite alternate;
+				transition:.3s;
+				}
+		}
+	}
+}
+.rwd-HeaderLink {
+	display: none;
+}
+.left-burgerBtn {
+	display: none;
+}
+
+@media screen and (max-width:900px){
+	.headerLink {
+		display: none;
+	// 	top: 80px;
+	// 	width: 100vw;
+	// 	height: 80px;
+	// 	margin-left: 0;
+	// 	a {
+	// 		width: 25%;
+
+	// 	}
+	// }
+	}
+	.left-burgerBtn {
+		display: inline-block;
+			width: 20%;
+			height: 40px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 20px;
+			margin: auto;
+		span {
+				display: block;
+				width: 30px;
+				height: 4px;
+				left: 15px;
+				background-color: $globalBgColor;
+				border-radius: 4px;
+				position: absolute;
+				margin: auto;
+				transition: .3s ease;
+				&:nth-of-type(1){
+					top: 5px;
+				}
+				&:nth-of-type(2){
+					top: 16px;
+				}
+				&:nth-of-type(3){
+					top: 27px;
+				}
+			}
+		&.active {
+				// transform: rotate(360deg);
+				transition: .3s ease;
+				span {
+					&:nth-of-type(1){
+						transform: rotate(-45deg);
+						transition: .3s ease;
+						top: 20px;
+					}
+					&:nth-of-type(2){
+						display: none;
+					}
+					&:nth-of-type(3){
+						transform: rotate(45deg);
+						top: 20px;
+						transition: .3s ease;
+					}
+				}
+		}
+	}
+	.rwd-HeaderLink {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		left: -100%;
+		transition:.3s;
+		@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
+		a {
+			width: 50%;
+			height: 30%;
+			display: block;
+			position: relative;
+			float: left;
+			padding: 10%;
+			img {
+				display: block;
+				max-width: 100px;
+				max-height: 100px;
+				width: 10vw;
+				height: 10vw;
+				margin: auto;
+			}
+			span {
+				display: block;
+				width: 100%;
+				color:$globalBgColor;
+				margin-top: 10px;
+				font-size: 5vw;
+			}
+		}
+		&.showMenu {
+			left: 0;
+			transition:.3s;
+		}
+	}
+	
+}
+
+
+
+
+
+
 
 
 //================= 1st搜尋板塊 ================================
@@ -25,7 +200,15 @@ section {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center bottom;
-
+	&.vansBgd {
+		transition:.3s;
+		background-image: url("../img/homepage/homepage_bg7.png");
+		background-position: center top;	
+	}
+	&.orginBgd {
+		transition:.3s;
+		background-image: url("../img/homepage/homepage_bg1.png");	
+	}
 	.itemGrp {
 		width: 70%;
 		height: 100%;
@@ -37,10 +220,14 @@ section {
 			width: 100%;
 			height: 30%;
 			
-			img {
+			#theLogo {
 				width: 100%;
 				height: 100%;
-
+				fill-opacity:0;
+				transition:fill-opacity 1s;
+				&.finished {
+					fill-opacity:1;
+				}
 			}
 		}
 
@@ -93,6 +280,7 @@ section {
 					background-color: rgba(255,255,255,0.9);
 					color:$globalTitleColor;
 					font-size:  $globalContentSize;
+					height: 30px;
 					border-radius:2px;
 					outline:none;
 					border:none;
@@ -139,12 +327,44 @@ section {
 						box-sizing:border-box;
 						background-color:transparent;
 						outline:none;
-
+						color:$globalFontColor;
+						transition: .3s;
+						cursor:pointer;
+						border-radius:2px;
+						&:hover {
+							background-color: $globalBtnColor;
+							color:$globalBgColor;
+							transition: .3s;
+						}
+						&.keyIn{
+							background-color: $globalBtnColor;
+							color:$globalBgColor;
+							transition: .3s;
+						}
 					}
 				}
 			}	
 
 
+		}
+		.sectionBetween {
+			margin-top: 30px;
+			p {
+					color:$globalBgColor;
+					font-size: 20px;
+					text-align: center;
+					text-shadow:0px 0px 30px rgba(0,0,0,1);
+				}
+				img {
+					display: block;
+					width: 60px;
+					height: 60px;
+					margin: 10px auto;
+					animation:moveDown .5s ease infinite alternate;
+					cursor:pointer;
+					background-color: rgba(0,0,0,.7);
+					border-radius: 50%;
+				}
 		}
 
 	}
@@ -155,7 +375,7 @@ section {
 	section.homeSearchBar{
 		.itemGrp {
 			width: 100%;
-			padding:150px 10px 0px 10px;
+			padding:100px 10px 0px 10px;
 			.bigLogo {
 			width: 50%;
 			height: 30%;
@@ -167,18 +387,40 @@ section {
 
 				}
 			}
-			  
+			.sectionBetween {
+				width: 100%;
+				p {
+					color:$globalBgColor;
+					text-align: center;
+					font-size: 16px;
+				}
+				img {
+					display: block;
+					width: 40px;
+					height: 40px;
+					margin: auto;
+				}
+
+			} 
 
 		}
 	}
 }
 @media screen and (max-width:500px){
 	section.homeSearchBar {
+
 		.itemGrp {
+			.descrp {
+				margin-top: 0;
+			}
 			.searchPart {
 				.searchContent {
+					.filter {
+						margin: 0px 5px 10px 0px;
+					}
 					.filterTitle {
 						width: 100%;
+						padding: 0px;
 					}
 					.searchbar {
 						input {
@@ -190,6 +432,7 @@ section {
 					}
 				}
 			}
+
 		}
 	}
 }
@@ -210,25 +453,35 @@ section {
 		font-weight: 500;
 	}
 	.titleGrp {
-			width: 90%;
-			margin: 10px auto;
+			margin: 30px auto;
 			text-align: center;
+
 			img {
+				width: 40px;
+				height: 40px;
 				display:inline-block;
-				vertical-align: top;
+				vertical-align: baseline;
 				margin-right: 10px;
+
 			}
 			.topChartTitle {
 				text-align: center;
-				margin: 10px auto;
+				height: 40px;
 				display:inline-block;
 				color:$globalFontColor;
 				font-size: 2em;
+
 			}
 		}
+	.shopItemGrp {
+		width: 80%;
+		margin: auto;
+	}	
 	.shopItem {
 			width: 100%;
 			height: 70vh;
+			outline:none;
+			cursor:pointer;
 			// padding:5%;
 			// border:1px solid #000;
 			.shopPic {
@@ -282,10 +535,10 @@ section {
 							float: left;
 							height: 100%;
 							img {
-								width:4vh;
-								// height: 1em;
-								height: 100%;
+								width:30px;
+								height: 30px;
 								float: left;
+								margin: 10px 0px; 
 								margin-right: 10px;
 							}
 							span {
@@ -438,9 +691,11 @@ section {
 					left: 10px;
 					right: 0;
 					margin: auto;
+					font-size: 24px;
 					color:$globalBgColor;
 					letter-spacing: 2px;
-					text-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+					text-shadow: 0px 0px 4px rgba(0, 0, 0, .7);
+					text-shadow: 1px 1px 4px rgba(50, 50, 50, 1);
 				}
 				.shopInfo {
 					width: 100%;
@@ -488,7 +743,7 @@ section {
 							span {
 								float: left;
 								color:$globalBgColor;
-								font-size: 16px;
+								font-size: 14px;
 							}
 						}
 					}
@@ -496,7 +751,7 @@ section {
 			}
 			.shopMessage {
 				width: 100%;
-				height: 40%;
+				height: 35%;
 				background-color: $globalFtColor;
 				box-shadow:0px 11px 24px rgba(165,160,148,0.56);
 				border-radius:10px;
@@ -527,10 +782,14 @@ section {
 				}
 				.message {
 					display: block;
+					margin-top: 10px;
 					width: 100%;
 					padding: 10px;
 					background-color: #fff;
 					border-radius:10px;
+					p {
+						font-size: 12px;
+					}
 
 				}
 			}
@@ -559,7 +818,9 @@ section {
 	}
 
 }
-
+.slick-dots {
+	bottom: 0px;
+}
 
 
 
@@ -609,10 +870,9 @@ section.homeCarMap {
 
 
 .homeActivity {
-	background-image: url("../img/homepage/homepage_bg4.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: fixed;
+	width: 100%;
+	height: 100vh;
+	//
 	position: relative;
 	.activityTitle {
 			background-color: rgba(96,56,19,.32);
@@ -645,56 +905,139 @@ section.homeCarMap {
 				margin: auto;
 			}
 	}
-
+	.act-bgd {
+		width: 50%;
+		height: 100%;
+		background-image: url("../img/homepage/homepage_bg4.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 0px 0px;
+		float: left;
+	}
 	.activityItem {
 		width: 50%;
 		height: 100%;
 		float: right;
-		margin-right: 10%;
-		
-		.activityRight {
-			width: 100%;
-			height: 100%;
-			margin: auto;
-			
-		}
-
+		padding:auto 0px;
+		// margin-right: 10%;
+		background-color: rgba(50, 25, 0, 0.7);
 		#chooseActUp {
 				width: 80px;
-				height: 20%;
+				height: 15%;
 				margin: auto;
 				vertical-align: top;
 				position: relative;
 				.svg {
-				width: 100px;
-				height: 100px;
-				margin: auto;
-				fill:$globalBgColor;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
+					width: 50px;
+					height: 50px;
+					margin: auto;
+					fill:$globalBgColor;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					cursor:pointer;
+				}
+		}
+		.actBannerGrp {
+			width: 90%;
+			// height: 70%;
+			margin: auto;
+			.actBanner {
+				height: 500px;
+				padding:15px;
+				// max-width: 700px;
+				background-color: $globalBgColor;
+				overflow:hidden;
+				position: relative;
+				border-radius: 5px;
+					.actDate {
+						width:80px;
+						height: 80px;
+						background-color: $globalAccountColor;
+						border-radius: 50%;
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						.dateItem {
+							width: 50px;
+							height: 50px;
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							margin: auto;
+							span {
+								display: block;
+								width: 100%;
+								font-size: 18px;
+								text-align: center;
+								color:$globalBgColor;
+								&:nth-child(2){
+									font-weight: 600;
+								}
+							}
+						}
+					}
+
+				img {
+						display: block;
+						width: 100%;
+						height: 60%;
+						object-fit:cover;
+					}
+				.actContent {
+					width: 100%;
+					height: 40%;
+					background-color:$globalBgColor;
+					padding: 10px;
+					border-radius: 5px;
+						h3 {
+							text-align: center;
+							color:$globalFontColor;
+							font-size: 24px;
+						}
+						ul {
+							text-align: center;
+							li {
+								width: 90%;
+								display: inline-block;
+								span {
+									float: left;
+									font-size: 16px;
+									font-weight: 600;
+									color:$globalFontColor;
+								}
+								p {
+									float:left;
+									margin-left: 10px;
+									font-size: 16px;
+									text-align: center;
+									color:$globalAltColor;
+									span {
+										color:$globalLinkColor;
+									}
+								}
+							}
+						}
+						a {
+							margin: auto;
+						}
+				}
+				
 			}
 		}
-
-		#actBanner {
-				max-width: 600px;
-				width: 100%;
-				height:60%;
-				margin: auto;
-				background-color: $globalBgColor;
-				border-radius:90% 90% 90% 90%;
-				
-		}
+		
 		#chooseActDown {
 			 	width: 80px;
-			 	height: 20%;
+			 	height: 15%;
 			 	margin: auto;
 			 	position: relative;	
 			 	.svg {
-				width: 100px;
-				height: 100px;
+				width: 50px;
+				height: 50px;
 				margin: auto;
 				fill:$globalBgColor;
 				position: absolute;
@@ -702,6 +1045,7 @@ section.homeCarMap {
 				left: 0;
 				right: 0;
 				bottom: 0;
+				cursor:pointer;
 			} 	
 		}
 	}
@@ -711,16 +1055,20 @@ section.homeCarMap {
 @media screen and (max-width:768px){
 	.homeActivity {
 		.activityTitle {
-			position: static;
+			// position: static;
 			width: 100%;
+			height: 30%;
+			margin: 0;
+			left: 0;
 			img {
 				width: 70px;
 				margin: 10px auto;
 			}
 			h1 {
-				width: 70%;
+				// width: 70%;
 				margin: 10px auto;
-				font-size: $globalh1Size;
+				font-size: 24px;
+				font-weight: 500;
 				text-align: center;
 				color:$globalBgColor;
 				letter-spacing: 1.8px;
@@ -732,39 +1080,199 @@ section.homeCarMap {
 				text-align: center;
 				color:$globalBgColor;
 				padding-top: 10px;
-				font-size: $globalh3Size;
+				font-size: 18px;
 				margin: auto;
 			}
 		}
+		.act-bgd {
+			width: 100%;
+			height: 30%;
+
+		}
 		.activityItem {
 			width: 100%;
-			height: 50%;
-			margin: auto;
-			.svg {
-				position: static;
-
+			height: 70%;
+			margin: 0;
+			#chooseActUp,#chooseActDown {
+				height: 10%;
+			}
+			.actBannerGrp {
+				height: 70%;
+				.actBanner {
+					height: 400px;
+					.actDate {
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						.dateItem {
+							width: 40px;
+							height: 40px;
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							margin: auto;
+							span {
+								display: block;
+								width: 100%;
+								font-size: 12px;
+								text-align: center;
+								color:$globalBgColor;
+								&:nth-child(2){
+									font-weight: 600;
+								}
+							}
+						}
+					}
+					.actContent {
+						h3 {
+							
+							text-align: center;
+							color:$globalFontColor;
+						}
+						ul {
+							text-align: center;
+							li {
+								width: 90%;
+								display: inline-block;
+								span {
+									float: left;
+									font-size: 14px;
+									font-weight: 600;
+									color:$globalFontColor;
+								}
+								p {
+									float:left;
+									margin-left: 10px;
+									font-size: 14px;
+									text-align: center;
+									color:$globalAltColor;
+									span {
+										color:$globalLinkColor;
+									}
+								}
+							}
+						}
+						a {
+							height: 40px;
+							line-height: 40px;
+							font-size: 14px;
+						}
+					}
 				}
-			#chooseActUp {
-					margin: auto;
-					vertical-align: top;
-
 			}
-			#actBanner {
-					max-width: 600px;	
-					width: 70%;
-					height:60vw;
-					background-color: $globalBgColor;
-					border-radius: 10%;
-					margin: auto;
-			}
-			#chooseActDown {
-				 	margin: auto;
-				 	
-			}
+			
 		}
+		
 	}
 }
+@media screen and (max-width:400px){
+	.homeActivity {
+		
+		.activityTitle {
+			height: 30%;
+			padding: 10px;
+			h1 {
+				font-size: 36px;
+				font-weight: 700;
+			}
+			img {
+				width: 40px;
+			}
+			p {
+				width: 90%;
+				font-size: 14px;
+			}
+		}
+		.act-bgd {
+			width: 100%;
+			height: 30%;
+		}
 
+		.activityItem {
+			width: 100%;
+			height: 70%;
+			.actBannerGrp {
+				height: 75%;
+				.actBanner {
+					height: 300px;
+					padding: 0;
+					position: relative;
+					.actDate {
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						.dateItem {
+							position: absolute;
+							top: 0;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							margin: auto;
+							span {
+								display: block;
+								width: 100%;
+								font-size: 12px;
+								text-align: center;
+								color:$globalBgColor;
+								&:nth-child(2){
+									font-weight: 600;
+								}
+							}
+						}
+					}
+					img {
+						height: 50%;
+					}
+					.actContent {
+						height: 30%;
+						h3 {
+							text-align: center;
+							color:$globalFontColor;
+							font-size: 16px;
+						}
+						ul {
+							text-align: center;
+							li {
+								width: 90%;
+								display: inline-block;
+								span {
+									float: left;
+									font-size: 12px;
+									font-weight: 600;
+									color:$globalFontColor;
+								}
+								p {
+									float:left;
+									margin-left: 10px;
+									font-size: 12px;
+									text-align: center;
+									color:$globalAltColor;
+									span {
+										color:$globalLinkColor;
+									}
+								}
+							}
+						}
+						a {
+							height: 40px;
+							line-height: 40px;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
 
 
 
@@ -809,11 +1317,11 @@ section.homeCarMap {
 
 	}
 	.newShopGrp {
-		width: 90%;
+		width: 80%;
 		margin: auto;
 		.newShops {
 			width: 30%;
-			// height: 40vw;
+			// height:80vh;
 			float: left;
 			margin: auto 10px;
 			padding: 10px;
@@ -843,7 +1351,7 @@ section.homeCarMap {
 					h2 {
 						width: 100%;
 						text-align: left;
-						font-size: $globalh2Size;
+						font-size: 20px;
 						color:$globalFontColor;
 						margin:10px 0px;
 					}
@@ -853,29 +1361,32 @@ section.homeCarMap {
 						margin:10px 0px;
 						word-wrap: wrap;
 						color:$globalAltColor;
-						font-size: $globalBtnSize;
+						font-size: 16px;
 					}
 					ul {
 						width: 100%;
-						padding: 10px;
+						height: 30px;
+						text-align: center;
+						display: inline-block;
+						text-align: center;
 						li {
-							// float: right;
+							display: inline-block;
+							margin:auto;
 							margin-right: 10px;
+							height: 30px;
 							img {
-								width: 4vw;
 								display: inline-block;
-								height: 4vw;
 								border:none;
-								max-width: 40px;
-								max-height: 40px;
-
+								width: 30px;
+								height: 30px;
 							}
 							span {
 								display: inline-block;
-								height: 4vw;
-								max-height: 40px;
-								line-height: 4vw;
-								font-size: $globalBtnSize;
+								height: 30px;
+								line-height: 30px;
+								font-size: 14px;
+								vertical-align: top;
+								color:$globalFontColor;
 							}
 						}
 					}
@@ -943,7 +1454,7 @@ section.homeCarMap {
 				.shopContent {
 					width: 100%;
 					p {
-						font-size: $globalContentSize;
+						font-size: 14px;
 					}
 				.exploreBtn {
 					display:block;
@@ -953,7 +1464,7 @@ section.homeCarMap {
 					text-align: center;
 					line-height: 40px;
 					margin: auto;
-					font-size: $globalContentSize;
+					font-size: 16px;
 					border: 1px solid $globalBtnColor;
 					color:$globalBtnColor;
 					background-color: $globalBgColor;
@@ -974,7 +1485,10 @@ section.homeCarMap {
 	}
 }
 
+@media screen and (max-width:400px){
+		
 
+}
 
 
 
@@ -986,43 +1500,54 @@ section.homeCarMap {
 	width: 100%;
 	height: 50vh;
 	clear:both;
-	img {
-		width: 15%;
-		height: 15%;
-		display:block;
-		margin: auto;
 	
-	}
 	p {
 		width: 80%;
 		margin: auto;
 		margin-top: 50px;
 		text-align: center;
 		margin-bottom: 20px;
-		font-size: 4vmin;
+		font-size: 30px;
 		color:$globalFontColor;
 		font-weight: 700;
 	}
-	h3 {
-		width: 100%;
+	.sectionItem {
+		width:30%;
 		margin: auto;
-		margin-bottom: 20px;
-		text-align: center;
-		font-weight: 500;
-		font-size: 3vmin;
-		color: $globalFontColor;
+
+		span {
+			width: 60px;
+			height: 60px;
+			display:block;
+			margin: auto;
+			fill:$globalFontColor;
+		
+		}
+		h3 {
+			margin: auto;
+			margin-bottom: 20px;
+			text-align: center;
+			font-weight: 500;
+			font-size: 18px;
+			color: $globalFontColor;
+		}
 	}
+
 	.addShop {
 		width: 50%;
 		height: 100%;
 		float: left;
 		box-sizing:border-box;
+
+
 	}
 	.contactUs {
 		width: 50%;
 		height: 100%;
 		float: left;
 		box-sizing:border-box;
+
+
 	}
 
 }
@@ -1031,7 +1556,7 @@ section.homeCarMap {
 	.homeContact {
 		height: 70vh;
 		p {
-			font-size: 5vw;
+			font-size: 24px;
 
 		}
 		h3 {
@@ -1039,12 +1564,12 @@ section.homeCarMap {
 		}	
 		.addShop {
 			width: 100%;
-			height: 50%;
+			height: 40%;
 
 		}
 		.contactUs {
 			width: 100%;
-			height: 50%;
+			height: 40%;
 		}
 
 	}
@@ -1052,7 +1577,12 @@ section.homeCarMap {
 	
 
 }
+@media screen and (max-width:400px){
+	.homeContact {
+		height: 100vh;
+	}
 
+}
 #navBtn {
 	width: 10px;
 	position: fixed;
@@ -1069,4 +1599,6 @@ section.homeCarMap {
 		background-color: #ccc;
 	}
 }
+
+
 

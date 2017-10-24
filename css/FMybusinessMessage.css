@@ -1,0 +1,208 @@
+@-webkit-keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+
+@-webkit-keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+
+@keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+
+body {
+  background-color: #fbf8f1; }
+
+.clear {
+  clear: both; }
+
+.coverHeader {
+  height: 100px; }
+
+header {
+  z-index: 3; }
+
+.coverSubtitile {
+  height: 44px; }
+  .coverSubtitile .subtitle {
+    height: 44px;
+    width: 100vw;
+    position: fixed;
+    top: 80px;
+    z-index: 3; }
+    .coverSubtitile .subtitle h2 {
+      line-height: 44px;
+      font-size: 20px;
+      background-color: #4289FF;
+      padding-left: 20px;
+      color: #fff; }
+
+.container {
+  width: 100%; }
+
+.CenterBusiness {
+  margin-top: 260px;
+  width: 70%;
+  margin: auto; }
+  .CenterBusiness .subtitle {
+    height: 100px;
+    text-align: center;
+    padding-top: 20px; }
+    .CenterBusiness .subtitle svg .line {
+      fill: none;
+      stroke-width: 1;
+      stroke: #4b7cbf;
+      -webkit-animation: letterleaf 1s ease forwards;
+      animation: letterleaf 1s ease forwards; }
+      .CenterBusiness .subtitle svg .line .line-g {
+        opacity: 1;
+        stroke-dasharray: 340;
+        stroke-dashoffset: 340;
+        -webkit-animation: letterDraw 3s ease forwards;
+        animation: letterDraw 3s ease forwards; }
+  .CenterBusiness .tableMessageContent {
+    width: 90%;
+    margin-right: 0;
+    margin-left: 0;
+    margin: auto;
+    margin-bottom: 30px;
+    border-spacing: 0px 0px; }
+    .CenterBusiness .tableMessageContent:last-child {
+      margin-bottom: 80px; }
+    .CenterBusiness .tableMessageContent tr:nth-child(1) td {
+      color: #502f0d;
+      height: 100px;
+      text-align: center; }
+      .CenterBusiness .tableMessageContent tr:nth-child(1) td .idName {
+        padding: 8px;
+        text-align: left;
+        font-size: 24px; }
+      .CenterBusiness .tableMessageContent tr:nth-child(1) td .memMsg {
+        padding: 0px 0px 8px 8px;
+        text-align: left;
+        color: #666;
+        font-size: 14px; }
+      .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(1) {
+        width: 10%;
+        padding: 4px; }
+        .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(1) img {
+          max-width: 70px; }
+      .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(2) {
+        width: 60%;
+        background-color: #ffffff;
+        border-radius: 10px; }
+      .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) {
+        width: 30%;
+        background-color: #ffffff;
+        text-align: center;
+        padding-right: 5%;
+        padding-left: 5%;
+        border-radius: 10px; }
+        .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) div img {
+          display: block;
+          margin: auto; }
+        .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) div:nth-child(1) {
+          width: 50%;
+          float: left; }
+        .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) div:nth-child(2) {
+          width: 50%;
+          float: left; }
+        .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) .msgTime {
+          font-size: 12px;
+          padding-top: 8px; }
+    .CenterBusiness .tableMessageContent tr:nth-child(2) td {
+      color: #502f0d;
+      height: 100px;
+      text-align: center; }
+      .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(1) {
+        width: 60%;
+        padding-left: 60px;
+        text-align: right; }
+        .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(1) textarea {
+          display: block;
+          margin-top: 0;
+          margin-bottom: 0;
+          margin: auto;
+          width: 90%;
+          height: 80px;
+          border: 1px solid #805934;
+          border-radius: 4px;
+          resize: none;
+          background-color: #FBF8F1;
+          text-indent: 6px;
+          line-height: 20px;
+          outline: none; }
+          .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(1) textarea::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #999;
+            font-size: 13px;
+            font-family: "Noto Sans CJK TC";
+            background-color: #FBF8F1;
+            text-indent: 6px;
+            line-height: 20px; }
+      .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) {
+        width: 30%;
+        text-align: center; }
+        .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button {
+          border: none;
+          width: 60px;
+          height: 40px;
+          color: #fff;
+          background-color: #805934;
+          border-radius: 4px;
+          transition: .5s; }
+          .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button:hover {
+            background-color: #fff;
+            color: #805934;
+            border: 1px solid #805934;
+            transition: .2s; }
+
+.commit {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 100px; }
+  .commit input {
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px; }
+    .commit input:nth-child(1) {
+      margin-right: 10px;
+      border: 1px solid #F06428;
+      background-color: #fff;
+      color: #F06428;
+      display: inline-block; }
+      .commit input:nth-child(1):hover {
+        color: #fff;
+        background-color: #F06428;
+        transition: 0.5s; }
+    .commit input:nth-child(2) {
+      margin-left: 10px;
+      border: 1px solid #F06428;
+      background-color: #F06428;
+      color: #fff;
+      display: inline-block; }
+      .commit input:nth-child(2):hover {
+        color: #F06428;
+        background-color: #fff;
+        transition: 0.5s; }
+
+@media screen and (max-width: 940px) {
+  .LeftBusiness {
+    display: none; } }
+
+@media screen and (max-width: 940px) {
+  .CenterBusiness {
+    width: 100%; }
+    .CenterBusiness .tableHeader {
+      width: 100%; }
+    .CenterBusiness table {
+      width: 100%; }
+      .CenterBusiness table tr td:nth-child(3) div.msgTime {
+        display: none; }
+      .CenterBusiness table tr td:nth-child(3) div span {
+        display: none; } }

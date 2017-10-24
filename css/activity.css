@@ -26,7 +26,6 @@ li {
     width: 100%;
     padding: 5% 5%;
     position: relative;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #805934;
     /* Old browsers */
@@ -40,7 +39,6 @@ li {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
     /* IE10+ */
-    background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
     background: linear-gradient(to right, #805934 0%, #9e693d 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
@@ -60,7 +58,14 @@ li {
       height: 50px;
       position: absolute;
       right: 10px;
-      top: 10px; }
+      top: 10px;
+      cursor: pointer;
+      transition: .3s ease-in; }
+      .globalForm .globalFormHeader .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        transition: .3s ease-in; }
   .globalForm .globalFormContent {
     width: 100%;
     padding-top: 10px; }
@@ -116,7 +121,14 @@ li {
 .hideUp header.globalHead {
   top: -80px; }
 
-header.globalHead {
+.hideUp_sub {
+  top: 0px  !important;
+  transition: 0.3s ease-in-out !important; }
+
+.hideUp_sub_burger {
+  top: 44px  !important; }
+
+.globalHead {
   width: 100%;
   height: 80px;
   background: rgba(128, 89, 52, 0.9);
@@ -131,26 +143,23 @@ header.globalHead {
   /* Opera 11.10+ */
   background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* IE10+ */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
   background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
   /* IE6-9 */
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   top: 0;
-  -webkit-box-sizing: border-box;
+  box-shadow: 0px 0px 15px 0px #382715;
   box-sizing: border-box;
-  -webkit-transition: top .3s ease-in-out;
-  -o-transition: top .3s ease-in-out;
   transition: top .3s ease-in-out; }
-  header.globalHead .headLoginBox {
+  .globalHead .headLoginBox {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
-    header.globalHead .headLoginBox .globalForm {
+    .globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
       left: 0;
@@ -161,25 +170,27 @@ header.globalHead {
       height: 80vh;
       border: none;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-      header.globalHead .headLoginBox .globalForm .globalFormHeader {
+      .globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
-        header.globalHead .headLoginBox .globalForm .globalFormHeader img {
+        .globalHead .headLoginBox .globalForm .globalFormHeader img {
           width: 160px; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        transition: .3s ease-in; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
         text-align: center;
-        padding: 20px 0px; }
-        header.globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
+        padding: 10px 0px; }
+        .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
           border-bottom: 1px solid #3399ff; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
         width: 100%;
         text-align: center;
         padding: 10px 0px; }
-        header.globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
           display: inline-block;
           width: 50%;
           height: 50px;
@@ -195,7 +206,6 @@ header.globalHead {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
-          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -205,23 +215,23 @@ header.globalHead {
           color: #fbf8f1;
           line-height: 50px;
           font-weight: 300; }
-      header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
+      .globalHead .headLoginBox .globalForm .globalFormContent .registerLink {
         width: 100%;
         padding: 10px 0px;
         text-align: center; }
-        header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
+        .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span {
           text-align: center;
           color: #663300;
           cursor: pointer; }
-          header.globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
+          .globalHead .headLoginBox .globalForm .globalFormContent .registerLink span:hover {
             border-bottom: 1px solid #663300; }
-  header.globalHead .headRegisterBox {
+  .globalHead .headRegisterBox {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
-    header.globalHead .headRegisterBox .globalForm {
+    .globalHead .headRegisterBox .globalForm {
       position: absolute;
       top: 0;
       left: 0;
@@ -232,19 +242,21 @@ header.globalHead {
       height: 80vh;
       border: none;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
-      header.globalHead .headRegisterBox .globalForm .globalFormHeader {
+      .globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
-        header.globalHead .headRegisterBox .globalForm .globalFormHeader img {
+        .globalHead .headRegisterBox .globalForm .globalFormHeader img {
           width: 160px; }
-      header.globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
-      header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        transition: .3s ease-in; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
         padding: 10px 0px; }
-        header.globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
+        .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister a {
           display: inline-block;
           width: 50%;
           height: 50px;
@@ -260,7 +272,6 @@ header.globalHead {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
-          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -270,39 +281,43 @@ header.globalHead {
           color: #fbf8f1;
           line-height: 50px;
           font-weight: 300; }
-      header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
+      .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink {
         width: 100%;
         padding: 10px 0px;
         text-align: center; }
-        header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
+        .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span {
           text-align: center;
           color: #663300;
           cursor: pointer; }
-          header.globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
+          .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
             border-bottom: 1px solid #663300; }
-  header.globalHead .headLogo {
-    width: 10vw;
-    padding: 10px 20px;
-    display: inline-block; }
-    header.globalHead .headLogo img {
-      display: inline-block;
-      height: 65px; }
-  header.globalHead .headerRight {
+  .globalHead .headLogo {
+    height: 100%;
+    margin-left: 20px;
+    float: left; }
+    .globalHead .headLogo a {
+      display: block;
+      width: 100%;
+      height: 80px;
+      padding: 10px 0px; }
+      .globalHead .headLogo a img {
+        display: inline-block;
+        height: 60px; }
+  .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
-    header.globalHead .headerRight .headSearch {
+    .globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      text-align: right; }
-      header.globalHead .headerRight .headSearch span {
+      text-align: right;
+      font-size: 0; }
+      .globalHead .headerRight .headSearch span {
         margin-right: 10px;
         color: #fbf8f1;
         font-weight: 300; }
-      header.globalHead .headerRight .headSearch #headSearch {
+      .globalHead .headerRight .headSearch #headSearch {
         width: 20%;
         height: 30px;
         display: inline-block;
@@ -310,10 +325,9 @@ header.globalHead {
         border: 1px solid #fff;
         padding-left: 10px;
         outline: none;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
-      header.globalHead .headerRight .headSearch select {
+      .globalHead .headerRight .headSearch select {
         display: inline-block;
         width: 80px;
         height: 30px;
@@ -324,9 +338,9 @@ header.globalHead {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box; }
-      header.globalHead .headerRight .headSearch button {
+        box-sizing: border-box;
+        vertical-align: top; }
+      .globalHead .headerRight .headSearch button {
         width: 80px;
         display: inline-block;
         height: 30px;
@@ -336,13 +350,13 @@ header.globalHead {
         margin: 0px 5px;
         font-size: 16px;
         border-radius: 2px; }
-        header.globalHead .headerRight .headSearch button:focus {
+        .globalHead .headerRight .headSearch button:focus {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
-          -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-      header.globalHead .headerRight .headSearch #headSearchSubmit {
+          box-sizing: border-box;
+          vertical-align: top; }
+      .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
         height: 30px;
@@ -353,44 +367,171 @@ header.globalHead {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box; }
-        header.globalHead .headerRight .headSearch #headSearchSubmit:active {
+        box-sizing: border-box;
+        vertical-align: top; }
+        .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-    header.globalHead .headerRight .headAccount {
-      width: 100px;
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@-webkit-keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+
+@keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+    .globalHead .headerRight .shake {
+      -webkit-animation: shake1 .2s linear 3 alternate;
+      animation: shake1 .2s linear 3 alternate; }
+    .globalHead .headerRight .activeStatus {
+      display: block; }
+    .globalHead .headerRight .headAccount {
+      width: 150px;
       float: left; }
-      header.globalHead .headerRight .headAccount #headMemStatus {
-        display: none; }
-        header.globalHead .headerRight .headAccount #headMemStatus #headMemPic {
-          width: 100%;
-          height: 70px; }
-      header.globalHead .headerRight .headAccount #headMemLogin {
+      .globalHead .headerRight .headAccount #headMemStatus {
+        display: none;
         width: 100%;
-        height: 70px; }
-        header.globalHead .headerRight .headAccount #headMemLogin .loginGrp {
+        height: 70px;
+        padding: 5px;
+        box-sizing: border-box; }
+        .globalHead .headerRight .headAccount #headMemStatus div {
+          width: 110px;
+          margin: 10px auto; }
+          .globalHead .headerRight .headAccount #headMemStatus div a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            float: left;
+            border: none; }
+            .globalHead .headerRight .headAccount #headMemStatus div a img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%; }
+              .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
+                transition: .3s; }
+                .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
+                  -webkit-animation: shake .3s ease infinite alternate;
+                  animation: shake .3s ease infinite alternate;
+                  transition: .3s; }
+            .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
+              margin-right: 10px; }
+            .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic {
+              position: relative; }
+              .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 4px solid #fff;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                position: absolute;
+                right: -10px;
+                bottom: 0; }
+      .globalHead .headerRight .headAccount .memStatusBar {
+        position: relative;
+        bottom: 15px;
+        right: 70px;
+        width: 180px;
+        padding: 10px;
+        display: none; }
+        .globalHead .headerRight .headAccount .memStatusBar ul {
+          width: 150px;
+          margin: auto;
+          background-color: #f2ebd4;
+          border-radius: 5px; }
+          .globalHead .headerRight .headAccount .memStatusBar ul:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid #f2ebd4;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            top: 2px;
+            right: 29px; }
+          .globalHead .headerRight .headAccount .memStatusBar ul li {
+            color: #663300;
+            width: 100%;
+            text-align: center; }
+            .globalHead .headerRight .headAccount .memStatusBar ul li:first-child a {
+              padding: 10px 0px;
+              font-weight: 600; }
+            .globalHead .headerRight .headAccount .memStatusBar ul li a {
+              display: block;
+              width: 100%;
+              padding: 5px 0px;
+              text-align: center;
+              font-weight: 500;
+              color: #663300;
+              transition: .3s; }
+              .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
+                background-color: #805934;
+                color: #fbf8f1;
+                transition: .3s; }
+      .globalHead .headerRight .headAccount #headMemLogin {
+        width: 100%;
+        height: 70px;
+        cursor: pointer;
+        display: block; }
+        .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
           width: 50%;
           margin: auto;
           height: 70px;
           position: relative; }
-        header.globalHead .headerRight .headAccount #headMemLogin .loginBtn {
+        .globalHead .headerRight .headAccount #headMemLogin .loginBtn {
           padding: 7px 0px; }
-        header.globalHead .headerRight .headAccount #headMemLogin #loginIcon {
+        .globalHead .headerRight .headAccount #headMemLogin #loginIcon {
           width: 32px;
           height: 32px;
           display: block;
           margin: auto;
           fill: #fbf8f1; }
-        header.globalHead .headerRight .headAccount #headMemLogin #loginTxt {
+        .globalHead .headerRight .headAccount #headMemLogin #loginTxt {
           text-align: center;
           color: #fbf8f1;
           display: block;
           margin: auto;
           font-weight: 300; }
-  header.globalHead .rwd_headerSearch {
+        .globalHead .headerRight .headAccount #headMemLogin:hover {
+          background-color: #996633;
+          transition: .3s; }
+          .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
+            -webkit-animation: shake .5s ease infinite alternate;
+            animation: shake .5s ease infinite alternate;
+            transition: .3s; }
+  .globalHead .rwd_headerSearch {
     display: none; }
-  header.globalHead .burgerMenu {
+  .globalHead .burgerMenu {
+    display: none; }
+  .globalHead .rwdSearchBar {
     display: none; }
 
 #menu {
@@ -424,10 +565,18 @@ footer {
     color: #663300;
     margin-top: 10px; }
 
+@media screen and (max-width: 400px) {
+  footer .globalFtBtn .svg {
+    width: 30px;
+    height: 30px; }
+  footer .globalFtBtn a {
+    font-size: 14px; } }
+
 .clearfix {
   clear: both; }
 
 .globalOkBtn {
+  display: block;
   width: 150px;
   height: 45px;
   border-radius: 22.5px;
@@ -437,18 +586,15 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
-  -webkit-transition: .3s ease;
-  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
-    -webkit-transition: .3s ease;
-    -o-transition: .3s ease;
     transition: .3s ease;
     cursor: pointer; }
 
 .globalCancelBtn {
+  display: block;
   width: 150px;
   height: 45px;
   border-radius: 22.5px;
@@ -457,14 +603,10 @@ footer {
   font-size: 18px;
   border: 1px solid #3399ff;
   color: #3399ff;
-  -webkit-transition: .3s ease;
-  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
     color: #fbf8f1;
-    -webkit-transition: .3s ease;
-    -o-transition: .3s ease;
     transition: .3s ease;
     text-decoration: none;
     cursor: pointer; }
@@ -540,167 +682,124 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
-
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
-
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
-
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
-
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
-
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
-
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
-
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
-
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
-
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
-
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
-
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
-
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-@media screen and (max-width: 900px) {
-  header.globalHead {
+
+@media screen and (max-width: 980px) {
+  .globalHead {
     text-align: center; }
-    header.globalHead .headLogo {
+    .globalHead .headLogo {
       min-width: 150px;
       width: 20vw;
       margin: auto;
       display: inline-block;
-      text-align: center; }
-      header.globalHead .headLogo img {
+      text-align: center;
+      float: none; }
+      .globalHead .headLogo img {
         width: 100%; }
-    header.globalHead .headerRight {
+    .globalHead .headerRight {
       display: none; }
-    header.globalHead .rwd_headerSearch {
+    .globalHead .rwd_headerSearch {
       display: inline-block;
       width: 40px;
       height: 40px;
       position: absolute;
       top: 0px;
-      right: 20px;
+      left: 20px;
       bottom: 0;
       margin: auto; }
-      header.globalHead .rwd_headerSearch .searchIcon {
+      .globalHead .rwd_headerSearch .searchIcon {
         width: 20vw;
         height: 40px;
         fill: #fbf8f1; }
-    header.globalHead .burgerMenu {
+    .globalHead .burgerMenu {
       display: inline-block;
       width: 20%;
       height: 40px;
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 0;
+      right: 20px;
       margin: auto; }
-      header.globalHead .burgerMenu span {
+      .globalHead .burgerMenu span {
+        width: 40px;
+        height: 40px;
         display: block;
-        width: 30px;
-        height: 4px;
-        left: 15px;
-        background-color: #fbf8f1;
-        border-radius: 4px;
-        position: absolute;
         margin: auto;
-        -webkit-transition: .3s ease;
-        -o-transition: .3s ease;
+        fill: #fbf8f1; }
+      .globalHead .burgerMenu.active {
         transition: .3s ease; }
-        header.globalHead .burgerMenu span:nth-of-type(1) {
-          top: 5px; }
-        header.globalHead .burgerMenu span:nth-of-type(2) {
-          top: 16px; }
-        header.globalHead .burgerMenu span:nth-of-type(3) {
-          top: 27px; }
-      header.globalHead .burgerMenu.active {
-        -webkit-transition: .3s ease;
-        -o-transition: .3s ease;
-        transition: .3s ease; }
-        header.globalHead .burgerMenu.active span:nth-of-type(1) {
-          -webkit-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-          -webkit-transition: .3s ease;
-          -o-transition: .3s ease;
-          transition: .3s ease;
-          top: 20px; }
-        header.globalHead .burgerMenu.active span:nth-of-type(2) {
-          display: none; }
-        header.globalHead .burgerMenu.active span:nth-of-type(3) {
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-          top: 20px;
-          -webkit-transition: .3s ease;
-          -o-transition: .3s ease;
-          transition: .3s ease; }
-    header.globalHead #menu {
+    .globalHead #headMemStatus {
+      display: none; }
+    .globalHead #menu {
       display: block;
       position: fixed;
       top: 80px;
+      height: 100vh;
+      width: 100%;
       background-color: rgba(0, 0, 0, 0.5); }
-      header.globalHead #menu.hideMenu {
-        left: -375px;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
+      .globalHead #menu.hideMenu {
+        right: -120%;
         transition: all 0.3s ease; }
-      header.globalHead #menu.show {
-        left: 0;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
+      .globalHead #menu.show {
+        right: 0;
         transition: all 0.3s ease; }
-      header.globalHead #menu ul {
+      .globalHead #menu ul {
         display: block;
-        width: 375px;
-        min-width: 320px;
+        width: 100%;
         background: rgba(128, 89, 52, 0.9);
         /* Old browsers */
         background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
@@ -713,180 +812,495 @@ footer {
         /* Opera 11.10+ */
         background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* IE10+ */
-        background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
         background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
-        header.globalHead #menu ul li {
-          display: block;
-          padding: 10px;
+        .globalHead #menu ul#memLoggedin {
+          display: block; }
+        .globalHead #menu ul li {
           color: #fbf8f1; }
-          header.globalHead #menu ul li.closeMenu span {
+          .globalHead #menu ul li.closeMenu span {
             width: 30px;
             display: block;
             float: right;
             fill: #fbf8f1; }
-          header.globalHead #menu ul li.memPart {
-            height: 60px; }
-            header.globalHead #menu ul li.memPart .memPic {
-              width: 30%;
-              height: 100%;
-              float: left; }
-              header.globalHead #menu ul li.memPart .memPic img {
+          .globalHead #menu ul li.memPart {
+            padding-bottom: 10px;
+            position: relative; }
+            .globalHead #menu ul li.memPart:after {
+              content: '';
+              display: block;
+              width: 50%;
+              height: 1px;
+              background-color: rgba(251, 248, 241, 0.5);
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
+            .globalHead #menu ul li.memPart .memPic {
+              width: 100%;
+              height: 100%; }
+              .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%; }
-            header.globalHead #menu ul li.memPart span {
-              width: 70%;
+            .globalHead #menu ul li.memPart span {
+              width: 100%;
               height: 100%;
               display: block;
-              float: left;
-              margin: auto;
-              line-height: 50px;
               text-align: center; }
-          header.globalHead #menu ul li.listTitle {
-            font-size: 1.2em; }
-          header.globalHead #menu ul li a {
+          .globalHead #menu ul li a {
+            display: block;
+            width: 100%;
+            padding: 10px;
             color: #fbf8f1;
-            font-weight: 400; } }
+            font-weight: 400;
+            transition: .3s; }
+            .globalHead #menu ul li a:focus {
+              background-color: rgba(158, 105, 61, 0.5);
+              transition: .3s; }
+          .globalHead #menu ul li.myActivity {
+            position: relative; }
+            .globalHead #menu ul li.myActivity:after {
+              content: '';
+              display: block;
+              width: 50%;
+              height: 1px;
+              background-color: rgba(251, 248, 241, 0.5);
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
+          .globalHead #menu ul li.needLogIn {
+            height: 80vh; }
+            .globalHead #menu ul li.needLogIn a {
+              width: 50%;
+              margin: auto;
+              padding: 0;
+              background-color: #f06428; }
+    .globalHead .rwdSearchBar {
+      background: rgba(128, 89, 52, 0.9);
+      /* Old browsers */
+      background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left left, left right, color-sleft(0%, rgba(128, 89, 52, 0.9)), color-sleft(100%, rgba(158, 105, 61, 0.9)));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* IE10+ */
+      background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
+      /* IE6-9 */
+      width: 100%;
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      height: 100vh;
+      transition: .3s;
+      display: block; }
+      .globalHead .rwdSearchBar .rwdsearchItem {
+        width: 90%;
+        height: 70%;
+        margin: 10px auto; }
+        .globalHead .rwdSearchBar .rwdsearchItem span {
+          display: block;
+          width: 70%;
+          color: #fbf8f1;
+          padding: 5px;
+          margin: 10px auto;
+          font-size: 20px;
+          background-color: #663300;
+          border-radius: 5px; }
+        .globalHead .rwdSearchBar .rwdsearchItem label {
+          display: inline-block;
+          margin: 0px 5px;
+          margin-bottom: 5px;
+          padding: 10px;
+          color: #fbf8f1;
+          border: 1px solid #fbf8f1;
+          outline: none;
+          border-radius: 5px; }
+          .globalHead .rwdSearchBar .rwdsearchItem label input {
+            display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
+            background-color: #f06428; }
+        .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
+          width: 100%;
+          margin: auto; }
+      .globalHead .rwdSearchBar #rwdHeadSearch {
+        width: 90%;
+        margin: auto;
+        height: 40px;
+        outline: none;
+        border: none;
+        padding-left: 10px; }
+      .globalHead .rwdSearchBar.activeSearch {
+        top: 80px;
+        left: 0;
+        transition: .3s; }
+      .globalHead .rwdSearchBar input[type="submit"] {
+        display: block;
+        width: 50%;
+        height: 40px;
+        background-color: #f2ebd4;
+        margin: 10px auto;
+        color: #663300;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer; } }
+
+@media screen and (max-width: 400px) {
+  .globalHead .headLoginBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headLoginBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      padding: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+      width: 60%; }
+  .globalHead .headRegisterBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headRegisterBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
+      width: 90%; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; } }
+
+#addShopBox {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none; }
+  #addShopBox .globalForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 600px;
+    height: 75%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+    #addShopBox .globalForm .chooseType input {
+      width: 20px;
+      height: 100%; }
+    #addShopBox .globalForm .chooseType .chooseBtn {
+      float: right;
+      margin: 0px 10px; }
+    #addShopBox .globalForm #showAddShopForm {
+      display: none; }
+    #addShopBox .globalForm #visitorForm {
+      display: block;
+      position: relative;
+      padding-top: 50%; }
+      #addShopBox .globalForm #visitorForm a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto; }
+    #addShopBox .globalForm input[type="number"] {
+      width: 20%;
+      height: 100%;
+      float: none;
+      display: inline-block; }
+
+#serviceCenter {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none; }
+  #serviceCenter .globalForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 600px;
+    height: 75%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+
 /* ===================================================*/
 /* ===================================================*/
 /* ===================================================*/
+@-webkit-keyframes dough1 {
+  0% {
+    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+  50% {
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+@keyframes dough1 {
+  0% {
+    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+  50% {
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+
+@-webkit-keyframes dough2 {
+  0% {
+    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+  50% {
+    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+
+@keyframes dough2 {
+  0% {
+    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+  50% {
+    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+
 .activity_banner {
   width: 100%;
   height: 100%;
   background: url("../img/acty_background.png") center center;
   background-size: cover;
-  height: 136vh; }
-  .activity_banner #acty_Dough {
-    min-width: 250px;
-    max-width: 300px;
-    width: 28.5vw;
+  text-align: center;
+  height: 135vh;
+  overflow: hidden; }
+  .activity_banner .activity_Dough {
     margin: auto;
-    padding: 30vh 0 0;
-    position: relative; }
-    .activity_banner #acty_Dough img {
-      width: 100%; }
-    .activity_banner #acty_Dough .acty_h1 {
-      width: 100%;
-      position: absolute;
-      bottom: 18%;
-      left: 0%;
-      text-align: center; }
-      .activity_banner #acty_Dough .acty_h1 h1 {
-        color: #996633;
-        font-size: 28px; }
-  .activity_banner .clear {
-    clear: both; }
+    height: 20%;
+    padding-top: 20%; }
+    .activity_banner .activity_Dough #acty_Dough {
+      -webkit-animation: dough1 2s linear infinite alternate;
+      animation: dough1 2s linear infinite alternate;
+      margin: auto;
+      min-width: 280px;
+      max-width: 320px;
+      width: 25%;
+      height: 250px;
+      position: relative;
+      border-radius: 38% 67% 34% 43% / 60% 67% 34% 43%;
+      background: #FFF8D7;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+      /* IE6-9 */ }
+      .activity_banner .activity_Dough #acty_Dough img {
+        position: absolute;
+        left: 16%;
+        top: 20%; }
+      .activity_banner .activity_Dough #acty_Dough h1 {
+        position: absolute;
+        left: 30%;
+        top: 27%;
+        font-size: 28px;
+        color: #f6921E; }
+      .activity_banner .activity_Dough #acty_Dough .acty_h2 {
+        width: 100%;
+        position: absolute;
+        bottom: 32%;
+        left: 0%;
+        text-align: center; }
+        .activity_banner .activity_Dough #acty_Dough .acty_h2 h2 {
+          color: #996633;
+          font-size: 32px; }
+  .activity_banner .activityDough {
+    margin: auto;
+    height: 20%;
+    padding-top: 30%; }
+    .activity_banner .activityDough #acty_Dough {
+      -webkit-animation: dough1 2s linear infinite alternate;
+      animation: dough1 2s linear infinite alternate;
+      margin: auto;
+      min-width: 250px;
+      max-width: 320px;
+      width: 25%;
+      height: 250px;
+      position: relative;
+      border-radius: 38% 67% 34% 43% / 60% 67% 34% 43%;
+      background: #FFF8D7;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+      /* IE6-9 */ }
+      .activity_banner .activityDough #acty_Dough img {
+        width: 31px;
+        position: absolute;
+        left: 16%;
+        top: 20%; }
+      .activity_banner .activityDough #acty_Dough h1 {
+        position: absolute;
+        left: 30%;
+        top: 27%;
+        font-size: 28px;
+        color: #f6921E; }
+      .activity_banner .activityDough #acty_Dough .acty_h2 {
+        width: 100%;
+        position: absolute;
+        bottom: 32%;
+        left: 0%;
+        text-align: center; }
+        .activity_banner .activityDough #acty_Dough .acty_h2 h2 {
+          color: #996633;
+          font-size: 32px; }
   .activity_banner .activity_board {
-    max-width: 380px;
-    min-width: 320px;
-    position: relative;
-    bottom: 0; }
+    z-index: 0;
+    box-sizing: box-sizing; }
+    .activity_banner .activity_board .acty_board {
+      position: relative;
+      min-width: 335px;
+      max-width: 400px; }
     .activity_banner .activity_board .acty_stirrer {
-      min-width: 76px;
-      max-width: 90px;
+      min-width: 67px;
+      max-width: 85px;
       width: 15vw;
       position: absolute;
-      top: -45%; }
+      top: -40%;
+      left: -5%; }
     .activity_banner .activity_board img {
       width: 100%; }
     .activity_banner .activity_board .acty_board_p {
-      font-size: 18px;
-      padding: 4%;
-      width: 82%;
+      font-size: 20px;
+      box-sizing: border-box;
       position: absolute;
       top: 0;
-      left: 0;
+      padding: 5% 13% 0 5%;
       color: #663300; }
+      .activity_banner .activity_board .acty_board_p p {
+        text-align: left;
+        min-width: 255px;
+        max-width: 310px; }
   .activity_banner .activity_detail {
-    min-width: 250px;
-    padding: 1%;
-    background-color: rgba(246, 146, 30, 0.4);
-    -webkit-box-sizing: border-box;
+    z-index: 4;
+    max-width: 362px;
+    min-width: 340px;
+    width: 37.5%;
+    background-color: rgba(246, 146, 30, 0.6);
     box-sizing: border-box; }
     .activity_banner .activity_detail ul {
       list-style-type: none;
       color: #fbf8f1; }
       .activity_banner .activity_detail ul li {
+        text-align: left;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-        font-size: 16px;
+        font-size: 18px;
         line-height: 25px; }
 
 /* .activity_banner rwd ==========================
 ==================================================
 ================================================== */
-@media all and (min-width: 768px) {
-  .activity_detail {
-    width: 25vw;
-    float: right;
-    margin: 15vw 10vw 8vw 0; } }
-@media all and (max-width: 767px) {
-  .activity_detail {
-    margin: auto;
-    width: 80%;
-    display: block; }
-
-  .acty_stirrer {
-    left: -7%; } }
-@media all and (max-width: 959px) {
+@media screen and (max-width: 960px) {
+  .activity_Dough {
+    display: none; }
   .activity_board {
-    width: 80px;
-    display: block;
-    margin: 20px auto;
-    float: none; }
-    .activity_board .acty_stirrer {
-      left: -10%; }
-
-  .activity_detail {
     margin: auto;
-    float: none; } }
-@media all and (max-width: 767px) {
+    position: relative;
+    width: 90%; }
+  .acty_board {
+    margin: 10% auto; }
   .activity_detail {
-    width: 80%;
-    display: block; }
+    margin: 10% auto;
+    padding: 4%; } }
 
-  .acty_stirrer {
-    left: -7%; } }
-@media all and (min-width: 960px) {
+@media screen and (min-width: 961px) {
+  .activityDough {
+    display: none; } }
+
+@media screen and (min-width: 961px) and (max-width: 1259px) {
   .activity_board {
-    width: 40vw;
-    margin: 15vh 8vw 5vw 10vh;
-    float: left; }
-    .activity_board .acty_stirrer {
-      left: -10%; } }
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    width: 37.5%; }
+  .activity_detail {
+    position: absolute;
+    right: 2%;
+    margin: auto;
+    top: 72%;
+    padding: 1%; } }
+
+@media screen and (min-width: 1260px) {
+  .activity_board {
+    position: absolute;
+    top: 50%;
+    left: 7vw;
+    width: 37.5%; }
+  .activity_detail {
+    position: absolute;
+    right: 12%;
+    margin: auto;
+    top: 72%;
+    padding: 1%; } }
+
 /*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
-@-webkit-keyframes dough1 {
-  0% {
-    border-radius: 30% 30% 40% 60%/50% 55% 45% 50%; }
-  100% {
-    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
-@keyframes dough1 {
-  0% {
-    border-radius: 30% 30% 40% 60%/50% 55% 45% 50%; }
-  100% {
-    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
 .activity_content {
   background: url("../img/acty_background_2.png") center center;
   background-size: cover;
   padding-top: 120px;
-  padding-bottom: 50px;
+  width: 100%;
   position: relative;
-  width: 100%; }
+  overflow: hidden;
+  /*---------------------------------------------------------
+	-------------------RWD麵團-----------------------------------
+	=======================================================
+*/
+  /*---------------------------------------------------------
+	-------------------RWD麵團 END-----------------------------------
+	=======================================================
+*/ }
+  .activity_content .activity_content_inner {
+    width: 100%;
+    margin: auto;
+    text-align: center; }
   .activity_content .activity_pot {
-    position: relative;
-    z-index: 2;
-    max-width: 350px;
-    width: 40%;
-    top: 20vw; }
+    position: absolute;
+    right: 0;
+    left: 0;
+    float: left;
+    margin: auto;
+    z-index: 0;
+    width: 350px;
+    height: 10vw; }
+    .activity_content .activity_pot .acty_out_pot {
+      position: relative; }
     .activity_content .activity_pot img {
       width: 100%; }
     .activity_content .activity_pot .activity_dough_change {
-      width: 75%;
-      height: 100%;
+      width: 280px;
+      height: 250px;
       border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
       background: #FFF8D7;
       /* Old browsers */
@@ -900,44 +1314,93 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
       /* IE10+ */
-      background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
       background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
       /* IE6-9 */
       position: absolute;
-      top: -40%;
-      left: 20%;
+      bottom: 10%;
+      left: 10%;
       z-index: -2; }
+      .activity_content .activity_pot .activity_dough_change .activity_dough_change_js {
+        background: linear-gradient(red, yellow); }
     .activity_content .activity_pot h2 {
       position: absolute;
       top: 40%;
       left: 10%;
       width: 80%;
-      font-size: 2.5vmin;
+      font-size: 22px;
       text-align: center;
       color: #9e693d; }
-  .activity_content .content_1 {
-    width: 50%;
-    float: left; }
-  .activity_content .content_2 {
-    width: 50%;
-    float: left; }
   .activity_content .activity_pot_b {
     position: absolute;
     top: -25%;
     left: 5px;
     z-index: -5; }
-  .activity_content .activity_dough_1 {
-    width: 320px;
-    height: 250px;
-    background: url("../img/acty_bread.png");
-    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    .activity_content .activity_pot_b img {
+      width: 100%; }
+  .activity_content .activityPot {
     position: relative;
-    top: -2vw; }
+    right: 0;
+    left: 0;
+    z-index: 0;
+    max-width: 368px;
+    width: 300px;
+    height: 10vw; }
+    .activity_content .activityPot .acty_out_pot {
+      position: relative; }
+    .activity_content .activityPot img {
+      width: 100%; }
+    .activity_content .activityPot .activity_dough_change {
+      width: 250px;
+      height: 200px;
+      border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
+      background: #FFF8D7;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+      /* IE6-9 */
+      position: absolute;
+      bottom: 10%;
+      left: 8%;
+      z-index: -2; }
+    .activity_content .activityPot h2 {
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      width: 80%;
+      font-size: 22px;
+      text-align: center;
+      color: #9e693d; }
+  .activity_content .activity_dough_1 {
+    width: 25%;
+    min-width: 240px;
+    height: 20vw;
+    min-height: 200px;
+    background: url("../img/acty_bread.png");
+    border-radius: 60% 45% 40% 60% / 50% 55% 45% 50%;
+    background-size: cover;
+    -webkit-animation: dough2 2s linear infinite alternate;
+    animation: dough2 2s linear infinite alternate;
+    position: relative;
+    z-index: 2; }
   .activity_content .activity_dough_2 {
-    width: 250px;
-    height: 230px;
+    margin-top: -2;
+    min-width: 280px;
+    max-width: 350px;
+    width: 23%;
+    height: 260px;
     background: #FFF8D7;
     /* Old browsers */
     background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
@@ -950,30 +1413,39 @@ footer {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
     /* IE10+ */
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
     background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
     /* IE6-9 */
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
-    -webkit-animation: dough1 2s linear infinite alternate;
-    animation: dough1 2s linear infinite alternate;
-    -webkit-transition: 1s;
-    -o-transition: 1s;
+    -webkit-animation: dough2 3s linear infinite alternate;
+    animation: dough2 3s linear infinite alternate;
     transition: 1s;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 30px; }
+    padding: 35px; }
     .activity_content .activity_dough_2 p {
+      text-align: left;
+      padding-bottom: 10px;
       color: #996633;
       font-size: 18px;
       margin-top: 30px;
       text-shadow: 1px 1px 1px rgba(90, 88, 86, 0.2); }
+    .activity_content .activity_dough_2 .act_btn {
+      text-align: center;
+      margin: auto; }
+      .activity_content .activity_dough_2 .act_btn a {
+        border-radius: 15px;
+        background-color: #f06428;
+        color: #fbf8f1;
+        padding: 2px 50px; }
+      .activity_content .activity_dough_2 .act_btn:hover a {
+        background-color: #fbf8f1;
+        color: #f06428; }
   .activity_content .activity_dough_3 {
-    width: 350px;
+    width: 370px;
     height: 300px;
     padding: 60px 35px;
-    -webkit-box-sizing: border-box;
+    z-index: 2;
     box-sizing: border-box;
     background: #FFF8D7;
     /* Old browsers */
@@ -987,124 +1459,174 @@ footer {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
     /* IE10+ */
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
     background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
     /* IE6-9 */
-    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    -webkit-animation: dough2 3s linear infinite alternate;
+    animation: dough2 3s linear infinite alternate; }
+    .activity_content .activity_dough_3 h2 {
+      color: #9e693d;
+      text-align: center;
+      line-height: 20px; }
     .activity_content .activity_dough_3 p {
+      text-align: left;
+      font-size: 18px;
       color: #5a5856;
-      margin: 30px auto;
+      margin: 10px auto;
       vertical-align: middle; }
   .activity_content .activity_dough_4_all {
+    z-index: 2;
     text-align: center; }
     .activity_content .activity_dough_4_all .activity_dough_4 {
-      width: 150px;
-      height: 130px;
+      min-width: 180px;
+      width: 30%;
+      min-height: 200px;
+      height: 20%;
       background-size: cover; }
     .activity_content .activity_dough_4_all .pic_1 {
       background: url("../img/acty_pic1.png") no-repeat center center;
       background-size: cover;
-      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+      -webkit-animation: dough2 3s linear infinite alternate;
+      animation: dough2 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_2 {
       background: url("../img/acty_pic2.png") no-repeat center center;
       background-size: cover;
-      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+      -webkit-animation: dough1 3s linear infinite alternate;
+      animation: dough1 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_3 {
       background: url("../img/acty_pic3.png") no-repeat center center;
       background-size: cover;
-      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+      border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+      -webkit-animation: dough2 3s linear infinite alternate;
+      animation: dough2 3s linear infinite alternate; }
+  .activity_content .section_5 {
+    width: 100%;
+    height: 50%; }
+  .activity_content .bake_bread {
+    position: relative;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10; }
   .activity_content .activity_dough_5 {
-    width: 320px;
-    height: 250px;
-    background: url("../img/acty_pic4.png");
-    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+    width: 30%;
+    height: 20vw;
+    min-width: 320px;
+    min-height: 250px;
+    background: url("../img/acty_pic4.png") center center;
+    background-size: cover;
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    -webkit-animation: dough2 3s linear infinite alternate;
+    animation: dough2 3s linear infinite alternate; }
   .activity_content .activity_dough_6 {
-    margin: 3vw auto;
-    width: 320px;
-    height: 250px;
+    width: 25%;
+    height: 20vw;
     background: url("../img/acty_pic5.png");
-    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%; }
+    background-size: cover;
+    border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
+    min-width: 320px;
+    min-height: 250px;
+    -webkit-animation: dough1 3s linear infinite alternate;
+    animation: dough1 3s linear infinite alternate; }
 
 /*===========content   rwd ====================
 ================================================
 ===============================================*/
-@media screen and (max-width: 767px) {
-  .activity_pot {
-    display: block;
-    margin: 5vw auto; }
-
-  .activity_dough_1 {
-    margin: auto;
-    display: block;
-    right: 0; }
-
+@media screen and (min-width: 1201px) {
   .activity_dough_2 {
-    margin: 10vw auto;
-    float: none; }
+    float: left;
+    margin-left: 13%; }
+  .activity_dough_3 {
+    float: right;
+    margin: 5% 10% 5% 0; }
+  .activity_dough_4_all {
+    float: left;
+    margin-top: -15%;
+    margin-left: 10%; } }
 
+@media screen and (min-width: 961px) and (max-width: 1200px) {
+  .activity_dough_2 {
+    margin-left: 5%;
+    float: left; }
+  .activity_dough_3 {
+    float: right;
+    margin: 5% 0% 5% 0; }
+  .activity_dough_4_all {
+    float: left;
+    margin-top: -15%;
+    margin-left: 5%; } }
+
+@media screen and (min-width: 961px) {
+  .activity_dough_1 {
+    top: -2vw;
+    margin-right: 8%;
+    float: right; }
+  .activityPot {
+    display: none; }
+  .pic_1 {
+    margin-left: 50%; }
+  .pic_3 {
+    margin-left: 90%;
+    margin-top: -50%; }
+  .bake_bread {
+    background: radial-gradient(rgba(241, 94, 36, 0.7), rgba(255, 165, 0, 0)); }
+  .activity_dough_5 {
+    float: right;
+    margin: 3vw 5% 0 0; }
+  .activity_dough_6 {
+    float: left;
+    margin: 15vw 0 10% 10%; }
+  .activity_bread {
+    display: block; } }
+
+@media screen and (max-width: 960px) {
+  .activity_dough_1 {
+    float: none;
+    margin: 10vw 10px 0;
+    display: inline-block; }
+  .activity_pot {
+    display: none; }
+  .activityPot {
+    display: block;
+    margin: 0 auto 110px; }
+  .activity_dough_2 {
+    float: none;
+    margin: 30px 10px;
+    display: inline-block; }
+  .rwd_none {
+    display: none; }
+  .section_5 {
+    text-align: center; }
   .activity_dough_3 {
     float: none;
-    margin: auto; }
-
-  .pic_3 {
-    margin: 10px auto; }
-
+    margin: 100px  0;
+    text-align: center;
+    display: inline-block; }
   .activity_dough_4_all {
-    margin: auto;
-    width: 100%; }
-
-  .activity_dough_4 {
+    float: none;
+    margin: 20px auto; }
+  .pic_1, .pic_2, .pic_3 {
+    margin: 2px;
+    display: inline-block; }
+  .bake_bread {
+    background-color: transparent; }
+  .activity_dough_5 {
     float: none;
     display: inline-block;
-    margin: 2% 3%; }
-
-  .activity_dough_5 {
-    float: none;
-    margin: auto; }
-
-  .activity_dough_5 {
-    float: none; } }
-@media all and (min-width: 768px) {
-  .activity_pot {
-    margin-left: 12vw;
-    float: left; }
-
-  .activity_dough_1 {
-    margin: 3vw 30vw 2vw 0vw;
-    float: right;
-    right: -5vw; }
-
-  .activity_dough_2 {
-    float: right;
-    margin-bottom: 10px;
-    margin-right: 10vw; }
-
-  .activity_dough_3 {
-    float: right;
-    margin-top: 5vw;
-    margin-right: 20vw; }
-
-  .pic_3 {
-    margin: 0 3%; }
-
-  .pic_2 {
-    margin: 5% 0; }
-
-  .activity_dough_4_all {
-    width: 85%;
-    margin-right: 8vw; }
-
-  .activity_dough_4 {
-    float: right; }
-
-  .activity_dough_5 {
-    float: right;
-    margin: 15vw 8vw 0vw 0vw; }
-
+    margin: 3vw 0 0; }
   .activity_dough_6 {
-    float: right; } }
+    float: none;
+    display: inline-block;
+    margin: 3vw 0 10%; }
+  .activity_bread {
+    display: none; } }
+
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/
@@ -1112,30 +1634,87 @@ footer {
   background: url("../img/acty_background_3.png") center;
   overflow: hidden;
   background-size: cover;
-  padding: 8vw 5vw 5vw; }
+  padding-top: 10vw;
+  padding-bottom: 2vw;
+  /*===========activity_application   rwd  end====================
+================================================
+===============================================*/
+  /*===========activity_application   rwd  end====================
+================================================
+===============================================*/ }
   .activity_application .activity_final {
-    width: 50%;
-    float: left;
-    text-align: center; }
+    text-align: center;
+    max-width: 798px; }
     .activity_application .activity_final .activity_fin_pic {
-      float: right;
+      text-align: center;
       background-color: rgba(246, 146, 30, 0.8);
-      width: 200px;
-      height: 10vw;
-      max-height: 165px;
+      height: 13.75vw;
+      min-height: 150px;
+      max-height: 210px;
       overflow: hidden; }
+      .activity_application .activity_final .activity_fin_pic p {
+        position: relative;
+        top: 45%;
+        color: #fbf8f1;
+        font-size: 20px; }
       .activity_application .activity_final .activity_fin_pic img {
         width: 100%;
         vertical-align: top; }
-    .activity_application .activity_final .activity_bread {
-      margin: 90px auto 0;
-      width: 200px; }
-      .activity_application .activity_final .activity_bread img {
-        width: 100%; }
+    .activity_application .activity_final .fin_1 {
+      background: url("../img/acty_bread1.jpg");
+      background-size: cover; }
+    .activity_application .activity_final .fin_2 {
+      background: url("../img/acty_bread2.jpg");
+      background-size: cover; }
+    .activity_application .activity_final .fin_3 {
+      background: url("../img/acty_bread3.jpg");
+      background-size: cover; }
+  .activity_application .activity_bread {
+    margin: auto;
+    width: 300px; }
+    .activity_application .activity_bread img {
+      width: 100%; }
+  .activity_application .activity_bread2 {
+    margin: auto;
+    width: 200px; }
+    .activity_application .activity_bread2 img {
+      width: 100%; }
   .activity_application .activity_form {
-    float: left;
+    margin: 0 auto 60px;
     width: 50%; }
     .activity_application .activity_form .globalForm {
-      width: 85%; }
-
-
+      width: 70%; }
+  .activity_application .globalFormBtns {
+    margin-top: 10px; }
+  .activity_application .btnTop {
+    margin-top: 10px; }
+  @media screen and (max-width: 960px) {
+    .activity_application .activity_final {
+      width: 90%;
+      float: none;
+      margin: 20px auto 0;
+      font-size: 0; }
+    .activity_application .activity_form {
+      width: 100%;
+      float: none;
+      margin-top: 50px; }
+    .activity_application .activity_fin_pic {
+      float: none;
+      display: inline-block;
+      width: 155px; }
+    .activity_application .activity_form .globalForm {
+      width: 80%; }
+    .activity_application .activity_bread2 {
+      display: block; } }
+  @media screen and (min-width: 961px) {
+    .activity_application .activity_final {
+      width: 50%;
+      float: left; }
+    .activity_application .activity_form {
+      width: 50%;
+      float: left; }
+    .activity_application .activity_fin_pic {
+      float: right;
+      width: 200px; }
+    .activity_application .activity_bread2 {
+      display: none; } }

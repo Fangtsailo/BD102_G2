@@ -1,3 +1,45 @@
+//按下追蹤icon動作
+function triggerFollow(memNum, storeId) {
+	if (memNum != -1) {
+		if (!isThisMemFollowThisStore) {
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange=function (){
+		    if( xhr.readyState == 4){
+		       if( xhr.status == 200 ){
+		       	//改變 icon 的圖
+		       	$('#follow-icon').attr('src', 'img/icon/follow3.svg');
+		       	$('#trace-btn .count').text("("+xhr.responseText+")");
+		       	isThisMemFollowThisStore = true;
+		       }else{
+		          console.log( xhr.status );
+		       }
+		   }
+		  }
+		  
+		  var url = "php/store/browse/ajax/AjaxTriggerFollow.php?storeId=" + storeId + "&memNum=" + memNum + "&mode=follow";
+		  xhr.open("Get", url, true);
+		  xhr.send( null );		
+		} else {
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange=function (){
+		    if( xhr.readyState == 4){
+		       if( xhr.status == 200 ){
+		       	//取消 follow
+		       	$('#follow-icon').attr('src', 'img/icon/follow2.svg');
+		       	$('#trace-btn .count').text("("+xhr.responseText+")");
+		       	isThisMemFollowThisStore = false;
+		       }else{
+		          console.log( xhr.status );
+		       }
+		   }
+		  }
+		  
+		  var url = "php/store/browse/ajax/AjaxTriggerFollow.php?storeId=" + storeId + "&memNum=" + memNum + "&mode=cancel";
+		  xhr.open("Get", url, true);
+		  xhr.send( null );			
+		}
+	}
+}
 //dot scroll 
 function navigatorDotScroll() {
 	$('.navigator a').click(function(){
@@ -11,13 +53,14 @@ function navigatorDotScroll() {
 
 //留言
 function sendMessage(storeId, memId, content) {
+	if (memId != -1) {
 	  var xhr = new XMLHttpRequest();
 	  xhr.onreadystatechange=function (){
 	    if( xhr.readyState == 4){
 	       if( xhr.status == 200 ){
 	       		location.reload();
 	       }else{
-	          consle.log( xhr.status );
+	          console.log( xhr.status );
 	       }
 	   }
 	  }
@@ -25,6 +68,7 @@ function sendMessage(storeId, memId, content) {
 	  var url = "php/store/browse/ajax/AjaxSendMessage.php?storeId=" + storeId + "&memId=" + memId + "&content=" + content;
 	  xhr.open("Get", url, true);
 	  xhr.send( null );	
+	}
 }
 
 //抓取更多留言
@@ -67,14 +111,14 @@ function loadMoreMessage(storeId) {
 	  xhr.send( null );
 }
 	//胖小車即時位置地圖
-function initBreadCarNowLocationMap(id) {
+function initBreadCarNowLocationMap(id, lat, lng) {
 	var map = new google.maps.Map(document.getElementById(id), {
 	  zoom: 16,
-	  center: {lat: 24.965356, lng: 121.191038}
+	  center: {lat: lat, lng: lng}
 	});
 	var image = "img/icon/van2.png";
 	var beachMarker = new google.maps.Marker({
-	  position: {lat:  24.965356 , lng: 121.191038},
+	  position: {lat:  lat , lng: lng},
 	  map: map, 
 	  icon: image
 	});
@@ -88,7 +132,7 @@ function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
     //initMap
     var map = new google.maps.Map(document.getElementById(id), {
       zoom: 13,
-      center: {lat: 24.969882, lng: 121.191587}
+      center: LatLngArr[0]
     });
     directionsDisplay.setMap(map);
 //now location marker
@@ -100,15 +144,17 @@ function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
 	});    
 //init route service
     var waypts = [];
-	for (waypoint in LatLngArr) {
-        waypts.push({
-          location: LatLngArr[waypoint],
-          stopover: true
-        });
+	for (waypointIndex in LatLngArr) {
+		if (waypointIndex != 0 && waypointIndex != LatLngArr.length-1) {
+	        waypts.push({
+	          location: LatLngArr[waypointIndex],
+	          stopover: true
+	        });
+    	}
 	}
     directionsService.route({
-      origin: {lat: 24.969882, lng: 121.191587},
-      destination: {lat: 24.971531, lng: 121.178006},
+      origin: LatLngArr[0],
+      destination: LatLngArr[LatLngArr.length-1],
       waypoints: waypts,
       optimizeWaypoints: true,
       travelMode: 'DRIVING'
@@ -158,7 +204,16 @@ function allSlickSetting() {
 	  asNavFor: '.product',
 	  dots: true,
 	  centerMode: true,
-	  focusOnSelect: true
+	  focusOnSelect: true,
+	  responsive: [
+	    {
+	      breakpoint: 767,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
   });
 	$('.screen-bread-car-map .maps').slick({
 	  slidesToShow: 1,
@@ -188,8 +243,12 @@ function allSlickSetting() {
 	    }
 	  ]
   });
-   $('.screen-bread-car-map .tabs').on('afterChange', function(event, slick, direction){
-  		// console.log(direction);
+   	$('.banner-area').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: true,
+	  dots: true,
+	  fade: true
 	});
 }
 //screen1 animation, like a paper

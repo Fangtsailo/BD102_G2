@@ -1,0 +1,72 @@
+@import "member/myBusiness/store/_FMybusinessStorVar.scss";
+@import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+
+
+
+
+	.LeftBusiness{
+		width: 200px;
+		height: 500px;
+		position: fixed;
+		left: 0;
+		top: 160px;
+		z-index: 99;
+		// background-color: #ccc;
+		transition:.3s;
+		.nav-Group1{
+			margin-top: 30px;
+		}
+		
+			&>div{ //aa group 1
+				 &>div{ //bb
+					
+
+						&:nth-child(1){
+							@include member-nav-bar-mainTitle-propity();
+						// margin-top:150px;
+						}
+					
+
+					
+						&:nth-child(2){//group sub
+
+							display:none;
+							div{//sub
+
+								&:nth-child(1){
+									@include member-nav-bar-subTitle-propity();
+																		
+								}
+								&:nth-child(2){
+									@include member-nav-bar-subTitle-propity();									
+								}
+								&:nth-child(3){
+									@include member-nav-bar-subTitle-propity();									
+								}
+
+
+							}//sub
+							
+							
+						}//:nth-child(2)  //group sub
+
+
+						
+				
+					
+				}//bb
+			}//aa
+		
+	}//LeftBusiness
+
+
+	.leftBarUp{
+		top:80px;
+		transition:.3s;
+	}
+
+
+
+
+
+

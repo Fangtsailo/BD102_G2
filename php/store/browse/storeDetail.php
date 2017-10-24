@@ -22,10 +22,24 @@ try {
 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
 }
+
+	//特定num的會員有沒有追蹤特定店家
+	function isFollowStoreByMemNum($memNum, $storeId) {
+		$isFollow = false;
+		if ($memNum != -1) {
+			$sql = "SELECT * FROM trepun.follow WHERE SI_NUM=$storeId AND MEM_NO=$memNum";
+			$stmt = $GLOBALS["connectPDO"] ->query($sql);
+			while ($count = $stmt->fetchObject()) {
+				//有追蹤
+				$isFollow = true;
+			}
+		}
+		return $isFollow==true?"true":"false";
+	}
 	
 	function getFollowCountByStoreId($storeId) {
 		$followCount = 0;
-		$sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId;"
+		$sql = "SELECT count(*) count FROM trepun.follow WHERE SI_NUM=$storeId";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($count = $stmt->fetchObject()) {
 			$followCount = $count->count;
@@ -52,12 +66,12 @@ try {
 		while ($store = $stmt->fetchObject()) {
 			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
 					$followCount = 0;
-			$sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId;"
-			$stmt = $GLOBALS["connectPDO"] ->query($sql);
-			while ($count = $stmt->fetchObject()) {
-				$followCount = $count->count;
-			}
-			$otherStore->follow = $count;
+			// $sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId";
+			// $stmt = $GLOBALS["connectPDO"] ->query($sql);
+			// while ($count = $stmt->fetchObject()) {
+			// 	$followCount = $count->count;
+			// }
+			// $otherStore->follow = $count;
 			array_push($otherStoreArr, $otherStore);
 		}
 		return $otherStoreArr;
@@ -89,7 +103,7 @@ try {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$activity = new ActivityObj($row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1);
+				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
 				array_push($activityArr, $activity);
 			}
 			return $activityArr;
@@ -105,7 +119,7 @@ try {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$product = new Bread($row->PD_NAME,$row->PD_PIC, $row->PD_INTRO, $row->PD_PRICE);
+				$product = new Bread($row->PD_NO,$row->PD_NAME,$row->PD_PIC, $row->PD_INTRO, $row->PD_PRICE);
 				array_push($productsArr, $product);
 			}
 			return $productsArr;
@@ -120,7 +134,9 @@ try {
 			header("location:homepage.php");
 		} else {
 			$tmpStore = $stmt->fetchObject();
-			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3);
+			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG);
+			$followCount = getFollowCountByStoreId($storeId);
+			$GLOBALS["store"]->follow = $followCount;
 		}
 	}
 	function getBreadCarPathByStoreId($storeId) {
