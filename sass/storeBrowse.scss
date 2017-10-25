@@ -34,7 +34,50 @@
 	    color: $color;
     }
 }
+.textLightBox {
+	display: none;
+	top: 0;
+	left: 0;
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(50, 50, 50, 0.5);
+	.content {
+		width: 50%;
+		min-height: 100px;
+		background-color: $globalBgColor;
+		position: relative;
+	    top: 50%;
+	    margin: auto;
+	    transform: translateY(-50%);
+	    border-radius: 5px;
+	    color: rgba(128, 89, 52, 0.7);
+	    background-color: $globalBgColor;
+	    .header {
+	    	height: 60px;
+	    	background: linear-gradient(to right, #805934 0%, #9e693d 100%);
+	    }
+	    p {
+	    	padding: 10px;
+	    }
+	    .svg {
+    	    width: 50px;
+		    height: 50px;
+		    position: absolute;
+		    right: 0px;
+		    top: 0px;
+		    cursor: pointer;
+		    transition: .3s ease-in;
+		    &:hover {
+		    	transform: rotate(180deg);
+    			transition: .3s ease-in;
+		    }
+	    }
+	}
+}
 .button {
+	display: block;
 	text-align: center;
 	background-color: transparent;
 	border: 1px solid $globalHdColor02;
@@ -126,7 +169,8 @@ img {
 				text-align: center;
 				margin: 0;
 				padding:0 10px;
-				background-color: red;
+				background-color: #E6B98F;
+				color: $globalBgColor;
 			}
 		}
 	}
@@ -220,6 +264,21 @@ img {
 			}
 			.trace {
 				float: right;
+				margin: 10px 0px;
+				overflow: hidden;
+				position:relative;
+				div {
+					float: left;
+				}
+				.icon {
+					width: 50%;
+				}
+				.count {
+					width: 50%;
+					font-size: 18px;
+					position: relative;
+					left: -10px;
+				}
 			}
 			.info-box {
 				clear: both;
@@ -230,14 +289,6 @@ img {
 				.content {
 					padding: 0;
 				}
-			}
-		}
-		.trace {
-			font-size: 18px;
-			padding-top: 10px;
-    		height: 52px;
-			img {
-				width: 30px;
 			}
 		}
 	}
@@ -255,6 +306,7 @@ img {
 		p {
 			text-indent: 2em;
 			margin-bottom: 20px;
+			text-shadow: 1px 2px black;
 		}
 	}
 	#bottom-city {
@@ -501,7 +553,7 @@ img {
 			img {
 				opacity: 0.5;
 				transition: transform 1s;
-				width: 30%;
+				width: 40%;
 				display: block;
 				position: absolute;
 				top: 0;
@@ -529,7 +581,7 @@ img {
 		.slick-current {
 			img {
 				opacity: 1;
-				transform: scale(2.5);
+				transform: scale(1.8);
 			}
 		}
 		.slick-next:before {
@@ -672,12 +724,13 @@ img {
 		margin: auto;
 		position: relative;
 		z-index: 0;
-		overflow: hidden;
 		h2 {
 			color: #94664f;
 		}
 		.item {
+			outline: none;
 			overflow: hidden;
+			padding: 0;
 		}
 		.row {
 			overflow: hidden;
@@ -700,30 +753,35 @@ img {
 				color: $globalFontColor;
 			}
 		}
-		// &:before {
-		// 	content: '';
-		// 	display: block;
-		// 	position: absolute;
-		// 	width: 50px;
-		// 	height: 100px;
-		// 	left: -100px;
-		// 	top: 40vh;
-		// 	background-image: url("../img/store/browse/black_left.png");
-		// 	background-repeat: no-repeat;
-		// 	background-size: 100%;
-		// }
-		// &:after {
-		// 	content: '';
-		// 	display: block;
-		// 	position: absolute;
-		// 	width: 50px;
-		// 	height: 100px;
-		// 	right: -100px;
-		// 	top: 40vh;
-		// 	background-image: url("../img/store/browse/black_right.png");
-		// 	background-repeat: no-repeat;
-		// 	background-size: 100%;
-		// }
+		.banner {
+			.item {
+				height: 25vh;
+				background-size: cover;
+				background-position: center center;
+			}
+		}
+		.slick-next:before {
+			content: '';
+			display: block;
+			width: 50px;
+			height: 100px;
+			left: -50px;
+			top: 20px;
+			background-image: url("../img/store/browse/black_right.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		.slick-prev:before {
+			content: '';
+			display: block;
+			width: 50px;
+			height: 100px;
+			left: -50px;
+			top: 20px;
+			background-image: url("../img/store/browse/black_left.png");
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
 	}
 }
 .screen-other-store {
@@ -735,6 +793,17 @@ img {
 	}
 	.store-list {
 		font-size: 0;
+		.item .store-img {
+			height: 300px;
+			background-position: center center;
+			background-size: cover;
+			transition: all 1s;
+			opacity: 0.5;
+			&:hover {
+				transform: scale(1.5);
+				opacity: 1;
+			}
+		}
 	}
 	.title {
 		@include title($globalHdColor02, $globalBgColor);
@@ -904,9 +973,11 @@ img {
 			    	font-size: 12px;
 			    	color: #b5b1b1;
 			    }
+			    .img-icon {
+			    	float: left;
+			    }
 				p {
 					max-width: 570px;
-					width: 100%;
 					float: left;
 					color: #8E8E8E;
 				}
@@ -951,20 +1022,25 @@ img {
 						float: right;
 						color: #bbbbbb;
 						font-size: 12px;
-						img {
-							width: auto;
-						}
 						.reply, .report {
-							width: 30px;
-							height: 30px;
+							overflow: hidden;
 							float: right;
+							padding: 3px;
 							.img-icon {
-								width: 22px;
-								height: 20px;
+								width: 15px;
+							    height: 16px;
+							}
+							&:hover p{
+								color: $globalBgColor;
 							}
 						}
-						.img-icon {
-
+						.reported {//已經檢舉過
+							border: none;
+							cursor: default;
+							pointer-events: none;
+							p {
+								color: red;
+							}
 						}
 					}
 				}
@@ -1036,8 +1112,17 @@ img {
 			}
 		}
 	}
-	#bread-detail {
+	.bread-detail {
 		display: none;
+	}
+	.screen-1 {
+		.detail-box {
+			.detail {
+				.trace {
+					width: 100px;
+				}
+			}
+		}
 	}
 	.screen-messages {
 		.send-message-area, .messages-area {
@@ -1077,6 +1162,10 @@ img {
 	}
 	.perspective {
 		margin-bottom: 20px;
+	}
+	//變手機板時, 所有 slick 的箭頭都拿掉
+	.slick-prev:before, .slick-prev:after {
+		display: none !important;
 	}
 	.screen-1 {
 		position: relative;
@@ -1119,9 +1208,6 @@ img {
 			padding-bottom: 55px;
 		}
 	}
-	.screen:not(:first-of-type){
-		padding-top: 50px;
-	}
 	.screen-bread-car-map {
 		#bread-car {
 			height: 40px;
@@ -1138,14 +1224,12 @@ img {
 			.item {
 				height: 126px;
 			}
-			.slick-prev:before, .slick-prev:after {
-				display: none;
-			}
 		}
 		.product {
 			height: auto;
 			padding-bottom: 0;
-			#bread-detail {
+			.bread-detail {
+				outline: none;
 				display: inline-block;
 				color: $globalBgColor;
 				border: 1px solid $globalBgColor;
@@ -1155,27 +1239,27 @@ img {
 				vertical-align: middle;
 				margin-left: 5px;
 			}
-			.image {
-			    max-width: 250px;
-			    width: 50%;
-			    float: none;
-			    margin: auto;
-			    height: auto;
-			    img {
-			    	position: relative;
-			    }
+			.item {
+				.image {
+				    max-width: 250px;
+				    width: 50%;
+				    float: none;
+				    margin: auto;
+				    height: 214px;
+				}
+				.describe {
+					background-color: transparent;
+					max-width: none;
+				    box-sizing: border-box;
+				    margin-top: 0px;
+				    color: #8E8E8E;
+				    text-align: center;
+				}
+				p {
+					display: none;
+				}
 			}
-			.describe {
-				background-color: transparent;
-				max-width: none;
-			    box-sizing: border-box;
-			    margin-top: 0px;
-			    color: #8E8E8E;
-			    text-align: center;
-			}
-			p {
-				display: none;
-			}
+
 		}
 	}
 	.screen-other-store {
@@ -1282,6 +1366,14 @@ img {
 			    	overflow: hidden;
 			    	&:before {
 			    		display: none;
+			    	}
+			    	.container {
+			    		.setting-area {
+			    			.report {
+			    				background-color: transparent;
+			    				border: 1px solid #9e693d;
+			    			}
+			    		}
 			    	}
 			    }
 			}
