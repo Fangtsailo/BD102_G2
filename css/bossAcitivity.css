@@ -252,6 +252,28 @@ li {
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
         transition: .3s ease-in; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span {
+          display: block;
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          color: #f06428;
+          font-size: 12px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.success {
+            color: green; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.error {
+            color: red; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span i.fa {
+            color: #666; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
@@ -603,6 +625,7 @@ footer {
   font-size: 18px;
   border: 1px solid #3399ff;
   color: #3399ff;
+  background-color: #fbf8f1;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
@@ -818,6 +841,8 @@ footer {
         /* IE6-9 */ }
         .globalHead #menu ul#memLoggedin {
           display: block; }
+          .globalHead #menu ul#memLoggedin li.beBoss #bossMenu {
+            display: none; }
         .globalHead #menu ul li {
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
@@ -857,6 +882,16 @@ footer {
             font-weight: 400;
             transition: .3s; }
             .globalHead #menu ul li a:focus {
+              background-color: rgba(158, 105, 61, 0.5);
+              transition: .3s; }
+          .globalHead #menu ul li #rwdBossRole {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            color: #fbf8f1;
+            font-weight: 400;
+            transition: .3s; }
+            .globalHead #menu ul li #rwdBossRole:focus {
               background-color: rgba(158, 105, 61, 0.5);
               transition: .3s; }
           .globalHead #menu ul li.myActivity {
@@ -1044,7 +1079,7 @@ footer {
 .container {
   padding-top: 80px;
   width: 100%;
-  height: 100vh; }
+  padding-bottom: 30%; }
   .container .bossHead {
     width: 100%;
     height: 70px;
