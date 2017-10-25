@@ -1,14 +1,49 @@
 $(function(){
 
-// sc_mg------------
+
+TweenMax.fromTo( ".activity_Dough" , 3, //寫法https://greensock.com/docs/TweenMax 
+{
+    y : 200,    //初始位置
+    opacity : 0,
+}, 
+{
+   y : 0,    //結束位置
+   opacity : 1,
+   ease : Quad.easeOut
+}
+);
+
+TweenMax.fromTo( ".activity_board" , 1 , 
+{
+    x : -100,   //初始位置
+    opacity : 0,
+}, 
+{
+   x : 0,      //結束位置
+   opacity : 1,
+   delay : 2,
+   ease : Quad.easeOut  // 動畫特效 https://greensock.com/docs/Easing
+}
+);
+
+TweenMax.fromTo( ".activity_detail" , 1 , 
+{
+    x : 100,   //初始位置
+    opacity : 0,
+}, 
+{
+   x : 0,      //結束位置
+   opacity : 1,
+   delay : 2,
+   ease : Quad.easeOut  // 動畫特效 https://greensock.com/docs/Easing
+}
+);
+
+
 var controller = new ScrollMagic.Controller();
-
-
-
 
     //掉麵團	00
 	
-
 		//tween   設要跑的動畫
     var tween_0 = TweenMax.staggerFromTo('#acty_Dough', .8, {
         //做事情  .8為總共秒數
@@ -28,10 +63,6 @@ var controller = new ScrollMagic.Controller();
         scale:1.1 
     }, 3);   //3為延遲秒數
 
-
-
-
-
      var scene_t = new ScrollMagic.Scene({
       //做事情
       triggerElement: ".trigger0",  //觸發點
@@ -49,9 +80,6 @@ var controller = new ScrollMagic.Controller();
    .addTo(controller);  //最開始設的場景
 
 //掉麵團 00 end
-
-
-
 
 
 //鍋保持位置
@@ -127,16 +155,6 @@ var controller = new ScrollMagic.Controller();
 
 
 
-
-
-
-
-
-
-
-
-
-
  //翻轉  
   
 
@@ -208,7 +226,7 @@ var controller = new ScrollMagic.Controller();
 	
 
 //烤箱區
-var tween_8 = TweenMax.staggerFromTo('.act_wind', .2, {
+var tween_8 = TweenMax.staggerFromTo('.act_wind', .8, {
         //做事情
         
        opacity:0 ,
@@ -245,10 +263,6 @@ var tween_8 = TweenMax.staggerFromTo('.act_wind', .2, {
         .addTo(controller);
 
 
-
-
-
-
 //烤好麵包
 var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
         //做事情
@@ -276,9 +290,6 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
 
     //     })
    .addTo(controller);  //最開始設的場景
-
-
-
 
 
     var controller = new ScrollMagic.Controller();
@@ -309,17 +320,6 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
 
     //     })
    .addTo(controller);  //最開始設的場景
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -295,58 +295,170 @@ session_start();
 
 				<div class="activity_form">
 					<!-- =================表單樣式===================== -->
+					
+		
+					<?php if (isset($_SESSION["memNo"])) {
+						
+							$memNo=$_SESSION["memNo"];
+					
+						$memsql="select * from ac_info where AC_NO='$actNum' and MEM_NO ='$memNo' ";
+						$actSign=$connectPDO->query($memsql);
+						$activityRow=$actSign->fetchObject();	
+
+						
+
+						if (isset($activityRow->MEM_NO)) {
+							?>
+
+
+
+						
+			<!-- ===================================已報名================================================================= -->
+
+									<div class="globalForm" >
+										 
+											<div class="globalFormHeader">
+											
+					
+						
+												<h1>已報名本活動</h1>
+												
+											</div>
+											<div class="globalFormContent">
+
+												
+								
+												
+												<div class="globalFormBtns">
+													
+													<p>活動地點 :  <?php echo $actRow->AC_ADDRESS ?></p>
+													<p>活動時間為 : <?php echo $actRow->AC_TIME ?></p>	
+													<p>記得準時參加活動喔，詳情請聯絡店家</p>				
+												</div>
+
+											</div>
+										
+									</div>  <!-- globalForm -->
+									
+			<!-- 
+					======================================還未報名============================================================ -->			 				
+								<?php			
+									}else{
+								 ?>		
+
+								 <div class="globalForm" >
+										 
+										<form action="php/activity/participation/actform.php" method="get" id='actform'>
+							
+
+											<input type="hidden" name="acNo" value="<?php echo $actRow->AC_NO ?>">
+
+
+											<div class="globalFormHeader">
+											
+					
+						
+												<h1>報名去</h1>
+												<p>快來一起參與烘培體驗吧!會員只要填寫基本資料，就能成功報名囉! <br> 名額有限速速行動~~ </p>
+											</div>
+
+											<div class="globalFormContent">
+
+												<div class="globalFormInput">
+													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName">
+												</div>
+												
+												<div class="globalFormInput">
+													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)">
+												</div>
+												
+												<div class="globalFormInput">
+													<label><span>*</span>信箱</label><input type="email" name="memEmail"  id="memEmail"  placeholder="必填" required>
+												</div>
+
+												
+												<div class="clearfix"></div>
+												<div class="globalFormBtns">
+													<input class="globalCancelBtn btnTop" type="reset" value="取消">
+													<input type="buttom" name="" class="globalOkBtn btnTop" value="送出" id="actSubmit">					
+												</div>
+
+											</div>
+										</form>
+									</div> <!-- globalForm -->
+									
+											<script type="text/javascript">
+								
+											$(function(){
+
+													$('#actSubmit').click(function(){
+															if($('#memName').val().length==0 && $('#memName').val().trim()==''){
+																alert ("沒有輸入姓名");
+														  	}else if($('#memPhone').val().length==0 && $('#memPhone').val().trim()==''){
+														  		alert ("沒有輸入聯絡電話");
+														  	}else if($('#memEmail').val().length==0 && $('#memEmail').val().trim()==''){
+														  		alert("沒有輸入E-mail");
+														  	}else {
+														  		$('#memName').val($('#memName').val().trim());
+														  		$('#memPhone').val($('#memPhone').val().trim());
+														  		$('#memEmail').val($('#memEmail').val().trim());
+
+														  				$( "#actform" ).submit();
+														  	}
+
+													});
+												});
+
+											</script>
+
+
+
+										<?php			
+										}
+									 ?>		
+						<!-- ===================================未登入=========================================== -->
+
+				<?php  } else{ ?>
+					
 						<div class="globalForm" >
 							 
-							<form action="php/activity/participation/actform.php" method="get">
-				
-
-				
-
-								<input type="hidden" name="acNo" value="<?php echo $actRow->AC_NO ?>">
-
-			<?php if (isset($memNo)) {
-						 $memNo=$_SESSION["memNo"];
-						?>
-
 								<div class="globalFormHeader">
 								
 		
 			
-									<h1>報名去</h1>
+									<h1>登入PUN友參加活動</h1>
 									<p>快來一起參與烘培體驗吧!會員只要填寫基本資料，就能成功報名囉! <br> 名額有限速速行動~~ </p>
 								</div>
 								<div class="globalFormContent">
 
-					<?php 
-						$memsql="select * from ac_info where MEMNO=	$memNo; ";
-
-
-					 ?>
 									
 					
-									<div class="globalFormInput">
-										<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填">
-									</div>
 									
-									<div class="globalFormInput">
-										<label><span>*</span>聯絡電話</label><input type="tel" name="memPhone" placeholder="手機或家用電話(必填)">
-									</div>
-									
-									<div class="globalFormInput">
-										<label><span>*</span>信箱</label><input type="email" name="memEmail" placeholder="必填" required>
-									</div>
-
-									
-									<div class="clearfix"></div>
 									<div class="globalFormBtns">
-										<input class="globalCancelBtn btnTop" type="reset" value="取消">
-										<input type="submit" name="" class="globalOkBtn btnTop" value="送出">					
+										
+										<input type="button" name="" class="globalOkBtn btnTop" id="actBtn" value="登入">					
 									</div>
 
 								</div>
-							</form>
-						</div>
-	<?php  } else{?>
+							
+						</div>  <!-- globalForm -->
+
+
+
+						<script type="text/javascript">
+								
+							$(function(){
+								$('#actBtn').click(function(){
+								$('#loginBox').fadeIn(500);
+									});
+							});
+
+						</script>
+
+
+
+				<?php 
+				}?>   <!-- else 還沒登入 -->
 
 				</div><!-- =================表單樣式===end================== -->
 
@@ -361,10 +473,6 @@ session_start();
 
 
 
-				<?php 
-
-				
-			}?>
 
 
 					<div class="clearfix"></div>
