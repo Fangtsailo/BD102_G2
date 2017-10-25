@@ -1,3 +1,12 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,175 +73,59 @@ require_once("BackStageHeaderSidebar.php");
 			
 				
 				<table class="tableContent">
+
+				<?php
+
+					try{
+						require_once("php/pdo/connectPDO.php");
+
+						$sql = "select *
+								from store_imformation 
+								left join member 
+								on store_imformation.SI_MEMNO = member.MEM_NO
+								where store_imformation.SI_TYPE = 0
+								group by store_imformation.SI_MEMNO
+								order by SI_NUM DESC";
+
+						$shopinfo = $connectPDO->query($sql);
+
+						while ($shopinfo_row = $shopinfo->fetchObject()) {
+					
+				 ?>
 					
 					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="shopUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
+						<td><?php echo $shopinfo_row->SI_NUM; //店家編號?></td>
+						<td><?php echo $shopinfo_row->SI_NAME; //店家店名?></td>
+						<td><?php echo $shopinfo_row->SI_MEMNO; //店長ID?></td>
+						<td><?php echo $shopinfo_row->MEM_NAME; //店長姓名?></td>
+						<td><a href="shopUpContent.php?SI_NUM=<?php echo $shopinfo_row->SI_NUM ; ?>">內容</a></td>
+						<td>
+							<?php 
+
+						$checkit = $shopinfo_row->SI_SELLSTAY ;
+
+						if($checkit==1){ echo "上架"; }
+						else if($checkit==0){ echo "<font color='#e03838'>下架</font>"; } ?>
+
+						</td>
+					</tr>				
 					
-					
-				</table>
+				
 			<!-- </section> -->
 			<!-- =====表格內容===== end-->
-
-
 			
+			<?php
+			}//while
+
+			echo "</table>";
+
+			//↓try
+			} 	catch (PDOException $e) {
+					echo "錯誤原因 : " , $e->getMessage(),"<br>";
+					echo "行號 : " , $e->getLine(),"<br>";	
+				}
+
+			 ?>
 			
 			
 
@@ -251,28 +144,6 @@ require_once("BackStageHeaderSidebar.php");
 <!-- ======================================================footer 頁尾========================================================= -->
 
 
-
-	<script type="text/javascript">
-		
-
-		function init(){
-
-			
-			document.getElementById("cancelLightBox").addEventListener("click",function(){
-				document.getElementById("LightBox").style.display="none";
-			},false);
-			
-			document.getElementById("LightBoxIncreaseBtn").addEventListener("click",function(){
-				document.getElementById("LightBox").style.display="none";
-			},false);
-
-			document.getElementById("addAuthority").addEventListener("click",function(){
-				document.getElementById("LightBox").style.display="block";
-			},false);
-		}
-
-		window.onload=init;
-	</script>
 
 </body>
 </html>

@@ -1,3 +1,12 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,27 +65,24 @@ require_once("BackStageHeaderSidebar.php");
 							where SI_NUM=$SI_NUM
 							group by store_imformation.SI_NUM;";
 					
-					$store = $pdo->query( $sql );
+					$store = $connectPDO->query( $sql );
+
+					$sqlnogb = "select *
+							from store_imformation
+							left join product 
+							on store_imformation.SI_NUM = product.PD_SHOPNO
+							where SI_NUM=$SI_NUM;";
+					
+					$storenogb = $connectPDO->query( $sqlnogb );
 
 					while ( $store_row = $store->fetchObject() ) {
-						
-					
-					
-
-
 				
-
 				 ?>
 
 				<tr>
 				<th>商家名稱</th>
 				<td><?php echo $store_row->SI_NAME; ?></td>
 				</tr>
-
-<!-- 				<tr>
-				<th>商家資訊</th>
-				<td></td>
-				</tr> -->
 
 				<tr>
 				<th>店家地址</th>
@@ -96,14 +102,14 @@ require_once("BackStageHeaderSidebar.php");
 				<td><?php echo $store_row->SI_PHONE; ?></td>
 				</tr>
 
-<!-- 				<tr>
+<!-- 			<tr>
 				<th>出沒位置</th>
 				<td></td>
 				</tr> -->
 
 				<tr>
 				<th>商家故事</th>
-				<td><?php echo $store_row->SI_STORY; ?></td>
+				<td><?php echo $store_row->SI_STORY; }//while ?></td>
 				</tr>
 
 				<!-- <tr>
@@ -119,25 +125,27 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 				<th>商品資訊</th>
 				<td>
-					<?php echo $store_row->PD_NO,"<br>";
-						echo $store_row->PD_PRICE,"<br>";
-						echo $store_row->PD_PIC,"<br>";
-						echo $store_row->PD_NAME,"<br>";
-						echo $store_row->PD_INTRO; }//while ?>
+					<?php 
+						while ( $storenogb_row = $storenogb->fetchObject() ) {
+						echo "商品編號 ",$storenogb_row->PD_NO,"<br>";
+						echo "商品名稱 ",$storenogb_row->PD_NAME,"<br>";
+						echo "商品介紹 ",$storenogb_row->PD_INTRO,"<br>";
+						echo "商品價格 ",$storenogb_row->PD_PRICE,"<br>";
+						echo "商品照片 ",$storenogb_row->PD_PIC,"<br>"; }//while ?>
 				</td>
 				</tr>
 
-				<tr>
+<!-- 				<tr>
 				<th>商品資訊</th>
-				<td><?php $store_row = $store->fetchAll(PDO::FETCH_ASSOC);
-					foreach( $store_row as $i=>$store_row ){
-						echo $store_row["PD_NO"]; 
-						echo $store_row["PD_PRICE"];
-						echo $store_row["PD_PIC"];
-						echo $store_row["PD_NAME"];
-						echo $store_row["PD_INTRO"]; }
+				<td><?php $store_row //= $store->fetchAll(PDO::FETCH_ASSOC);
+					//foreach( $store_row as $i=>$store_row ){
+					//	echo $store_row["PD_NO"]; 
+					//	echo $store_row["PD_PRICE"];
+					//	echo $store_row["PD_PIC"];
+					//	echo $store_row["PD_NAME"];
+					//	echo $store_row["PD_INTRO"]; }
 				 ?></td>
-				</tr>
+				</tr> -->
 
 
 			<?php 
@@ -151,20 +159,27 @@ require_once("BackStageHeaderSidebar.php");
 
 			 ?>
 
-			
-
 
 		</div>  <!-- content-table -->
+
+
+
+		<div class="commit">
+
+			<form action="php/backstage/OKORNOT.php" method="get">	
+				<input type="hidden" name="si_num" value="<?php echo $SI_NUM; ?>">
+				<input type="submit" name="refuseone" value="駁回">
+				<input type="submit" name="okone" value="核准">
+			</form>
 			
 
-		<div class="commit">		
-			<a href="">
-				<input type="button" name="" value="駁回">
-			</a>
-			<a href="">
-				<input type="button" name="" value="核准">
-			</a>
 		</div>
+
+
+
+
+
+
 			
 </div> <!-- tableArea -->
 

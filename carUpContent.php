@@ -39,70 +39,154 @@ require_once("BackStageHeaderSidebar.php");
 			<table>
 				
 				<tr class="tabletitle" >
-					<!-- <th colspan="2">新增商品</th> -->
 				</tr>
+
+				<?php 
+
+				$SI_NUM = $_REQUEST['SI_NUM'];
+
+				try{
+
+					require_once("php/pdo/connectPDO.php");
+
+					$sql = "select *
+							from store_imformation 
+							left join reviews on store_imformation.SI_NUM = reviews.SI_NUM
+							left join follow on store_imformation.SI_NUM = follow.SI_NUM
+							left join product on store_imformation.SI_NUM = product.PD_SHOPNO
+							where store_imformation.SI_NUM=$SI_NUM
+							group by store_imformation.SI_NUM"; 
+					
+					$shop = $connectPDO->query( $sql );
+
+					$sqlnogb = "select *
+							from store_imformation
+							left join product 
+							on store_imformation.SI_NUM = product.PD_SHOPNO
+							where SI_NUM=$SI_NUM;";
+
+					$storenogb = $connectPDO->query( $sqlnogb );
+
+					while ( $shop_row = $shop->fetchObject() ) {
+
+				 ?>
 
 				<tr>
 				<th>胖小車名稱</th>
-				<td>麵包麵包車</td>
+				<td><?php echo $shop_row->SI_NAME; ?></td>
 				</tr>
 
-				<tr>
+<!-- 				<tr>
 				<th>胖小車資訊</th>
-				<td>Lorem ipsum dolor sit amet, adipisicing elit. Quaerat  alias accusamus rem quas.</td>
-				</tr>
+				<td></td>
+				</tr> -->
 
 				
 				<tr>
 				<th>營業時間</th>
 				<td>
-				週二 - 週六 09:30 - 22:30<br>
-				週日 09:30 - 17:30<br>
-				每週一公休<br>
+					公休日　星期<?php echo $shop_row->SI_RESTDAY; ?><br>
+					營業時間　<?php echo $shop_row->SI_STARTTIME; ?>:00 - <?php echo $shop_row->SI_ENDTIME; ?>:00
 				</td>
 				</tr>
 
 				<tr>
 				<th>商家電話</th>
-				<td>0939318183</td>
+				<td><?php echo $shop_row->SI_PHONE ; ?></td>
 				</tr>
+
+				<?php
+					$sql_path = "select *
+								from store_imformation 
+								left join bread_car_path
+								on store_imformation.SI_NUM = bread_car_path.BCP_STORE_NUM
+								where store_imformation.SI_TYPE = 1
+								and store_imformation.SI_NUM = $SI_NUM";
+					$path = $connectPDO->query( $sql_path );
+					
+
+				 ?>
 
 				<tr>
 				<th>出沒位置</th>
 				<td>
-				星期一   1. E121 20 30.5, N24 05 22.5   2.E121 20 30.5, N24 05 22.5 <br>
-				星期三   1. E121 20 30.5, N24 05 22.5   2.E121 20 30.5, N24 05 22.5<br>
-				星期五   1. E121 20 30.5, N24 05 22.5   2.E121 20 30.5, N24 05 22.5<br>
+					<?php
+					while ( $path_row = $path->fetchObject()) {
+						echo $path_row->BCP_LOCATION,"<br>";
+
+					 } ?>
 				</td>
 				</tr>
 
 				<tr>
 				<th>商家故事</th>
-				<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum inventore fuga dicta totam labore earum facere repellendus delectus doloribus neque!<br>
-				Consectetur adipisicing elit. Ipsum impedit laboriosam perspiciatis officiis numquam saepe, tenetur sit inventore enim fugit!<br>
-				Adipisicing elit. Similique repellat quos nemo, nobis culpa quas!<br>
-				</td>
+				<td><?php echo $shop_row->SI_STORY; }//while ?></td>
 				</tr>
+
+				<?php 
+
+				$sql_review = "select round(AVG(ifnull(REVIEWS,0)),1) rrr
+								from store_imformation 
+								left join reviews on store_imformation.SI_NUM = reviews.SI_NUM
+								where store_imformation.SI_NUM = $SI_NUM ";
+
+				$review = $connectPDO->query( $sql_review );
+
+				while ( $review_row = $review->fetchObject() ) {
+
+				 ?>
 
 				<tr>
 				<th>評價分數</th>
-				<td>4.0 <span>分</span></td>
+				<td><?php echo $review_row->rrr ; } ?> <span>分</span></td>
 				</tr>
+
+				<?php 
+				$sql_follow = "select count(follow.MEM_NO) fff
+								from store_imformation 
+								left join follow
+								on store_imformation.SI_NUM = follow.SI_NUM
+								where store_imformation.SI_NUM = $SI_NUM
+								group by store_imformation.SI_MEMNO";
+				$follow = $connectPDO->query( $sql_follow );
+				
+				while ( $follow_row = $follow->fetchObject() ) {
+
+				 ?>
 
 				<tr>
 				<th>追蹤人數</th>
-				<td>123 <span>人</span></td>
+				<td><?php echo $follow_row->fff ; } ?> <span>人</span></td>
 				</tr>
 
 				<tr>
 				<th>商品資訊</th>
-				<td></td>
+				<td>
+					<?php 
+						while ( $storenogb_row = $storenogb->fetchObject() ) {
+						echo "商品編號 ",$storenogb_row->PD_NO,"<br>";
+						echo "商品名稱 ",$storenogb_row->PD_NAME,"<br>";
+						echo "商品介紹 ",$storenogb_row->PD_INTRO,"<br>";
+						echo "商品價格 ",$storenogb_row->PD_PRICE,"<br>";
+						echo "商品照片 ",$storenogb_row->PD_PIC,"<br>"; }//while ?>
+				</td>
 				</tr>
 
 
 
 
 			</table>	
+
+			<?php 
+
+			//echo "</table>";
+
+			} catch (PDOException $e) {
+				echo "錯誤原因 : " , $e->getMessage(),"<br>";
+				echo "行號 : " , $e->getLine(),"<br>";	
+			}	
+
+			?>
 
 
 
@@ -113,12 +197,11 @@ require_once("BackStageHeaderSidebar.php");
 			
 
 		<div class="commit">		
-			<a href="">
-				<input type="button" name="" value="駁回">
-			</a>
-			<a href="">
-				<input type="button" name="" value="核准">
-			</a>
+			<form action="php/backstage/OKORNOT_carup.php">
+				<input type="hidden" name="si_num" value="<?php echo $SI_NUM; ?>">
+				<input type="submit" name="noooo" value="駁回">
+				<input type="submit" name="okooo" value="核准">
+			</form>
 		</div>
 			
 </div> <!-- tableArea -->

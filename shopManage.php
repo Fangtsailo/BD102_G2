@@ -96,7 +96,7 @@ require_once("BackStageHeaderSidebar.php");
 										on store_imformation.SI_MEMNO = member.MEM_NO
 										group by store_imformation.SI_MEMNO
 										order by SI_NUM DESC";
-						$storelist = $pdo->query($sql_storelist);
+						$storelist = $connectPDO->query($sql_storelist);
 						//$storelist_row = $storelist->fetchObject();
 
 

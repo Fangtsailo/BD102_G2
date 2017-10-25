@@ -1,3 +1,11 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,174 +72,64 @@ require_once("BackStageHeaderSidebar.php");
 			
 				
 				<table class="tableContent">
+
+				<?php 
+
+					try{
+
+						require_once("php/pdo/connectPDO.php");
+
+						$sql = "select *
+								from store_imformation 
+                                left join member 
+								on store_imformation.SI_MEMNO = member.MEM_NO
+								where store_imformation.SI_TYPE = 1
+								group by store_imformation.SI_NUM
+								order by SI_NUM DESC;";
+						
+						$carinfo = $connectPDO->query($sql);
+
+						while ($carinfo_row = $carinfo->fetchObject()) {
+
+
+
+				?>
 					
 					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
-					</tr>
-					<tr>
-						<td>A1234567</td>
-						<td>笑笑麵包</td>
-						<td>ID094187</td>
-						<td>解師傅‧咚咚咚咚咚</td>
-						<td><a href="carUpContent.php">內容</a></td>
-						<td>上架</td>
+						<td><?php echo $carinfo_row->SI_NUM; //胖小車編號 ?></td>
+						<td><?php echo $carinfo_row->SI_NAME; //胖小車店名 ?></td>
+						<td><?php echo $carinfo_row->SI_MEMNO; //店長ID ?></td>
+						<td><?php echo $carinfo_row->MEM_NAME; //店長姓名 ?></td>
+						<td><a href="carUpContent.php?SI_NUM=<?php echo $carinfo_row->SI_NUM ; ?>">內容</a></td>
+						<td>
+						<?php 
+							$checkit = $carinfo_row->SI_SELLSTAY ;
+	
+							if($checkit==1){ echo "上架"; }
+							else if($checkit==0){ echo "<font color='#e03838'>下架</font>"; } 
+						?>
+						</td>
 					</tr>
 					
 					
-				</table>
+				
 			<!-- </section> -->
 			<!-- =====表格內容===== end-->
 
+				<?php 
 
+				}//while
+
+				echo "</table>";
+
+				}catch (PDOException $e) {
+					echo "錯誤原因 : " , $e->getMessage(),"<br>";
+					echo "行號 : " , $e->getLine(),"<br>";	
+				}
+
+
+
+				 ?>
 			
 			
 			

@@ -138,7 +138,7 @@ require_once("BackStageHeaderSidebar.php");
 
 								$sql = "select * from member where MEM_ROLE=1";
 
-								$member = $pdo->query($sql);
+								//$member = $pdo->query($sql);
 
 
 
