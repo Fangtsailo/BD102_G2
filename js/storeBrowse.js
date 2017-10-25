@@ -51,6 +51,35 @@ function navigatorDotScroll() {
  	});
 }
 
+//檢舉留言
+function reportMessage(messageNum, memNum, reason) {
+	if (memNum != -1) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	       		//檢舉完成, 把 button 變色跟變字
+	       		$('#msg-' + messageNum + ' p').text('已檢舉');
+	       		$('#msg-' + messageNum).off();
+	       		$('#msg-' + messageNum).addClass('reported');
+
+	       }else{
+	          console.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxReportMessage.php?messageNum=" + messageNum + "&memNum=" + memNum + "&reason=" + reason;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );	
+	} else {
+		//須先登入
+		$('#loginBox').fadeIn(500);
+	    $("#menu").removeClass("show");
+	    $('#addShopBox').hide();
+	}
+}
+
 //留言
 function sendMessage(storeId, memId, content) {
 	if (memId != -1) {

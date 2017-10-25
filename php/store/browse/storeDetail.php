@@ -76,7 +76,7 @@ try {
 		}
 		return $otherStoreArr;
 	}
-	function getMessagesByStoreId($storeId) {
+	function getMessagesByStoreId($storeId, $loginMemNum) {
 		$messageArr = array();
 		$limitCount = 5;//一次載入5筆
 		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC limit $limitCount";
@@ -88,6 +88,12 @@ try {
 		} else {
 			while($row = $stmt->fetchObject()) {
 				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
+				//這筆留言有沒有被此登入的 member 檢舉過
+				$sql = "SELECT * FROM trepun.report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
+				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
+				if ($row = $stmt2->fetchObject()) {
+					$message->isReportByMe = true;
+				}
 				array_push($messageArr, $message);
 			}
 			return $messageArr;

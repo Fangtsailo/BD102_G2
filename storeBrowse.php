@@ -41,6 +41,9 @@ try {
 		$isLogin = true;
 	}
 	$storeId = 2;
+	if ( isset($_REQUEST["storeId"]) === true) {
+		$storeId = $_REQUEST["storeId"];
+	}
 	//會員基資======================================
 	$memPic = GLOBAL_MEM_PIC_PATH."default.png";
 	if ($memNum != -1) {
@@ -50,7 +53,7 @@ try {
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
-	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId);
+	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
 	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
 	$isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
 
@@ -376,15 +379,15 @@ try {
 		<?php 
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
-					<div class="message-box" id="MSG123">
+					<div class="message-box">
 						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $messageItem->memberPicName ?>"></div>
 						<div class="content col-lg-10">
 							<div class="container">
 								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
 								<p><?php echo $messageItem->content ?></p>
 								<div class="setting-area">
-									<div class="report pointer">
-										<div class="img-icon" data-msg-id="<?php echo $messageItem->no ?>"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+									<div class="report pointer button" id="msg-<?php echo $messageItem->no ?>" data-msg-id="<?php echo $messageItem->no ?>">
+										<div class="img-icon" ><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -412,13 +415,15 @@ try {
 			<?php 
 				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
 			?>
+				<a href="storeBrowse.php?storeId=<?php echo $otherStore->id; ?>">
 					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore->id; ?>">
-						<div class="color-img"><img alt="other_store1.png" src="<?php echo $otherStore->banner1 ?>"></div>
+						<div class="store-img"></div>
 						<div class="detail">
 							<h3 class="name"><?php echo $otherStore->name; ?></h3>
 							<p class="describe"><?php echo $otherStore->story ?></p>
 						</div>
 					</div>
+				</a>
 			<?php
 				}
 			 ?>
@@ -516,6 +521,24 @@ $(document).ready(function(){
 		$('#act-<?php echo $activity->num ?> .item:nth-child(4)').css('background-image', 'url(<?php echo $activity->actPicName2 ?>)');
 	<?php 
 		} 
+	?>
+	//檢舉留言-----------------------------------
+	<?php 
+		foreach ($GLOBALS["messageArr"] as $messageItem) {
+			//有被此登入者檢舉過就不給再檢舉
+			if ($messageItem->isReportByMe == true) {
+	?>
+   		$('#msg-' + <?php echo $messageItem->no ?>).addClass('reported');
+   		$('#msg-' + <?php echo $messageItem->no ?> + ' p').text('已檢舉');
+	<?php 
+			} else {
+	 ?>
+		$('#msg-<?php echo $messageItem->no ?>').on('click', function(){
+			reportMessage(<?php echo $messageItem->no ?>, <?php echo $memNum;?>, "test reason");
+		});
+	<?php 
+			}
+		}
 	?>
 });	
 </script>

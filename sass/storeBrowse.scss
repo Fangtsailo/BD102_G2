@@ -791,6 +791,9 @@ img {
 	}
 	.store-list {
 		font-size: 0;
+		.store-img {
+			height: 300px;
+		}
 	}
 	.title {
 		@include title($globalHdColor02, $globalBgColor);
@@ -960,9 +963,11 @@ img {
 			    	font-size: 12px;
 			    	color: #b5b1b1;
 			    }
+			    .img-icon {
+			    	float: left;
+			    }
 				p {
 					max-width: 570px;
-					width: 100%;
 					float: left;
 					color: #8E8E8E;
 				}
@@ -1007,20 +1012,22 @@ img {
 						float: right;
 						color: #bbbbbb;
 						font-size: 12px;
-						img {
-							width: auto;
-						}
 						.reply, .report {
-							width: 30px;
-							height: 30px;
+							overflow: hidden;
 							float: right;
+							padding: 3px;
 							.img-icon {
-								width: 22px;
-								height: 20px;
+								width: 15px;
+							    height: 16px;
+							}
+							&:hover p{
+								color: $globalBgColor;
 							}
 						}
-						.img-icon {
-
+						.reported {//已經檢舉過
+							border: none;
+							cursor: default;
+							pointer-events: none;
 						}
 					}
 				}
@@ -1134,6 +1141,10 @@ img {
 	.perspective {
 		margin-bottom: 20px;
 	}
+	//變手機板時, 所有 slick 的箭頭都拿掉
+	.slick-prev:before, .slick-prev:after {
+		display: none !important;
+	}
 	.screen-1 {
 		position: relative;
 		#bottom-city {
@@ -1193,9 +1204,6 @@ img {
 			}
 			.item {
 				height: 126px;
-			}
-			.slick-prev:before, .slick-prev:after {
-				display: none;
 			}
 		}
 		.product {
