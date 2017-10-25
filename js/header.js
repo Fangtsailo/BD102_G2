@@ -1,11 +1,14 @@
 
 
+
 //切換會員專區
 function changePanel(){
-    $("#headMemStatus").show(300);
-    $("#headMemLogin").hide(300);
+    $("#headMemStatus").fadeIn(300);
+    $("#headMemLogin").fadeOut(300);
     $("#memLoggedin").show(300);
     $("#visitor").hide(300);
+    $('#showAddShopForm').css('display','block');
+    $('#visitorForm').css('display','none');
 }
 
 //登出會員專區
@@ -14,18 +17,32 @@ function logOut(){
     $("#headMemStatus").hide(300);
     $('#memStatusBar').hide(300);
 }   
-//填寫表單燈箱切換
-function lightboxloggedIn(){
-    $('#showAddShopForm').css('display','block');
-    $('#visitorForm').css('display','none');
+
+//更換會員專區角色
+function changeRole() {
+    $("#role").text("店長專區").attr('href','bossActivity.php');
+    $("#rwdBossRole").replaceWith("<span id='rwdBossRole'>店長專區   <i class='fa fa-plus' aria-hidden='true'></i></span>");
+    $("#rwdBossRole").click(function(){
+        $('#bossMenu').slideToggle(500);
+    });
 }
 
-function addSuccess(e){
-  $(this).submit();
-}
+//顯示輸入密碼值
+function hideShowPsw(){  
+        if ($('#newMemPsw').attr('type') == 'password') {  
+          $('#newMemPsw').attr('type','text');
+            
+        }else {  
+          $('#newMemPsw').attr('type','password');
+        }  
+    }
 
 
-//頁面開始動作
+
+
+
+
+//================================ 頁面開始動作 ====================================
 
 $(function(){
 
@@ -80,6 +97,7 @@ var bodyClass = document.body.classList,
 			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
             $("#loginForm")[0].reset();
+            $("#registerForm")[0].reset();
 		
   });
 
@@ -147,10 +165,13 @@ $("#submitLogin").click(function(){
                         icon: $.sweetModal.ICON_SUCCESS,
                         width: '300px',
                         theme: $.sweetModal.THEME_MIXED,
+                        timeout: 1000,
+                        onClose: function(){
+                          $("#showMemId").text(xhr.responseText);
+                          location.reload();
+                        }
                     });
-                    $("#showMemId").text(xhr.responseText);
 
-                    changePanel();
 
                 }  
               }else{//server端無法順利的執行完畢,產生錯誤
@@ -177,30 +198,53 @@ $("#submitLogin").click(function(){
 });
 
 
+      
+  
 
 
 
 //註冊檢查function
+$('#showPsw').click(function(){
+    hideShowPsw();
+});
+
+
+$('#newMemId').blur(function(){
+
+      $.ajax( {
+        url: 'IDValidate.php',
+        type: 'GET',
+        data: {
+        user_name: $('#newMemId').val()
+      },
+      error: function(xhr) {
+        alert('Ajax request 發生錯誤');
+      },
+      success: function(response) {
+        $("#showResult").html(response);
+        $("#showResult").fadeIn();
+        
+          if (response == '此帳號已被使用過囉') {
+              $("#showResult").addClass('error');
+              $("#showResult").removeClass('success');
+          }else{
+              $("#showResult").addClass('success');
+              $("#showResult").removeClass('error');
+          }
+      }
+
+      } );
+
+});
+
+
+
+
 
 
 $("#submitRegister").click(function(){
 
-  if ( $("#newMemId").val().length < 6 && $("#newMemId").val().length ==0 ){
-        $.sweetModal({
-            content: '帳號不得低於六碼',
-            icon: $.sweetModal.ICON_WARNING,
-            width: '300px',
-            theme: $.sweetModal.THEME_MIXED,
-            buttons: [
-                {
-                    label: '知道了',
-                    classes: 'brownB'
-                }
-            ]
-        });
-        $("#newMemId").select();
-        return;
-    }
+  
 
     //檢查email格式
     var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -222,8 +266,17 @@ $("#submitRegister").click(function(){
         $("#newMemPsw").select();
         return;
     }
-
-  $("#registerForm").submit();
+    $.sweetModal({
+            content: '註冊成功！',
+            icon: $.sweetModal.ICON_SUCCESS,
+            width: '300px',
+            theme: $.sweetModal.THEME_MIXED,
+            timeout: 1000,
+            onClose: function(){
+              $("#registerForm").submit();
+            }
+        });
+  
 
 });
 
@@ -340,8 +393,8 @@ $("#submitRegister").click(function(){
             icon: $.sweetModal.ICON_SUCCESS,
             width: '300px',
             theme: $.sweetModal.THEME_MIXED,
+            timeout: 1000,
             onClose: function(){
-             
               $("#addstoreForm").submit();
             }
         });

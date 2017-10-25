@@ -1,6 +1,6 @@
 <?php 
 	ob_start();
-	// session_start();
+	session_start();
 
  ?>
 <!DOCTYPE html>
@@ -12,10 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
-	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick-theme.css">	
+	<!-- <link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick-theme.css">	 -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="js/parallax.min.js"></script>
-	<script src="libs/slick-master/slick/slick.min.js"></script>
+	<!-- <script src="libs/slick-master/slick/slick.min.js"></script> -->
+	<script src="libs/slick-1.8.0/slick/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
 	<script src="libs/gsap/src/minified/TweenMax.min.js"></script>
 	<script src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
@@ -23,8 +25,7 @@
     <script src="js/storeBrowse.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
-    <script src="libs/jquery-modal-master/jquery.modal.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="libs/jquery-modal-master/jquery.modal.min.css">
+
     <script src="js/header.js"></script>
 </head>
 <body>
@@ -35,26 +36,47 @@ try {
 	require_once("header.php");
 	require_once("php/common/globalVar.php");	
 	require_once("php/store/browse/storeDetail.php");
-	// $storeId = $_REQUEST["storeId"];
+	$memNum = -1;
+	$isLogin = false;
+	if ( isset($_SESSION["memNo"]) ===true ) {
+		$memNum = $_SESSION["memNo"];
+		$isLogin = true;
+	}
 	$storeId = 2;
+	if ( isset($_REQUEST["storeId"]) === true) {
+		$storeId = $_REQUEST["storeId"];
+	}
 	//會員基資======================================
-	$memNum = 5;
-	$memPic = GLOBAL_MEM_PIC_PATH.$memNum.".png";
+	$memPic = GLOBAL_MEM_PIC_PATH."default.png";
+	if ($memNum != -1) {
+		$memPic = GLOBAL_MEM_PIC_PATH.$_SESSION["memPic"];
+	}
 	getStoreInfoById($storeId);
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
-	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
-	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId);
+	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
 	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
+	$isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
+
 } catch (Exception $e) {
 	echo "原因：",$e->getMessage(),"<br>";
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
- <div id="review-modal" class="modal">
-  <p>Thanks for clicking. That felt good.</p>
-  <button onclick="alert('123');">456</button>
+<div class="textLightBox">
+	<div class="content">
+		<div class="header"></div>
+		<p></p>
+		<div class="svg closeBtn">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+				<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
+					L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
+					s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+				</svg>
+		</div>
+	</div>
 </div>
 <div class="navigator">
 		<a href="#screen1" class="item selected">
@@ -111,7 +133,22 @@ try {
 					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				</ul>
-			<div class="trace pointer col-xs-3"><img alt="follow.svg" src="img/store/browse/follow.svg">(<?php echo $GLOBALS["store"]->follow ?>)</div>
+			<div class="trace pointer col-xs-3" id='trace-btn'>
+				<div class="icon">
+				<?php 
+					if ($isThisMemFollowThisStore == "true") {
+				 ?>
+				 	<img alt="follow.svg" src="img/icon/follow3.svg" id="follow-icon">
+				 <?php 
+				 	} else {
+				 ?>
+				  	<img alt="follow.svg" src="img/icon/follow2.svg" id="follow-icon">
+				 <?php 
+				  	}
+				 ?>	
+				</div>
+				<div class="count">(<?php echo $GLOBALS["store"]->follow ?>)</div>		
+			</div>
 			<div class="info-box">
 				<div class="address overflow col-xs-12">
 					<p class="title col-lg-3 col-xs-4">地址:</p>
@@ -211,10 +248,10 @@ try {
 		<?php 
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
-					<div class="item">
+					<div class="item" id="big-bread-<?php echo $product->num; ?>">
 						<div class="image"><img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>"></div>
 						<div class="describe">
-						<h3><?php echo $product->name; ?><button id="bread-detail">詳情</button></h3>
+						<h3><?php echo $product->name; ?><button class="bread-detail" id="bread-detail-<?php echo $product->num; ?>">詳情</button></h3>
 
 						<p><?php echo $product->description ?></p>
 						</div>
@@ -294,10 +331,17 @@ try {
 				<div class="label col-lg-3 col-xs-4">費用:</div>
 				<div class="content col-lg-9 col-xs-8"><?php echo $activity->price ?></div>
        			</div>
-       			<div class="activity-detail button">活動詳情</div>
+       			<a href="activity_act.php?actNum=<?php echo $activity->num ?>" class="activity-detail button">活動詳情</a>
 			</div>
-			<div class="banner col-lg-6 col-xs-12">
-				<img alt="<?php echo $activity->bannerPicName ?>" src="<?php echo $activity->bannerfullPicName ?>">
+			<div class="banner col-lg-6 col-xs-12" id="act-<?php echo $activity->num ?>">
+				<div class="item col-lg-6">
+				</div>
+				<div class="item col-lg-6">
+				</div>
+				<div class="item col-lg-6">
+				</div>
+				<div class="item col-lg-6">
+				</div>
 			</div>
 		</div>
 		<?php 
@@ -327,7 +371,7 @@ try {
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
 			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
-			<div class="content col-lg-10"><textarea maxlength="250" placeholder="登入後開始留言..." rows="5" id="message-content"></textarea>
+			<div class="content col-lg-10"><textarea id="message-box-txtarea" maxlength="200" placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
 			<div class="clear"></div>
@@ -337,15 +381,15 @@ try {
 		<?php 
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
-					<div class="message-box" id="MSG123">
+					<div class="message-box">
 						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $messageItem->memberPicName ?>"></div>
 						<div class="content col-lg-10">
 							<div class="container">
 								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
 								<p><?php echo $messageItem->content ?></p>
 								<div class="setting-area">
-									<div class="report pointer">
-										<div class="img-icon" data-msg-id="<?php echo $messageItem->no ?>"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+									<div class="report pointer button" id="msg-<?php echo $messageItem->no ?>">
+										<p>檢舉</p></div>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -373,13 +417,15 @@ try {
 			<?php 
 				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
 			?>
-					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore->id; ?>">
-						<div class="color-img"><img alt="other_store1.png" src="<?php echo $otherStore->banner1 ?>"></div>
+				<a href="storeBrowse.php?storeId=<?php echo $otherStore->id; ?>">
+					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" id="other-<?php echo $otherStore->id; ?>">
+						<div class="store-img"></div>
 						<div class="detail">
 							<h3 class="name"><?php echo $otherStore->name; ?></h3>
 							<p class="describe"><?php echo $otherStore->story ?></p>
 						</div>
 					</div>
+				</a>
 			<?php
 				}
 			 ?>
@@ -394,10 +440,12 @@ try {
 	
 <script type="text/javascript">
 $(document).ready(function(){
+	isLogin = <?php echo $isLogin==true?"true":"false"; ?>;
+	isThisMemFollowThisStore = <?php echo $isThisMemFollowThisStore; ?>;
 	initParallax("activity-parallax");
 	allSlickSetting();
 	initAllScrollMagicScene();
-	initBreadCarNowLocationMap("map-now", {lat: 24.960439, lng: 121.190096});
+	initBreadCarNowLocationMap("map-now", <?php echo $GLOBALS["store"]->lat;?>, <?php echo $GLOBALS["store"]->lng ?>);
 	<?php
 	foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
 	?>
@@ -413,21 +461,95 @@ $(document).ready(function(){
 	}, false);
 	//寄發留言-------------------------
 	$("#send-message-btn").click(function() {
-		var content = $('#message-content').val();
+		var content = $("#message-box-txtarea").val();
+		if (content.length > 0) {
 		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
+		} else {
+			$.sweetModal({
+                content: '先輸入文字',
+                icon: $.sweetModal.ICON_WARNING,
+                width: '300px',
+                theme: $.sweetModal.THEME_MIXED
+            });
+		}
 	})
+	if (isLogin) {
+		$("#send-message-btn").attr("disabled",false);
+	} else {
+		//留言板相關
+		$("#send-message-btn").attr("disabled",true);
+		$("#message-box-txtarea").on('click', function(){
+				$('#loginBox').fadeIn(500);
+			    $("#menu").removeClass("show");
+			    $('#addShopBox').hide();
+			});
+	}
+	//觸發追蹤店家
+	$("#trace-btn").click(function() {
+		triggerFollow(<?php echo $memNum;?>, <?php echo $GLOBALS["store"]->id; ?>);
+	})
+	
 	//screen1 banner1 bgImg----------------
 	 $('#banner1').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner1;?>")');
 	 $('#banner2').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner2;?>")');
 	 $('#banner3').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner3;?>")');
 	 //評價-----------------------------
 	 $('#review-btn').on('click', function() {
-	 	$('#review-modal').modal({
-		 	fadeDuration: 100
-		 });
-	 })
+
+	 });
 	 navigatorDotScroll();
-	 
+	 //商品詳情-------------------------
+	 $(".textLightBox .closeBtn").on('click', function(){
+	 	$('.textLightBox').fadeOut(500);
+	 });
+	 <?php
+	 	foreach ($GLOBALS["produtsArr"] as $product) {
+	 ?>
+	 	$("#bread-detail-<?php echo $product->num; ?>").on('click', function(){
+	 	var detailContent = $('#big-bread-<?php echo $product->num; ?> p').text();
+	 	$('.textLightBox .content p').text(detailContent);
+	 	$('.textLightBox').fadeIn(500);
+	 });
+	 <?php
+	 	}
+	?>
+	//活動照片------------------------------
+	<?php  
+		foreach ($GLOBALS["activityArr"] as $activity) {
+	?>
+		$('#act-<?php echo $activity->num ?> .item:first-child').css('background-image', 'url(<?php echo $activity->actPicName1 ?>)');
+		$('#act-<?php echo $activity->num ?> .item:nth-child(2)').css('background-image', 'url(<?php echo $activity->actProductPicName1 ?>)');
+		$('#act-<?php echo $activity->num ?> .item:nth-child(3)').css('background-image', 'url(<?php echo $activity->actProductPicName2 ?>)');
+		$('#act-<?php echo $activity->num ?> .item:nth-child(4)').css('background-image', 'url(<?php echo $activity->actPicName2 ?>)');
+	<?php 
+		} 
+	?>
+	//檢舉留言-----------------------------------
+	<?php 
+		foreach ($GLOBALS["messageArr"] as $messageItem) {
+			//有被此登入者檢舉過就不給再檢舉
+			if ($messageItem->isReportByMe == true) {
+	?>
+   		$('#msg-' + <?php echo $messageItem->no ?>).addClass('reported');
+   		$('#msg-' + <?php echo $messageItem->no ?> + ' p').text('已檢舉');
+	<?php 
+			} else {
+	 ?>
+		$('#msg-<?php echo $messageItem->no ?>').on('click', function(){
+			reportMessage(<?php echo $messageItem->no ?>, <?php echo $memNum;?>, "test reason");
+		});
+	<?php 
+			}
+		}
+	?>
+	//其他店家列表用background-image
+	<?php 
+		foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
+	?>
+			$('#other-<?php echo $otherStore->id; ?> .store-img').css('background-image', 'url("<?php echo $otherStore->banner1; ?>")');
+	<?php
+		}
+	 ?>	
 });	
 </script>
 </body>

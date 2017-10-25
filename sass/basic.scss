@@ -308,7 +308,38 @@ li {
 							border-bottom:1px solid $globalBtnColor;
 							transition:.3s ease-in;
 						}
+
 					}
+					&.enterID {
+						position: relative;
+						span {
+							display: block;
+							position: absolute;
+							right: 10px;
+							top: 20px;
+							color:$globalBtnColor;
+							font-size: 12px;
+							&.success {
+								color:green;
+							}
+							&.error {
+								color:red;
+							}
+						}
+					}
+					&.enterPsw {
+						position: relative;
+						span {
+							display: block;
+							position: absolute;
+							right: 20px;
+							top: 10px;
+							i.fa {
+								color:#666;
+							}
+						}
+					}
+					
 				}
 				
 				
@@ -776,6 +807,7 @@ footer {
 	font-size: $globalBtnSize;
 	border: 1px solid $globalLinkColor;
 	color:$globalLinkColor;
+	background-color: $globalBgColor;
 	transition: .3s ease;
 	&:hover {
 	background-color: $globalLinkColor;
@@ -854,7 +886,7 @@ footer {
 			text-align: center;
 			float: none;
 			img {
-				width: 100%;
+				width: 100%;  
 			}
 		}
 		.headerRight {
@@ -923,6 +955,11 @@ footer {
 				@include leftRightGradient(rgba(128, 89, 52, 0.9),rgba(158, 105, 61, 0.9));
 				&#memLoggedin {
 					display: block;
+					li.beBoss {
+						#bossMenu {
+							display: none;
+						}
+					}
 				}
 				li {
 					color:$globalBgColor;
@@ -969,6 +1006,18 @@ footer {
 					}
 
 					a {
+						display: block;
+						width: 100%;
+						padding: 10px;
+						color:$globalBgColor;
+						font-weight: 400;
+						transition: .3s;
+						&:focus {
+							background-color: rgba(158, 105, 61, .5);
+							transition: .3s;
+						}
+					}
+					#rwdBossRole {
 						display: block;
 						width: 100%;
 						padding: 10px;

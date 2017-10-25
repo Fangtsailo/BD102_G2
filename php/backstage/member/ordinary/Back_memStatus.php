@@ -15,7 +15,7 @@
 		// $user = "root";
 		// $password = "root";
 		// $options = array( PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-		// $pdo = new PDO($dsn, $user, $password, $options);
+		// $connectPDO = new PDO($dsn, $user, $password, $options);
 
 
 		require_once("../../../pdo/connectPDO.php");
