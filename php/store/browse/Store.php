@@ -30,9 +30,9 @@ class Store {
 		$this->closeDay = $closeDay;
 		$this->story = $story;	
 		$this->closeDayArr = explode(",", $closeDay);
-		$this->banner1 = GLOBAL_STORE_BANNERS_PIC_PATH.$banner1;
-		$this->banner2 = GLOBAL_STORE_BANNERS_PIC_PATH.$banner2;
-		$this->banner3 = GLOBAL_STORE_BANNERS_PIC_PATH.$banner3;
+		$this->banner1 = GLOBAL_STORE_BANNERS_PIC_PATH.($banner1==""?"default.png":$banner1);
+		$this->banner2 = GLOBAL_STORE_BANNERS_PIC_PATH.($banner2==""?"default.png":$banner2);
+		$this->banner3 = GLOBAL_STORE_BANNERS_PIC_PATH.($banner3==""?"default.png":$banner3);
 		$this->lat = $lat;
 		$this->lng = $lng;
 	}

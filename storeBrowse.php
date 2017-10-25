@@ -12,10 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
-	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick-theme.css">	
+	<!-- <link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick-theme.css">	 -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 	<script src="js/parallax.min.js"></script>
-	<script src="libs/slick-master/slick/slick.min.js"></script>
+	<!-- <script src="libs/slick-master/slick/slick.min.js"></script> -->
+	<script src="libs/slick-1.8.0/slick/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
 	<script src="libs/gsap/src/minified/TweenMax.min.js"></script>
 	<script src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
@@ -329,7 +331,7 @@ try {
 				<div class="label col-lg-3 col-xs-4">費用:</div>
 				<div class="content col-lg-9 col-xs-8"><?php echo $activity->price ?></div>
        			</div>
-       			<div class="activity-detail button">活動詳情</div>
+       			<a href="activity_act.php?actNum=<?php echo $activity->num ?>" class="activity-detail button">活動詳情</a>
 			</div>
 			<div class="banner col-lg-6 col-xs-12" id="act-<?php echo $activity->num ?>">
 				<div class="item col-lg-6">
@@ -386,8 +388,8 @@ try {
 								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
 								<p><?php echo $messageItem->content ?></p>
 								<div class="setting-area">
-									<div class="report pointer button" id="msg-<?php echo $messageItem->no ?>" data-msg-id="<?php echo $messageItem->no ?>">
-										<div class="img-icon" ><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>
+									<div class="report pointer button" id="msg-<?php echo $messageItem->no ?>">
+										<p>檢舉</p></div>
 								</div>
 								<div class="clear"></div>
 							</div>
@@ -416,7 +418,7 @@ try {
 				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
 			?>
 				<a href="storeBrowse.php?storeId=<?php echo $otherStore->id; ?>">
-					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" data-store-id="<?php echo $otherStore->id; ?>">
+					<div class="item pointer col-lg-4 col-xs-6 col-xs-6" id="other-<?php echo $otherStore->id; ?>">
 						<div class="store-img"></div>
 						<div class="detail">
 							<h3 class="name"><?php echo $otherStore->name; ?></h3>
@@ -459,7 +461,7 @@ $(document).ready(function(){
 	}, false);
 	//寄發留言-------------------------
 	$("#send-message-btn").click(function() {
-		var content = $("#send-message-btn").val();
+		var content = $("#message-box-txtarea").val();
 		if (content.length > 0) {
 		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
 		} else {
@@ -540,6 +542,14 @@ $(document).ready(function(){
 			}
 		}
 	?>
+	//其他店家列表用background-image
+	<?php 
+		foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
+	?>
+			$('#other-<?php echo $otherStore->id; ?> .store-img').css('background-image', 'url("<?php echo $otherStore->banner1; ?>")');
+	<?php
+		}
+	 ?>	
 });	
 </script>
 </body>

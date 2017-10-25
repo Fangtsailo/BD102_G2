@@ -77,6 +77,7 @@
 	}
 }
 .button {
+	display: block;
 	text-align: center;
 	background-color: transparent;
 	border: 1px solid $globalHdColor02;
@@ -265,7 +266,6 @@ img {
 				float: right;
 				margin: 10px 0px;
 				overflow: hidden;
-				width: 100px;
 				position:relative;
 				div {
 					float: left;
@@ -275,7 +275,7 @@ img {
 				}
 				.count {
 					width: 50%;
-					font-size: 25px;
+					font-size: 18px;
 					position: relative;
 					left: -10px;
 				}
@@ -306,6 +306,7 @@ img {
 		p {
 			text-indent: 2em;
 			margin-bottom: 20px;
+			text-shadow: 1px 2px black;
 		}
 	}
 	#bottom-city {
@@ -552,7 +553,7 @@ img {
 			img {
 				opacity: 0.5;
 				transition: transform 1s;
-				width: 30%;
+				width: 40%;
 				display: block;
 				position: absolute;
 				top: 0;
@@ -580,7 +581,7 @@ img {
 		.slick-current {
 			img {
 				opacity: 1;
-				transform: scale(2.5);
+				transform: scale(1.8);
 			}
 		}
 		.slick-next:before {
@@ -756,6 +757,7 @@ img {
 			.item {
 				height: 25vh;
 				background-size: cover;
+				background-position: center center;
 			}
 		}
 		.slick-next:before {
@@ -791,8 +793,16 @@ img {
 	}
 	.store-list {
 		font-size: 0;
-		.store-img {
+		.item .store-img {
 			height: 300px;
+			background-position: center center;
+			background-size: cover;
+			transition: all 1s;
+			opacity: 0.5;
+			&:hover {
+				transform: scale(1.5);
+				opacity: 1;
+			}
 		}
 	}
 	.title {
@@ -1028,6 +1038,9 @@ img {
 							border: none;
 							cursor: default;
 							pointer-events: none;
+							p {
+								color: red;
+							}
 						}
 					}
 				}
@@ -1101,6 +1114,15 @@ img {
 	}
 	.bread-detail {
 		display: none;
+	}
+	.screen-1 {
+		.detail-box {
+			.detail {
+				.trace {
+					width: 100px;
+				}
+			}
+		}
 	}
 	.screen-messages {
 		.send-message-area, .messages-area {
@@ -1185,9 +1207,6 @@ img {
 			top: 0;
 			padding-bottom: 55px;
 		}
-	}
-	.screen:not(:first-of-type){
-		padding-top: 50px;
 	}
 	.screen-bread-car-map {
 		#bread-car {
@@ -1347,6 +1366,14 @@ img {
 			    	overflow: hidden;
 			    	&:before {
 			    		display: none;
+			    	}
+			    	.container {
+			    		.setting-area {
+			    			.report {
+			    				background-color: transparent;
+			    				border: 1px solid #9e693d;
+			    			}
+			    		}
 			    	}
 			    }
 			}

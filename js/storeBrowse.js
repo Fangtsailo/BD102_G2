@@ -49,6 +49,30 @@ function navigatorDotScroll() {
        $('.navigator .item .point').removeClass('selected');
        $('.point', this).addClass('selected');
  	});
+ 	//user scroll 到特定特範圍, 對應 dot 要變色
+ 	$(window).on('scroll', function(){
+ 		console.log($(document).scrollTop());
+		if ($(document).scrollTop() > (4560 + $('.screen-messages').height()) ) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(6) .point').addClass('selected');
+	    }  else if ($(document).scrollTop() > 3340) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(5) .point').addClass('selected');
+	    } else if ($(document).scrollTop() > 2400) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(4) .point').addClass('selected');
+	    } else if ($(document).scrollTop() > 1550) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(3) .point').addClass('selected');
+	    } else if ($(document).scrollTop() > 650) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(2) .point').addClass('selected');
+	    } else {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(1) .point').addClass('selected');
+	    }
+
+ 	});
 }
 
 //檢舉留言
@@ -118,9 +142,9 @@ function loadMoreMessage(storeId) {
 					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
 					+	'			<p>'+ messageListObj[key].content +'</p>'
 					+	'			<div class="setting-area">'
-					+	'				<div class="report pointer">'
-					+	'					<div class="img-icon" data-msg-id="'+ messageListObj[key].no + '"><img alt="report.png" src="img/store/browse/report.png"></div><p>檢舉</p></div>'
-					+	'			</div>'
+					+	'				<div class="report pointer button" id="msg-'+ messageListObj[key].no + '">'
+					+	'					<p>檢舉</p>'
+					+	'			</div></div>'
 					+	'			<div class="clear"></div>'
 					+	'		</div>'
 					+	'	</div>'

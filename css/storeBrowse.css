@@ -48,6 +48,7 @@
         transition: .3s ease-in; }
 
 .button {
+  display: block;
   text-align: center;
   background-color: transparent;
   border: 1px solid #9e693d;
@@ -214,7 +215,6 @@ img {
         float: right;
         margin: 10px 0px;
         overflow: hidden;
-        width: 100px;
         position: relative; }
         .screen-1 .detail-box .detail .trace div {
           float: left; }
@@ -222,7 +222,7 @@ img {
           width: 50%; }
         .screen-1 .detail-box .detail .trace .count {
           width: 50%;
-          font-size: 25px;
+          font-size: 18px;
           position: relative;
           left: -10px; }
       .screen-1 .detail-box .detail .info-box {
@@ -245,7 +245,8 @@ img {
     text-align: justify; }
     .screen-1 .right-describe p {
       text-indent: 2em;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      text-shadow: 1px 2px black; }
   .screen-1 #bottom-city {
     max-width: 920px;
     bottom: -15px;
@@ -552,7 +553,7 @@ img {
         -o-transition: transform 1s;
         transition: transform 1s;
         transition: transform 1s, -webkit-transform 1s;
-        width: 30%;
+        width: 40%;
         display: block;
         position: absolute;
         top: 0;
@@ -571,9 +572,9 @@ img {
         color: #fbf8f1; }
     .screen-product .product-list .slick-current img {
       opacity: 1;
-      -webkit-transform: scale(2.5);
-      -ms-transform: scale(2.5);
-      transform: scale(2.5); }
+      -webkit-transform: scale(1.8);
+      -ms-transform: scale(1.8);
+      transform: scale(1.8); }
     .screen-product .product-list .slick-next:before {
       content: '';
       display: block;
@@ -762,7 +763,8 @@ img {
         color: #663300; }
     .screen-activity .banner-area .banner .item {
       height: 25vh;
-      background-size: cover; }
+      background-size: cover;
+      background-position: center center; }
     .screen-activity .banner-area .slick-next:before {
       content: '';
       display: block;
@@ -792,8 +794,19 @@ img {
     vertical-align: top; }
   .screen-other-store .store-list {
     font-size: 0; }
-    .screen-other-store .store-list .store-img {
-      height: 300px; }
+    .screen-other-store .store-list .item .store-img {
+      height: 300px;
+      background-position: center center;
+      background-size: cover;
+      -webkit-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      opacity: 0.5; }
+      .screen-other-store .store-list .item .store-img:hover {
+        -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        transform: scale(1.5);
+        opacity: 1; }
   .screen-other-store .title {
     width: 100%;
     height: 100%;
@@ -1065,6 +1078,8 @@ img {
             border: none;
             cursor: default;
             pointer-events: none; }
+            .screen-messages .messages-area .message-box .content .container .setting-area .reported p, .screen-messages .send-message-area .message-box .content .container .setting-area .reported p {
+              color: red; }
   .screen-messages .send-message-area {
     position: relative; }
     .screen-messages .send-message-area .message-box .mem-pic {
@@ -1213,6 +1228,9 @@ img {
   .bread-detail {
     display: none; }
 
+  .screen-1 .detail-box .detail .trace {
+    width: 100px; }
+
   .screen-messages .send-message-area .message-box .mem-pic img, .screen-messages .messages-area .message-box .mem-pic img {
     width: 70px;
     height: 70px; } }
@@ -1349,9 +1367,6 @@ img {
       top: 0;
       padding-bottom: 55px; }
 
-  .screen:not(:first-of-type) {
-    padding-top: 50px; }
-
   .screen-bread-car-map #bread-car {
     height: 40px; }
 
@@ -1469,6 +1484,9 @@ img {
         overflow: hidden; }
         .screen-messages .send-message-area .message-box .content:before, .screen-messages .messages-area .message-box .content:before {
           display: none; }
+        .screen-messages .send-message-area .message-box .content .container .setting-area .report, .screen-messages .messages-area .message-box .content .container .setting-area .report {
+          background-color: transparent;
+          border: 1px solid #9e693d; }
     .screen-messages .send-message-area .more-message, .screen-messages .messages-area .more-message {
       width: 100%; } }
 
