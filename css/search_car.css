@@ -1169,7 +1169,8 @@ img {
       .search_store .search_storeOne .search_storeContent .search_follow {
         float: left;
         width: 30px;
-        padding: 0 0 0 20px; }
+        padding: 0 0 0 20px;
+        box-sizing: content-box; }
         .search_store .search_storeOne .search_storeContent .search_follow img {
           vertical-align: -webkit-baseline-middle; }
       .search_store .search_storeOne .search_storeContent #search_followNum {
