@@ -11,6 +11,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<!-- 套件區 -->
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
