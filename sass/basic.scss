@@ -1017,6 +1017,18 @@ footer {
 							transition: .3s;
 						}
 					}
+					#rwdBossRole {
+						display: block;
+						width: 100%;
+						padding: 10px;
+						color:$globalBgColor;
+						font-weight: 400;
+						transition: .3s;
+						&:focus {
+							background-color: rgba(158, 105, 61, .5);
+							transition: .3s;
+						}
+					}
 					&.myActivity {
 						position: relative;
 						&:after {

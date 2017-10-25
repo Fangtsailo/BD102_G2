@@ -23,9 +23,10 @@ session_start();
 	<script type="text/javascript" src="libs/vivus/vivus.min.js"></script>
 	<script type="text/javascript" src="js/parallax.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
-	<script type="text/javascript" src="js/header.js"></script>
 	<!-- googlemap -->
-	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script> -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+
+	<script type="text/javascript" src="js/header.js"></script>
 
 
 </head>
@@ -139,7 +140,7 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form>
+				<form action="" method="post">
 				<ul class="tabs">
 					<li class="tab_contents active" id="searchShops">
 						店家
@@ -158,17 +159,20 @@ require_once("headerForHomePage.php");
 								<option value="taipei">台北市</option>
 								<option value="newTaipei">新北市</option>
 								<option value="taoyuan">桃園市</option>
+								<option value="taoyuan">台中市</option>
+								<option value="taoyuan">台南市</option>
+								<option value="taoyuan">高雄市</option>
 						</select>
 					
 				
-					<button class="filter" id="filterTops">
+					<button type="button" name="topFilters" value="top" class="filter" id="filterTops">
 						<span>熱門</span>
 					</button>
-					<button class="filter" id="filterstars">
+					<button type="button" name="starFilters" value="stars" class="filter" id="filterstars">
 						<span>評價</span>
 					</button>
 					<div class="searchbar">
-					<input id="searchInput" type="search" name="searchStore" placeholder="尋找你附近的麵包香">
+					<input id="searchInput" type="search" name="searchStore" placeholder="輸入您附近的麵包香，讓我們幫您尋找">
 					<button id="searchSubmit" type="submit">搜尋</button>
 					</div>
 				</div>
@@ -201,14 +205,14 @@ require_once("headerForHomePage.php");
 		<div id="trigger2"></div>
 		<div class="shopItemGrp">
 
-<?php 
-try{
-	require_once("php/PDO/connectPDO.php");
-	$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
-	$topShops = $connectPDO->query($selectTopShopSQL);
-	while ($topShopsRow = $topShops->fetchObject()) {
-		
-?>
+	<?php 
+	try{
+		require_once("php/PDO/connectPDO.php");
+		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
+		$topShops = $connectPDO->query($selectTopShopSQL);
+		while ($topShopsRow = $topShops->fetchObject()) {
+			
+	?>
 
 			<div class="shopItem" data-depth="1">
 				<div class="shopPic">
@@ -235,15 +239,15 @@ try{
 				</div>
 			</div>
 			
-<?php
-	
-	} //while
-}catch(PDOException $ex){
-	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-	echo "行號：",$ex->getLine(),"<br>";
-}
+	<?php
+		
+		} //while
+	}catch(PDOException $ex){
+		echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+		echo "行號：",$ex->getLine(),"<br>";
+	}
 
- ?>
+	 ?>
 
 		</div>
 		
@@ -255,9 +259,165 @@ try{
 	<section class="homeCarMap" id="section3-move">
 		<div class="carMap">
 			<h1 class="mapTitle">胖小車地圖</h1>
-			<div class="carList">
-				
-			</div>
+			<div class="search_mapcar">
+				<div id="map-now1"></div>
+				<div class="search_store">
+		
+		
+		
+					<div class="search_storeOne">
+						<div class="search_storeImg col-sm-5 col-xs-4">
+							
+						</div>
+						<div class="search_storeContent col-sm-7 col-xs-8">
+							<h2><a href="#">山下麵包</a></h2>
+							<div class="search_follow">
+								<img src="img/icon/follow.svg">	
+							</div>
+							<div id="search_followNum">123</div>
+							<div class="search_storeStar">
+								<ul>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+								</ul>
+							</div>  
+							<div class="search_storeInfor ">
+								<ul>
+									<li>電話： (03)3333551</li>
+									<li>地址：  桃園市中壢區中大路300號
+										</li>
+									<li>營業時間： 10:00~23:00</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					<div class="search_storeOne">
+						<div class="search_storeImg col-sm-5 col-xs-4">
+							
+						</div>
+						<div class="search_storeContent col-sm-7 col-xs-8">
+							<h2><a href="#">山下麵包</a></h2>
+							<div class="search_follow">
+								<img src="img/icon/follow.svg">	
+							</div>
+							<div id="search_followNum">123</div>
+							<div class="search_storeStar">
+								<ul>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+								</ul>
+							</div>
+							<div class="search_storeInfor ">
+								<ul>
+									<li>電話： (03)3333551</li>
+									<li>地址：  桃園市中壢區中大路300號
+										</li>
+									<li>營業時間： 10:00~23:00</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					<div class="search_storeOne">
+						<div class="search_storeImg col-sm-5 col-xs-4">
+							
+						</div>
+						<div class="search_storeContent col-sm-7 col-xs-8">
+							<h2><a href="#">山下麵包</a></h2>
+							<div class="search_follow">
+								<img src="img/icon/follow.svg">	
+							</div>
+							<div id="search_followNum">123</div>
+							<div class="search_storeStar">
+								<ul>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+								</ul>
+							</div>
+							<div class="search_storeInfor ">
+								<ul>
+									<li>電話： (03)3333551</li>
+									<li>地址：  桃園市中壢區中大路300號
+										</li>
+									<li>營業時間： 10:00~23:00</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					<div class="search_storeOne">
+						<div class="search_storeImg col-sm-5 col-xs-4">
+							
+						</div>
+						<div class="search_storeContent col-sm-7 col-xs-8">
+							<h2><a href="#">山下麵包</a></h2>
+							<div class="search_follow">
+								<img src="img/icon/follow.svg">	
+							</div>
+							<div id="search_followNum">123</div>
+							<div class="search_storeStar">
+								<ul>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+								</ul>
+							</div>
+							<div class="search_storeInfor ">
+								<ul>
+									<li>電話： (03)3333551</li>
+									<li>地址：  桃園市中壢區中大路300號
+										</li>
+									<li>營業時間： 10:00~23:00</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+					<div class="search_storeOne">
+						<div class="search_storeImg col-sm-5 col-xs-4">
+							
+						</div>
+						<div class="search_storeContent col-sm-7 col-xs-8">
+							<h2><a href="#">山下麵包</a></h2>
+							<div class="search_follow">
+								<img src="img/icon/follow.svg">	
+							</div>
+							<div id="search_followNum">123</div>
+							<div class="search_storeStar">
+								<ul>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+								</ul>
+							</div>
+							<div class="search_storeInfor ">
+								<ul>
+									<li>電話： (03)3333551</li>
+									<li>地址：  桃園市中壢區中大路300號
+										</li>
+									<li>營業時間： 10:00~23:00</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+						
+				</div>  <!-- search_store -->
+		</div>
 		</div>
 	</section>
 

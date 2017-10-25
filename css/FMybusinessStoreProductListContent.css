@@ -100,7 +100,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -117,7 +116,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(3) td input {
         width: 90%;
         height: 40px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -241,8 +239,6 @@ header {
         .CenterBusiness .commit input:nth-child(1):hover {
           color: #fff;
           background-color: #F06428;
-          -webkit-transition: 0.5s;
-          -o-transition: 0.5s;
           transition: 0.5s; }
       .CenterBusiness .commit input:nth-child(2) {
         margin-left: 10px;
@@ -253,8 +249,6 @@ header {
         .CenterBusiness .commit input:nth-child(2):hover {
           color: #F06428;
           background-color: #fff;
-          -webkit-transition: 0.5s;
-          -o-transition: 0.5s;
           transition: 0.5s; }
 
 @media screen and (max-width: 645px) {
@@ -302,7 +296,6 @@ header {
         .CenterBusiness .content-table table tr:nth-child(2) td input {
           width: 90%;
           height: 40px;
-          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           text-indent: 4px;
           font-size: 14px;
@@ -319,7 +312,6 @@ header {
         .CenterBusiness .content-table table tr:nth-child(3) td input {
           width: 90%;
           height: 40px;
-          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           text-indent: 4px;
           font-size: 14px;
@@ -370,15 +362,12 @@ header {
               right: 0;
               left: 0;
               margin: auto;
-              display: -webkit-box;
               display: -webkit-flex;
               display: -ms-flexbox;
               display: flex;
-              -webkit-box-align: center;
               -webkit-align-items: center;
               -ms-flex-align: center;
               align-items: center;
-              -webkit-box-pack: center;
               -webkit-justify-content: center;
               -ms-flex-pack: center;
               justify-content: center; }
