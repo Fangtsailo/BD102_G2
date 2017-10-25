@@ -133,7 +133,7 @@ require_once("BackStageHeaderSidebar.php");
 
 								$sql = "select * from member where MEM_ROLE=0";
 
-								$member = $pdo->query($sql);
+								$member = $connectPDO->query($sql);
 
 
 
@@ -146,7 +146,7 @@ require_once("BackStageHeaderSidebar.php");
 								 	$sqlSearch = "select * from member where MEM_ID='$searchBar' or MEM_NAME='$searchBar'";
 
 
-								 	$memberSearch = $pdo->query($sqlSearch);
+								 	$memberSearch = $connectPDO->query($sqlSearch);
 
 								 	$memberSearchRow=$memberSearch->fetchObject();
 

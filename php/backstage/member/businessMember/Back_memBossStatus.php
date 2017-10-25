@@ -15,7 +15,7 @@
 		// $user = "root";
 		// $password = "root";
 		// $options = array( PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
-		// $pdo = new PDO($dsn, $user, $password, $options);
+		// $connectPDO = new PDO($dsn, $user, $password, $options);
 
 
 		require_once("../../../pdo/connectPDO.php");
@@ -28,7 +28,7 @@
       		$sql = "UPDATE member SET MEM_STATUS=1 WHERE MEM_ID ='$mem_ID'";
 
 
-      		$update = $pdo->query($sql);
+      		$update = $connectPDO->query($sql);
 
       		header("Location:../../../../BBusinessMember.php");
 
@@ -38,7 +38,7 @@
 
       		$sql = "UPDATE member set MEM_STATUS=0 where MEM_ID ='$mem_ID' ";
 
-      		$update = $pdo->query($sql);
+      		$update = $connectPDO->query($sql);
 
       		header("Location:../../../../BBusinessMember.php");
 
@@ -49,7 +49,7 @@
 
       		$sql = "select * from member where MEM_ROLE=1 and ( MEM_ID='$searchBar' or MEM_NAME='$searchBar')";
 
-      		$memberSearch = $pdo->query($sql);
+      		$memberSearch = $connectPDO->query($sql);
 
       		if($memberSearch->rowCount()!==0){
 
@@ -68,7 +68,7 @@
 
       			$sql = "UPDATE store_imformation set SI_CHECKSTAY=0 where SI_NUM ='$SI_NO' ";
 
-      			$update = $pdo->query($sql);
+      			$update = $connectPDO->query($sql);
 
       			header("Location:../../../../BBusinessMember.php");
 
@@ -79,7 +79,7 @@
 
       			$sql = "UPDATE store_imformation set SI_CHECKSTAY=1 where SI_NUM ='$SI_NO' ";
 
-      			$update = $pdo->query($sql);
+      			$update = $connectPDO->query($sql);
 
       			header("Location:../../../../BBusinessMember.php");
 

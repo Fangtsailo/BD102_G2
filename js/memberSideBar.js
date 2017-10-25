@@ -30,13 +30,13 @@
    window.addEventListener('scroll', function(){
    var st = this.scrollY;
 
-   console.log(123);
+  
       if( st > lastScrollY) {
 
 
           
           LeftBusinessClass.add('leftBarUp');
-           console.log(456);
+         
           
 
           

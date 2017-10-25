@@ -1,17 +1,224 @@
+//按下追蹤icon動作
+function triggerFollow(memNum, storeId) {
+	if (memNum != -1) {
+		if (!isThisMemFollowThisStore) {
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange=function (){
+		    if( xhr.readyState == 4){
+		       if( xhr.status == 200 ){
+		       	//改變 icon 的圖
+		       	$('#follow-icon').attr('src', 'img/icon/follow3.svg');
+		       	$('#trace-btn .count').text("("+xhr.responseText+")");
+		       	isThisMemFollowThisStore = true;
+		       }else{
+		          console.log( xhr.status );
+		       }
+		   }
+		  }
+		  
+		  var url = "php/store/browse/ajax/AjaxTriggerFollow.php?storeId=" + storeId + "&memNum=" + memNum + "&mode=follow";
+		  xhr.open("Get", url, true);
+		  xhr.send( null );		
+		} else {
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange=function (){
+		    if( xhr.readyState == 4){
+		       if( xhr.status == 200 ){
+		       	//取消 follow
+		       	$('#follow-icon').attr('src', 'img/icon/follow2.svg');
+		       	$('#trace-btn .count').text("("+xhr.responseText+")");
+		       	isThisMemFollowThisStore = false;
+		       }else{
+		          console.log( xhr.status );
+		       }
+		   }
+		  }
+		  
+		  var url = "php/store/browse/ajax/AjaxTriggerFollow.php?storeId=" + storeId + "&memNum=" + memNum + "&mode=cancel";
+		  xhr.open("Get", url, true);
+		  xhr.send( null );			
+		}
+	}
+}
+//dot scroll 
+function navigatorDotScroll() {
+	$('.navigator a').click(function(){
+       $('html, body').animate({
+         scrollTop: $( $.attr(this, 'href') ).offset().top
+       }, 700);
+       $('.navigator .item .point').removeClass('selected');
+       $('.point', this).addClass('selected');
+ 	});
+ 	//user scroll 到特定特範圍, 對應 dot 要變色
+ 	$(window).on('scroll', function(){
+ 		console.log($(document).scrollTop());
+		if ($(document).scrollTop() > (4560 + $('.screen-messages').height()) ) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(6) .point').addClass('selected');
+	    }  else if ($(document).scrollTop() > 3340) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(5) .point').addClass('selected');
+	    } else if ($(document).scrollTop() > 2400) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(4) .point').addClass('selected');
+	    } else if ($(document).scrollTop() > 1550) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(3) .point').addClass('selected');
+	    } else if ($(document).scrollTop() > 650) {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(2) .point').addClass('selected');
+	    } else {
+	    	$('.navigator a .point').removeClass('selected');
+	    	$('.navigator a:nth-child(1) .point').addClass('selected');
+	    }
+
+ 	});
+}
+
+//檢舉留言
+function reportMessage(messageNum, memNum, reason) {
+	if (memNum != -1) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	       		//檢舉完成, 把 button 變色跟變字
+	       		$('#msg-' + messageNum + ' p').text('已檢舉');
+	       		$('#msg-' + messageNum).off();
+	       		$('#msg-' + messageNum).addClass('reported');
+
+	       }else{
+	          console.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxReportMessage.php?messageNum=" + messageNum + "&memNum=" + memNum + "&reason=" + reason;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );	
+	} else {
+		//須先登入
+		$('#loginBox').fadeIn(500);
+	    $("#menu").removeClass("show");
+	    $('#addShopBox').hide();
+	}
+}
+
+//留言
+function sendMessage(storeId, memId, content) {
+	if (memId != -1) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	       		location.reload();
+	       }else{
+	          console.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxSendMessage.php?storeId=" + storeId + "&memId=" + memId + "&content=" + content;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );	
+	}
+}
+
+//抓取更多留言
+nowMessagePage = 0;
+function loadMoreMessage(storeId) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	        var messageListObj = JSON.parse(xhr.responseText);
+	        nowMessagePage++;
+	        var html = "";
+	        for (var key in messageListObj) {
+	        	html +=	'<div class="message-box">'
+					+	'	<div class="mem-pic col-lg-2"><img alt="'+ messageListObj[key].memberPicName +'" src="'+ messageListObj[key].memberPicName +'"></div>'
+					+	'	<div class="content col-lg-10">'
+					+	'		<div class="container">'
+					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
+					+	'			<p>'+ messageListObj[key].content +'</p>'
+					+	'			<div class="setting-area">'
+					+	'				<div class="report pointer button" id="msg-'+ messageListObj[key].no + '">'
+					+	'					<p>檢舉</p>'
+					+	'			</div></div>'
+					+	'			<div class="clear"></div>'
+					+	'		</div>'
+					+	'	</div>'
+					+	'	<div class="clear"></div>'
+					+	'</div>';
+	        }
+	        $('#messages-area').append(html);
+	        $('#messages-area').append($('#more-message'));
+	       }else{
+	          consle.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxLoadMoreMessage.php?messagePage=" + nowMessagePage + "&storeId=" + storeId;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );
+}
 	//胖小車即時位置地圖
-	function initBreadCarNowLocationMap(selector) {
-	var map = new google.maps.Map(document.getElementById(selector), {
+function initBreadCarNowLocationMap(id, lat, lng) {
+	var map = new google.maps.Map(document.getElementById(id), {
 	  zoom: 16,
-	  center: {lat: 24.965356, lng: 121.191038}
+	  center: {lat: lat, lng: lng}
 	});
-		var image = {
-		path: "M27.4,8.1h-20c-4,0-5,3.3-5,5v13h-2v2h4v-15c0-0.5,0.2-3,3-3h1v8h27.5c0.3,1.4,0.5,3.1,0.5,5v2c0,0.5-0.2,1-1,1 h-1.1c-0.5-2.3-2.5-4-4.9-4s-4.4,1.7-4.9,4h-8.2c-0.5-2.3-2.5-4-4.9-4c-2.8,0-5,2.2-5,5s2.2,5,5,5c2.4,0,4.4-1.7,4.9-4h8.2 c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4h1.1c2.2,0,3-1.8,3-3v-2C38.4,8.3,27.5,8.1,27.4,8.1z M16.4,16.1h-6v-6h6V16.1z M24.4,16.1h-6v-6 h6V16.1z M26.4,16.1v-6h1c0.3,0,5.5,0.1,7.8,6H26.4z M11.4,30.1c-1.6,0-3-1.4-3-3s1.4-3,3-3s3,1.4,3,3S13.1,30.1,11.4,30.1z M29.4,30.1c-1.6,0-3-1.4-3-3s1.4-3,3-3s3,1.4,3,3S31.1,30.1,29.4,30.1z"
-	};
+	var image = "img/icon/van2.png";
 	var beachMarker = new google.maps.Marker({
-	  position: {lat:  24.965356 , lng: 121.191038},
+	  position: {lat:  lat , lng: lng},
 	  map: map, 
 	  icon: image
 	});
+}
+	//胖小車路線地圖: id, 座標 array
+function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+	var labels = '123456';
+	var labelIndex = 0;
+    //initMap
+    var map = new google.maps.Map(document.getElementById(id), {
+      zoom: 13,
+      center: LatLngArr[0]
+    });
+    directionsDisplay.setMap(map);
+//now location marker
+	var image = "img/icon/van2.png";
+	var nowLocationMarker = new google.maps.Marker({
+	  position: nowLocation,
+	  map: map, 
+	  icon: image
+	});    
+//init route service
+    var waypts = [];
+	for (waypointIndex in LatLngArr) {
+		if (waypointIndex != 0 && waypointIndex != LatLngArr.length-1) {
+	        waypts.push({
+	          location: LatLngArr[waypointIndex],
+	          stopover: true
+	        });
+    	}
+	}
+    directionsService.route({
+      origin: LatLngArr[0],
+      destination: LatLngArr[LatLngArr.length-1],
+      waypoints: waypts,
+      optimizeWaypoints: true,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+      	//有這行才會畫出來...
+      	directionsDisplay.setDirections(response);	
+      } else {
+        console.log('Directions request failed due to ' + status);
+      }
+    });
 }
 function initParallax(selector) {
  		var scence = document.getElementById(selector);
@@ -27,6 +234,16 @@ function allSlickSetting() {
 	//   arrows: false,
 	//   fade: true
  //  });
+ //screen1 banner 輪播
+ screen1BannerImgDivNum = "1";
+ setInterval(function(){ 
+ 	var tmpNum = screen1BannerImgDivNum;
+ 	screen1BannerImgDivNum = (screen1BannerImgDivNum + 1) % 3;
+ 	screen1BannerImgDivNum = screen1BannerImgDivNum == 0?3:screen1BannerImgDivNum;
+ 	$('#banner' + screen1BannerImgDivNum).fadeIn(2000);
+ 	$('#banner' + tmpNum).fadeOut(2000);
+  }, 5000);
+
 	$('.product').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
@@ -40,18 +257,52 @@ function allSlickSetting() {
 	  asNavFor: '.product',
 	  dots: true,
 	  centerMode: true,
-	  focusOnSelect: true
+	  focusOnSelect: true,
+	  responsive: [
+	    {
+	      breakpoint: 767,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
   });
-   $('.screen-bread-car-map .tabs').slick({
+	$('.screen-bread-car-map .maps').slick({
 	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  fade: true,
+	  swipe: false,
+	  asNavFor: '.screen-bread-car-map .tabs'
+	});
+   $('.screen-bread-car-map .tabs').slick({
+	  slidesToShow: 3,
 	  slidesToScroll: 1,
 	  arrows: false,
 	  dots: true,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  asNavFor: '.screen-bread-car-map .maps',
 	  // variableWidth: true,
-	  infinite: false
+	  infinite: true,
+	  responsive: [
+	    {
+	      breakpoint: 767,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
   });
+   	$('.banner-area').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: true,
+	  dots: true,
+	  fade: true
+	});
 }
 //screen1 animation, like a paper
 function animate_illustration(a, b) {
@@ -326,15 +577,14 @@ new ScrollMagic.Scene({
 		        })])
 				// .addIndicators({name: "other-store"})
 				.addTo(controller);	
-new ScrollMagic.Scene({
-					triggerElement: "#messages-icon-trigger"
-				})
-				.setTween(TweenMax.staggerFromTo('.screen-messages .message-icons .icon', 3, {
-				    opacity: 0,
-				}, {
-				    opacity: 1,
-				}))
-				// .addIndicators({name: "messages)"})
-				.addTo(controller);
+// var scene = new ScrollMagic.Scene({triggerElement: "a#screen-bread-car-map", duration: 200, triggerHook: "onLeave"})
+// 					.setTween(tween)
+// 					.addIndicators() // add indicators (requires plugin)
+// 					.addTo(controller);
+
+// 				// change behaviour of controller to animate scroll instead of jump
+// 				controller.scrollTo(function (newpos) {
+// 					TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+// 				});
 						
 }

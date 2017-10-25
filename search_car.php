@@ -37,7 +37,37 @@
 		
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
+						</div>
+						<div class="search_storeContent col-sm-7 col-xs-8">
+							<h2><a href="#">山下麵包</a></h2>
+							<div class="search_follow">
+								<img src="img/icon/follow.svg">	
+							</div>
+							<div id="search_followNum">123</div>
+							<div class="search_storeStar">
+								<ul>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+									<li><img src="img/icon/star.svg"></li>
+								</ul>
+							</div>  
+							<div class="search_storeInfor ">
+								<ul>
+									<li>電話： (03)3333551</li>
+									<li>地址：  桃園市中壢區中大路300號
+										</li>
+									<li>營業時間： 10:00~23:00</li>
+								</ul>
+							</div>
+						</div>
+						
+				</div>
+				<div class="search_storeOne">
+						<div class="search_storeImg col-sm-5 col-xs-4">
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -67,7 +97,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -97,7 +127,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -127,37 +157,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-				</div>
-				<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
