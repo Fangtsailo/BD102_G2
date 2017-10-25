@@ -15,9 +15,21 @@ $(function(){
 //留言板收合
 $(function(){
 	$(".msg").click(function(){
-		$('.reply').slideToggle(1000);
+		//找到這個msg裡面的reply
+		$(this).children('.reply').slideToggle(1000);
+		//$(this).children('.reply')也可以寫成$(this).find('.reply')，但children()在此的用法更為恰當
 	});
 });
+
+//下面這個語法對，但不會收合，可能瀏覽器不認為reply是msg的第6個孩子
+// $(function(){
+// 	$(".msg").click(function(){
+// 		if($('this :nth-child(6)').hasClass('reply')){
+// 			$('this .reply').slideToggle(1000);
+// 		}
+// 	});
+// });
+
 
 //輸入錯誤手機時停止傳送
 function check(){
@@ -28,3 +40,6 @@ function check(){
 		return false;
 	}
 }
+
+
+// $('.msg').appendChild('div');

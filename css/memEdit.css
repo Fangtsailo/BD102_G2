@@ -26,6 +26,7 @@ li {
     width: 100%;
     padding: 5% 5%;
     position: relative;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #805934;
     /* Old browsers */
@@ -39,6 +40,7 @@ li {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
     /* IE10+ */
+    background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
     background: linear-gradient(to right, #805934 0%, #9e693d 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
@@ -60,11 +62,15 @@ li {
       right: 10px;
       top: 10px;
       cursor: pointer;
+      -webkit-transition: .3s ease-in;
+      -o-transition: .3s ease-in;
       transition: .3s ease-in; }
       .globalForm .globalFormHeader .svg:hover {
         -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
         transform: rotate(180deg);
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
   .globalForm .globalFormContent {
     width: 100%;
@@ -123,6 +129,8 @@ li {
 
 .hideUp_sub {
   top: 0px  !important;
+  -webkit-transition: 0.3s ease-in-out !important;
+  -o-transition: 0.3s ease-in-out !important;
   transition: 0.3s ease-in-out !important; }
 
 .hideUp_sub_burger {
@@ -143,6 +151,7 @@ li {
   /* Opera 11.10+ */
   background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* IE10+ */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
   background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -150,8 +159,12 @@ li {
   z-index: 100;
   position: fixed;
   top: 0;
+  -webkit-box-shadow: 0px 0px 15px 0px #382715;
   box-shadow: 0px 0px 15px 0px #382715;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: top .3s ease-in-out;
+  -o-transition: top .3s ease-in-out;
   transition: top .3s ease-in-out; }
   .globalHead .headLoginBox {
     position: fixed;
@@ -170,6 +183,7 @@ li {
       height: 80vh;
       border: none;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       .globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -179,6 +193,8 @@ li {
         font-size: 16px; }
       .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
       .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
@@ -206,6 +222,7 @@ li {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
+          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -242,6 +259,7 @@ li {
       height: 80vh;
       border: none;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       .globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -251,6 +269,8 @@ li {
         font-size: 16px; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID {
         position: relative; }
@@ -294,6 +314,7 @@ li {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
+          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -328,10 +349,12 @@ li {
   .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     .globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       text-align: right;
       font-size: 0; }
@@ -347,6 +370,7 @@ li {
         border: 1px solid #fff;
         padding-left: 10px;
         outline: none;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       .globalHead .headerRight .headSearch select {
@@ -360,6 +384,7 @@ li {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       .globalHead .headerRight .headSearch button {
@@ -376,6 +401,7 @@ li {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           vertical-align: top; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
@@ -389,6 +415,7 @@ li {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
@@ -439,6 +466,7 @@ li {
         width: 100%;
         height: 70px;
         padding: 5px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         .globalHead .headerRight .headAccount #headMemStatus div {
           width: 110px;
@@ -456,10 +484,14 @@ li {
               height: 100%;
               border-radius: 50%; }
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
+                -webkit-transition: .3s;
+                -o-transition: .3s;
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
                   -webkit-animation: shake .3s ease infinite alternate;
                   animation: shake .3s ease infinite alternate;
+                  -webkit-transition: .3s;
+                  -o-transition: .3s;
                   transition: .3s; }
             .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
               margin-right: 10px; }
@@ -513,10 +545,14 @@ li {
               text-align: center;
               font-weight: 500;
               color: #663300;
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;
+                -webkit-transition: .3s;
+                -o-transition: .3s;
                 transition: .3s; }
       .globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
@@ -544,10 +580,14 @@ li {
           font-weight: 300; }
         .globalHead .headerRight .headAccount #headMemLogin:hover {
           background-color: #996633;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
           transition: .3s; }
           .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
             -webkit-animation: shake .5s ease infinite alternate;
             animation: shake .5s ease infinite alternate;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s; }
   .globalHead .rwd_headerSearch {
     display: none; }
@@ -608,10 +648,14 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease;
     cursor: pointer; }
 
@@ -626,10 +670,14 @@ footer {
   border: 1px solid #3399ff;
   color: #3399ff;
   background-color: #fbf8f1;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
     color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease;
     text-decoration: none;
     cursor: pointer; }
@@ -804,6 +852,8 @@ footer {
         margin: auto;
         fill: #fbf8f1; }
       .globalHead .burgerMenu.active {
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease; }
     .globalHead #headMemStatus {
       display: none; }
@@ -816,9 +866,13 @@ footer {
       background-color: rgba(0, 0, 0, 0.5); }
       .globalHead #menu.hideMenu {
         right: -120%;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu.show {
         right: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu ul {
         display: block;
@@ -835,6 +889,7 @@ footer {
         /* Opera 11.10+ */
         background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* IE10+ */
+        background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
         background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -880,9 +935,13 @@ footer {
             padding: 10px;
             color: #fbf8f1;
             font-weight: 400;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s; }
             .globalHead #menu ul li a:focus {
               background-color: rgba(158, 105, 61, 0.5);
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
           .globalHead #menu ul li #rwdBossRole {
             display: block;
@@ -890,9 +949,13 @@ footer {
             padding: 10px;
             color: #fbf8f1;
             font-weight: 400;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s; }
             .globalHead #menu ul li #rwdBossRole:focus {
               background-color: rgba(158, 105, 61, 0.5);
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
           .globalHead #menu ul li.myActivity {
             position: relative; }
@@ -925,6 +988,7 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
       background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -934,6 +998,8 @@ footer {
       top: 80px;
       left: -100%;
       height: 100vh;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
       transition: .3s;
       display: block; }
       .globalHead .rwdSearchBar .rwdsearchItem {
@@ -975,6 +1041,8 @@ footer {
       .globalHead .rwdSearchBar.activeSearch {
         top: 80px;
         left: 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
         transition: .3s; }
       .globalHead .rwdSearchBar input[type="submit"] {
         display: block;
@@ -1030,6 +1098,7 @@ footer {
     height: 75%;
     border: none;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
     #addShopBox .globalForm .chooseType input {
       width: 20px;
@@ -1074,6 +1143,7 @@ footer {
     height: 75%;
     border: none;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
 
 * {
@@ -1123,34 +1193,39 @@ img {
   max-width: 100%;
   vertical-align: bottom; }
 
-input {
+input, textarea {
   outline: none;
   padding: 2px;
   font-family: "Noto Sans CJK TC";
   font-weight: lighter; }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #bbb; }
 
-input:-moz-placeholder {
+input:-moz-placeholder, textarea:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #bbb; }
 
-input::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #bbb; }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #bbb; }
 
-input:not(.radio):focus {
+input:not(.radio):focus, textarea:focus {
   border: 1px solid rgba(240, 100, 40, 0.3);
+  -webkit-box-shadow: 0 0 2px #f6921E;
   box-shadow: 0 0 2px #f6921E; }
 
 .myfollow, .msg, .myentry {
-  transition: box-shadow 1s; }
+  -webkit-transition: -webkit-box-shadow 1s;
+  transition: -webkit-box-shadow 1s;
+  -o-transition: box-shadow 1s;
+  transition: box-shadow 1s;
+  transition: box-shadow 1s, -webkit-box-shadow 1s; }
 
 .container {
   position: relative;
@@ -1183,7 +1258,9 @@ input:not(.radio):focus {
         background-position: right center;
         position: absolute;
         right: 140px;
-        transition: right 1.5s, background-color 1s; }
+        -webkit-transition: right 1.5s, background-color 1s;
+        -o-transition: right 1.5s, background-color 1s;
+        transition: right 1.5s, background-color 1s; }
       .container .sidebar li a.mycommentsvg {
         background-image: url(../img/memimg/mycomment.svg); }
       .container .sidebar li a.myentrysvg {
@@ -1228,7 +1305,7 @@ input:not(.radio):focus {
       content: '';
       display: block;
       clear: both; }
-    .container .content input[type="submit"], .container .content .upload, .container .content label.openlightbox, .container .content .btn {
+    .container .content input[type="submit"], .container .content input[type="button"], .container .content .upload, .container .content label.openlightbox, .container .content .btn {
       width: 145px;
       height: 50px;
       border-radius: 25px;
@@ -1238,16 +1315,21 @@ input:not(.radio):focus {
       color: #f06428;
       cursor: pointer;
       line-height: 48px;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box; }
     .container .content .btn {
       display: block;
       margin: 0 auto; }
-    .container .content input[type="submit"] {
+    .container .content input[type="submit"], .container .content input[type="button"] {
       color: #fbf8f1;
       background: #f06428;
       float: none;
       line-height: 40px;
+      -webkit-transition: -webkit-box-shadow 1s;
+      transition: -webkit-box-shadow 1s;
+      -o-transition: box-shadow 1s;
       transition: box-shadow 1s;
+      transition: box-shadow 1s, -webkit-box-shadow 1s;
       margin: 0 auto; }
     .container .content input[type="file"] {
       opacity: 0;
@@ -1256,11 +1338,14 @@ input:not(.radio):focus {
     .container .content .upload:hover, .container .content label.openlightbox:hover, .container .content .btn:hover {
       color: #fbf8f1;
       background: #f06428;
+      -webkit-transition: .3s ease;
+      -o-transition: .3s ease;
       transition: .3s ease; }
     .container .content .upload {
       position: relative;
       float: left; }
-    .container .content input[type="submit"]:hover {
+    .container .content input[type="submit"]:hover, .container .content input[type="button"]:hover {
+      -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5); }
     .container .content .box {
       display: none;
@@ -1272,7 +1357,9 @@ input:not(.radio):focus {
       top: 0px;
       left: 0px;
       background-color: rgba(50, 50, 50, 0.5);
-      transition: width 0s 1s, height 0s 1s, background-color 1s; }
+      -webkit-transition: width 0s 1s, height 0s 1s, background-color 1s;
+      -o-transition: width 0s 1s, height 0s 1s, background-color 1s;
+      transition: width 0s 1s, height 0s 1s, background-color 1s; }
       .container .content .box .changepsw {
         width: 330px;
         height: 390px;
@@ -1283,6 +1370,7 @@ input:not(.radio):focus {
         bottom: 0px;
         left: 0px;
         margin: auto;
+        -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
         .container .content .box .changepsw p {
           margin: 0 auto;
@@ -1302,6 +1390,7 @@ input:not(.radio):focus {
           text-align: justify;
           color: #fbf8f1;
           position: relative;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           background: #805934;
           background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
@@ -1309,6 +1398,7 @@ input:not(.radio):focus {
           background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
           background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
           background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+          background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
           background: linear-gradient(to right, #805934 0%, #9e693d 100%); }
         .container .content .box .changepsw img {
           width: 40px;
@@ -1332,6 +1422,7 @@ input:not(.radio):focus {
     .container .content .myfollow:nth-child(n+2) {
       margin-left: 4%; }
     .container .content .myfollow:hover {
+      -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
     .container .content .btn50 {
       width: 50px;
@@ -1342,7 +1433,7 @@ input:not(.radio):focus {
       float: right;
       margin: -55px 2px 0 0; }
       .container .content #cancelfollow:after {
-        content: '�����l��';
+        content: 'ȡ��׷ۙ';
         font-size: 12px;
         vertical-align: top; }
     .container .content #mappointer {
@@ -1350,7 +1441,7 @@ input:not(.radio):focus {
       display: block; }
       .container .content #mappointer:after {
         display: block;
-        content: '�a��';
+        content: '�؈D';
         font-size: 12px;
         vertical-align: top; }
     .container .content .myfollow > ul {
@@ -1383,7 +1474,9 @@ input:not(.radio):focus {
         margin: 5px 10px;
         float: left; } }
     .container .content .mycomment {
-      /*�κ��h�]�w�����u�q*/
+      /*�Ýu���O���Gɫ����*/
+      background-image: -webkit-linear-gradient(left, #00c853 10px, #00c853 10px);
+      background-image: -o-linear-gradient(left, #00c853 10px, #00c853 10px);
       background-image: linear-gradient(90deg, #00c853 10px, #00c853 10px);
       background-size: 2px 100px;
       background-position: center top;
@@ -1427,7 +1520,7 @@ input:not(.radio):focus {
             top: 0px;
             right: 0; }
             .container .content .mycomment li .msg #del:after {
-              content: '�R��';
+              content: '�h��';
               font-size: 12px;
               vertical-align: top; }
         .container .content .mycomment li .msg:before {
@@ -1440,6 +1533,7 @@ input:not(.radio):focus {
           position: absolute;
           top: 20px; }
         .container .content .mycomment li .msg:hover {
+          -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
       .container .content .mycomment li:nth-child(even) {
         left: 50%; }
@@ -1500,18 +1594,21 @@ input:not(.radio):focus {
         position: absolute;
         top: 140px;
         left: 0;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
         transition: 1s; }
         .container .content .myentry .info #cancelentry {
           float: right;
           margin: -50px 2px 0 0; }
         .container .content .myentry .info #cancelentry:after {
-          content: '�������W';
+          content: 'ȡ������';
           color: #fbf8f1;
           font-size: 12px;
           vertical-align: top; }
     .container .content .myentry:nth-child(n+2) {
       margin-left: 5%; }
     .container .content .myentry:hover {
+      -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
     .container .content .myentry:hover .info {
       top: 0; }
@@ -1548,6 +1645,7 @@ input:not(.radio):focus {
       text-align: justify;
       height: 100%;
       display: inline-block;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box; }
     .container .content form span.note {
       font-size: 12px;
@@ -1557,17 +1655,29 @@ input:not(.radio):focus {
     .container .content form label {
       width: 90px;
       float: left; }
-    .container .content form input, .container .content form strong {
+    .container .content form input, .container .content form strong, .container .content form textarea {
       max-width: 320px;
       width: 100%;
       float: right; }
     .container .content form a.upload {
       float: right; }
-    .container .content form input {
+    .container .content form input, .container .content form textarea {
       border-radius: 2px;
       background: transparent;
       border: none;
       border-bottom: 1px solid #bbb; }
+    .container .content form textarea {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      resize: none;
+      height: 200px;
+      border: 1px solid rgba(187, 187, 187, 0.3);
+      border-bottom: 1px solid #bbb;
+      margin-bottom: 30px; }
+    .container .content form input[type="number"] {
+      width: 30%;
+      float: none;
+      text-align: center; }
     .container .content form .userpic {
       width: 80px;
       height: 80px;
@@ -1622,7 +1732,9 @@ input:not(.radio):focus {
       .container .content form label.openlightbox {
         margin-right: unset; }
       .container .content form input[type="submit"] {
-        margin-bottom: 0px; } }
+        margin-bottom: 0px; }
+      .container .content form input[type="number"] {
+        width: 18%; } }
     .container .content .memBeBoss {
       max-width: 1200px;
       width: 120%;
@@ -1664,9 +1776,7 @@ input:not(.radio):focus {
         width: 8%;
         margin-left: 0%; }
       .container .content .memBeBoss1 .radio:last-child {
-        margin-left: 3%; }
-      .container .content .memBeBoss1 a.btn {
-        margin-top: 100px; } }
+        margin-left: 3%; } }
     .container .content h1.find {
       margin-bottom: 30px; }
     .container .content div.find {

@@ -125,6 +125,7 @@ img{
 				float:left;
 				width:30px;
 				padding:0 0 0 20px;
+				box-sizing:content-box;
 				img {
 					vertical-align: -webkit-baseline-middle;
 				}
