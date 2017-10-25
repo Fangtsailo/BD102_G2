@@ -1066,6 +1066,9 @@ footer {
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
 
+body {
+  background: url("../img/homepage/homepage_bg0.png") repeat; }
+
 img {
   vertical-align: top; }
 
@@ -1086,6 +1089,7 @@ img {
     .search_result h1 #numberOf {
       color: #f06428; }
   .search_result .tag-fa {
+    height: 35px;
     margin-top: 5px;
     display: inline-block; }
     .search_result .tag-fa .tag {
@@ -1096,7 +1100,9 @@ img {
       color: #fbf8f1;
       background-color: #f6921E;
       position: relative;
-      border-radius: 5px; }
+      height: 29px;
+      border-radius: 5px;
+      display: inline-block; }
     .search_result .tag-fa .head {
       top: 0;
       position: absolute;
@@ -1122,6 +1128,7 @@ img {
   margin: 5vw auto 300px;
   max-width: 800px; }
   .search_store .search_storeOne {
+    background-color: #fbf8f1;
     width: 100%;
     margin: 25px auto;
     overflow: hidden;

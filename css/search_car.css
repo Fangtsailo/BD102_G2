@@ -1212,13 +1212,14 @@ img {
   .search_content .search_mapcar {
     overflow: -webkit-paged-x; }
     .search_content .search_mapcar #map-now1 {
-      height: 80vh; }
+      height: 45vh; }
     .search_content .search_mapcar .search_store {
       bottom: 0%;
       width: 95%;
       margin: auto;
       overflow: auto;
-      max-height: 200px; }
+      max-height: 200px;
+      position: relative; }
       .search_content .search_mapcar .search_store .search_storeOne {
         width: 100%;
         margin: auto; }

@@ -17,6 +17,9 @@
 .coverHeader {
   height: 80px; }
 
+.week_checkBox {
+  display: none; }
+
 header {
   z-index: 3; }
 
@@ -79,19 +82,67 @@ header {
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(2) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(3) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(3) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(4) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(4) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(5) td input {
         width: 90%;
         height: 40px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        text-indent: 4px;
+        font-size: 14px;
+        outline: none; }
+      .CenterBusiness .content-table table tr:nth-child(5) td p {
+        color: #999;
+        height: 40px;
+        line-height: 40px;
+        width: 90%;
+        text-align: left;
+        margin: auto;
+        font-size: 18px;
+        padding-left: 4px; }
       .CenterBusiness .content-table table tr:nth-child(6) {
         height: 100px; }
         .CenterBusiness .content-table table tr:nth-child(6) th div {
@@ -101,11 +152,9 @@ header {
           width: 19%;
           border: 1px solid #ddd;
           margin: 10px;
-          padding: 5px 0; }
-          .CenterBusiness .content-table table tr:nth-child(6) td div div:hover {
-            background-color: #4289FF;
-            color: #fff;
-            transition: 0.5s; }
+          padding: 5px 0;
+          transition: .3s;
+          cursor: pointer; }
       .CenterBusiness .content-table table tr:nth-child(7) {
         height: 100px; }
         .CenterBusiness .content-table table tr:nth-child(7) th div {
@@ -113,7 +162,21 @@ header {
           line-height: 80px; }
         .CenterBusiness .content-table table tr:nth-child(7) td label {
           display: inline-block;
-          margin: 20px; }
+          width: 40%; }
+          .CenterBusiness .content-table table tr:nth-child(7) td label select {
+            width: 60%;
+            text-align: center;
+            border: 1px solid #ccc;
+            color: #999;
+            outline: none;
+            -moz-text-align-last: center;
+            text-align-last: center;
+            border: none;
+            height: 30px;
+            font-size: 14px;
+            border: 1px solid #ccc; }
+            .CenterBusiness .content-table table tr:nth-child(7) td label select option {
+              text-align: center; }
       .CenterBusiness .content-table table tr:nth-child(8) {
         height: 180px; }
         .CenterBusiness .content-table table tr:nth-child(8) th div {
@@ -127,35 +190,82 @@ header {
           width: 90%;
           height: 140px;
           border: 1px solid #ccc;
-          resize: none; }
-      .CenterBusiness .content-table table tr:nth-child(9) {
+          resize: none;
+          outline: none;
+          text-indent: 4px;
+          font-size: 14px;
+          outline: none;
+          color: #999; }
+      .CenterBusiness .content-table table tr:nth-child(9), .CenterBusiness .content-table table tr:nth-child(10), .CenterBusiness .content-table table tr:nth-child(11), .CenterBusiness .content-table table tr:nth-child(12) {
         height: 220px; }
-        .CenterBusiness .content-table table tr:nth-child(9) th div {
+        .CenterBusiness .content-table table tr:nth-child(9) th div, .CenterBusiness .content-table table tr:nth-child(10) th div, .CenterBusiness .content-table table tr:nth-child(11) th div, .CenterBusiness .content-table table tr:nth-child(12) th div {
           height: 200px;
           line-height: 200px; }
-        .CenterBusiness .content-table table tr:nth-child(9) td {
+        .CenterBusiness .content-table table tr:nth-child(9) td, .CenterBusiness .content-table table tr:nth-child(10) td, .CenterBusiness .content-table table tr:nth-child(11) td, .CenterBusiness .content-table table tr:nth-child(12) td {
           position: relative; }
-          .CenterBusiness .content-table table tr:nth-child(9) td div {
-            width: 90%;
-            height: 160px;
-            border: 1px solid #ccc;
-            position: relative;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            margin: auto;
-            padding-top: 5%; }
-            .CenterBusiness .content-table table tr:nth-child(9) td div div {
+          .CenterBusiness .content-table table tr:nth-child(9) td > div, .CenterBusiness .content-table table tr:nth-child(10) td > div, .CenterBusiness .content-table table tr:nth-child(11) td > div, .CenterBusiness .content-table table tr:nth-child(12) td > div {
+            position: relative; }
+            .CenterBusiness .content-table table tr:nth-child(9) td > div img.preview, .CenterBusiness .content-table table tr:nth-child(10) td > div img.preview, .CenterBusiness .content-table table tr:nth-child(11) td > div img.preview, .CenterBusiness .content-table table tr:nth-child(12) td > div img.preview {
+              display: block;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              margin: auto;
+              max-width: 100%;
+              max-height: 180px; }
+            .CenterBusiness .content-table table tr:nth-child(9) td > div:nth-child(1), .CenterBusiness .content-table table tr:nth-child(10) td > div:nth-child(1), .CenterBusiness .content-table table tr:nth-child(11) td > div:nth-child(1), .CenterBusiness .content-table table tr:nth-child(12) td > div:nth-child(1) {
+              width: 70%;
+              height: 160px;
+              border: 1px solid #ccc;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 5%;
+              margin: auto;
+              padding-top: 5%;
+              display: inline-block; }
+            .CenterBusiness .content-table table tr:nth-child(9) td > div:nth-child(2), .CenterBusiness .content-table table tr:nth-child(10) td > div:nth-child(2), .CenterBusiness .content-table table tr:nth-child(11) td > div:nth-child(2), .CenterBusiness .content-table table tr:nth-child(12) td > div:nth-child(2) {
+              display: none;
+              width: 20%;
+              height: 160px;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 5%;
+              margin: auto;
+              padding-top: 5%;
+              display: inline-block; }
+              .CenterBusiness .content-table table tr:nth-child(9) td > div:nth-child(2) input, .CenterBusiness .content-table table tr:nth-child(10) td > div:nth-child(2) input, .CenterBusiness .content-table table tr:nth-child(11) td > div:nth-child(2) input, .CenterBusiness .content-table table tr:nth-child(12) td > div:nth-child(2) input {
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 14%;
+                margin: auto;
+                width: 50px;
+                height: 35px;
+                border: none;
+                border: 1px solid #ccc;
+                outline: none;
+                background-color: #cc4e4e;
+                color: #fff; }
+            .CenterBusiness .content-table table tr:nth-child(9) td > div > div, .CenterBusiness .content-table table tr:nth-child(10) td > div > div, .CenterBusiness .content-table table tr:nth-child(11) td > div > div, .CenterBusiness .content-table table tr:nth-child(12) td > div > div {
               height: 80%;
               width: 100%;
-              border: none; }
-              .CenterBusiness .content-table table tr:nth-child(9) td div div input {
-                display: none; }
-              .CenterBusiness .content-table table tr:nth-child(9) td div div img {
+              border: none;
+              position: absolute;
+              top: 50px;
+              z-index: 1; }
+              .CenterBusiness .content-table table tr:nth-child(9) td > div > div input, .CenterBusiness .content-table table tr:nth-child(10) td > div > div input, .CenterBusiness .content-table table tr:nth-child(11) td > div > div input, .CenterBusiness .content-table table tr:nth-child(12) td > div > div input {
+                display: none;
+                text-align: center; }
+              .CenterBusiness .content-table table tr:nth-child(9) td > div > div img, .CenterBusiness .content-table table tr:nth-child(10) td > div > div img, .CenterBusiness .content-table table tr:nth-child(11) td > div > div img, .CenterBusiness .content-table table tr:nth-child(12) td > div > div img {
                 display: block;
-                margin: auto; }
-              .CenterBusiness .content-table table tr:nth-child(9) td div div span {
+                margin: auto;
+                cursor: pointer; }
+              .CenterBusiness .content-table table tr:nth-child(9) td > div > div span, .CenterBusiness .content-table table tr:nth-child(10) td > div > div span, .CenterBusiness .content-table table tr:nth-child(11) td > div > div span, .CenterBusiness .content-table table tr:nth-child(12) td > div > div span {
                 display: block;
                 font-size: 8px; }
   .CenterBusiness .commit {
@@ -166,7 +276,8 @@ header {
       border: none;
       width: 150px;
       height: 50px;
-      border-radius: 25px; }
+      border-radius: 25px;
+      outline: none; }
       .CenterBusiness .commit input:nth-child(1) {
         margin-right: 10px;
         border: 1px solid #F06428;
@@ -223,11 +334,10 @@ header {
   right: -70px;
   transition: 1s; }
 
-footer {
-  width: 100vw;
-  height: 50px;
-  position: fixed;
-  bottom: 0; }
+.chooseWeek {
+  background-color: #4289FF;
+  color: #fff !important;
+  transition: .3s; }
 
 @media screen and (max-width: 940px) {
   .LeftBusiness {

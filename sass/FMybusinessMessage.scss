@@ -61,48 +61,7 @@ width: 100%;
 
 
 
-	.LeftBusiness{
-		width: 200px;
-		height: 500px;
-		position: fixed;
-		left: 0;
-		top: 160px;
-		// background-color: #ccc;
-		.nav-Group1{
-			margin-top: 30px;
-			svg{
-				.cls-ma-1{
-					fill:$globalAccountColor;
-				}
-				.cls-ma-2{
-					fill:#fff;
-				}
-			}
-		}
-		div{
-			div{
-				&:nth-child(1){
-					@include member-nav-bar-mainTitle-propity();
-					// margin-top:150px;
 
-				}
-				&:nth-child(2){
-					@include member-nav-bar-subTitle-propity();
-					
-				}
-				&:nth-child(3){
-					@include member-nav-bar-subTitle-propity();
-					
-				}
-				&:nth-child(4){
-					@include member-nav-bar-subTitle-propity();
-					
-				}
-
-				
-			}
-		}
-	}
 
 
 
@@ -248,7 +207,8 @@ width: 100%;
 						
 						&:nth-child(1){
 							width: $table-col2;
-							padding-left: 30px;
+							padding-left: 60px;
+							text-align: right;
 								textarea{
 								display: block;
 								margin-top: 0;
@@ -256,13 +216,16 @@ width: 100%;
 								margin: auto;
 								width: 90%;
 								height: 80px;
-								border:1px solid #ccc;
+								border:1px solid $globalHdColor01;
+								border-radius: 4px;
 								resize : none;
 								background-color: #FBF8F1;
+								text-indent: 6px;
+								line-height: 20px;
+								outline: none;
 								&::-webkit-input-placeholder { /* WebKit browsers */
 								    color:#999;
 								    font-size: 13px;
-								    text-indent: 1px;
 								    font-family: $globalFont;
 								    background-color: #FBF8F1;
 								    text-indent: 6px;
@@ -273,10 +236,11 @@ width: 100%;
 
 						&:nth-child(2){
 							width: $table-col3;
+							text-align: center;
 							button{
 								border:none;
-								width: 44px;
-								height: 30px;
+								width: 60px;
+								height: 40px;
 								color:#fff;
 								background-color: $globalHdColor01;
 								border-radius: 4px;
@@ -385,10 +349,10 @@ width: 100%;
 
 
 footer{
-	width: 100vw;
-	height: 50px;
-	position: fixed;
-	bottom: 0;
+	// width: 100vw;
+	// height: 50px;
+	// position: fixed;
+	// bottom: 0;
 }
 
 

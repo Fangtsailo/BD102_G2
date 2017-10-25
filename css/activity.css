@@ -1071,31 +1071,129 @@ footer {
 /* ===================================================*/
 @-webkit-keyframes dough1 {
   0% {
-    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 30% 70% 40% 60% / 50% 55% 45% 50%; }
   50% {
     border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 @keyframes dough1 {
   0% {
-    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 30% 70% 40% 60% / 50% 55% 45% 50%; }
   50% {
     border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 
 @-webkit-keyframes dough2 {
   0% {
-    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+    border-radius: 40% 60% 60% 40% / 55% 55% 45% 45%; }
   50% {
-    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 
 @keyframes dough2 {
   0% {
-    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+    border-radius: 40% 60% 60% 40% / 55% 55% 45% 45%; }
   50% {
-    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+
+@-webkit-keyframes bigdoughChange {
+  0% {
+    opacity: .8; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: .5; } }
+
+@keyframes bigdoughChange {
+  0% {
+    opacity: .8; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: .5; } }
+
+@-webkit-keyframes blow {
+  0% {
+    -webkit-transform: translate(0px);
+    transform: translate(0px); }
+  100% {
+    -webkit-transform: translate(550px);
+    transform: translate(550px); } }
+
+@keyframes blow {
+  0% {
+    -webkit-transform: translate(0px);
+    transform: translate(0px); }
+  100% {
+    -webkit-transform: translate(550px);
+    transform: translate(550px); } }
+
+@-webkit-keyframes cloud {
+  0% {
+    top: 400px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    top: 200px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    top: 0px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+@keyframes cloud {
+  0% {
+    top: 400px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    top: 200px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    top: 0px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+@-webkit-keyframes cloud2 {
+  0% {
+    bottom: 100px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 250px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); }
+  100% {
+    bottom: 400px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8); } }
+
+@keyframes cloud2 {
+  0% {
+    bottom: 100px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 250px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); }
+  100% {
+    bottom: 400px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8); } }
 
 .activity_banner {
   width: 100%;
-  height: 100%;
-  background: url("../img/acty_background.png") center center;
   background-size: cover;
   text-align: center;
   height: 135vh;
@@ -1113,7 +1211,7 @@ footer {
       width: 25%;
       height: 250px;
       position: relative;
-      border-radius: 38% 67% 34% 43% / 60% 67% 34% 43%;
+      border-radius: 38% 62% 34% 66% / 60% 67% 33% 40%;
       background: #FFF8D7;
       /* Old browsers */
       background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
@@ -1292,7 +1390,7 @@ footer {
 =====================================================
 ===================================================== */
 .activity_content {
-  background: url("../img/acty_background_2.png") center center;
+  background: url("../img/act/acty_background_2.png") center center;
   background-size: cover;
   padding-top: 120px;
   width: 100%;
@@ -1323,6 +1421,33 @@ footer {
       position: relative; }
     .activity_content .activity_pot img {
       width: 100%; }
+    .activity_content .activity_pot .bigDough {
+      -webkit-animation: bigdoughChange 3s 1s linear 3 alternate;
+      animation: bigdoughChange 3s 1s linear 3 alternate;
+      opacity: 0;
+      border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
+      width: 280px;
+      height: 250px;
+      background: #FFF8D7;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+      /* IE6-9 */
+      position: absolute;
+      bottom: 11%;
+      left: 10%;
+      z-index: -5; }
     .activity_content .activity_pot .activity_dough_change {
       width: 280px;
       height: 250px;
@@ -1344,11 +1469,9 @@ footer {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
       /* IE6-9 */
       position: absolute;
-      bottom: 10%;
+      bottom: 11%;
       left: 10%;
       z-index: -2; }
-      .activity_content .activity_pot .activity_dough_change .activity_dough_change_js {
-        background: linear-gradient(red, yellow); }
     .activity_content .activity_pot h2 {
       position: absolute;
       top: 40%;
@@ -1376,7 +1499,7 @@ footer {
       position: relative; }
     .activity_content .activityPot img {
       width: 100%; }
-    .activity_content .activityPot .activity_dough_change {
+    .activity_content .activityPot .activity_dough_changes {
       width: 250px;
       height: 200px;
       border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
@@ -1413,7 +1536,6 @@ footer {
     min-width: 240px;
     height: 20vw;
     min-height: 200px;
-    background: url("../img/acty_bread.png");
     border-radius: 60% 45% 40% 60% / 50% 55% 45% 50%;
     background-size: cover;
     -webkit-animation: dough2 2s linear infinite alternate;
@@ -1421,7 +1543,6 @@ footer {
     position: relative;
     z-index: 2; }
   .activity_content .activity_dough_2 {
-    margin-top: -2;
     min-width: 280px;
     max-width: 350px;
     width: 23%;
@@ -1511,20 +1632,14 @@ footer {
       height: 20%;
       background-size: cover; }
     .activity_content .activity_dough_4_all .pic_1 {
-      background: url("../img/acty_pic1.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_2 {
-      background: url("../img/acty_pic2.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough1 3s linear infinite alternate;
       animation: dough1 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_3 {
-      background: url("../img/acty_pic3.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
@@ -1539,21 +1654,37 @@ footer {
     width: 100%;
     height: 100%;
     z-index: 10; }
+  .activity_content .act_wind {
+    width: 437px;
+    opacity: 0;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    z-index: -8; }
+    .activity_content .act_wind .actShadow {
+      width: 0px;
+      left: 0%;
+      position: absolute;
+      height: 185px;
+      margin: auto;
+      -webkit-animation: blow 1s  linear infinite;
+      animation: blow 1s  linear infinite;
+      box-shadow: 1px 0px 72px 36px rgba(248, 214, 191, 0.8);
+      top: 0;
+      background-color: rgba(248, 214, 191, 0.8); }
   .activity_content .activity_dough_5 {
     width: 30%;
     height: 20vw;
     min-width: 320px;
     min-height: 250px;
-    background: url("../img/acty_pic4.png") center center;
-    background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate; }
   .activity_content .activity_dough_6 {
     width: 25%;
     height: 20vw;
-    background: url("../img/acty_pic5.png");
-    background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     min-width: 320px;
     min-height: 250px;
@@ -1569,10 +1700,10 @@ footer {
     margin-left: 13%; }
   .activity_dough_3 {
     float: right;
-    margin: 5% 10% 5% 0; }
+    margin: 0 10% 5% 0; }
   .activity_dough_4_all {
     float: left;
-    margin-top: -15%;
+    margin-top: -17%;
     margin-left: 10%; } }
 
 @media screen and (min-width: 961px) and (max-width: 1200px) {
@@ -1600,15 +1731,17 @@ footer {
     margin-left: 90%;
     margin-top: -50%; }
   .bake_bread {
-    background: radial-gradient(rgba(241, 94, 36, 0.7), rgba(255, 165, 0, 0)); }
+    background-color: rgba(241, 94, 36, 0.2); }
   .activity_dough_5 {
     float: right;
     margin: 3vw 5% 0 0; }
   .activity_dough_6 {
     float: left;
-    margin: 15vw 0 10% 10%; }
+    margin: 15vw 0 5% 10%; }
   .activity_bread {
-    display: block; } }
+    display: block; }
+  .activity_dough_2 {
+    margin-top: -2%; } }
 
 @media screen and (max-width: 960px) {
   .activity_dough_1 {
@@ -1621,6 +1754,7 @@ footer {
     display: block;
     margin: 0 auto 110px; }
   .activity_dough_2 {
+    margin-top: 0;
     float: none;
     margin: 30px 10px;
     display: inline-block; }
@@ -1650,23 +1784,34 @@ footer {
     display: inline-block;
     margin: 3vw 0 10%; }
   .activity_bread {
+    display: none; }
+  .container-template .activity .section_1 .activity_content .activity_content_inner .section_5 .trigger6 .act_wind {
     display: none; } }
 
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/
 .activity_application {
-  background: url("../img/acty_background_3.png") center;
+  position: relative;
   overflow: hidden;
-  background-size: cover;
   padding-top: 10vw;
   padding-bottom: 2vw;
-  /*===========activity_application   rwd  end====================
+  /*===========activity_application   rwd  ====================
 ================================================
 ===============================================*/
   /*===========activity_application   rwd  end====================
 ================================================
 ===============================================*/ }
+  .activity_application::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-size: cover;
+    z-index: -20; }
   .activity_application .activity_final {
     text-align: center;
     max-width: 798px; }
@@ -1686,15 +1831,14 @@ footer {
         width: 100%;
         vertical-align: top; }
     .activity_application .activity_final .fin_1 {
-      background: url("../img/acty_bread1.jpg");
       background-size: cover; }
     .activity_application .activity_final .fin_2 {
-      background: url("../img/acty_bread2.jpg");
       background-size: cover; }
     .activity_application .activity_final .fin_3 {
-      background: url("../img/acty_bread3.jpg");
       background-size: cover; }
   .activity_application .activity_bread {
+    z-index: 2;
+    position: relative;
     margin: auto;
     width: 300px; }
     .activity_application .activity_bread img {
@@ -1713,6 +1857,33 @@ footer {
     margin-top: 10px; }
   .activity_application .btnTop {
     margin-top: 10px; }
+  .activity_application .activity_cloud {
+    position: absolute;
+    top: -300px;
+    width: 510px;
+    height: 550px;
+    overflow: hidden;
+    left: -121px; }
+  .activity_application .act_cloud:nth-child(1) {
+    z-index: 1;
+    position: absolute;
+    left: 121px;
+    top: -100px;
+    -webkit-animation: cloud  12s 5s linear infinite;
+    animation: cloud  12s 5s linear infinite; }
+  .activity_application .act_cloud:nth-child(2) {
+    z-index: 1;
+    position: absolute;
+    top: -100px;
+    right: 50px;
+    -webkit-animation: cloud  8s 3s linear infinite;
+    animation: cloud  8s 3s linear infinite; }
+  .activity_application .act_cloud:nth-child(3) {
+    z-index: -1;
+    position: absolute;
+    left: 200px;
+    -webkit-animation: cloud2 5s  linear infinite;
+    animation: cloud2 5s  linear infinite; }
   @media screen and (max-width: 960px) {
     .activity_application .activity_final {
       width: 90%;

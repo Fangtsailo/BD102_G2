@@ -1112,7 +1112,8 @@ footer {
         font-size: 18px;
         color: #fff; }
     .container .LeftBusiness div div:nth-child(2) {
-      width: 180px;
+      display: block;
+      width: 160px;
       height: 60px;
       background-color: #D9E8FF;
       border-radius: 2px;
@@ -1126,7 +1127,7 @@ footer {
         margin: auto;
         font-size: 18px;
         color: #fff;
-        color: #4289FF; }
+        color: #4289FF !important; }
       .container .LeftBusiness div div:nth-child(2) svg {
         display: inline-block;
         position: absolute;
@@ -1143,7 +1144,8 @@ footer {
         .container .LeftBusiness div div:nth-child(2) svg .cls-3 {
           fill: #999; }
     .container .LeftBusiness div div:nth-child(3) {
-      width: 180px;
+      display: block;
+      width: 160px;
       height: 60px;
       background-color: #D9E8FF;
       border-radius: 2px;
@@ -1157,7 +1159,7 @@ footer {
         margin: auto;
         font-size: 18px;
         color: #fff;
-        color: #4289FF; }
+        color: #4289FF !important; }
       .container .LeftBusiness div div:nth-child(3) svg {
         display: inline-block;
         position: absolute;
@@ -1174,7 +1176,8 @@ footer {
         .container .LeftBusiness div div:nth-child(3) svg .cls-3 {
           fill: #999; }
     .container .LeftBusiness div div:nth-child(4) {
-      width: 180px;
+      display: block;
+      width: 160px;
       height: 60px;
       background-color: #D9E8FF;
       border-radius: 2px;
@@ -1188,7 +1191,7 @@ footer {
         margin: auto;
         font-size: 18px;
         color: #fff;
-        color: #4289FF; }
+        color: #4289FF !important; }
       .container .LeftBusiness div div:nth-child(4) svg {
         display: inline-block;
         position: absolute;

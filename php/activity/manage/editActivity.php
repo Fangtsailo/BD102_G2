@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3555d19d861130cac04acfed5d4f32eaeb637c3
 <?php 
 ob_start();
 session_start();

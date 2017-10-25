@@ -1,13 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-   HELLOW
+
+	  <!DOCTYPE html>
+  <html>
+  
+      <head>
+          <meta charset="UTF-8">
+          <title>购物车效果</title>
+ 
+         <style>
+             body {
+                 background: black;
+            }
+            
+             nav {
+                 width: 120px;
+                 height: 40px;
+                 background: #ccc;
+                 margin-left: 300px;
+                position: relative;
+            }
+            
+             nav a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                 transition: 0.1s 1s;
+                 /*鼠标移开*/
+             }
+           
+             nav:hover a {
+                transition: 0.1s;
+                 /*鼠标越过*/
+                background: white;
+                 color: #ff4400;
+             }
+             
+             .sub {
+                 position: absolute;
+                 right: 0px;
+                 width: 300px;
+                 height: 0px;
+                 background: white;
+                 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+                 transition: 1s;
+             }
+             
+             nav:hover .sub {
+                 height: 150px;
+             }
+         </style>
+     </head>
+ 
+     <body>
+ 
+        <nav>
+             <a href="">购物车</a>
+             <div class="sub">
+                 子菜单
+             </div>
+         </nav>
+     </body>
+ 
+ </html>
 </body>
 </html>

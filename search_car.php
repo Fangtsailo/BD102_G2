@@ -37,7 +37,7 @@
 		
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -67,7 +67,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -97,7 +97,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -127,7 +127,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>
@@ -157,7 +157,7 @@
 				</div>
 				<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
-							<!-- <img src="img/search-store.png"> -->
+							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="#">山下麵包</a></h2>

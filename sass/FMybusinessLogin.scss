@@ -11,6 +11,10 @@ header{
 	z-index: 1;
 }
 
+input{
+	outline: none;
+}
+
 
 // .container{
 // 	box-sizing: border-box;
@@ -34,6 +38,7 @@ header{
 			background-color: #c5beb7;
 			width: 40vw;
 			height: 70vh;
+			min-height: 675px;
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -120,7 +125,7 @@ header{
 						margin: auto;
 
 						margin-top: 30px;
-
+						cursor: pointer;
 
 						width: 120px;
 						height: 40px;
