@@ -65,7 +65,7 @@ session_start();
 		//$_SESSION["memId"]="cccfff";
 		//$_SESSION["memNo"]="7";
 
-		$memNo="7";
+		$memNo="8";
 
 		$sql = "select * from store_imformation where SI_MEMNO=$memNo";
 

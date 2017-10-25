@@ -214,7 +214,7 @@ session_start();
 						<td><?php echo $product_table_Row->PD_PRICE; ?></td>
 						<td>
 							<div>
-								<a href="">
+								<a href="FMybusinessStoreProductListContentDetail.php?PD_NO=<?php echo $PD_NO; ?>" >
 									<img src="img/icon/editIcon.png">
 									<span>編輯</span>
 								</a>
