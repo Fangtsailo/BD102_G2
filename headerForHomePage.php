@@ -1,13 +1,17 @@
+
 <?php 
 	//判斷是否有登入過網站
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
 		//更換會員專區面板
 		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);</script>"; //更換會員專區面板
+		if ($_SESSION["memRole"] == 1) { //若會員身份為店長，則打開店長專區連結
+			echo "<script type='text/javascript'>window.addEventListener('load',changeRole,false);</script>";
+		}
 	}else { 
 		// session_destroy();
 	}
 
- ?>
+ ?>   
 
 <header class="globalHead">
 
@@ -81,14 +85,16 @@
 			</div>
 			<div class="globalFormContent">
 
-				<div class="globalFormInput">
+				<div class="globalFormInput enterID">
 					<label>註冊會員帳號</label><input type="text" id="newMemId" name="newMemId" placeholder="請輸入會員帳號" required>
+					<span id="showResult"></span>
 				</div>
 				<div class="globalFormInput">
 					<label>註冊會員信箱</label><input type="email" id="newMemMail" name="newMemMail" placeholder="請輸入會員信箱" required>
 				</div>
-				<div class="globalFormInput">
+				<div class="globalFormInput enterPsw">
 					<label>會員密碼</label><input type="password" id="newMemPsw"  name="newMemPsw" placeholder="密碼" required>
+					<span><i id="showPsw" class="fa fa-2x fa-eye" aria-hidden="true"></i></span>
 				</div>
 				
 				<div class="clearfix"></div>
@@ -197,7 +203,7 @@
 						<li><a class="memLink" href="#">我的追蹤</a></li>
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
-						<li><a class="memLink" href="#">成為店長</a></li>
+						<li><a  id="role" class="memLink" href="#">成為店長</a></li>
 						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
@@ -248,27 +254,38 @@
 			<li class="navItem needLogIn"><a class="globalOkBtn" id="rwdLoginBtn" href="#">請先登入會員</a></li>
 		</ul>	
 		<ul  id="memLoggedin">
-		<li class="closeMenu">
-			<span id="closeBurger">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
-				<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
-				</svg>
-			</span>
-			<div class="clearfix"></div>
-		</li>
-		<li class="memPart">
-			<div class="memPic">
-				<img id="memPic" src="img/homepage/user.png">
-			</div>
-			<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
-			<div class="clearfix"></div>
-		</li>
-		<li class="navItem"><a href="#">我的追蹤</a></li>
-		<li class="navItem"><a href="#">我的留言</a></li>
-		<li class="navItem myActivity"><a href="#">我的報名</a></li>
-		<li class="navItem beBoss"><a href="#">成為店長</a></li>
-		<li class="navItem"><a href="php/member/login/sessionLogOut.php">登出</a></li>
+			<li class="closeMenu">
+				<span id="closeBurger">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 			viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+					<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+					</svg>
+				</span>
+				<div class="clearfix"></div>
+			</li>
+			<li class="memPart">
+				<div class="memPic">
+					<img id="memPic" src="img/homepage/user.png">
+				</div>
+				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
+				<div class="clearfix"></div>
+			</li>
+			<ul id="memberMenu">
+			<li class="navItem"><a href="#">我的追蹤</a></li>
+			<li class="navItem"><a href="#">我的留言</a></li>
+			<li class="navItem myActivity"><a href="#">我的報名</a></li>
+			</ul>
+			<li class="navItem beBoss">
+				<a id="rwdBossRole" href="#">成為店長</a>
+				
+				<ul id="bossMenu">
+					<li><a class="navItem bossMenu" href="#">麵包店</a></li>
+					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
+					<li><a class="navItem bossMenu" href="#">活動管理</a></li>
+					<li><a class="navItem bossMenu" href="#">留言管理</a></li>
+				</ul>
+			</li>
+			<li class="navItem"><a href="php/member/login/sessionLogOut.php">登出</a></li>
 		</ul>
 	</nav>
 	

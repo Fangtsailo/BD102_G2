@@ -260,6 +260,8 @@ session_start();
 <!-- ==============left fixed content======END======= -->
 		
 	<div class="bossActContent">
+		<form action="php/activity/add/addActivity.php" method="post" id="addActForm" enctype="multipart/form-data"> <?php  ?>
+			<input type="hidden" name="acNo" value="">
 			<img src="img/icon/bossActivity.svg" alt="#" class="bigTitle">
 			<h2>新增活動</h2>
 			<div class="actManageTable">
@@ -267,25 +269,37 @@ session_start();
 					<tr>
 						<th><div>活動名稱</div></th>
 						<td>
-							<input type="text" name="actName" placeholder="請輸入活動名稱">
+							<input type="text" name="acName" placeholder="請輸入活動名稱">
 						</td>
 					</tr>
 					<tr>
 						<th><div>活動時間</div></th>
 						<td>
-							<input type="text" name="actTime" placeholder="例如：2017-10-10上午10:00">
+							<input type="text" name="acTime" placeholder="例如：2017-10-10上午10:00">
 						</td>
 					</tr>
 					<tr>
 						<th><div>人數限制</div></th>
 						<td>
-							<input type="number" name="" placeholder="請輸入人數">
+							<input type="number" name="acParticipants" placeholder="請輸入人數">
 						</td>
 					</tr>
 					<tr>
-						<th><div>描述</div></th>
+						<th><div>目的</div></th>
 						<td>
-							<textarea placeholder="限500字"></textarea>
+							<textarea name="ac_detail1" placeholder="限70字" maxlength="70"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th><div>詳情</div></th>
+						<td>
+							<textarea name="ac_detail2" placeholder="限55字" maxlength="55"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<th><div>食材準備</div></th>
+						<td>
+							<textarea name="ac_detail3" placeholder="限80字" maxlength="80"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -294,11 +308,31 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actBgd"></label>
+								<input type="file" name="upfile[]">
+								<span></span>
+								</label>
+							
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actBgd"></label>
+								<input type="file" name="upfile[]"></label>
+						</td>
+					</tr>
+					<tr>
+						<th class="uploadPic"><div>活動照片(限3張)</div></th>
+						<td class="uploadPic">
+							<label class="upload">
+								<img src="img/icon/camera.png">
+								<span>上傳照片</span>
+								<input type="file" name="upfile[]"></label>
+							<label class="upload">
+								<img src="img/icon/camera.png">
+								<span>上傳照片</span>
+								<input type="file" name="upfile[]"></label>
+							<label class="upload">
+								<img src="img/icon/camera.png">
+								<span>上傳照片</span>
+								<input type="file" name="upfile[]"></label>
 						</td>
 					</tr>
 					<tr>
@@ -307,15 +341,15 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actFood"></label>
+								<input type="file" name="upfile[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actFood"></label>
+								<input type="file" name="upfile[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actFood"></label>
+								<input type="file" name="upfile[]"></label>
 						</td>
 					</tr>
 					<tr>
@@ -324,21 +358,22 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actProduct"></label>
+								<input type="file" name="upfile[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actProduct"></label>
+								<input type="file" name="upfile[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="actProduct"></label>
+								<input type="file" name="upfile[]"></label>
 						</td>
 					</tr>
 				</table>
-				<button class="globalOkBtn" type="submit">編輯完成</button>
+				<button class="globalOkBtn" id="addActBtn" type="button">編輯完成</button>
 			</div>
-		</div>
+		</form>
+	</div>
 		
 
 
@@ -355,7 +390,25 @@ session_start();
 	 	require_once('footer.php');
 
 	  ?>
-	  
+<script type="text/javascript">
+	$(function(){
+		$("#addActBtn").click(function(){
+            $.sweetModal.confirm('確認送出?', function() {
+				$.sweetModal({
+					content: '修改完成',
+					icon: $.sweetModal.ICON_SUCCESS,
+					width: '300px',
+					theme: $.sweetModal.THEME_MIXED,
+					timeout: 1000,
+					onClose: function(){
+		              	$("#addActForm").submit();
+		           	}
+		        });
+			});
+		});
+	});
+
+</script>
 </body>
 </body>
 </html>
