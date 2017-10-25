@@ -62,12 +62,14 @@ session_start();
 		//$sql should change to SI_MEMNO=$MEM_ID 
 		// where $MEM_ID = $_GET["MEM_ID"];  from login session
 
-		$_SESSION["memId"]="ccc";
-		$_SESSION["memNo"]="4";
+		//$_SESSION["memId"]="cccfff";
+		//$_SESSION["memNo"]="7";
 
-		$sql = "select * from store_imformation where SI_MEMNO=4";
+		$memNo="7";
 
-		$store_imformation = $pdo->query($sql);
+		$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+		$store_imformation = $connectPDO->query($sql);
 
 		$store_imformationRow=$store_imformation->fetchObject();
 
@@ -164,12 +166,18 @@ session_start();
 
 			<?php 
 
+			if($store_imformation->rowCount()!=0){
+
 				$SI_TYPE=$store_imformationRow->SI_TYPE;
 
-			if ($SI_TYPE==0) {
-				echo "麵包店";
+				if ($SI_TYPE==0) {
+					echo "麵包店";
+				}else{
+					echo "麵包車";
+				}
+
 			}else{
-				echo "麵包車";
+				echo "新增店家";
 			}
 
 			 ?>
@@ -180,7 +188,7 @@ session_start();
 		</div>
 		
 
-		<form action="php/member/myBusiness/store/storeManage.php" method="get">
+		<form action="php/member/myBusiness/store/storeManage.php" method="post" enctype="multipart/form-data">
 		<div class="content-table">
 				
 			<table>
@@ -195,12 +203,20 @@ session_start();
 						<p>			
 							<?php 
 
-								$SI_SELLSTAY=$store_imformationRow->SI_SELLSTAY;
+							if($store_imformation->rowCount()!=0){
 
-							if ($SI_SELLSTAY==1) {
-								echo "營運中";
+									$SI_SELLSTAY=$store_imformationRow->SI_SELLSTAY;
+
+								if ($SI_SELLSTAY==1) {
+									echo "營運中";
+								}elseif($SI_SELLSTAY==0){
+									echo "歇業中";
+								}else{
+									echo "建構中";
+								}
+
 							}else{
-								echo "歇業中";
+								echo "首次建構";
 							}
 
 							 ?>
@@ -212,19 +228,34 @@ session_start();
 
 				<tr>
 				<th><div>店名</div></th>
-				<td><input type="text" name="" value="<?php echo $store_imformationRow->SI_NAME;?>"></td>
+				<td><input type="text" name="SI_NAME" value="<?php
+
+				 if($store_imformation->rowCount()!=0){
+
+				echo $store_imformationRow->SI_NAME;
+
+				}
+				?>"></td>
 				</tr>
 
 
 				<tr>
 				<th><div>電話</div></th>
-				<td><input type="text" name="" value="<?php echo $store_imformationRow->SI_PHONE;?>"></td>
+				<td><input type="text" name="SI_PHONE" value="<?php 
+					if($store_imformation->rowCount()!=0){
+						echo $store_imformationRow->SI_PHONE;
+					}
+					?>"></td>
 				</tr>
 
 
 				<tr>
 				<th><div>地址</div></th>
-				<td><input type="text" name="" value="<?php echo $store_imformationRow->SI_ADDR;?>"></td>
+				<td><input type="text" name="SI_ADDR" value="<?php 
+					if($store_imformation->rowCount()!=0){
+						echo $store_imformationRow->SI_ADDR;
+					}
+					?>"></td>
 				</tr>
 
 
@@ -235,15 +266,22 @@ session_start();
 
 					<?php 
 
+					if($store_imformation->rowCount()!=0){
 
 					$SI_RESTDAY=$store_imformationRow->SI_RESTDAY;
 
 					$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
 
 
+					}else{
 
+						$SI_RESTDAY=",,,,,,,";
 
-					 ?>
+						$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+
+					}
+
+					?>
 
 
 					<div>
@@ -373,7 +411,7 @@ session_start();
 					</div>
 				</td>
 
-				<input type="hidden" id="restWeekDays" name="restWeekDays" value="<?php echo $SI_RESTDAY ?>">
+				<input type="hidden" id="restWeekDays" name="SI_RESTDAY" value="<?php echo $SI_RESTDAY ?>">
 				
 					<script type="text/javascript">
 	
@@ -397,7 +435,7 @@ session_start();
 
 								var updateWeekStr =updateWeek.join(",");
 								
-								alert(updateWeekStr);
+								//alert(updateWeekStr);
 
 								$("#restWeekDays").val(updateWeekStr);
 							});
@@ -419,7 +457,7 @@ session_start();
 				<td>
 					<label>
 						<span>開始</span>
-						<select>
+						<select name="SI_STARTTIME">
 
 							<?php 
 
@@ -438,7 +476,7 @@ session_start();
 					</label>
 					<label>
 						<span>結束</span>
-						<select>
+						<select name="SI_ENDTIME">
 							<?php 
 
 							for($i=0;$i<24;$i++){
@@ -461,7 +499,11 @@ session_start();
 				<tr>
 				<th><div>故事</div></th>
 				<td>
-					<textarea placeholder="請輸入"><?php echo $store_imformationRow->SI_STORY;?></textarea>
+					<textarea name="SI_STORY" placeholder="請輸入"><?php
+					if($store_imformation->rowCount()!=0){
+						echo $store_imformationRow->SI_STORY;
+					}
+					?></textarea>
 				</td>
 				</tr>
 
@@ -474,17 +516,32 @@ session_start();
 					<div>		
 						<div>
 							<label for="uploadLogoImg"><img src="img/icon/camera.png"></label>
-							<input type="file" class="upl_0" name="" id="uploadLogoImg">
+							<input type="file" class="upl_0" name="uploadLogoImg[]" id="uploadLogoImg">
 							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
-						</div>
-						<img class="preview preview_0" src="">
+						</div><?php 
+
+						if($store_imformation->rowCount()!=0){
+
+							if($store_imformationRow->SI_LOGO===null or $store_imformationRow->SI_LOGO==""){
+
+								echo '<img class="preview preview_0" src="">';
+							}else{
+
+								echo '<img class="preview preview_0" src="img/store/logo/'.$store_imformationRow->SI_LOGO.'.jpg">';
+							}
+						}else{
+
+							echo '<img class="preview preview_0" src="">';
+
+						}
+
+						?></div>
+					<div>
+						
+							<input type="hidden" id="hidden_dellogo" name="delLogo" value="">
+							<input type="button" id="dellogo" name="" value="刪除" style="cursor: pointer;">
+						
 					</div>
-					<!-- <div>
-						<form action="php/member/myBusiness/store/storeManage.php" method="get">
-							<input type="hidden" name="delLogo" value="1">
-							<input type="submit" name="" value="刪除">
-						</form>
-					</div> -->
 				</td>
 				</tr>
 
@@ -495,17 +552,30 @@ session_start();
 					<div>		
 						<div>
 							<label for="uploadImg1"><img src="img/icon/camera.png"></label>
-							<input type="file" class="upl_1" name="" id="uploadImg1">
+							<input type="file" class="upl_1" name="uploadImg[]" id="uploadImg1">
 							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
-						</div>
-						<img class="preview preview_1" src="">
+						</div><?php 
+
+						if($store_imformation->rowCount()!=0){
+
+							if($store_imformationRow->SI_BIMG_1===null or $store_imformationRow->SI_BIMG_1==""){
+
+							echo '<img class="preview preview_1" src="">';
+							}else{
+
+								echo '<img class="preview preview_1" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_1.'.jpg">';
+							}
+						}else{
+							echo '<img class="preview preview_1" src="">';
+						}
+
+						 ?></div>
+					<div>
+						
+							<input type="hidden" id="hidden_delImg1" name="delImg1" value="">
+							<input type="button" id="delImg1" name="" value="刪除" style="cursor: pointer;">
+						
 					</div>
-<!-- 					<div>
-						<form action="storeManage.php" method="get">
-							<input type="hidden" name="delImg1" value="1">
-							<input type="submit" name="" value="刪除">
-						</form>
-					</div> -->
 				</td>
 				</tr>
 
@@ -516,16 +586,32 @@ session_start();
 					<div>		
 						<div>
 							<label for="uploadImg2"><img src="img/icon/camera.png"></label>
-							<input type="file" class="upl_2" name="" id="uploadImg2">
+							<input type="file" class="upl_2" name="uploadImg[]" id="uploadImg2">
 							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
-						</div>
-						<img class="preview preview_2" src="">
+						</div><?php 
+
+						if($store_imformation->rowCount()!=0){
+
+							if($store_imformationRow->SI_BIMG_2===null or $store_imformationRow->SI_BIMG_2==""){
+
+							echo '<img class="preview preview_2" src="">';
+							}else{
+
+								echo '<img class="preview preview_2" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_2.'.jpg">';
+							}
+
+						}else{
+
+							echo '<img class="preview preview_2" src="">';
+
+						}
+
+						 ?></div>
+					<div>
+							<input type="hidden" id="hidden_delImg2" name="delImg2" value="">
+							<input type="button" id="delImg2" name="" value="刪除" style="cursor: pointer;">
+						
 					</div>
-<!-- 					<div>
-						<form action="storeManage.php" method="get">
-							<input type="submit" name="delImg2" value="刪除">
-						</form>
-					</div> -->
 				</td>
 				</tr>
 
@@ -536,21 +622,117 @@ session_start();
 					<div>		
 						<div>
 							<label for="uploadImg3"><img src="img/icon/camera.png"></label>
-							<input type="file" class="upl_3" name="" id="uploadImg3">
+							<input type="file" class="upl_3" name="uploadImg[]" id="uploadImg3">
 							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
 						</div>
-						<img class="preview preview_3" src="">
+						<?php 
+
+						if($store_imformation->rowCount()!=0){
+
+							if($store_imformationRow->SI_BIMG_3===null or $store_imformationRow->SI_BIMG_3==""){
+
+							echo '<img class="preview preview_3" src="">';
+							
+							}else{
+
+								echo '<img class="preview preview_3" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_3.'.jpg">';
+							}
+						}else{
+
+							echo '<img class="preview preview_3" src="">';
+
+						}
+
+						 ?>
 					</div>
-<!-- 					<div>
-						<form action="storeManage.php" method="get">
-							<input type="submit" name="delImg3" value="刪除">
-						</form>
-					</div> -->
+					<div>
+							<input type="hidden" id="hidden_delImg3" name="delImg3" value="">
+							<input type="button" id="delImg3" name="" value="刪除" style="cursor: pointer;">
+						
+					</div>
 				</td>
 				</tr>
 
 				<script>
 					$(function (){
+
+							//var logoSrc = $('.preview_0').attr("src");
+
+							if($('.preview_0').attr("src") !=null || $('.preview_0').attr("src") !=''){
+			                	$('.preview_0').css('z-index', 1);
+							}else{
+								$('.preview_0').css('z-index', -1);
+							}
+
+							if($('.preview_1').attr("src")!=null || $('.preview_1').attr("src")!=""){
+			                	$('.preview_1').css('z-index', 1);
+							}else{
+								$('.preview_1').css('z-index', -1);
+							}
+
+							if($('.preview_2').attr("src")!=null || $('.preview_2').attr("src")!=""){
+			                	$('.preview_2').css('z-index', 1);
+							}else{
+								$('.preview_2').css('z-index', -1);
+							}
+
+							if($('.preview_3').attr("src")!=null || $('.preview_3').attr("src")!="" ){
+			                	$('.preview_3').css('z-index', 1);
+							}else{
+								$('.preview_3').css('z-index', -1);
+							}
+
+
+
+							$('#dellogo').click(function(){
+
+									$('.preview_0').attr('src', "");
+					                $('.preview_0').css('z-index', -1);
+					                $('#hidden_dellogo').val("1");
+
+							});
+
+
+							$('#delImg1').click(function(){
+
+									$('.preview_1').attr('src', "");
+					                $('.preview_1').css('z-index', -1);
+					                $('#hidden_delImg1').val("1");
+
+							});
+
+
+							$('#delImg2').click(function(){
+
+									$('.preview_2').attr('src', "");
+					                $('.preview_2').css('z-index', -1);
+					                $('#hidden_delImg2').val("1");
+
+							});
+
+
+							$('#delImg3').click(function(){
+
+									$('.preview_3').attr('src', "");
+					                $('.preview_3').css('z-index', -1);
+					                $('#hidden_delImg3').val("1");
+
+							});
+
+
+							// for(var i=1 ; i<=3 ; i++){
+
+							// 	$('#delImg'+i).click(function(){
+
+							// 		$('.preview_'+i).attr('src', "");
+					  //               $('.preview_'+i).css('z-index', -1);
+					  //               $('#hidden_delImg'+i).val("1");
+
+							// 	});
+
+
+							// }
+
 					 
 
 
@@ -567,7 +749,7 @@ session_start();
 							            
 							            reader_0.onload = function () {
 							                $('.preview_0').attr('src', reader_0.result);
-							                //$('.preview_0').css('z-index', 2);
+							                $('.preview_0').css('z-index', 2);
 
 							            }
 							 
@@ -597,7 +779,7 @@ session_start();
 							            
 							            reader_1.onload = function () {
 							                $('.preview_1').attr('src', reader_1.result);
-							                //$('.preview_1').css('z-index', 2);
+							                $('.preview_1').css('z-index', 2);
 							                
 							            }
 							 
@@ -627,7 +809,7 @@ session_start();
 							            
 							            reader_2.onload = function () {
 							                $('.preview_2').attr('src', reader_2.result);
-							                //$('.preview_2').css('z-index', 2);
+							                $('.preview_2').css('z-index', 2);
 
 							            }
 							 
@@ -653,7 +835,7 @@ session_start();
 							            
 							            reader_3.onload = function () {
 							                $('.preview_3').attr('src', reader_3.result);
-							                //$('.preview_3').css('z-index', 2);
+							                $('.preview_3').css('z-index', 2);
 
 							                
 							            }
@@ -725,7 +907,7 @@ session_start();
 
 		<div class="commit">
 			<!-- <input type="button" name="" value="預覽"> -->
-			<input type="button" name="" value="編輯完成">
+			<input type="submit" name="" value="編輯完成">
 		</div>
 
 		</form>

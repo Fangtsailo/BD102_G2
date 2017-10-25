@@ -139,20 +139,21 @@
 		<!-- 頁首搜尋區塊 -->
 			<div class="headSearch">
 				<span>商家搜尋</span>
-				<select id="headSearchKind">
-					<option value="breadCar">胖小車</option>
-					<option value="shop">店家</option>
+				<select id="headSearchKind" name="shopType">
+					<option value="1">胖小車</option>
+					<option value="0">店家</option>
 				</select>
-				<select id="headSearchPlace">
+				<select name="shopPosition" id="headSearchPlace">
 				<option value="default">地區</option>
-				<option value="taipei">台北市</option>
-				<option value="newTaipei">新北市</option>
-				<option value="Taoyuan">桃園市</option>
+				<option value="north">北部</option>
+				<option value="center">中部</option>
+				<option value="south">南部</option>
+				<option value="east">東部</option>
 				</select>
-				<button id="headSearchHot">熱門</button>
-				<button id="headSearchStar">評價</button>
-				<input type="text" name="" id="headSearch">
-				<input id="headSearchSubmit" type="submit" name="" value="搜尋">
+				<button name="filter" value="top" id="headSearchHot">熱門</button>
+				<button name="filter" value="star"  id="headSearchStar">評價</button>
+				<input type="text" name="searchName" id="headSearch">
+				<input id="headSearchSubmit" type="submit" value="搜尋">
 			</div>
 
 		<!-- 頁首會員區塊 -->
@@ -215,28 +216,27 @@
 	</div>
 	
 	<div class="rwdSearchBar" id="rwdSearchBar">
-		<form action="" method="post">
+		<form action="" method="get">
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
-			<label><input type="radio" value="breadCar" name="shopType">麵包小車</label>
-			<label><input type="radio" value="shop" name="shopType">麵包店</label>
+			<label><input type="radio" value="1" name="shopType">麵包小車</label>
+			<label><input type="radio" value="0" name="shopType">麵包店</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
-				<label><input type="checkbox" name="shopPosition" value="taipei">台北市</label>
-				<label><input type="checkbox" name="shopPosition" value="newTaipei">新北市</label>
-				<label><input type="checkbox" name="shopPosition" value="taoyuan">桃園市</label>
-				<label><input type="checkbox" name="shopPosition" value="taichung">台中市</label>
-				<label><input type="checkbox" name="shopPosition" value="tainan">台南市</label>
-				<label><input type="checkbox" name="shopPosition" value="kaoshiung">高雄市</label>
+				<label><input type="radio" name="shopPosition" value="nouth">北部</label>
+				<label><input type="radio" name="shopPosition" value="center">中部</label>
+				<label><input type="radio" name="shopPosition" value="south">南部</label>
+				<label><input type="radio" name="shopPosition" value="east">東部</label>
+				
 			</div>
 			<span>- 其他篩選條件 -</span>
-				<label><input type="radio" name="filter" value="topShop">熱門</label>
-				<label><input type="radio" name="filter" value="recommendation">評價</label>
+				<label><input type="radio" name="filter" value="top">熱門</label>
+				<label><input type="radio" name="filter" value="star">評價</label>
 			<div class="clearfix"></div>
 		</div>
-		<input type="search" name="" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
-		<input type="submit" name="" value="搜尋">
+		<input type="search" name="searchName" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
+		<input type="submit" value="搜尋">
 		</form>
 	</div>
 

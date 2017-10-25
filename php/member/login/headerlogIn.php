@@ -5,7 +5,7 @@ session_start();
 <?php
 try{
 	require_once("../../PDO/connectPDO.php");
-	$login = "select * from member where MEM_ID =:memId and MEM_PSW =:memPsw " ;
+	$login = "select * from member where MEM_ID =:memId and MEM_PSW =:memPsw" ;
 	$jsonStr = $_REQUEST["jsonStr"];
 	$jsonObj = json_decode($jsonStr);
 	$member = $connectPDO->prepare($login);
