@@ -1,3 +1,14 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +44,35 @@
 <body>
 
 <!-- ======================================================header 頁首========================================================= -->
+
+<?php 
+
+
+	try {
+		
+		require_once("php/pdo/connectPDO.php");
+
+		//$sql should change to SI_MEMNO=$MEM_ID 
+		// where $MEM_ID = $_GET["MEM_ID"];  from login session
+
+		//$_SESSION["memId"]="cccfff";
+		//$_SESSION["memNo"]="7";
+
+		$memNo="4";
+
+		// $sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+		// $store_imformation = $connectPDO->query($sql);
+
+		// $store_imformationRow=$store_imformation->fetchObject();
+
+
+
+
+?>
+
+
+
 	<div class="coverHeader">
 			<?php 
 
@@ -107,6 +147,8 @@
 			</svg>
 		</div>
 
+		<form action="php/member/myBusiness/store/addProduct.php" method="post" enctype="multipart/form-data">
+
 		<div class="content-table">
 				
 			<table>
@@ -117,13 +159,13 @@
 
 				<tr>
 				<th><div>品名</div></th>
-				<td><input type="text" name="" value="請輸入商品名稱"></td>
+				<td><input type="text" name="PD_NAME" placeholder="請輸入商品名稱" value=""></td>
 				</tr>
 
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="" value="請輸入字數"></td>
+				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value=""></td>
 				</tr>
 
 
@@ -131,9 +173,9 @@
 
 
 				<tr>
-				<th><div>故事</div></th>
+				<th><div>簡介</div></th>
 				<td>
-					<textarea placeholder="限500字"></textarea>
+					<textarea name="PD_INTRO" placeholder="限500字"></textarea>
 				</td>
 				</tr>
 
@@ -141,49 +183,69 @@
 
 
 				<tr>
-				<th><div>新增店照</div></th>
+				<th><div>商品照片</div></th>
 				<td>
-					<div>
+					<div>		
 						<div>
-							<img src="img/icon/camera.png">
-							<!-- <input type="file"> -->
-							<span class="ifForPic">建議寬高大於1440像素</span>
-							<input type="file">
-							<button class="ifForBtn">新增照片</button>
+							<label for="uploadLogoImg"><img src="img/icon/camera.png"></label>
+							<input type="file" class="upl_0" name="PD_PIC[]" id="uploadLogoImg">
+							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
 						</div>
+						<img class="preview preview_0" src="">
+					</div>
+					<div>
+						
+							<input type="hidden" id="hidden_dellogo" name="delProduct" value="">
+							<input type="button" id="dellogo" name="" value="刪除" style="cursor: pointer;">
+						
 					</div>
 				</td>
 				</tr>
 
 
-				<!-- <tr>
-				<th><div>新增商品<br>(最多6筆)</div></th>
-				<td>
-					<div class="">
-						<div>
-							<label>
-								<span>品名</span>
-								<input type="text" name="" value="">
-							</label>
-							<label>
-								<span>價格</span>
-								<input type="text" name="" value="">
-								<span>元</span>
-							</label>
-						</div>
+				<script>
+					
+					$(function (){
 
-						<div>
-							<img src="http://fakeimg.pl/60x50/00CED1/FFF/?text=camera">
-							<input type="file">
-							<span>點擊上傳店頭照片<br>建議寬、高大於1440像素</span>
-						</div>
-					</div>
-					<div class="">
-						<img src="http://fakeimg.pl/45x45/00CED1/FFF/?text=cross">
-						<span>新增下一個商品</span>
-					</div>
-				</td>
-				</tr> -->
+						if($('.preview_0').attr("src") !=null || $('.preview_0').attr("src") !=''){
+		                	$('.preview_0').css('z-index', 1);
+						}else{
+							$('.preview_0').css('z-index', -1);
+						}
+
+
+						$('#dellogo').click(function(){
+
+									$('.preview_0').attr('src', "");
+					                $('.preview_0').css('z-index', -1);
+					                $('#hidden_dellogo').val("1");
+
+						});
+
+						var inputLogoImg = document.getElementById('uploadLogoImg');
+					 
+					        
+
+					    	$('#uploadLogoImg').change(function(){
+
+
+							        if (inputLogoImg.files && inputLogoImg.files[0]) {
+							            var reader_0 = new FileReader();
+							            
+							            reader_0.onload = function () {
+							                $('.preview_0').attr('src', reader_0.result);
+							                $('.preview_0').css('z-index', 2);
+
+							            }
+							 
+							            reader_0.readAsDataURL(inputLogoImg.files[0]);
+							        }
+
+					        });
+
+					})
+
+				</script>
 
 
 
@@ -200,11 +262,11 @@
 
 
 		<div class="commit">
-			<input type="button" name="" value="預覽">
-			<input type="button" name="" value="編輯完成">
+			<!-- <input type="button" name="" value="預覽"> -->
+			<input type="submit" name="" value="編輯完成">
 		</div>
 
-
+		</form>
 
 	</div>  <!-- CenterBusiness -->
 
@@ -263,46 +325,21 @@
 
 
 <!-- ======================================================footer 頁尾========================================================= -->
-	<footer>
-	<!-- <div class="globalFtgroup">
-		<div class="globalFtBtn">
-			<div class="svg">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
-				<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/>
-				<path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
-				</svg>
-			</div>
-			<a href="#">客服中心</a>
+	<?php 
 
-		</div>
-		<div class="globalFtBtn">
-			<div class="svg">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
-	<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
-		L22,0z"/>
-	<path d="M23.3,17.5c0-0.8,0.3-1.5,1.5-1.5h1.5v-3h-2.5c-3,0-4,1-4,4v2h-2v3h2v9h3.5v-9h2.5l0.5-3h-3V17.5z"/></g>
-				</svg>
+	require_once('footer.php');
 
-			</div>
-			<a href="#">TrePun粉絲專頁</a>
+	 ?>
 
-		</div>
-		<div class="globalFtBtn">
-			<div class="svg">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 
-			13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 
-			22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
-			L22,0z"/>
-	</g>
-</g>
-</svg>
-			</div>
-			<a href="#">新增店家</a>
+	<?php 
 
-		</div>
-		<p>© 2017 找麥方TrePun - 設計製作</p>
-	</div> -->
-	</footer>
+	}catch( PDOException $ex){
+  		echo "行號: ",$ex->getLine(), "<br>";	
+  		echo "訊息: ",$ex->getMessage() , "<br>";	
+	}//catch
+
+
+ ?>
 	
 
 </body>

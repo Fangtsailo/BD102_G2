@@ -28,7 +28,7 @@
 		
 
 
-		$employee = $pdo ->prepare($sql);
+		$employee = $connectPDO ->prepare($sql);
 
 		$employee -> bindValue(":emp_id",$_GET["emp_id"]);
 		$employee -> bindValue(":emp_psw",$_GET["emp_psw"]);

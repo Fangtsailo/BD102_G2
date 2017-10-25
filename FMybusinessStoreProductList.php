@@ -1,3 +1,14 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +40,12 @@
 <body>
 
 <!-- ======================================================header 頁首========================================================= -->
+
+
+
+
+
+
 	<div class="coverHeader">
 			<?php 
 
@@ -107,6 +124,51 @@
 			</svg>
 		</div><!-- subtitle -->
 
+		<?php 
+
+
+	try {
+		
+		require_once("php/pdo/connectPDO.php");
+
+		//$sql should change to SI_MEMNO=$MEM_ID 
+		// where $MEM_ID = $_GET["MEM_ID"];  from login session
+
+		//$_SESSION["memId"]="cccfff";
+		//$_SESSION["memNo"]="7";
+
+		// $memNo="7";
+
+		// $sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+		// $store_imformation = $connectPDO->query($sql);
+
+		// $store_imformationRow=$store_imformation->fetchObject();
+
+
+		$mem_No="4";
+
+		$sql_mem_No_FIND_PD_SHOPNO="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE=0";
+
+		$mem_No_FIND_PD_SHOPNO=$connectPDO->query($sql_mem_No_FIND_PD_SHOPNO);
+
+		$mem_No_FIND_PD_SHOPNO_ROW = $mem_No_FIND_PD_SHOPNO->fetchObject();
+
+		$PD_SHOPNO_By_Mem_No=$mem_No_FIND_PD_SHOPNO_ROW->SI_NUM;
+
+
+
+
+		$sql_product_table="select * from product where PD_SHOPNO=$PD_SHOPNO_By_Mem_No";
+
+		$product_table=$connectPDO->query($sql_product_table);
+
+		
+
+
+
+		?>
+
 		<div class="content-table">
 
 			<table class="tableHeader">
@@ -114,8 +176,8 @@
 					<tr class="tabletitle" >
 					<th colspan="3">商品</th>
 					<td colspan="3">
-						<img src="img/icon/crossIcon.png">
-						<span>新增商品</span>
+						<a href="FMybusinessStoreProductListContentAdd.php"><img src="img/icon/crossIcon.png">
+							<span>新增商品</span></a>
 					</td>
 					</tr>
 
@@ -129,7 +191,51 @@
 			</table>
 
 			<table class="tableContent">
+
+				<?php 
+
+
+					while ($product_table_Row=$product_table->fetchObject()) {
+
+					$PD_NO=$product_table_Row->PD_NO;
+					$PD_SHOPNO=$product_table_Row->PD_SHOPNO;
+
+					$fileName = $PD_NO."-".$PD_SHOPNO;
+						
+					
+
+				 ?>
 					<tr>
+						<td><?php echo $product_table_Row->PD_NO; ?></td>
+
+
+						<td><img src="<?php echo 'img/store/products/'.$fileName.'.jpg'; ?>"></td>
+						<td><?php echo $product_table_Row->PD_NAME; ?></td>
+						<td><?php echo $product_table_Row->PD_PRICE; ?></td>
+						<td>
+							<div>
+								<img src="img/icon/editIcon.png">
+								<span>編輯</span>
+							</div>
+							<div>
+								<img src="img/icon/deleteIcon.png">
+								<span>下架</span>
+							</div>
+						</td>
+					</tr>
+
+
+
+
+
+					<?php 
+
+						}//while ($product_table_Row=$product_table->fetchObject()) 
+
+					 ?>
+
+
+<!-- 					<tr>
 						<td>001</td>
 						<td><img src="img/icon/cakeSample.png"></td>
 						<td>長麵包</td>
@@ -144,87 +250,8 @@
 								<span>下架</span>
 							</div>
 						</td>
-					</tr>
-					<tr>
-						<td>001</td>
-						<td><img src="img/icon/cakeSample.png"></td>
-						<td>長麵包</td>
-						<td>70</td>
-						<td>
-							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
-							</div>
-							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>001</td>
-						<td><img src="img/icon/cakeSample.png"></td>
-						<td>長麵包</td>
-						<td>70</td>
-						<td>
-							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
-							</div>
-							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>001</td>
-						<td><img src="img/icon/cakeSample.png"></td>
-						<td>長麵包</td>
-						<td>70</td>
-						<td>
-							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
-							</div>
-							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>001</td>
-						<td><img src="img/icon/cakeSample.png"></td>
-						<td>長麵包</td>
-						<td>70</td>
-						<td>
-							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
-							</div>
-							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>001</td>
-						<td><img src="img/icon/cakeSample.png"></td>
-						<td>長麵包</td>
-						<td>70</td>
-						<td>
-							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
-							</div>
-							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
-							</div>
-						</td>
-					</tr>
+					</tr> -->
+					
 					
 			</table>
 
@@ -307,6 +334,16 @@
 	require_once('footer.php');
 
 	 ?>
+
+	 	<?php 
+
+	}catch( PDOException $ex){
+  		echo "行號: ",$ex->getLine(), "<br>";	
+  		echo "訊息: ",$ex->getMessage() , "<br>";	
+	}//catch
+
+
+ ?>
 	
 
 </body>
