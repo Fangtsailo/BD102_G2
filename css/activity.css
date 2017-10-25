@@ -26,6 +26,7 @@ li {
     width: 100%;
     padding: 5% 5%;
     position: relative;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #805934;
     /* Old browsers */
@@ -39,6 +40,7 @@ li {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
     /* IE10+ */
+    background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
     background: linear-gradient(to right, #805934 0%, #9e693d 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
@@ -60,11 +62,15 @@ li {
       right: 10px;
       top: 10px;
       cursor: pointer;
+      -webkit-transition: .3s ease-in;
+      -o-transition: .3s ease-in;
       transition: .3s ease-in; }
       .globalForm .globalFormHeader .svg:hover {
         -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
         transform: rotate(180deg);
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
   .globalForm .globalFormContent {
     width: 100%;
@@ -123,6 +129,8 @@ li {
 
 .hideUp_sub {
   top: 0px  !important;
+  -webkit-transition: 0.3s ease-in-out !important;
+  -o-transition: 0.3s ease-in-out !important;
   transition: 0.3s ease-in-out !important; }
 
 .hideUp_sub_burger {
@@ -143,6 +151,7 @@ li {
   /* Opera 11.10+ */
   background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* IE10+ */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
   background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -150,8 +159,12 @@ li {
   z-index: 100;
   position: fixed;
   top: 0;
+  -webkit-box-shadow: 0px 0px 15px 0px #382715;
   box-shadow: 0px 0px 15px 0px #382715;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: top .3s ease-in-out;
+  -o-transition: top .3s ease-in-out;
   transition: top .3s ease-in-out; }
   .globalHead .headLoginBox {
     position: fixed;
@@ -170,6 +183,7 @@ li {
       height: 80vh;
       border: none;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       .globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -179,6 +193,8 @@ li {
         font-size: 16px; }
       .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
       .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
@@ -206,6 +222,7 @@ li {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
+          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -242,6 +259,7 @@ li {
       height: 80vh;
       border: none;
       border-radius: 5px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       .globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -251,7 +269,31 @@ li {
         font-size: 16px; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span {
+          display: block;
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          color: #f06428;
+          font-size: 12px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.success {
+            color: green; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.error {
+            color: red; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span i.fa {
+            color: #666; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
@@ -272,6 +314,7 @@ li {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
+          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -306,10 +349,12 @@ li {
   .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     .globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       text-align: right;
       font-size: 0; }
@@ -325,6 +370,7 @@ li {
         border: 1px solid #fff;
         padding-left: 10px;
         outline: none;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       .globalHead .headerRight .headSearch select {
@@ -338,6 +384,7 @@ li {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       .globalHead .headerRight .headSearch button {
@@ -354,6 +401,7 @@ li {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           vertical-align: top; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
@@ -367,6 +415,7 @@ li {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
@@ -417,6 +466,7 @@ li {
         width: 100%;
         height: 70px;
         padding: 5px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         .globalHead .headerRight .headAccount #headMemStatus div {
           width: 110px;
@@ -434,10 +484,14 @@ li {
               height: 100%;
               border-radius: 50%; }
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
+                -webkit-transition: .3s;
+                -o-transition: .3s;
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
                   -webkit-animation: shake .3s ease infinite alternate;
                   animation: shake .3s ease infinite alternate;
+                  -webkit-transition: .3s;
+                  -o-transition: .3s;
                   transition: .3s; }
             .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
               margin-right: 10px; }
@@ -491,10 +545,14 @@ li {
               text-align: center;
               font-weight: 500;
               color: #663300;
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;
+                -webkit-transition: .3s;
+                -o-transition: .3s;
                 transition: .3s; }
       .globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
@@ -522,10 +580,14 @@ li {
           font-weight: 300; }
         .globalHead .headerRight .headAccount #headMemLogin:hover {
           background-color: #996633;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
           transition: .3s; }
           .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
             -webkit-animation: shake .5s ease infinite alternate;
             animation: shake .5s ease infinite alternate;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s; }
   .globalHead .rwd_headerSearch {
     display: none; }
@@ -586,10 +648,14 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease;
     cursor: pointer; }
 
@@ -603,10 +669,15 @@ footer {
   font-size: 18px;
   border: 1px solid #3399ff;
   color: #3399ff;
+  background-color: #fbf8f1;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
     color: #fbf8f1;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
     transition: .3s ease;
     text-decoration: none;
     cursor: pointer; }
@@ -781,6 +852,8 @@ footer {
         margin: auto;
         fill: #fbf8f1; }
       .globalHead .burgerMenu.active {
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
         transition: .3s ease; }
     .globalHead #headMemStatus {
       display: none; }
@@ -793,9 +866,13 @@ footer {
       background-color: rgba(0, 0, 0, 0.5); }
       .globalHead #menu.hideMenu {
         right: -120%;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu.show {
         right: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu ul {
         display: block;
@@ -812,12 +889,15 @@ footer {
         /* Opera 11.10+ */
         background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* IE10+ */
+        background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
         background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
         .globalHead #menu ul#memLoggedin {
           display: block; }
+          .globalHead #menu ul#memLoggedin li.beBoss #bossMenu {
+            display: none; }
         .globalHead #menu ul li {
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
@@ -855,9 +935,13 @@ footer {
             padding: 10px;
             color: #fbf8f1;
             font-weight: 400;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s; }
             .globalHead #menu ul li a:focus {
               background-color: rgba(158, 105, 61, 0.5);
+              -webkit-transition: .3s;
+              -o-transition: .3s;
               transition: .3s; }
           .globalHead #menu ul li.myActivity {
             position: relative; }
@@ -890,6 +974,7 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
       background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -899,6 +984,8 @@ footer {
       top: 80px;
       left: -100%;
       height: 100vh;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
       transition: .3s;
       display: block; }
       .globalHead .rwdSearchBar .rwdsearchItem {
@@ -940,6 +1027,8 @@ footer {
       .globalHead .rwdSearchBar.activeSearch {
         top: 80px;
         left: 0;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
         transition: .3s; }
       .globalHead .rwdSearchBar input[type="submit"] {
         display: block;
@@ -995,6 +1084,7 @@ footer {
     height: 75%;
     border: none;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
     #addShopBox .globalForm .chooseType input {
       width: 20px;
@@ -1039,6 +1129,7 @@ footer {
     height: 75%;
     border: none;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
 
 /* ===================================================*/
@@ -1046,31 +1137,129 @@ footer {
 /* ===================================================*/
 @-webkit-keyframes dough1 {
   0% {
-    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 30% 70% 40% 60% / 50% 55% 45% 50%; }
   50% {
     border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 @keyframes dough1 {
   0% {
-    border-radius: 30% 30% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 30% 70% 40% 60% / 50% 55% 45% 50%; }
   50% {
     border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 
 @-webkit-keyframes dough2 {
   0% {
-    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+    border-radius: 40% 60% 60% 40% / 55% 55% 45% 45%; }
   50% {
-    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
 
 @keyframes dough2 {
   0% {
-    border-radius: 40% 40% 40% 40% / 55% 55% 45% 35%; }
+    border-radius: 40% 60% 60% 40% / 55% 55% 45% 45%; }
   50% {
-    border-radius: 45% 45% 45% 55% / 60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+
+@-webkit-keyframes bigdoughChange {
+  0% {
+    opacity: .8; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: .5; } }
+
+@keyframes bigdoughChange {
+  0% {
+    opacity: .8; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: .5; } }
+
+@-webkit-keyframes blow {
+  0% {
+    -webkit-transform: translate(0px);
+    transform: translate(0px); }
+  100% {
+    -webkit-transform: translate(550px);
+    transform: translate(550px); } }
+
+@keyframes blow {
+  0% {
+    -webkit-transform: translate(0px);
+    transform: translate(0px); }
+  100% {
+    -webkit-transform: translate(550px);
+    transform: translate(550px); } }
+
+@-webkit-keyframes cloud {
+  0% {
+    top: 400px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    top: 200px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    top: 0px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+@keyframes cloud {
+  0% {
+    top: 400px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    top: 200px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  100% {
+    top: 0px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }
+
+@-webkit-keyframes cloud2 {
+  0% {
+    bottom: 100px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 250px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); }
+  100% {
+    bottom: 400px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8); } }
+
+@keyframes cloud2 {
+  0% {
+    bottom: 100px;
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    bottom: 250px;
+    opacity: 0.5;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); }
+  100% {
+    bottom: 400px;
+    opacity: 0.1;
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8); } }
 
 .activity_banner {
   width: 100%;
-  height: 100%;
-  background: url("../img/acty_background.png") center center;
   background-size: cover;
   text-align: center;
   height: 135vh;
@@ -1088,7 +1277,7 @@ footer {
       width: 25%;
       height: 250px;
       position: relative;
-      border-radius: 38% 67% 34% 43% / 60% 67% 34% 43%;
+      border-radius: 38% 62% 34% 66% / 60% 67% 33% 40%;
       background: #FFF8D7;
       /* Old browsers */
       background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
@@ -1101,6 +1290,7 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
       background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
@@ -1150,6 +1340,7 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
       background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
@@ -1176,6 +1367,7 @@ footer {
           font-size: 32px; }
   .activity_banner .activity_board {
     z-index: 0;
+    -webkit-box-sizing: box-sizing;
     box-sizing: box-sizing; }
     .activity_banner .activity_board .acty_board {
       position: relative;
@@ -1192,6 +1384,7 @@ footer {
       width: 100%; }
     .activity_banner .activity_board .acty_board_p {
       font-size: 20px;
+      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       position: absolute;
       top: 0;
@@ -1207,6 +1400,7 @@ footer {
     min-width: 340px;
     width: 37.5%;
     background-color: rgba(246, 146, 30, 0.6);
+    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     .activity_banner .activity_detail ul {
       list-style-type: none;
@@ -1267,7 +1461,7 @@ footer {
 =====================================================
 ===================================================== */
 .activity_content {
-  background: url("../img/acty_background_2.png") center center;
+  background: url("../img/act/acty_background_2.png") center center;
   background-size: cover;
   padding-top: 120px;
   width: 100%;
@@ -1298,6 +1492,34 @@ footer {
       position: relative; }
     .activity_content .activity_pot img {
       width: 100%; }
+    .activity_content .activity_pot .bigDough {
+      -webkit-animation: bigdoughChange 3s 1s linear 3 alternate;
+      animation: bigdoughChange 3s 1s linear 3 alternate;
+      opacity: 0;
+      border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
+      width: 280px;
+      height: 250px;
+      background: #FFF8D7;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, top top, top bottom, color-stop(0%, #FFF8D7), color-stop(100%, #ebb78f));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
+      /* IE10+ */
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
+      background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
+      /* IE6-9 */
+      position: absolute;
+      bottom: 11%;
+      left: 10%;
+      z-index: -5; }
     .activity_content .activity_pot .activity_dough_change {
       width: 280px;
       height: 250px;
@@ -1314,16 +1536,15 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
       background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
       /* IE6-9 */
       position: absolute;
-      bottom: 10%;
+      bottom: 11%;
       left: 10%;
       z-index: -2; }
-      .activity_content .activity_pot .activity_dough_change .activity_dough_change_js {
-        background: linear-gradient(red, yellow); }
     .activity_content .activity_pot h2 {
       position: absolute;
       top: 40%;
@@ -1351,7 +1572,7 @@ footer {
       position: relative; }
     .activity_content .activityPot img {
       width: 100%; }
-    .activity_content .activityPot .activity_dough_change {
+    .activity_content .activityPot .activity_dough_changes {
       width: 250px;
       height: 200px;
       border-radius: 50% 45% 50% 50% / 64% 65% 35% 30%;
@@ -1367,6 +1588,7 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
       /* IE10+ */
+      background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
       background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
@@ -1388,7 +1610,6 @@ footer {
     min-width: 240px;
     height: 20vw;
     min-height: 200px;
-    background: url("../img/acty_bread.png");
     border-radius: 60% 45% 40% 60% / 50% 55% 45% 50%;
     background-size: cover;
     -webkit-animation: dough2 2s linear infinite alternate;
@@ -1396,7 +1617,6 @@ footer {
     position: relative;
     z-index: 2; }
   .activity_content .activity_dough_2 {
-    margin-top: -2;
     min-width: 280px;
     max-width: 350px;
     width: 23%;
@@ -1413,6 +1633,7 @@ footer {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
     /* IE10+ */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
     background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
@@ -1420,7 +1641,10 @@ footer {
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
     transition: 1s;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 35px; }
     .activity_content .activity_dough_2 p {
@@ -1446,6 +1670,7 @@ footer {
     height: 300px;
     padding: 60px 35px;
     z-index: 2;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #FFF8D7;
     /* Old browsers */
@@ -1459,6 +1684,7 @@ footer {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #FFF8D7 0%, #ebb78f 100%);
     /* IE10+ */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFF8D7), to(#ebb78f));
     background: linear-gradient(to bottom, #FFF8D7 0%, #ebb78f 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF8D7', endColorstr='#ebb78f', GradientType=0 );
@@ -1486,20 +1712,14 @@ footer {
       height: 20%;
       background-size: cover; }
     .activity_content .activity_dough_4_all .pic_1 {
-      background: url("../img/acty_pic1.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_2 {
-      background: url("../img/acty_pic2.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough1 3s linear infinite alternate;
       animation: dough1 3s linear infinite alternate; }
     .activity_content .activity_dough_4_all .pic_3 {
-      background: url("../img/acty_pic3.png") no-repeat center center;
-      background-size: cover;
       border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
       -webkit-animation: dough2 3s linear infinite alternate;
       animation: dough2 3s linear infinite alternate; }
@@ -1508,27 +1728,48 @@ footer {
     height: 50%; }
   .activity_content .bake_bread {
     position: relative;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
     transition-timing-function: linear;
     text-align: center;
     width: 100%;
     height: 100%;
     z-index: 10; }
+  .activity_content .act_wind {
+    width: 437px;
+    opacity: 0;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    z-index: -8; }
+    .activity_content .act_wind .actShadow {
+      width: 0px;
+      left: 0%;
+      position: absolute;
+      height: 185px;
+      margin: auto;
+      -webkit-animation: blow 1s  linear infinite;
+      animation: blow 1s  linear infinite;
+      -webkit-box-shadow: 1px 0px 72px 36px rgba(248, 214, 191, 0.8);
+      box-shadow: 1px 0px 72px 36px rgba(248, 214, 191, 0.8);
+      top: 0;
+      background-color: rgba(248, 214, 191, 0.8); }
   .activity_content .activity_dough_5 {
     width: 30%;
     height: 20vw;
     min-width: 320px;
     min-height: 250px;
-    background: url("../img/acty_pic4.png") center center;
-    background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     -webkit-animation: dough2 3s linear infinite alternate;
     animation: dough2 3s linear infinite alternate; }
   .activity_content .activity_dough_6 {
     width: 25%;
     height: 20vw;
-    background: url("../img/acty_pic5.png");
-    background-size: cover;
     border-radius: 60% 40% 40% 60% / 50% 55% 45% 50%;
     min-width: 320px;
     min-height: 250px;
@@ -1544,10 +1785,10 @@ footer {
     margin-left: 13%; }
   .activity_dough_3 {
     float: right;
-    margin: 5% 10% 5% 0; }
+    margin: 0 10% 5% 0; }
   .activity_dough_4_all {
     float: left;
-    margin-top: -15%;
+    margin-top: -17%;
     margin-left: 10%; } }
 
 @media screen and (min-width: 961px) and (max-width: 1200px) {
@@ -1575,15 +1816,17 @@ footer {
     margin-left: 90%;
     margin-top: -50%; }
   .bake_bread {
-    background: radial-gradient(rgba(241, 94, 36, 0.7), rgba(255, 165, 0, 0)); }
+    background-color: rgba(241, 94, 36, 0.2); }
   .activity_dough_5 {
     float: right;
     margin: 3vw 5% 0 0; }
   .activity_dough_6 {
     float: left;
-    margin: 15vw 0 10% 10%; }
+    margin: 15vw 0 5% 10%; }
   .activity_bread {
-    display: block; } }
+    display: block; }
+  .activity_dough_2 {
+    margin-top: -2%; } }
 
 @media screen and (max-width: 960px) {
   .activity_dough_1 {
@@ -1596,6 +1839,7 @@ footer {
     display: block;
     margin: 0 auto 110px; }
   .activity_dough_2 {
+    margin-top: 0;
     float: none;
     margin: 30px 10px;
     display: inline-block; }
@@ -1625,23 +1869,34 @@ footer {
     display: inline-block;
     margin: 3vw 0 10%; }
   .activity_bread {
+    display: none; }
+  .container-template .activity .section_1 .activity_content .activity_content_inner .section_5 .trigger6 .act_wind {
     display: none; } }
 
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/
 .activity_application {
-  background: url("../img/acty_background_3.png") center;
+  position: relative;
   overflow: hidden;
-  background-size: cover;
   padding-top: 10vw;
   padding-bottom: 2vw;
-  /*===========activity_application   rwd  end====================
+  /*===========activity_application   rwd  ====================
 ================================================
 ===============================================*/
   /*===========activity_application   rwd  end====================
 ================================================
 ===============================================*/ }
+  .activity_application::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-size: cover;
+    z-index: -20; }
   .activity_application .activity_final {
     text-align: center;
     max-width: 798px; }
@@ -1661,15 +1916,14 @@ footer {
         width: 100%;
         vertical-align: top; }
     .activity_application .activity_final .fin_1 {
-      background: url("../img/acty_bread1.jpg");
       background-size: cover; }
     .activity_application .activity_final .fin_2 {
-      background: url("../img/acty_bread2.jpg");
       background-size: cover; }
     .activity_application .activity_final .fin_3 {
-      background: url("../img/acty_bread3.jpg");
       background-size: cover; }
   .activity_application .activity_bread {
+    z-index: 2;
+    position: relative;
     margin: auto;
     width: 300px; }
     .activity_application .activity_bread img {
@@ -1688,6 +1942,33 @@ footer {
     margin-top: 10px; }
   .activity_application .btnTop {
     margin-top: 10px; }
+  .activity_application .activity_cloud {
+    position: absolute;
+    top: -300px;
+    width: 510px;
+    height: 550px;
+    overflow: hidden;
+    left: -121px; }
+  .activity_application .act_cloud:nth-child(1) {
+    z-index: 1;
+    position: absolute;
+    left: 121px;
+    top: -100px;
+    -webkit-animation: cloud  12s 5s linear infinite;
+    animation: cloud  12s 5s linear infinite; }
+  .activity_application .act_cloud:nth-child(2) {
+    z-index: 1;
+    position: absolute;
+    top: -100px;
+    right: 50px;
+    -webkit-animation: cloud  8s 3s linear infinite;
+    animation: cloud  8s 3s linear infinite; }
+  .activity_application .act_cloud:nth-child(3) {
+    z-index: -1;
+    position: absolute;
+    left: 200px;
+    -webkit-animation: cloud2 5s  linear infinite;
+    animation: cloud2 5s  linear infinite; }
   @media screen and (max-width: 960px) {
     .activity_application .activity_final {
       width: 90%;

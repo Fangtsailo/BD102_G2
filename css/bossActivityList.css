@@ -252,6 +252,28 @@ li {
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
         transition: .3s ease-in; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span {
+          display: block;
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          color: #f06428;
+          font-size: 12px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.success {
+            color: green; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.error {
+            color: red; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span i.fa {
+            color: #666; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
@@ -603,6 +625,7 @@ footer {
   font-size: 18px;
   border: 1px solid #3399ff;
   color: #3399ff;
+  background-color: #fbf8f1;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
@@ -818,6 +841,8 @@ footer {
         /* IE6-9 */ }
         .globalHead #menu ul#memLoggedin {
           display: block; }
+          .globalHead #menu ul#memLoggedin li.beBoss #bossMenu {
+            display: none; }
         .globalHead #menu ul li {
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
@@ -1220,20 +1245,23 @@ footer {
             font-weight: 400; }
             .container .bossActContent .actManageTable table tr td:last-child {
               padding: 0; }
-            .container .bossActContent .actManageTable table tr td a {
+            .container .bossActContent .actManageTable table tr td button {
               width: 100%;
               height: 100%;
               display: inline-block;
-              color: #999; }
-              .container .bossActContent .actManageTable table tr td a:hover span {
+              color: #999;
+              background-color: transparent;
+              border: none;
+              outline: none; }
+              .container .bossActContent .actManageTable table tr td button:hover span {
                 color: #f06428;
                 fill: #f06428; }
-              .container .bossActContent .actManageTable table tr td a .tableIcon {
+              .container .bossActContent .actManageTable table tr td button .tableIcon {
                 width: 50px;
                 display: block;
                 margin: auto;
                 fill: #999; }
-              .container .bossActContent .actManageTable table tr td a span {
+              .container .bossActContent .actManageTable table tr td button span {
                 display: block;
                 text-align: center; }
 

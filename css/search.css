@@ -5,8 +5,7 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC";
-  overflow-x: hidden; }
+  font-family: "Noto Sans CJK TC"; }
 
 input {
   font-family: "Noto Sans CJK TC"; }
@@ -59,7 +58,14 @@ li {
       height: 50px;
       position: absolute;
       right: 10px;
-      top: 10px; }
+      top: 10px;
+      cursor: pointer;
+      transition: .3s ease-in; }
+      .globalForm .globalFormHeader .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        transition: .3s ease-in; }
   .globalForm .globalFormContent {
     width: 100%;
     padding-top: 10px; }
@@ -141,15 +147,16 @@ li {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
   /* IE6-9 */
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   top: 0;
+  box-shadow: 0px 0px 15px 0px #382715;
   box-sizing: border-box;
   transition: top .3s ease-in-out; }
   .globalHead .headLoginBox {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
     .globalHead .headLoginBox .globalForm {
@@ -170,10 +177,13 @@ li {
           width: 160px; }
       .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        transition: .3s ease-in; }
       .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
         text-align: center;
-        padding: 20px 0px; }
+        padding: 10px 0px; }
         .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw a:hover {
           border-bottom: 1px solid #3399ff; }
       .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin {
@@ -218,7 +228,7 @@ li {
   .globalHead .headRegisterBox {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
     display: none; }
     .globalHead .headRegisterBox .globalForm {
@@ -239,6 +249,31 @@ li {
           width: 160px; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input::-webkit-input-placeholder {
         font-size: 16px; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
+        border-bottom: 1px solid #f06428;
+        transition: .3s ease-in; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span {
+          display: block;
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          color: #f06428;
+          font-size: 12px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.success {
+            color: green; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID span.error {
+            color: red; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw {
+        position: relative; }
+        .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 10px; }
+          .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterPsw span i.fa {
+            color: #666; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .facebookRegister {
         width: 100%;
         text-align: center;
@@ -279,12 +314,17 @@ li {
           .globalHead .headRegisterBox .globalForm .globalFormContent .loginLink span:hover {
             border-bottom: 1px solid #663300; }
   .globalHead .headLogo {
-    width: 10vw;
-    padding: 10px 20px;
-    display: inline-block; }
-    .globalHead .headLogo img {
-      display: inline-block;
-      height: 65px; }
+    height: 100%;
+    margin-left: 20px;
+    float: left; }
+    .globalHead .headLogo a {
+      display: block;
+      width: 100%;
+      height: 80px;
+      padding: 10px 0px; }
+      .globalHead .headLogo a img {
+        display: inline-block;
+        height: 60px; }
   .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
@@ -293,7 +333,8 @@ li {
       float: left;
       padding: 20px 10px;
       box-sizing: border-box;
-      text-align: right; }
+      text-align: right;
+      font-size: 0; }
       .globalHead .headerRight .headSearch span {
         margin-right: 10px;
         color: #fbf8f1;
@@ -319,7 +360,8 @@ li {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        vertical-align: top; }
       .globalHead .headerRight .headSearch button {
         width: 80px;
         display: inline-block;
@@ -334,7 +376,8 @@ li {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+          vertical-align: top; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -346,21 +389,140 @@ li {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        vertical-align: top; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@keyframes shake {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@-webkit-keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+
+@keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+    .globalHead .headerRight .shake {
+      -webkit-animation: shake1 .2s linear 3 alternate;
+      animation: shake1 .2s linear 3 alternate; }
+    .globalHead .headerRight .activeStatus {
+      display: block; }
     .globalHead .headerRight .headAccount {
-      width: 100px;
+      width: 150px;
       float: left; }
       .globalHead .headerRight .headAccount #headMemStatus {
+        display: none;
+        width: 100%;
+        height: 70px;
+        padding: 5px;
+        box-sizing: border-box; }
+        .globalHead .headerRight .headAccount #headMemStatus div {
+          width: 110px;
+          margin: 10px auto; }
+          .globalHead .headerRight .headAccount #headMemStatus div a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            float: left;
+            border: none; }
+            .globalHead .headerRight .headAccount #headMemStatus div a img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%; }
+              .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
+                transition: .3s; }
+                .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
+                  -webkit-animation: shake .3s ease infinite alternate;
+                  animation: shake .3s ease infinite alternate;
+                  transition: .3s; }
+            .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
+              margin-right: 10px; }
+            .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic {
+              position: relative; }
+              .globalHead .headerRight .headAccount #headMemStatus div a#headMemPic:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 4px solid #fff;
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                position: absolute;
+                right: -10px;
+                bottom: 0; }
+      .globalHead .headerRight .headAccount .memStatusBar {
+        position: relative;
+        bottom: 15px;
+        right: 70px;
+        width: 180px;
+        padding: 10px;
         display: none; }
-        .globalHead .headerRight .headAccount #headMemStatus #headMemPic {
-          width: 100%;
-          height: 70px; }
+        .globalHead .headerRight .headAccount .memStatusBar ul {
+          width: 150px;
+          margin: auto;
+          background-color: #f2ebd4;
+          border-radius: 5px; }
+          .globalHead .headerRight .headAccount .memStatusBar ul:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid #f2ebd4;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            top: 2px;
+            right: 29px; }
+          .globalHead .headerRight .headAccount .memStatusBar ul li {
+            color: #663300;
+            width: 100%;
+            text-align: center; }
+            .globalHead .headerRight .headAccount .memStatusBar ul li:first-child a {
+              padding: 10px 0px;
+              font-weight: 600; }
+            .globalHead .headerRight .headAccount .memStatusBar ul li a {
+              display: block;
+              width: 100%;
+              padding: 5px 0px;
+              text-align: center;
+              font-weight: 500;
+              color: #663300;
+              transition: .3s; }
+              .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
+                background-color: #805934;
+                color: #fbf8f1;
+                transition: .3s; }
       .globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
-        height: 70px; }
+        height: 70px;
+        cursor: pointer;
+        display: block; }
         .globalHead .headerRight .headAccount #headMemLogin .loginGrp {
           width: 50%;
           margin: auto;
@@ -380,6 +542,13 @@ li {
           display: block;
           margin: auto;
           font-weight: 300; }
+        .globalHead .headerRight .headAccount #headMemLogin:hover {
+          background-color: #996633;
+          transition: .3s; }
+          .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
+            -webkit-animation: shake .5s ease infinite alternate;
+            animation: shake .5s ease infinite alternate;
+            transition: .3s; }
   .globalHead .rwd_headerSearch {
     display: none; }
   .globalHead .burgerMenu {
@@ -418,6 +587,13 @@ footer {
     color: #663300;
     margin-top: 10px; }
 
+@media screen and (max-width: 400px) {
+  footer .globalFtBtn .svg {
+    width: 30px;
+    height: 30px; }
+  footer .globalFtBtn a {
+    font-size: 14px; } }
+
 .clearfix {
   clear: both; }
 
@@ -449,6 +625,7 @@ footer {
   font-size: 18px;
   border: 1px solid #3399ff;
   color: #3399ff;
+  background-color: #fbf8f1;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
@@ -528,74 +705,63 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
-
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
-
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
-
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
-
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
-
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
-
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
-
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
-
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
-
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
-
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
-
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
-
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
     .globalHead .headLogo {
@@ -603,7 +769,8 @@ footer {
       width: 20vw;
       margin: auto;
       display: inline-block;
-      text-align: center; }
+      text-align: center;
+      float: none; }
       .globalHead .headLogo img {
         width: 100%; }
     .globalHead .headerRight {
@@ -614,7 +781,7 @@ footer {
       height: 40px;
       position: absolute;
       top: 0px;
-      right: 20px;
+      left: 20px;
       bottom: 0;
       margin: auto; }
       .globalHead .rwd_headerSearch .searchIcon {
@@ -628,7 +795,7 @@ footer {
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 0;
+      right: 20px;
       margin: auto; }
       .globalHead .burgerMenu span {
         width: 40px;
@@ -638,21 +805,24 @@ footer {
         fill: #fbf8f1; }
       .globalHead .burgerMenu.active {
         transition: .3s ease; }
+    .globalHead #headMemStatus {
+      display: none; }
     .globalHead #menu {
       display: block;
       position: fixed;
       top: 80px;
+      height: 100vh;
+      width: 100%;
       background-color: rgba(0, 0, 0, 0.5); }
       .globalHead #menu.hideMenu {
-        left: -120%;
+        right: -120%;
         transition: all 0.3s ease; }
       .globalHead #menu.show {
-        left: 0;
+        right: 0;
         transition: all 0.3s ease; }
       .globalHead #menu ul {
         display: block;
-        width: 375px;
-        min-width: 320px;
+        width: 100%;
         background: rgba(128, 89, 52, 0.9);
         /* Old browsers */
         background: -moz-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
@@ -669,9 +839,11 @@ footer {
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
         /* IE6-9 */ }
+        .globalHead #menu ul#memLoggedin {
+          display: block; }
+          .globalHead #menu ul#memLoggedin li.beBoss #bossMenu {
+            display: none; }
         .globalHead #menu ul li {
-          display: block;
-          padding: 10px;
           color: #fbf8f1; }
           .globalHead #menu ul li.closeMenu span {
             width: 30px;
@@ -679,28 +851,57 @@ footer {
             float: right;
             fill: #fbf8f1; }
           .globalHead #menu ul li.memPart {
-            height: 60px; }
+            padding-bottom: 10px;
+            position: relative; }
+            .globalHead #menu ul li.memPart:after {
+              content: '';
+              display: block;
+              width: 50%;
+              height: 1px;
+              background-color: rgba(251, 248, 241, 0.5);
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
             .globalHead #menu ul li.memPart .memPic {
-              width: 30%;
-              height: 100%;
-              float: left; }
+              width: 100%;
+              height: 100%; }
               .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%; }
             .globalHead #menu ul li.memPart span {
-              width: 70%;
+              width: 100%;
               height: 100%;
               display: block;
-              float: left;
-              margin: auto;
-              line-height: 50px;
               text-align: center; }
-          .globalHead #menu ul li.listTitle {
-            font-size: 1.2em; }
           .globalHead #menu ul li a {
+            display: block;
+            width: 100%;
+            padding: 10px;
             color: #fbf8f1;
-            font-weight: 400; }
+            font-weight: 400;
+            transition: .3s; }
+            .globalHead #menu ul li a:focus {
+              background-color: rgba(158, 105, 61, 0.5);
+              transition: .3s; }
+          .globalHead #menu ul li.myActivity {
+            position: relative; }
+            .globalHead #menu ul li.myActivity:after {
+              content: '';
+              display: block;
+              width: 50%;
+              height: 1px;
+              background-color: rgba(251, 248, 241, 0.5);
+              position: absolute;
+              bottom: 0;
+              left: 25%; }
+          .globalHead #menu ul li.needLogIn {
+            height: 80vh; }
+            .globalHead #menu ul li.needLogIn a {
+              width: 50%;
+              margin: auto;
+              padding: 0;
+              background-color: #f06428; }
     .globalHead .rwdSearchBar {
       background: rgba(128, 89, 52, 0.9);
       /* Old browsers */
@@ -721,49 +922,153 @@ footer {
       width: 100%;
       position: fixed;
       top: 80px;
-      right: -100%;
-      height: 80px;
+      left: -100%;
+      height: 100vh;
       transition: .3s;
       display: block; }
       .globalHead .rwdSearchBar .rwdsearchItem {
         width: 90%;
-        height: 30px;
-        margin: 5px auto; }
-        .globalHead .rwdSearchBar .rwdsearchItem select {
-          width: 25%;
-          height: 100%;
-          float: left;
-          text-align: center;
-          border: 1px solid #fbf8f1;
-          background-color: transparent;
+        height: 70%;
+        margin: 10px auto; }
+        .globalHead .rwdSearchBar .rwdsearchItem span {
+          display: block;
+          width: 70%;
           color: #fbf8f1;
-          outline: none;
-          border-radius: 2px;
-          font-size: 16px; }
-        .globalHead .rwdSearchBar .rwdsearchItem button {
-          width: 25%;
-          height: 100%;
-          float: left;
-          text-align: center;
+          padding: 5px;
+          margin: 10px auto;
+          font-size: 20px;
+          background-color: #663300;
+          border-radius: 5px; }
+        .globalHead .rwdSearchBar .rwdsearchItem label {
+          display: inline-block;
+          margin: 0px 5px;
+          margin-bottom: 5px;
+          padding: 10px;
           color: #fbf8f1;
-          background-color: transparent;
           border: 1px solid #fbf8f1;
-          border-radius: 2px;
           outline: none;
-          font-size: 16px; }
-          .globalHead .rwdSearchBar .rwdsearchItem button:focus {
-            background-color: #fbf8f1;
-            color: #805934;
-            outline: none; }
-      .globalHead .rwdSearchBar input {
-        width: 100%;
+          border-radius: 5px; }
+          .globalHead .rwdSearchBar .rwdsearchItem label input {
+            display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
+            background-color: #f06428; }
+        .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
+          width: 100%;
+          margin: auto; }
+      .globalHead .rwdSearchBar #rwdHeadSearch {
+        width: 90%;
+        margin: auto;
         height: 40px;
         outline: none;
-        border: none; }
+        border: none;
+        padding-left: 10px; }
       .globalHead .rwdSearchBar.activeSearch {
         top: 80px;
+        left: 0;
+        transition: .3s; }
+      .globalHead .rwdSearchBar input[type="submit"] {
+        display: block;
+        width: 50%;
+        height: 40px;
+        background-color: #f2ebd4;
+        margin: 10px auto;
+        color: #663300;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer; } }
+
+@media screen and (max-width: 400px) {
+  .globalHead .headLoginBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headLoginBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+      padding: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; }
+    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+      width: 60%; }
+  .globalHead .headRegisterBox .globalForm {
+    width: 100%;
+    margin-top: 80px;
+    height: 90vh; }
+    .globalHead .headRegisterBox .globalForm .globalFormHeader img {
+      width: 120px; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
+      width: 90%; }
+    .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
+      margin: 10px auto; } }
+
+#addShopBox {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none; }
+  #addShopBox .globalForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 600px;
+    height: 75%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+    #addShopBox .globalForm .chooseType input {
+      width: 20px;
+      height: 100%; }
+    #addShopBox .globalForm .chooseType .chooseBtn {
+      float: right;
+      margin: 0px 10px; }
+    #addShopBox .globalForm #showAddShopForm {
+      display: none; }
+    #addShopBox .globalForm #visitorForm {
+      display: block;
+      position: relative;
+      padding-top: 50%; }
+      #addShopBox .globalForm #visitorForm a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
         right: 0;
-        transition: .3s; } }
+        margin: auto; }
+    #addShopBox .globalForm input[type="number"] {
+      width: 20%;
+      height: 100%;
+      float: none;
+      display: inline-block; }
+
+#serviceCenter {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  display: none; }
+  #serviceCenter .globalForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 600px;
+    height: 75%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
+
+body {
+  background: url("../img/homepage/homepage_bg0.png") repeat; }
+
 img {
   vertical-align: top; }
 
@@ -784,6 +1089,7 @@ img {
     .search_result h1 #numberOf {
       color: #f06428; }
   .search_result .tag-fa {
+    height: 35px;
     margin-top: 5px;
     display: inline-block; }
     .search_result .tag-fa .tag {
@@ -794,7 +1100,9 @@ img {
       color: #fbf8f1;
       background-color: #f6921E;
       position: relative;
-      border-radius: 5px; }
+      height: 29px;
+      border-radius: 5px;
+      display: inline-block; }
     .search_result .tag-fa .head {
       top: 0;
       position: absolute;
@@ -820,6 +1128,7 @@ img {
   margin: 5vw auto 300px;
   max-width: 800px; }
   .search_store .search_storeOne {
+    background-color: #fbf8f1;
     width: 100%;
     margin: 25px auto;
     overflow: hidden;
@@ -881,21 +1190,20 @@ img {
 @media screen and (min-width: 960px) {
   .search_store {
     width: 65%; }
-
   .search_storeOne {
     min-height: 150px;
     max-height: 200px; } }
+
 @media screen and (min-width: 768px) and (max-width: 959px) {
   .search_store {
     width: 90%; }
-
   .search_storeOne {
     min-height: 150px;
     max-height: 200px; } }
+
 @media screen and (max-width: 767px) {
   .search_store {
     width: 80%; }
-
   .search_content .search_title {
     margin-top: 25vw; }
   .search_content .search_result {

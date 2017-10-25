@@ -1,12 +1,15 @@
-
+<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
 	//判斷是否有登入過網站
 	if ( isset($_SESSION["memId"]) ===true ) { //若有，則打開會員專區面板
 		// echo "<script type='text/javascript'>window.onload=changePanel;</script>"; //更換會員專區面板
-		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);window.addEventListener('load',lightboxloggedIn,false);</script>"; //更換會員專區面板
-		// echo "<script type='text/javascript'>window.onload=lightboxloggedIn;</script>"; 
+		echo "<script type='text/javascript'>window.addEventListener('load',changePanel,false);</script>"; //更換會員專區面板
+		if ($_SESSION["memRole"] == 1) { //若會員身份為店長，則打開店長專區連結
+			echo "<script type='text/javascript'>window.addEventListener('load',changeRole,false);</script>";
+		}
 	}else { 
 		// session_destroy();
 	}
@@ -86,14 +89,16 @@
 			</div>
 			<div class="globalFormContent">
 
-				<div class="globalFormInput">
+				<div class="globalFormInput enterID">
 					<label>註冊會員帳號</label><input type="text" id="newMemId" name="newMemId" placeholder="請輸入會員帳號" required>
+					<span id="showResult"></span>
 				</div>
 				<div class="globalFormInput">
 					<label>註冊會員信箱</label><input type="email" id="newMemMail" name="newMemMail" placeholder="請輸入會員信箱" required>
 				</div>
-				<div class="globalFormInput">
+				<div class="globalFormInput enterPsw">
 					<label>會員密碼</label><input type="password" id="newMemPsw"  name="newMemPsw" placeholder="密碼" required>
+					<span><i id="showPsw" class="fa fa-2x fa-eye" aria-hidden="true"></i></span>
 				</div>
 				
 				<div class="clearfix"></div>
@@ -172,6 +177,7 @@
 						<li><a class="memLink" href="#">我的留言</a></li>
 						<li><a class="memLink" href="#">我的報名</a></li>
 						<li><a class="memLink" href="#">成為店長</a></li>
+						<li><a id="role" class="memLink" href="#">店長專區</a></li>
 						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
@@ -272,16 +278,27 @@
 			</li>
 			<li class="memPart">
 				<div class="memPic">
-					<a href="#"><img id="memPic" src="img/homepage/user.png"></a>
+					<img id="memPic" src="img/homepage/user.png">
 				</div>
 				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
+			<ul id="memberMenu">
 			<li class="navItem"><a href="#">我的追蹤</a></li>
 			<li class="navItem"><a href="#">我的留言</a></li>
 			<li class="navItem myActivity"><a href="#">我的報名</a></li>
-			<li class="navItem beBoss"><a href="#">成為店長</a></li>
-			<li class="navItem"><a href="php/member/login/sessionLogOut.php" id="rwdLogout">登出</a></li>
+			</ul>
+			<li class="navItem beBoss">
+				<a id="rwdBossRole" href="#">成為店長</a>
+				
+				<ul id="bossMenu">
+					<li><a class="navItem bossMenu" href="#">麵包店</a></li>
+					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
+					<li><a class="navItem bossMenu" href="#">活動管理</a></li>
+					<li><a class="navItem bossMenu" href="#">留言管理</a></li>
+				</ul>
+			</li>
+			<li class="navItem"><a href="php/member/login/sessionLogOut.php">登出</a></li>
 		</ul>
 	</nav>
 	

@@ -154,11 +154,15 @@ header {
           color: #fff;
           background-color: #805934;
           border-radius: 4px;
+          -webkit-transition: .5s;
+          -o-transition: .5s;
           transition: .5s; }
           .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button:hover {
             background-color: #fff;
             color: #805934;
             border: 1px solid #805934;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
             transition: .2s; }
 
 .commit {
@@ -179,6 +183,8 @@ header {
       .commit input:nth-child(1):hover {
         color: #fff;
         background-color: #F06428;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
     .commit input:nth-child(2) {
       margin-left: 10px;
@@ -189,6 +195,8 @@ header {
       .commit input:nth-child(2):hover {
         color: #F06428;
         background-color: #fff;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
 
 @media screen and (max-width: 940px) {
