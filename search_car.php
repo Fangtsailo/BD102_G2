@@ -53,7 +53,7 @@
 									<li><img src="img/icon/star.svg"></li>
 									<li><img src="img/icon/star.svg"></li>
 								</ul>
-							</div>
+							</div>  
 							<div class="search_storeInfor ">
 								<ul>
 									<li>電話： (03)3333551</li>

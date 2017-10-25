@@ -884,6 +884,16 @@ footer {
             .globalHead #menu ul li a:focus {
               background-color: rgba(158, 105, 61, 0.5);
               transition: .3s; }
+          .globalHead #menu ul li #rwdBossRole {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            color: #fbf8f1;
+            font-weight: 400;
+            transition: .3s; }
+            .globalHead #menu ul li #rwdBossRole:focus {
+              background-color: rgba(158, 105, 61, 0.5);
+              transition: .3s; }
           .globalHead #menu ul li.myActivity {
             position: relative; }
             .globalHead #menu ul li.myActivity:after {

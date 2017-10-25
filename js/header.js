@@ -21,7 +21,7 @@ function logOut(){
 //更換會員專區角色
 function changeRole() {
     $("#role").text("店長專區").attr('href','bossActivity.php');
-    $("#rwdBossRole").html("店長專區   <i class='fa fa-plus' aria-hidden='true'></i>").attr('href','#');
+    $("#rwdBossRole").replaceWith("<span id='rwdBossRole'>店長專區   <i class='fa fa-plus' aria-hidden='true'></i></span>");
     $("#rwdBossRole").click(function(){
         $('#bossMenu').slideToggle(500);
     });
