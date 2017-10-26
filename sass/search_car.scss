@@ -125,6 +125,7 @@ img{
 				float:left;
 				width:30px;
 				padding:0 0 0 20px;
+				box-sizing:content-box;
 				img {
 					vertical-align: -webkit-baseline-middle;
 				}
@@ -216,7 +217,7 @@ img{
 			overflow:-webkit-paged-x;
 			// height:none;
 			#map-now1{
-				height:80vh;
+				height: 45vh;
 			}
 			.search_store{
 				bottom:0%;
@@ -224,6 +225,7 @@ img{
 				margin:auto;
 				overflow: auto;
     			max-height: 200px;
+    			position:relative;
 				.search_storeOne{
 					width:100%;
 					margin:auto;
