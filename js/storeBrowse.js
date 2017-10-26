@@ -51,8 +51,7 @@ function navigatorDotScroll() {
  	});
  	//user scroll 到特定特範圍, 對應 dot 要變色
  	$(window).on('scroll', function(){
- 		console.log($(document).scrollTop());
-		if ($(document).scrollTop() > (4560 + $('.screen-messages').height()) ) {
+		if ($(document).scrollTop() > (3340 + $('.screen-messages').height()) ) {
 	    	$('.navigator a .point').removeClass('selected');
 	    	$('.navigator a:nth-child(6) .point').addClass('selected');
 	    }  else if ($(document).scrollTop() > 3340) {
@@ -153,6 +152,23 @@ function loadMoreMessage(storeId) {
 	        }
 	        $('#messages-area').append(html);
 	        $('#messages-area').append($('#more-message'));
+	        for (var key in messageListObj) {
+	        	html +=	'<div class="message-box">'
+					+	'	<div class="mem-pic col-lg-2"><img alt="'+ messageListObj[key].memberPicName +'" src="'+ messageListObj[key].memberPicName +'"></div>'
+					+	'	<div class="content col-lg-10">'
+					+	'		<div class="container">'
+					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
+					+	'			<p>'+ messageListObj[key].content +'</p>'
+					+	'			<div class="setting-area">'
+					+	'				<div class="report pointer button" id="msg-'+ messageListObj[key].no + '">'
+					+	'					<p>檢舉</p>'
+					+	'			</div></div>'
+					+	'			<div class="clear"></div>'
+					+	'		</div>'
+					+	'	</div>'
+					+	'	<div class="clear"></div>'
+					+	'</div>';	
+	        }
 	       }else{
 	          consle.log( xhr.status );
 	       }

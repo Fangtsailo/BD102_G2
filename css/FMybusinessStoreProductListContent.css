@@ -1,19 +1,15 @@
 @-webkit-keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
-
 @keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
-
 @-webkit-keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
-
 @keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
-
 body {
   background-color: #fbf8f1; }
 
@@ -100,6 +96,7 @@ header {
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -116,6 +113,7 @@ header {
       .CenterBusiness .content-table table tr:nth-child(3) td input {
         width: 90%;
         height: 40px;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -166,12 +164,15 @@ header {
             right: 0;
             left: 0;
             margin: auto;
+            display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
+            -webkit-box-align: center;
             -webkit-align-items: center;
             -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
             -webkit-justify-content: center;
             -ms-flex-pack: center;
             justify-content: center; }
@@ -197,6 +198,8 @@ header {
                   color: #ccc;
                   background-color: #fff;
                   border: 1px solid #ccc;
+                  -webkit-transition: 0.3s;
+                  -o-transition: 0.3s;
                   transition: 0.3s; }
               .CenterBusiness .content-table table tr:nth-child(5) td div div img {
                 display: block;
@@ -224,6 +227,8 @@ header {
         .CenterBusiness .commit input:nth-child(1):hover {
           color: #fff;
           background-color: #F06428;
+          -webkit-transition: 0.5s;
+          -o-transition: 0.5s;
           transition: 0.5s; }
       .CenterBusiness .commit input:nth-child(2) {
         margin-left: 10px;
@@ -234,6 +239,8 @@ header {
         .CenterBusiness .commit input:nth-child(2):hover {
           color: #F06428;
           background-color: #fff;
+          -webkit-transition: 0.5s;
+          -o-transition: 0.5s;
           transition: 0.5s; }
 
 @media screen and (max-width: 645px) {
@@ -281,6 +288,7 @@ header {
         .CenterBusiness .content-table table tr:nth-child(2) td input {
           width: 90%;
           height: 40px;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           text-indent: 4px;
           font-size: 14px;
@@ -297,6 +305,7 @@ header {
         .CenterBusiness .content-table table tr:nth-child(3) td input {
           width: 90%;
           height: 40px;
+          -webkit-box-sizing: border-box;
           box-sizing: border-box;
           text-indent: 4px;
           font-size: 14px;
@@ -347,12 +356,15 @@ header {
               right: 0;
               left: 0;
               margin: auto;
+              display: -webkit-box;
               display: -webkit-flex;
               display: -ms-flexbox;
               display: flex;
+              -webkit-box-align: center;
               -webkit-align-items: center;
               -ms-flex-align: center;
               align-items: center;
+              -webkit-box-pack: center;
               -webkit-justify-content: center;
               -ms-flex-pack: center;
               justify-content: center; }
@@ -382,13 +394,12 @@ header {
                   display: none;
                   font-size: 8px;
                   margin: auto; } }
-
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; }
+
   .coverSubtitile .subtitle .burger {
     display: block; } }
-
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -403,9 +414,10 @@ header {
       .CenterBusiness .content-table table tr:nth-child(6) td div div {
         font-size: 14px;
         margin: 10px 0; } }
-
 @media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }
     .CenterBusiness .content-table table tr th div {
       font-size: 14px; } }
+
+
