@@ -1,18 +1,24 @@
+<?php 
+ob_start();
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="icon" type="image/x-icon" href="img/icon/trepun3.ico">
-	<title>會員專區</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
+	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
-
 </head>
+
 <body>
 	<!-- header -->
 	<?php
@@ -35,6 +41,18 @@
 			<!-- 我的追蹤 -->
 			<h1><img src="img/memimg/myfollowtl.svg" alt="我的追蹤"></h1>
 			<section class="col-xs-12 col-sm-3 section1000">
+
+				<?php
+				// phpinfo();
+				
+				// try{
+				// 	require_once("php/pdo/connectPDO.php");
+				// 	$sql = "select * from follow where MEM_NO='$memNo'";
+				// 	$follow = $connectPDO->query($sql);
+
+				// 	while( $followRow = $follow->fetchObject() ){
+				?>
+	
 				<div class="myfollow">
 					<a href="#"><img src="img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
 					<ul>
@@ -113,8 +131,10 @@
                     </time>
 				</div>
 
+		       
+		       
 				<div class="myfollow">
-					<a href="#"><img src="img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
+					<a href="#"><img src="img/memimg/followimg1.jpg"><h2><?php //echo $followRow["SI_NAME"];?>小木屋鬆餅屋</h2></a>
 					<ul>
 						<li class="star"><img src="img/memimg/star3.svg"></li>
 						<li class="star"><img src="img/memimg/star3.svg"></li>

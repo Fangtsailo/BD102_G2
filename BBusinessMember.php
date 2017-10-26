@@ -142,7 +142,7 @@ require_once("BackStageHeaderSidebar.php");
 
 
 
-								 if(isset($_GET["searchBar"])){
+								 if(isset($_REQUEST["searchBar"])){
 
 
 								 	$searchBar = $_GET["searchBar"];
@@ -326,7 +326,9 @@ require_once("BackStageHeaderSidebar.php");
 
 							$MEM_NO=$memberRow->MEM_NO;
 
-							$sql = "select * from store_imformation where SI_MEMNO=$MEM_NO";
+
+
+							$sql = "select * from store_imformation where SI_MEMNO='$MEM_NO'";
 
 							$store_imformation = $connectPDO->query($sql);
 
