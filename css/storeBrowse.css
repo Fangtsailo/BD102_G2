@@ -1,4 +1,46 @@
 /*===========================================================*/
+.gm-style-iw {
+  color: red;
+  font-family: "Noto Sans CJK TC"; }
+
+.review-mask {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10; }
+  .review-mask #give-reivew-modal {
+    position: relative;
+    top: 50%;
+    width: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #fbf8f1;
+    padding: 10px; }
+    .review-mask #give-reivew-modal p {
+      text-align: center; }
+    .review-mask #give-reivew-modal ul {
+      margin: auto;
+      position: relative;
+      width: 170px; }
+      .review-mask #give-reivew-modal ul .star {
+        width: 30px;
+        display: inline-block; }
+        .review-mask #give-reivew-modal ul .star img {
+          width: 100%; }
+    .review-mask #give-reivew-modal .btns {
+      margin: auto;
+      margin-top: 30px;
+      text-align: center; }
+      .review-mask #give-reivew-modal .btns div {
+        display: inline-block;
+        margin-bottom: 10px; }
+
 .textLightBox {
   display: none;
   top: 0;
@@ -569,7 +611,8 @@ img {
         left: 0;
         right: 0;
         margin: auto;
-        color: #fbf8f1; }
+        color: #fbf8f1;
+        text-shadow: 1px 2px black; }
     .screen-product .product-list .slick-current img {
       opacity: 1;
       -webkit-transform: scale(1.8);
@@ -871,7 +914,11 @@ img {
         -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         .screen-other-store .top-list .item .detail p, .screen-other-store .bottom-list .item .detail p {
-          color: #ccc; }
+          color: #ccc;
+          overflow: hidden;
+          -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
         .screen-other-store .top-list .item .detail h3, .screen-other-store .bottom-list .item .detail h3 {
           margin-bottom: 10px;
           color: #fbf8f1; }

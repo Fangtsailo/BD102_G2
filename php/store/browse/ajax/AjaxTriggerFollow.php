@@ -14,7 +14,7 @@ if (isset($_REQUEST["memNum"]) && isset($_REQUEST["storeId"]) && isset($_REQUEST
 	echo $followCount;
 } 
 function triggerFollow($memNum, $storeId) {
-		$sql = "insert into trepun.follow(SI_NUM, MEM_NO, FL_TIME) values(:storeId,:memNum,:time)";
+		$sql = "insert into follow(SI_NUM, MEM_NO, FL_TIME) values(:storeId,:memNum,:time)";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->bindValue(":memNum", $memNum);
@@ -22,7 +22,7 @@ function triggerFollow($memNum, $storeId) {
 		$stmt->execute();
 }
 function cancelFollow($memNum, $storeId) {
-		$sql = "delete from trepun.follow where SI_NUM=:storeId and MEM_NO=:memNum";
+		$sql = "delete from follow where SI_NUM=:storeId and MEM_NO=:memNum";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->bindValue(":memNum", $memNum);
@@ -30,7 +30,7 @@ function cancelFollow($memNum, $storeId) {
 }
 function getFollowCount($storeId) {
 	$followCount = 0;
-	$sql = "SELECT count(*) count FROM trepun.follow WHERE SI_NUM=$storeId";
+	$sql = "SELECT count(*) count FROM follow WHERE SI_NUM=$storeId";
 	$stmt = $GLOBALS["connectPDO"] ->query($sql);
 	while ($count = $stmt->fetchObject()) {
 		$followCount = $count->count;
