@@ -7,15 +7,17 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="icon" type="image/x-icon" href="img/icon/trepun3.ico">
-	<title>會員專區</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
+	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
-
 </head>
+
 <body>
 	<!-- header -->
 	<?php

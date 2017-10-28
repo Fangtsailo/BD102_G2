@@ -1,0 +1,85 @@
+input {
+  outline: none;
+  cursor: pointer; }
+
+header {
+  z-index: 1; }
+
+.tableArea {
+  height: 100vh;
+  position: relative;
+  margin: auto;
+  left: 0; }
+
+.content-table table {
+  width: 80%;
+  margin-left: 0;
+  margin-right: 0;
+  margin: auto; }
+  .content-table table span, .content-table table div, .content-table table input {
+    color: #999; }
+  .content-table table tr {
+    height: 50px; }
+    .content-table table tr th {
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      font-weight: normal;
+      width: 20%;
+      background-color: #d7cab4;
+      color: #502f0d; }
+    .content-table table tr td {
+      padding: 10px 10px 10px 20px;
+      text-align: left;
+      background-color: #fff;
+      color: #be9f80;
+      width: 80%;
+      border-bottom: 1px solid #ccc; }
+    .content-table table tr span {
+      color: #be9f80; }
+    .content-table table tr:nth-child(6) td {
+      padding: 10px 0 10px 20px; }
+    .content-table table tr:nth-child(7) td {
+      padding: 10px 0 10px 20px; }
+
+.commit {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 100px; }
+  .commit form input:nth-child(2) {
+    border: none;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #cc4e4e;
+    color: #fff;
+    display: inline-block; }
+    .commit form input:nth-child(2):hover {
+      border: 1px solid #cc4e4e;
+      color: #cc4e4e;
+      background-color: #fff;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s; }
+  .commit form input:nth-child(3) {
+    border: none;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: #53c453;
+    color: #fff;
+    display: inline-block; }
+    .commit form input:nth-child(3):hover {
+      border: 1px solid #53c453;
+      color: #53c453;
+      background-color: #fff;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s; }
+
+.dutyColorChange {
+  background-color: #00c853 !important;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s; }

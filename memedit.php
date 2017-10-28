@@ -8,8 +8,8 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="icon" type="image/x-icon" href="img/icon/trepun3.ico">
-	<title>會員專區</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.css">
@@ -17,8 +17,8 @@ session_start();
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
-
 </head>
+
 <body>
 	<!-- header -->
 	<?php
@@ -57,15 +57,15 @@ session_start();
 						$memRow = $member->fetchObject();
 				?>
 
-				<form class="form-horizontal" action="memUpdateToDb.php" method="post" enctype="multipart/form-data">
+				<form class="form-horizontal" action="php\member\memUpdateToDb.php" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="memId" value="<?php echo $memRow->MEM_ID;?>">
 					<div class="userpic">
-						<img src="img/mempic/followimg1.jpg">
+						<img src="img/member_pic/signin2.svg">
 					</div>
 					<p>
-						<label for="MEM_PIC">變更頭像</label>
+						<label for="mempic">變更頭像</label>
 						<a href="javascript:;" class="upload">上傳照片
-							<input type="file" name="MEM_PIC" id="MEM_PIC">
+							<input type="file" name="mempic" id="mempic">
 							<input type="hidden" name="oldImage" value="<?php echo $memRow->MEM_PIC;?>">
 						</a>
 					</p>
@@ -80,7 +80,7 @@ session_start();
 					</p>
 					<p>
 						<label for="MEM_MAIL">信箱</label>
-						<strong><?php echo  $memRow->MEM_MAIL ?></strong>
+						<strong><?php echo $memRow->MEM_MAIL ?></strong>
 						<span class="note">※已註冊信箱無法變更</span>
 					</p>
 					<p>

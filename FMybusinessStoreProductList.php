@@ -214,12 +214,16 @@ session_start();
 						<td><?php echo $product_table_Row->PD_PRICE; ?></td>
 						<td>
 							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
+								<a href="FMybusinessStoreProductListContentDetail.php?PD_NO=<?php echo $PD_NO; ?>" >
+									<img src="img/icon/editIcon.png">
+									<span>編輯</span>
+								</a>
 							</div>
 							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
+								<a href="">
+									<img src="img/icon/deleteIcon.png">
+									<span>下架</span>
+								</a>
 							</div>
 						</td>
 					</tr>
