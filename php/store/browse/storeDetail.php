@@ -22,7 +22,34 @@ try {
 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
 }
-
+	//轉換數字成星期文字
+	function transNumToWord($num) {
+		$word = "一";
+		switch ($num) {
+			case 1:
+				$word = "一";
+				break;
+			case 2:
+				$word = "二";
+				break;
+			case 3:
+				$word = "三";
+				break;
+			case 4:
+				$word = "四";
+				break;
+			case 5:
+				$word = "五";
+				break;
+			case 6:
+				$word = "六";
+				break;
+			case 7:
+				$word = "日";
+				break;
+		}
+		return $word;
+	}
 	//特定num的會員有沒有追蹤特定店家
 	function isFollowStoreByMemNum($memNum, $storeId) {
 		$isFollow = false;

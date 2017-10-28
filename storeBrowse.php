@@ -209,9 +209,9 @@ try {
 					<?php 
 						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
 							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
-								echo "星期", $GLOBALS["store"]->closeDayArr[$i], ", ";
+								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
 							} else {
-								echo "星期", $GLOBALS["store"]->closeDayArr[$i];
+								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
 							}
 						}
 					 ?>
