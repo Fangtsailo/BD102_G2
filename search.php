@@ -156,7 +156,7 @@ try{
 
 			<script>
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("img/store/banners/<?php echo $searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');			
+					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');			
 
 
 				});
