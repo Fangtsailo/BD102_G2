@@ -27,7 +27,7 @@ try {
 	function isFollowStoreByMemNum($memNum, $storeId) {
 		$isFollow = false;
 		if ($memNum != -1) {
-			$sql = "SELECT * FROM trepun.follow WHERE SI_NUM=$storeId AND MEM_NO=$memNum";
+			$sql = "SELECT * FROM follow WHERE SI_NUM=$storeId AND MEM_NO=$memNum";
 			$stmt = $GLOBALS["connectPDO"] ->query($sql);
 			while ($count = $stmt->fetchObject()) {
 				//有追蹤
@@ -39,7 +39,7 @@ try {
 	
 	function getFollowCountByStoreId($storeId) {
 		$followCount = 0;
-		$sql = "SELECT count(*) count FROM trepun.follow WHERE SI_NUM=$storeId";
+		$sql = "SELECT count(*) count FROM follow WHERE SI_NUM=$storeId";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($count = $stmt->fetchObject()) {
 			$followCount = $count->count;
@@ -66,7 +66,7 @@ try {
 		while ($store = $stmt->fetchObject()) {
 			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
 					$followCount = 0;
-			// $sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId";
+			// $sql = "SELECT count(*) FROM follow WHERE SI_NUM=$storeId";
 			// $stmt = $GLOBALS["connectPDO"] ->query($sql);
 			// while ($count = $stmt->fetchObject()) {
 			// 	$followCount = $count->count;
@@ -89,7 +89,7 @@ try {
 			while($row = $stmt->fetchObject()) {
 				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
 				//這筆留言有沒有被此登入的 member 檢舉過
-				$sql = "SELECT * FROM trepun.report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
+				$sql = "SELECT * FROM report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
 				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
 				if ($row = $stmt2->fetchObject()) {
 					$message->isReportByMe = true;
@@ -101,7 +101,7 @@ try {
 	}
 	function getActivityInfoByStoreId($storeId) {
 		$activityArr = array();
-		$sql = "SELECT * FROM trepun.activity where AC_STORE_NUM=:storeId";
+		$sql = "SELECT * FROM activity where AC_STORE_NUM=:storeId";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
@@ -117,7 +117,7 @@ try {
 	}
 	function getProductsByStoreId($storeId) {
 		$productsArr = array();
-		$sql = "SELECT * FROM trepun.product where PD_SHOPNO=:storeId";
+		$sql = "SELECT * FROM product where PD_SHOPNO=:storeId";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
@@ -147,7 +147,7 @@ try {
 	}
 	function getBreadCarPathByStoreId($storeId) {
 		$breadCarPathArr = array();
-		$sql = "select path.bcp_location,path.bcp_describe, store.si_lat, store.si_lng from trepun.bread_car_path path, trepun.store_imformation store where path.BCP_STORE_NUM = :storeId and path.bcp_store_num=store.si_num";
+		$sql = "select path.bcp_location,path.bcp_describe, store.si_lat, store.si_lng from bread_car_path path, store_imformation store where path.BCP_STORE_NUM = :storeId and path.bcp_store_num=store.si_num";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
