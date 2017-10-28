@@ -6,8 +6,6 @@
     position: fixed;
     top: 80px;
     z-index: 3;
-    -webkit-transition: top 0.3s ease-in-out;
-    -o-transition: top 0.3s ease-in-out;
     transition: top 0.3s ease-in-out; }
     .coverSubtitile .subtitle h2 {
       line-height: 44px;
@@ -29,8 +27,6 @@
   position: absolute;
   top: 44px;
   right: -200px;
-  -webkit-transition: .2s;
-  -o-transition: .2s;
   transition: .2s;
   background-color: #f2ebd4; }
   .CoverRightMy ul li {
@@ -43,8 +39,6 @@
     display: block; }
     .CoverRightMy ul li:hover {
       color: #f6921E;
-      -webkit-transition: 0.5s;
-      -o-transition: 0.5s;
       transition: 0.5s; }
     .CoverRightMy ul li ul li {
       background-color: #4289ff;
@@ -56,21 +50,15 @@
       border-bottom: 1px solid #4b7cbf; }
       .CoverRightMy ul li ul li:hover {
         color: #f06428;
-        -webkit-transition: 0.5s;
-        -o-transition: 0.5s;
         transition: 0.5s; }
 
 .moveToLeft {
   right: -70px;
-  -webkit-transition: .2s;
-  -o-transition: .2s;
   transition: .2s; }
 
 .moveToLeftTop {
   top: 44px;
   right: -70px;
-  -webkit-transition: right .2s;
-  -o-transition: right .2s;
   transition: right .2s; }
 
 .hide {
@@ -79,9 +67,9 @@
 @media screen and (min-width: 941px) {
   .CoverRightMy {
     display: none; } }
-
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; }
+
   .coverSubtitile .subtitle .burger {
     display: block; } }

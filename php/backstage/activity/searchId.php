@@ -37,7 +37,7 @@
       		if($search->rowCount()!==0){
 
       		header("Location:../../../BActivity.php?searchIdName=$searchIdName");
-
+      		
       		}else{
 
       			header("Location:../../../BActivity.php");

@@ -62,8 +62,6 @@ li {
       cursor: pointer;
       transition: .3s ease-in; }
       .globalForm .globalFormHeader .svg:hover {
-        -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
         transform: rotate(180deg);
         transition: .3s ease-in; }
   .globalForm .globalFormContent {
@@ -394,40 +392,17 @@ li {
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-
-@-webkit-keyframes shake {
-  0% {
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1); }
-  100% {
-    -webkit-transform: scale(1.2, 1.2);
-    transform: scale(1.2, 1.2); } }
-
 @keyframes shake {
   0% {
-    -webkit-transform: scale(1, 1);
     transform: scale(1, 1); }
   100% {
-    -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-
-@-webkit-keyframes shake1 {
-  0% {
-    -webkit-transform: translate(15px, 0px);
-    transform: translate(15px, 0px); }
-  100% {
-    -webkit-transform: translate(-15px, 0px);
-    transform: translate(-15px, 0px); } }
-
 @keyframes shake1 {
   0% {
-    -webkit-transform: translate(15px, 0px);
     transform: translate(15px, 0px); }
   100% {
-    -webkit-transform: translate(-15px, 0px);
     transform: translate(-15px, 0px); } }
     .globalHead .headerRight .shake {
-      -webkit-animation: shake1 .2s linear 3 alternate;
       animation: shake1 .2s linear 3 alternate; }
     .globalHead .headerRight .activeStatus {
       display: block; }
@@ -458,7 +433,6 @@ li {
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
-                  -webkit-animation: shake .3s ease infinite alternate;
                   animation: shake .3s ease infinite alternate;
                   transition: .3s; }
             .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
@@ -546,7 +520,6 @@ li {
           background-color: #996633;
           transition: .3s; }
           .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
-            -webkit-animation: shake .5s ease infinite alternate;
             animation: shake .5s ease infinite alternate;
             transition: .3s; }
   .globalHead .rwd_headerSearch {
@@ -593,7 +566,6 @@ footer {
     height: 30px; }
   footer .globalFtBtn a {
     font-size: 14px; } }
-
 .clearfix {
   clear: both; }
 
@@ -705,62 +677,73 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
+
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
+
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
+
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
+
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
+
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
+
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
+
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
+
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
+
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
+
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
+
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
+
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-
 @media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
@@ -987,7 +970,6 @@ footer {
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer; } }
-
 @media screen and (max-width: 400px) {
   .globalHead .headLoginBox .globalForm {
     width: 100%;
@@ -1011,7 +993,6 @@ footer {
       width: 90%; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
-
 #addShopBox {
   position: fixed;
   z-index: 999;
@@ -1294,7 +1275,6 @@ footer {
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; } }
-
 @media screen and (max-width: 768px) {
   .container {
     width: 100%; }

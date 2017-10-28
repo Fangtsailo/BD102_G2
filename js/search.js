@@ -1,21 +1,21 @@
-$(function(){
 
 
 
 
 
-initBreadCarNowLocationMap("map-now2");
 
-	function initBreadCarNowLocationMap(selector) {
+//initBreadCarNowLocationMap("map-now-<?php echo "$searchRow->SI_NUM";?>");
+
+	function initBreadCarNowLocationMap(selector,lat,lng) {
 		var map = new google.maps.Map(document.getElementById(selector), {
 		  zoom: 16,
-		  center: {lat: 24.965356, lng: 121.191038}
+		  center: {lat: lat, lng: lng}
 		});
 		var image =src='img/map_point.png';
 			
 		;
 		var beachMarker = new google.maps.Marker({
-		  position: {lat:  24.965356 , lng: 121.191038},
+		  position: {lat:  lat , lng: lng},
 		  map: map, 
 		  icon: image
 		});
@@ -23,4 +23,3 @@ initBreadCarNowLocationMap("map-now2");
 
 
 
-})

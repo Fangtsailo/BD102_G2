@@ -24,6 +24,9 @@ session_start();
 
 	<!-- paralla 用 -->
 	<script type="text/javascript" src="js/parallax.min.js"></script>
+	
+	<!-- 跳窗用 -->
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 
 </head>
 <body>
@@ -44,6 +47,9 @@ session_start();
 				// $memNo=$_SESSION["memNo"];
 
 				$actNum=6;
+
+
+
 				if (isset($_REQUEST["actNum"])) {
 					
 				$actNum=$_REQUEST["actNum"];
@@ -56,7 +62,10 @@ session_start();
 					$activity=$connectPDO->query($sql);
 					$actRow=$activity->fetchObject();
 
+               //  $msg = isset($msg) === true  ? $msg : "Hello" ;
+               //  echo $msg;
 
+               // echo $actRow->AC_PIC=="" ? "header.jpg" : $actRow->AC_PIC;
 			 ?>
 
 	<div class="container-template">
@@ -289,10 +298,6 @@ session_start();
 
 
 
-
-
-
-
 				<div class="activity_form">
 					<!-- =================表單樣式===================== -->
 					
@@ -305,13 +310,9 @@ session_start();
 						$actSign=$connectPDO->query($memsql);
 						$activityRow=$actSign->fetchObject();	
 
-						
 
 						if (isset($activityRow->MEM_NO)) {
 							?>
-
-
-
 						
 			<!-- ===================================已報名================================================================= -->
 
@@ -387,29 +388,53 @@ session_start();
 										</form>
 									</div> <!-- globalForm -->
 									
-											<script type="text/javascript">
+							<script type="text/javascript">
 								
-											$(function(){
+								$(function(){
 
-													$('#actSubmit').click(function(){
-															if($('#memName').val().length==0 && $('#memName').val().trim()==''){
-																alert ("沒有輸入姓名");
-														  	}else if($('#memPhone').val().length==0 && $('#memPhone').val().trim()==''){
-														  		alert ("沒有輸入聯絡電話");
-														  	}else if($('#memEmail').val().length==0 && $('#memEmail').val().trim()==''){
-														  		alert("沒有輸入E-mail");
-														  	}else {
-														  		$('#memName').val($('#memName').val().trim());
-														  		$('#memPhone').val($('#memPhone').val().trim());
-														  		$('#memEmail').val($('#memEmail').val().trim());
-
-														  				$( "#actform" ).submit();
-														  	}
-
+										$('#actSubmit').click(function(){
+											if($('#memName').val().length==0 && $('#memName').val().trim()==''){
+													$.sweetModal({
+														content: '姓名沒有輸入喔',
+														icon: $.sweetModal.ICON_WARNING,
+														width: '300px',
+														theme: $.sweetModal.THEME_MIXED,
 													});
-												});
+											}else if($('#memPhone').val().length==0 && $('#memPhone').val().trim()==''){
+													$.sweetModal({
+															content: '聯絡電話沒有輸入喔',
+															icon: $.sweetModal.ICON_WARNING,
+															width: '300px',
+															theme: $.sweetModal.THEME_MIXED,
+													});
+											}else if($('#memEmail').val().length==0 && $('#memEmail').val().trim()==''){
+													$.sweetModal({
+															content: 'e-mail沒有輸入喔',
+															icon: $.sweetModal.ICON_WARNING,
+															width: '300px',
+															theme: $.sweetModal.THEME_MIXED,
+													});
+											}else {
+													$('#memName').val($('#memName').val().trim());
+													$('#memPhone').val($('#memPhone').val().trim());
+													$('#memEmail').val($('#memEmail').val().trim());
+														  		//消空格
+													$.sweetModal({
+														content: '成功報名',
+														icon: $.sweetModal.ICON_SUCCESS,
+														width: '300px',
+														theme: $.sweetModal.THEME_MIXED,
+														onClose: function(){
+												              $( "#actform" ).submit();
+												         }
+													});
+														  				
+											}
 
-											</script>
+										});
+								}); //function()
+
+							</script>
 
 
 
@@ -461,16 +486,6 @@ session_start();
 				}?>   <!-- else 還沒登入 -->
 
 				</div><!-- =================表單樣式===end================== -->
-
-
-			
-
-
-
-
-
-
-
 
 
 
