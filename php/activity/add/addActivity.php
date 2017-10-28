@@ -66,16 +66,19 @@ try{
 
 		if( $_FILES["upAct"]["error"][$i] ==0 ){
 
+
 					$from = $_FILES["upAct"]["tmp_name"][$i];
 					$FileName = mb_convert_encoding($_FILES["upAct"]["name"][$i],"big5","utf-8");
 					$newFileName= $acNum."-act-".($i+1).substr($FileName,strpos($FileName,'.'));
 					$to = "../../../".GLOBAL_ACTIVITY_ACT_PIC_PATH.$newFileName ;
+
 					copy($from, $to);
 					$AC_PIC_COL = "AC_PIC".($i+1);
 					$UploadActPicSQL = "UPDATE activity SET $AC_PIC_COL='$newFileName' WHERE AC_NO = $acNum";
 					$UploadActPic = $connectPDO->query($UploadActPicSQL);
 		}
 	}		
+
 
 	foreach( $_FILES["upIngrd"]["error"] as $i=>$data ){
 
@@ -86,6 +89,7 @@ try{
 					$newFileName= $acNum."-ingrd-".($i+1).substr($FileName,strpos($FileName,'.'));
 					$to = "../../../".GLOBAL_ACTIVITY_INGREDIENT_PIC_PATH.$newFileName;
 					copy($from, $to);
+
 					$AC_INGRD_COL = "AC_INGREDIENT_PIC".($i+1);
 					$UploadIngrdPicSQL = "UPDATE activity SET $AC_INGRD_COL='$newFileName' WHERE AC_NO = $acNum";
 					$UploadIngrdPic = $connectPDO->query($UploadIngrdPicSQL);
@@ -94,7 +98,10 @@ try{
 		}			
 	}			
 
+
+	
 	foreach( $_FILES["upProd"]["error"] as $i=>$data ){
+
 
 		if( $_FILES["upProd"]["error"][$i] ==0 ){
 		

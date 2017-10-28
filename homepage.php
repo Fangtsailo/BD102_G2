@@ -152,10 +152,10 @@ require_once("headerForHomePage.php");
 						<span class="filterTitle">篩選條件</span>
 						<select  class="filter" name="shopPosition" id="filterArea">
 							<option value="default">地區</option>
-							<option value="north">北部</option>
-							<option value="center">中部</option>
-							<option value="south">南部</option>
-							<option value="east">東部</option>
+							<option value="0">北部</option>
+							<option value="1">中部</option>
+							<option value="2">南部</option>
+							<option value="3">東部</option>
 						</select>
 						<input type="radio" value="top" name="filter" id="filterTops">
 						<label for="filterTops" class="filter">熱門</label>	
