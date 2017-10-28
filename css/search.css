@@ -387,7 +387,7 @@ li {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
-      .globalHead .headerRight .headSearch button {
+      .globalHead .headerRight .headSearch label {
         width: 80px;
         display: inline-block;
         height: 30px;
@@ -396,14 +396,21 @@ li {
         border: 1px solid #fbf8f1;
         margin: 0px 5px;
         font-size: 16px;
-        border-radius: 2px; }
-        .globalHead .headerRight .headSearch button:focus {
+        border-radius: 2px;
+        vertical-align: top;
+        outline: none;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer; }
+      .globalHead .headerRight .headSearch input[type=radio] {
+        display: none; }
+        .globalHead .headerRight .headSearch input[type=radio]:checked + label {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
           -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-          vertical-align: top; }
+          box-sizing: border-box; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -1082,7 +1089,8 @@ footer {
 
 #addShopBox {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(50, 50, 50, 0.5);
@@ -1119,11 +1127,50 @@ footer {
         left: 0;
         right: 0;
         margin: auto; }
-    #addShopBox .globalForm input[type="number"] {
-      width: 20%;
+    #addShopBox .globalForm .selectTime {
+      display: block;
+      float: right;
+      width: 65%;
       height: 100%;
-      float: none;
-      display: inline-block; }
+      padding-left: 10px;
+      margin: auto;
+      background-color: transparent; }
+      #addShopBox .globalForm .selectTime span {
+        display: inline-block;
+        float: left;
+        line-height: 50px;
+        color: #663300; }
+      #addShopBox .globalForm .selectTime select {
+        width: 30%;
+        height: 30px;
+        float: left;
+        display: inline-block;
+        margin: 10px; }
+
+@media screen and (max-width: 400px) {
+  #addShopBox .globalForm .globalFormHeader {
+    padding: 2%; }
+    #addShopBox .globalForm .globalFormHeader .svg {
+      width: 30px; }
+    #addShopBox .globalForm .globalFormHeader p {
+      font-size: 13px; }
+  #addShopBox .globalForm .globalFormInput {
+    width: 90%;
+    height: 30px; }
+    #addShopBox .globalForm .globalFormInput label {
+      line-height: 30px;
+      font-size: 13px; }
+    #addShopBox .globalForm .globalFormInput .chooseBtn {
+      margin: 0px 5px; }
+    #addShopBox .globalForm .globalFormInput .selectTime {
+      padding-left: 0; }
+    #addShopBox .globalForm .globalFormInput select {
+      width: 37%;
+      line-height: 30px;
+      margin: 0; }
+    #addShopBox .globalForm .globalFormInput span {
+      line-height: 30px;
+      font-size: 12px; } }
 
 #serviceCenter {
   position: fixed;
@@ -1277,6 +1324,10 @@ img {
       float: left;
       padding: 0;
       height: 200px; }
+      .search_store .search_storeOne .search_storeMap .noneMap p {
+        margin: 50px;
+        text-align: center;
+        color: #3399ff; }
   .search_store .search_map {
     height: 100%; }
 

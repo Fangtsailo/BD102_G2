@@ -206,7 +206,7 @@ try{
 
 				
 				<?php 	
-						if (isset($searchRow->SI_LNG) and isset($searchRow->SI_LAT)) {
+						if ($searchRow->SI_LNG!="" and $searchRow->SI_LAT!="") {
 				?>
 					<script type="text/javascript">
 							$(document).ready(function (){

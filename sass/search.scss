@@ -176,7 +176,12 @@ img{
 			float:left;
 			padding:0;
 			height:200px;
-			
+			.noneMap{
+				p{	margin:50px;
+					text-align:center;
+					color:$globalLinkColor;
+				}
+			}
 		}//.search_storeMap
 
 				
