@@ -53,17 +53,56 @@ try {
 	}
 	getStoreInfoById($storeId);
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
+	$breadCarPathCount = 1;//至少有"即時位置"
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
 	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
 	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
 	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
 	$isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
 
+	//預設至少一個商品跟活動圖
+	if (count($GLOBALS["produtsArr"]) == 0 ) {
+		array_push($GLOBALS["produtsArr"],new Bread());
+	}
+	if (count($GLOBALS["activityArr"]) == 0 ) {
+		array_push($GLOBALS["activityArr"],new ActivityObj());
+	}
+
 } catch (Exception $e) {
 	echo "原因：",$e->getMessage(),"<br>";
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
+ <div id="loading-page">
+ 	<div class="content">Loading...</div>
+ </div>
+ <div class="report-mask mask">
+ 	<div class="report-modal modal">
+ 		<p>檢舉原因</p>
+		<textarea id="report-reason" maxlength="50" placeholder="請填寫原因..." rows="2"></textarea>
+		 <div class="btns">
+		 	<div id="cancel-report-btn" class="globalCancelBtn">取消</div>
+		 	<div id="submit-report-btn" class="globalOkBtn">檢舉</div>
+		 </div>
+ 	</div>
+ </div>
+ <div class="review-mask">
+	 <div id="give-reivew-modal">
+	 	<p>給予評價</p>
+	 	<ul> 	
+	 		<li class="star pointer" id="review-star1" data-id="1"><img alt="star.svg" src="img/icon/star3.svg"></li>
+		 	<li class="star pointer" id="review-star2" data-id="2"><img alt="star.svg" src="img/icon/star3.svg"></li>
+		 	<li class="star pointer" id="review-star3" data-id="3"><img alt="star.svg" src="img/icon/star3.svg"></li>
+		 	<li class="star pointer" id="review-star4" data-id="4"><img alt="star.svg" src="img/icon/star3.svg"></li>
+		 	<li class="star pointer" id="review-star5" data-id="5"><img alt="star.svg" src="img/icon/star3.svg"></li>
+		 </ul>
+		 <div class="btns">
+		 	<div id="cancel-review-btn" class="globalCancelBtn">取消</div>
+		 	<div id="submit-review-btn" class="globalOkBtn">給評價</div>
+		 </div>
+		
+	 </div>
+ </div>
 <div class="textLightBox">
 	<div class="content">
 		<div class="header"></div>
@@ -111,7 +150,7 @@ try {
 		<div id="banner3"></div>
 	</div>
 	<div class="detail-box">
-		<div class="store-logo"><img alt="<?php echo $GLOBALS["store"]->storeLogo ?>" src="<?php echo GLOBAL_STORE_PIC_PATH, $GLOBALS["store"]->storeLogo ?>"></div>
+		<div class="store-logo"><img alt="<?php echo $GLOBALS["store"]->storeLogo ?>" src="<?php echo $GLOBALS["store"]->storeLogo ?>"></div>
 		<div class="title">
 			<div class="container">
 				<h1 class="store-name"><?php echo $GLOBALS["store"]->name ?></h1>
@@ -120,18 +159,20 @@ try {
 		<div class="detail">
 				<ul class="follow col-xs-9" id="review-btn">
 					<?php 
-						// for ($i = 0; $i < 5; $i++) {
-						// 	if ($review > 0) {
-
-						// 	}
-						// 	$review--;
-						// }
+						$reviewCount = $GLOBALS["store"]->reviews;
+						for ($i = 0; $i < 5; $i++) {
+							if ($reviewCount > 0) {
+					?>
+							<li class="star pointer"><img alt="star.svg" src="img/icon/star2.svg"></li>
+					<?php
+								$reviewCount--;
+							} else {
+					?>
+							<li class="star pointer"><img alt="star.svg" src="img/icon/star3.svg"></li>
+					<?php
+							}
+						}
 					 ?>
-					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
-					<li class="star pointer"><img alt="star.svg" src="img/store/browse/star.svg"></li>
 				</ul>
 			<div class="trace pointer col-xs-3" id='trace-btn'>
 				<div class="icon">
@@ -168,9 +209,9 @@ try {
 					<?php 
 						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
 							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
-								echo "星期", $i, ", ";
+								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
 							} else {
-								echo "星期", $i;
+								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
 							}
 						}
 					 ?>
@@ -205,11 +246,14 @@ try {
 	</div>
 	</div>
 	<ul class="tabs">
-		<li class="item pointer item-selected">
+		<li class="item pointer item-selected" id="bread-car-path-now-location">
 			即時位置
 		</li>
 		<?php
 			foreach ($GLOBALS["breadCarPathArr"] as $path) {
+				if ($breadCarPathCount <=3) {
+					$breadCarPathCount++;
+				}
 		?>
 			<li class="item pointer">
 				<?php echo $path->describe ?>
@@ -370,8 +414,8 @@ try {
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
-			<div class="content col-lg-10"><textarea id="message-box-txtarea" maxlength="200" placeholder="登入後開始留言..." rows="5"></textarea>
+			<div class="mem-pic col-lg-2"><div id="login-men-pic"></div></div>
+			<div class="content col-lg-10"><textarea id="message-box-txtarea" maxlength="250" placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
 			<div class="clear"></div>
@@ -382,13 +426,15 @@ try {
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
 					<div class="message-box">
-						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $messageItem->memberPicName ?>"></div>
+						<div class="mem-pic col-lg-2">
+							<div class="picture" style="background-image:url('<?php echo $messageItem->memberPicName ?>')"></div>
+							</div>
 						<div class="content col-lg-10">
 							<div class="container">
 								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
 								<p><?php echo $messageItem->content ?></p>
 								<div class="setting-area">
-									<div class="report pointer button" id="msg-<?php echo $messageItem->no ?>">
+									<div class="report pointer button" data-id="<?php echo $messageItem->no ?>" id="msg-<?php echo $messageItem->no ?>">
 										<p>檢舉</p></div>
 								</div>
 								<div class="clear"></div>
@@ -440,10 +486,20 @@ try {
 	
 <script type="text/javascript">
 $(document).ready(function(){
+	//loading page
+	// $('#loading-page').delay(2000).fadeOut(1000);
+	$('#loading-page').hide();
+	//檢舉公用變數
+	reportMessageNum = -1;
+	reviewIGave = 0;//若有給予評價的分數
+	memNum = <?php echo $memNum; ?>;
+	storeId = <?php echo $storeId; ?>;
+	initReviewStarAction();
+	initReportAction();
 	isLogin = <?php echo $isLogin==true?"true":"false"; ?>;
 	isThisMemFollowThisStore = <?php echo $isThisMemFollowThisStore; ?>;
 	initParallax("activity-parallax");
-	allSlickSetting();
+	allSlickSetting(<?php echo $breadCarPathCount; ?>);
 	initAllScrollMagicScene();
 	initBreadCarNowLocationMap("map-now", <?php echo $GLOBALS["store"]->lat;?>, <?php echo $GLOBALS["store"]->lng ?>);
 	<?php
@@ -457,16 +513,17 @@ $(document).ready(function(){
 	var messageLoadMore = document.getElementById("more-message");
 	//看更多留言事件--------------------
 	messageLoadMore.addEventListener("click", function() {
-		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>);
+		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum; ?>);
 	}, false);
 	//寄發留言-------------------------
+	$('#login-men-pic').css('background-image', 'url("<?php echo $memPic;?>")')
 	$("#send-message-btn").click(function() {
 		var content = $("#message-box-txtarea").val();
 		if (content.length > 0) {
 		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
 		} else {
 			$.sweetModal({
-                content: '先輸入文字',
+                content: '請先輸入文字',
                 icon: $.sweetModal.ICON_WARNING,
                 width: '300px',
                 theme: $.sweetModal.THEME_MIXED
@@ -497,6 +554,7 @@ $(document).ready(function(){
 	 $('#review-btn').on('click', function() {
 
 	 });
+	 //導覽dot-------------------------
 	 navigatorDotScroll();
 	 //商品詳情-------------------------
 	 $(".textLightBox .closeBtn").on('click', function(){
@@ -536,8 +594,8 @@ $(document).ready(function(){
 			} else {
 	 ?>
 		$('#msg-<?php echo $messageItem->no ?>').on('click', function(){
-			reportMessage(<?php echo $messageItem->no ?>, <?php echo $memNum;?>, "test reason");
-		});
+				reportMessage(<?php echo $messageItem->no ?>, <?php echo $memNum;?>);
+			});
 	<?php 
 			}
 		}
@@ -549,7 +607,19 @@ $(document).ready(function(){
 			$('#other-<?php echo $otherStore->id; ?> .store-img').css('background-image', 'url("<?php echo $otherStore->banner1; ?>")');
 	<?php
 		}
-	 ?>	
+	 ?>
+	 //給評價-----------------------------
+	 if (isLogin) {
+			$("#review-btn").on('click', function(){
+				$('.review-mask').fadeIn(500);
+			});
+	} else {
+		$("#review-btn").on('click', function(){
+				$('#loginBox').fadeIn(500);
+			    $("#menu").removeClass("show");
+			    $('#addShopBox').hide();
+			});
+	}	
 });	
 </script>
 </body>
