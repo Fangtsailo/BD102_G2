@@ -62,6 +62,8 @@ li {
       cursor: pointer;
       transition: .3s ease-in; }
       .globalForm .globalFormHeader .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
         transform: rotate(180deg);
         transition: .3s ease-in; }
   .globalForm .globalFormContent {
@@ -360,7 +362,7 @@ li {
         border-radius: 2px;
         box-sizing: border-box;
         vertical-align: top; }
-      .globalHead .headerRight .headSearch button {
+      .globalHead .headerRight .headSearch label {
         width: 80px;
         display: inline-block;
         height: 30px;
@@ -369,13 +371,19 @@ li {
         border: 1px solid #fbf8f1;
         margin: 0px 5px;
         font-size: 16px;
-        border-radius: 2px; }
-        .globalHead .headerRight .headSearch button:focus {
+        border-radius: 2px;
+        vertical-align: top;
+        outline: none;
+        text-align: center;
+        box-sizing: border-box;
+        cursor: pointer; }
+      .globalHead .headerRight .headSearch input[type=radio] {
+        display: none; }
+        .globalHead .headerRight .headSearch input[type=radio]:checked + label {
           background-color: #fbf8f1;
           color: #805934;
           outline: none;
-          box-sizing: border-box;
-          vertical-align: top; }
+          box-sizing: border-box; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -392,17 +400,40 @@ li {
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-@keyframes shake {
+
+@-webkit-keyframes shake {
   0% {
+    -webkit-transform: scale(1, 1);
     transform: scale(1, 1); }
   100% {
+    -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-@keyframes shake1 {
+
+@keyframes shake {
   0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); } }
+
+@-webkit-keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
     transform: translate(15px, 0px); }
   100% {
+    -webkit-transform: translate(-15px, 0px);
+    transform: translate(-15px, 0px); } }
+
+@keyframes shake1 {
+  0% {
+    -webkit-transform: translate(15px, 0px);
+    transform: translate(15px, 0px); }
+  100% {
+    -webkit-transform: translate(-15px, 0px);
     transform: translate(-15px, 0px); } }
     .globalHead .headerRight .shake {
+      -webkit-animation: shake1 .2s linear 3 alternate;
       animation: shake1 .2s linear 3 alternate; }
     .globalHead .headerRight .activeStatus {
       display: block; }
@@ -433,6 +464,7 @@ li {
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
+                  -webkit-animation: shake .3s ease infinite alternate;
                   animation: shake .3s ease infinite alternate;
                   transition: .3s; }
             .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
@@ -520,6 +552,7 @@ li {
           background-color: #996633;
           transition: .3s; }
           .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
+            -webkit-animation: shake .5s ease infinite alternate;
             animation: shake .5s ease infinite alternate;
             transition: .3s; }
   .globalHead .rwd_headerSearch {
@@ -566,6 +599,7 @@ footer {
     height: 30px; }
   footer .globalFtBtn a {
     font-size: 14px; } }
+
 .clearfix {
   clear: both; }
 
@@ -677,73 +711,62 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
-
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
-
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
-
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
-
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
-
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
-
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
-
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
-
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
-
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
-
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
-
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
-
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
+
 @media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
@@ -970,6 +993,7 @@ footer {
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer; } }
+
 @media screen and (max-width: 400px) {
   .globalHead .headLoginBox .globalForm {
     width: 100%;
@@ -993,9 +1017,11 @@ footer {
       width: 90%; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
+
 #addShopBox {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(50, 50, 50, 0.5);
@@ -1031,11 +1057,50 @@ footer {
         left: 0;
         right: 0;
         margin: auto; }
-    #addShopBox .globalForm input[type="number"] {
-      width: 20%;
+    #addShopBox .globalForm .selectTime {
+      display: block;
+      float: right;
+      width: 65%;
       height: 100%;
-      float: none;
-      display: inline-block; }
+      padding-left: 10px;
+      margin: auto;
+      background-color: transparent; }
+      #addShopBox .globalForm .selectTime span {
+        display: inline-block;
+        float: left;
+        line-height: 50px;
+        color: #663300; }
+      #addShopBox .globalForm .selectTime select {
+        width: 30%;
+        height: 30px;
+        float: left;
+        display: inline-block;
+        margin: 10px; }
+
+@media screen and (max-width: 400px) {
+  #addShopBox .globalForm .globalFormHeader {
+    padding: 2%; }
+    #addShopBox .globalForm .globalFormHeader .svg {
+      width: 30px; }
+    #addShopBox .globalForm .globalFormHeader p {
+      font-size: 13px; }
+  #addShopBox .globalForm .globalFormInput {
+    width: 90%;
+    height: 30px; }
+    #addShopBox .globalForm .globalFormInput label {
+      line-height: 30px;
+      font-size: 13px; }
+    #addShopBox .globalForm .globalFormInput .chooseBtn {
+      margin: 0px 5px; }
+    #addShopBox .globalForm .globalFormInput .selectTime {
+      padding-left: 0; }
+    #addShopBox .globalForm .globalFormInput select {
+      width: 37%;
+      line-height: 30px;
+      margin: 0; }
+    #addShopBox .globalForm .globalFormInput span {
+      line-height: 30px;
+      font-size: 12px; } }
 
 #serviceCenter {
   position: fixed;
@@ -1070,14 +1135,28 @@ section {
 
 @keyframes shake {
   0% {
+    -webkit-transform: scale(1, 1);
     transform: scale(1, 1); }
   100% {
+    -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-@keyframes moveDown {
+
+@-webkit-keyframes moveDown {
   0% {
+    -webkit-transform: translate(0px, 5px);
     transform: translate(0px, 5px); }
   100% {
+    -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px); } }
+
+@keyframes moveDown {
+  0% {
+    -webkit-transform: translate(0px, 5px);
+    transform: translate(0px, 5px); }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); } }
+
 .headerLink {
   width: 60%;
   height: 100%;
@@ -1108,6 +1187,7 @@ section {
       background-color: #996633;
       transition: .3s; }
       .headerLink a:hover img {
+        -webkit-animation: shake .5s ease infinite alternate;
         animation: shake .5s ease infinite alternate;
         transition: .3s; }
 
@@ -1120,7 +1200,6 @@ section {
 @media screen and (max-width: 900px) {
   .headerLink {
     display: none; }
-
   .left-burgerBtn {
     display: inline-block;
     width: 20%;
@@ -1149,16 +1228,19 @@ section {
     .left-burgerBtn.active {
       transition: .3s ease; }
       .left-burgerBtn.active span:nth-of-type(1) {
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
         transition: .3s ease;
         top: 20px; }
       .left-burgerBtn.active span:nth-of-type(2) {
         display: none; }
       .left-burgerBtn.active span:nth-of-type(3) {
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
         top: 20px;
         transition: .3s ease; }
-
   .rwd-HeaderLink {
     display: block;
     position: relative;
@@ -1205,6 +1287,7 @@ section {
     .rwd-HeaderLink.showMenu {
       left: 0;
       transition: .3s; } }
+
 .homeSearchBar {
   width: 100%;
   height: 100vh;
@@ -1247,14 +1330,17 @@ section {
         width: 100%;
         box-sizing: border-box; }
         .homeSearchBar .itemGrp .searchPart .tabs .tab_contents {
-          width: 100px;
+          display: block;
           float: left;
           text-align: center;
-          background-color: #805934;
+          width: 100px;
           padding: 10px;
+          background-color: #805934;
           box-sizing: border-box;
           color: #fbf8f1;
           cursor: pointer; }
+          .homeSearchBar .itemGrp .searchPart .tabs .tab_contents input {
+            display: none; }
           .homeSearchBar .itemGrp .searchPart .tabs .tab_contents.active {
             background-color: #E7E6E6;
             color: #9e693d; }
@@ -1266,28 +1352,45 @@ section {
         background-color: #E7E6E6;
         text-align: center; }
         .homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
-          display: inline-block;
+          display: block;
           padding: 10px 20px;
           margin: 10px 0px;
+          float: left;
           color: #996633; }
+        .homeSearchBar .itemGrp .searchPart .searchContent .filterBar {
+          width: 70%;
+          margin: auto; }
         .homeSearchBar .itemGrp .searchPart .searchContent .filter {
-          display: inline-block;
-          padding: 5px 20px;
+          width: 20%;
+          display: block;
+          float: left;
+          padding: 10px 20px;
           margin: 10px 10px;
           background-color: rgba(255, 255, 255, 0.9);
           color: #996633;
           font-size: 16px;
-          height: 30px;
+          height: 44px;
           border-radius: 2px;
           outline: none;
           border: none; }
-          .homeSearchBar .itemGrp .searchPart .searchContent .filter select {
-            font-size: 16px;
-            color: #996633;
-            border: none; }
-        .homeSearchBar .itemGrp .searchPart .searchContent button.filter {
+        .homeSearchBar .itemGrp .searchPart .searchContent select.filter {
+          display: block;
+          float: left;
+          padding: 10px 20px;
+          margin: 10px 10px;
+          background-color: rgba(255, 255, 255, 0.9);
+          height: 44px;
+          line-height: 30px;
+          border-radius: 2px;
+          outline: none;
+          font-size: 16px;
+          color: #996633;
+          border: none; }
+        .homeSearchBar .itemGrp .searchPart .searchContent label.filter {
           cursor: pointer; }
-          .homeSearchBar .itemGrp .searchPart .searchContent button.filter:focus {
+        .homeSearchBar .itemGrp .searchPart .searchContent input[type=radio] {
+          display: none; }
+          .homeSearchBar .itemGrp .searchPart .searchContent input[type=radio]:checked + label.filter {
             background-color: #996633;
             color: #fbf8f1; }
         .homeSearchBar .itemGrp .searchPart .searchContent .searchbar {
@@ -1341,6 +1444,7 @@ section {
         width: 60px;
         height: 60px;
         margin: 10px auto;
+        -webkit-animation: moveDown .5s ease infinite alternate;
         animation: moveDown .5s ease infinite alternate;
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.7);
@@ -1368,18 +1472,27 @@ section {
         width: 40px;
         height: 40px;
         margin: auto; } }
+
 @media screen and (max-width: 500px) {
   section.homeSearchBar .itemGrp .descrp {
     margin-top: 0; }
+  section.homeSearchBar .itemGrp .searchPart .searchContent .filterBar {
+    width: 95%; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .filter {
+    width: 30%;
     margin: 0px 5px 10px 0px; }
+  section.homeSearchBar .itemGrp .searchPart .searchContent select.filter {
+    padding: 10px; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .filterTitle {
     width: 100%;
     padding: 0px; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar input {
     width: 70%; }
+    section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar input::-webkit-input-placeholder {
+      font-size: 12px; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
-    width: 20%; } }
+    width: 29%; } }
+
 .homeTopChart {
   position: relative; }
   .homeTopChart p.topChartDescrp {
@@ -1491,6 +1604,9 @@ section {
         background-color: #ccc;
         float: left;
         margin: 20px; }
+        .homeTopChart .shopItem .shopMessage .memPic img {
+          width: 100%;
+          height: 100%; }
       .homeTopChart .shopItem .shopMessage span {
         display: inline-block;
         float: left;
@@ -1687,6 +1803,7 @@ section {
         color: #fbf8f1;
         transition: .3s ease;
         cursor: pointer; } }
+
 .slick-dots {
   bottom: 0px; }
 
@@ -1784,13 +1901,14 @@ section.homeCarMap {
   .search_storeOne {
     min-height: 150px;
     max-height: 160px; } }
+
 @media screen and (min-width: 768px) and (max-width: 959px) {
   .search_store {
     width: 90%; }
-
   .search_storeOne {
     min-height: 150px;
     max-height: 200px; } }
+
 @media screen and (max-width: 767px) {
   .search_mapcar {
     overflow: -webkit-paged-x; }
@@ -1808,18 +1926,18 @@ section.homeCarMap {
         margin: auto; }
         .search_mapcar .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
           display: inline; } }
+
 @media screen and (min-width: 768px) {
   .search_store {
     overflow: auto;
     max-height: 44vw;
     top: 0;
     max-width: 800px; }
-
   .search_mapcar {
     height: 50vw; }
-
   .search_store {
     width: 35%; } }
+
 .homeActivity {
   width: 100%;
   height: 100vh;
@@ -2054,6 +2172,7 @@ section.homeCarMap {
           height: 40px;
           line-height: 40px;
           font-size: 14px; } }
+
 @media screen and (max-width: 400px) {
   .homeActivity .activityTitle {
     height: 30%;
@@ -2130,6 +2249,7 @@ section.homeCarMap {
             height: 40px;
             line-height: 40px;
             font-size: 14px; } }
+
 .homeNewshop {
   background-image: url("../img/homepage/homepage_bg5.png");
   background-repeat: no-repeat;
@@ -2278,6 +2398,7 @@ section.homeCarMap {
           color: #fbf8f1;
           transition: .3s ease;
           cursor: pointer; } }
+
 .homeContact {
   width: 100%;
   height: 50vh;
@@ -2331,9 +2452,11 @@ section.homeCarMap {
     .homeContact .contactUs {
       width: 100%;
       height: 40%; } }
+
 @media screen and (max-width: 400px) {
   .homeContact {
     height: 100vh; } }
+
 #navBtn {
   width: 10px;
   position: fixed;
