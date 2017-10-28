@@ -20,46 +20,27 @@
 		//$mem_ID=$_SESSION["memId"];
 		//$mem_No=$_SESSION["memNo"];
 
-		// $mem_No="4";
+		$mem_No=$_SESSION["memNo"];
 
-		// $sql_mem_No_FIND_PD_SHOPNO="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE=0";
+		$sql_mem_No_FIND_PD_SHOPNO="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE=1";
 
-		// $mem_No_FIND_PD_SHOPNO=$connectPDO->query($sql_mem_No_FIND_PD_SHOPNO);
+		$mem_No_FIND_PD_SHOPNO=$connectPDO->query($sql_mem_No_FIND_PD_SHOPNO);
 
-		// $mem_No_FIND_PD_SHOPNO_ROW = $mem_No_FIND_PD_SHOPNO->fetchObject();
+		$mem_No_FIND_PD_SHOPNO_ROW = $mem_No_FIND_PD_SHOPNO->fetchObject();
 
-		// $PD_SHOPNO_By_Mem_No=$mem_No_FIND_PD_SHOPNO_ROW->SI_NUM;
-
-
+		$PD_SHOPNO_By_Mem_No=$mem_No_FIND_PD_SHOPNO_ROW->SI_NUM;
 
 
 
 
-		$PD_NO=$_REQUEST["PD_NO"];
-
-		$sql="select * from product where PD_NO=$PD_NO";
-
-		$product_one=$connectPDO->query($sql);
-
-		$product_one_Row=$product_one->fetchObject();
 
 		if($_REQUEST["delProduct"]==="1"){
 
-
-			echo $_REQUEST["delProduct"];
-
-
 			
 
-			$sql = "UPDATE product SET PD_PIC= null WHERE PD_NO =$PD_NO";
+			//$sql = "UPDATE product SET PD_PIC= null WHERE PD_SHOPNO =$PD_SHOPNO_By_Mem_No";
 
-      		$update = $connectPDO->query($sql);
-
-
-      		echo $PD_NO;
-
-      		
-
+      		//$update = $connectPDO->query($sql);
 
       		//header("Location:../../../../FMybusinessStore.php");
       
@@ -67,9 +48,10 @@
       	}
 
 
-      	$sql_insert = "UPDATE product SET PD_SHOPNO=:PD_SHOPNO,PD_PRICE=:PD_PRICE,PD_NAME=:PD_NAME,PD_INTRO=:PD_INTRO where PD_NO =$PD_NO";
+      	$sql_insert = "INSERT INTO product (PD_SHOPNO,PD_PRICE,PD_NAME,PD_INTRO)
+    			VALUES (:PD_SHOPNO,:PD_PRICE,:PD_NAME,:PD_INTRO)";
     	$product_insert = $connectPDO->prepare($sql_insert);
-    	$product_insert->bindValue(":PD_SHOPNO",$product_one_Row->PD_SHOPNO);
+    	$product_insert->bindValue(":PD_SHOPNO",$PD_SHOPNO_By_Mem_No);
     	$product_insert->bindValue(":PD_PRICE",$_REQUEST["PD_PRICE"]);
     	$product_insert->bindValue(":PD_NAME",$_REQUEST["PD_NAME"]);
     	$product_insert->bindValue(":PD_INTRO",$_REQUEST["PD_INTRO"]);
@@ -81,18 +63,17 @@
 				// 以foreach叫出每一陣列
 			if($_FILES["PD_PIC"]["error"][$i]==0){
 
-						$sql_pic="select * from product where PD_NO =$PD_NO";
-						$product=$connectPDO->query($sql_pic);
-						$productRow=$product->fetchObject();
-
-						$PD_SHOPNO=$productRow->PD_SHOPNO;
+					  $sql_find_new_insert = "select max(PD_NO) MAX_PD_NO from product where PD_SHOPNO =$PD_SHOPNO_By_Mem_No";
+					  $find_new_insert=$connectPDO->query($sql_find_new_insert);
+					  $find_new_insert_Row=$find_new_insert->fetchObject();
+					  $MAX_PD_NO=$find_new_insert_Row->MAX_PD_NO;
 
 					  $from = $_FILES["PD_PIC"]["tmp_name"][$i];
 					  $FileName = mb_convert_encoding($_FILES["PD_PIC"]["name"][$i],"big5","utf-8");
-					  $to = "../../../../img/store/products/".$PD_NO."-".$PD_SHOPNO.substr($FileName,strpos($FileName,'.'));
+					  $to = "../../../../img/store/products/".$MAX_PD_NO."-".$PD_SHOPNO_By_Mem_No.substr($FileName,strpos($FileName,'.'));
 					  copy($from, $to);
-					  $PD_PIC=$PD_NO."-".$PD_SHOPNO.substr($FileName,strpos($FileName,'.'));
-					  $sql_update_PD_PIC = "UPDATE product SET PD_PIC='$PD_PIC' WHERE PD_NO=$PD_NO";
+					  $PD_PIC=$MAX_PD_NO."-".$PD_SHOPNO_By_Mem_No.substr($FileName,strpos($FileName,'.'));
+					  $sql_update_PD_PIC = "UPDATE product SET PD_PIC='$PD_PIC' WHERE PD_NO=$MAX_PD_NO";
 					  $update_PD_PIC = $connectPDO->query($sql_update_PD_PIC);
 					 
 				
@@ -102,9 +83,9 @@
 
 
 
-		header("Location:../../../../FMybusinessStoreProductList.php");
+		header("Location:../../../../FMybusinessCarProductList.php");
 
-		  	
+		exit();    	
 
 
 

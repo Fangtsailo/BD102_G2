@@ -37,9 +37,9 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/subtitle.css">
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
-
-	<!-- =====alert==== -->
+		<!-- =====alert==== -->
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+
 
 
 
@@ -151,25 +151,40 @@ session_start();
 			</svg>
 		</div>
 
-		<form action="php/member/myBusiness/store/addProduct.php" id="alertFormSubmit" method="post" enctype="multipart/form-data">
+		<form id="alertFormSubmit" action="php/member/myBusiness/store/editCarProduct.php" method="post" enctype="multipart/form-data">
 
 		<div class="content-table">
 				
 			<table>
+
+				<?php 
+
+					$PD_NO=$_REQUEST["PD_NO"];
+
+					$sql="select * from product where PD_NO=$PD_NO";
+
+					$product_one=$connectPDO->query($sql);
+
+					$product_one_Row=$product_one->fetchObject();
+
+
+
+
+				?>
 				
 				<tr class="tabletitle" >
-					<th colspan="2">新增商品</th>
+					<th colspan="2">商品 <?php echo $PD_NO; ?></th>
 				</tr>
 
 				<tr>
 				<th><div>品名</div></th>
-				<td><input type="text" name="PD_NAME" placeholder="請輸入商品名稱" value=""></td>
+				<td><input type="text" name="PD_NAME" placeholder="請輸入商品名稱" value="<?php echo $product_one_Row->PD_NAME; ?>"></td>
 				</tr>
 
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value=""></td>
+				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value="<?php echo $product_one_Row->PD_PRICE; ?>"></td>
 				</tr>
 
 
@@ -179,7 +194,7 @@ session_start();
 				<tr>
 				<th><div>簡介</div></th>
 				<td>
-					<textarea name="PD_INTRO" placeholder="限500字"></textarea>
+					<textarea name="PD_INTRO" placeholder="限500字"><?php echo $product_one_Row->PD_INTRO; ?></textarea>
 				</td>
 				</tr>
 
@@ -188,6 +203,12 @@ session_start();
 
 				<tr>
 				<th><div>商品照片</div></th>
+				<?php 					
+						$PD_SHOPNO=$product_one_Row->PD_SHOPNO;
+						$PD_PIC=$product_one_Row->PD_PIC;
+
+						$fileName = $PD_PIC;
+				 ?>
 				<td>
 					<div>		
 						<div>
@@ -195,7 +216,15 @@ session_start();
 							<input type="file" class="upl_0" name="PD_PIC[]" id="uploadLogoImg">
 							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
 						</div>
-						<img class="preview preview_0" src="">
+						<img class="preview preview_0" src="<?php 
+
+						if($fileName != null){
+
+							echo 'img/store/products/'.$fileName; 
+
+						}
+
+						?>">
 					</div>
 					<div>
 						
@@ -267,12 +296,15 @@ session_start();
 
 		<div class="commit">
 			<!-- <input type="button" name="" value="預覽"> -->
+			<input type="hidden" name="PD_NO" value="<?php echo $PD_NO; ?>">
 			<input type="button" id="alertBtn" name="" value="編輯完成">
 		</div>
 
 		</form>
 
 	</div>  <!-- CenterBusiness -->
+
+
 
 <script>
 	
@@ -295,6 +327,7 @@ session_start();
       
     });
 </script>
+
 
 
 

@@ -1258,9 +1258,9 @@ input:not(.radio):focus, textarea:focus {
         background-position: right center;
         position: absolute;
         right: 140px;
-        -webkit-transition: right 1.5s, background-color 1s;
-        -o-transition: right 1.5s, background-color 1s;
-        transition: right 1.5s, background-color 1s; }
+        -webkit-transition: right 1.5s, background-color 1s;
+        -o-transition: right 1.5s, background-color 1s;
+        transition: right 1.5s, background-color 1s; }
       .container .sidebar li a.mycommentsvg {
         background-image: url(../img/memimg/mycomment.svg); }
       .container .sidebar li a.myentrysvg {
@@ -1357,9 +1357,9 @@ input:not(.radio):focus, textarea:focus {
       top: 0px;
       left: 0px;
       background-color: rgba(50, 50, 50, 0.5);
-      -webkit-transition: width 0s 1s, height 0s 1s, background-color 1s;
-      -o-transition: width 0s 1s, height 0s 1s, background-color 1s;
-      transition: width 0s 1s, height 0s 1s, background-color 1s; }
+      -webkit-transition: width 0s 1s, height 0s 1s, background-color 1s;
+      -o-transition: width 0s 1s, height 0s 1s, background-color 1s;
+      transition: width 0s 1s, height 0s 1s, background-color 1s; }
       .container .content .box .changepsw {
         width: 330px;
         height: 390px;
@@ -1433,7 +1433,7 @@ input:not(.radio):focus, textarea:focus {
       float: right;
       margin: -55px 2px 0 0; }
       .container .content #cancelfollow:after {
-        content: 'ȡ��׷ۙ';
+        content: 'È¡Ïû×·Û™';
         font-size: 12px;
         vertical-align: top; }
     .container .content #mappointer {
@@ -1441,7 +1441,7 @@ input:not(.radio):focus, textarea:focus {
       display: block; }
       .container .content #mappointer:after {
         display: block;
-        content: '�؈D';
+        content: 'µØˆD';
         font-size: 12px;
         vertical-align: top; }
     .container .content .myfollow > ul {
@@ -1474,7 +1474,7 @@ input:not(.radio):focus, textarea:focus {
         margin: 5px 10px;
         float: left; } }
     .container .content .mycomment {
-      /*�Ýu���O���Gɫ����*/
+      /*ÓÃuŒÓÔO¶¨¾GÉ«¾€¶Î*/
       background-image: -webkit-linear-gradient(left, #00c853 10px, #00c853 10px);
       background-image: -o-linear-gradient(left, #00c853 10px, #00c853 10px);
       background-image: linear-gradient(90deg, #00c853 10px, #00c853 10px);
@@ -1519,10 +1519,6 @@ input:not(.radio):focus, textarea:focus {
             position: absolute;
             top: 0px;
             right: 0; }
-            .container .content .mycomment li .msg #del:after {
-              content: '�h��';
-              font-size: 12px;
-              vertical-align: top; }
         .container .content .mycomment li .msg:before {
           content: '';
           display: block;
@@ -1601,7 +1597,7 @@ input:not(.radio):focus, textarea:focus {
           float: right;
           margin: -50px 2px 0 0; }
         .container .content .myentry .info #cancelentry:after {
-          content: 'ȡ������';
+          content: 'È¡ÏûˆóÃû';
           color: #fbf8f1;
           font-size: 12px;
           vertical-align: top; }

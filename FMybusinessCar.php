@@ -42,8 +42,13 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/subtitle.css">
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
-	<!-- =====alert==== -->
+
+		<!-- =====alert==== -->
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+
+
+
+	
 	
 
 	
@@ -67,7 +72,7 @@ session_start();
 
 		$memNo=$_SESSION["memNo"];
 
-		$sql = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=0";
+		$sql = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=1";
 
 		$store_imformation = $connectPDO->query($sql);
 
@@ -188,7 +193,7 @@ session_start();
 		</div>
 		
 
-		<form id="alertFormSubmit" action="php/member/myBusiness/store/storeManage.php" method="post" enctype="multipart/form-data">
+		<form id="alertFormSubmit" action="php/member/myBusiness/store/carManage.php" method="post" enctype="multipart/form-data">
 		<div class="content-table">
 				
 			<table>
@@ -920,13 +925,14 @@ session_start();
 
 	</div>  <!-- CenterBusiness -->
 
+
 	<script>
-		
+	
 	$("#alertBtn").click(function(){
 
 
       $.sweetModal({
-            content: '修改成功！',
+            content: '新增成功！',
             icon: $.sweetModal.ICON_SUCCESS,
             width: '300px',
             theme: $.sweetModal.THEME_MIXED,
@@ -940,11 +946,7 @@ session_start();
       
       
     });
-
-
-
-
-	</script>
+</script>
 
 
 

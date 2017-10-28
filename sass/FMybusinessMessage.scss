@@ -55,6 +55,7 @@ header{
 
 .container{
 width: 100%;
+min-height: 600px;
 // width: 100vw;
 
 }
@@ -172,17 +173,18 @@ width: 100%;
 								img{
 									display: block;
 									margin: auto;
+									width: 36px;
 
 								}
 								&:nth-child(1){
 
-									width: 50%;
+									width: 100%;
 									float: left;
 								}
-								&:nth-child(2){
-									width: 50%;
-									float: left;
-								}
+								// &:nth-child(2){
+								// 	width: 50%;
+								// 	float: left;
+								// }
 							}
 
 							.msgTime{
@@ -237,7 +239,9 @@ width: 100%;
 						&:nth-child(2){
 							width: $table-col3;
 							text-align: center;
-							button{
+							input{
+								outline: none;
+								display: block;
 								border:none;
 								width: 60px;
 								height: 40px;
@@ -408,7 +412,7 @@ footer{
 									}
 
 									span{
-										display: none;
+										//display: none;
 									}
 								}
 							}

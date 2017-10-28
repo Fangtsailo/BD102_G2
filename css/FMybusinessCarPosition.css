@@ -88,12 +88,6 @@ header {
         margin: auto;
         min-width: 40px; }
 
-footer {
-  width: 100vw;
-  height: 50px;
-  position: fixed;
-  bottom: 0; }
-
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; } }

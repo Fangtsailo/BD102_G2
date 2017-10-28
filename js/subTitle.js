@@ -6,44 +6,44 @@
 	
 
 
-    var bodyClass = document.body.classList,
-    lastScrollY = 80;
+    // var bodyClass = document.body.classList,
+    // lastScrollY = 80;
 
 
-    var subtitleClass= document.getElementById("subtitle").classList;
-    var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
+    //var subtitleClass= document.getElementById("subtitle").classList;
+    //var CoverRightMyClass = document.getElementById("CoverRightMy").classList;
 
 
 
-	window.addEventListener('scroll', function(){
- 	 var st = this.scrollY;
-  		if( st > lastScrollY) {
+	// window.addEventListener('scroll', function(){
+ // 	 var st = this.scrollY;
+ //  		if( st > lastScrollY) {
   	  		
-  	  		subtitleClass.add('hideUp_sub');
-  	  		CoverRightMyClass.remove('moveToLeft');
+ //  	  		subtitleClass.add('hideUp_sub');
+ //  	  		CoverRightMyClass.remove('moveToLeft');
 
           
-  		}else{
+ //  		}else{
     		
-    		subtitleClass.remove('hideUp_sub');
-    		CoverRightMyClass.remove('moveToLeft');
-  		}
-  		lastScrollY = st;
-	});
+ //    		subtitleClass.remove('hideUp_sub');
+ //    		CoverRightMyClass.remove('moveToLeft');
+ //  		}
+ //  		lastScrollY = st;
+	// });
 
 
 
-    $(".burger").click(function(){
+    // $(".burger").click(function(){
 
        
 
-          $(".CoverRightMy").toggleClass("moveToLeft");
+    //       $(".CoverRightMy").toggleClass("moveToLeft");
 
         
 
 
 
-    });
+    // });
 
 
    

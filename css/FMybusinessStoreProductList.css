@@ -163,6 +163,8 @@ header {
       .commit input:nth-child(1):hover {
         color: #fff;
         background-color: #F06428;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
     .commit input:nth-child(2) {
       margin-left: 10px;
@@ -173,6 +175,8 @@ header {
       .commit input:nth-child(2):hover {
         color: #F06428;
         background-color: #fff;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
 
 @media screen and (max-width: 940px) {
@@ -189,4 +193,8 @@ header {
       .CenterBusiness .content-table table tr td {
         font-size: 14px; }
         .CenterBusiness .content-table table tr td:nth-child(5) div span {
-          display: none; } }
+          display: none; }
+        .CenterBusiness .content-table table tr td:nth-child(5) div:nth-child(1) img {
+          margin-right: 5px; }
+        .CenterBusiness .content-table table tr td:nth-child(5) div:nth-child(2) img {
+          margin-left: 5px; } }
