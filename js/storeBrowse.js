@@ -16,6 +16,43 @@ function initReviewStarAction() {
 		starFillColorByNum(reviewIGave);
 	});
 }
+function initReportAction() {
+	$('#submit-report-btn').click(function() {
+				//只取前50字
+		if (reportMessageNum != -1) {
+			var reason = $('#report-reason').val();
+			reason = reason.substring(0,50);
+				var param = "messageNum=" + reportMessageNum + "&memNum=" + memNum + "&reason=" + reason;
+			  var xhr = new XMLHttpRequest();
+			  xhr.onreadystatechange=function (){
+			    if( xhr.readyState == 4){
+			       if( xhr.status == 200 ){
+			       		//檢舉完成, 把 button 變色跟變字
+			       		$('#msg-' + reportMessageNum + ' p').text('已檢舉');
+			       		$('#msg-' + reportMessageNum).off();
+			       		$('#msg-' + reportMessageNum).addClass('reported');
+			       		reportMessageNum = -1;
+			       		$('.report-mask').fadeOut(500);
+			       }else{
+			       	$('.report-mask').fadeOut(500);
+			          console.log( xhr.status );
+			       }
+			   }
+			  }
+			  
+			  var url = "php/store/browse/ajax/AjaxReportMessage.php";
+			  xhr.open("Post", url, true);
+			  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			  xhr.send( param );
+		} else {
+			$('.report-mask').fadeOut(500);
+		}
+	});
+	$('#cancel-report-btn').click(function() {
+		$('.report-mask').fadeOut(500);
+		$('#report-reason').val("");
+	});
+}
 //確定送出評價
 function confirmReviewAction() {
 	if (memNum != -1) {
@@ -138,31 +175,9 @@ function navigatorDotScroll() {
 
 //檢舉留言
 function reportMessage(messageNum, memNum) {
-	if (memNum != -1) {
-		$.sweetModal.prompt('檢舉原因', null, null, function(reason) {
-			//只取前30字
-			reason = reason.substring(0,50);
-			var param = "messageNum=" + messageNum + "&memNum=" + memNum + "&reason=" + reason;
-		  var xhr = new XMLHttpRequest();
-		  xhr.onreadystatechange=function (){
-		    if( xhr.readyState == 4){
-		       if( xhr.status == 200 ){
-		       		//檢舉完成, 把 button 變色跟變字
-		       		$('#msg-' + messageNum + ' p').text('已檢舉');
-		       		$('#msg-' + messageNum).off();
-		       		$('#msg-' + messageNum).addClass('reported');
-
-		       }else{
-		          console.log( xhr.status );
-		       }
-		   }
-		  }
-		  
-		  var url = "php/store/browse/ajax/AjaxReportMessage.php";
-		  xhr.open("Post", url, true);
-		  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		  xhr.send( param );
-			});
+	if (memNum != -1 ) {
+		reportMessageNum = messageNum;
+		$('.report-mask').fadeIn(500);
 	} else {
 		//須先登入
 		$('#loginBox').fadeIn(500);
@@ -205,7 +220,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 	        var html = "";
 	        for (var key in messageListObj) {
 	        	html +=	'<div class="message-box">'
-					+	'	<div class="mem-pic col-lg-2"><img alt="'+ messageListObj[key].memberPicName +'" src="'+ messageListObj[key].memberPicName +'"></div>'
+					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
 					+	'	<div class="content col-lg-10">'
 					+	'		<div class="container">'
 					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'

@@ -73,6 +73,19 @@ try {
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
+ <div id="loading-page">
+ 	<div class="content">Loading...</div>
+ </div>
+ <div class="report-mask mask">
+ 	<div class="report-modal modal">
+ 		<p>檢舉原因</p>
+		<textarea id="report-reason" maxlength="50" placeholder="請填寫原因..." rows="2"></textarea>
+		 <div class="btns">
+		 	<div id="cancel-report-btn" class="globalCancelBtn">取消</div>
+		 	<div id="submit-report-btn" class="globalOkBtn">檢舉</div>
+		 </div>
+ 	</div>
+ </div>
  <div class="review-mask">
 	 <div id="give-reivew-modal">
 	 	<p>給予評價</p>
@@ -196,9 +209,9 @@ try {
 					<?php 
 						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
 							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
-								echo "星期", $i, ", ";
+								echo "星期", $GLOBALS["store"]->closeDayArr[$i], ", ";
 							} else {
-								echo "星期", $i;
+								echo "星期", $GLOBALS["store"]->closeDayArr[$i];
 							}
 						}
 					 ?>
@@ -401,7 +414,7 @@ try {
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
+			<div class="mem-pic col-lg-2"><div id="login-men-pic"></div></div>
 			<div class="content col-lg-10"><textarea id="message-box-txtarea" maxlength="250" placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
@@ -413,7 +426,9 @@ try {
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
 					<div class="message-box">
-						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $messageItem->memberPicName ?>"></div>
+						<div class="mem-pic col-lg-2">
+							<div class="picture" style="background-image:url('<?php echo $messageItem->memberPicName ?>')"></div>
+							</div>
 						<div class="content col-lg-10">
 							<div class="container">
 								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
@@ -471,10 +486,16 @@ try {
 	
 <script type="text/javascript">
 $(document).ready(function(){
-	var reviewIGave = 0;//若有給予評價的分數
+	//loading page
+	// $('#loading-page').delay(2000).fadeOut(1000);
+	$('#loading-page').hide();
+	//檢舉公用變數
+	reportMessageNum = -1;
+	reviewIGave = 0;//若有給予評價的分數
 	memNum = <?php echo $memNum; ?>;
 	storeId = <?php echo $storeId; ?>;
 	initReviewStarAction();
+	initReportAction();
 	isLogin = <?php echo $isLogin==true?"true":"false"; ?>;
 	isThisMemFollowThisStore = <?php echo $isThisMemFollowThisStore; ?>;
 	initParallax("activity-parallax");
@@ -495,6 +516,7 @@ $(document).ready(function(){
 		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum; ?>);
 	}, false);
 	//寄發留言-------------------------
+	$('#login-men-pic').css('background-image', 'url("<?php echo $memPic;?>")')
 	$("#send-message-btn").click(function() {
 		var content = $("#message-box-txtarea").val();
 		if (content.length > 0) {
