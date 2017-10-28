@@ -82,7 +82,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(2) td input {
         width: 90%;
         height: 40px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -99,7 +98,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(3) td input {
         width: 90%;
         height: 40px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -116,7 +114,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(4) td input {
         width: 90%;
         height: 40px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -133,7 +130,6 @@ header {
       .CenterBusiness .content-table table tr:nth-child(5) td input {
         width: 90%;
         height: 40px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         text-indent: 4px;
         font-size: 14px;
@@ -157,8 +153,6 @@ header {
           border: 1px solid #ddd;
           margin: 10px;
           padding: 5px 0;
-          -webkit-transition: .3s;
-          -o-transition: .3s;
           transition: .3s;
           cursor: pointer; }
       .CenterBusiness .content-table table tr:nth-child(7) {
@@ -175,6 +169,7 @@ header {
             border: 1px solid #ccc;
             color: #999;
             outline: none;
+            -moz-text-align-last: center;
             text-align-last: center;
             border: none;
             height: 30px;
@@ -292,8 +287,6 @@ header {
         .CenterBusiness .commit input:nth-child(1):hover {
           color: #fff;
           background-color: #F06428;
-          -webkit-transition: 0.5s;
-          -o-transition: 0.5s;
           transition: 0.5s; }
       .CenterBusiness .commit input:nth-child(2) {
         margin-left: 10px;
@@ -304,8 +297,6 @@ header {
         .CenterBusiness .commit input:nth-child(2):hover {
           color: #F06428;
           background-color: #fff;
-          -webkit-transition: 0.5s;
-          -o-transition: 0.5s;
           transition: 0.5s; }
 
 .CoverRightMy {
@@ -314,8 +305,6 @@ header {
   position: fixed;
   top: 124px;
   right: -200px;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
   transition: 1s;
   background-color: #f2ebd4; }
   .CoverRightMy ul li {
@@ -328,8 +317,6 @@ header {
     display: block; }
     .CoverRightMy ul li:hover {
       color: #f6921E;
-      -webkit-transition: 0.5s;
-      -o-transition: 0.5s;
       transition: 0.5s; }
     .CoverRightMy ul li ul li {
       background-color: #4289ff;
@@ -341,21 +328,15 @@ header {
       border-bottom: 1px solid #4b7cbf; }
       .CoverRightMy ul li ul li:hover {
         color: #f06428;
-        -webkit-transition: 0.5s;
-        -o-transition: 0.5s;
         transition: 0.5s; }
 
 .moveToLeft {
   right: -70px;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
   transition: 1s; }
 
 .chooseWeek {
   background-color: #4289FF;
   color: #fff !important;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
   transition: .3s; }
 
 @media screen and (max-width: 940px) {

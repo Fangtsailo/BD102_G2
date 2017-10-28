@@ -1,3 +1,102 @@
+//hover or click 評價星======================
+function initReviewStarAction() {
+	for (var i = 1; i <= 5; i++) {
+		$('#review-star' + i).click(function() {
+			var id = $(this).attr('data-id');
+			starFillColorByNum(id);
+		});
+	}
+	//確定送出按鈕的 event
+	$('#submit-review-btn').click(function() {
+		confirmReviewAction();
+	});
+	$('#cancel-review-btn').click(function() {
+		$('.review-mask').fadeOut(500);
+		reviewIGave = 0;
+		starFillColorByNum(reviewIGave);
+	});
+}
+function initReportAction() {
+	$('#submit-report-btn').click(function() {
+				//只取前50字
+		if (reportMessageNum != -1) {
+			var reason = $('#report-reason').val();
+			reason = reason.substring(0,50);
+				var param = "messageNum=" + reportMessageNum + "&memNum=" + memNum + "&reason=" + reason;
+			  var xhr = new XMLHttpRequest();
+			  xhr.onreadystatechange=function (){
+			    if( xhr.readyState == 4){
+			       if( xhr.status == 200 ){
+			       		//檢舉完成, 把 button 變色跟變字
+			       		$('#msg-' + reportMessageNum + ' p').text('已檢舉');
+			       		$('#msg-' + reportMessageNum).off();
+			       		$('#msg-' + reportMessageNum).addClass('reported');
+			       		reportMessageNum = -1;
+			       		$('.report-mask').fadeOut(500);
+			       }else{
+			       	$('.report-mask').fadeOut(500);
+			          console.log( xhr.status );
+			       }
+			   }
+			  }
+			  
+			  var url = "php/store/browse/ajax/AjaxReportMessage.php";
+			  xhr.open("Post", url, true);
+			  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			  xhr.send( param );
+		} else {
+			$('.report-mask').fadeOut(500);
+		}
+	});
+	$('#cancel-report-btn').click(function() {
+		$('.report-mask').fadeOut(500);
+		$('#report-reason').val("");
+	});
+}
+//確定送出評價
+function confirmReviewAction() {
+	if (memNum != -1) {
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange=function (){
+		    if( xhr.readyState == 4){
+		       if( xhr.status == 200 ){
+		       	// var jsonObj = JSON.parse(xhr.responseText);
+		       	var avgReviewValue = parseInt(xhr.responseText);
+			       	//改變評價值
+			       	html = "";
+			       	for (var i = 0;i < 5;i++) {
+						if (avgReviewValue > 0) {
+							html +=	'<li class="star pointer"><img alt="star.svg" src="img/icon/star2.svg"></li>';
+							avgReviewValue--;
+						} else {
+							html +=	'<li class="star pointer"><img alt="star.svg" src="img/icon/star3.svg"></li>';
+								}
+					}
+					$('#review-btn').html(html);
+					reviewIGave = 0;
+					starFillColorByNum(reviewIGave);
+					$('.review-mask').fadeOut(500);
+		       }else{
+		          console.log( xhr.status );
+		       }
+		   }
+		  }		  
+		  var url = "php/store/browse/ajax/AjaxReviewAction.php?storeId=" + storeId + "&memNum=" + memNum + "&reviewNum=" + reviewIGave;
+		  xhr.open("Get", url, true);
+		  xhr.send( null );	
+	}	
+}
+//填滿星星
+function starFillColorByNum(num) {
+	reviewIGave = num;
+	for (var i = 1; i <= 5; i++) {
+		if (i <= num) {
+			$('#review-star' + i + ' img').attr("src","img/icon/star2.svg");
+		} else {
+			$('#review-star' + i + ' img').attr("src","img/icon/star3.svg");
+		}
+	}
+}
 //按下追蹤icon動作
 function triggerFollow(memNum, storeId) {
 	if (memNum != -1) {
@@ -51,8 +150,7 @@ function navigatorDotScroll() {
  	});
  	//user scroll 到特定特範圍, 對應 dot 要變色
  	$(window).on('scroll', function(){
- 		console.log($(document).scrollTop());
-		if ($(document).scrollTop() > (4560 + $('.screen-messages').height()) ) {
+		if ($(document).scrollTop() > (3340 + $('.screen-messages').height()) ) {
 	    	$('.navigator a .point').removeClass('selected');
 	    	$('.navigator a:nth-child(6) .point').addClass('selected');
 	    }  else if ($(document).scrollTop() > 3340) {
@@ -76,26 +174,10 @@ function navigatorDotScroll() {
 }
 
 //檢舉留言
-function reportMessage(messageNum, memNum, reason) {
-	if (memNum != -1) {
-	  var xhr = new XMLHttpRequest();
-	  xhr.onreadystatechange=function (){
-	    if( xhr.readyState == 4){
-	       if( xhr.status == 200 ){
-	       		//檢舉完成, 把 button 變色跟變字
-	       		$('#msg-' + messageNum + ' p').text('已檢舉');
-	       		$('#msg-' + messageNum).off();
-	       		$('#msg-' + messageNum).addClass('reported');
-
-	       }else{
-	          console.log( xhr.status );
-	       }
-	   }
-	  }
-	  
-	  var url = "php/store/browse/ajax/AjaxReportMessage.php?messageNum=" + messageNum + "&memNum=" + memNum + "&reason=" + reason;
-	  xhr.open("Get", url, true);
-	  xhr.send( null );	
+function reportMessage(messageNum, memNum) {
+	if (memNum != -1 ) {
+		reportMessageNum = messageNum;
+		$('.report-mask').fadeIn(500);
 	} else {
 		//須先登入
 		$('#loginBox').fadeIn(500);
@@ -108,6 +190,7 @@ function reportMessage(messageNum, memNum, reason) {
 function sendMessage(storeId, memId, content) {
 	if (memId != -1) {
 	  var xhr = new XMLHttpRequest();
+	  var param = "storeId=" + storeId + "&memId=" + memId + "&content=" + content;
 	  xhr.onreadystatechange=function (){
 	    if( xhr.readyState == 4){
 	       if( xhr.status == 200 ){
@@ -118,15 +201,16 @@ function sendMessage(storeId, memId, content) {
 	   }
 	  }
 	  
-	  var url = "php/store/browse/ajax/AjaxSendMessage.php?storeId=" + storeId + "&memId=" + memId + "&content=" + content;
-	  xhr.open("Get", url, true);
-	  xhr.send( null );	
+	  var url = "php/store/browse/ajax/AjaxSendMessage.php";
+	  xhr.open("Post", url, true);
+	  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	  xhr.send( param );	
 	}
 }
 
 //抓取更多留言
 nowMessagePage = 0;
-function loadMoreMessage(storeId) {
+function loadMoreMessage(storeId, loginMemNum) {
 	  var xhr = new XMLHttpRequest();
 	  xhr.onreadystatechange=function (){
 	    if( xhr.readyState == 4){
@@ -136,13 +220,13 @@ function loadMoreMessage(storeId) {
 	        var html = "";
 	        for (var key in messageListObj) {
 	        	html +=	'<div class="message-box">'
-					+	'	<div class="mem-pic col-lg-2"><img alt="'+ messageListObj[key].memberPicName +'" src="'+ messageListObj[key].memberPicName +'"></div>'
+					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
 					+	'	<div class="content col-lg-10">'
 					+	'		<div class="container">'
 					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
 					+	'			<p>'+ messageListObj[key].content +'</p>'
 					+	'			<div class="setting-area">'
-					+	'				<div class="report pointer button" id="msg-'+ messageListObj[key].no + '">'
+					+	'				<div class="report pointer button" data-id="'+ messageListObj[key].no +'" id="msg-'+ messageListObj[key].no + '">'
 					+	'					<p>檢舉</p>'
 					+	'			</div></div>'
 					+	'			<div class="clear"></div>'
@@ -153,28 +237,54 @@ function loadMoreMessage(storeId) {
 	        }
 	        $('#messages-area').append(html);
 	        $('#messages-area').append($('#more-message'));
+	        //ajax載入的檢舉要加事件
+	        for (var key in messageListObj) {
+	        	if (messageListObj[key].isReportByMe == true) {
+			   		$('#msg-' + messageListObj[key].no).addClass('reported');
+			   		$('#msg-' + messageListObj[key].no + ' p').text('已檢舉');
+				}
+	        	$('#msg-'+ messageListObj[key].no).on('click', function(){
+					var id = $(this).attr('data-id');
+						reportMessage(id, loginMemNum);
+
+				});	
+	        }
 	       }else{
-	          consle.log( xhr.status );
+	          console.log( xhr.status );
 	       }
 	   }
 	  }
 	  
-	  var url = "php/store/browse/ajax/AjaxLoadMoreMessage.php?messagePage=" + nowMessagePage + "&storeId=" + storeId;
+	  var url = "php/store/browse/ajax/AjaxLoadMoreMessage.php?messagePage=" + nowMessagePage + "&storeId=" + storeId + "&loginMemNum=" + loginMemNum;
 	  xhr.open("Get", url, true);
 	  xhr.send( null );
 }
 	//胖小車即時位置地圖
 function initBreadCarNowLocationMap(id, lat, lng) {
-	var map = new google.maps.Map(document.getElementById(id), {
-	  zoom: 16,
-	  center: {lat: lat, lng: lng}
-	});
-	var image = "img/icon/van2.png";
-	var beachMarker = new google.maps.Marker({
-	  position: {lat:  lat , lng: lng},
-	  map: map, 
-	  icon: image
-	});
+	if ((lat != '' && lng != '') || (lat != 0 && lng != 0)) {
+		var map = new google.maps.Map(document.getElementById(id), {
+		  zoom: 16,
+		  center: {lat: lat, lng: lng}
+		});
+		var image = "img/icon/van2.png";
+		var beachMarker = new google.maps.Marker({
+		  position: {lat:  lat , lng: lng},
+		  map: map, 
+		  icon: image
+		});
+	} else {
+		//沒目前位置就預設中大
+		var map = new google.maps.Map(document.getElementById(id), {
+		  zoom: 16,
+		  center: {lat: 24.967993, lng: 121.191168}
+		});
+		//前端顯示沒營業
+		var infoWindow = new google.maps.InfoWindow({
+          content: '胖小車休息中喔!!'
+        });
+        infoWindow.setPosition({lat: 24.967993, lng: 121.191168});
+        infoWindow.open(map);
+	}
 }
 	//胖小車路線地圖: id, 座標 array
 function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
@@ -225,7 +335,7 @@ function initParallax(selector) {
     	var parallax = new Parallax(scence);
 }
 //所有輪播
-function allSlickSetting() {
+function allSlickSetting(breadCarPathCount) {
 	// $('.screen-1 .banners').slick({
 	//   speed: 2000,//跟 autoPlaySpeed 順序不能錯
 	//   autoplay: true,
@@ -277,10 +387,10 @@ function allSlickSetting() {
 	  asNavFor: '.screen-bread-car-map .tabs'
 	});
    $('.screen-bread-car-map .tabs').slick({
-	  slidesToShow: 3,
+	  slidesToShow: breadCarPathCount,
 	  slidesToScroll: 1,
 	  arrows: false,
-	  dots: true,
+	  dots: false,
 	  centerMode: true,
 	  focusOnSelect: true,
 	  asNavFor: '.screen-bread-car-map .maps',
