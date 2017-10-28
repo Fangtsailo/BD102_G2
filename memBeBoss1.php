@@ -1,4 +1,3 @@
-
 <?php 
 ob_start();
 session_start();
@@ -9,8 +8,8 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<link rel="icon" type="image/x-icon" href="img/icon/trepun3.ico">
-	<title>會員專區</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
 	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.css">
@@ -19,7 +18,22 @@ session_start();
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
 
+	<!-- 若店名未輸入就跳窗警示 -->
+ 	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#check" ).click(function() {
+
+				if($( "#SI_NAME" ).val().length==0){
+			  		alert ("沒有輸入店名");
+			  	}else{
+			  		$( ".searchSi" ).submit();
+			  	}
+			});
+		});	
+	</script>
 </head>
+
 <body>
 	<!-- header -->
 	<?php
@@ -87,19 +101,32 @@ session_start();
 				<h1>想和我們合作嗎？</h1>
                 <p>請填寫以下表單，<br>我們將有專人盡快與你聯繫！</p>
 
-                <form class="form-horizontal" action="memBeBoss2.php" method="post">
+                <form class="form-horizontal searchSi" action="php/member/memBeBossSearch.php" method="get">
 	                <p>
 	                	<label for="SI_TYPE"><span class="required">*</span>選擇店型</label>
-	                	<input type="radio" name="SI_TYPE" value="0" class="radio" <?php if (isset($siType) && $siType=="0") echo "checked";?> >麵包店
-	                	<input type="radio" name="SI_TYPE" value="1" class="radio" <?php if (isset($siType) && $siType=="1") echo "checked";?> >麵包車
+	                	<input type="radio" name="SI_TYPE" value="0" class="radio" checked>麵包店
+	                	<input type="radio" name="SI_TYPE" value="1" class="radio">麵包車
 	            	</p>
 
+	            	<!-- <p>
+	                	<label for="SI_TYPE"><span class="required">*</span>選擇店型</label>
+	                	<input type="radio" name="SI_TYPE" value="0" class="radio" <?php //if (isset($siType) && $siType=="0") echo "checked";?> >麵包店
+	                	<input type="radio" name="SI_TYPE" value="1" class="radio" <?php //if (isset($siType) && $siType=="1") echo "checked";?> >麵包車
+	            	</p>
+ -->
 	            	<p>
 	                 	<label for="SI_NAME"><span class="required">*</span>輸入店名</label>
-	                 	<input type="text" name="SI_NAME" placeholder="請輸入完整店名" value="<?php echo $storeInfoRow->SI_NAME;?>">
+	                 	<input type="text" name="SI_NAME" placeholder="請輸入完整店名" id="SI_NAME">
 	             	</p>
+
+	             	<!-- <p>
+	                 	<label for="SI_NAME"><span class="required">*</span>輸入店名</label>
+	                 	<input type="text" name="SI_NAME" placeholder="請輸入完整店名" value="<?php //echo $storeInfoRow->SI_NAME;?>">
+	             	</p> -->
 					
-	             	<a href="memBeBoss2.php" class="btn">下一步</a>
+	             	<input type="button" class="btn" value="下一步" id="check">
+
+					
 	            	
 	            </form>
 			</section>

@@ -51,8 +51,7 @@ function navigatorDotScroll() {
  	});
  	//user scroll 到特定特範圍, 對應 dot 要變色
  	$(window).on('scroll', function(){
- 		console.log($(document).scrollTop());
-		if ($(document).scrollTop() > (4560 + $('.screen-messages').height()) ) {
+		if ($(document).scrollTop() > (3340 + $('.screen-messages').height()) ) {
 	    	$('.navigator a .point').removeClass('selected');
 	    	$('.navigator a:nth-child(6) .point').addClass('selected');
 	    }  else if ($(document).scrollTop() > 3340) {

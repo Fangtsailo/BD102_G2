@@ -15,12 +15,17 @@
     position: relative;
     top: 50%;
     margin: auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     border-radius: 5px;
     color: rgba(128, 89, 52, 0.7);
     background-color: #fbf8f1; }
     .textLightBox .content .header {
       height: 60px;
+      background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
+      background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+      background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
       background: linear-gradient(to right, #805934 0%, #9e693d 100%); }
     .textLightBox .content p {
       padding: 10px; }
@@ -34,6 +39,15 @@
       transition: .3s ease-in; }
       .textLightBox .content .svg:hover {
         transform: rotate(180deg);
+      -webkit-transition: .3s ease-in;
+      -o-transition: .3s ease-in;
+      transition: .3s ease-in; }
+      .textLightBox .content .svg:hover {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
 
 .button {
@@ -274,6 +288,13 @@ img {
       background-repeat: no-repeat;
       background-size: contain;
       animation: cloud-move 12s linear alternate infinite; }
+@-webkit-keyframes cloud-move {
+  0% {
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px); }
+  100% {
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px); } }
 @keyframes cloud-move {
   0% {
     transform: translateX(-50px); }
@@ -291,6 +312,15 @@ img {
       right: 0; }
     .screen-1 #bottom-city .marker {
       animation: marker-move 0.5s linear alternate infinite; }
+      -webkit-animation: marker-move 0.5s linear alternate infinite;
+      animation: marker-move 0.5s linear alternate infinite; }
+@-webkit-keyframes marker-move {
+  0% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px); }
+  100% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); } }
 @keyframes marker-move {
   0% {
     transform: translateY(0px); }
@@ -487,6 +517,7 @@ img {
       .screen-product .product-list .item img {
         opacity: 0.5;
         transition: transform 1s;
+        transition: transform 1s, -webkit-transform 1s;
         width: 40%;
         display: block;
         position: absolute;
@@ -506,6 +537,8 @@ img {
         color: #fbf8f1; }
     .screen-product .product-list .slick-current img {
       opacity: 1;
+      -webkit-transform: scale(1.8);
+      -ms-transform: scale(1.8);
       transform: scale(1.8); }
     .screen-product .product-list .slick-next:before {
       content: '';
@@ -600,11 +633,25 @@ img {
     .screen-activity #activity-parallax .tool-shadow {
       left: 30vw;
       top: 53vh; }
+@-webkit-keyframes tool-move {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(20vw);
+    transform: translateX(20vw); } }
 @keyframes tool-move {
   0% {
     transform: translateX(0px); }
   100% {
     transform: translateX(20vw); } }
+@-webkit-keyframes tool-move-long {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(30vw);
+    transform: translateX(30vw); } }
 @keyframes tool-move-long {
   0% {
     transform: translateX(0px); }
@@ -707,6 +754,13 @@ img {
       transition: all 1s;
       opacity: 0.5; }
       .screen-other-store .store-list .item .store-img:hover {
+      -webkit-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      opacity: 0.5; }
+      .screen-other-store .store-list .item .store-img:hover {
+        -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
         transform: scale(1.5);
         opacity: 1; }
   .screen-other-store .title {
@@ -838,6 +892,13 @@ img {
       left: 150px; }
     .screen-messages .message-icons .icon:nth-child(6) {
       right: 150px; }
+@-webkit-keyframes dialog-bubble {
+  0% {
+    top: -200px;
+    opacity: 1; }
+  100% {
+    top: 100%;
+    opacity: 1; } }
 @keyframes dialog-bubble {
   0% {
     top: -200px;

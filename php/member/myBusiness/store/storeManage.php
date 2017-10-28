@@ -23,7 +23,7 @@
 		//$mem_ID=$_SESSION["memId"];
 		//$mem_No=$_SESSION["memNo"];
 
-		$mem_No="7";
+		$mem_No="8";
 
 		if($_REQUEST["delLogo"]==="1"){
 
