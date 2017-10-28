@@ -139,13 +139,13 @@
 		<!-- 頁首搜尋區塊 -->
 			<div class="headSearch">
 				<span>商家搜尋</span>
-				<form id="SearchForm" action="search.php" method="post">
+				<form id="SearchForm" action="search.php" method="get">
 				<select id="headSearchKind" name="shopType">
 					<option id="shops" value="0">店家</option>
 					<option id="cars" value="1">胖小車</option>
 				</select>
 				<select name="shopPosition" id="headSearchPlace">
-				<option value="default">地區</option>
+				<option value="">地區</option>
 				<option value="0">北部</option>
 				<option value="1">中部</option>
 				<option value="2">南部</option>
@@ -154,7 +154,7 @@
 				<input type="radio" name="filter" value="top" id="top">
 				<label id="headSearchHot" for="top">熱門</label>
 				<input type="radio" name="filter" value="star" id="star">
-				<label id="headSearchStar" for="star">評價</label>
+				<label id="headSearchStar" for="stars">評價</label>
 				<input type="text" name="searchName" id="headSearch">
 				<input id="headSearchSubmit" type="button" value="搜尋">
 				</form>
@@ -228,11 +228,11 @@
 	</div>
 	
 	<div class="rwdSearchBar" id="rwdSearchBar">
-		<form action="" method="get">
+		<form id="rwdsearchForm" action="search.php" method="get">
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
-			<label><input type="radio" value="1" name="shopType">麵包小車</label>
-			<label><input type="radio" value="0" name="shopType">麵包店</label>
+			<label class="selectType"><input type="radio" value="1" name="shopType">麵包小車</label>
+			<label class="selectType"><input type="radio" value="0" name="shopType">麵包店</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
@@ -244,11 +244,11 @@
 			</div>
 			<span>- 其他篩選條件 -</span>
 				<label><input type="radio" name="filter" value="top">熱門</label>
-				<label><input type="radio" name="filter" value="star">評價</label>
+				<label><input type="radio" name="filter" value="stars">評價</label>
 			<div class="clearfix"></div>
 		</div>
 		<input type="search" name="searchName" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
-		<input type="submit" value="搜尋">
+		<input id="rwdSubmit" type="button" value="搜尋">
 		</form>
 	</div>
 

@@ -1,4 +1,4 @@
-
+  
 
 
 //切換會員專區
@@ -289,7 +289,7 @@ $("#headMemPic").click(function(){
         });
 
 
-//header.php選擇送出查詢的頁面是胖小車或店家(select)
+//header.php選擇送出查詢的頁面是胖小車或店家(desktop)
 $("#headSearchKind").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#SearchForm").attr("action",action);
@@ -297,7 +297,14 @@ $("#headSearchKind").change(function(){
         $("#SearchForm").submit()
     });
 });    
-
+//header.php選擇送出查詢的頁面是胖小車或店家(rwd)
+$(".selectType input[name=shopType]").change(function(){
+     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
+     $("#rwdsearchForm").attr("action",action);
+     $("#rwdSubmit").click(function(){
+        $("#rwdsearchForm").submit();
+     });
+});
 //homepage.php選擇送出查詢的頁面是胖小車或店家(radio)
 $(".tab_contents input[name=shopType]").change(function(){
      var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
@@ -306,6 +313,7 @@ $(".tab_contents input[name=shopType]").change(function(){
         $("#homeSearchForm").submit();
      });
 });
+
 $("#searchSubmit").click(function(){
         $("#homeSearchForm").submit();
      });
