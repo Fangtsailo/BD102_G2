@@ -1948,8 +1948,7 @@ footer {
   /*===========activity_application   rwd  end====================
 ================================================
 ===============================================*/ }
-  .activity_application::after {
-    content: '';
+  .activity_application .activity_bgd {
     position: absolute;
     top: 0;
     left: 0;
