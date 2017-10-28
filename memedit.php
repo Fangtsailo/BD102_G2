@@ -49,7 +49,7 @@ session_start();
 				
 				try{
 					require_once("php/pdo/connectPDO.php");
-					$sql = "select * from member where MEM_ID=$memId";
+					$sql = "select * from member where MEM_ID='$memId'";
 					$member = $connectPDO->query($sql);
 					if($member->rowCount()==0){
 						echo "<center>查無此帳號</center>";

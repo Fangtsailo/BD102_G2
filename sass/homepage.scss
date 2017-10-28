@@ -243,22 +243,24 @@ section {
 			.tabs {
 				width: 100%;
 				box-sizing:border-box;
-				.tab_contents {
-					width: 100px;
-					float: left;
-					text-align: center;
-					background-color: $globalHdColor01;
-					padding:10px;
-					box-sizing:border-box;
-					color:$globalBgColor;
-					cursor: pointer;
-					
-					&.active {
-						background-color: #E7E6E6;
-						color:$globalHdColor02;
+					.tab_contents {
+						display: block;
+						float: left;
+						text-align: center;
+						width: 100px;
+						padding: 10px;
+						background-color: $globalHdColor01;
+						box-sizing:border-box;
+						color:$globalBgColor;
+						cursor: pointer;
+						input {
+							display: none;
+						}
+						&.active {
+							background-color: #E7E6E6;
+							color:$globalHdColor02;
+						}
 					}
-				}
-				
 			}
 			.searchContent {
 				width: 100%;
@@ -268,34 +270,53 @@ section {
 				background-color: #E7E6E6;
 				text-align: center;
 				.filterTitle {
-					display: inline-block;
+					display: block;
 					padding:10px 20px;
 					margin:10px 0px;
+					float: left;
 					color:$globalTitleColor;
 				}
+				.filterBar {
+					width: 70%;
+					margin: auto;
+				}
 				.filter {
-					display: inline-block;
-					padding:5px 20px;
+					width: 20%;
+					display: block;
+					float: left;
+					padding:10px 20px;
 					margin:10px 10px;
 					background-color: rgba(255,255,255,0.9);
 					color:$globalTitleColor;
 					font-size:  $globalContentSize;
-					height: 30px;
+					height: 44px;
 					border-radius:2px;
 					outline:none;
 					border:none;
-					select {
+				}
+				select.filter {
+						display: block;
+						float: left;
+						padding:10px 20px;
+						margin:10px 10px;
+						background-color: rgba(255,255,255,0.9);
+						height: 44px;
+						line-height: 30px;
+						border-radius:2px;
+						outline:none;
 						font-size: $globalContentSize;
 						color:$globalTitleColor;
 						border:none;
 					}
-				}
-				button.filter {
+				label.filter {
 					cursor: pointer;
-					&:focus {
+				}
+				input[type=radio] {
+						display: none;
+						&:checked+label.filter {
 						background-color: $globalTitleColor;
 						color:$globalBgColor;
-					}
+						}
 				}
 				.searchbar {
 					width: 100%;
@@ -314,6 +335,7 @@ section {
 						display:inline-block;
 						box-sizing:border-box;
 						outline:none;
+
 					
 
 					}
@@ -415,8 +437,15 @@ section {
 			}
 			.searchPart {
 				.searchContent {
+					.filterBar {
+						width: 95%;
+					}
 					.filter {
+						width: 30%;
 						margin: 0px 5px 10px 0px;
+					}
+					select.filter {
+						padding: 10px;
 					}
 					.filterTitle {
 						width: 100%;
@@ -425,9 +454,12 @@ section {
 					.searchbar {
 						input {
 							width: 70%;
+							&::-webkit-input-placeholder {
+								font-size: 12px;
+							}
 						}
 						button {
-							width: 20%;
+							width: 29%;
 						}
 					}
 				}
@@ -573,6 +605,11 @@ section {
 						background-color: #ccc;
 						float: left;
 						margin: 20px;
+						img {
+							width: 100%;
+							height: 100%;
+							
+						}
 
 					}
 					span {
