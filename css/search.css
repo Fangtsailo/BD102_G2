@@ -1180,6 +1180,15 @@ img {
     .search_result .tag-fa .tag-fa:last-child {
       margin-right: 5px; }
 
+.none_store {
+  height: 50vh; }
+  .none_store h1 {
+    width: 80%;
+    margin: auto;
+    font-size: 24px;
+    text-align: center;
+    color: #3399ff; }
+
 .search_store {
   margin: 5vw auto 300px;
   max-width: 800px; }
@@ -1205,10 +1214,13 @@ img {
       .search_store .search_storeOne .search_storeContent h2 {
         float: left; }
       .search_store .search_storeOne .search_storeContent .search_follow {
-        float: left;
         width: 30px;
-        padding: 0 0 0 20px; }
+        display: inline-block;
+        box-sizing: content-box; }
         .search_store .search_storeOne .search_storeContent .search_follow img {
+          position: relative;
+          top: -5px;
+          width: 40px;
           vertical-align: -webkit-baseline-middle; }
       .search_store .search_storeOne .search_storeContent #search_map1 {
         display: none;
@@ -1217,12 +1229,11 @@ img {
         right: 0; }
       .search_store .search_storeOne .search_storeContent #search_followNum {
         color: #bbb;
-        float: left;
         font-size: 16px;
-        padding: 6px; }
+        padding: 6px 0 0;
+        display: inline-block; }
       .search_store .search_storeOne .search_storeContent .search_storeStar {
         height: 20px;
-        margin-top: 40px;
         margin-bottom: 10px; }
         .search_store .search_storeOne .search_storeContent .search_storeStar li {
           display: inline-block;
@@ -1238,9 +1249,11 @@ img {
       float: left;
       padding: 0;
       height: 200px; }
-      .search_store .search_storeOne .search_storeMap #map-now {
-        height: 100%; }
-  .search_store #map-now2 {
+      .search_store .search_storeOne .search_storeMap .noneMap p {
+        margin: 50px;
+        text-align: center;
+        color: #3399ff; }
+  .search_store .search_map {
     height: 100%; }
 
 @media screen and (min-width: 960px) {
@@ -1265,6 +1278,6 @@ img {
   .search_content .search_result {
     margin: 5vw auto 2vw; }
   .search_content .search_store .search_storeOne .search_storeMap {
-    display: none; }
+    height: 25vh; }
   .search_content .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
     display: inline; } }

@@ -17,7 +17,7 @@ class ActivityObj {
 	public $actProductPicName3 = "";
 
 
-	function __construct($num=0,$title="牛角麵包簡單學", $address="桃園市中壢區中央路55號 烘焙王麵包坊", $time="106/12/10 下午1:00(預計3小時)", $peopleLimit = 100, $ingredient = "麵包坊提供", $price="報名費與材料一共1000元(現場收費)",$bannerPicName="default.jpg",$actPicName1 = "default.jpg",$actPicName2 = "default.jpg",$actPicName3 = "default.jpg",$actProductPicName1 = "default.jpg",$actProductPicName2 = "default.jpg",$actProductPicName3 = "default.jpg") {
+	function __construct($num=0,$title="敬請期待體驗活動...", $address="", $time="", $peopleLimit = 0, $ingredient = "", $price="",$bannerPicName="",$actPicName1 = "",$actPicName2 = "",$actPicName3 = "",$actProductPicName1 = "",$actProductPicName2 = "",$actProductPicName3 = "") {
 		$this->num = $num;
 		$this->title = $title;
 		$this->address = $address;
