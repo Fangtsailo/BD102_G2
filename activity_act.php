@@ -44,6 +44,7 @@ session_start();
 			<?php 
 
 				require_once("header.php");
+				require_once("php/common/globalVar.php")
 				// $memNo=$_SESSION["memNo"];
 
 				$actNum=6;
@@ -77,7 +78,7 @@ session_start();
 		<script type="text/javascript">
 			$(document).ready(function () {
 
-				$('.activity_banner').css('background','url("img/store/activity/banner/<?php echo $actRow->AC_BANNER1; ?>") center center').css('background-size','cover');
+				$('.activity_banner').css('background','url("<?php echo GLOBAL_ACTIVITY_PIC_PATH.$actRow->AC_BANNER1; ?>") center center').css('background-size','cover');
 
 				$('#activity_application').after().css('background','url("img/store/activity/banner/<?php echo $actRow->AC_BANNER2; ?>") center center' ).css('background-size','cover');
 
