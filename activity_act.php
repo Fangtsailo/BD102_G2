@@ -82,7 +82,7 @@ session_start();
 
 				$('#activity_application').after().css('background','url("<?php echo $actRow->AC_BANNER2=="" ? GLOBAL_ACTIVITY_PIC_PATH."default.png" : GLOBAL_ACTIVITY_PIC_PATH.$actRow->AC_BANNER2; ?>") center center' ).css('background-size','cover');
 
-				$('.activity_dough_1').css('background','url("<?php echo GLOBAL_ACTIVITY_ACT_PIC_PATH.$actRow->AC_PIC1; ?>") center center').css('background-size','cover');
+				$('.activity_dough_1').css('background','url("<?php echo $actRow->AC_PIC1=="" ? GLOBAL_ACTIVITY_ACT_PIC_PATH."" : GLOBAL_ACTIVITY_ACT_PIC_PATH.$actRow->AC_PIC1; ?>") center center').css('background-size','cover');
 
 				$('.pic_1').css('background','url("<?php echo GLOBAL_ACTIVITY_INGREDIENT_PIC_PATH.$actRow->AC_INGREDIENT_PIC1; ?>") center center').css('background-size','cover');
 
