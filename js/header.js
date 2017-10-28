@@ -293,25 +293,25 @@ $("#headMemPic").click(function(){
 $("#headSearchKind").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#SearchForm").attr("action",action);
-    $('#headSearchSubmit').click(function(){
-        $("#SearchForm").submit()
-    });
 });    
+$('#headSearchSubmit').click(function(){
+    $("#SearchForm").submit()
+});
 //header.php選擇送出查詢的頁面是胖小車或店家(rwd)
 $(".selectType input[name=shopType]").change(function(){
-     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
-     $("#rwdsearchForm").attr("action",action);
-     $("#rwdSubmit").click(function(){
-        $("#rwdsearchForm").submit();
-     });
+    var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
+    $("#rwdsearchForm").attr("action",action);
+});
+$("#rwdSubmit").click(function(){
+    $("#rwdsearchForm").submit();
 });
 //homepage.php選擇送出查詢的頁面是胖小車或店家(radio)
 $(".tab_contents input[name=shopType]").change(function(){
-     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
-     $("#homeSearchForm").attr("action",action);
-     $("#searchSubmit").click(function(){
-        $("#homeSearchForm").submit();
-     });
+    var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
+    $("#homeSearchForm").attr("action",action);     
+});
+$("#searchSubmit").click(function(){
+    $("#homeSearchForm").submit();
 });
 
 $("#searchSubmit").click(function(){
