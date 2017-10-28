@@ -428,7 +428,6 @@ li {
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-
 @-webkit-keyframes shake {
   0% {
     -webkit-transform: scale(1, 1);
@@ -436,7 +435,6 @@ li {
   100% {
     -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-
 @keyframes shake {
   0% {
     -webkit-transform: scale(1, 1);
@@ -444,7 +442,6 @@ li {
   100% {
     -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-
 @-webkit-keyframes shake1 {
   0% {
     -webkit-transform: translate(15px, 0px);
@@ -452,7 +449,6 @@ li {
   100% {
     -webkit-transform: translate(-15px, 0px);
     transform: translate(-15px, 0px); } }
-
 @keyframes shake1 {
   0% {
     -webkit-transform: translate(15px, 0px);
@@ -640,7 +636,6 @@ footer {
     height: 30px; }
   footer .globalFtBtn a {
     font-size: 14px; } }
-
 .clearfix {
   clear: both; }
 
@@ -760,62 +755,73 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
+
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
+
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
+
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
+
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
+
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
+
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
+
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
+
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
+
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
+
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
+
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
+
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-
 @media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
@@ -1062,7 +1068,6 @@ footer {
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer; } }
-
 @media screen and (max-width: 400px) {
   .globalHead .headLoginBox .globalForm {
     width: 100%;
@@ -1086,7 +1091,6 @@ footer {
       width: 90%; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
-
 #addShopBox {
   position: fixed;
   z-index: 99;
@@ -1171,7 +1175,6 @@ footer {
     #addShopBox .globalForm .globalFormInput span {
       line-height: 30px;
       font-size: 12px; } }
-
 #serviceCenter {
   position: fixed;
   z-index: 999;
@@ -1198,27 +1201,24 @@ footer {
 /* ===================================================*/
 @-webkit-keyframes dough1 {
   0% {
-    border-radius: 30% 70% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 30% 70% 40% 60%/50% 55% 45% 50%; }
   50% {
-    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
+    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
 @keyframes dough1 {
   0% {
-    border-radius: 30% 70% 40% 60% / 50% 55% 45% 50%; }
+    border-radius: 30% 70% 40% 60%/50% 55% 45% 50%; }
   50% {
-    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
-
+    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
 @-webkit-keyframes dough2 {
   0% {
-    border-radius: 40% 60% 60% 40% / 55% 55% 45% 45%; }
+    border-radius: 40% 60% 60% 40%/55% 55% 45% 45%; }
   50% {
-    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
-
+    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
 @keyframes dough2 {
   0% {
-    border-radius: 40% 60% 60% 40% / 55% 55% 45% 45%; }
+    border-radius: 40% 60% 60% 40%/55% 55% 45% 45%; }
   50% {
-    border-radius: 45% 55% 45% 55% / 60% 45% 55% 40%; } }
-
+    border-radius: 45% 55% 45% 55%/60% 45% 55% 40%; } }
 @-webkit-keyframes bigdoughChange {
   0% {
     opacity: .8; }
@@ -1226,7 +1226,6 @@ footer {
     opacity: 0; }
   100% {
     opacity: .5; } }
-
 @keyframes bigdoughChange {
   0% {
     opacity: .8; }
@@ -1234,7 +1233,6 @@ footer {
     opacity: 0; }
   100% {
     opacity: .5; } }
-
 @-webkit-keyframes blow {
   0% {
     -webkit-transform: translate(0px);
@@ -1242,7 +1240,6 @@ footer {
   100% {
     -webkit-transform: translate(550px);
     transform: translate(550px); } }
-
 @keyframes blow {
   0% {
     -webkit-transform: translate(0px);
@@ -1250,7 +1247,6 @@ footer {
   100% {
     -webkit-transform: translate(550px);
     transform: translate(550px); } }
-
 @-webkit-keyframes cloud {
   0% {
     top: 400px;
@@ -1267,7 +1263,6 @@ footer {
     opacity: 0.1;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); } }
-
 @keyframes cloud {
   0% {
     top: 400px;
@@ -1284,7 +1279,6 @@ footer {
     opacity: 0.1;
     -webkit-transform: scale(1.5);
     transform: scale(1.5); } }
-
 @-webkit-keyframes cloud2 {
   0% {
     bottom: 100px;
@@ -1301,7 +1295,6 @@ footer {
     opacity: 0.1;
     -webkit-transform: scale(1.8);
     transform: scale(1.8); } }
-
 @keyframes cloud2 {
   0% {
     bottom: 100px;
@@ -1318,7 +1311,6 @@ footer {
     opacity: 0.1;
     -webkit-transform: scale(1.8);
     transform: scale(1.8); } }
-
 .activity_banner {
   width: 100%;
   background-size: cover;
@@ -1478,46 +1470,47 @@ footer {
 @media screen and (max-width: 960px) {
   .activity_Dough {
     display: none; }
+
   .activity_board {
     margin: auto;
     position: relative;
     width: 90%; }
+
   .acty_board {
     margin: 10% auto; }
+
   .activity_detail {
     margin: 10% auto;
     padding: 4%; } }
-
 @media screen and (min-width: 961px) {
   .activityDough {
     display: none; } }
-
 @media screen and (min-width: 961px) and (max-width: 1259px) {
   .activity_board {
     position: absolute;
     top: 50%;
     left: 2%;
     width: 37.5%; }
+
   .activity_detail {
     position: absolute;
     right: 2%;
     margin: auto;
     top: 72%;
     padding: 1%; } }
-
 @media screen and (min-width: 1260px) {
   .activity_board {
     position: absolute;
     top: 50%;
     left: 7vw;
     width: 37.5%; }
+
   .activity_detail {
     position: absolute;
     right: 12%;
     margin: auto;
     top: 72%;
     padding: 1%; } }
-
 /*---------- .activity_banner rwd end -----------
 =====================================================
 ===================================================== */
@@ -1529,13 +1522,13 @@ footer {
   position: relative;
   overflow: hidden;
   /*---------------------------------------------------------
-	-------------------RWD麵團-----------------------------------
-	=======================================================
-*/
+  	-------------------RWD麵團-----------------------------------
+  	=======================================================
+  */
   /*---------------------------------------------------------
-	-------------------RWD麵團 END-----------------------------------
-	=======================================================
-*/ }
+  	-------------------RWD麵團 END-----------------------------------
+  	=======================================================
+  */ }
   .activity_content .activity_content_inner {
     width: 100%;
     margin: auto;
@@ -1844,96 +1837,117 @@ footer {
   .activity_dough_2 {
     float: left;
     margin-left: 13%; }
+
   .activity_dough_3 {
     float: right;
     margin: 0 10% 5% 0; }
+
   .activity_dough_4_all {
     float: left;
     margin-top: -17%;
     margin-left: 10%; } }
-
 @media screen and (min-width: 961px) and (max-width: 1200px) {
   .activity_dough_2 {
     margin-left: 5%;
     float: left; }
+
   .activity_dough_3 {
     float: right;
     margin: 5% 0% 5% 0; }
+
   .activity_dough_4_all {
     float: left;
     margin-top: -15%;
     margin-left: 5%; } }
-
 @media screen and (min-width: 961px) {
   .activity_dough_1 {
     top: -2vw;
     margin-right: 8%;
     float: right; }
+
   .activityPot {
     display: none; }
+
   .pic_1 {
     margin-left: 50%; }
+
   .pic_3 {
     margin-left: 90%;
     margin-top: -50%; }
+
   .bake_bread {
     background-color: rgba(241, 94, 36, 0.2); }
+
   .activity_dough_5 {
     float: right;
     margin: 3vw 5% 0 0; }
+
   .activity_dough_6 {
     float: left;
     margin: 15vw 0 5% 10%; }
+
   .activity_bread {
     display: block; }
+
   .activity_dough_2 {
     margin-top: -2%; } }
-
 @media screen and (max-width: 960px) {
   .activity_dough_1 {
     float: none;
     margin: 10vw 10px 0;
     display: inline-block; }
+
   .activity_pot {
     display: none; }
+
   .activityPot {
     display: block;
     margin: 0 auto 110px; }
+
   .activity_dough_2 {
     margin-top: 0;
     float: none;
     margin: 30px 10px;
     display: inline-block; }
+
   .rwd_none {
     display: none; }
+
   .section_5 {
     text-align: center; }
+
   .activity_dough_3 {
     float: none;
     margin: 100px  0;
     text-align: center;
     display: inline-block; }
+
   .activity_dough_4_all {
     float: none;
     margin: 20px auto; }
+
   .pic_1, .pic_2, .pic_3 {
     margin: 2px;
     display: inline-block; }
+
   .bake_bread {
     background-color: transparent; }
+
   .activity_dough_5 {
     float: none;
     display: inline-block;
     margin: 3vw 0 0; }
+
   .activity_dough_6 {
     float: none;
     display: inline-block;
     margin: 3vw 0 10%; }
+
   .activity_bread {
     display: none; }
+
   .container-template .activity .section_1 .activity_content .activity_content_inner .section_5 .trigger6 .act_wind {
     display: none; } }
-
 /*===========content   rwd  end====================
 ================================================
 ===============================================*/
@@ -1943,11 +1957,11 @@ footer {
   padding-top: 10vw;
   padding-bottom: 2vw;
   /*===========activity_application   rwd  ====================
-================================================
-===============================================*/
+  ================================================
+  ===============================================*/
   /*===========activity_application   rwd  end====================
-================================================
-===============================================*/ }
+  ================================================
+  ===============================================*/ }
   .activity_application::after {
     content: '';
     position: absolute;
@@ -2060,3 +2074,5 @@ footer {
       width: 200px; }
     .activity_application .activity_bread2 {
       display: none; } }
+
+

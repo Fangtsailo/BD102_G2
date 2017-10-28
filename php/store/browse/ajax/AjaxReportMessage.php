@@ -5,7 +5,7 @@ require_once("../Message.php");
 require_once("../../../pdo/connectPDO.php");
 	function reportMessages($memNum, $messageNum, $reason) {
 		//寫一筆記錄到 REPORT table
-		$sql = "INSERT INTO trepun.report(SPMSG_NO, MEM_NO, RE_CONTENT) VALUES(:messageNum, :memNum, :reason)";
+		$sql = "INSERT INTO report(SPMSG_NO, MEM_NO, RE_CONTENT) VALUES(:messageNum, :memNum, :reason)";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":messageNum", $messageNum);
 		$stmt->bindValue(":memNum", $memNum);

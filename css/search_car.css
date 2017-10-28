@@ -428,7 +428,6 @@ li {
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
-
 @-webkit-keyframes shake {
   0% {
     -webkit-transform: scale(1, 1);
@@ -436,7 +435,6 @@ li {
   100% {
     -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-
 @keyframes shake {
   0% {
     -webkit-transform: scale(1, 1);
@@ -444,7 +442,6 @@ li {
   100% {
     -webkit-transform: scale(1.2, 1.2);
     transform: scale(1.2, 1.2); } }
-
 @-webkit-keyframes shake1 {
   0% {
     -webkit-transform: translate(15px, 0px);
@@ -452,7 +449,6 @@ li {
   100% {
     -webkit-transform: translate(-15px, 0px);
     transform: translate(-15px, 0px); } }
-
 @keyframes shake1 {
   0% {
     -webkit-transform: translate(15px, 0px);
@@ -640,7 +636,6 @@ footer {
     height: 30px; }
   footer .globalFtBtn a {
     font-size: 14px; } }
-
 .clearfix {
   clear: both; }
 
@@ -760,62 +755,73 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
+
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
+
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
+
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
+
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
+
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
+
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
+
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
+
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
+
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
+
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
+
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
+
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-
 @media screen and (max-width: 980px) {
   .globalHead {
     text-align: center; }
@@ -1062,7 +1068,6 @@ footer {
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer; } }
-
 @media screen and (max-width: 400px) {
   .globalHead .headLoginBox .globalForm {
     width: 100%;
@@ -1086,7 +1091,6 @@ footer {
       width: 90%; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
-
 #addShopBox {
   position: fixed;
   z-index: 99;
@@ -1171,7 +1175,6 @@ footer {
     #addShopBox .globalForm .globalFormInput span {
       line-height: 30px;
       font-size: 12px; } }
-
 #serviceCenter {
   position: fixed;
   z-index: 999;
@@ -1339,15 +1342,14 @@ img {
   .search_storeOne {
     min-height: 150px;
     max-height: 160px; } }
-
 @media screen and (min-width: 768px) and (max-width: 959px) {
   .search_store {
     width: 90%;
     min-width: 447px; }
+
   .search_storeOne {
     min-height: 150px;
     max-height: 200px; } }
-
 @media screen and (max-width: 767px) {
   .search_content .search_title {
     margin-top: 16vh; }
@@ -1371,7 +1373,6 @@ img {
           float: none; }
         .search_content .search_mapcar .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
           display: inline; } }
-
 @media screen and (min-width: 768px) {
   .search_store {
     overflow: auto;
@@ -1380,7 +1381,11 @@ img {
     max-width: 800px;
     min-width: 420px;
     right: 3%; }
+
   .search_mapcar {
     height: 50vw; }
+
   .search_store {
     width: 35%; } }
+
+
