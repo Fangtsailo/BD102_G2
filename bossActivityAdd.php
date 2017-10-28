@@ -49,6 +49,17 @@ session_start();
 			<div class="actManageTable">
 				<table>
 					<tr>
+						<th><div>店家型態</div></th>
+						<td>
+
+							
+							<input id="shop" class="storeTypeBtn" type="radio" name="storeType" value="0">
+							<label for="shop" class="storeType">麵包店</label>
+							<input id="car" class="storeTypeBtn" type="radio" name="storeType" value="1">
+							<label for="car" class="storeType">胖小車</label>
+						</td>
+					</tr>
+					<tr>
 						<th><div>活動名稱</div></th>
 						<td>
 							<input type="text" name="acName" placeholder="請輸入活動名稱">
@@ -90,14 +101,14 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]">
+								<input type="file" name="upBanner[]">
 								<span></span>
 								</label>
 							
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upBanner[]"></label>
 						</td>
 					</tr>
 					<tr>
@@ -106,15 +117,15 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upAct[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upAct[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upAct[]"></label>
 						</td>
 					</tr>
 					<tr>
@@ -123,15 +134,15 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upIngrd[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upIngrd[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upIngrd[]"></label>
 						</td>
 					</tr>
 					<tr>
@@ -140,15 +151,15 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upProd[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upProd[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upfile[]"></label>
+								<input type="file" name="upProd[]"></label>
 						</td>
 					</tr>
 				</table>
@@ -175,7 +186,10 @@ session_start();
 <script type="text/javascript">
 	$(function(){
 		$("#addActBtn").click(function(){
+
+
             $.sweetModal.confirm('確認送出?', function() {
+				
 				$.sweetModal({
 					content: '修改完成',
 					icon: $.sweetModal.ICON_SUCCESS,
@@ -187,7 +201,12 @@ session_start();
 		           	}
 		        });
 			});
+
+
+
+
 		});
+
 	});
 
 </script>

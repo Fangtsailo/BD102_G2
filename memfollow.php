@@ -1,8 +1,7 @@
 <?php 
 ob_start();
 session_start();
-?>
-
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,128 +35,60 @@ session_start();
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
 			</ul>
 		</div>
+
+
 		
 		<div class="content">
 			<!-- 我的追蹤 -->
 			<h1><img src="img/memimg/myfollowtl.svg" alt="我的追蹤"></h1>
 			<section class="col-xs-12 col-sm-3 section1000">
+		<?php 
+		$memNo = $_SESSION["memNo"];
+		try{
+			require_once("php/PDO/connectPDO.php");
+			$selectFollowSQL = "SELECT s.SI_NAME,s.SI_PHONE,s.SI_BIMG_1,s.SI_ADDR,SUBSTRING(f.FL_TIME,1,10) followTime,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO='$memNo' AND s.SI_NUM = r.SI_NUM GROUP BY s.SI_NUM ";
+			$selectFollow = $connectPDO->query($selectFollowSQL);
+			while ( $selectFollowRow = $selectFollow->fetchObject() ){
 
-				<?php
-				// phpinfo();
-				
-				// try{
-				// 	require_once("php/pdo/connectPDO.php");
-				// 	$sql = "select * from follow where MEM_NO='$memNo'";
-				// 	$follow = $connectPDO->query($sql);
-
-				// 	while( $followRow = $follow->fetchObject() ){
-				?>
-	
+		 ?>
+		
 				<div class="myfollow">
-					<a href="#"><img src="img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
+					<a href="#"><img src="img/storeBgImg/<?php echo $selectFollowRow->SI_BIMG_1.'.jpg'; ?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
 					<ul>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
+						<?php 
+							$starAmt = $selectFollowRow->reviews;
+							for ($i=1; $i<$starAmt ; $i++) { 
+								echo '<li class="star"><img src="img/memimg/star2.svg"></li>';
+							}
+						 ?>
 					</ul>
-					<a href="javascript:;" class="btn50" id="cancelfollow">
+					<a href="php/member/track/cancelFollow.php?SI_NUM=<?php echo $selectFollowRow->SI_NUM;?>" id="cancelfollow" class="btn50" id="cancelfollow">
 						<img src="img/memimg/follow3.svg">
 					</a>
 					<address>
 						<ul>
-							<li>電話：03 426 5215</li>
-                            <li>地址：桃園市中壢區中大路300號</li>
+							<li>電話：<?php echo $selectFollowRow->SI_PHONE ; ?></li>
+                            <li>地址：<?php echo $selectFollowRow->SI_ADDR ; ?></li>
 						</ul>
 					</address>
 					<a href="javascript:;" class="btn50" id="mappointer">
 						<img src="img/memimg/mappointer2.svg">
 					</a>
 					<time>
-                    	收藏日期：2017-10-6
+                    	收藏日期：<?php echo $selectFollowRow->followTime ; ?>
                     </time>
 				</div>
 
-				<div class="myfollow">
-					<a href="#"><img src="img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
-					<ul>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-					</ul>
-					<a href="javascript:;" class="btn50" id="cancelfollow">
-						<img src="img/memimg/follow3.svg">
-					</a>
-					<address>
-						<ul>
-							<li>電話：03 426 5215</li>
-                            <li>地址：桃園市中壢區中大路300號</li>
-						</ul>
-					</address>
-					<a href="javascript:;" class="btn50" id="mappointer">
-						<img src="img/memimg/mappointer2.svg">
-					</a>
-					<time>
-                    	收藏日期：2017-10-6
-                    </time>
-				</div>
+		<?php 
+			}//while
+		}catch(PDOException $ex){
+				echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+				echo "行號：",$ex->getLine(),"<br>";
+		}
 
-				<div class="myfollow">
-					<a href="#"><img src="img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
-					<ul>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-					</ul>
-					<a href="javascript:;" class="btn50" id="cancelfollow">
-						<img src="img/memimg/follow3.svg">
-					</a>
-					<address>
-						<ul>
-							<li>電話：03 426 5215</li>
-                            <li>地址：桃園市中壢區中大路300號</li>
-						</ul>
-					</address>
-					<a href="javascript:;" class="btn50" id="mappointer">
-						<img src="img/memimg/mappointer2.svg">
-					</a>
-					<time>
-                    	收藏日期：2017-10-6
-                    </time>
-				</div>
 
-		       
-		       
-				<div class="myfollow">
-					<a href="#"><img src="img/memimg/followimg1.jpg"><h2><?php //echo $followRow["SI_NAME"];?>小木屋鬆餅屋</h2></a>
-					<ul>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-					</ul>
-					<a href="javascript:;" class="btn50" id="cancelfollow">
-						<img src="img/memimg/follow3.svg">
-					</a>
-					<address>
-						<ul>
-							<li>電話：03 426 5215</li>
-                            <li>地址：桃園市中壢區中大路300號</li>
-						</ul>
-					</address>
-					<a href="javascript:;" class="btn50" id="mappointer">
-						<img src="img/memimg/mappointer2.svg">
-					</a>
-					<time>
-                    	收藏日期：2017-10-6
-                    </time>
-				</div>
+		?>
+
 			</section>
 
 		</div>
@@ -166,6 +97,28 @@ session_start();
 	<?php
 		require_once("footer.php");
 	?>
+<script type="text/javascript">
+	$(function(){
+		$("#cancelfollow").click(function(e){
+				e.preventDefault();
+				$.sweetModal.confirm('取消追蹤?', function() {
+            		theme: $.sweetModal.THEME_DARK,
+					$.sweetModal({
+						content: '修改完成',
+						icon: $.sweetModal.ICON_SUCCESS,
+						width: '300px',
+						theme: $.sweetModal.THEME_MIXED,
+						timeout: 1000,
+						onClose: function(){
+							var link = $("#cancelfollow").attr('href');
+			              	location.href=link; 
+			           	}
+		        	});
+				});
+		});
+	});
 
+
+</script>
 </body>
 </html>
