@@ -1,9 +1,19 @@
+@-webkit-keyframes letterDraw {
+  to {
+    stroke-dashoffset: 0; } }
+
 @keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
+
+@-webkit-keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+
 @keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
+
 .coverHeader {
   height: 80px; }
 
@@ -28,11 +38,13 @@ header {
       fill: none;
       stroke-width: 1;
       stroke: #4b7cbf;
+      -webkit-animation: letterleaf 2s ease forwards;
       animation: letterleaf 2s ease forwards; }
       .CenterBusiness .subtitle svg .line .line-g {
         opacity: 1;
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
+        -webkit-animation: letterDraw 5s ease forwards;
         animation: letterDraw 5s ease forwards; }
   .CenterBusiness .content-table table {
     width: 80%;
@@ -157,6 +169,7 @@ header {
             border: 1px solid #ccc;
             color: #999;
             outline: none;
+            -moz-text-align-last: center;
             text-align-last: center;
             border: none;
             height: 30px;
@@ -329,9 +342,9 @@ header {
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; }
-
   .coverSubtitile .subtitle .burger {
     display: block; } }
+
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -346,6 +359,7 @@ header {
       .CenterBusiness .content-table table tr:nth-child(6) td div div {
         font-size: 14px;
         margin: 10px 0; } }
+
 @media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }
