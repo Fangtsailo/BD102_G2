@@ -23,6 +23,7 @@ class Store {
 		$this->id = $id;
 		$this->reviews = $reviews;
 		$this->name = $name;
+		$this->type = $type;
 		$this->storeLogo = GLOBAL_STORE_PIC_PATH.($storeLogo==""?"default.png":$storeLogo);
 		$this->address = $address;
 		$this->openStartTime = $openStartTime;
