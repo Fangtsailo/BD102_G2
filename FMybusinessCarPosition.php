@@ -39,6 +39,11 @@ session_start();
 
 
 
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
+    </script>
+
+
+
 
 </head>
 
@@ -149,24 +154,50 @@ session_start();
 			</svg>
 		</div><!-- subtitle -->
 
+		<?php 
+
+				$memNo=$_SESSION["memNo"];
+
+				$sql = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE='1'";
+
+				$store_imformation=$connectPDO->query($sql);
+
+				$store_imformation_row=$store_imformation->fetchObject();
+
+				$SI_NUM=$store_imformation_row->SI_NUM;
+
+
+
+		 ?>
+
 		<div class="content-table">
 
-			<table class="tableHeader">
-
-					<tr class="tabletitle" >
-					<th>定位目前位置</th>
-					<td>
-						到達定點時，請按下【定位】圓鈕，系統會自動將您的目前位置發送至地圖上。
-					</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map">
-							<div><img src="img/icon/mapAim.png"></div>
-						</td>
-					</tr>
-				
-			</table>
+<form id="alertFormSubmit" action="php/member/myBusiness/store/livePosition.php" method="post" enctype="multipart/form-data">
+	<table class="tableHeader">
+	
+			<tr class="tabletitle" >
+			<th>定位 <?php echo $store_imformation->rowCount(); ?></th>
+			<td>
+				到達定點時，請按下【定位】圓鈕，系統會自動將您的目前位置發送至地圖上。
+			</td>
+			</tr>
+			<tr>
+				<td id="map" colspan="2">
+					<!-- <img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map"> -->
+					
+				</td>
+			</tr>
+	
+			<tr>
+				<td id="" colspan="2">
+					<img id="position_btn" src="img/icon/mapAim.png" style="cursor: pointer;">
+				</td>
+			</tr>
+		
+	</table>
+	<input type="hidden" id="livePosition" name="livePosition" value="">
+	<input type="hidden" id="livePosition_data" name="livePosition_data" value="">
+</form>
 
 			
 
@@ -176,6 +207,71 @@ session_start();
 
 
 		</div>  <!-- content-table -->
+
+<script>
+
+
+		$('#position_btn').click(function(){
+
+			var SI_NUM=<?php echo $SI_NUM; ?>;
+
+			$('#livePosition').val(SI_NUM);
+
+			var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+
+
+			$('#livePosition_data').val(coord);
+
+			$('#alertFormSubmit').submit();
+
+		});
+
+
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      initMap();
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 24.967779, lng: 121.192124},
+          zoom: 16
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+             pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('目前位置');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+
+    </script>
+
+
+
 
 	
 

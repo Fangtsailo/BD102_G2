@@ -195,8 +195,22 @@ require_once("php/pdo/connectPDO.php");
 
 
 					<div>
+						<a href="FMybusinessCarRouteAdd.php">
+							<h3>路線規劃</h3>
+							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+								<defs>
+					
+								</defs>
+								<title>arrow</title>
+								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+							</svg>
+						</a>	
+					</div><!-- 商品 -->
+
+
+					<div>
 						<a href="FMybusinessCarPosition.php">
-							<h3>定位位置</h3>
+							<h3>目前位置</h3>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 								<defs>
 					
@@ -230,7 +244,7 @@ require_once("php/pdo/connectPDO.php");
 
 				
 					<div>
-						<a href="">
+						<a href="bossActivity.php">
 							<h2>活動管理</h2>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60">
 								<defs>

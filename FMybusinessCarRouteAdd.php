@@ -18,6 +18,7 @@ session_start();
 	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessCarRoute.css">
+	<link rel="stylesheet" type="text/css" href="css/subTitleAmination.css">
 	
 		<!-- =====header==== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -43,6 +44,14 @@ session_start();
     </script>
 
 
+    	<!-- =====alert==== -->
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+
+
+	 <!-- =====route Map==== -->
+	
+
+
 
 
 </head>
@@ -57,6 +66,35 @@ session_start();
 	try {
 		
 		require_once("php/pdo/connectPDO.php");
+
+		$memNo=$_SESSION["memNo"];
+		
+		 $sql_mem_No_FIND_SI_NUM="select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=1";
+		 $mem_No_FIND_SI_NUM=$connectPDO->query($sql_mem_No_FIND_SI_NUM);
+		$mem_No_FIND_SI_NUM_ROW=$mem_No_FIND_SI_NUM->fetchObject();
+
+		$SI_NUM= $mem_No_FIND_SI_NUM_ROW->SI_NUM;
+
+
+
+
+		// $sql_bread_car_path_BCP_NO="select BCP_NO from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+		// $bread_car_path_BCP_NO=$connectPDO->query($sql_bread_car_path_BCP_NO);
+		
+
+		// $sql_bread_car_path_BCP_LOCATION="select BCP_LOCATION from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+		// $bread_car_path_BCP_LOCATION=$connectPDO->query($sql_bread_car_path_BCP_LOCATION);
+
+
+		// $sql_bread_car_path_BCP_DESCRIBE="select BCP_DESCRIBE from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+		// $bread_car_path_BCP_DESCRIBE=$connectPDO->query($sql_bread_car_path_BCP_DESCRIBE);
+
+
+
+
+		
+
+
 
 
 		// $memNo=$_SESSION["memNo"];
@@ -154,42 +192,304 @@ session_start();
 			</svg>
 		</div><!-- subtitle -->
 
+		<?php 
+
+		$sql_bread_car_path="select * from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+
+		$bread_car_path=$connectPDO->query($sql_bread_car_path);
+		$BCP_NO=$bread_car_path->fetchAll(PDO::FETCH_COLUMN,0);
+		//print_r($BCP_NO);
+
+
+		$bread_car_path_1=$connectPDO->query($sql_bread_car_path);
+		$BCP_STORE_NUM=$bread_car_path_1->fetchAll(PDO::FETCH_COLUMN,1);
+		//print_r($BCP_STORE_NUM);
+
+
+		$bread_car_path_2=$connectPDO->query($sql_bread_car_path);
+		$BCP_LOCATION=$bread_car_path_2->fetchAll(PDO::FETCH_COLUMN,2);
+		//print_r($BCP_LOCATION);
+
+
+		$bread_car_path_3=$connectPDO->query($sql_bread_car_path);
+		$BCP_DESCRIBE=$bread_car_path_3->fetchAll(PDO::FETCH_COLUMN,3);
+		//print_r($BCP_DESCRIBE);
+
+
+
+
+		// $bread_car_path=$connectPDO->query($sql_bread_car_path);
+		// $BCP_NO=$bread_car_path->fetchAll(PDO::FETCH_COLUMN,0);
+		// $BCP_LOCATION=$bread_car_path->fetchAll(PDO::FETCH_COLUMN,2);
+
+
+		// $bread_car_path=$connectPDO->query($sql_bread_car_path);
+		// $BCP_NO=$bread_car_path->fetchAll(PDO::FETCH_COLUMN,0); 
+		// $BCP_DESCRIBE=$bread_car_path->fetchAll(PDO::FETCH_COLUMN,3);
+
+
+		// print_r($BCP_NO);
+		// print_r($BCP_STORE_NUM);
+		// print_r($BCP_LOCATION);
+		// print_r($BCP_DESCRIBE);
+
+		//exit();
+
+
+
+		 ?>
+
+
+<form id="carRouteForm" action="php/member/myBusiness/store/carRoute.php" method="post">
 		<div class="content-table">
 
 			<table class="tableHeader">
 
 					<tr class="tabletitle" >
-					<th>新增路線</th>
+					<th>路線 I</th>
 					<td>
-						請點擊地圖來規劃胖小車販售點位
+						<input type="text" name="BCP_DESCRIBE_1" placeholder="請輸入路線描述" value="<?php 
+
+																					if(isset($BCP_DESCRIBE[0])){
+																					echo $BCP_DESCRIBE[0]; 
+																					}
+																					?>">
 					</td>
 					</tr>
-					
-					<tr class="item">
+					<?php 
+
+					if(isset($BCP_LOCATION[0])){
+
+					$LOCATION_1=$BCP_LOCATION[0];
+
+					$LOCATION_1_Ary=explode("},{",$LOCATION_1);
+					//$LOCATION_1_Ary=json_decode($$LOCATION_1);
+					}
+					 ?>
+					<tr class="item1">
 					<th>點Ａ:</th>
-					<td>
-						<!-- {lat:-34.39474,lng:150.644123} -->
-					</td>
+					<td><?php 
+					if(isset( $LOCATION_1_Ary[0])){
+						echo $LOCATION_1_Ary[0]; 
+					}
+						?></td>
 					</tr>
 
-					<tr class="item">
+					<tr class="item1">
 					<th>點Ｂ:</th>
-					<td>
-						<!-- {lat:-34.39474,lng:150.644123} -->
-					</td>
+					<td><?php 
+
+					if(isset( $LOCATION_1_Ary[1])){
+
+						echo $LOCATION_1_Ary[1]; 
+
+					}
+
+					?></td>
 					</tr>
 
 
-					<tr class="item">
+					<tr class="item1">
 					<th>點Ｃ:</th>
-					<td>
-						<!-- {lat:-34.39474,lng:150.644123} -->
-					</td>
+					<td><?php 
+
+						if(isset( $LOCATION_1_Ary[2])){
+						echo $LOCATION_1_Ary[2] ;
+						}
+						?></td>
 					</tr>
 
 					<tr>
 						<td class="td_map" colspan="2">
-							<div id="map">
+							<div id="map1">
+								
+							</div>
+							
+						</td>
+					</tr>
+
+				
+					<tr>
+						<td colspan="2">
+					
+							<input id="clear1" type="button" name="" value="清除">
+							<input type="button" id="route1_btn" name="" value="確認">
+							<input type="hidden" id="route1" name="route1">
+							<input type="hidden" id="route1_del" name="route1_del" value=""> 
+
+     
+							<script>
+
+
+
+								$('#clear1').click(function(){
+
+									var route1_del_data =<?php 
+									if(isset($BCP_NO[0])){
+									echo $BCP_NO[0];  
+									}
+									?>
+
+									$('#route1_del').val(route1_del_data);
+
+									$.sweetModal({
+										            content: '成功刪除！',
+										            icon: $.sweetModal.ICON_SUCCESS,
+										            width: '300px',
+										            theme: $.sweetModal.THEME_MIXED,
+										            timeout: 1000,
+										            onClose: function(){
+			          									$('#carRouteForm').submit();
+											            }
+										        	});
+
+									//$('#carRouteForm').submit();
+
+
+								});
+
+
+
+
+								
+								$('#route1_btn').click(function(){
+
+									var routeArray1 = new Array();
+
+									for(i = 0; i < 3; i++){
+
+										routeArray1[i] = $('.item1').eq(i).children('td').html();
+
+									}
+
+									var routeStr1 =routeArray1.join(",");
+
+									// var n = routeStr1.lastIndexOf("}");
+
+									var routeStr1_sub=routeStr1.substring(0,routeStr1.lastIndexOf("}")+1);
+
+
+									$('#route1').val(routeStr1_sub);
+
+
+									if($('#route1').val()==""){
+										            $.sweetModal({
+										            content: '尚未選取座標！',
+										            icon: $.sweetModal.ICON_WARNING,
+										            width: '300px',
+										            theme: $.sweetModal.THEME_MIXED,
+										            timeout: 1000,
+										        	});
+									}else{
+
+											$('#route1').val(routeStr1_sub);
+											$.sweetModal({
+								            content: '新增成功！',
+								            icon: $.sweetModal.ICON_SUCCESS,
+								            width: '300px',
+								            theme: $.sweetModal.THEME_MIXED,
+								            timeout: 1000,
+								            onClose: function(){
+          									$('#carRouteForm').submit();
+								            }
+								       		 });
+
+
+          							 } 
+
+								});
+
+
+
+
+
+
+							</script>
+					
+					
+							
+							
+						</td>
+					</tr>
+			
+				
+			</table>
+
+
+						<table class="tableHeader">
+
+							<?php 
+
+							// $sql_bread_car_path_BCP_NO="select * from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+							// $bread_car_path_BCP_NO=$connectPDO->query($sql_bread_car_path_BCP_NO);
+							// $test=$bread_car_path_BCP_NO->fetchAll(PDO::FETCH_COLUMN, 3); 
+
+		
+
+							// $sql_bread_car_path_BCP_LOCATION="select BCP_LOCATION from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+							// $bread_car_path_BCP_LOCATION=$connectPDO->query($sql_bread_car_path_BCP_LOCATION);
+
+
+							// 	$sql_bread_car_path_BCP_DESCRIBE="select BCP_DESCRIBE from bread_car_path where BCP_STORE_NUM=$SI_NUM";
+							// 	$bread_car_path_BCP_DESCRIBE=$connectPDO->query($sql_bread_car_path_BCP_DESCRIBE);
+
+
+							 ?>
+
+					<tr class="tabletitle" >
+					<th>路線 II</th>
+					<td>
+						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
+					</td>
+					</tr>
+					<?php 
+
+					if(isset($BCP_LOCATION[1])){
+
+					$LOCATION_2=$BCP_LOCATION[1];
+
+					$LOCATION_2_Ary=explode("},{",$LOCATION_2);
+					//$LOCATION_1_Ary=json_decode($$LOCATION_1);
+					}
+					 ?>
+					<tr class="item2">
+					<th>點Ａ:</th>
+					<td><?php 
+					if(isset( $LOCATION_2_Ary[0])){
+
+					echo $LOCATION_2_Ary[0]; 
+
+					}
+					?></td>
+					</tr>
+
+					<tr class="item2">
+					<th>點Ｂ:</th>
+					<td><?php 
+
+					if(isset( $LOCATION_2_Ary[1])){
+
+						echo $LOCATION_2_Ary[1]; 
+
+					}
+
+					?></td>
+					</tr>
+
+
+					<tr class="item2">
+					<th>點Ｃ:</th>
+					<td><?php 
+
+						if(isset( $LOCATION_2_Ary[2])){
+						echo $LOCATION_2_Ary[2] ;
+						}
+						?></td>
+					</tr>
+
+					<tr>
+						<td class="td_map" colspan="2">
+							<div id="map2">
 								
 							</div>
 							
@@ -199,13 +499,257 @@ session_start();
 					<tr>
 						<td colspan="2">
 
-							<input id="clear" type="button" name="" value="清除">
-							<input type="button" name="" value="確認">
+							<input id="clear2" type="button" name="" value="清除">
+							<input type="button" id="route2_btn" name="" value="確認">
+							<input type="hidden" id="route2" name="route2">
+							<input type="hidden" id="route2_del" name="route2_del" value="">
+
+							<script>
+
+								$('#clear2').click(function(){
+
+									var route2_del_data =<?php 
+															if(isset($BCP_NO[1])){
+															echo $BCP_NO[1]; 
+															}
+															 ?>
+
+									$('#route2_del').val(route2_del_data);
+
+									$.sweetModal({
+										            content: '成功刪除！',
+										            icon: $.sweetModal.ICON_SUCCESS,
+										            width: '300px',
+										            theme: $.sweetModal.THEME_MIXED,
+										            timeout: 1000,
+										            onClose: function(){
+			          									$('#carRouteForm').submit();
+											            }
+										        	});
+
+									//$('#carRouteForm').submit();
+
+
+								});
+
+
+								
+								$('#route2_btn').click(function(){
+
+									var routeArray2 = new Array();
+
+									for(i = 0; i < 3; i++){
+
+										routeArray2[i] = $('.item2').eq(i).children('td').html();
+
+									}
+
+									var routeStr2 =routeArray2.join(",");
+
+									// var n = routeStr1.lastIndexOf("}");
+
+									var routeStr2_sub=routeStr2.substring(0,routeStr2.lastIndexOf("}")+1);
+
+
+									$('#route2').val(routeStr2_sub);
+
+
+									if($('#route2').val()==""){
+										            $.sweetModal({
+										            content: '尚未選取座標！',
+										            icon: $.sweetModal.ICON_WARNING,
+										            width: '300px',
+										            theme: $.sweetModal.THEME_MIXED,
+										            timeout: 1000,
+										        	});
+									}else{
+
+											$('#route2').val(routeStr2_sub);
+											$.sweetModal({
+								            content: '新增成功！',
+								            icon: $.sweetModal.ICON_SUCCESS,
+								            width: '300px',
+								            theme: $.sweetModal.THEME_MIXED,
+								            timeout: 1000,
+								            onClose: function(){
+          									$('#carRouteForm').submit();
+								            }
+								       		 });
+
+
+          							 } 
+
+								});
+
+
+
+							</script>
 							
 						</td>
 					</tr>
 				
 			</table>
+
+
+
+									<table class="tableHeader">
+
+					<tr class="tabletitle" >
+					<th>路線 III</th>
+					<td>
+						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
+					</td>
+					</tr>
+					<?php 
+
+					if(isset($BCP_LOCATION[2])){
+
+					$LOCATION_3=$BCP_LOCATION[2];
+
+					$LOCATION_3_Ary=explode("},{",$LOCATION_3);
+					//$LOCATION_1_Ary=json_decode($$LOCATION_1);
+					}
+					 ?>
+					<tr class="item3">
+					<th>點Ａ:</th>
+					<td><?php 
+					if(isset( $LOCATION_3_Ary[0])){
+
+					echo $LOCATION_3_Ary[0]; 
+
+					}
+					?></td>
+					</tr>
+
+					<tr class="item3">
+					<th>點Ｂ:</th>
+					<td><?php 
+					if(isset( $LOCATION_3_Ary[1])){
+
+					echo $LOCATION_3_Ary[1]; 
+
+					}
+					?></td>
+					</tr>
+
+
+					<tr class="item3">
+					<th>點Ｃ:</th>
+					<td><?php 
+					if(isset( $LOCATION_3_Ary[2])){
+
+					echo $LOCATION_3_Ary[2]; 
+
+					}
+					?></td>
+					</tr>
+
+					<tr>
+						<td class="td_map" colspan="2">
+							<div id="map3">
+								
+							</div>
+							
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2">
+
+							<input id="clear3" type="button" name="" value="清除">
+							<input type="button" id="route3_btn" name="" value="確認">
+							<input type="hidden" id="route3" name="route3">
+							<input type="hidden" id="route3_del" name="route2_del" value="">
+
+							<script>
+
+
+								$('#clear3').click(function(){
+
+									var route3_del_data =<?php 
+															if(isset($BCP_NO[2])){
+															echo $BCP_NO[2]; 
+															}
+															 ?>
+
+									$('#route3_del').val(route3_del_data);
+
+									$.sweetModal({
+										            content: '成功刪除！',
+										            icon: $.sweetModal.ICON_SUCCESS,
+										            width: '300px',
+										            theme: $.sweetModal.THEME_MIXED,
+										            timeout: 1000,
+										            onClose: function(){
+			          									$('#carRouteForm').submit();
+											            }
+										        	});
+
+									//$('#carRouteForm').submit();
+
+
+								});
+
+
+								
+								$('#route3_btn').click(function(){
+
+									var routeArray3 = new Array();
+
+									for(i = 0; i < 3; i++){
+
+										routeArray3[i] = $('.item3').eq(i).children('td').html();
+
+									}
+
+									var routeStr3 =routeArray3.join(",");
+
+									// var n = routeStr1.lastIndexOf("}");
+
+									var routeStr3_sub=routeStr3.substring(0,routeStr3.lastIndexOf("}")+1);
+
+
+									$('#route3').val(routeStr3_sub);
+
+
+											if($('#route3').val()==""){
+												            $.sweetModal({
+												            content: '尚未選取座標！',
+												            icon: $.sweetModal.ICON_WARNING,
+												            width: '300px',
+												            theme: $.sweetModal.THEME_MIXED,
+												            timeout: 1000,
+												        	});
+											}else{
+
+													$('#route3').val(routeStr3_sub);
+													$.sweetModal({
+										            content: '新增成功！',
+										            icon: $.sweetModal.ICON_SUCCESS,
+										            width: '300px',
+										            theme: $.sweetModal.THEME_MIXED,
+										            timeout: 1000,
+										            onClose: function(){
+		          									$('#carRouteForm').submit();
+										            }
+										       		 });
+
+
+		          							 } 
+
+								});
+
+
+
+							</script>
+							
+						</td>
+					</tr>
+				
+			</table>
+
+
+
 
 
 
@@ -223,7 +767,7 @@ session_start();
 
 		</div>  <!-- content-table -->
 
-	
+</form>	
 
 
 		<!-- <div class="commit">
@@ -240,11 +784,279 @@ session_start();
 
 <!-- ==============center content======END======= -->
 
+<script type="text/javascript">
+    //抓 user 位置
+    //點擊回傳座標
+   	var globalCount1 = 1;
+   	var labels1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   	var labelIndex1 = 0;
+   	var markers1 = [];
+
+   	//2.<OK>按下紐發送目前位置
+   	   	initMap1();
+// function showPosition(position){
+//   alert("Latitude: " + position.coords.latitude + 
+//     "<br>Longitude: " + position.coords.longitude);
+// }
+
+
+   	function initMap1() {
+        map1 = new google.maps.Map(document.getElementById('map1'), {
+          center: {lat: 24.967779, lng: 121.192124},
+          zoom: 16
+        });
+        //先輸入地址把地圖 center 移入
+        //<OK>按下點放一個 marker
+   		//<OK>抓位置到label (對應A B C)
+   		<?php  
+   		if(isset($BCP_LOCATION[0])){
+   		?>
+   		
+   		
+   		var markers1_init=<?php echo '['.$LOCATION_1.']'; ?>;
+
+   		for (var i =0; i < markers1_init.length; i++) {
+        	new google.maps.Marker({
+			  position: markers1_init[i],
+			  map: map1,
+			  label: labels1[labelIndex1++ % labels1.length]
+			});
+		}
+
+		<?php 
+
+		}else{
+		 ?>
+		
+   		
+        google.maps.event.addListener(map1, 'click', function( overlay) {
+
+
+        	//   for (var i = 0; i < markers1_init.length; i++) {
+			     //      markers1_init[i].setMap(null);
+			     //      //$('.item1:nth-child('+(i+2)+') td').text('');
+			     // }
+            	
+              if (globalCount1 <= 3) {
+    	        	var point1 = overlay.latLng.toJSON();
+
+
+
+    	        	var beachMarker1 = new google.maps.Marker({
+    				        position:point1,
+    				        map: map1,
+    				        label: labels1[labelIndex1++ % labels1.length]
+    				    });
+
+				        markers1.push(beachMarker1);
+
+
+				        $('.item1:nth-child('+(globalCount1+1)+') td').text('{lat:'+overlay.latLng.lat().toFixed(6) +',lng:'+overlay.latLng.lng().toFixed(6) +'}');
+				        globalCount1++;
+        	    }//if (globalCount <= 3)
+        });//google.maps.event.addListener(map, 'click', function( overlay) {
+
+
+        	<?php 
+        		}
+
+        	 ?>
+
+        //反悔就按全部清除鍵
+        $('#clear1').on('click', function(){
+			
+          for (var i = 0; i < markers1.length; i++) {
+			          markers1[i].setMap(null);
+			          $('.item1:nth-child('+(i+2)+') td').text('');
+			     }
+
+        //   for (var i = 0; i < markers1_init.length; i++) {
+			     //      markers1_init[i].setMap(null);
+			     //      //$('.item1:nth-child('+(i+2)+') td').text('');
+			     // }
+			     markers1 = [];//array 要清空
+			     globalCount1 = 1;
+			   labelIndex1 = 0;
+        });
+                
+        }//function initMap1()
+   </script>
 
 
 
 
 
+<script type="text/javascript">
+    //抓 user 位置
+    //點擊回傳座標
+   	var globalCount2 = 1;
+   	var labels2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   	var labelIndex2 = 0;
+   	var markers2 = [];
+   	//2.<OK>按下紐發送目前位置
+   	   	initMap2();
+// function showPosition(position){
+//   alert("Latitude: " + position.coords.latitude + 
+//     "<br>Longitude: " + position.coords.longitude);
+// }
+
+
+   	function initMap2() {
+        map2 = new google.maps.Map(document.getElementById('map2'), {
+          center: {lat: 24.967779, lng: 121.192124},
+          zoom: 16
+        });
+        //先輸入地址把地圖 center 移入
+        //<OK>按下點放一個 marker
+   		//<OK>抓位置到label (對應A B C)
+   		<?php  
+   		if(isset($BCP_LOCATION[1])){
+   		?>
+   		
+   		
+   		var markers2_init=<?php echo '['.$LOCATION_2.']'; ?>;
+
+   		for (var i =0; i < markers2_init.length; i++) {
+        	new google.maps.Marker({
+			  position: markers2_init[i],
+			  map: map2,
+			  label: labels2[labelIndex2++ % labels2.length]
+			});
+		}
+
+		<?php 
+
+		}else{
+		 ?>
+		
+   		
+        google.maps.event.addListener(map2, 'click', function( overlay) {
+            	
+              if (globalCount2 <= 3) {
+    	        	var point2 = overlay.latLng.toJSON();
+
+    	        	var beachMarker2 = new google.maps.Marker({
+    				        position: point2,
+    				        map: map2,
+    				        label: labels2[labelIndex2++ % labels2.length]
+    				    });
+
+				        markers2.push(beachMarker2);
+
+
+				        $('.item2:nth-child('+(globalCount2+1)+') td').text('{lat:'+overlay.latLng.lat().toFixed(6) +',lng:'+overlay.latLng.lng().toFixed(6) +'}');
+				        globalCount2++;
+        	    }//if (globalCount <= 3)
+        });//google.maps.event.addListener(map, 'click', function( overlay) {
+
+        	<?php 
+
+        }
+        	 ?>
+
+
+        //反悔就按全部清除鍵
+        $('#clear2').on('click', function(){
+			
+          for (var i = 0; i < markers2.length; i++) {
+			          markers2[i].setMap(null);
+			          $('.item2:nth-child('+(i+2)+') td').text('');
+			     }
+			     markers2 = [];//array 要清空
+			     globalCount2 = 1;
+			   labelIndex2 = 0;
+        });
+                
+        }
+   </script>
+
+
+
+
+<script type="text/javascript">
+    //抓 user 位置
+    //點擊回傳座標
+   	var globalCount3 = 1;
+   	var labels3 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   	var labelIndex3 = 0;
+   	var markers3 = [];
+   	//2.<OK>按下紐發送目前位置
+   	   	initMap3();
+// function showPosition(position){
+//   alert("Latitude: " + position.coords.latitude + 
+//     "<br>Longitude: " + position.coords.longitude);
+// }
+
+
+   	function initMap3() {
+        map3 = new google.maps.Map(document.getElementById('map3'), {
+          center: {lat: 24.967779, lng: 121.192124},
+          zoom: 16
+        });
+        //先輸入地址把地圖 center 移入
+        //<OK>按下點放一個 marker
+   		//<OK>抓位置到label (對應A B C)
+
+
+   		 <?php  
+   		if(isset($BCP_LOCATION[2])){
+   		?>
+   		
+   		
+   		var markers3_init=<?php echo '['.$LOCATION_3.']'; ?>;
+
+   		for (var i =0; i < markers3_init.length; i++) {
+        	new google.maps.Marker({
+			  position: markers3_init[i],
+			  map: map3,
+			  label: labels3[labelIndex3++ % labels3.length]
+			});
+		}
+
+		<?php 
+
+		}else{
+		 ?>
+		
+   		
+        google.maps.event.addListener(map3, 'click', function( overlay) {
+            	
+              if (globalCount3 <= 3) {
+    	        	var point3 = overlay.latLng.toJSON();
+
+    	        	var beachMarker3 = new google.maps.Marker({
+    				        position: point3,
+    				        map: map3,
+    				        label: labels3[labelIndex3++ % labels3.length]
+    				    });
+
+				        markers3.push(beachMarker3);
+
+
+				        $('.item3:nth-child('+(globalCount3+1)+') td').text('{lat:'+overlay.latLng.lat().toFixed(6) +',lng:'+overlay.latLng.lng().toFixed(6) +'}');
+				        globalCount3++;
+        	    }//if (globalCount <= 3)
+        });//google.maps.event.addListener(map, 'click', function( overlay) {
+
+			<?php 
+			}
+			 ?>
+
+
+        //反悔就按全部清除鍵
+        $('#clear3').on('click', function(){
+			
+          for (var i = 0; i < markers3.length; i++) {
+			          markers3[i].setMap(null);
+			          $('.item3:nth-child('+(i+2)+') td').text('');
+			     }
+			     markers3 = [];//array 要清空
+			     globalCount3 = 1;
+			   labelIndex3 = 0;
+        });
+                
+        }
+   </script>
 
 
 
@@ -282,66 +1094,7 @@ session_start();
 
 	
 
-<script type="text/javascript">
-    //抓 user 位置
-    //點擊回傳座標
-   	var globalCount = 1;
-   	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-   	var labelIndex = 0;
-   	var markers = [];
-   	//2.<OK>按下紐發送目前位置
-   	   	initMap();
-function showPosition(position){
-  alert("Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude);
-}
 
-
-   	function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 24.967779, lng: 121.192124},
-          zoom: 16
-        });
-        //先輸入地址把地圖 center 移入
-        //<OK>按下點放一個 marker
-   		//<OK>抓位置到label (對應A B C)
-   		
-        google.maps.event.addListener(map, 'click', function( overlay) {
-            	
-              if (globalCount <= 3) {
-    	        	var point = overlay.latLng.toJSON();
-
-    	        	var beachMarker = new google.maps.Marker({
-    				        position: point,
-    				        map: map,
-    				        label: labels[labelIndex++ % labels.length]
-    				    });
-
-				        markers.push(beachMarker);
-
-
-				        $('.item:nth-child('+(globalCount+1)+') td').text('{lat:'+overlay.latLng.lat() +',lng:'+overlay.latLng.lng() +'}');
-				        globalCount++;
-        	    }//if (globalCount <= 3)
-        });//google.maps.event.addListener(map, 'click', function( overlay) {
-
-
-
-
-        //反悔就按全部清除鍵
-        $('#clear').on('click', function(){
-			
-          for (var i = 0; i < markers.length; i++) {
-			          markers[i].setMap(null);
-			          $('.item:nth-child('+(i+2)+') td').text('');
-			     }
-			     markers = [];//array 要清空
-			     globalCount = 1;
-			   labelIndex = 0;
-        });
-                
-        }
-   </script>
 
 
 

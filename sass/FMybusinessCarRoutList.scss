@@ -158,12 +158,13 @@ width: 100%;
 						color: #999;
 						font-size: 26px;
 					}
-					td{
+					.addProduct{
 						border: none;
 						// line-height: 80px;
 						// vertical-align: middle;
 						padding-top: 0px;
 						text-align: right;
+						width:30%;
 						img{
 							// text-decoration: none;
 							vertical-align: middle;
@@ -174,7 +175,10 @@ width: 100%;
 							color:#f06428;
 						}
 					}
-				}
+				}//&.tabletitle
+
+				&.titleText{
+
 				td{
 					color:#666666;
 					background-color: #fbf8f1;
@@ -202,6 +206,8 @@ width: 100%;
 					}
 
 				}//td
+
+				}//&.titleText{
 			}//tr
 
 		}//tableHeader

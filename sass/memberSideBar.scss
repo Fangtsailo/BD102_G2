@@ -43,6 +43,9 @@
 								&:nth-child(3){
 									@include member-nav-bar-subTitle-propity();									
 								}
+								&:nth-child(4){
+									@include member-nav-bar-subTitle-propity();									
+								}
 
 
 							}//sub
