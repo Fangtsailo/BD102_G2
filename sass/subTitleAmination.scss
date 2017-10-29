@@ -1,0 +1,40 @@
+
+@keyframes letterDraw {
+  		to {
+  			stroke-dashoffset: 0;
+  		}
+  	}
+
+
+@keyframes letterleaf {
+  		to {
+  			fill: #4b7cbf;
+  		}
+  	}
+
+
+
+
+.subtitle{
+		height: 100px;
+		// border: 1px solid #ccc;
+		text-align: center;
+		padding-top: 20px;
+		svg{
+			
+			.line {
+		  		fill: none;
+		  		stroke-width:  1;
+		  		stroke: #4b7cbf;
+		  		animation:letterleaf 1s ease forwards; 
+		 		
+			  	.line-g {
+				opacity: 1;
+				stroke-dasharray: 340;
+				stroke-dashoffset: 340;
+				animation: letterDraw 3s ease forwards;
+	  			}
+	  		}	
+		}//svg
+
+	}//subtitle

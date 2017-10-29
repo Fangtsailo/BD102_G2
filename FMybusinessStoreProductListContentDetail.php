@@ -38,6 +38,10 @@ session_start();
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 
+		<!-- =====alert==== -->
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+
+
 
 
 </head>
@@ -58,7 +62,7 @@ session_start();
 		//$_SESSION["memId"]="cccfff";
 		//$_SESSION["memNo"]="7";
 
-		$memNo="4";
+		$memNo=$_SESSION["memNo"];
 
 		// $sql = "select * from store_imformation where SI_MEMNO=$memNo";
 
@@ -86,7 +90,7 @@ session_start();
 
 <?php 
 
-		require_once('subtitle.php');
+		//require_once('subtitle.php');
 
 	 ?>
 
@@ -147,7 +151,7 @@ session_start();
 			</svg>
 		</div>
 
-		<form action="php/member/myBusiness/store/editProduct.php" method="post" enctype="multipart/form-data">
+		<form id="alertFormSubmit" action="php/member/myBusiness/store/editProduct.php" method="post" enctype="multipart/form-data">
 
 		<div class="content-table">
 				
@@ -157,7 +161,7 @@ session_start();
 
 					$PD_NO=$_REQUEST["PD_NO"];
 
-					$sql="select * from product where PD_NO=25";
+					$sql="select * from product where PD_NO=$PD_NO";
 
 					$product_one=$connectPDO->query($sql);
 
@@ -201,7 +205,9 @@ session_start();
 				<th><div>商品照片</div></th>
 				<?php 					
 						$PD_SHOPNO=$product_one_Row->PD_SHOPNO;
-						$fileName = $PD_NO."-".$PD_SHOPNO;
+						$PD_PIC=$product_one_Row->PD_PIC;
+
+						$fileName = $PD_PIC;
 				 ?>
 				<td>
 					<div>		
@@ -210,7 +216,15 @@ session_start();
 							<input type="file" class="upl_0" name="PD_PIC[]" id="uploadLogoImg">
 							<span>點擊上傳照片<br>建議寬、高大於1440像素</span>
 						</div>
-						<img class="preview preview_0" src="<?php echo 'img/store/products/'.$fileName.'.jpg'; ?>">
+						<img class="preview preview_0" src="<?php 
+
+						if($fileName != null){
+
+							echo 'img/store/products/'.$fileName; 
+
+						}
+
+						?>">
 					</div>
 					<div>
 						
@@ -226,7 +240,7 @@ session_start();
 					
 					$(function (){
 
-						if($('.preview_0').attr("src") !=null || $('.preview_0').attr("src") !=''){
+						if($('.preview_0').attr("src")){
 		                	$('.preview_0').css('z-index', 1);
 						}else{
 							$('.preview_0').css('z-index', -1);
@@ -283,12 +297,36 @@ session_start();
 		<div class="commit">
 			<!-- <input type="button" name="" value="預覽"> -->
 			<input type="hidden" name="PD_NO" value="<?php echo $PD_NO; ?>">
-			<input type="submit" name="" value="編輯完成">
+			<input type="button" id="alertBtn" name="" value="編輯完成">
 		</div>
 
 		</form>
 
 	</div>  <!-- CenterBusiness -->
+
+
+
+<script>
+	
+	$("#alertBtn").click(function(){
+
+
+      $.sweetModal({
+            content: '新增成功！',
+            icon: $.sweetModal.ICON_SUCCESS,
+            width: '300px',
+            theme: $.sweetModal.THEME_MIXED,
+            timeout: 1000,
+            onClose: function(){
+              $("#alertFormSubmit").submit();
+            }
+        });
+     
+     
+      
+      
+    });
+</script>
 
 
 
