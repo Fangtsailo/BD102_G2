@@ -105,6 +105,8 @@ session_start();
 					break;
 			}
 ?>
+
+
 				<form>
 						<input type="hidden" name="AC_NO" value="<?php echo $activityRow->AC_NO; ?>">
 				<tr>
@@ -122,35 +124,59 @@ session_start();
 							<span class="tableIcon"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"><path d="M35.5,17.4c0.4-0.4,0.6-0.9,0.6-1.5c0-0.6-0.2-1.1-0.6-1.5c-0.8-0.8-2.1-0.8-2.9,0l-1.4,1.4c-1.9-1.3-4-1.9-6.2-1.9c-6.1,0-11.1,5-11.1,11.1v0.8h1.6l0-0.3c0-0.2,0-0.3,0-0.5c0-5.3,4.3-9.6,9.6-9.6c1.8,0,3.6,0.5,5.1,1.5l-7,7c-0.5,0.5-0.9,1.1-1.1,1.6c-0.3,0.7-0.3,1.3-0.3,1.3c0,0.2,0,0.4,0,0.7v0.8h0.8c1.8,0,2.8-0.7,3.5-1.3l7.2-7.2c1,1.6,1.5,3.3,1.5,5.2c0,5.3-4.3,9.6-9.6,9.6c-4.5,0-8.5-3.2-9.4-7.7l0-0.1H14l0,0.1c0.9,5.3,5.5,9.2,10.9,9.2c6.1,0,11.1-5,11.1-11.1c0-2.2-0.7-4.4-2-6.3L35.5,17.4z M23.3,26.7c0.1-0.8,0.5-1.2,1-1.7l9.5-9.5c0.1-0.1,0.2-0.1,0.4-0.1c0.1,0,0.3,0,0.4,0.1c0.1,0.1,0.2,0.2,0.2,0.4c0,0.1-0.1,0.3-0.2,0.4L25,25.8C24.5,26.2,24,26.6,23.3,26.7z"/></svg>
 							</span><span>編輯</span>	
 						</a>
-						<a href="#" class="removeAct">
+						<a href="php/activity/manage/deleteActivity.php?acNo=<?php echo $activityRow->AC_NO; ?>" class="removeAct">
 							<span class="tableIcon"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"><g><rect x="20.4" y="24.3" width="9.3" height="1.5"/><path d="M25,13.9c-6.1,0-11.1,5-11.1,11.1v0.7h1.5l0-0.2c0-0.2,0-0.3,0-0.5c0-5.3,4.3-9.6,9.6-9.6s9.6,4.3,9.6,9.6s-4.3,9.6-9.6,9.6c-4.6,0-8.5-3.2-9.4-7.7l0-0.1h-1.5l0,0.1c0.9,5.3,5.5,9.1,10.9,9.1c6.1,0,11.1-5,11.1-11.1S31.1,13.9,25,13.9z"/></g></svg>
 							</span><span>下架</span>	
 						</a>
 					</td>
 				</tr>
 				</form>
-				<?php
-	
-	} //while
-}catch(PDOException $ex){
-	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-	echo "行號：",$ex->getLine(),"<br>";
-}
+<?php
+		} //while
+	}catch(PDOException $ex){
+		echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+		echo "行號：",$ex->getLine(),"<br>";
+	}
 
- ?>
-			</table>
+?>
+				</table>
+			</div>
 		</div>
-
 	</div>
+<?php 
+	require_once('footer.php');
+	$deleteInfo = $_REQUEST["info"];
+?>
+<?php echo $deleteInfo;  ?>
+<script type="text/javascript">
+	$(function(){
+		$(".removeAct").click(function(){
+			event.preventDefault();
+			$.sweetModal.confirm('確認刪除本活動?', function() {
+            	theme: $.sweetModal.THEME_DARK,
+            	$.sweetModal({
+            		content:'歡迎再次舉辦體驗活動喔！',
+            		timeout:1000,
+            		onClose: function(){
+		            	var link = $(".removeAct").attr('href');
+		            	location.href=link;
+            		}
+            	})
+            });
+		});
+		var deleteInfo = "<?php echo $deleteInfo;?>";
+		console.log(deleteInfo);
+		if( deleteInfo == "success" ){
+			 $.sweetModal({
+	            content: '刪除成功',
+				icon: $.sweetModal.ICON_SUCCESS,
+				width: '300px',
+				theme: $.sweetModal.THEME_MIXED,
+				timeout: 1000,
+			});
+		}
+	});
 
-
-
-	</div>
-	 <?php 
-
-	 	require_once('footer.php');
-
-	  ?>
-	  
+</script>
 </body>
 </html>

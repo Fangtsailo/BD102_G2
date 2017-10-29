@@ -1,4 +1,4 @@
-
+@charset "UTF-8";
 @import "basic/setting";
 @import "basic.scss"; //scss of header vs footer
 *{
@@ -56,7 +56,7 @@ input, textarea{
 	font-family: $globalFont;
 	font-weight: lighter;
 }
-//ÔO¶¨input placeholder˜ÓÊ½
+//Ã”OÂ¶Â¨input placeholderËœÃ“ÃŠÂ½
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
 	   color: $globalUnclickColor;
 }
@@ -72,18 +72,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explor
 input:not(.radio):focus, textarea:focus{
 	border: 1px solid rgba(240, 100, 40, 0.3);
 	box-shadow: 0 0 2px $globalStarColor;
-}//ÔO¶¨input:focus˜ÓÊ½
+}//Ã”OÂ¶Â¨input:focusËœÃ“ÃŠÂ½
 
 .myfollow, .msg, .myentry{
 	transition: box-shadow 1s;
-}//hoveréLêÓ°•rég
+}//hoverÃ©LÃªÅ½Ã“Â°â€¢rÃ©g
 
-//===•ş†TŒ£…^¹²ÓÃµÄÔO¶¨==================================================
+//===â€¢Ã¾â€ TÅ’Â£â€¦^Â¹Â²Ã“ÃƒÂµÃ„Ã”OÂ¶Â¨==================================================
 .container{
 	position: relative;
 	margin: 0 auto;
 
-//===‚Èß…™Ú==================================================
+//===â€šÃˆÃŸâ€¦â„¢Ãš==================================================
 	.sidebar{
 		width: 210px;
 		height: 310px;
@@ -156,12 +156,12 @@ input:not(.radio):focus, textarea:focus{
 		}
 	}//RWD end
 
-//===ƒÈÈİ¹²ÓÃµÄÔO¶¨==================================================
+//===Æ’ÃˆÃˆÃÂ¹Â²Ã“ÃƒÂµÃ„Ã”OÂ¶Â¨==================================================
 
 	.content{
 		max-width: 1200px;
     	width: 83.3333%;
-    	min-height: 60vh; //·ÀÖ¹footerÍùÉÏÅÜ
+    	min-height: 60vh; //Â·Ã€Ã–Â¹footerÃÃ¹Ã‰ÃÃ…Ãœ
 		margin: 0 auto;
 		margin-top: 100px;
 		text-align: center;
@@ -288,9 +288,9 @@ input:not(.radio):focus, textarea:focus{
 			    right: 10px;
 			}
 		}//changepsw end
-	}//¹âÏäbox end
+	}//Â¹Ã¢ÃÃ¤box end
 
-//===ÎÒµÄ×·Û™==================================================
+//===ÃÃ’ÂµÃ„Ã—Â·Ã›â„¢==================================================
 	.myfollow{
 		width: 220px;
 		float: left;
@@ -314,9 +314,9 @@ input:not(.radio):focus, textarea:focus{
 	}
 	.myfollow:hover{
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-	}//hoveréLêÓ°
+	}//hoverÃ©LÃªÅ½Ã“Â°
 
-	//Ğ¡°´âo˜ÓÊ½
+	//ÃÂ¡Â°Â´Ã¢oËœÃ“ÃŠÂ½
 	.btn50{
 		width: 50px;
 		height: 50px;
@@ -329,22 +329,22 @@ input:not(.radio):focus, textarea:focus{
 		float: right;
 		margin: -55px 2px 0 0;
 		&:after{
-		content: 'È¡Ïû×·Û™';
+		content: 'ÃˆÂ¡ÃÃ»Ã—Â·Ã›â„¢';
 		font-size: $globalCardSize;
 		vertical-align: top;
 		}
-	}//È¡Ïû×·Û™
+	}//ÃˆÂ¡ÃÃ»Ã—Â·Ã›â„¢
 
 	#mappointer{
 		text-align: center;
 		display: block;
 		&:after{
 		display: block;
-		content: 'µØˆD';
+		content: 'ÂµÃ˜Ë†D';
 		font-size: $globalCardSize;
 		vertical-align: top;
 		}
-	}//µØˆD
+	}//ÂµÃ˜Ë†D
 	
 		
 	.myfollow > ul{
@@ -357,14 +357,14 @@ input:not(.radio):focus, textarea:focus{
 			vertical-align: top;
 			}
 		}
-	}//ÔuƒrĞÇĞÇ”µ
+	}//Ã”uÆ’rÃÃ‡ÃÃ‡â€Âµ
 
 	time{
 		color: $globalUnclickColor;
 		font-size: $globalCardSize - 2px;
 		float: right;
 		margin: -20px 10px 0px;
-	}//ÈÕÆÚ•régĞ¡×Ö˜ÓÊ½
+	}//ÃˆÃ•Ã†Ãšâ€¢rÃ©gÃÂ¡Ã—Ã–ËœÃ“ÃŠÂ½
 
 	@media screen and (max-width: 767px) {
 		.myfollow{
@@ -389,9 +389,9 @@ input:not(.radio):focus, textarea:focus{
 		}
 	}//RWD end
 
-//===ÎÒµÄÁôÑÔ==================================================
+//===ÃÃ’ÂµÃ„ÃÃ´Ã‘Ã”==================================================
 	.mycomment{
-		/*ÓÃuŒÓÔO¶¨¾GÉ«¾€¶Î*/
+		/*Ã“ÃƒÂuÅ’Ã“Ã”OÂ¶Â¨Â¾GÃ‰Â«Â¾â‚¬Â¶Ã*/
 		background-image: linear-gradient(90deg, $globalAccountColor 10px, $globalAccountColor 10px );
 		background-size: 2px 100px;
 		background-position: center top;
@@ -412,7 +412,7 @@ input:not(.radio):focus, textarea:focus{
 
 				time{
 					margin: 5px 50px 0 0;
-				}//ÁôÑÔ•rég
+				}//ÃÃ´Ã‘Ã”â€¢rÃ©g
 
 				.storepic{
 					width: 50px;
@@ -426,7 +426,7 @@ input:not(.radio):focus, textarea:focus{
 						height: 100%;
 						max-width: none;
 					}
-				}//•ş†T´óî^ÕÕ
+				}//â€¢Ã¾â€ TÂ´Ã³Ã®^Ã•Ã•
 
 				.reply{
 					padding: 10px;
@@ -436,20 +436,20 @@ input:not(.radio):focus, textarea:focus{
 					display: none;
 					time{
 						margin-right: 0;
-					}//µêéL»Ø¸²•rég
-				}//µêéL»Ø¸²
+					}//ÂµÃªÃ©LÂ»Ã˜Â¸Â²â€¢rÃ©g
+				}//ÂµÃªÃ©LÂ»Ã˜Â¸Â²
 
 				#del{
 					padding: 0%;
 					position: absolute;
 					top: 0px;
 					right: 0;
-					&:after{
-						content: '„h³ı';
-						font-size: 12px;
-						vertical-align: top;
-					}
-				}//„h³ıÁôÑÔ°´âo
+					// &:after{
+					// 	content: 'åˆªé™¤';
+					// 	font-size: 12px;
+					// 	vertical-align: top;
+					// }
+				}//â€hÂ³Ã½ÃÃ´Ã‘Ã”Â°Â´Ã¢o
 			}//msg end
 
 			.msg:before{
@@ -461,11 +461,11 @@ input:not(.radio):focus, textarea:focus{
 				border-bottom: 10px solid  transparent;
 				position: absolute;		
 				top: 20px;	
-			}//msgÇ°ÃæµÄĞ¡Èı½ÇĞÎ
+			}//msgÃ‡Â°ÃƒÃ¦ÂµÃ„ÃÂ¡ÃˆÃ½Â½Ã‡ÃÃ
 
 			.msg:hover {
 			    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-			}//hoveréLêÓ°
+			}//hoverÃ©LÃªÅ½Ã“Â°
 		}//mycomment li end
 
 		li:nth-child(even){
@@ -481,12 +481,12 @@ input:not(.radio):focus, textarea:focus{
 				left: -15px;
 				border-right: 16px solid #fff;
 			}
-		}//Å¼”µ™ÚÆ«ÒÆÔO¶¨
+		}//Ã…Â¼â€Âµâ„¢ÃšÃ†Â«Ã’Ã†Ã”OÂ¶Â¨
 
 		li:nth-child(odd) .msg:before{
 			right: -15px;
 			border-left: 16px solid #fff;
-		}//Ææ”µ™ÚÆ«ÒÆÔO¶¨
+		}//Ã†Ã¦â€Âµâ„¢ÃšÃ†Â«Ã’Ã†Ã”OÂ¶Â¨
 	}//mycomment end
 
 	@media screen and (max-width: 767px) {
@@ -517,7 +517,7 @@ input:not(.radio):focus, textarea:focus{
 		}//mycomment end
 	}//RWD end
 
-//===ÎÒµÄˆóÃû==================================================
+//===ÃÃ’ÂµÃ„Ë†Ã³ÃƒÃ»==================================================
 	.myentry{
 		width: 300px;
 		height: 200px;
@@ -557,7 +557,7 @@ input:not(.radio):focus, textarea:focus{
 				margin: -50px 2px 0 0;
 			}
 			#cancelentry:after{
-				content: 'È¡ÏûˆóÃû';
+				content: 'ÃˆÂ¡ÃÃ»Ë†Ã³ÃƒÃ»';
 				color: $globalBgColor;
 				font-size: 12px;
 				vertical-align: top;
@@ -603,7 +603,7 @@ input:not(.radio):focus, textarea:focus{
 		}
 	}//RWD end
 
-//===¾İ‹‚€ÈËÙYÁÏ==================================================
+//===Â¾Å½Ãâ€¹â€šâ‚¬ÃˆÃ‹Ã™YÃÃ==================================================
 	form{
 		p, .checkbox{
 			width: 42%;
@@ -653,12 +653,12 @@ input:not(.radio):focus, textarea:focus{
 			border: 1px solid rgba(187,187,187,0.3);
 			border-bottom: 1px solid $globalUnclickColor;
 			margin-bottom: 30px;
-		}//³ÉéµêéL_¹ÊÊÂ½é½Bİ”Èë¿ò
+		}//Â³Ã‰Å¾Ã©ÂµÃªÃ©L_Â¹ÃŠÃŠÃ‚Â½Ã©Â½BÃâ€ÃˆÃ«Â¿Ã²
 		input[type="number"]{
 			width: 30%;
 			float: none;
 			text-align: center;
-		}//³ÉéµêéL I˜I•régßxí—
+		}//Â³Ã‰Å¾Ã©ÂµÃªÃ©LÂ IËœIâ€¢rÃ©gÃŸxÃ­â€”
 		.userpic{
 			width: 80px;
 			height: 80px;
@@ -678,7 +678,7 @@ input:not(.radio):focus, textarea:focus{
 			position: absolute;
 			top: 1px;
 		    left: 8px;
-		}//ÉÏ‚÷ÕÕÆ¬
+		}//Ã‰Ãâ€šÃ·Ã•Ã•Ã†Â¬
 		.checkbox{
 			margin-left: 34%;
 			overflow: hidden;
@@ -688,7 +688,7 @@ input:not(.radio):focus, textarea:focus{
 				float: none;
 				margin-right: 30px;
 			}
-		}//×ƒ¸üÃÜ´a¹âÏä°´âo
+		}//Ã—Æ’Â¸Ã¼ÃƒÃœÂ´aÂ¹Ã¢ÃÃ¤Â°Â´Ã¢o
 
 	@media screen and (max-width: 767px) {
 		p{
@@ -732,11 +732,11 @@ input:not(.radio):focus, textarea:focus{
 		}
 		input[type="number"]{
 			width: 18%;
-		}//³ÉéµêéL I˜I•régßxí—
+		}//Â³Ã‰Å¾Ã©ÂµÃªÃ©LÂ IËœIâ€¢rÃ©gÃŸxÃ­â€”
 	}//RWD end
 	}//form end
 
-//===³ÉéµêéL_µÚ1í“==================================================
+//===Â³Ã‰Å¾Ã©ÂµÃªÃ©L_ÂµÃš1Ã­â€œ==================================================
 	.memBeBoss{
 		max-width: 1200px;
 		width: 120%;
@@ -800,7 +800,7 @@ input:not(.radio):focus, textarea:focus{
 		}//memBeBoss1 end
 	}//RWD end
 
-//===³ÉéµêéL_µÚ2¡¢3í“==================================================
+//===Â³Ã‰Å¾Ã©ÂµÃªÃ©L_ÂµÃš2Â¡Â¢3Ã­â€œ==================================================
 	h1.find{
 		margin-bottom: 30px;
 	}

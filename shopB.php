@@ -16,7 +16,7 @@ session_start();
   	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
     <link rel="stylesheet" href="css/shopB.css">
  	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCAy_Zw-sc6u3IYn0CFQc9vKn7wA3JNJ4Y"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyCAy_Zw-sc6u3IYn0CFQc9vKn7wA3JNJ4Y"></script> -->
     <script src="js/spB_map.js"></script>
     <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
     <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
@@ -66,6 +66,14 @@ require_once("header.php");
 	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
 	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
 	$isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
+
+	require_once("php/pdo/connectPDO.php");
+
+	$sql = "select * from store_imformation where SI_NUM=$storeId and SI_TYPE=0";
+
+	$store_imformation = $connectPDO->query($sql);
+
+	$store_imformationRow=$store_imformation->fetchObject();
 
 	 } catch (Exception $e) {
 	echo "原因：",$e->getMessage(),"<br>";
@@ -149,16 +157,43 @@ require_once("header.php");
 		<div class="col-xs-10 col-sm-3" id="biginfo">
 		<div class="" id="SPINFO">
 			<p><?php echo $GLOBALS["store"]->address ?></p>
-			<p>營業時間 <?php echo $GLOBALS["store"]->openStartTime ?>:00 - <?php echo $GLOBALS["store"]->openEndTime ?>:00</p>
-			<p>公休日 
+			<p>營業時間　<?php echo $GLOBALS["store"]->openStartTime ?>:00 - <?php echo $GLOBALS["store"]->openEndTime ?>:00</p>
+			<p>公休日　
 				<?php 
-						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
-							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
-								echo "星期", $i, ", ";
-							} else {
-								echo "星期", $i;
+					
+					if($store_imformation->rowCount()!=0){
+					$SI_RESTDAY=$store_imformationRow->SI_RESTDAY;
+					$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+
+					}else{
+						$SI_RESTDAY=",,,,,,,";
+						$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+					}
+
+					if(in_array('1',$SI_RESTDAY_ARY)){
+								echo '<span id="week_1" >星期ㄧ &nbsp</span>';
 							}
-						}
+					if(in_array('2',$SI_RESTDAY_ARY)){
+								echo '<span id="week_2" >星期二 &nbsp</span>';
+							}
+					if(in_array('3',$SI_RESTDAY_ARY)){
+								echo '<span id="week_3" >星期三 &nbsp</span>';
+							}
+					if(in_array('4',$SI_RESTDAY_ARY)){
+								echo '<span id="week_4" >星期四 &nbsp</span>';
+							}
+					if(in_array('5',$SI_RESTDAY_ARY)){
+								echo '<span id="week_5" >星期五 &nbsp</span>';
+							}
+					if(in_array('6',$SI_RESTDAY_ARY)){
+								echo '<span id="week_6" >星期六 &nbsp</span>';
+							}
+					if(in_array('7',$SI_RESTDAY_ARY)){
+								echo '<span id="week_7" >星期日 &nbsp</span>';
+							}
+					if(in_array('0',$SI_RESTDAY_ARY)){
+								echo '<span id="week_0" >國定假日　<spanv>';
+							}
 					 ?>
 			</p>
 			<p><?php echo $GLOBALS["store"]->phone ?></p>
@@ -180,30 +215,30 @@ require_once("header.php");
 		</div>
 		<div class="clearfix"></div>
 		<div id="SPGRADE" >
-			
 			<div class="rating">
-			<label for="star1"></label>
         	<input type="radio" id="star1" name="rating" value="1" hidden/>
-        	<label for="star2"></label>
+        	<label for="star1"></label>
        	 	<input type="radio" id="star2" name="rating" value="2" hidden/>
-         	<label for="star3"></label>
+       	 	<label for="star2"></label>
        	 	<input type="radio" id="star3" name="rating" value="3" hidden/>
-       	 	<label for="star4"></label>
+       	 	<label for="star3"></label>
        	 	<input type="radio" id="star4" name="rating" value="4" hidden/>
-       	 	<label for="star5"></label>
+       	 	<label for="star4"></label>
        	 	<input type="radio" id="star5" name="rating" value="5" hidden/>
+       	 	<label for="star5"></label>
 			</div>
-
 
 			<div id="GIVESTAR">
 			<a href="#"><input  type="hidden" name="" value="" placeholder="">送出</a>
 			</div>
+
+
 		</div>
 
 
 		<div id="getstar">
 			<span>好評</span>
-			<span>&nbsp3.5&nbsp</span>
+			<span>&nbsp<?php echo $store_imformationRow->SI_AVG_REVIEW ; ?>&nbsp</span>
 			<span>分</span>
 		</div>
 		</div>

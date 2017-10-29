@@ -175,7 +175,7 @@ li {
 	transition: top .3s ease-in-out;
 	
 	
-//-----------------會員登入燈箱----------------------
+	//-----------------會員登入燈箱----------------------
 	.headLoginBox {
 			position: fixed;
 			width: 100%;
@@ -435,7 +435,7 @@ li {
 			font-size: 0;
 			span {
 				margin-right: 10px;
-				color:$globalBgColor;
+				color:$globalTitleColor;
 				font-weight: 300;
 			}
 			#headSearch {
@@ -453,8 +453,8 @@ li {
 				display: inline-block;
 				width: 80px;
 				height: 30px;
-				color:$globalBgColor;
-				background-color:transparent;
+				color:$globalTitleColor;
+				background-color:$globalBgColor;
 				border:1px solid $globalBgColor;
 				margin: 0px 5px;
 				font-size: $globalContentSize;
@@ -463,22 +463,33 @@ li {
 				box-sizing:border-box;
 				vertical-align: top;
 				}
-			button {
+			label {
 				width: 80px;
 				display: inline-block;
 				height: 30px;
-				color:$globalBgColor;
-				background-color:transparent;
-				border:1px solid $globalBgColor;
+				color:$globalTitleColor;
+				background-color:$globalBgColor;
 				margin: 0px 5px;
 				font-size: $globalContentSize;
 				border-radius:2px;
-				&:focus {
-				background-color: $globalBgColor;
-				color:$globalHdColor01;
-				outline: none;
-				box-sizing:border-box;
 				vertical-align: top;
+				outline: none;
+				text-align: center;
+				box-sizing:border-box;
+				cursor:pointer;
+				box-shadow:-1px 1px 0px 1px #713f2a;
+				transition: .3s;
+			}
+			input[name=filter] {
+				display: none;
+				&:checked+label {
+					background-color: #5d2812;
+					color:$globalBgColor;
+					outline: none;
+					box-sizing:border-box;
+					box-shadow:none;
+					transition: .3s;
+					// animation: checked .5s ease infinite alternate;
 				}
 			}	
 			#headSearchSubmit {
@@ -495,9 +506,15 @@ li {
 				outline: none;
 				box-sizing:border-box;
 				vertical-align: top;
+				transition: .3s;
 				&:active {
 					background-color:$globalFontColor ;
 					color:$globalBgColor;
+				}
+				&.keyIn{
+					background-color: $globalBtnColor;
+					color:$globalBgColor;
+					transition: .3s;
 				}
 
 			}
@@ -513,6 +530,10 @@ li {
 	0%{transform:translate(15px,0px);}
 	100%{transform:translate(-15px,0px);}
 }
+// @keyframes checked {
+// 	0%{ transform:translate(0px,1px); }
+// 	100%{ transform:translate(0px,0px); }
+// }
 .shake {
 	animation:shake1 .2s linear 3 alternate;
 }
@@ -1198,7 +1219,8 @@ footer {
 
 #addShopBox {
 	position: fixed;
-	z-index: 999;
+	z-index: 99;
+	top: 0;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(50,50,50,.5);
@@ -1241,16 +1263,71 @@ footer {
 				margin: auto;
 			}
 		}
-		input[type="number"] {
-				width: 20%;
-				height: 100%;
-				float: none;
+		.selectTime {
+			display: block;
+		    float: right;
+		    width: 65%;
+		    height: 100%;
+		    padding-left: 10px;
+		    margin: auto;
+		    background-color: transparent;
+			span {
 				display: inline-block;
+				float: left;
+				line-height: 50px;
+				color:$globalFontColor;
+			}
+			select {
+				width: 30%;
+				height: 30px;
+				float: left;
+				display: inline-block;
+				margin: 10px;
 
+			}
 		}
 	}
 }
+@media screen and (max-width:400px){
+	#addShopBox {
+		.globalForm {
+			.globalFormHeader{
+				padding: 2%;
+				.svg {
+					width: 30px;
+				}
+				p {
+					font-size: 13px;
+				}
+			}
+			.globalFormInput {
+					width: 90%;
+					height: 30px;
+					label {
+						line-height: 30px;
+						font-size: 13px;
+					}
+					.chooseBtn {
+						margin: 0px 5px;
+					}
+					.selectTime {
+						padding-left: 0;
+					}
+					select {
+						width: 37%;
+						line-height: 30px;
+						margin: 0;
+					}
+					span {
+						line-height: 30px;
+						font-size: 12px;
+					}
+				} 
+		}
+	}
 
+
+}
 
 	// --------------------------客服中心燈箱--------------------------
 

@@ -13,7 +13,7 @@ class Message {
 		$this->memberName = $memberName;
 		$this->dateStamp = $dateStamp;
 		$this->content = $content;
-		$this->memberPicName = GLOBAL_MEM_PIC_PATH.$memberPicName;
+		$this->memberPicName = GLOBAL_MEM_PIC_PATH.($memberPicName==""?"default.png":$memberPicName);
 		$this->dateStr = date("Y/m/d H:i", $dateStamp);
 	}
 }

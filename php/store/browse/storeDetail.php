@@ -22,7 +22,34 @@ try {
 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
 }
-
+	//轉換數字成星期文字
+	function transNumToWord($num) {
+		$word = "一";
+		switch ($num) {
+			case 1:
+				$word = "一";
+				break;
+			case 2:
+				$word = "二";
+				break;
+			case 3:
+				$word = "三";
+				break;
+			case 4:
+				$word = "四";
+				break;
+			case 5:
+				$word = "五";
+				break;
+			case 6:
+				$word = "六";
+				break;
+			case 7:
+				$word = "日";
+				break;
+		}
+		return $word;
+	}
 	//特定num的會員有沒有追蹤特定店家
 	function isFollowStoreByMemNum($memNum, $storeId) {
 		$isFollow = false;
@@ -64,7 +91,7 @@ try {
 		$sql = "SELECT * FROM store_imformation limit $randomStart, $StoreCountToGet";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($store = $stmt->fetchObject()) {
-			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
+			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3, $store->SI_LAT, $store->SI_LNG, $store->SI_AVG_REVIEW);
 					$followCount = 0;
 			// $sql = "SELECT count(*) FROM follow WHERE SI_NUM=$storeId";
 			// $stmt = $GLOBALS["connectPDO"] ->query($sql);
@@ -140,7 +167,7 @@ try {
 			header("location:homepage.php");
 		} else {
 			$tmpStore = $stmt->fetchObject();
-			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG);
+			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG, $tmpStore->SI_AVG_REVIEW);
 			$followCount = getFollowCountByStoreId($storeId);
 			$GLOBALS["store"]->follow = $followCount;
 		}

@@ -10,7 +10,7 @@
 	}else { 
 		// session_destroy();
 	}
-
+	require_once("php/common/globalVar.php");
  ?>   
 
 <header class="globalHead">
@@ -192,18 +192,26 @@
 							<img id="addShop1" src="img/homepage/addShop1.svg">
 						</a>
 						<a href="#" id="headMemPic">
-							<img src="img/homepage/user.png">
+							<?php 
+								if ( isset($_SESSION["memPic"]) ){
+									echo "<img src='img/member_pic/".$_SESSION["memPic"]."''>";
+								}else {
+									echo "<img src='img/member_pic/default.png'>";
+								}
+
+							 ?>
 						</a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="#" id="showMemId"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?>  </a></li>
-						<li><a class="memLink" href="#">我的追蹤</a></li>
-						<li><a class="memLink" href="#">我的留言</a></li>
-						<li><a class="memLink" href="#">我的報名</a></li>
-						<li><a  id="role" class="memLink" href="#">成為店長</a></li>
+						<li><a href="memedit.php" id="showMemId"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?>  </a></li>
+						<li><a class="memLink" href="memedit.php">基本資料</a></li>
+						<li><a class="memLink" href="memfollow.php">我的追蹤</a></li>
+						<li><a class="memLink" href="memcomment.php">我的留言</a></li>
+						<li><a class="memLink" href="mementry.php">我的報名</a></li>
+						<li><a id="role" class="memLink" href="memBeBoss1.php">成為店長</a></li>
 						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
@@ -265,24 +273,31 @@
 			</li>
 			<li class="memPart">
 				<div class="memPic">
-					<img id="memPic" src="img/homepage/user.png">
+					<?php 
+								if ( isset($_SESSION['memPic']) ){
+									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+								}else {
+									echo "<img src='img/member_pic/default.png'>";
+								}
+
+							 ?>
 				</div>
 				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<ul id="memberMenu">
-			<li class="navItem"><a href="#">我的追蹤</a></li>
-			<li class="navItem"><a href="#">我的留言</a></li>
-			<li class="navItem myActivity"><a href="#">我的報名</a></li>
+			<li class="navItem"><a href="memfollow.php">我的追蹤</a></li>
+			<li class="navItem"><a href="memcomment.php">我的留言</a></li>
+			<li class="navItem myActivity"><a href="mementry.php">我的報名</a></li>
 			</ul>
 			<li class="navItem beBoss">
-				<a id="rwdBossRole" href="#">成為店長</a>
+				<a id="rwdBossRole" href="memBeBoss1.php">成為店長</a>
 				
 				<ul id="bossMenu">
-					<li><a class="navItem bossMenu" href="#">麵包店</a></li>
+					<li><a class="navItem bossMenu" href="FMybusinessStore.php">麵包店</a></li>
 					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
-					<li><a class="navItem bossMenu" href="#">活動管理</a></li>
-					<li><a class="navItem bossMenu" href="#">留言管理</a></li>
+					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
+					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>
 			</li>
 			<li class="navItem"><a href="php/member/login/sessionLogOut.php">登出</a></li>
@@ -321,10 +336,68 @@
 						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入地址/門牌號碼">
+						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
+						<input type="hidden" name="SI_lat" id="SI_lat" value="">
+						<input type="hidden" name="SI_lng" id="SI_lng" value="">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>營業時間</label><input type="number" name="startTime" max="24" min="0" maxlength="2"><span>點至</span><input type="number" name="endTime" max="24" min="0" maxlength="2"><span>點</span>
+						<label><span>*</span>營業時間</label>
+						<div class="selectTime">
+							<select name="startTime">
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
+							</select>
+							<span>點至</span>
+							<select name="endTime">
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
+							</select>
+							<span>點</span>
+						</div>
 					</div>
 					<div class="globalFormInput">
 						<label>故事介紹</label><textarea name="story"></textarea>
