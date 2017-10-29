@@ -1,3 +1,11 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +24,9 @@
 
 	<!-- paralla 用 -->
 	<script type="text/javascript" src="js/parallax.min.js"></script>
+	
+	<!-- 跳窗用 -->
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 
 </head>
 <body>
@@ -24,9 +35,38 @@
 
 <!-- ======================================================開始寫========================================================= -->
 
-	<?php require_once("header.php");?>
+	
 
 
+	
+
+
+			<?php 
+
+				require_once("header.php");
+				// $memNo=$_SESSION["memNo"];
+
+				$actNum=6;
+
+
+
+				if (isset($_REQUEST["actNum"])) {
+					
+				$actNum=$_REQUEST["actNum"];
+				}
+
+				try {
+					require_once("php/pdo/connectPDO.php");
+
+					$sql = "select * from activity,store_imformation where AC_NO='$actNum'and SI_NUM=AC_STORE_NUM ";
+					$activity=$connectPDO->query($sql);
+					$actRow=$activity->fetchObject();
+
+               //  $msg = isset($msg) === true  ? $msg : "Hello" ;
+               //  echo $msg;
+
+               // echo $actRow->AC_PIC=="" ? "header.jpg" : $actRow->AC_PIC;
+			 ?>
 
 	<div class="container-template">
 		
@@ -34,14 +74,47 @@
    		<div class="activity_banner">   <!-- 第一層 -->
    				  <!-- 背景在這層 -->
 			
+		<script type="text/javascript">
+			$(document).ready(function () {
+
+				$('.activity_banner').css('background','url("img/store/activity/banner/<?php echo $actRow->AC_BANNER1; ?>") center center').css('background-size','cover');
+
+				$('#activity_application').after().css('background','url("img/store/activity/banner/<?php echo $actRow->AC_BANNER2; ?>") center center' ).css('background-size','cover');
+
+				$('.activity_dough_1').css('background','url("img/store/activity/activity/<?php echo $actRow->AC_PIC; ?>") center center').css('background-size','cover');
+
+				$('.pic_1').css('background','url("img/store/activity/ingredient/<?php echo $actRow->AC_INGREDIENT_PIC; ?>") center center').css('background-size','cover');
+
+				$('.pic_2').css('background','url("img/store/activity/ingredient/<?php echo $actRow->AC_INGREDIENT_PIC2; ?>") center center').css('background-size','cover');
+
+
+
+				$('.pic_3').css('background','url("img/store/activity/ingredient/<?php echo $actRow->AC_INGREDIENT_PIC3; ?>") center center').css('background-size','cover');
+
+
+				$('.activity_dough_5').css('background','url("img/store/activity/activity/<?php echo $actRow->AC_PIC2; ?>") center center').css('background-size','cover');
+
+				$('.activity_dough_6').css('background','url("img/store/activity/activity/<?php echo $actRow->AC_PIC3; ?>") center center').css('background-size','cover');
+
+
+				$('.fin_1').css('background','url("img/store/activity/product/<?php echo $actRow->AC_PRODUCT_PIC; ?>") center center').css('background-size','cover');
+
+				$('.fin_2').css('background','url("img/store/activity/product/<?php echo $actRow->AC_PRODUCT_PIC2; ?>") center center').css('background-size','cover');
+				$('.fin_3').css('background','url("img/store/activity/product/<?php echo $actRow->AC_PRODUCT_PIC3; ?>") center center').css('background-size','cover');
+
+
+			});
+		</script>
+
+
 			
    			<section class="section_0">
    			<div class="activity_Dough trigger0"> <!--  麵團區 -->
    				<div id="acty_Dough">
-	   				<img src="img/acty_icon.png">
+	   				<img src="img/act/acty_icon.png">
 	   				<h1>烘培體驗</h1>
 	   				<div class="acty_h2">
-	   					<h2>牛角麵包簡單學</h2>	
+	   					<h2><?php echo $actRow->AC_NAME ?></h2>	
 	   				</div>	
    				</div>
    			</div>
@@ -49,10 +122,10 @@
 
 			<div class="activityDough "> <!--  麵團區 -->
    				<div id="acty_Dough">
-	   				<img src="img/acty_icon.png">
+	   				<img src="img/act/acty_icon.png">
 	   				<h1>烘培體驗</h1>
 	   				<div class="acty_h2">
-	   					<h2>牛角麵包簡單學</h2>	
+	   					<h2><?php echo $actRow->AC_NAME ?></h2>	
 	   				</div>	
    				</div>
    			</div>
@@ -62,11 +135,11 @@
    			<div class="activity_board"><!-- 介紹區 -->
    				 
    				<div class="acty_board">
-   					<img src="img/acty_board.png"> <!-- 沾板 -->
-   					<div class="acty_board_p"><p>由烘焙王工房，麵包師傅親自講解說明步驟，一步一步帶著你一起做，讓你在家也能輕鬆做出好吃牛角，還有師傅獨門配方秘密大公開!</p>
+   					<img src="img/act/acty_board.png"> <!-- 板 -->
+   					<div class="acty_board_p"><p><?php echo $actRow->AC_DETAIL1 ?></p>
    					</div>
    					<div class="acty_stirrer">
-   						<img src="img/acty_stirrer.png">
+   						<img src="img/act/acty_stirrer.png">
    					</div>
    				</div>
    			
@@ -75,12 +148,12 @@
    			
    			<div class="activity_detail"><!--  資訊 -->
    				<ul>
-   					<li>體驗地點 : 桃園市中壢區中央路55號(烘焙王麵包坊)</li>
-	   				<li>時間 : 105.9.29  下午1:00(預計3小時)</li>
-	   				<li>人數限制 : 10~12人</li>
-	   				<li>聯絡方式 : (03)3335567</li>
-	   				<li>材料 : 麵包坊提供</li>
-	   				<li>費用 : 報名費與材料一共1000元(現場收費)</li>
+   					<li>體驗地點 :<?php echo $actRow->AC_ADDRESS ?></li>
+	   				<li>時間 : <?php echo $actRow->AC_TIME ?></li>
+	   				<li>人數 : <?php echo $actRow->AC_MEM_COUNT ?>人</li>
+	   				<li>聯絡方式 : <?php echo $actRow->SI_PHONE ?></li>
+	   				<li>材料 : <?php echo $actRow->AC_INGREDIENT ?></li>
+	   				<li>費用 : <?php echo $actRow->AC_PRICE ?></li>
 	   			</ul>
    			</div>	
 					
@@ -102,11 +175,12 @@
 
 			<div class="activity_pot">
 				<div class="acty_out_pot">
-					<img src="img/acty_pot.png"><!-- 外鍋 -->
-					<h2>烘焙王麵包坊<br>最受歡迎牛角麵包製作</h2>
+					<img src="img/act/acty_pot.png"><!-- 外鍋 -->
+					<h2><?php echo $actRow->AC_SECOND_NAME ?></h2>
 				 	<div class="activity_pot_b">  <!-- 最裡層 -->
-						<img src="img/acty_pot_b.png">
+						<img src="img/act/acty_pot_b.png">
 					</div>
+					<div class="big"></div>
 					<div class="activity_dough_change"></div>   <!-- 麵團 -->
 				</div>
 				
@@ -114,14 +188,16 @@
 				
 			</div>
 
-			<div class="activityPot">
+			<div class="activityPot rwdw">
 				<div class="acty_out_pot">
-					<img src="img/acty_pot.png"><!-- 外鍋 -->
-					<h2>烘焙王麵包坊<br>最受歡迎牛角麵包製作</h2>
+					<img src="img/act/acty_pot.png"><!-- 外鍋 -->
+					<h2><?php echo $actRow->AC_SECOND_NAME ?></h2>
 				 	<div class="activity_pot_b">  <!-- 最裡層 -->
-						<img src="img/acty_pot_b.png">
+						<img src="img/act/acty_pot_b.png">
 					</div>
-					<div class="activity_dough_change"></div>   <!-- 麵團 -->
+					
+					<div class="activity_dough_changes"></div>   <!-- 麵團 -->
+					
 				</div>
 				
 				
@@ -129,14 +205,11 @@
 			</div>
 			
 			
-			<div class="activity_dough_1 "></div>
+			<div class="activity_dough_1  "></div>
 				<div class="clearfix rwd_none"></div>
 				
 				<div class="activity_dough_2">
-					<p>牛角麵包如何捲的漂亮?
-						如何讓麵包又鬆又軟?
-						如何挑選好的麵包食材?
-						答案都在這次烘培體驗，讓你一次明瞭		
+					<p><?php echo $actRow->AC_DETAIL2 ?>		
 					</p>
 					<div class="act_btn">
 						<a href="#apply">報名</a>
@@ -147,9 +220,7 @@
 			<div class="clearfix"></div>
 			<div class="activity_dough_3 trigger4">
 				<h2>食材選用</h2>
-				<p>麵粉選用 : 頂級美國小麥研磨出的小麥粉，使麵包又鬆軟又綿密 ;
-				雞蛋選用: 安心牧場當天直送新鮮雞蛋，通過認證，保證食品安全 ;
-				奶油選用 : 澳洲頂級奶油，讓麵包烤出香而不膩</p>
+				<p><?php echo $actRow->AC_DETAIL3 ?></p>
 
 	
 			</div>
@@ -173,7 +244,12 @@
 			
 				
 				<div class="bgc trigger6">
+					
 				<div class="activity_dough_5  "></div>
+				<div class="act_wind">
+					<img src="img/act/act_wind.png">
+					<div class="actShadow"></div>
+				</div>
 				<div class="activity_dough_6"></div>
 				<div class="clearfix"></div>
 				</div>
@@ -190,7 +266,7 @@
 
 			
 		<section class="section_6"><a name="apply">
-			<div class="activity_application trigger7">
+			<div class="activity_application trigger7" id="activity_application">
 				<div class="activity_final">
 					<div class="activity_fin_pic fin_1">
 						
@@ -216,59 +292,225 @@
 					</div>
 						<div class="clearfix"></div>
 				
-
-						
-
-
 				</div>
+
+
+
+
+
 				<div class="activity_form">
 					<!-- =================表單樣式===================== -->
+					
+		
+					<?php if (isset($_SESSION["memNo"])) {
+						
+							$memNo=$_SESSION["memNo"];
+					
+						$memsql="select * from ac_info where AC_NO='$actNum' and MEM_NO ='$memNo' ";
+						$actSign=$connectPDO->query($memsql);
+						$activityRow=$actSign->fetchObject();	
+
+
+						if (isset($activityRow->MEM_NO)) {
+							?>
+						
+			<!-- ===================================已報名================================================================= -->
+
+									<div class="globalForm" >
+										 
+											<div class="globalFormHeader">
+											
+					
+						
+												<h1>已報名本活動</h1>
+												
+											</div>
+											<div class="globalFormContent">
+
+												
+								
+												
+												<div class="globalFormBtns">
+													
+													<p>活動地點 :  <?php echo $actRow->AC_ADDRESS ?></p>
+													<p>活動時間為 : <?php echo $actRow->AC_TIME ?></p>	
+													<p>記得準時參加活動喔，詳情請聯絡店家</p>				
+												</div>
+
+											</div>
+										
+									</div>  <!-- globalForm -->
+									
+			<!-- 
+					======================================還未報名============================================================ -->			 				
+								<?php			
+									}else{
+								 ?>		
+
+								 <div class="globalForm" >
+										 
+										<form action="php/activity/participation/actform.php" method="get" id='actform'>
+							
+
+											<input type="hidden" name="acNo" value="<?php echo $actRow->AC_NO ?>">
+
+
+											<div class="globalFormHeader">
+											
+					
+						
+												<h1>報名去</h1>
+												<p>快來一起參與烘培體驗吧!會員只要填寫基本資料，就能成功報名囉! <br> 名額有限速速行動~~ </p>
+											</div>
+
+											<div class="globalFormContent">
+
+												<div class="globalFormInput">
+													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName">
+												</div>
+												
+												<div class="globalFormInput">
+													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)">
+												</div>
+												
+												<div class="globalFormInput">
+													<label><span>*</span>信箱</label><input type="email" name="memEmail"  id="memEmail"  placeholder="必填" required>
+												</div>
+
+												
+												<div class="clearfix"></div>
+												<div class="globalFormBtns">
+													<input class="globalCancelBtn btnTop" type="reset" value="取消">
+													<input type="buttom" name="" class="globalOkBtn btnTop" value="送出" id="actSubmit">					
+												</div>
+
+											</div>
+										</form>
+									</div> <!-- globalForm -->
+									
+							<script type="text/javascript">
+								
+								$(function(){
+
+										$('#actSubmit').click(function(){
+											if($('#memName').val().length==0 && $('#memName').val().trim()==''){
+													$.sweetModal({
+														content: '姓名沒有輸入喔',
+														icon: $.sweetModal.ICON_WARNING,
+														width: '300px',
+														theme: $.sweetModal.THEME_MIXED,
+													});
+											}else if($('#memPhone').val().length==0 && $('#memPhone').val().trim()==''){
+													$.sweetModal({
+															content: '聯絡電話沒有輸入喔',
+															icon: $.sweetModal.ICON_WARNING,
+															width: '300px',
+															theme: $.sweetModal.THEME_MIXED,
+													});
+											}else if($('#memEmail').val().length==0 && $('#memEmail').val().trim()==''){
+													$.sweetModal({
+															content: 'e-mail沒有輸入喔',
+															icon: $.sweetModal.ICON_WARNING,
+															width: '300px',
+															theme: $.sweetModal.THEME_MIXED,
+													});
+											}else {
+													$('#memName').val($('#memName').val().trim());
+													$('#memPhone').val($('#memPhone').val().trim());
+													$('#memEmail').val($('#memEmail').val().trim());
+														  		//消空格
+													$.sweetModal({
+														content: '成功報名',
+														icon: $.sweetModal.ICON_SUCCESS,
+														width: '300px',
+														theme: $.sweetModal.THEME_MIXED,
+														onClose: function(){
+												              $( "#actform" ).submit();
+												         }
+													});
+														  				
+											}
+
+										});
+								}); //function()
+
+							</script>
+
+
+
+										<?php			
+										}
+									 ?>		
+						<!-- ===================================未登入=========================================== -->
+
+				<?php  } else{ ?>
+					
 						<div class="globalForm" >
 							 
-							<form action="" method="">
-								
 								<div class="globalFormHeader">
 								
-
-									<h1>報名去</h1>
+		
+			
+									<h1>登入PUN友參加活動</h1>
 									<p>快來一起參與烘培體驗吧!會員只要填寫基本資料，就能成功報名囉! <br> 名額有限速速行動~~ </p>
 								</div>
 								<div class="globalFormContent">
 
 									
-
-									<div class="globalFormInput">
-										<label><span>*</span>姓名</label><input type="text" name="" placeholder="必填">
-									</div>
+					
 									
-									<div class="globalFormInput">
-										<label><span>*</span>聯絡電話</label><input type="tel" name="" placeholder="手機或家用電話">
-									</div>
-									
-									<div class="globalFormInput">
-										<label><span>*</span>信箱</label><input type="email" name="" placeholder="必填" required>
-									</div>
-
-									
-									<div class="clearfix"></div>
 									<div class="globalFormBtns">
-										<div class="globalCancelBtn btnTop">取消</div>
-										<input type="submit" name="" class="globalOkBtn btnTop" value="送出">					
+										
+										<input type="button" name="" class="globalOkBtn btnTop" id="actBtn" value="登入">					
 									</div>
 
 								</div>
-							</form>
-						</div>
-	
+							
+						</div>  <!-- globalForm -->
 
-				</div><!-- =================表單樣式===================== -->
+
+
+						<script type="text/javascript">
+								
+							$(function(){
+								$('#actBtn').click(function(){
+								$('#loginBox').fadeIn(500);
+									});
+							});
+
+						</script>
+
+
+
+				<?php 
+				}?>   <!-- else 還沒登入 -->
+
+				</div><!-- =================表單樣式===end================== -->
+
+
+
+
 					<div class="clearfix"></div>
 					<div class="activity_bread ">
-							<img src="img/acty_finish_bread.png">
+							<img src="img/act/acty_finish_bread.png">
+							<div class="activity_cloud">
+								<div class="act_cloud">
+									<img alt="cloud.png" src="img/act/cloud.png">
+								</div>
+								<div class="act_cloud">
+									<img alt="cloud.png" src="img/act/cloud.png">
+								</div>
+								<div class="act_cloud">
+									<img alt="cloud.png" src="img/act/cloud.png">
+								</div>
+							</div>
+							
 					</div>
 					<div class="activity_bread2 rwd_none">
-							<img src="img/acty_finish_bread.png">
+							<img src="img/act/acty_finish_bread.png">
 					</div>
+
+					
 
 				</div> <!-- activity_application -->
 			</section>
@@ -276,9 +518,15 @@
 		
 
 	</div>  <!-- container-template -->
-	
 
+<?php 
+			
+		}catch(PDOException $e) {
+				echo "錯誤行號 : ", $e->getLine(), "<br>";
+				echo "錯誤訊息 : ", $e->getMessage(), "<br>";	
+				}
 
+	 ?>
 
 <?php require_once("footer.php");?>
 

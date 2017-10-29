@@ -173,7 +173,7 @@ header {
           border-radius: 10px;
           box-shadow: 0 0 0;
           border: none;
-          transition: 0.5s; }
+          transition: .5s; }
           .tableContent tr td:nth-child(5) input#addAuthority {
             background-color: #565894; }
 
@@ -227,4 +227,4 @@ footer {
 
 .dutyColorChange {
   background-color: #00c853 !important;
-  transition: 0.5s; }
+  transition: .5s; }

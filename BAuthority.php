@@ -85,14 +85,14 @@ require_once("BackStageHeaderSidebar.php");
 
 								$sql_grade_Check = "select * from employee where EMP_ID='$emp_id' and EMP_GRADE = 1";
 
-								$employee_grade_Check = $pdo ->query($sql_grade_Check);
+								$employee_grade_Check = $connectPDO ->query($sql_grade_Check);
 
 								if($employee_grade_Check->rowCount() !== 0){
 
 
 									$sql_high_grade = "select * from employee";
 
-									$employee_high_grade = $pdo ->query($sql_high_grade);
+									$employee_high_grade = $connectPDO ->query($sql_high_grade);
 
 									$employee_high_grade_row = $employee_high_grade-> fetchObject();
 
@@ -121,7 +121,7 @@ require_once("BackStageHeaderSidebar.php");
 
 					 		$sql_normal = "select * from employee where not(EMP_GRADE = 1)";
 
-							$employee_normal = $pdo ->query($sql_normal);
+							$employee_normal = $connectPDO ->query($sql_normal);
 
 
 							while($employee_normal_row = $employee_normal -> fetchObject()){
@@ -218,7 +218,7 @@ require_once("BackStageHeaderSidebar.php");
 
 					 	 		$sql_normal = "select * from employee where not(EMP_GRADE = 1)";
 
-								$employee_normal = $pdo ->query($sql_normal);
+								$employee_normal = $connectPDO ->query($sql_normal);
 
 
 							while($employee_normal_row = $employee_normal -> fetchObject()){

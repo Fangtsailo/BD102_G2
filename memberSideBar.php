@@ -1,3 +1,11 @@
+<?php 
+
+require_once("php/pdo/connectPDO.php");
+
+ ?>
+
+
+
 <div class="LeftBusiness" id="LeftBusiness">
 
 			<div class="nav-Group1"> <!-- Groupmember -->
@@ -67,6 +75,20 @@
 								</svg>
 							</a>
 						</div><!-- 基本資料 -->
+
+
+						<?php 
+
+						$memNo=$_SESSION["memNo"];
+
+						$sql_Store = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=0";
+
+						$store_imformation_sideBar_store = $connectPDO->query($sql_Store);
+
+
+						if($store_imformation_sideBar_store->rowCount()!=0){
+
+						 ?>
 						
 						
 						
@@ -82,6 +104,13 @@
 								</svg>
 							</a>
 						</div><!-- 商品 -->
+
+
+						<?php 
+
+							}
+
+						 ?>
 						
 						
 										
@@ -119,23 +148,12 @@
 				
 				
 				<div id="SB_breadCarList"><!-- group sub -->
-					<div>
-						<a href="FMybusinessCarPosition.php">
-							<h3>定位位置</h3>
-							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
-								<defs>
 					
-								</defs>
-								<title>arrow</title>
-								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
-							</svg>
-						</a>
-					</div><!-- 定位位置 -->
 					
 					
 					
 					<div>
-						<a href="FMybusinessStore.php">
+						<a href="FMybusinessCar.php">
 							<h3>基本資料</h3>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 								<defs>
@@ -146,10 +164,24 @@
 							</svg>
 						</a>
 					</div><!-- 基本資料 -->
+
+
+						<?php 
+
+						$memNo=$_SESSION["memNo"];
+
+						$sql_Car = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=1";
+
+						$store_imformation_sideBar_Car = $connectPDO->query($sql_Car);
+
+
+						if($store_imformation_sideBar_Car->rowCount()!=0){
+
+						 ?>
 					
 					
 					<div>
-						<a href="FMybusinessStoreProductList.php">
+						<a href="FMybusinessCarProductList.php">
 							<h3>商品</h3>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
 								<defs>
@@ -160,6 +192,42 @@
 							</svg>
 						</a>	
 					</div><!-- 商品 -->
+
+
+					<div>
+						<a href="FMybusinessCarRouteAdd.php">
+							<h3>路線規劃</h3>
+							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+								<defs>
+					
+								</defs>
+								<title>arrow</title>
+								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+							</svg>
+						</a>	
+					</div><!-- 商品 -->
+
+
+					<div>
+						<a href="FMybusinessCarPosition.php">
+							<h3>目前位置</h3>
+							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.23 17.56" width="20" height="20">
+								<defs>
+					
+								</defs>
+								<title>arrow</title>
+								<polygon class="cls-ar" points="1.25 17.56 0 16 9.02 8.78 0 1.56 1.25 0 12.23 8.78 1.25 17.56"/>
+							</svg>
+						</a>
+					</div><!-- 定位位置 -->
+
+					<?php 
+
+							}
+
+					?>
+
+
 				</div> <!-- group sub -->
 				
 
@@ -176,7 +244,7 @@
 
 				
 					<div>
-						<a href="">
+						<a href="bossActivity.php">
 							<h2>活動管理</h2>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60">
 								<defs>

@@ -1,0 +1,83 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>readme.md</title>
+      </head>
+      <body>
+        <h1 id="modernizr-build-status-https-api-travis-ci-org-modernizr-modernizr-svg-branch-master-https-travis-ci-org-modernizr-modernizr-inline-docs-https-inch-ci-org-github-modernizr-modernizr-svg-branch-master-https-inch-ci-org-github-modernizr-modernizr-">Modernizr <a href="https://travis-ci.org/Modernizr/Modernizr"><img src="https://api.travis-ci.org/Modernizr/Modernizr.svg?branch=master" alt="Build Status"></a> <a href="https://inch-ci.org/github/Modernizr/Modernizr"><img src="https://inch-ci.org/github/Modernizr/Modernizr.svg?branch=master" alt="Inline docs"></a></h1>
+<h5 id="modernizr-is-a-javascript-library-that-detects-html5-and-css3-features-in-the-user-s-browser-">Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser.</h5>
+<ul>
+<li><a href="https://modernizr.com">Website</a></li>
+<li><a href="https://modernizr.com/docs/">Documentation</a></li>
+</ul>
+<p>Modernizr tests which native CSS3 and HTML5 features are available in the current UA and makes the results available to you in two ways: as properties on a global <code>Modernizr</code> object, and as classes on the <code>&lt;html&gt;</code> element. This information allows you to progressively enhance your pages with a granular level of control over the experience.</p>
+<p>This project adheres to the <a href="http://todogroup.org/opencodeofconduct/#Modernizr/conduct@modernizr.com">Open Code of Conduct</a>. By participating, you are expected to honor this code.</p>
+<h2 id="new-asynchronous-event-listeners">New Asynchronous Event Listeners</h2>
+<p>Often times people want to know when an asynchronous test is done so they can allow their application to react to it.
+In the past, you&#39;ve had to rely on watching properties or <code>&lt;html&gt;</code> classes. Only events on <strong>asynchronous</strong> tests are
+supported. Synchronous tests should be handled synchronously to improve speed and to maintain consistency.</p>
+<p>The new API looks like this:</p>
+<pre><code class="lang-js">// Listen to a test, give it a callback
+Modernizr.on(&#39;testname&#39;, function( result ) {
+  if (result) {
+    console.log(&#39;The test passed!&#39;);
+  }
+  else {
+    console.log(&#39;The test failed!&#39;);
+  }
+});
+</code></pre>
+<p>We guarantee that we&#39;ll only invoke your function once (per time that you call <code>on</code>). We are currently not exposing
+a method for exposing the <code>trigger</code> functionality. Instead, if you&#39;d like to have control over async tests, use the
+<code>src/addTest</code> feature, and any test that you set will automatically expose and trigger the <code>on</code> functionality.</p>
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+<li>Clone or download the repository</li>
+<li>Install project dependencies with <code>npm install</code></li>
+</ul>
+<h2 id="test-suite">Test suite</h2>
+<p>Run the <a href="https://modernizr.github.io/Modernizr/test/">test suite</a></p>
+<h2 id="building-modernizr-v3">Building Modernizr v3</h2>
+<h3 id="to-generate-everything-in-config-all-json-">To generate everything in &#39;config-all.json&#39;:</h3>
+<pre><code class="lang-shell">npm install
+./bin/modernizr -c lib/config-all.json
+//outputs to ./modernizr.js
+</code></pre>
+<h3 id="to-run-tests-in-phantom-">To run tests (in phantom):</h3>
+<pre><code class="lang-shell">grunt test
+</code></pre>
+<h3 id="to-run-tests-in-browser-">To run tests (in browser):</h3>
+<pre><code class="lang-shell">grunt build
+serve .
+visit &lt;url&gt;/test
+</code></pre>
+<h3 id="to-see-simple-build-in-browser-">To see simple build in browser:</h3>
+<p>serve the root dir, <code>&lt;url&gt;/test/modular.html</code></p>
+<h3 id="to-see-the-build-tool-">To see the build tool:</h3>
+<ul>
+<li>checkout the modernizr.com code</li>
+<li>install all your gems and bundles and jekyll</li>
+<li><code>jekyll</code></li>
+<li><code>serve ./_sites</code></li>
+<li>visit <url>/download</li>
+<li>It should be just a big list of things you can build with no frills.</li>
+</ul>
+<h3 id="api-reference">API Reference</h3>
+<p>Modernizr can be used programmatically via npm:</p>
+<pre><code class="lang-js">var modernizr = require(&quot;modernizr&quot;);
+</code></pre>
+<h4 id="building">Building</h4>
+<p>A <code>build</code> method is exposed for generating custom Modernizr builds. Example:</p>
+<pre><code class="lang-javascript">var modernizr = require(&quot;modernizr&quot;);
+
+modernizr.build({}, function (result) {
+  console.log(result); // the build
+});
+</code></pre>
+<p>The first parameter takes a JSON object of options and feature-detects to include. See <a href="lib/config-all.json"><code>lib/config-all.json</code></a> for all available options.</p>
+<p>The second parameter is a function invoked on task completion.</p>
+<h2 id="license">License</h2>
+<p><a href="https://opensource.org/licenses/MIT">MIT License</a></p>
+
+      </body>
+    </html>
