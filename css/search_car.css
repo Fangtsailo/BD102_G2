@@ -1281,6 +1281,17 @@ img {
     margin: 0 auto;
     overflow: hidden;
     border: #bbb solid 1px; }
+    .search_store .search_storeOne:hover {
+      background-color: rgba(234, 178, 96, 0.5) !important; }
+    .search_store .search_storeOne a {
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      width: 172px;
+      white-space: nowrap;
+      display: block; }
+      .search_store .search_storeOne a:hover {
+        color: #f06428; }
     .search_store .search_storeOne .search_storeImg {
       float: left;
       overflow: hidden;
@@ -1324,6 +1335,13 @@ img {
         line-height: 20px; }
         .search_store .search_storeOne .search_storeContent .search_storeInfor ul {
           position: relative; }
+          .search_store .search_storeOne .search_storeContent .search_storeInfor ul li {
+            list-style: none;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            width: 100%;
+            white-space: nowrap; }
     .search_store .search_storeOne .search_storeMap {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -1369,6 +1387,8 @@ img {
         width: 100%; }
         .search_content .search_mapcar .search_store .search_storeOne .search_storeContent h2 {
           float: none; }
+          .search_content .search_mapcar .search_store .search_storeOne .search_storeContent h2 a {
+            width: 100%; }
         .search_content .search_mapcar .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
           display: inline; } }
 
