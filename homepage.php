@@ -140,7 +140,7 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form id="homeSearchForm" action="search.php" method="get">
+				<form id="homeSearchForm" action="search.php" method="post">
 				<div class="tabs">
 						<label class="tab_contents active" id="searchShops">店家<input type="radio" value="0" name="shopType"></label>
 						<label class="tab_contents" id="searchVans">胖小車<input type="radio" value="1" name="shopType"></label>
@@ -151,7 +151,7 @@ require_once("headerForHomePage.php");
 					<div class="filterBar">
 						<span class="filterTitle">篩選條件</span>
 						<select  class="filter" name="shopPosition" id="filterArea">
-							<option value="">地區</option>
+							<option value="default">地區</option>
 							<option value="0">北部</option>
 							<option value="1">中部</option>
 							<option value="2">南部</option>

@@ -38,6 +38,12 @@ try{
 	
 	//取得該筆新增活動的活動編號
 	
+	
+	// $queryAcNumSQL = "SELECT * FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE SI_MEMNO = '$memNo' AND SI_TYPE = '$storeType' ";
+	// $queryAcNum = $connectPDO->query($queryAcNumSQL);
+	// $queryAcNumRow = $queryAcNum->fetchObject();
+	// $acNum = $queryAcNumRow->AC_NO;
+
 	//上傳照片檔案
 	foreach( $_FILES["upBanner"]["error"] as $i=>$data ){
 

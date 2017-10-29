@@ -48,16 +48,20 @@ session_start();
 
 try{
 	require_once("php/pdo/connectPDO.php");
-	require_once("php/common/globalVar.php");
+
 		$shopType=1;  //店家 0  胖小車1
 	
 
+<<<<<<< HEAD
 		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE s.SI_TYPE='$shopType' ";	
+=======
+		$searchsql="select s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top from store_imformation s JOIN follow f ON f.SI_NUM=s.SI_NUM JOIN reviews r ON r.SI_NUM = s.SI_NUM where  SI_TYPE='$shopType' ";	
+>>>>>>> e6f66a8320ec0a5abd1550a8751370615fea6523
 			if ($shopPosition!=='') {
-				$searchsql.=" AND s.SI_POSITION = '$shopPosition'";
+				$searchsql.=" and SI_POSITION = '$shopPosition'";
 			}
 			if ($searchName!==''  ) {
-				$searchsql.=" AND s.SI_NAME like '%$searchName%'";
+				$searchsql.=" and SI_NAME like '%$searchName%'";
 			}
 			
 			$searchsql.= " group by s.SI_NUM";
@@ -65,8 +69,8 @@ try{
 			if ($filter!=='' && $filter=="top"){
 				$searchsql.=" order by top desc"; 
 			}
-			if ($filter!=='' && $filter=="stars"){
-				$searchsql.=" order by s.SI_AVG_REVIEW desc"; 
+			if ($filter!=='' && $filter=="star"){
+				$searchsql.=" order by star desc"; 
 			}
 
 			$search=$connectPDO->query($searchsql);
@@ -157,7 +161,7 @@ try{
 
 			<script type="text/javascript">
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');
+					$('.search_storeImg').css('background','url("img/store/banners/<?php echo $searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');
 				});
 			</script>
 

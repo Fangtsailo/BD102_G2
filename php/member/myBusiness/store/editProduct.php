@@ -45,11 +45,21 @@
 
 		if($_REQUEST["delProduct"]==="1"){
 
+
+			echo $_REQUEST["delProduct"];
+
+
 			
 
 			$sql = "UPDATE product SET PD_PIC= null WHERE PD_NO =$PD_NO";
 
       		$update = $connectPDO->query($sql);
+
+
+      		echo $PD_NO;
+
+      		
+
 
       		//header("Location:../../../../FMybusinessStore.php");
       
@@ -78,9 +88,10 @@
 						$PD_SHOPNO=$productRow->PD_SHOPNO;
 
 					  $from = $_FILES["PD_PIC"]["tmp_name"][$i];
-					  $to = "../../../../img/store/products/".$PD_NO."-".$PD_SHOPNO.".jpg";
+					  $FileName = mb_convert_encoding($_FILES["PD_PIC"]["name"][$i],"big5","utf-8");
+					  $to = "../../../../img/store/products/".$PD_NO."-".$PD_SHOPNO.substr($FileName,strpos($FileName,'.'));
 					  copy($from, $to);
-					  $PD_PIC=$PD_NO."-".$PD_SHOPNO;
+					  $PD_PIC=$PD_NO."-".$PD_SHOPNO.substr($FileName,strpos($FileName,'.'));
 					  $sql_update_PD_PIC = "UPDATE product SET PD_PIC='$PD_PIC' WHERE PD_NO=$PD_NO";
 					  $update_PD_PIC = $connectPDO->query($sql_update_PD_PIC);
 					 

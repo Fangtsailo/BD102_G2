@@ -44,7 +44,6 @@ session_start();
 			<?php 
 
 				require_once("header.php");
-				require_once("php/common/globalVar.php");
 				// $memNo=$_SESSION["memNo"];
 
 				$actNum=6;
@@ -78,30 +77,30 @@ session_start();
 		<script type="text/javascript">
 			$(document).ready(function () {
 
-				$('.activity_banner').css('background','url("<?php echo $actRow->AC_BANNER1=="" ? GLOBAL_ACTIVITY_PIC_PATH."default.png" : GLOBAL_ACTIVITY_PIC_PATH.$actRow->AC_BANNER1; ?>") center center').css('background-size','cover');
+				$('.activity_banner').css('background','url("img/store/activity/banner/<?php echo $actRow->AC_BANNER1; ?>") center center').css('background-size','cover');
 
-				$('#activity_application').after().css('background','url("<?php echo $actRow->AC_BANNER2=="" ? GLOBAL_ACTIVITY_PIC_PATH."default.png" : GLOBAL_ACTIVITY_PIC_PATH.$actRow->AC_BANNER2; ?>") center center' ).css('background-size','cover');
+				$('#activity_application').after().css('background','url("img/store/activity/banner/<?php echo $actRow->AC_BANNER2; ?>") center center' ).css('background-size','cover');
 
-				$('.activity_dough_1').css('background','url("<?php echo $actRow->AC_PIC1=="" ? GLOBAL_ACTIVITY_ACT_PIC_PATH."" : GLOBAL_ACTIVITY_ACT_PIC_PATH.$actRow->AC_PIC1; ?>") center center').css('background-size','cover');
+				$('.activity_dough_1').css('background','url("img/store/activity/activity/<?php echo $actRow->AC_PIC; ?>") center center').css('background-size','cover');
 
-				$('.pic_1').css('background','url("<?php echo GLOBAL_ACTIVITY_INGREDIENT_PIC_PATH.$actRow->AC_INGREDIENT_PIC1; ?>") center center').css('background-size','cover');
+				$('.pic_1').css('background','url("img/store/activity/ingredient/<?php echo $actRow->AC_INGREDIENT_PIC; ?>") center center').css('background-size','cover');
 
-				$('.pic_2').css('background','url("<?php echo GLOBAL_ACTIVITY_INGREDIENT_PIC_PATH.$actRow->AC_INGREDIENT_PIC2; ?>") center center').css('background-size','cover');
-
-
-
-				$('.pic_3').css('background','url("<?php echo GLOBAL_ACTIVITY_INGREDIENT_PIC_PATH.$actRow->AC_INGREDIENT_PIC3; ?>") center center').css('background-size','cover');
+				$('.pic_2').css('background','url("img/store/activity/ingredient/<?php echo $actRow->AC_INGREDIENT_PIC2; ?>") center center').css('background-size','cover');
 
 
-				$('.activity_dough_5').css('background','url("<?php echo GLOBAL_ACTIVITY_ACT_PIC_PATH.$actRow->AC_PIC2; ?>") center center').css('background-size','cover');
 
-				$('.activity_dough_6').css('background','url("<?php echo GLOBAL_ACTIVITY_ACT_PIC_PATH.$actRow->AC_PIC3; ?>") center center').css('background-size','cover');
+				$('.pic_3').css('background','url("img/store/activity/ingredient/<?php echo $actRow->AC_INGREDIENT_PIC3; ?>") center center').css('background-size','cover');
 
 
-				$('.fin_1').css('background','url("<?php echo GLOBAL_ACTIVITY_PRODUCT_PIC_PATH.$actRow->AC_PRODUCT_PIC1; ?>") center center').css('background-size','cover');
+				$('.activity_dough_5').css('background','url("img/store/activity/activity/<?php echo $actRow->AC_PIC2; ?>") center center').css('background-size','cover');
 
-				$('.fin_2').css('background','url("<?php echo GLOBAL_ACTIVITY_PRODUCT_PIC_PATH.$actRow->AC_PRODUCT_PIC2; ?>") center center').css('background-size','cover');
-				$('.fin_3').css('background','url("<?php echo GLOBAL_ACTIVITY_PRODUCT_PIC_PATH.$actRow->AC_PRODUCT_PIC3; ?>") center center').css('background-size','cover');
+				$('.activity_dough_6').css('background','url("img/store/activity/activity/<?php echo $actRow->AC_PIC3; ?>") center center').css('background-size','cover');
+
+
+				$('.fin_1').css('background','url("img/store/activity/product/<?php echo $actRow->AC_PRODUCT_PIC; ?>") center center').css('background-size','cover');
+
+				$('.fin_2').css('background','url("img/store/activity/product/<?php echo $actRow->AC_PRODUCT_PIC2; ?>") center center').css('background-size','cover');
+				$('.fin_3').css('background','url("img/store/activity/product/<?php echo $actRow->AC_PRODUCT_PIC3; ?>") center center').css('background-size','cover');
 
 
 			});

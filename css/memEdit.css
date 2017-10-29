@@ -1396,7 +1396,7 @@ input:not(.radio):focus, textarea:focus {
       float: right;
       margin: -55px 2px 0 0; }
       .container .content #cancelfollow:after {
-        content: 'ȡ��׷ۙ';
+        content: 'È¡Ïû×·Û™';
         font-size: 12px;
         vertical-align: top; }
     .container .content #mappointer {
@@ -1404,7 +1404,7 @@ input:not(.radio):focus, textarea:focus {
       display: block; }
       .container .content #mappointer:after {
         display: block;
-        content: '�؈D';
+        content: 'µØˆD';
         font-size: 12px;
         vertical-align: top; }
     .container .content .myfollow > ul {
@@ -1437,7 +1437,7 @@ input:not(.radio):focus, textarea:focus {
         margin: 5px 10px;
         float: left; } }
     .container .content .mycomment {
-      /*�Ýu���O���Gɫ����*/
+      /*ÓÃuŒÓÔO¶¨¾GÉ«¾€¶Î*/
       background-image: linear-gradient(90deg, #00c853 10px, #00c853 10px);
       background-size: 2px 100px;
       background-position: center top;
@@ -1480,10 +1480,6 @@ input:not(.radio):focus, textarea:focus {
             position: absolute;
             top: 0px;
             right: 0; }
-            .container .content .mycomment li .msg #del:after {
-              content: '�h��';
-              font-size: 12px;
-              vertical-align: top; }
         .container .content .mycomment li .msg:before {
           content: '';
           display: block;
@@ -1559,7 +1555,7 @@ input:not(.radio):focus, textarea:focus {
           float: right;
           margin: -50px 2px 0 0; }
         .container .content .myentry .info #cancelentry:after {
-          content: 'ȡ������';
+          content: 'È¡ÏûˆóÃû';
           color: #fbf8f1;
           font-size: 12px;
           vertical-align: top; }
