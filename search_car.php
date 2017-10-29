@@ -6,7 +6,7 @@ session_start();
 
  ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -18,6 +18,7 @@ session_start();
 	 	<script type="text/javascript" src="js/header.js"></script>
 	<!-- map區 -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+	<script type="text/javascript" src="js/search_car.js"></script>
 </head>
 <body>
 
@@ -48,16 +49,16 @@ session_start();
 
 try{
 	require_once("php/pdo/connectPDO.php");
-
+	require_once("php/common/globalVar.php");
 		$shopType=1;  //店家 0  胖小車1
 	
 
-		$searchsql="select s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top from store_imformation s JOIN follow f ON f.SI_NUM=s.SI_NUM JOIN reviews r ON r.SI_NUM = s.SI_NUM where  SI_TYPE='$shopType' ";	
+		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' ";	
 			if ($shopPosition!=='') {
-				$searchsql.=" and SI_POSITION = '$shopPosition'";
+				$searchsql.=" AND s.SI_POSITION = '$shopPosition'";
 			}
 			if ($searchName!==''  ) {
-				$searchsql.=" and SI_NAME like '%$searchName%'";
+				$searchsql.=" AND s.SI_NAME like '%$searchName%'";
 			}
 			
 			$searchsql.= " group by s.SI_NUM";
@@ -65,8 +66,8 @@ try{
 			if ($filter!=='' && $filter=="top"){
 				$searchsql.=" order by top desc"; 
 			}
-			if ($filter!=='' && $filter=="star"){
-				$searchsql.=" order by star desc"; 
+			if ($filter!=='' && $filter=="stars"){
+				$searchsql.=" order by s.SI_AVG_REVIEW desc"; 
 			}
 
 			$search=$connectPDO->query($searchsql);
@@ -151,22 +152,36 @@ try{
 		
 			
 			<?php 
-			while($searchRow=$search->fetchObject()){	 ?>
+			$firstCarNum = -1;//為了預設顯示第一台車的位置
+			while($searchRow=$search->fetchObject()){	 
+				if ($firstCarNum == -1) {
+					$firstCarNum = $searchRow->SI_NUM;
+				}
+			?>
 			
 
 
 			<script type="text/javascript">
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("img/store/banners/<?php echo $searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');
+					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');
+					$('#car-<?php echo $searchRow->SI_NUM ?>').click(function(){
+						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
+						$('.search_storeOne').css("background-color","transparent");
+						$(this).css("background-color","rgba(234, 178, 96, 0.5)");
+					});
+					$('#car-<?php echo $searchRow->SI_NUM ?>').hover(function(){
+						// $('.search_storeOne').css("background-color","transparent");
+						// $(this).css("background-color","rgba(234, 178, 96, 0.5)");
+					});
 				});
+
 			</script>
 
-
-				<div class="search_storeOne">
+				<div class="search_storeOne" id="car-<?php echo $searchRow->SI_NUM ?>" data-lat="<?php echo $searchRow->SI_LAT ?>" data-lng="<?php echo $searchRow->SI_LNG ?>">
 						<div class="search_storeImg col-sm-5 col-xs-4"></div>
 						
 						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="storeBrowse.php?storeId='<?php $searchRow->SI_NUM ?>'"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
+							<h2><a href="storeBrowse.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
 							<div class="search_follow">
 								<img src="img/icon/follow3.svg">	
 							</div>
@@ -215,9 +230,18 @@ try{
 	 ?>
 
 
-
+<script>
+$(document).ready(function (){
+	initBreadCarNowLocationMap("map-now1");
+	<?php 
+		if ($firstCarNum != -1) {
+	?>
+			$('#car-<?php echo $firstCarNum ?>').click();
+	<?php
+		}
+	 ?>
+});
+</script>
 	<?php require_once("footer.php");?>
-
-	<script type="text/javascript" src="js/search_car.js"></script>
 </body>
 </html>

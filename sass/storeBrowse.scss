@@ -1,5 +1,4 @@
-@import "basic/_var.scss";
-@import "basic/_mixin.scss";
+@import "basic.scss";
 
 /*===========================================================*/
 //每個 screen 的 title style
@@ -596,11 +595,12 @@ img {
 				float: left;
 				margin-right: 40px;
 				position: relative;
-				img {
-					position: absolute;
-					top: 0;
-					bottom: 0;
-					margin: auto;
+				.wraper {
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+					background-size: cover;
+					background-position: center center;
 				}
 			}		
 			.describe {
