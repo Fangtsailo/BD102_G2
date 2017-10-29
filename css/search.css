@@ -1269,6 +1269,8 @@ img {
     margin: 25px auto;
     overflow: hidden;
     border: #bbb solid 1px; }
+    .search_store .search_storeOne:hover {
+      background-color: rgba(234, 178, 96, 0.5) !important; }
     .search_store .search_storeOne .search_storeImg {
       float: left;
       overflow: hidden;
@@ -1284,10 +1286,16 @@ img {
       padding: 10px 10px;
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
-      .search_store .search_storeOne .search_storeContent h2 {
-        float: left; }
+      .search_store .search_storeOne .search_storeContent h2 a {
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        width: 100%;
+        white-space: nowrap;
+        display: block; }
+        .search_store .search_storeOne .search_storeContent h2 a:hover {
+          color: #f06428; }
       .search_store .search_storeOne .search_storeContent .search_follow {
-        width: 30px;
         display: inline-block;
         -webkit-box-sizing: content-box;
         box-sizing: content-box; }
@@ -1305,10 +1313,19 @@ img {
         color: #bbb;
         font-size: 16px;
         padding: 6px 0 0;
-        display: inline-block; }
+        display: inline-block;
+        position: relative;
+        left: -7px; }
       .search_store .search_storeOne .search_storeContent .search_storeStar {
+        display: inline-block;
         height: 20px;
+        margin-top: 5px;
         margin-bottom: 10px; }
+        .search_store .search_storeOne .search_storeContent .search_storeStar ul {
+          display: inline-block;
+          position: relative;
+          top: 2px;
+          left: 10px; }
         .search_store .search_storeOne .search_storeContent .search_storeStar li {
           display: inline-block;
           width: 20px; }
@@ -1318,6 +1335,13 @@ img {
         line-height: 20px; }
         .search_store .search_storeOne .search_storeContent .search_storeInfor ul {
           position: relative; }
+          .search_store .search_storeOne .search_storeContent .search_storeInfor ul li {
+            list-style: none;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            width: 100%;
+            white-space: nowrap; }
     .search_store .search_storeOne .search_storeMap {
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
@@ -1354,5 +1378,7 @@ img {
     margin: 5vw auto 2vw; }
   .search_content .search_store .search_storeOne .search_storeMap {
     height: 25vh; }
+  .search_content .search_store .search_storeOne .search_storeContent .search_storeInfor a {
+    width: 100%; }
   .search_content .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
     display: inline; } }

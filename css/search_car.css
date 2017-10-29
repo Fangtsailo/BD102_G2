@@ -1264,7 +1264,7 @@ img {
   width: 100%;
   position: relative; }
 
-#map-now1 {
+#map-now-1 {
   width: 100%;
   height: 50vw;
   z-index: 1; }
@@ -1287,7 +1287,7 @@ img {
       overflow: hidden;
       -o-text-overflow: ellipsis;
       text-overflow: ellipsis;
-      width: 172px;
+      width: 171px;
       white-space: nowrap;
       display: block; }
       .search_store .search_storeOne a:hover {
@@ -1348,10 +1348,6 @@ img {
       float: left;
       padding: 0;
       height: 200px; }
-      .search_store .search_storeOne .search_storeMap #map-now {
-        height: 100%; }
-  .search_store #map-now2 {
-    height: 100%; }
 
 @media screen and (min-width: 960px) {
   .search_storeOne {
@@ -1375,7 +1371,7 @@ img {
       width: 100%; }
   .search_content .search_mapcar {
     overflow: -webkit-paged-x; }
-    .search_content .search_mapcar #map-now1 {
+    .search_content .search_mapcar #map-now-1 {
       height: 45vh; }
     .search_content .search_mapcar .search_store {
       bottom: 0%;
