@@ -42,8 +42,7 @@ header {
       color: #fff; }
 
 .container {
-  width: 100%;
-  min-height: 600px; }
+  width: 100%; }
 
 .CenterBusiness {
   margin-top: 260px;
@@ -105,10 +104,12 @@ header {
         border-radius: 10px; }
         .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) div img {
           display: block;
-          margin: auto;
-          width: 36px; }
+          margin: auto; }
         .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) div:nth-child(1) {
-          width: 100%;
+          width: 50%;
+          float: left; }
+        .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) div:nth-child(2) {
+          width: 50%;
           float: left; }
         .CenterBusiness .tableMessageContent tr:nth-child(1) td:nth-child(3) .msgTime {
           font-size: 12px;
@@ -146,9 +147,7 @@ header {
       .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) {
         width: 30%;
         text-align: center; }
-        .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) input {
-          outline: none;
-          display: block;
+        .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button {
           border: none;
           width: 60px;
           height: 40px;
@@ -156,7 +155,7 @@ header {
           background-color: #805934;
           border-radius: 4px;
           transition: .5s; }
-          .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) input:hover {
+          .CenterBusiness .tableMessageContent tr:nth-child(2) td:nth-child(2) button:hover {
             background-color: #fff;
             color: #805934;
             border: 1px solid #805934;
@@ -204,4 +203,6 @@ header {
     .CenterBusiness table {
       width: 100%; }
       .CenterBusiness table tr td:nth-child(3) div.msgTime {
+        display: none; }
+      .CenterBusiness table tr td:nth-child(3) div span {
         display: none; } }

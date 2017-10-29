@@ -1,13 +1,3 @@
-<?php 
-
-ob_start();
-
-session_start();
-
- ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +19,6 @@ session_start();
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 
-	<!-- =====alert==== -->
-	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
-	
-
-
 
 
 </head>
@@ -41,37 +26,6 @@ session_start();
 <body>
 
 <!-- ======================================================header 頁首========================================================= -->
-
-
-
-<?php 
-
-
-	try {
-		
-		require_once("php/pdo/connectPDO.php");
-
-
-		$memNo=$_SESSION["memNo"];
-
-
-
-
-
-		//foreach( $_FILES["uploadLogoImg"]["error"] as $i=>$data )
-
-
-
-		// $store_imformationRow=$store_imformation->fetchObject();
-
-
-
-
-?>
-
-
-
-
 	<div class="coverHeader">
 
 			<?php 
@@ -86,7 +40,7 @@ session_start();
 
 	<?php 
 
-		//require_once('subtitle.php');
+		require_once('subtitle.php');
 
 	 ?>
 
@@ -151,232 +105,142 @@ session_start();
 			</svg>
 		</div><!-- subtitle -->
 
-<form id="alertFormSubmit" action="php/member/myBusiness/store/msgManage.php" method="post" enctype="multipart/form-data">
-		<?php 
-
-			$sql = "select * from store_imformation where SI_MEMNO=$memNo";
-
-			$store_imformation = $connectPDO->query($sql);
-
-			//$store_imformation_row=$store_imformation->fetchObject();
-
-			
-
-			while ($store_imformation_row=$store_imformation->fetchObject()) {
-
-				$SI_NUM=$store_imformation_row->SI_NUM;
-
-				$sql_msg="select * from shop_message where SPMSG_SPNO=$SI_NUM";
-
-				$shop_message=$connectPDO->query($sql_msg);
-
-				while ($shop_message_Row=$shop_message->fetchObject()) {
-
-					$SPMSG_MEMNO=$shop_message_Row->SPMSG_MEMNO;
-
-					$sql_mem="select * from member where MEM_NO=$SPMSG_MEMNO";
-
-					$mem_table = $connectPDO->query($sql_mem);
-
-					$mem_table_Row=$mem_table->fetchObject();
-
-
-		 ?>
-
 		
 
 			<table class="tableMessageContent">
 					<tr>
+						<td><img src="img/Mymember/memHead.png"></td>
 						<td>
-							
-							<img src="img/member_pic/<?php echo $mem_table_Row->MEM_PIC ?>">
-							
-						</td>
-						<td>
-							<p class="idName"><?php echo $mem_table_Row->MEM_ID; ?></p>
-							<p class="memMsg"><?php echo $shop_message_Row->SPMSG_CON; ?></p>
+							<p class="idName">adamLo</p>
+							<p class="memMsg">折價轉讓男子跟女子11K,含來回接駁車票
+							衣服都是2XL的</p>
 							
 						</td>
 						
 						<td>
-							<!-- <div>
+							<div>
 								<img src="img/icon/editIcon.png">
 								<span>回應</span>
-							</div> -->
+							</div>
 							<div>
-								
-									<?php 
-
-										$SPMSG_NO=$shop_message_Row->SPMSG_NO;
-										$sql_report="select * from report where SPMSG_NO=$SPMSG_NO";
-										$report=$connectPDO->query($sql_report);
-										
-
-
-										if($report->rowCount()==0 ){
-
-										?>
-											<a href="php/member/myBusiness/store/reportMsg.php?SPMSG_NO=<?php echo $shop_message_Row->SPMSG_NO; ?>&SPMSG_SPNO=<?php echo $shop_message_Row->SPMSG_SPNO; ?>&SPMSG_MEMNO=<?php echo $shop_message_Row->SPMSG_MEMNO; ?>&SPMSG_CON=<?php echo $shop_message_Row->SPMSG_CON; ?>">
-										<?php
-
-											echo '<img class="delImg" src="img/icon/risk.png"><span style="color:#f00;">檢舉</span>';
-
-										?>
-										</a>
-										<?php
-
-										}else{
-
-											$reportRow=$report->fetchObject();
-											$RE_STATUS=$reportRow->RE_STATUS;
-
-											if($RE_STATUS===NULL){
-												echo '<img src="img/icon/delete.png"><span style="color:#ccc;">審核中</span>';
-											}else if($RE_STATUS==="0"){
-												echo '<img src="img/icon/delete.png"><span style="color:#ccc;">已刪除</span>';
-											}else if($RE_STATUS==="1"){
-												echo '<img src="img/icon/delete.png"><span style="color:#ccc;">已保留</span>';
-											}
-
-										}
-
-									 ?>
-									
-									<!-- <span>檢舉</span> -->
-								
+								<img src="img/icon/deleteIcon.png">
+								<span>檢舉</span>
 							</div>
 							<div class="clear"></div>
-							<div class="msgTime"><?php echo $shop_message_Row->SPMSG_TIME; ?></div>
+							<div class="msgTime">
+                                2017-09-20 22:15:44
+							</div>
 						</td>
 					</tr>
 
-
-
 					<tr>
 						
-						<td class="txtFather" colspan="2">
-							<?php 
-
-								if($shop_message_Row->SPMSG_CON_REPLY===null){
-
-									$reportRow=$report->fetchObject();
-
-									
-
-										echo'<textarea name="SPMSG_CON_REPLY_'.$shop_message_Row->SPMSG_NO.'" placeholder="店長回覆"></textarea>';
-
-									
-								}else{
-
-									echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
-								}
-
-							 ?>
-							
+						<td colspan="2"><textarea placeholder="店長回覆"></textarea>
 						</td>
 						<!-- <td></td> -->
-						<td>
-
-							<?php 
-
-
-
-								if($shop_message_Row->SPMSG_CON_REPLY===null){
-
-									//echo'<button id="alertBtn" value="'.$shop_message_Row->SPMSG_NO.'">送出</button>';
-									// echo'<button id="alertBtn">送出</button>';
-									echo '<input type="hidden" name="" value="'.$shop_message_Row->SPMSG_NO.'">';
-									echo '<input type="button" class="alertBtn" name="" value="送出" style="cursor:pointer;">';
-
-								}else{
-
-									//echo'<button style="backgroundColor=#ccc;">送出</button>';
-								}
-
-							 ?>
-
-<!-- 							<input type="" name="sendMsg">
-							<a href="php/member/myBusiness/store/msgManage.php"><button>送出</button></a> -->
-						</td>
+						<td><button>送出</button></td>
 					</tr>
 					
 					
 					
 			</table>
-			
-
-			<?php 
-
-				}//while ($shop_message_Row=$shop_message->fetchObject();) {
 
 
-				
-			}//while ($store_imformation_row=$store_imformation->fetchObject();) {
+			<table class="tableMessageContent">
+					<tr>
+						<td><img src="img/Mymember/memHead.png"></td>
+						<td>
+							<p class="idName">adamLo</p>
+							<p class="memMsg">折價轉讓男子跟女子11K,含來回接駁車票
+							衣服都是2XL的</p>
+							
+						</td>
+						
+						<td>
+							<div>
+								<img src="img/icon/editIcon.png">
+								<span>回應</span>
+							</div>
+							<div>
+								<img src="img/icon/deleteIcon.png">
+								<span>檢舉</span>
+							</div>
+							<div class="clear"></div>
+							<div class="msgTime">
+                                2017-09-20 22:15:44
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						
+						<td colspan="2"><textarea placeholder="店長回覆"></textarea>
+						</td>
+						<!-- <td></td> -->
+						<td><button>送出</button></td>
+					</tr>
+					
+					
+					
+			</table>
+
+			<table class="tableMessageContent">
+					<tr>
+						<td><img src="img/Mymember/memHead.png"></td>
+						<td>
+							<p class="idName">adamLo</p>
+							<p class="memMsg">折價轉讓男子跟女子11K,含來回接駁車票
+							衣服都是2XL的</p>
+							
+						</td>
+						
+						<td>
+							<div>
+								<img src="img/icon/editIcon.png">
+								<span>回應</span>
+							</div>
+							<div>
+								<img src="img/icon/deleteIcon.png">
+								<span>檢舉</span>
+							</div>
+							<div class="clear"></div>
+							<div class="msgTime">
+                                2017-09-20 22:15:44
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						
+						<td colspan="2"><textarea placeholder="店長回覆"></textarea>
+						</td>
+						<!-- <td></td> -->
+						<td><button>送出</button></td>
+					</tr>
+					
+					
+					
+			</table>
 
 
-			 ?>
-
-<input type="hidden" id="SPMSG_NO" name="SPMSG_NO" value="">
 
 
-</form>
+
+
+
+
+	
+
+
+		<!-- <div class="commit">
+			<input type="button" name="" value="預覽">
+			<input type="button" name="" value="編輯完成">
+		</div> -->
+
+
+
 	</div>  <!-- CenterBusiness -->
 
-
-	<script>
-		
-	$(".alertBtn").click(function(){
-
-		//alert($(this).parent().siblings('.txtFather').children().val());
-
-			if($(this).parent().siblings('.txtFather').children().val()==""){
-            $.sweetModal({
-            content: '尚未回覆！',
-            icon: $.sweetModal.ICON_WARNING,
-            width: '300px',
-            theme: $.sweetModal.THEME_MIXED,
-            timeout: 1000,
-        	});
-
-          }else{
-
-          	var Value =$(this).siblings().attr("value");
-
-			$("#SPMSG_NO").attr("value",Value);
-
-				$.sweetModal({
-	            content: '回覆成功！',
-	            icon: $.sweetModal.ICON_SUCCESS,
-	            width: '300px',
-	            theme: $.sweetModal.THEME_MIXED,
-	            timeout: 1000,
-	            onClose: function(){
-	              $("#alertFormSubmit").submit();
-	            }
-	       		 });
-
-
-           } 
-         
-    });
-
-
-
-		$(".delImg").click(function(){
-
-						
-			if($(this).attr("src")=="img/icon/delete.png"){
-				$(this).attr("src","img/icon/risk.png");
-			}
-
-		});
-
-
-
-
-
-
-	</script>
 
 
 
@@ -399,7 +263,17 @@ session_start();
 
 <!-- ==============right fixed content================== -->
 
-	
+	<!-- <div class="CoverRightMy">
+		
+		<div class="RightMy">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		
+	</div> -->
 
 
 <!-- ==============right fixed content======END======= -->
@@ -427,18 +301,6 @@ session_start();
 	require_once('footer.php');
 
 	 ?>
-
-
-
-<?php 
-
-	}catch( PDOException $ex){
-  		echo "行號: ",$ex->getLine(), "<br>";	
-  		echo "訊息: ",$ex->getMessage() , "<br>";	
-	}//catch
-
-
- ?>
 
 	
 

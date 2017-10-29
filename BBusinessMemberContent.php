@@ -54,7 +54,7 @@ session_start();
 
 			$sql = "select * from store_imformation where SI_MEMNO=$MEM_ID";
 
-			$store_imformation = $connectPDO->query($sql);
+			$store_imformation = $pdo->query($sql);
 
 			$store_imformationRow=$store_imformation->fetchObject();
 

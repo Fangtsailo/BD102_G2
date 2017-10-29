@@ -1,45 +1,130 @@
-<?php 
-ob_start();
-session_start();
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>TREPUN</title>
-	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
-	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick-1.8.0/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
-	<!-- 套件區 -->
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script type="text/javascript" src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script> -->
-	<script type="text/javascript" src="libs/vivus/vivus.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.2/vivus.min.js"></script>
 	<script type="text/javascript" src="js/parallax.min.js"></script>
-	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
-	<!-- googlemap -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
-
-	<script type="text/javascript" src="js/header.js"></script>
-
 
 </head>
 <body>
 	<?php 
 
-require_once("headerForHomePage.php");
+require_once("header.php");
 
  ?>
 
 <!-- ======================================================內頁開始========================================================= -->	
 
+<!-- ========================新增店家燈箱===================== -->
+	<div id="addShopBox">
+		<div class="globalForm">
+			<form action="" method="">
+				<div class="globalFormHeader">
+					<div class="svg" id="closeBtn01">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+						<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
+							L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
+							s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+						</svg>
+					</div>
 
+					<h1>新增店家</h1>
+					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
+				</div>
+				<div class="globalFormContent">
+					<div class="globalFormInput chooseType">
+						<label><span>*</span>選擇店型</label>
+							<label class="chooseBtn">胖小車<input type="radio" value="car" name="chooseType"></label>
+							<label class="chooseBtn">麵包店<input type="radio" value="shop" name="chooseType"></label>
+							<div class="clearfix"></div>
+					</div>
+					<div class="globalFormInput">
+						<label><span>*</span>主旨</label><input type="text" name="" placeholder="提醒字">
+					</div>
+
+					<div class="globalFormInput">
+						<label><span>*</span>輸入店名</label><input type="text" name="" placeholder="提醒字">
+					</div>
+					
+					<div class="globalFormInput">
+						<label><span>*</span>商家電話</label><input type="tel" name="" placeholder="提醒字">
+					</div>
+					
+					<div class="globalFormInput">
+						<label><span>*</span>商家地址</label><input type="email" name="" placeholder="提醒字" required>
+					</div>
+
+					<div class="globalFormInput">
+						<label>故事介紹</label><textarea></textarea>
+					</div>
+					<div class="clearfix"></div>
+					<div class="globalFormBtns">
+						<div class="globalCancelBtn">取消</div>
+						<input type="submit" name="" class="globalOkBtn" value="送出">					
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+<!-- ========================客服中心燈箱===================== -->
+	<div id="serviceCenter">
+		<div class="globalForm">
+			<form action="" method="">
+				<div class="globalFormHeader">
+					<div class="svg" id="closeBtn02">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+						<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
+							L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
+							s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+						</svg>
+					</div>
+
+					<h1>客服中心</h1>
+					<p>感謝您對TrePun的支持！<br>如對本站有任何問題，請提供寶貴意見，我們將儘速與您聯繫。</p>
+				</div>
+				<div class="globalFormContent">
+
+					<div class="globalFormInput">
+						<label><span>*</span>主旨</label><input type="text" name="" placeholder="提醒字">
+					</div>
+
+					<div class="globalFormInput">
+						<label><span>*</span>姓名</label><input type="text" name="" placeholder="提醒字">
+					</div>
+					
+					<div class="globalFormInput">
+						<label><span>*</span>聯絡電話</label><input type="tel" name="" placeholder="提醒字">
+					</div>
+					
+					<div class="globalFormInput">
+						<label><span>*</span>信箱</label><input type="email" name="" placeholder="提醒字" required>
+					</div>
+
+					<div class="globalFormInput">
+						<label>內文</label><textarea></textarea>
+					</div>
+					<div class="clearfix"></div>
+					<div class="globalFormBtns">
+						<div class="globalCancelBtn">取消</div>
+						<input type="submit" name="" class="globalOkBtn" value="送出">					
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 
 
@@ -47,6 +132,7 @@ require_once("headerForHomePage.php");
 <!-- ======================================================1st首頁搜尋========================================================= -->	
 	<section class="homeSearchBar" id="section1-move">
 		
+		<!-- <img src="img/homepage/homepage_bg1.png"> -->
 		
 		<div class="itemGrp">
 			<div class="bigLogo">
@@ -138,45 +224,43 @@ require_once("headerForHomePage.php");
 					</g>
 					</svg>
 		</div>
-			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
+			<h2 class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form id="homeSearchForm" action="search.php" method="get">
-				<div class="tabs">
-						<label class="tab_contents active" id="searchShops">店家<input type="radio" value="0" name="shopType"></label>
-						<label class="tab_contents" id="searchVans">胖小車<input type="radio" value="1" name="shopType"></label>
-					
-					<div class="clearfix"></div>
-				</div>
+				<ul class="tabs">
+					<li class="tab_contents active" id="searchShops">
+						店家
+					</li>
+					<li class="tab_contents" id="searchVans" onclick="location.href='search_car.php'">
+						胖小車
+					</li>
+				</ul>
 				<div class="searchContent">
-					<div class="filterBar">
-						<span class="filterTitle">篩選條件</span>
-						<select  class="filter" name="shopPosition" id="filterArea">
-							<option value="">地區</option>
-							<option value="0">北部</option>
-							<option value="1">中部</option>
-							<option value="2">南部</option>
-							<option value="3">東部</option>
+					<span class="filterTitle">篩選條件</span>
+					
+					<div class="filter">
+						<select name="" id="filterArea">
+								<option>地區</option>
+								<option>台北市</option>
+								<option>新北市</option>
+								<option>桃園市</option>
 						</select>
-						<input type="radio" value="top" name="filter" id="filterTops">
-						<label for="filterTops" class="filter">熱門</label>	
-						<input type="radio" name="filter" value="stars" id="filterstars">
-						<label for="filterstars" class="filter">評價</label>	
-						<div class="clearfix"></div>
 					</div>
+				
+					<button class="filter" id="filterTops">
+						<span>熱門</span>
+					</button>
+					<button class="filter" id="filterstars">
+						<span>評價</span>
+					</button>
 					<div class="searchbar">
-					<input id="searchInput" type="search" name="searchStore" placeholder="輸入您喜愛的麵包店面！">
-					<button id="searchSubmit" type="button">搜尋</button>
+					<input type="search" name="searchStore" placeholder="尋找你附近的麵包香">
+					<button type="submit" onclick="location.href='search.php'">搜尋</button>
 					</div>
 				</div>
-				<div class="clearfix"></div>
-				</form>
 			</div>
-			<div class="sectionBetween">
-				<p>不知從何找起？<br>那就先來看看我們為您精選的熱門店家！</p>
-				<img src="img/icon/scrolldown.svg" class="section2-click">
-			</div>
-
 		</div>
+
+
 
 	</section>
 	<div id="trigger1"></div>
@@ -185,70 +269,90 @@ require_once("headerForHomePage.php");
 
 
 <!-- ======================================================2nd首頁熱門店家========================================================= -->
-	<section class="homeTopChart" id="section2-move">
+	<section class="homeTopChart" id="section2-move"  >
 	
 		<p class="topChartDescrp">為您篩選出各地區的熱門麵包香，<br>尋找附近地區最熱門的麵包小店！</p>
-		
 		<div class="titleGrp">
-			<img src="img/icon/bread.svg">
+			<img src="img/homepage/topChartIcon.png">
 			<h1 class="topChartTitle">精選熱門店家</h1>
 		</div>
-
 		<div id="trigger2"></div>
 		<div class="shopItemGrp">
-
-	<?php 
-	try{
-		require_once("php/PDO/connectPDO.php");
-		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
-		$topShops = $connectPDO->query($selectTopShopSQL);
-		while ($topShopsRow = $topShops->fetchObject()) {
-	?>
-
 			<div class="shopItem" data-depth="1">
 				<div class="shopPic">
 					<img src="img/homepage/shop1.jpg">
-					<h3><?php echo $topShopsRow->SI_NAME ?></h3>
+					<h3>巴奇手做麵包</h3>
 					<div class="shopInfo">
 						<ul>
-							<li><img src="img/icon/mappointer1.svg"><span><?php echo $topShopsRow->address ?></span></li>
-							<li><img src="img/icon/star2.svg"><span><?php echo $topShopsRow->reviews ?>顆星</span></li>
-							<li><img src="img/icon/follow3.svg"><span><?php echo $topShopsRow->followers ?>人追蹤</span></li>
+							<li><img src="img/icon/mappointer1.svg"><span>新北市</span></li>
+							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow.svg"><span>265人追蹤</span></li>
 						</ul>
 					</div>
 				</div>
 				<div class="shopMessage">
 					<div class="memPic">
-						<?php 
-								if ( isset($_SESSION['memPic']) ){
-									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
-								}else {
-									echo "<img src='img/member_pic/default.png'>";
-								}
-
-							 ?>
+						<img src="">
 					</div>
-					<span><?php echo $topShopsRow->MEM_NAME ?></span>
-					<span id="messageTime"><?php echo $topShopsRow->SPMSG_TIME?></span>
+					<span>Chris</span>
+					<span id="messageTime">2小時前</span>
 					<div class="clearfix"></div>
 					<div class="message">
-						<p><?php echo $topShopsRow->SPMSG_CON?></p>
+						<p>居然還有自製果醬，跟他們家的白土司是絕配啊！</p>
 					</div>
 				</div>
 			</div>
-			
-	<?php
-		
-		} //while
-	}catch(PDOException $ex){
-		echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-		echo "行號：",$ex->getLine(),"<br>";
-	}
-
-	 ?>
-
+			<div class="shopItem">
+				<div class="shopPic">
+					<img src="img/homepage/shop2.jpg">
+					<h3>唔飽椿</h3>
+					<div class="shopInfo">
+						<ul>
+							<li><img src="img/icon/mappointer1.svg"><span>台北市</span></li>
+							<li><img src="img/icon/star.svg"><span>4.5顆星</span></li>
+							<li><img src="img/icon/follow.svg"><span>900人追蹤</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="shopMessage">
+					<div class="memPic">
+						<img src="">
+					</div>
+					<span>Steven</span>
+					<span id="messageTime">2小時前</span>
+					<div class="clearfix"></div>
+					<div class="message">
+						<p>我們家小孩好喜歡你們家的麵包，一直吵著要我買一整條回去...</p>
+					</div>
+				</div>
+			</div>
+			<div class="shopItem">
+				<div class="shopPic">
+					<img src="img/homepage/shop3.jpg">
+					<h3>田也麵包</h3>
+					<div class="shopInfo">
+						<ul>
+							<li><img src="img/icon/mappointer1.svg"><span>台中市</span></li>
+							<li><img src="img/icon/star.svg"><span>4顆星</span></li>
+							<li><img src="img/icon/follow.svg"><span>460人追蹤</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="shopMessage">
+					<div class="memPic">
+						<img src="">
+					</div>
+					<span>Tiffany</span>
+					<span id="messageTime">2小時前</span>
+					<div class="clearfix"></div>
+					<div class="message">
+						<p>全麥麵包很好吃，但對我來說是有點貴貴啦QAQ</p>
+					</div>
+				</div>
+			</div>
 		</div>
 		
+		<!-- <div class="chooseBtn">看下一家</div> -->
 	</section>
 
 
@@ -257,165 +361,9 @@ require_once("headerForHomePage.php");
 	<section class="homeCarMap" id="section3-move">
 		<div class="carMap">
 			<h1 class="mapTitle">胖小車地圖</h1>
-			<div class="search_mapcar">
-				<div id="map-now1"></div>
-				<div class="search_store">
-		
-		
-		
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>  
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-						
-				</div>  <!-- search_store -->
-		</div>
+			<div class="carList">
+				
+			</div>
 		</div>
 	</section>
 
@@ -427,110 +375,60 @@ require_once("headerForHomePage.php");
 			<h1>體驗活動精選</h1>
 			<p>適合全家大小一起動手製作的烘焙課程</p>
 		</div>
-		<div class="act-bgd"></div>
 		<div class="activityItem">
+			
+			<div class="activityRight">
 				<div id="chooseActUp">
 					<div class="svg">
-						<svg width="50" height="50" viewBox="0 0 38 38" >
+						<svg width="100" height="100" viewBox="0 0 38 38" >
 						<polygon style="fill:#fbf8f1" points="19.4,14.4 28.2,25.4 26.6,26.6 19.4,17.6 12.2,26.6 10.6,25.4 "/>
 						</svg>
 					</div>
 				</div>
-
-				<div class="actBannerGrp">
-
-<?php 
-try{
-	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM, s.SI_NUM, s.SI_NAME FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM ORDER BY RAND() LIMIT 6" ;
-	$showActivity = $connectPDO->query($selectNewShopSQL);
-	while ($showActivityRow = $showActivity->fetchObject()) {
-?>
-
-					<div class="actBanner">
-						<div class="actDate">
-							<div class="dateItem">
-								<span><?php echo $showActivityRow->AC_TIME ?></span>
-								<span>Nov</span>
-							</div>
-						</div>
-						<img src="img/homepage/acty-1.jpg">
-						<div class="actContent">
-							<div class="content-txt">
-								<h3><?php echo $showActivityRow->AC_NAME ?></h3>
-								<ul>
-									<li>
-										<span>店家名稱</span>
-										<p><?php echo $showActivityRow->SI_NAME ?></p>
-									</li>
-									<li>
-										<span>活動地點</span>
-										<p><?php echo $showActivityRow->address ?></p>
-									</li>
-									<li>
-										<span>活動人數</span>
-										<p><span><?php echo $showActivityRow->AC_MEM_COUNT ?></span>人</p>
-									</li>
-								</ul>
-							</div>
-							<a href="#" class="globalOkBtn" >立即體驗</a>
-						</div>
+				<div id="actBanner">
+					<img src="img/acty_fin-1.png">
+					<div class="actContent">
+						<h2>牛角麵包簡單學</h2>
+						<p><span class="itemTitle">地點</span>桃園市中壢區中大路300號</p>
+						<p><span class="itemTitle">時間</span>2017.09.29 下午一點</p>
+						<p><span class="itemTitle">參加人數</span><span>15</span>/30人</p>
+						<a href="#" class="globalOkBtn" >活動詳情</a>
 					</div>
-
-<?php
-	
-	} //while
-}catch(PDOException $ex){
-	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-	echo "行號：",$ex->getLine(),"<br>";
-}
-
- ?>	
 
 				</div>
 				<div id="chooseActDown">
 					<div class="svg">
-						<svg width="50" height="50" viewBox="0 0 38 38">
+						<svg width="100" height="100" viewBox="0 0 38 38">
 							<polygon style="fill:#fbf8f1" points="28.2,15.5 26.6,14.2 19.4,23.2 12.2,14.2 10.6,15.5 19.4,26.4 "/>
 						</svg>
 					</div>
 				</div>
+			</div>
+
 		</div>
-		<div class="clearfix"></div>
 	</section>
 <!-- ======================================================5th首頁新進店家========================================================= -->
-
-
-
 	<section class="homeNewshop" id="section5-move">
 		<div class="newShopTitle">
 			<img src="img/homepage/titleDecor1.png">
 			<h1>新進店家精選</h1>
 			<img src="img/homepage/titleDecor2.png">
 		</div>
-		
 		<div class="newShopGrp">
-<?php 
-try{
-	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT SI_NAME,SI_STORY,SUBSTRING(SI_ADDR,1,6) address,SI_ADDDATE FROM store_imformation ORDER BY SI_ADDDATE LIMIT 6" ;
-	$newShops = $connectPDO->query($selectNewShopSQL);
-	while ($newShopsRow = $newShops->fetchObject()) {
-?>
 			<div class="newShops">
 					<div class="newShopItem">
 						<img src="img/homepage/shop1.jpg">
 						<div class="shopContent">
-							<h2><?php echo $newShopsRow->SI_NAME ?></h2>
-							<p><?php echo $newShopsRow->SI_STORY ?></p>
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
 							<ul>
 								<li>
 									<img src="img/icon/mappointer1.svg">
-									<span class="newShopPlace"><?php echo $newShopsRow->address ?></span>
+									<span class="newShopPlace">新北市 永和</span>
 								</li>
 								<li>
 									<img src="img/icon/reply.svg">
-									<span class="postTime"><?php echo $newShopsRow->SI_ADDDATE ?></span>
+									<span class="postTime">2小時前</span>
 								</li>
 								<div class="clearfix"></div>
 							</ul>
@@ -539,21 +437,80 @@ try{
 						<div class="clearfix"></div>
 					</div>
 					<div class="clearfix"></div>
-			</div>
-			
-<?php
-	
-	} //while
-}catch(PDOException $ex){
-	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-	echo "行號：",$ex->getLine(),"<br>";
-}
-
- ?>	
- 			<div class="clearfix"></div>  
+				</div>   
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>   
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			<div class="newShops">
+					<div class="newShopItem">
+						<img src="img/homepage/shop1.jpg">
+						<div class="shopContent">
+							<h2>裕馥西點麵包店</h2>
+							<p>黃師傅對於麵包的熱愛來自於愛吃麵包的夫人，早期在台灣如果能吃上一個蔥花麵包那是多麼棒的一餐呀！於是兩人攜手打造『裕馥西點麵包店』，位於景美及永和兩間在地老店。</p>
+							<ul>
+								<li>
+									<img src="img/icon/mappointer1.svg">
+									<span class="newShopPlace">新北市 永和</span>
+								</li>
+								<li>
+									<img src="img/icon/reply.svg">
+									<span class="postTime">2小時前</span>
+								</li>
+								<div class="clearfix"></div>
+							</ul>
+							<a class="exploreBtn" href="#">探索更多</a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>  
+			<div class="clearfix"></div>  
 		</div>
-	</section>
 
+	</section>
 
 <!-- ======================================================6th首頁聯絡我們========================================================= -->
 	
@@ -561,36 +518,38 @@ try{
 
 	<section class="homeContact" id="section6-move">
 		<div class="addShop">
+				
 			<p>想跟全世界分享吃到好麵包的感動？</p>
-			<div class="sectionItem">
-					<span>
-						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/></g></g>
-						</svg>
-					</span>
-				<h3>新增店家</h3>
-			</div>
+			<img src="img/icon/addshop.svg">
+			<h3>新增店家</h3>
 			
 		</div>
 		<div class="contactUs">
 			<p>遇到問題無法解決，或有更多建議想讓我們知道？</p>
-			<div class="sectionItem">
-				<span>
-					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/><path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
-					</svg>
-				</span>
-				<h3>客服中心</h3>
-			</div>
+			<img src="img/icon/report.svg">	
+			<h3>客服中心</h3>
 			
 		</div>
 		<div class="clearfix"></div>
 	</section>
+	
+
+	<!-- <ul id="navBtn">
+		<li class="section1-click"><a href="#section1"></a></li>
+		<li class="section2-click"><a href="#section2"></a></li>
+		<li class="section3-click"><a href="#section3"></a></li>
+		<li class="section4-click"><a href="#section4"></a></li>
+		<li class="section5-click"><a href="#section5"></a></li>
+		<li class="section6-click"><a href="#section6"></a></li>
+	</ul> -->
+
 
  	<?php 
 
 require_once("footer.php");
  	 ?>
-
-<script type="text/javascript" src="libs/slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="slick-1.8.0/slick/slick.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/velocity.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/velocity.ui.min.js"></script>
 <script type="text/javascript" src="libs/page-scroll-effects/js/modernizr.js"></script>

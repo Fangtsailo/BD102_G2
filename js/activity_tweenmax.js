@@ -1,49 +1,14 @@
 $(function(){
 
-
-TweenMax.fromTo( ".activity_Dough" , 3, //寫法https://greensock.com/docs/TweenMax 
-{
-    y : 200,    //初始位置
-    opacity : 0,
-}, 
-{
-   y : 0,    //結束位置
-   opacity : 1,
-   ease : Quad.easeOut
-}
-);
-
-TweenMax.fromTo( ".activity_board" , 1 , 
-{
-    x : -100,   //初始位置
-    opacity : 0,
-}, 
-{
-   x : 0,      //結束位置
-   opacity : 1,
-   delay : 2,
-   ease : Quad.easeOut  // 動畫特效 https://greensock.com/docs/Easing
-}
-);
-
-TweenMax.fromTo( ".activity_detail" , 1 , 
-{
-    x : 100,   //初始位置
-    opacity : 0,
-}, 
-{
-   x : 0,      //結束位置
-   opacity : 1,
-   delay : 2,
-   ease : Quad.easeOut  // 動畫特效 https://greensock.com/docs/Easing
-}
-);
-
-
+// sc_mg------------
 var controller = new ScrollMagic.Controller();
+
+
+
 
     //掉麵團	00
 	
+
 		//tween   設要跑的動畫
     var tween_0 = TweenMax.staggerFromTo('#acty_Dough', .8, {
         //做事情  .8為總共秒數
@@ -63,6 +28,10 @@ var controller = new ScrollMagic.Controller();
         scale:1.1 
     }, 3);   //3為延遲秒數
 
+
+
+
+
      var scene_t = new ScrollMagic.Scene({
       //做事情
       triggerElement: ".trigger0",  //觸發點
@@ -80,6 +49,9 @@ var controller = new ScrollMagic.Controller();
    .addTo(controller);  //最開始設的場景
 
 //掉麵團 00 end
+
+
+
 
 
 //鍋保持位置
@@ -109,7 +81,7 @@ var controller = new ScrollMagic.Controller();
   
 
     //tween   設要跑的動畫
-    var tween_2 = TweenMax.staggerFromTo('.activity_dough_change ', .8, {
+    var tween_2 = TweenMax.staggerFromTo('.activity_dough_change', .8, {
         //做事情
         
         y:-420,
@@ -126,7 +98,7 @@ var controller = new ScrollMagic.Controller();
       reverse: true,
     })
     .setTween(tween_2)  //要跑的動畫  ，要先設var
-   // .setClassToggle('.big','bigDough')
+
     // .addIndicators({
     //         name: 'scene 02'   
     //         //除錯，並找位置,js外掛要加連結至html中
@@ -135,23 +107,6 @@ var controller = new ScrollMagic.Controller();
    .addTo(controller);  //最開始設的場景
 
 //掉麵團  end
-
-
-       var scene_t = new ScrollMagic.Scene({
-      //做事情
-      triggerElement: ".trigger1",  //觸發點
-      duration: 500,  //開始結束距離
-      offset: 0  ,  //離起始點多遠開始跑動畫
-      reverse: true,
-    })
-    
-    .setClassToggle('.big','bigDough')
-    // .addIndicators({
-    //         name: 'scene 08'   
-    //         //除錯，並找位置,js外掛要加連結至html中
-
-    //     })
-   .addTo(controller);  //最開始設的場景
 
 
 
@@ -200,7 +155,7 @@ var controller = new ScrollMagic.Controller();
 
     }, {
         
-        y:-1500,
+        y:-1550,
         rotation:660,
 
     }, );
@@ -208,7 +163,7 @@ var controller = new ScrollMagic.Controller();
      var scene_t = new ScrollMagic.Scene({
       //做事情
       triggerElement: ".trigger3",  //觸發點
-      duration: 1200,  //開始結束距離
+      duration: 1000,  //開始結束距離
       offset: 200  ,  //離起始點多遠開始跑動畫
       reverse: true,
     })
@@ -226,73 +181,23 @@ var controller = new ScrollMagic.Controller();
 	
 
 //烤箱區
-var tween_8 = TweenMax.staggerFromTo('.act_wind', .8, {
-        //做事情
-        
-       opacity:0 ,
-
-    }, {
-        
-        opacity:1,
-
-    },5);
   var scene_bg = new ScrollMagic.Scene({
             //做事情
             triggerElement: ".trigger6",
             offset: -100,
-             duration: 400,
         })
-        .setTween(tween_8) 
-        //.setClassToggle('.bgc' , 'bake_bread')
+        .setClassToggle('.bgc' , 'bake_bread')
         // .addIndicators({
         //     name: 'add_class'
         // })
         .addTo(controller);
 
-    var scene_bg = new ScrollMagic.Scene({
-            //做事情
-            triggerElement: ".trigger6",
-            offset: -200,
-            duration: 500,
-        })
-        //.setTween(tween_8) 
-        .setClassToggle('.bgc' , 'bake_bread')
-        // .addIndicators({
-        //     name: 'add_bg'
-        // })
-        .addTo(controller);
+
+
 
 
 //烤好麵包
-var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
-        //做事情
-        
-       opacity:0 ,
-
-    }, {
-        
-        opacity:1,
-
-    },5);
-
-   var scene_t = new ScrollMagic.Scene({
-      //做事情
-      triggerElement: ".trigger7",  //觸發點
-      
-      offset: 380  ,  //離起始點多遠開始跑動畫
-      reverse: true,
-    })
-    .setTween(tween_9)  //要跑的動畫  ，要先設var
-
-    // .addIndicators({
-    //         name: 'scene9'   
-    //         //除錯，並找位置,js外掛要加連結至html中
-
-    //     })
-   .addTo(controller);  //最開始設的場景
-
-
-    var controller = new ScrollMagic.Controller();
+var controller = new ScrollMagic.Controller();
     var tween_6 = TweenMax.staggerFromTo('.activity_bread', .8, {
         //做事情
         
@@ -308,8 +213,8 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
      var scene_t = new ScrollMagic.Scene({
       //做事情
       triggerElement: ".trigger7",  //觸發點
-      duration: 700,  //開始結束距離
-      offset: -300  ,  //離起始點多遠開始跑動畫
+      duration: 500,  //開始結束距離
+      offset: -100  ,  //離起始點多遠開始跑動畫
       reverse: true,
     })
     .setTween(tween_6)  //要跑的動畫  ，要先設var
@@ -320,6 +225,17 @@ var tween_9 = TweenMax.staggerFromTo('.activity_cloud', .2, {
 
     //     })
    .addTo(controller);  //最開始設的場景
+
+
+
+
+
+
+
+
+
+
+
 
 
 

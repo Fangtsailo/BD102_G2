@@ -138,11 +138,11 @@ require_once("BackStageHeaderSidebar.php");
 
 								$sql = "select * from member where MEM_ROLE=1";
 
-								$member = $connectPDO->query($sql);
+								$member = $pdo->query($sql);
 
 
 
-								 if(isset($_REQUEST["searchBar"])){
+								 if(isset($_GET["searchBar"])){
 
 
 								 	$searchBar = $_GET["searchBar"];
@@ -151,7 +151,7 @@ require_once("BackStageHeaderSidebar.php");
 								 	$sqlSearch = "select * from member where MEM_ID='$searchBar' or MEM_NAME='$searchBar'";
 
 
-								 	$memberSearch = $connectPDO->query($sqlSearch);
+								 	$memberSearch = $pdo->query($sqlSearch);
 
 								 	$memberSearchRow=$memberSearch->fetchObject();
 
@@ -159,7 +159,7 @@ require_once("BackStageHeaderSidebar.php");
 
 								 	$sql = "select * from store_imformation where SI_MEMNO=$MEM_NO";
 
-									$store_imformation = $connectPDO->query($sql);
+									$store_imformation = $pdo->query($sql);
 
 									$store_imformationRow=$store_imformation->fetchObject();
 
@@ -326,11 +326,9 @@ require_once("BackStageHeaderSidebar.php");
 
 							$MEM_NO=$memberRow->MEM_NO;
 
+							$sql = "select * from store_imformation where SI_MEMNO=$MEM_NO";
 
-
-							$sql = "select * from store_imformation where SI_MEMNO='$MEM_NO'";
-
-							$store_imformation = $connectPDO->query($sql);
+							$store_imformation = $pdo->query($sql);
 
 							$store_imformationRow=$store_imformation->fetchObject();
 
