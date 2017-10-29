@@ -196,6 +196,10 @@ footer {
 
 .dutyColorChange {
   background-color: #00c853 !important;
+<<<<<<< HEAD
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s; }
+=======
+  transition: 0.5s; }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f

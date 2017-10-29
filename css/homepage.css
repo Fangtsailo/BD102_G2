@@ -705,63 +705,79 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
+
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
+
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
+
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
+
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
+
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
+
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
+
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
+
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
+
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
+
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
+
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
+
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
+<<<<<<< HEAD
 
 @media screen and (max-width: 980px) {
+=======
+@media screen and (max-width: 900px) {
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
   .globalHead {
     text-align: center; }
     .globalHead .headLogo {
@@ -1049,6 +1065,7 @@ footer {
         bottom: 0;
         left: 0;
         right: 0;
+<<<<<<< HEAD
         margin: auto; }
     #addShopBox .globalForm input[type="number"] {
       width: 20%;
@@ -1076,6 +1093,9 @@ footer {
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
 
+=======
+        transition: .3s; } }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 * {
   box-sizing: border-box; }
 
@@ -1394,6 +1414,7 @@ section {
       margin: auto; }
       section.homeSearchBar .itemGrp .bigLogo img {
         width: 100%;
+<<<<<<< HEAD
         height: 100%; }
     section.homeSearchBar .itemGrp .sectionBetween {
       width: 100%; }
@@ -1407,6 +1428,9 @@ section {
         height: 40px;
         margin: auto; } }
 
+=======
+        height: 100%; } }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 @media screen and (max-width: 500px) {
   section.homeSearchBar .itemGrp .descrp {
     margin-top: 0; }
@@ -1419,7 +1443,6 @@ section {
     width: 70%; }
   section.homeSearchBar .itemGrp .searchPart .searchContent .searchbar button {
     width: 20%; } }
-
 .homeTopChart {
   position: relative; }
   .homeTopChart p.topChartDescrp {
@@ -1727,10 +1750,13 @@ section {
         color: #fbf8f1;
         transition: .3s ease;
         cursor: pointer; } }
+<<<<<<< HEAD
 
 .slick-dots {
   bottom: 0px; }
 
+=======
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 section.homeCarMap {
   background-image: url("../img/homepage/homepage_bg3.png");
   background-repeat: no-repeat;
@@ -2039,6 +2065,7 @@ section.homeCarMap {
     height: 30%; }
   .homeActivity .activityItem {
     width: 100%;
+<<<<<<< HEAD
     height: 70%;
     margin: 0; }
     .homeActivity .activityItem #chooseActUp, .homeActivity .activityItem #chooseActDown {
@@ -2174,6 +2201,24 @@ section.homeCarMap {
             line-height: 40px;
             font-size: 14px; } }
 
+=======
+    height: 50%;
+    margin: auto; }
+    .homeActivity .activityItem .svg {
+      position: static; }
+    .homeActivity .activityItem #chooseActUp {
+      margin: auto;
+      vertical-align: top; }
+    .homeActivity .activityItem #actBanner {
+      max-width: 600px;
+      width: 70%;
+      height: 60vw;
+      background-color: #fbf8f1;
+      border-radius: 10%;
+      margin: auto; }
+    .homeActivity .activityItem #chooseActDown {
+      margin: auto; } }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 .homeNewshop {
   background-image: url("../img/homepage/homepage_bg5.png");
   background-repeat: no-repeat;
@@ -2322,7 +2367,6 @@ section.homeCarMap {
           color: #fbf8f1;
           transition: .3s ease;
           cursor: pointer; } }
-
 .homeContact {
   width: 100%;
   height: 50vh;
@@ -2375,12 +2419,16 @@ section.homeCarMap {
       height: 40%; }
     .homeContact .contactUs {
       width: 100%;
+<<<<<<< HEAD
       height: 40%; } }
 
 @media screen and (max-width: 400px) {
   .homeContact {
     height: 100vh; } }
 
+=======
+      height: 50%; } }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 #navBtn {
   width: 10px;
   position: fixed;

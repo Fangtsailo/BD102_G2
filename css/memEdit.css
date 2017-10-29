@@ -4,8 +4,20 @@
   margin: 0; }
 
 body {
+<<<<<<< HEAD
   background-color: #fbf8f1;
   font-family: "Noto Sans CJK TC"; }
+=======
+  background-color: #f2ebd4;
+  background: -webkit-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -o-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: -moz-radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  background: radial-gradient(ellipse, #fbf8f1, #f2ebd4);
+  font-family: "Noto Sans", "Noto Sans CJK TC", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #663300; }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 
 input {
   font-family: "Noto Sans CJK TC"; }
@@ -138,6 +150,7 @@ li {
 
 .globalHead {
   width: 100%;
+<<<<<<< HEAD
   height: 80px;
   background: rgba(128, 89, 52, 0.9);
   /* Old browsers */
@@ -1640,6 +1653,471 @@ input:not(.radio):focus, textarea:focus {
       left: 8px; }
     .container .content form .psw {
       display: none; }
+=======
+  position: relative; }
+  .container h1 img {
+    height: 100px; }
+  .container section {
+    width: 100%;
+    margin: 0 auto 50px; }
+  .container section:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .container h2 {
+    font-size: 22px; }
+  .container h3 {
+    font-size: 18px; }
+  .container h2, .container h3 {
+    font-weight: 500; }
+  .container address {
+    font-size: 14px;
+    line-height: 1.6em; }
+  .container p {
+    padding: 5px 0; }
+  .container ul {
+    list-style-type: none; }
+  .container a {
+    text-decoration: none;
+    color: #3399ff; }
+  .container img {
+    max-width: 100%;
+    vertical-align: bottom; }
+  .container input {
+    outline: none;
+    padding: 2px;
+    font-family: "Noto Sans CJK TC";
+    font-weight: lighter; }
+  .container input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #bbb; }
+  .container input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #bbb; }
+  .container input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #bbb; }
+  .container input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #bbb; }
+  .container input:focus {
+    border: 1px solid rgba(240, 100, 40, 0.3);
+    box-shadow: 0 0 2px #f6921E; }
+  .container .myfollow, .container .msg, .container .myentry {
+    transition: box-shadow 1s; }
+  .container .sidebar {
+    width: 210px;
+    height: 310px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 1; }
+    .container .sidebar li {
+      position: relative;
+      height: 60px;
+      margin-bottom: 2px; }
+      .container .sidebar li a {
+        color: #fbf8f1;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px;
+        padding-left: 16px;
+        padding-right: 80px;
+        text-align: right;
+        background-color: transparent;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        background-image: url(../img/memimg/myfollow.svg);
+        background-repeat: no-repeat;
+        background-position: right center;
+        position: absolute;
+        right: 140px;
+        transition: right 1.5s, background-color 1s; }
+      .container .sidebar li a.mycommentsvg {
+        background-image: url(../img/memimg/mycomment.svg); }
+      .container .sidebar li a.myentrysvg {
+        background-image: url(../img/memimg/myentry.svg); }
+      .container .sidebar li a.myeditsvg {
+        background-image: url(../img/memimg/myedit.svg); }
+      .container .sidebar li a.bebosssvg {
+        background-image: url(../img/memimg/beboss.svg); }
+    .container .sidebar li:hover a {
+      background-color: #00c853;
+      right: 0px; }
+    .container .sidebar li:hover a {
+      background-image: url(../img/memimg/myfollow2.svg); }
+    .container .sidebar li:hover a.mycommentsvg {
+      background-image: url(../img/memimg/mycomment2.svg); }
+    .container .sidebar li:hover a.myentrysvg {
+      background-image: url(../img/memimg/myentry2.svg); }
+    .container .sidebar li:hover a.myeditsvg {
+      background-image: url(../img/memimg/myedit2.svg); }
+    .container .sidebar li:hover a.bebosssvg {
+      background-color: #4289ff;
+      background-image: url(../img/memimg/beboss2.svg); }
+  @media screen and (max-width: 767px) {
+    .container .sidebar {
+      display: none; } }
+  .container .content {
+    max-width: 1000px;
+    width: 69.4444%;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center; }
+    .container .content .myfollow {
+      width: 220px;
+      float: left;
+      overflow: hidden;
+      text-align: left;
+      line-height: 1.3;
+      position: relative;
+      background-color: #fbf8f1;
+      border-radius: 5px;
+      margin-bottom: 15px; }
+      .container .content .myfollow a {
+        display: block; }
+      .container .content .myfollow h2, .container .content .myfollow address {
+        margin: 8px; }
+    .container .content .myfollow:nth-child(n+2) {
+      margin-left: 30px; }
+    .container .content .myfollow:hover {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
+    .container .content .btn50 {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      color: #999; }
+    .container .content #cancelfollow {
+      float: right;
+      margin: -55px 2px 0 0; }
+      .container .content #cancelfollow:after {
+        content: '取消追蹤';
+        font-size: 12px;
+        vertical-align: top; }
+    .container .content #mappointer {
+      text-align: center;
+      display: block; }
+      .container .content #mappointer:after {
+        display: block;
+        content: '地圖';
+        font-size: 12px;
+        vertical-align: top; }
+    .container .content .myfollow > ul {
+      height: 16px;
+      margin-left: 8px; }
+      .container .content .myfollow > ul .star {
+        display: inline-block; }
+        .container .content .myfollow > ul .star img {
+          width: 16px;
+          vertical-align: top; }
+    .container .content time {
+      color: #bbb;
+      font-size: 10px;
+      float: right;
+      margin: -20px 10px 0px; }
+    @media screen and (max-width: 767px) {
+      .container .content .myfollow {
+        width: 100%;
+        margin-bottom: 30px; }
+      .container .content .myfollow:nth-child(n+2) {
+        margin-left: 0px; }
+      .container .content .btn50 {
+        padding: 0 10%; }
+      .container .content #cancelfollow {
+        position: absolute;
+        bottom: 24px;
+        right: 10px;
+        margin-top: 0px; }
+      .container .content time {
+        margin: 5px 10px;
+        float: left; } }
+    .container .content .mycomment {
+      margin: auto;
+      list-style-type: none;
+      /*用漸層設定綠色線段*/
+      background-image: linear-gradient(90deg, #00c853 10px, #00c853 10px);
+      background-size: 2px 100px;
+      background-position: center top;
+      background-repeat: repeat-y; }
+      .container .content .mycomment li {
+        width: 50%;
+        position: relative;
+        margin-bottom: 20px; }
+        .container .content .mycomment li .msg {
+          padding: 10px;
+          min-height: 60px;
+          text-align: justify;
+          border-radius: 5px;
+          margin-right: 40px;
+          background-color: #fbf8f1;
+          position: relative; }
+          .container .content .mycomment li .msg time {
+            margin: 5px 50px 0 0; }
+          .container .content .mycomment li .msg .storepic {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            overflow: hidden;
+            position: absolute;
+            right: -65px;
+            top: 8px; }
+            .container .content .mycomment li .msg .storepic img {
+              height: 100%;
+              max-width: none; }
+          .container .content .mycomment li .msg .reply {
+            padding: 10px;
+            margin-top: 32px;
+            border-radius: 2px;
+            background-color: #eee; }
+            .container .content .mycomment li .msg .reply time {
+              margin-right: 0; }
+          .container .content .mycomment li .msg #del {
+            padding: 0%;
+            position: absolute;
+            top: 0px;
+            right: 0; }
+            .container .content .mycomment li .msg #del:after {
+              content: '刪除';
+              font-size: 12px;
+              vertical-align: top; }
+        .container .content .mycomment li .msg:before {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border-top: 10px solid  transparent;
+          border-bottom: 10px solid  transparent;
+          position: absolute;
+          top: 20px; }
+        .container .content .mycomment li .msg:hover {
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
+      .container .content .mycomment li:nth-child(even) {
+        left: 50%; }
+        .container .content .mycomment li:nth-child(even) .msg {
+          margin-left: 40px;
+          margin-right: 0; }
+        .container .content .mycomment li:nth-child(even) .storepic {
+          left: -65px; }
+        .container .content .mycomment li:nth-child(even) .msg:before {
+          left: -15px;
+          border-right: 16px solid #fbf8f1; }
+      .container .content .mycomment li:nth-child(odd) .msg:before {
+        right: -15px;
+        border-left: 16px solid #fbf8f1; }
+    @media screen and (max-width: 767px) {
+      .container .content .mycomment {
+        background-position: left top; }
+        .container .content .mycomment li {
+          width: 100%; }
+          .container .content .mycomment li .msg {
+            margin: 0 0 0 40px; }
+            .container .content .mycomment li .msg time {
+              float: none;
+              margin: 0; }
+          .container .content .mycomment li .storepic {
+            left: -65px; }
+        .container .content .mycomment li:nth-child(even) {
+          left: 0; }
+        .container .content .mycomment li:nth-child(odd) .msg:before {
+          left: -15px;
+          border-left: none;
+          border-right: 16px solid #fbf8f1; } }
+    .container .content .myentry {
+      width: 300px;
+      height: 200px;
+      float: left;
+      overflow: hidden;
+      text-align: justify;
+      line-height: 1.3;
+      position: relative;
+      border-radius: 5px;
+      margin-bottom: 15px; }
+      .container .content .myentry h2, .container .content .myentry address {
+        margin: 8px; }
+      .container .content .myentry h2 > a {
+        color: #fbf8f1; }
+      .container .content .myentry time {
+        margin: 20px 0 0 5px; }
+      .container .content .myentry .actpic {
+        height: 100%; }
+      .container .content .myentry .info {
+        width: 280px;
+        height: 180px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fbf8f1;
+        position: absolute;
+        top: 140px;
+        left: 0;
+        transition: 1s; }
+        .container .content .myentry .info #cancelentry {
+          float: right;
+          margin: -50px 2px 0 0; }
+        .container .content .myentry .info #cancelentry:after {
+          content: '取消報名';
+          color: #fbf8f1;
+          font-size: 12px;
+          vertical-align: top; }
+    .container .content .myentry:nth-child(n+2) {
+      margin-left: 50px; }
+    .container .content .myentry:hover {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
+    .container .content .myentry:hover .info {
+      top: 0; }
+    @media screen and (max-width: 767px) {
+      .container .content .myentry {
+        width: auto;
+        margin-bottom: 0px;
+        margin-top: 230px;
+        overflow: visible; }
+        .container .content .myentry .info {
+          width: auto;
+          position: unset;
+          background-color: rgba(0, 0, 0, 0.9);
+          margin-top: -400px; }
+          .container .content .myentry .info .btn50 {
+            padding: 0 10%; }
+          .container .content .myentry .info #cancelentry {
+            padding: 0;
+            margin: 80px 0; }
+          .container .content .myentry .info time {
+            margin: 12px 0 0 8px;
+            float: left; }
+      .container .content .myentry:nth-child(n+2) {
+        margin-left: 0px; } }
+    .container .content form p, .container .content form .checkbox {
+      width: 42%;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 29%; }
+    .container .content form p {
+      margin-bottom: 30px; }
+    .container .content form label, .container .content form input, .container .content form strong, .container .content form a.upload {
+      text-align: justify;
+      height: 100%;
+      display: inline-block;
+      box-sizing: border-box; }
+    .container .content form span.note {
+      font-size: 12px;
+      color: #f06428;
+      margin: -28px 100px;
+      float: left; }
+    .container .content form label {
+      width: 100px;
+      float: left; }
+    .container .content form input, .container .content form strong, .container .content form a.upload {
+      max-width: 320px;
+      width: 100%;
+      float: right; }
+    .container .content form input {
+      border-radius: 2px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #bbb; }
+    .container .content form input[type="submit"], .container .content form a.upload, .container .content form .openlightbox {
+      width: 145px;
+      height: 50px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 18px;
+      border: 1px solid #f06428;
+      color: #f06428;
+      cursor: pointer;
+      margin-right: 30px;
+      line-height: 48px; }
+    .container .content form input[type="submit"] {
+      color: #fbf8f1;
+      background: #f06428;
+      float: none;
+      line-height: 40px; }
+    .container .content form .userpic {
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+      background-color: #f06428;
+      margin: 0 auto;
+      margin-bottom: -75px;
+      margin-right: 520px;
+      overflow: hidden; }
+      .container .content form .userpic img {
+        height: 100%;
+        max-width: none;
+        width: auto; }
+    .container .content form .upload:hover, .container .content form .openlightbox:hover {
+      color: #fbf8f1;
+      background: #f06428;
+      transition: .3s ease; }
+    .container .content form .upload {
+      position: relative;
+      float: left; }
+    .container .content form input[type="file"] {
+      position: absolute;
+      opacity: 0;
+      top: 2px;
+      left: 28px;
+      width: 80px;
+      cursor: pointer; }
+    .container .content form .checkbox {
+      margin-left: 34%;
+      overflow: hidden;
+      line-height: 50px;
+      padding: 10px 0; }
+      .container .content form .checkbox .openlightbox {
+        float: none; }
+    .container .content form .box {
+      display: none;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      background-color: rgba(50, 50, 50, 0.5);
+      transition: width 0s 1s, height 0s 1s, background-color 1s; }
+      .container .content form .box .changepsw {
+        width: 330px;
+        height: 390px;
+        background-color: #fbf8f1;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
+        .container .content form .box .changepsw p {
+          margin: 0 auto;
+          width: 290px;
+          padding: 20px; }
+        .container .content form .box .changepsw label {
+          width: 25%; }
+        .container .content form .box .changepsw input {
+          max-width: 75%; }
+        .container .content form .box .changepsw input[type="submit"] {
+          width: 145px;
+          margin: 0 auto; }
+        .container .content form .box .changepsw h1 {
+          width: 100%;
+          padding: 10% 5%;
+          text-align: justify;
+          color: #fbf8f1;
+          position: relative;
+          box-sizing: border-box;
+          background: #805934;
+          background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
+          background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
+          background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
+          background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
+          background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
+          background: linear-gradient(to right, #805934 0%, #9e693d 100%); }
+        .container .content form .box .changepsw img {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 10px;
+          right: 10px; }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
     @media screen and (max-width: 767px) {
       .container .content form p {
         width: 100%;
@@ -1650,13 +2128,19 @@ input:not(.radio):focus, textarea:focus {
         width: 150px;
         height: 150px;
         border-radius: 75px;
+<<<<<<< HEAD
         margin: 0 auto 30px; }
       .container .content form input, .container .content form label.openpsw, .container .content form a.upload {
+=======
+        margin: 0 auto; }
+      .container .content form input, .container .content form .openlightbox, .container .content form a.upload {
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
         margin-bottom: 30px; }
       .container .content form strong {
         margin-bottom: 45px; }
       .container .content form span.note {
         margin: -70px 0px; }
+<<<<<<< HEAD
       .container .content form input[type="submit"], .container .content form .upload {
         margin-left: auto;
         margin-right: auto; }
@@ -1730,3 +2214,17 @@ input:not(.radio):focus, textarea:focus {
         font-size: 22px; }
       .container .content h1, .container .content p {
         text-align: left; } }
+=======
+      .container .content form .checkbox {
+        width: 100%;
+        height: auto;
+        margin: 0 auto; }
+      .container .content form .openlightbox, .container .content form input[type="submit"], .container .content form a.upload {
+        width: 240px;
+        margin-left: auto;
+        margin-right: auto; }
+      .container .content form input[type="submit"] {
+        margin-bottom: 0px; }
+      .container .content form input[type="file"] {
+        width: 185px; } }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f

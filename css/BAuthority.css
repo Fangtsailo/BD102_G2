@@ -177,9 +177,13 @@ header {
           -webkit-box-shadow: 0 0 0;
           box-shadow: 0 0 0;
           border: none;
+<<<<<<< HEAD
           -webkit-transition: .5s;
           -o-transition: .5s;
           transition: .5s; }
+=======
+          transition: 0.5s; }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
           .tableContent tr td:nth-child(5) input#addAuthority {
             background-color: #565894; }
 
@@ -236,6 +240,10 @@ footer {
 
 .dutyColorChange {
   background-color: #00c853 !important;
+<<<<<<< HEAD
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s; }
+=======
+  transition: 0.5s; }
+>>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
