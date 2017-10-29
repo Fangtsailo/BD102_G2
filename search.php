@@ -52,12 +52,12 @@ try{
 		$shopType=0;  //店家 0  胖小車1
 	
 
-		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' ";	
+		$searchsql="select s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top from store_imformation s JOIN follow f ON f.SI_NUM=s.SI_NUM JOIN reviews r ON r.SI_NUM = s.SI_NUM where  SI_TYPE='$shopType' ";	
 			if ($shopPosition!=='') {
-				$searchsql.=" AND s.SI_POSITION = '$shopPosition'";
+				$searchsql.=" and SI_POSITION = '$shopPosition'";
 			}
 			if ($searchName!==''  ) {
-				$searchsql.=" AND s.SI_NAME like '%$searchName%'";
+				$searchsql.=" and SI_NAME like '%$searchName%'";
 			}
 			
 			$searchsql.= " group by s.SI_NUM";
@@ -65,8 +65,8 @@ try{
 			if ($filter!=='' && $filter=="top"){
 				$searchsql.=" order by top desc"; 
 			}
-			if ($filter!=='' && $filter=="stars"){
-				$searchsql.=" order by s.SI_AVG_REVIEW desc"; 
+			if ($filter!=='' && $filter=="star"){
+				$searchsql.=" order by star desc"; 
 			}
 
 			$search=$connectPDO->query($searchsql);
@@ -156,7 +156,7 @@ try{
 
 			<script>
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');			
+					$('.search_storeImg').css('background','url("img/store/banners/<?php echo $searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');			
 
 
 				});
@@ -167,7 +167,7 @@ try{
 					<!-- <img src="img/search-store.png"> -->
 				</div>
 				<div class="search_storeContent col-sm-6 col-xs-12">
-					<h2><a href="shopB.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
+					<h2><a href="shopB.php?storeId='<?php $searchRow->SI_NUM ?>'"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
 					<div class="search_follow">
 						<img src="img/icon/follow3.svg">	
 					</div>

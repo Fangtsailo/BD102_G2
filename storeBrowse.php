@@ -293,9 +293,7 @@ try {
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
 					<div class="item" id="big-bread-<?php echo $product->num; ?>">
-						<div class="image">
-							<div class="wraper"></div>
-						</div>
+						<div class="image"><img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>"></div>
 						<div class="describe">
 						<h3><?php echo $product->name; ?><button class="bread-detail" id="bread-detail-<?php echo $product->num; ?>">詳情</button></h3>
 
@@ -570,8 +568,6 @@ $(document).ready(function(){
 	 	$('.textLightBox .content p').text(detailContent);
 	 	$('.textLightBox').fadeIn(500);
 	 });
-	 	//商品大背景圖
-	 	$('#big-bread-<?php echo $product->num; ?> .image .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 <?php
 	 	}
 	?>
