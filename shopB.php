@@ -1,38 +1,85 @@
+<?php 
+ob_start();
+session_start();
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SSSHOP</title>
+    <link rel="icon" href="img/trepun4.png">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
     <link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
   	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCAy_Zw-sc6u3IYn0CFQc9vKn7wA3JNJ4Y"></script>
+    <link rel="stylesheet" href="css/shopB.css">
+ 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="http://maps.google.com/maps/api/js?key=AIzaSyCAy_Zw-sc6u3IYn0CFQc9vKn7wA3JNJ4Y"></script> -->
     <script src="js/spB_map.js"></script>
-
-    <script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
-
     <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
     <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
-    <script type="text/javascript" src="js/parallax.min.js"></script>
-
-
-
-	
-
-
+    <script type="text/javascript" src="js/parallax.min.js"></script>  
+    <script src="js/storeBrowse.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
-
-    <title>Document</title>
-    <link rel="stylesheet" href="css/shopB.css">
-    <link rel="stylesheet" type="text/css" href="css/basic.css">
+	
+    	
 </head>
 <body>
 
-<!-- ======================================= header 頁首 ======================================================= -->
+<!-- ======================================= header 頁首 
+	======================================================= -->
+<?php 
+require_once("header.php");
+ ?>
+<?php 
+	try{
+	
+	require_once("php/common/globalVar.php");	
+	require_once("php/store/browse/storeDetail.php");
 
-<?php require_once("header.php"); ?>
+	$memNum = -1;
+	$isLogin = false;
+	if ( isset($_SESSION["memNo"]) ===true ) {
+		$memNum = $_SESSION["memNo"];
+		$isLogin = true;
+	}
+	$storeId = 1;
+	if ( isset($_REQUEST["storeId"]) === true) {
+		$storeId = $_REQUEST["storeId"];
+	}
+
+	//======================================
+	$memPic = GLOBAL_MEM_PIC_PATH."default.png";
+	if ($memNum != -1) {
+		$memPic = GLOBAL_MEM_PIC_PATH.$_SESSION["memPic"];
+	}
+	getStoreInfoById($storeId);
+
+	// $GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
+	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
+	$GLOBALS["activityArr"] = getActivityInfoByStoreId($storeId);
+	//*****
+	$GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
+	$GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
+	$isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
+
+	require_once("php/pdo/connectPDO.php");
+
+	$sql = "select * from store_imformation where SI_NUM=$storeId and SI_TYPE=0";
+
+	$store_imformation = $connectPDO->query($sql);
+
+	$store_imformationRow=$store_imformation->fetchObject();
+
+	 } catch (Exception $e) {
+	echo "原因：",$e->getMessage(),"<br>";
+	echo "行號：",$e->getLine(),"<br>";
+	 }
+  ?>
 
 	<!-- <div class="container-template"></div> -->
 	
@@ -45,12 +92,15 @@
 	<section class="SHOPB_SHOP">
 		
 		<div class="banners">
-			<img src="img/SHOPB/BN_01.JPG" alt="">
+			<!-- <img src="img/SHOPB/BN_01.JPG" alt="">
 			<img src="img/SHOPB/BN_02.JPG" alt="">
-			<img src="img/SHOPB/BN_03.JPG" alt="">
+			<img src="img/SHOPB/BN_03.JPG" alt=""> -->
+			<div id="banner1"></div>
+			<div id="banner2"></div>
+			<div id="banner3"></div>
 		</div>
 
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			var counter = 0, // 一開始要顯示的圖，0 的話就是顯示第一張
 		    slide = document.querySelector('.banners'),
 		    items = slide.querySelectorAll('img'),
@@ -80,7 +130,7 @@
 		}
 		
 		function showPrev(){
-		    counter--; // 將 counter－1 指定上一張圖
+		    counter//--; // 將 counter－1 指定上一張圖
 		    showCurrent();
 		}
 		
@@ -90,7 +140,7 @@
 		
 		// 一開始秀出第一張圖，也可以在 HTML 的第一個 img 裡加上 class="show"
 		items[0].classList.add('show');
-		</script>
+		</script> -->
 		
 		
 
@@ -103,46 +153,102 @@
 
 
 		<div class="col-xs-10 col-sm-3" id="SPNAME">MONOCLE 麵包屋</div>
-		<div class="col-xs-10 col-sm-3" id="SPINFO">
-			<p>桃園市中壢區中央路123號</p>
-			<p>週二 - 週六 09:30 - 22:30</p>
-			<p>週日 09:30 - 17:30</p>
-			<p>每週一公休</p>
-			<p>03 - 1234567</p>
-		</div>
-		<div id="SPGRADE" >
-			
-			<div class="rating">
-			<label for="star1"></label>
-        	<input type="radio" id="star1" name="rating" value="1" hidden/>
-        	<label for="star2"></label>
-       	 	<input type="radio" id="star2" name="rating" value="2" hidden/>
-         	<label for="star3"></label>
-       	 	<input type="radio" id="star3" name="rating" value="3" hidden/>
-       	 	<label for="star4"></label>
-       	 	<input type="radio" id="star4" name="rating" value="4" hidden/>
-       	 	<label for="star5"></label>
-       	 	<input type="radio" id="star5" name="rating" value="5" hidden/>
-			</div>
 
+		<div class="col-xs-10 col-sm-3" id="biginfo">
+		<div class="" id="SPINFO">
+			<p><?php echo $GLOBALS["store"]->address ?></p>
+			<p>營業時間　<?php echo $GLOBALS["store"]->openStartTime ?>:00 - <?php echo $GLOBALS["store"]->openEndTime ?>:00</p>
+			<p>公休日　
+				<?php 
+					
+					if($store_imformation->rowCount()!=0){
+					$SI_RESTDAY=$store_imformationRow->SI_RESTDAY;
+					$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+
+					}else{
+						$SI_RESTDAY=",,,,,,,";
+						$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+					}
+
+					if(in_array('1',$SI_RESTDAY_ARY)){
+								echo '<span id="week_1" >星期ㄧ &nbsp</span>';
+							}
+					if(in_array('2',$SI_RESTDAY_ARY)){
+								echo '<span id="week_2" >星期二 &nbsp</span>';
+							}
+					if(in_array('3',$SI_RESTDAY_ARY)){
+								echo '<span id="week_3" >星期三 &nbsp</span>';
+							}
+					if(in_array('4',$SI_RESTDAY_ARY)){
+								echo '<span id="week_4" >星期四 &nbsp</span>';
+							}
+					if(in_array('5',$SI_RESTDAY_ARY)){
+								echo '<span id="week_5" >星期五 &nbsp</span>';
+							}
+					if(in_array('6',$SI_RESTDAY_ARY)){
+								echo '<span id="week_6" >星期六 &nbsp</span>';
+							}
+					if(in_array('7',$SI_RESTDAY_ARY)){
+								echo '<span id="week_7" >星期日 &nbsp</span>';
+							}
+					if(in_array('0',$SI_RESTDAY_ARY)){
+								echo '<span id="week_0" >國定假日　<spanv>';
+							}
+					 ?>
+			</p>
+			<p><?php echo $GLOBALS["store"]->phone ?></p>
+			<div id="trace-btn">
+				<?php 
+					if ($isThisMemFollowThisStore == "true") {
+				 ?>
+				 	<img alt="follow.svg" src="img/icon/follow3.svg" id="follow-icon">
+				 <?php 
+				 	} else {
+				 ?>
+				  	<img alt="follow.svg" src="img/icon/follow2.svg" id="follow-icon">
+				 <?php 
+				  	}
+				 ?>
+				<!-- <img src="img/SHOPB/heart.png" id="heart" title="收藏到口袋！"> -->
+				<p class="count">(<?php echo $GLOBALS["store"]->follow ?>)</p>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div id="SPGRADE" >
+			<div class="rating">
+        	<input type="radio" id="star1" name="rating" value="1" hidden/>
+        	<label for="star1"></label>
+       	 	<input type="radio" id="star2" name="rating" value="2" hidden/>
+       	 	<label for="star2"></label>
+       	 	<input type="radio" id="star3" name="rating" value="3" hidden/>
+       	 	<label for="star3"></label>
+       	 	<input type="radio" id="star4" name="rating" value="4" hidden/>
+       	 	<label for="star4"></label>
+       	 	<input type="radio" id="star5" name="rating" value="5" hidden/>
+       	 	<label for="star5"></label>
+			</div>
 
 			<div id="GIVESTAR">
 			<a href="#"><input  type="hidden" name="" value="" placeholder="">送出</a>
 			</div>
+
+
 		</div>
 
 
 		<div id="getstar">
 			<span>好評</span>
-			<span>&nbsp3.5&nbsp</span>
+			<span>&nbsp<?php echo $store_imformationRow->SI_AVG_REVIEW ; ?>&nbsp</span>
 			<span>分</span>
 		</div>
-		<div id="SPFOLLOW">
-			<img src="img/SHOPB/heart.png" id="heart" title="收藏到口袋！">
-			<p id="getfollow">(123)</p>
 		</div>
 
-		<script>
+		<!-- <div id="SPFOLLOW">
+			<img src="img/SHOPB/heart.png" id="heart" title="收藏到口袋！">
+			<p id="getfollow">(123)</p>
+		</div> -->
+
+<!-- 		<script>
 			function switchFavorite(){
 			  var heart = document.getElementById("heart");
 			  if( heart.title == "收藏到口袋！"){
@@ -157,12 +263,12 @@
 			  document.getElementById("heart").onclick = switchFavorite;
 			}
 			window.onload = init;
-		</script> 
+		</script>  -->
 
 
 
 		<div class="col-xs-6 col-sm-4" id="SPSTORY">
-			<p id="story1">烘焙是一間以手工製做麵包為出發的複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味。</p><p id="story2">麵包店，提供客人複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味。 烘焙是一間以手工製做麵包為出發的複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味， 提供客人複合式麵包店。</p><p id="story3">烘焙是一間以手工製做麵包為出發的複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味。</p>
+			<p id="story1"><?php echo $GLOBALS["store"]->story ?></p>
 		</div>
 
 			
@@ -177,7 +283,7 @@
 	</section>
 	<div class="clearfix"></div>
 		<div class="SPSTORYRWD">
-			<p id="story1">　　烘焙是一間以手工製做麵包為出發的複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味。</p><p id="story2">　　麵包店提供客人，複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味。 烘焙是一間以手工製做麵包為出發的複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味， 提供客人複合式麵包店。</p><p id="story3">　　烘焙是一間以手工製做麵包為出發的複合式麵包店。嚴選天然食材、自製天然、強調原味即是美味。</p>
+			<p id="story1"><?php echo $GLOBALS["store"]->story ?></p>
 		</div>
 
 
@@ -197,60 +303,25 @@
 			<div class="bar"></div>
 			<p>自慢商品</p>
 		</div>
-		<div id="pd1">
-			<img src="img/SHOPB/PD_001.jpg">
-			<p id="dis">辮子丹麥麵包</p>
-			<div class="pd1_DTL">
-				<h3>辮子丹麥麵包</h3>
-				<p>	表皮香酥層層疊疊層層疊<br>
-					內在柔軟綿綿密密綿綿蜜<br>NT.50</p>
+
+
+		<?php 
+		// exit(print_r($GLOBALS["produtsArr"]));
+			foreach ($GLOBALS["produtsArr"] as $key=>$product) {
+		?>
+		<div id="pd<?php echo ($key+1); ?>">
+			<div class="pdimg">
+			<img src="<?php echo $product->pictureName; ?>">
+			</div>
+			<p id="dis"><?php echo $product->name; ?></p>
+			<div class="pd<?php echo ($key+1); ?>_DTL">
+				<h3><?php echo $product->name; ?></h3>
+				<p><?php echo $product->description ?><br>NT.<?php echo $product->price ?></p>
 			</div>
 		</div>
-		<div id="pd2">
-			<img src="img/SHOPB/PD_002.jpg">
-			<p id="dis">巧克力閃電泡芙</p>
-			<div class="pd2_DTL">
-				<h3>巧克力閃電泡芙</h3>
-				<p>	表皮香酥層層疊疊<br>
-					內在柔軟綿綿密密<br>NT.50</p>
-			</div>
-		</div>
-		<div id="pd3">
-			<img src="img/SHOPB/PD_003.jpg">
-			<p id="dis">麥麥香香麵包</p>
-			<div class="pd3_DTL">
-				<h3>麥麥香香麵包</h3>
-				<p>	表皮香酥層層疊疊<br>
-					內在柔軟綿綿密密<br>NT.50</p>
-			</div>
-		</div>
-		<div id="pd4">
-			<img src="img/SHOPB/PD_004.jpg">
-			<p id="dis">秘製清爽多拿滋</p>
-			<div class="pd4_DTL">
-				<h3>秘製清爽多拿滋</h3>
-				<p>	表皮香酥層層疊疊<br>
-					內在柔軟綿綿密密<br>NT.50</p>
-			</div>
-		</div>
-		<div id="pd5">
-			<img src="img/SHOPB/PD_005.jpg">
-			<p id="dis">短棍法國麵包</p>
-			<div class="pd5_DTL">
-				<h3>短棍法國麵包</h3>
-				<p>	表皮香酥層層疊疊<br>
-					內在柔軟綿綿密密<br>NT.50</p>
-			</div>
-		</div>
-		<div id="pd6">
-			<img src="img/SHOPB/PD_006.jpg">
-			<p id="dis">楓糖可頌</p>
-			<div class="pd6_DTL">
-				<h3>楓糖可頌</h3>
-				<p>	表皮香酥層層疊疊<br>
-					內在柔軟綿綿密密<br>NT.50</p>
-			</div>
-		</div>
+		<?php
+			}
+		 ?>
 	</section>
 
 
@@ -260,23 +331,32 @@
 	<section class="SHOPB_ACT col-xs-12 col-sm-12">
 		<img src="img/SHOPB/ACT_01.jpg">
 		<div id="BOTTOMAREA"></div>
-		<div id="ACTIMG">
+		<!-- <div id="ACTIMG">
 			<img src="img/SHOPB/act.png">
-		</div>
+		</div> -->
 		<div id="SKINAREA"></div>
 		<div id="ACTTXT">
-			<p id="tt">牛角麵包簡單學</p>
+			<?php  
+			foreach ($GLOBALS["activityArr"] as $activity) {
+			?>
+			<p id="tt"><?php echo $activity->title ?></p>
 			<p id="cc">
-				體驗地點 : 桃園市中壢區中央路55號<br>  
-           		烘焙王麵包坊<br>
-				時間 : 105.9.29  下午1:00(預計3小時)<br>
-				人數限制 : 10~12人<br>
-				聯絡方式 : (03)3335567<br>
-				材料 : 麵包坊提供<br>
-				費用 : 報名費與材料一共1000元(現場收費)
+				體驗地點 : <?php echo $activity->address ?> <br>
+				時間 : <?php echo $activity->time ?> <br>
+				人數限制 : <?php echo $activity->peopleLimit ?> 人<br>
+				材料 : <?php echo $activity->ingredient ?> <br>
+				費用 : <?php echo $activity->price ?>
 			</p>
-			<input type="button" id="ACTBT" name="" value="報名活動">
+			<a href="activity_act.php?actNum=<?php echo $activity->num ?>" id="ACTBT">活動詳情</a>
+			<div id="ACTIMG">
+				<script type="text/javascript">
+					$("#ACTIMG").css('background','url("<?php echo $activity->bannerfullPicName=="" ? "default.jpg" : $activity->bannerfullPicName; ?>") center center').css('background-size','cover');
+				</script>
+			<!-- <img src="<?php //echo $activity->bannerfullPicName ?>"> -->
+			</div>
 		</div>
+		<?php 
+		} ?>
 	</section>
 
 
@@ -290,7 +370,7 @@
 
 	<section class="SHOPB_MSG">
 
-		<div class="MSG_CON">
+		<!-- <div class="MSG_CON">
 			<div class="MSG_PROFILE">
 				<img src="img/SHOPB/PROFILE1.png">
 			</div>
@@ -334,7 +414,7 @@
 					</p>
 					</div>					
 				</div> <!-- MSG_RES -->
-				<div class="clearfix"></div>
+<!-- 				<div class="clearfix"></div>
 				<div class="MSG_RES">
 					<div class="MSG_RES_PROFILE">
 						<img src="img/SHOPB/PROFILE2.png">
@@ -344,9 +424,52 @@
 					</p>					
 				</div> <!-- MSG_RES -->
 
-			</div>	<!-- MSG_TXT -->		
+<!-- 			</div>	<!-- MSG_TXT -->		
 			
-		</div><div class="clearfix"></div>
+<!-- 		</div><div class="clearfix"></div> -->
+
+		<div class="perspective">
+		<div class="title">
+			<!-- <div class="front">留言板</div> -->
+			<div class="down">
+				<p>留言板</p>
+			</div>
+		</div>
+	</div>
+	<div class="send-message-area">
+		<div class="message-box" id="MSG123">
+			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
+			<div class="content col-lg-10"><textarea wrap="physical" id="message-box-txtarea" maxlength="200" placeholder="登入後開始留言..." rows="5"></textarea>
+			<button id="send-message-btn" class="button">留言</button>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="messages-area" id="messages-area">
+		<?php 
+			foreach ($GLOBALS["messageArr"] as $messageItem) {
+		?>
+					<div class="message-box">
+						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $memPic ?>"></div>
+						<div class="content col-lg-10">
+							<div class="container">
+								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
+								<p><?php echo $messageItem->content ?></p>
+								<div class="setting-area">
+									<div class="report pointer button" id="msg-<?php echo $messageItem->no ?>">
+										<p>檢舉</p></div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>	
+		<?php
+			}
+		 ?>
+		<div class="more-message button" id="more-message">看更多</div>
+	</div>
+
 
 
 
@@ -366,10 +489,16 @@
 
 
 		<div class="OTHERSPHOTOS">
-    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_01.jpg"></a> </div>
-    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_02.jpg"></a> </div>
+			<?php 
+				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
+			?>
+    		<div><a href="shopB.php?storeId=<?php echo $otherStore->id; ?>"><img id="IIImg" src="<?php echo $otherStore->banner1; ?>"></a> </div>
+    		<?php
+				}
+	 		?>	
+    		<!-- <div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_02.jpg"></a> </div>
     		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_03.jpg"></a> </div>
-    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_04.jpg"></a> </div>
+    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_04.jpg"></a> </div> -->
 
   		</div>
 
@@ -411,7 +540,138 @@
 
 <?php require_once("footer.php"); ?>
 
-<script type="text/javascript" src="js/spB_don.js"></script>	
+<script type="text/javascript" src="js/spB_don.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	initShopBMap(<?php echo $GLOBALS["store"]->lat ?>,<?php echo $GLOBALS["store"]->lng ?>);
+	isLogin = <?php echo $isLogin==true?"true":"false"; ?>;
+	isThisMemFollowThisStore = <?php echo $isThisMemFollowThisStore; ?>;
+	//initParallax("activity-parallax");
+	//allSlickSetting();
+	//initAllScrollMagicScene();
+	// initBreadCarNowLocationMap("map-now", <?php //echo $GLOBALS["store"]->lat;?>, <?php //echo $GLOBALS["store"]->lng ?>);
+	// <?php
+	// foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
+	// ?>
+	// 	initBreadCarRouteMap("map-now<?php //echo $key;?>",<?php //echo $path->locationsStr ?>,<?php //echo $path->nowLocation?>);
+	// <?php
+	// 	}
+	//  ?>
+	// setTimeout(function() {animate_illustration("bottom-city", "start");}, 1000);
+
+	$('#banner1').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner1;?>")');
+	 $('#banner2').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner2;?>")');
+	 $('#banner3').css('background-image', 'url("<?php echo $GLOBALS["store"]->banner3;?>")');
+
+	screen1BannerImgDivNum = "1";
+ 	setInterval(function(){ 
+ 	var tmpNum = screen1BannerImgDivNum;
+ 	screen1BannerImgDivNum = (screen1BannerImgDivNum + 1) % 3;
+ 	screen1BannerImgDivNum = screen1BannerImgDivNum == 0?3:screen1BannerImgDivNum;
+ 	$('#banner' + screen1BannerImgDivNum).fadeIn(2000);
+ 	$('#banner' + tmpNum).fadeOut(2000);
+  	}, 5000);
+
+	var messageLoadMore = document.getElementById("more-message");
+	//看更多留言事件--------------------
+	messageLoadMore.addEventListener("click", function() {
+		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>);
+	}, false);
+	//寄發留言-------------------------
+	
+	$("#send-message-btn").click(function() {
+		var content = $("#message-box-txtarea").val();
+		if (content.length > 0) {
+		sendMessage(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum;?>, content);
+		} else {
+			$.sweetModal({
+                content: '先輸入文字',
+                icon: $.sweetModal.ICON_WARNING,
+                width: '300px',
+                theme: $.sweetModal.THEME_MIXED
+            });
+		}
+	})
+	if (isLogin) {
+		$("#send-message-btn").attr("disabled",false);
+	} else {
+		//留言板相關
+		$("#send-message-btn").attr("disabled",true);
+		$("#message-box-txtarea").on('click', function(){
+				$('#loginBox').fadeIn(500);
+			    $("#menu").removeClass("show");
+			    $('#addShopBox').hide();
+			});
+	}
+	//觸發追蹤店家
+	$("#trace-btn").click(function() {
+		triggerFollow(<?php echo $memNum;?>, <?php echo $GLOBALS["store"]->id; ?>);
+	})
+	
+	//screen1 banner1 bgImg----------------
+	 // $('#banner1').css('background-image', 'url("<?php //echo $GLOBALS["store"]->banner1;?>")');
+	 // $('#banner2').css('background-image', 'url("<?php //echo $GLOBALS["store"]->banner2;?>")');
+	 // $('#banner3').css('background-image', 'url("<?php //echo $GLOBALS["store"]->banner3;?>")');
+	 //評價-----------------------------
+	 $('#review-btn').on('click', function() {
+
+	 });
+	 navigatorDotScroll();
+	 //商品詳情-------------------------
+	//  $(".textLightBox .closeBtn").on('click', function(){
+	//  	$('.textLightBox').fadeOut(500);
+	//  });
+	//  <?php
+	//  	foreach ($GLOBALS["produtsArr"] as $product) {
+	//  ?>
+	//  	$("#bread-detail-<?php //echo $product->num; ?>").on('click', function(){
+	//  	var detailContent = $('#big-bread-<?php //echo $product->num; ?> p').text();
+	//  	$('.textLightBox .content p').text(detailContent);
+	//  	$('.textLightBox').fadeIn(500);
+	//  });
+	//  <?php
+	//  	}
+	// ?>
+	//活動照片------------------------------
+	<?php  
+		foreach ($GLOBALS["activityArr"] as $activity) {
+	?>
+		$('#act-<?php echo $activity->num ?> .item:first-child').css('background-image', 'url(<?php echo $activity->actPicName1 ?>)');
+		$('#act-<?php echo $activity->num ?> .item:nth-child(2)').css('background-image', 'url(<?php echo $activity->actProductPicName1 ?>)');
+		$('#act-<?php echo $activity->num ?> .item:nth-child(3)').css('background-image', 'url(<?php echo $activity->actProductPicName2 ?>)');
+		$('#act-<?php echo $activity->num ?> .item:nth-child(4)').css('background-image', 'url(<?php echo $activity->actPicName2 ?>)');
+	<?php 
+		} 
+	?>
+	//檢舉留言-----------------------------------
+	<?php 
+		foreach ($GLOBALS["messageArr"] as $messageItem) {
+			//有被此登入者檢舉過就不給再檢舉
+			if ($messageItem->isReportByMe == true) {
+	?>
+   		$('#msg-' + <?php echo $messageItem->no ?>).addClass('reported');
+   		$('#msg-' + <?php echo $messageItem->no ?> + ' p').text('已檢舉');
+	<?php 
+			} else {
+	 ?>
+		$('#msg-<?php echo $messageItem->no ?>').on('click', function(){
+			reportMessage(<?php echo $messageItem->no ?>, <?php echo $memNum;?>, "test reason");
+		});
+	<?php 
+			}
+		}
+	?>
+	//其他店家列表用background-image
+	<?php 
+		foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
+	?>
+			$('#other-<?php echo $otherStore->id; ?> .store-img').css('background-image', 'url("<?php echo $otherStore->banner1; ?>")');
+	<?php
+		}
+	 ?>	
+});	
+</script>	
 
 </body>
 </html>
