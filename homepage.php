@@ -151,7 +151,7 @@ require_once("headerForHomePage.php");
 					<div class="filterBar">
 						<span class="filterTitle">篩選條件</span>
 						<select  class="filter" name="shopPosition" id="filterArea">
-							<option value="default">地區</option>
+							<option value="">地區</option>
 							<option value="0">北部</option>
 							<option value="1">中部</option>
 							<option value="2">南部</option>

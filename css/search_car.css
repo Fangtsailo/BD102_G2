@@ -719,79 +719,63 @@ footer {
     padding: 0 10px;
     float: left;
     width: 8.3333%; }
-
   /*12欄*/
   .col-xs-2 {
     padding: 0 10px;
     float: left;
     width: 16.6666%; }
-
   /*6欄*/
   .col-xs-3 {
     padding: 0 10px;
     float: left;
     width: 25%; }
-
   /*4欄*/
   .col-xs-4 {
     padding: 0 10px;
     float: left;
     width: 33.3333%; }
-
   /*3欄*/
   .col-xs-5 {
     padding: 0 10px;
     float: left;
     width: 41.6666%; }
-
   .col-xs-6 {
     padding: 0 10px;
     float: left;
     width: 50%; }
-
   /*2欄*/
   .col-xs-7 {
     padding: 0 10px;
     float: left;
     width: 58.3333%; }
-
   .col-xs-8 {
     padding: 0 10px;
     float: left;
     width: 66.6666%; }
-
   .col-xs-9 {
     padding: 0 10px;
     float: left;
     width: 75%; }
-
   .col-xs-10 {
     padding: 0 10px;
     float: left;
     width: 83.3333%; }
-
   .col-xs-11 {
     padding: 0 10px;
     float: left;
     width: 91.6666%; }
-
   .col-xs-12 {
     padding: 0 10px;
     float: left;
     width: 100%; }
-
   /*1欄*/
   .globalForm {
     width: 80%;
     margin: auto; }
     .globalForm .globalOkBtn, .globalForm .globalCancelBtn {
       width: 40%; } }
-<<<<<<< HEAD
 
 @media screen and (max-width: 980px) {
-=======
-@media screen and (max-width: 900px) {
->>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
   .globalHead {
     text-align: center; }
     .globalHead .headLogo {
@@ -979,7 +963,7 @@ footer {
           font-size: 20px;
           background-color: #663300;
           border-radius: 5px; }
-        .globalHead .rwdSearchBar .rwdsearchItem label {
+        .globalHead .rwdSearchBar .rwdsearchItem label.rwdfilter {
           display: inline-block;
           margin: 0px 5px;
           margin-bottom: 5px;
@@ -987,11 +971,15 @@ footer {
           color: #fbf8f1;
           border: 1px solid #fbf8f1;
           outline: none;
-          border-radius: 5px; }
-          .globalHead .rwdSearchBar .rwdsearchItem label input {
-            display: none; }
-          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
-            background-color: #f06428; }
+          border-radius: 5px;
+          cursor: pointer; }
+        .globalHead .rwdSearchBar .rwdsearchItem input[type=radio] {
+          display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
+            background-color: #fbf8f1;
+            color: #996633;
+            box-shadow: none;
+            transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
           margin: auto; }
@@ -1006,7 +994,7 @@ footer {
         top: 80px;
         left: 0;
         transition: .3s; }
-      .globalHead .rwdSearchBar input[type="submit"] {
+      .globalHead .rwdSearchBar #rwdSubmit {
         display: block;
         width: 50%;
         height: 40px;
@@ -1080,7 +1068,6 @@ footer {
         bottom: 0;
         left: 0;
         right: 0;
-<<<<<<< HEAD
         margin: auto; }
     #addShopBox .globalForm .selectTime {
       display: block;
@@ -1147,15 +1134,9 @@ footer {
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
 
-<<<<<<< HEAD
-=======
-        transition: .3s; } }
->>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
-=======
 body {
   background: url("../img/homepage/homepage_bg0.png") repeat; }
 
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 img {
   vertical-align: top; }
 
@@ -1294,18 +1275,15 @@ img {
   .search_storeOne {
     min-height: 150px;
     max-height: 160px; } }
+
 @media screen and (min-width: 768px) and (max-width: 959px) {
   .search_store {
-<<<<<<< HEAD
-    width: 90%; }
-
-=======
     width: 90%;
     min-width: 447px; }
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
   .search_storeOne {
     min-height: 150px;
     max-height: 200px; } }
+
 @media screen and (max-width: 767px) {
   .search_content .search_title {
     margin-top: 16vh; }
@@ -1329,21 +1307,16 @@ img {
           float: none; }
         .search_content .search_mapcar .search_store .search_storeOne .search_storeContent .search_storeInfor #search_map1 {
           display: inline; } }
+
 @media screen and (min-width: 768px) {
   .search_store {
     overflow: auto;
     max-height: 44vw;
     top: 0;
-<<<<<<< HEAD
-    max-width: 800px; }
-
-=======
     max-width: 800px;
     min-width: 420px;
     right: 3%; }
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
   .search_mapcar {
     height: 50vw; }
-
   .search_store {
     width: 35%; } }

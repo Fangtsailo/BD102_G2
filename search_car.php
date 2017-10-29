@@ -50,7 +50,6 @@ try{
 	require_once("php/pdo/connectPDO.php");
 
 		$shopType=1;  //店家 0  胖小車1
-	
 
 		$searchsql="select s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top from store_imformation s JOIN follow f ON f.SI_NUM=s.SI_NUM JOIN reviews r ON r.SI_NUM = s.SI_NUM where  SI_TYPE='$shopType' ";	
 			if ($shopPosition!=='') {
@@ -183,7 +182,7 @@ try{
 										}
 									?>
 								</ul>
-							</div>  
+							</div>
 							<div class="search_storeInfor ">
 								<ul>
 									<li>電話： <?php echo "$searchRow->SI_PHONE"; ?></li>
