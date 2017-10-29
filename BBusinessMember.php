@@ -36,7 +36,9 @@ session_start();
 
 
 
-<?php 
+<?php
+
+
 
 require_once("BackStageHeaderSidebar.php");
 
@@ -142,7 +144,10 @@ require_once("BackStageHeaderSidebar.php");
 
 
 
+
 								 if(isset($_REQUEST["searchBar"])){
+
+								 exit("22222222222222222222222222222"); 
 
 
 								 	$searchBar = $_GET["searchBar"];
@@ -162,6 +167,12 @@ require_once("BackStageHeaderSidebar.php");
 									$store_imformation = $connectPDO->query($sql);
 
 									$store_imformationRow=$store_imformation->fetchObject();
+
+
+
+
+
+									
 
 
 
@@ -246,6 +257,9 @@ require_once("BackStageHeaderSidebar.php");
 							} else{//if($EMP_STATUS==0)
 
 
+								exit("22222222222222222222222222222"); 
+
+
 						?>
 
 												 <td class="authorityName">正常</td>
@@ -263,6 +277,8 @@ require_once("BackStageHeaderSidebar.php");
 											$MEM_STATUS = $memberSearchRow->MEM_STATUS;
 
 											if($MEM_STATUS==0){
+
+												exit();
 
 										?>
 										
@@ -320,11 +336,13 @@ require_once("BackStageHeaderSidebar.php");
 					 	 
 						}else{//if(isset($_GET["searchBar"]))
 
-
+					
 
 							while($memberRow = $member -> fetchObject()){
 
 							$MEM_NO=$memberRow->MEM_NO;
+
+							
 
 
 
@@ -343,12 +361,19 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $memberRow->MEM_MAIL; ?></td>
 						<td><?php echo $memberRow->MEM_NAME; ?></td>
 						<td><?php echo $memberRow->MEM_PHONE; ?></td>
+
+
 <!-- =========td pass or not====== -->
 
 
 						<?php 
 
+
+
+						
 							$SI_CHECKSTAY=$store_imformationRow->SI_CHECKSTAY;
+
+							
 
 							if($SI_CHECKSTAY==NULL){
 
@@ -374,6 +399,7 @@ require_once("BackStageHeaderSidebar.php");
 							<td style="color:#cc4e4e">駁回</td>
 
 						<?php
+
 
 							}//if($SI_CHECKSTAY==1)
 
