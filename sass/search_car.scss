@@ -1,12 +1,17 @@
 @import 'basic.scss';
 
 // ==================================
+body {
+	background:url("../img/homepage/homepage_bg0.png") repeat ;
+
+}
+
 
 img{
 	vertical-align:top;
 }
 .search_title{
-	margin-top:8vw;
+	margin-top:9vw;
 	color:$globalTitleColor;
 	text-align:center;
 }
@@ -26,7 +31,7 @@ img{
 		}   
 	}	//h1
 	.tag-fa{
-		    height: 35px;
+		    height: 5%;
 		margin-top:5px;
 		display:inline-block;
 		.tag{
@@ -71,6 +76,19 @@ img{
 	
 }  //.search_result
 
+
+
+.none_store{
+	height:50vh;
+	h1{	width:80%;
+		margin:auto;
+		font-size:24px;
+		text-align:center;
+		color:$globalLinkColor;
+	}
+}
+
+
 .search_mapcar{
 	width:100%;
 	// height:50vw;
@@ -91,22 +109,36 @@ img{
 	z-index:5;
 	background-color:rgba(255, 255, 255, .7);
 	position:absolute;
-	right:3%;
+	
 	
 
 	
 	.search_storeOne{
-		width:90%;
-		margin:25px auto;
+		 box-sizing: border-box;
+		width:100%;
+		margin:0 auto;
 		overflow:hidden;
 		border:$globalUnclickColor solid 1px;
+		&:hover {
+			background-color: rgba(234, 178, 96, 0.5) !important;
+		}
+		a {
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    width: 172px;
+		    white-space: nowrap;
+		    display: block;
+			&:hover {
+				color: #f06428;
+			}
+		}
 		.search_storeImg {
 			float:left;
 			overflow:hidden;
 			height:200px;
 			box-sizing: border-box;
 			
-			background:url('../img/search-1.png') center center;
+			//background:url('../img/search-1.png') center center;
 			background-size:cover;
 			img{
 				width:100%;
@@ -122,11 +154,14 @@ img{
 				
 			}
 			.search_follow{
-				float:left;
+				// float:left;
 				width:30px;
-				padding:0 0 0 20px;
+				display:inline-block;
 				box-sizing:content-box;
 				img {
+					position: relative;
+    				top: -5px;
+					width:40px;
 					vertical-align: -webkit-baseline-middle;
 				}
 				
@@ -134,13 +169,13 @@ img{
 		
 			#search_followNum{
 				color:#bbb;
-				float:left;
+				display:inline-block;
 				font-size:16px;
-				padding:6px;
+				padding:6px 0 0;
 			}
 			.search_storeStar{
 				height:20px;
-				margin-top: 40px;
+			
 				margin-bottom: 10px;
 				li{
 					display:inline-block;
@@ -152,7 +187,16 @@ img{
 			}
 			.search_storeInfor{
 				line-height: 20px;
-				ul{ position:relative}
+				ul{ 
+					position:relative;
+					li {
+					    list-style: none;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    width: 100%;
+					    white-space: nowrap;
+					}
+				}
 			}
 
 
@@ -193,6 +237,7 @@ img{
 {
 	.search_store{
 		width:90%;
+		min-width: 447px;
 	}
 	.search_storeOne{
 		min-height:150px;
@@ -205,7 +250,7 @@ img{
 	
 	.search_content {
 		.search_title{
-			margin-top:12vh;
+			margin-top:16vh;
 		}
 		.search_result{
 			margin:0 auto 10px ;
@@ -221,18 +266,24 @@ img{
 			}
 			.search_store{
 				bottom:0%;
-				width:95%;
-				margin:auto;
+				width:100%;
 				overflow: auto;
     			max-height: 200px;
     			position:relative;
+				
 				.search_storeOne{
 					width:100%;
-					margin:auto;
+					// margin:auto 0;
 				.search_storeMap{
 					
 				}	
 					.search_storeContent{
+						h2{
+							float:none;
+							a {
+							    width: 100%;
+							}
+						}
 						.search_storeInfor{
 							#search_map1{
 								display:inline;
@@ -251,6 +302,8 @@ img{
  		max-height:44vw;
  		top:0;
  		max-width:800px;
+ 		min-width: 420px;
+ 		right:3%;
  	}
  	.search_mapcar{
  		     height: 50vw; 

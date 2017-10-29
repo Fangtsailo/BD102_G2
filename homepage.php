@@ -140,40 +140,32 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form action="" method="post">
-				<ul class="tabs">
-					<li class="tab_contents active" id="searchShops">
-						店家
-					</li>
-					<li class="tab_contents" id="searchVans">
-						胖小車
-					</li>
-					<li class="clearfix"></li>
-				</ul>
+				<form id="homeSearchForm" action="search.php" method="get">
+				<div class="tabs">
+						<label class="tab_contents active" id="searchShops">店家<input type="radio" value="0" name="shopType"></label>
+						<label class="tab_contents" id="searchVans">胖小車<input type="radio" value="1" name="shopType"></label>
+					
+					<div class="clearfix"></div>
+				</div>
 				<div class="searchContent">
-					<span class="filterTitle">篩選條件</span>
-					
-					
-						<select  class="filter" name="searchArea" id="filterArea">
-								<option value="default">地區</option>
-								<option value="taipei">台北市</option>
-								<option value="newTaipei">新北市</option>
-								<option value="taoyuan">桃園市</option>
-								<option value="taoyuan">台中市</option>
-								<option value="taoyuan">台南市</option>
-								<option value="taoyuan">高雄市</option>
+					<div class="filterBar">
+						<span class="filterTitle">篩選條件</span>
+						<select  class="filter" name="shopPosition" id="filterArea">
+							<option value="">地區</option>
+							<option value="0">北部</option>
+							<option value="1">中部</option>
+							<option value="2">南部</option>
+							<option value="3">東部</option>
 						</select>
-					
-				
-					<button type="button" name="topFilters" value="top" class="filter" id="filterTops">
-						<span>熱門</span>
-					</button>
-					<button type="button" name="starFilters" value="stars" class="filter" id="filterstars">
-						<span>評價</span>
-					</button>
+						<input type="radio" value="top" name="filter" id="filterTops">
+						<label for="filterTops" class="filter">熱門</label>	
+						<input type="radio" name="filter" value="stars" id="filterstars">
+						<label for="filterstars" class="filter">評價</label>	
+						<div class="clearfix"></div>
+					</div>
 					<div class="searchbar">
-					<input id="searchInput" type="search" name="searchStore" placeholder="輸入您附近的麵包香，讓我們幫您尋找">
-					<button id="searchSubmit" type="submit">搜尋</button>
+					<input id="searchInput" type="search" name="searchStore" placeholder="輸入您喜愛的麵包店面！">
+					<button id="searchSubmit" type="button">搜尋</button>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -208,10 +200,9 @@ require_once("headerForHomePage.php");
 	<?php 
 	try{
 		require_once("php/PDO/connectPDO.php");
-		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
+		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
 		$topShops = $connectPDO->query($selectTopShopSQL);
 		while ($topShopsRow = $topShops->fetchObject()) {
-			
 	?>
 
 			<div class="shopItem" data-depth="1">
@@ -228,13 +219,20 @@ require_once("headerForHomePage.php");
 				</div>
 				<div class="shopMessage">
 					<div class="memPic">
-						<img src="">
+						<?php 
+								if ( isset($_SESSION['memPic']) ){
+									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+								}else {
+									echo "<img src='img/member_pic/default.png'>";
+								}
+
+							 ?>
 					</div>
-					<span>Chris</span>
-					<span id="messageTime">2小時前</span>
+					<span><?php echo $topShopsRow->MEM_NAME ?></span>
+					<span id="messageTime"><?php echo $topShopsRow->SPMSG_TIME?></span>
 					<div class="clearfix"></div>
 					<div class="message">
-						<p>居然還有自製果醬，跟他們家的白土司是絕配啊！</p>
+						<p><?php echo $topShopsRow->SPMSG_CON?></p>
 					</div>
 				</div>
 			</div>

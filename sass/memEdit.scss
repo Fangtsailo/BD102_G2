@@ -50,40 +50,40 @@ img{
 	max-width: 100%;
 	vertical-align: bottom;
 }
-input{
+input, textarea{
 	outline: none;
 	padding: 2px;
 	font-family: $globalFont;
 	font-weight: lighter;
 }
-//砞﹚input placeholder妓Α
-input::-webkit-input-placeholder { /* WebKit browsers */
+//設定input placeholder樣式
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
 	   color: $globalUnclickColor;
 }
-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 	   color: $globalUnclickColor;
 }
-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+input::-moz-placeholder, textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
 	   color: $globalUnclickColor;
 }
-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
 	   color: $globalUnclickColor;
 }
-input:not(.radio):focus{
+input:not(.radio):focus, textarea:focus{
 	border: 1px solid rgba(240, 100, 40, 0.3);
 	box-shadow: 0 0 2px $globalStarColor;
-}//砞﹚input:focus妓Α
+}//設定input:focus樣式
 
 .myfollow, .msg, .myentry{
 	transition: box-shadow 1s;
-}//hover潮紇丁
+}//hover長陰影時間
 
-//===穦盡跋ノ砞﹚==================================================
+//===會員專區共用的設定==================================================
 .container{
 	position: relative;
 	margin: 0 auto;
 
-//===凹娩逆==================================================
+//===側邊欄==================================================
 	.sidebar{
 		width: 210px;
 		height: 310px;
@@ -156,12 +156,12 @@ input:not(.radio):focus{
 		}
 	}//RWD end
 
-//===ず甧ノ砞﹚==================================================
+//===內容共用的設定==================================================
 
 	.content{
 		max-width: 1200px;
     	width: 83.3333%;
-    	min-height: 60vh; //ňゎfooter┕禲
+    	min-height: 60vh; //防止footer往上跑
 		margin: 0 auto;
 		margin-top: 100px;
 		text-align: center;
@@ -183,7 +183,7 @@ input:not(.radio):focus{
 			clear: both;  
 		}
 
-	input[type="submit"], .upload, label.openlightbox, .btn{
+	input[type="submit"], input[type="button"], .upload, label.openlightbox, .btn{
 		width: 145px;
 		height: 50px;
 		border-radius: 25px;
@@ -199,7 +199,7 @@ input:not(.radio):focus{
 		display: block;
 		margin: 0 auto;
 	}
-	input[type="submit"]{
+	input[type="submit"], input[type="button"]{
 		color: $globalBgColor;
 		background: $globalBtnColor;
 		float: none;
@@ -221,7 +221,7 @@ input:not(.radio):focus{
 		position: relative;
 		float: left;
 	}
-	input[type="submit"]:hover{
+	input[type="submit"]:hover, input[type="button"]:hover{
 		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 	}
 
@@ -288,9 +288,9 @@ input:not(.radio):focus{
 			    right: 10px;
 			}
 		}//changepsw end
-	}//絚box end
+	}//光箱box end
 
-//===и發萝==================================================
+//===我的追蹤==================================================
 	.myfollow{
 		width: 220px;
 		float: left;
@@ -314,9 +314,9 @@ input:not(.radio):focus{
 	}
 	.myfollow:hover{
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-	}//hover潮紇
+	}//hover長陰影
 
-	//秙妓Α
+	//小按鈕樣式
 	.btn50{
 		width: 50px;
 		height: 50px;
@@ -329,22 +329,22 @@ input:not(.radio):focus{
 		float: right;
 		margin: -55px 2px 0 0;
 		&:after{
-		content: '發萝';
+		content: '取消追蹤';
 		font-size: $globalCardSize;
 		vertical-align: top;
 		}
-	}//發萝
+	}//取消追蹤
 
 	#mappointer{
 		text-align: center;
 		display: block;
 		&:after{
 		display: block;
-		content: '瓜';
+		content: '地圖';
 		font-size: $globalCardSize;
 		vertical-align: top;
 		}
-	}//瓜
+	}//地圖
 	
 		
 	.myfollow > ul{
@@ -357,14 +357,14 @@ input:not(.radio):focus{
 			vertical-align: top;
 			}
 		}
-	}//蝶基琍琍计
+	}//評價星星數
 
 	time{
 		color: $globalUnclickColor;
 		font-size: $globalCardSize - 2px;
 		float: right;
 		margin: -20px 10px 0px;
-	}//ら戳丁妓Α
+	}//日期時間小字樣式
 
 	@media screen and (max-width: 767px) {
 		.myfollow{
@@ -389,9 +389,9 @@ input:not(.radio):focus{
 		}
 	}//RWD end
 
-//===и痙ē==================================================
+//===我的留言==================================================
 	.mycomment{
-		/*ノ亥糷砞﹚厚︹絬琿*/
+		/*用漸層設定綠色線段*/
 		background-image: linear-gradient(90deg, $globalAccountColor 10px, $globalAccountColor 10px );
 		background-size: 2px 100px;
 		background-position: center top;
@@ -412,7 +412,7 @@ input:not(.radio):focus{
 
 				time{
 					margin: 5px 50px 0 0;
-				}//痙ē丁
+				}//留言時間
 
 				.storepic{
 					width: 50px;
@@ -426,7 +426,7 @@ input:not(.radio):focus{
 						height: 100%;
 						max-width: none;
 					}
-				}//穦繷酚
+				}//會員大頭照
 
 				.reply{
 					padding: 10px;
@@ -436,8 +436,8 @@ input:not(.radio):focus{
 					display: none;
 					time{
 						margin-right: 0;
-					}//┍滦丁
-				}//┍滦
+					}//店長回覆時間
+				}//店長回覆
 
 				#del{
 					padding: 0%;
@@ -445,11 +445,11 @@ input:not(.radio):focus{
 					top: 0px;
 					right: 0;
 					&:after{
-						content: '埃';
+						content: '刪除';
 						font-size: 12px;
 						vertical-align: top;
 					}
-				}//埃痙ē秙
+				}//刪除留言按鈕
 			}//msg end
 
 			.msg:before{
@@ -461,11 +461,11 @@ input:not(.radio):focus{
 				border-bottom: 10px solid  transparent;
 				position: absolute;		
 				top: 20px;	
-			}//msg玡à
+			}//msg前面的小三角形
 
 			.msg:hover {
 			    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-			}//hover潮紇
+			}//hover長陰影
 		}//mycomment li end
 
 		li:nth-child(even){
@@ -481,12 +481,12 @@ input:not(.radio):focus{
 				left: -15px;
 				border-right: 16px solid #fff;
 			}
-		}//案计逆熬簿砞﹚
+		}//偶數欄偏移設定
 
 		li:nth-child(odd) .msg:before{
 			right: -15px;
 			border-left: 16px solid #fff;
-		}//计逆熬簿砞﹚
+		}//奇數欄偏移設定
 	}//mycomment end
 
 	@media screen and (max-width: 767px) {
@@ -517,7 +517,7 @@ input:not(.radio):focus{
 		}//mycomment end
 	}//RWD end
 
-//===и厨==================================================
+//===我的報名==================================================
 	.myentry{
 		width: 300px;
 		height: 200px;
@@ -557,7 +557,7 @@ input:not(.radio):focus{
 				margin: -50px 2px 0 0;
 			}
 			#cancelentry:after{
-				content: '厨';
+				content: '取消報名';
 				color: $globalBgColor;
 				font-size: 12px;
 				vertical-align: top;
@@ -603,7 +603,7 @@ input:not(.radio):focus{
 		}
 	}//RWD end
 
-//===絪胯戈==================================================
+//===編輯個人資料==================================================
 	form{
 		p, .checkbox{
 			width: 42%;
@@ -632,7 +632,7 @@ input:not(.radio):focus{
 			width: 90px;
 			float: left;
 		}
-		input, strong{
+		input, strong, textarea{
 			max-width: 320px;
 			width: 100%;
 			float: right;
@@ -640,12 +640,25 @@ input:not(.radio):focus{
 		a.upload{
 			float: right;
 		}
-		input{
+		input, textarea{
 			border-radius: 2px;
 			background: transparent;
 			border:none;
 			border-bottom: 1px solid $globalUnclickColor;
 		}
+		textarea{
+			box-sizing: border-box;
+			resize: none;
+	    	height: 200px;
+			border: 1px solid rgba(187,187,187,0.3);
+			border-bottom: 1px solid $globalUnclickColor;
+			margin-bottom: 30px;
+		}//成為店長_故事介紹輸入框
+		input[type="number"]{
+			width: 30%;
+			float: none;
+			text-align: center;
+		}//成為店長營業時間選項
 		.userpic{
 			width: 80px;
 			height: 80px;
@@ -665,7 +678,7 @@ input:not(.radio):focus{
 			position: absolute;
 			top: 1px;
 		    left: 8px;
-		}//肚酚
+		}//上傳照片
 		.checkbox{
 			margin-left: 34%;
 			overflow: hidden;
@@ -675,7 +688,7 @@ input:not(.radio):focus{
 				float: none;
 				margin-right: 30px;
 			}
-		}//跑盞絏絚秙
+		}//變更密碼光箱按鈕
 
 	@media screen and (max-width: 767px) {
 		p{
@@ -717,10 +730,13 @@ input:not(.radio):focus{
 		input[type="submit"]{
 			margin-bottom: 0px;
 		}
+		input[type="number"]{
+			width: 18%;
+		}//成為店長營業時間選項
 	}//RWD end
 	}//form end
 
-//===Θ┍_材1==================================================
+//===成為店長_第1頁==================================================
 	.memBeBoss{
 		max-width: 1200px;
 		width: 120%;
@@ -781,13 +797,10 @@ input:not(.radio):focus{
 			.radio:last-child{
 				margin-left: 3%;
 			}
-			a.btn{
-				margin-top: 100px;
-			}
 		}//memBeBoss1 end
 	}//RWD end
 
-//===Θ┍_材23==================================================
+//===成為店長_第2、3頁==================================================
 	h1.find{
 		margin-bottom: 30px;
 	}

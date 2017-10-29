@@ -13,7 +13,7 @@
 	}else { 
 		// session_destroy();
 	}
-
+	require_once("php/common/globalVar.php");
  ?>
 
 
@@ -139,21 +139,25 @@
 		<!-- 頁首搜尋區塊 -->
 			<div class="headSearch">
 				<span>商家搜尋</span>
+				<form id="SearchForm" action="search.php" method="get">
 				<select id="headSearchKind" name="shopType">
-					<option value="1">胖小車</option>
-					<option value="0">店家</option>
+					<option id="shops" value="0">店家</option>
+					<option id="cars" value="1">胖小車</option>
 				</select>
 				<select name="shopPosition" id="headSearchPlace">
-				<option value="default">地區</option>
-				<option value="north">北部</option>
-				<option value="center">中部</option>
-				<option value="south">南部</option>
-				<option value="east">東部</option>
+				<option value="">地區</option>
+				<option value="0">北部</option>
+				<option value="1">中部</option>
+				<option value="2">南部</option>
+				<option value="3">東部</option>
 				</select>
-				<button name="filter" value="top" id="headSearchHot">熱門</button>
-				<button name="filter" value="star"  id="headSearchStar">評價</button>
+				<input type="radio" name="filter" value="top" id="top">
+				<label id="headSearchHot" for="top">熱門</label>
+				<input type="radio" name="filter" value="star" id="star">
+				<label id="headSearchStar" for="stars">評價</label>
 				<input type="text" name="searchName" id="headSearch">
-				<input id="headSearchSubmit" type="submit" value="搜尋">
+				<input id="headSearchSubmit" type="button" value="搜尋">
+				</form>
 			</div>
 
 		<!-- 頁首會員區塊 -->
@@ -166,19 +170,27 @@
 							<img id="addShop1" src="img/homepage/addShop1.svg">
 						</a>
 						<a href="#" id="headMemPic">
-							<img src="img/homepage/user.png">
+							<?php 
+								if ( isset($_SESSION['memPic']) ){
+									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+								}else {
+									echo "<img src='img/member_pic/default.png'>";
+								}
+
+							 ?>
+							
 						</a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="#"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : "" ; ?>  </a></li>
-						<li><a class="memLink" href="#">我的追蹤</a></li>
-						<li><a class="memLink" href="#">我的留言</a></li>
-						<li><a class="memLink" href="#">我的報名</a></li>
-						<li><a class="memLink" href="#">成為店長</a></li>
-						<li><a id="role" class="memLink" href="#">店長專區</a></li>
+						<li><a href="memedit.php"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : "" ; ?>  </a></li>
+						<li><a class="memLink" href="memedit.php">基本資料</a></li>
+						<li><a class="memLink" href="memfollow.php">我的追蹤</a></li>
+						<li><a class="memLink" href="memcomment.php">我的留言</a></li>
+						<li><a class="memLink" href="mementry.php">我的報名</a></li>
+						<li><a id="role" class="memLink" href="memBeBoss1.php">成為店長</a></li>
 						<li><a class="memLink" href="php/member/login/sessionLogOut.php" id="logOut">登出</a></li>
 					</ul>
 				</div>
@@ -216,27 +228,27 @@
 	</div>
 	
 	<div class="rwdSearchBar" id="rwdSearchBar">
-		<form action="" method="get">
+		<form id="rwdsearchForm" action="search.php" method="get">
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
-			<label><input type="radio" value="1" name="shopType">麵包小車</label>
-			<label><input type="radio" value="0" name="shopType">麵包店</label>
+			<label class="selectType"><input type="radio" value="1" name="shopType">麵包小車</label>
+			<label class="selectType"><input type="radio" value="0" name="shopType">麵包店</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
-				<label><input type="radio" name="shopPosition" value="nouth">北部</label>
-				<label><input type="radio" name="shopPosition" value="center">中部</label>
-				<label><input type="radio" name="shopPosition" value="south">南部</label>
-				<label><input type="radio" name="shopPosition" value="east">東部</label>
+				<label><input type="radio" name="shopPosition" value="0">北部</label>
+				<label><input type="radio" name="shopPosition" value="1">中部</label>
+				<label><input type="radio" name="shopPosition" value="2">南部</label>
+				<label><input type="radio" name="shopPosition" value="3">東部</label>
 				
 			</div>
 			<span>- 其他篩選條件 -</span>
 				<label><input type="radio" name="filter" value="top">熱門</label>
-				<label><input type="radio" name="filter" value="star">評價</label>
+				<label><input type="radio" name="filter" value="stars">評價</label>
 			<div class="clearfix"></div>
 		</div>
 		<input type="search" name="searchName" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
-		<input type="submit" value="搜尋">
+		<input id="rwdSubmit" type="button" value="搜尋">
 		</form>
 	</div>
 
@@ -278,24 +290,31 @@
 			</li>
 			<li class="memPart">
 				<div class="memPic">
-					<img id="memPic" src="img/homepage/user.png">
+					<?php 
+								if ( isset($_SESSION['memPic']) ){
+									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+								}else {
+									echo "<img src='img/member_pic/default.png'>";
+								}
+
+							 ?>
 				</div>
 				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<ul id="memberMenu">
-			<li class="navItem"><a href="#">我的追蹤</a></li>
-			<li class="navItem"><a href="#">我的留言</a></li>
-			<li class="navItem myActivity"><a href="#">我的報名</a></li>
+			<li class="navItem"><a href="memfollow.php">我的追蹤</a></li>
+			<li class="navItem"><a href="memcomment.php">我的留言</a></li>
+			<li class="navItem myActivity"><a href="mementry.php">我的報名</a></li>
 			</ul>
 			<li class="navItem beBoss">
-				<a id="rwdBossRole" href="#">成為店長</a>
+				<a id="rwdBossRole" href="memBeBoss1.php">成為店長</a>
 				
 				<ul id="bossMenu">
-					<li><a class="navItem bossMenu" href="#">麵包店</a></li>
+					<li><a class="navItem bossMenu" href="FMybusinessStore.php">麵包店</a></li>
 					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
-					<li><a class="navItem bossMenu" href="#">活動管理</a></li>
-					<li><a class="navItem bossMenu" href="#">留言管理</a></li>
+					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
+					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>
 			</li>
 			<li class="navItem"><a href="php/member/login/sessionLogOut.php">登出</a></li>
@@ -336,10 +355,66 @@
 						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入地址/門牌號碼">
+						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>營業時間</label><input type="number" name="startTime" max="24" min="0" maxlength="2"><span>點至</span><input type="number" name="endTime" max="24" min="0" maxlength="2"><span>點</span>
+						<label><span>*</span>營業時間</label>
+						<div class="selectTime">
+							<select name="startTime">
+								<option value="00:00">00:00</option>
+								<option value="01:00">01:00</option>
+								<option value="02:00">02:00</option>
+								<option value="03:00">03:00</option>
+								<option value="04:00">04:00</option>
+								<option value="05:00">05:00</option>
+								<option value="06:00">06:00</option>
+								<option value="07:00">07:00</option>
+								<option value="08:00">08:00</option>
+								<option value="09:00">09:00</option>
+								<option value="10:00">10:00</option>
+								<option value="11:00">11:00</option>
+								<option value="12:00">12:00</option>
+								<option value="13:00">13:00</option>
+								<option value="14:00">14:00</option>
+								<option value="15:00">15:00</option>
+								<option value="16:00">16:00</option>
+								<option value="17:00">17:00</option>
+								<option value="18:00">18:00</option>
+								<option value="19:00">19:00</option>
+								<option value="20:00">20:00</option>
+								<option value="21:00">21:00</option>
+								<option value="22:00">22:00</option>
+								<option value="23:00">23:00</option>
+							</select>
+							<span>點至</span>
+							<select name="endTime">
+								<option value="00:00">00:00</option>
+								<option value="01:00">01:00</option>
+								<option value="02:00">02:00</option>
+								<option value="03:00">03:00</option>
+								<option value="04:00">04:00</option>
+								<option value="05:00">05:00</option>
+								<option value="06:00">06:00</option>
+								<option value="07:00">07:00</option>
+								<option value="08:00">08:00</option>
+								<option value="09:00">09:00</option>
+								<option value="10:00">10:00</option>
+								<option value="11:00">11:00</option>
+								<option value="12:00">12:00</option>
+								<option value="13:00">13:00</option>
+								<option value="14:00">14:00</option>
+								<option value="15:00">15:00</option>
+								<option value="16:00">16:00</option>
+								<option value="17:00">17:00</option>
+								<option value="18:00">18:00</option>
+								<option value="19:00">19:00</option>
+								<option value="20:00">20:00</option>
+								<option value="21:00">21:00</option>
+								<option value="22:00">22:00</option>
+								<option value="23:00">23:00</option>
+							</select>
+							<span>點</span>
+						</div>
 					</div>
 					<div class="globalFormInput">
 						<label>故事介紹</label><textarea name="story"></textarea>

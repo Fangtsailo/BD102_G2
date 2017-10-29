@@ -18,10 +18,9 @@
     <script type="text/javascript" src="js/parallax.min.js"></script>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css"></link>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.theme.default.min.css"></link>
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js"></script>
+
+	
+
 
 	<script type="text/javascript" src="js/header.js"></script>
 
@@ -46,11 +45,61 @@
 	<section class="SHOPB_SHOP">
 		
 		<div class="banners">
-		<!-- <img src="img/SHOPB/店家-MONO-扁.jpg"> -->
-		<!-- <img src="img/SHOPB/BN_02.JPG">
-		<img src="img/SHOPB/BN_03.JPG"> -->
+			<img src="img/SHOPB/BN_01.JPG" alt="">
+			<img src="img/SHOPB/BN_02.JPG" alt="">
+			<img src="img/SHOPB/BN_03.JPG" alt="">
 		</div>
 
+		<script type="text/javascript">
+			var counter = 0, // 一開始要顯示的圖，0 的話就是顯示第一張
+		    slide = document.querySelector('.banners'),
+		    items = slide.querySelectorAll('img'),
+		    itemsCount = items.length, 
+		    prevBtn = document.createElement('a'),
+		    nextBtn = document.createElement('a'),
+		    timer = 5000, // 4 秒換圖
+		    interval = window.setInterval(showNext, timer);  // 設定循環
+		
+		prevBtn.classList.add('prev'); // 幫上一張按鈕加 class＝"prev" 給 CSS 指定樣式用
+		nextBtn.classList.add('next'); // 幫下一張按鈕加 class＝"next" 給 CSS 指定樣式用
+		slide.appendChild(prevBtn); // 將按鈕加到 #slide 裡
+		slide.appendChild(nextBtn);
+
+		// 帶入目前要顯示第幾張圖 
+		var showCurrent = function(){
+		    var itemToShow = Math.abs(counter % itemsCount); // 取餘數才能無限循環
+		    [].forEach.call( items, function(el){
+		        el.classList.remove('show'); // 將所有 img 的 class="show" 移除
+		    });
+		    items[itemToShow].classList.add('show'); // 將要顯示的 img 加入 class="show"
+		};
+		
+		function showNext(){
+		    counter++; // 將 counter+1 指定下一張圖
+		    showCurrent();
+		}
+		
+		function showPrev(){
+		    counter--; // 將 counter－1 指定上一張圖
+		    showCurrent();
+		}
+		
+		// 綁定點擊上一張，下一張按鈕的事件
+		nextBtn.addEventListener('click', showNext, false);
+		prevBtn.addEventListener('click', showPrev, false);
+		
+		// 一開始秀出第一張圖，也可以在 HTML 的第一個 img 裡加上 class="show"
+		items[0].classList.add('show');
+		</script>
+		
+		
+
+
+
+
+
+
+		
 
 
 		<div class="col-xs-10 col-sm-3" id="SPNAME">MONOCLE 麵包屋</div>
@@ -61,16 +110,36 @@
 			<p>每週一公休</p>
 			<p>03 - 1234567</p>
 		</div>
-		<div id="SPGRADE">
-			<div class="star1"><img src="img/SHOPB/star2.svg"></div>
-			<div class="star2"><img src="img/SHOPB/star2.svg"></div>
-			<div class="star3"><img src="img/SHOPB/star2.svg"></div>
-			<div class="star4"><img src="img/SHOPB/star.svg"></div>
-			<div class="star5"><img src="img/SHOPB/star.svg"></div>
-			<span>3.5</span>
+		<div id="SPGRADE" >
+			
+			<div class="rating">
+			<label for="star1"></label>
+        	<input type="radio" id="star1" name="rating" value="1" hidden/>
+        	<label for="star2"></label>
+       	 	<input type="radio" id="star2" name="rating" value="2" hidden/>
+         	<label for="star3"></label>
+       	 	<input type="radio" id="star3" name="rating" value="3" hidden/>
+       	 	<label for="star4"></label>
+       	 	<input type="radio" id="star4" name="rating" value="4" hidden/>
+       	 	<label for="star5"></label>
+       	 	<input type="radio" id="star5" name="rating" value="5" hidden/>
+			</div>
+
+
+			<div id="GIVESTAR">
+			<a href="#"><input  type="hidden" name="" value="" placeholder="">送出</a>
+			</div>
+		</div>
+
+
+		<div id="getstar">
+			<span>好評</span>
+			<span>&nbsp3.5&nbsp</span>
+			<span>分</span>
 		</div>
 		<div id="SPFOLLOW">
 			<img src="img/SHOPB/heart.png" id="heart" title="收藏到口袋！">
+			<p id="getfollow">(123)</p>
 		</div>
 
 		<script>

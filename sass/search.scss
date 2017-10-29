@@ -75,7 +75,15 @@ img{
 	}
 	
 }  //.search_result
-
+.none_store{
+			height:50vh;
+			h1{	width:80%;
+				margin:auto;
+				font-size:24px;
+				text-align:center;
+				color:$globalLinkColor;
+			}
+		}
 
 // ============================================================
 .search_store{
@@ -99,6 +107,9 @@ img{
 				width:100%;
 			}
 		}//.search_storeImg
+
+
+		
 		.search_storeContent{
 			float:left;
 			padding:10px 10px;
@@ -109,15 +120,21 @@ img{
 				
 			}
 			.search_follow{
-				float:left;
+				// float:left;
 				width:30px;
-				padding:0 0 0 20px;
+				display:inline-block;
+				box-sizing:content-box;
+				// padding:0 0 0 20px;
 				img {
+					position: relative;
+    				top: -5px;
+					width:40px;
 					vertical-align: -webkit-baseline-middle;
 				}
 				
 			}
 			#search_map1{
+
 				display:none;
 				position:absolute;
 				top:0px;
@@ -125,13 +142,14 @@ img{
 			}
 			#search_followNum{
 				color:#bbb;
-				float:left;
 				font-size:16px;
-				padding:6px;
+				padding:6px 0 0;
+				display: inline-block;
+	
 			}
 			.search_storeStar{
 				height:20px;
-				margin-top: 40px;
+				
 				margin-bottom: 10px;
 				li{
 					display:inline-block;
@@ -143,7 +161,10 @@ img{
 			}
 			.search_storeInfor{
 				line-height: 20px;
-				ul{ position:relative}
+				ul{ 
+					position:relative;
+					
+				}
 			}
 
 
@@ -155,14 +176,17 @@ img{
 			float:left;
 			padding:0;
 			height:200px;
-			#map-now{
-				height:100%;
+			.noneMap{
+				p{	margin:50px;
+					text-align:center;
+					color:$globalLinkColor;
+				}
 			}
 		}//.search_storeMap
 
 				
 	}//.search_storeOne
-		#map-now2{
+		.search_map{
 				height:100%;
 			}
 	
@@ -207,7 +231,7 @@ img{
 		.search_store{
 			.search_storeOne{
 			.search_storeMap{
-				display:none;
+				height:25vh;
 			}	
 				.search_storeContent{
 					.search_storeInfor{

@@ -33,9 +33,9 @@ $(function(){
 
 
 // 第一屏篩選
-	$(".tab_contents").click(function(){
+	$(".tabs label").click(function(){
 
-		$(this).toggleClass("active");
+		$(this).addClass("active");
 		$(this).siblings(".active").removeClass("active");
 
 	});
