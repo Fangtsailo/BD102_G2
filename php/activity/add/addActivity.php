@@ -9,11 +9,12 @@ session_start();
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
+<body>
+	
 <?php 
 require_once('../../common/globalVar.php');
 
 try{
-
 
 	require_once("../../PDO/connectPDO.php");
 	$memNo = $_SESSION["memNo"]; //取得店長的會員編號
@@ -25,11 +26,13 @@ try{
 
 	$connectPDO->beginTransaction();
 	//先新增活動文字資訊以取得活動編號
-	$addActSQL = "INSERT INTO activity (AC_STORE_NUM,AC_NAME,AC_TIME,AC_MEM_COUNT,AC_DETAIL1,AC_DETAIL2,AC_DETAIL3,AC_CHECKSTAY) VALUE (:ac_StoreNum,:acName,:acTime,:acParticipants,:ac_detail1,:ac_detail2,:ac_detail3,null)";
+	$addActSQL = "INSERT INTO activity (AC_STORE_NUM,AC_NAME,AC_TIME,AC_PRICE,AC_INGREDIENT,AC_MEM_COUNT,AC_DETAIL1,AC_DETAIL2,AC_DETAIL3,AC_CHECKSTAY) VALUE (:ac_StoreNum,:acName,:acTime,:acPrice,:acIngrd,:acParticipants,:ac_detail1,:ac_detail2,:ac_detail3,null)";
 	$addActTxt = $connectPDO->prepare($addActSQL);
 	$addActTxt->bindValue(":ac_StoreNum",$ac_StoreNum);
 	$addActTxt->bindValue(":acName",$_REQUEST["acName"]);
 	$addActTxt->bindValue(":acTime",$_REQUEST["acTime"]);
+	$addActTxt->bindValue(":acPrice",$_REQUEST["acPrice"]);
+	$addActTxt->bindValue(":acIngrd",$_REQUEST["acIngrd"]);
 	$addActTxt->bindValue(":acParticipants",$_REQUEST["acParticipants"]);
 	$addActTxt->bindValue(":ac_detail1",$_REQUEST["ac_detail1"]);
 	$addActTxt->bindValue(":ac_detail2",$_REQUEST["ac_detail2"]);
@@ -39,6 +42,10 @@ try{
 	//取得該筆新增活動的活動編號
 	$acNum = $connectPDO->lastInsertId();
 	
+	// $queryAcNumSQL = "SELECT * FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE SI_MEMNO = '$memNo' AND SI_TYPE = '$storeType' ";
+	// $queryAcNum = $connectPDO->query($queryAcNumSQL);
+	// $queryAcNumRow = $queryAcNum->fetchObject();
+	// $acNum = $queryAcNumRow->AC_NO;
 
 	//上傳照片檔案
 	foreach( $_FILES["upBanner"]["error"] as $i=>$data ){

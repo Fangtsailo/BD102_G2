@@ -261,7 +261,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 }
 	//胖小車即時位置地圖
 function initBreadCarNowLocationMap(id, lat, lng) {
-	if ((lat != '' && lng != '') && (lat != 0 && lng != 0)) {
+	if ((lat != '' && lng != '') || (lat != 0 && lng != 0)) {
 		var map = new google.maps.Map(document.getElementById(id), {
 		  zoom: 16,
 		  center: {lat: lat, lng: lng}

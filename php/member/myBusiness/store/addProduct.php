@@ -20,7 +20,7 @@
 		//$mem_ID=$_SESSION["memId"];
 		//$mem_No=$_SESSION["memNo"];
 
-		$mem_No="4";
+		$mem_No=$_SESSION["memNo"];
 
 		$sql_mem_No_FIND_PD_SHOPNO="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE=0";
 
@@ -69,9 +69,11 @@
 					  $MAX_PD_NO=$find_new_insert_Row->MAX_PD_NO;
 
 					  $from = $_FILES["PD_PIC"]["tmp_name"][$i];
-					  $to = "../../../../img/store/products/".$MAX_PD_NO."-".$PD_SHOPNO_By_Mem_No.".jpg";
+					  $FileName = mb_convert_encoding($_FILES["PD_PIC"]["name"][$i],"big5","utf-8");
+					  $to = "../../../../img/store/products/".$MAX_PD_NO."-".$PD_SHOPNO_By_Mem_No.substr($FileName,strpos($FileName,'.'));
 					  copy($from, $to);
-					  $PD_PIC=$MAX_PD_NO."-".$PD_SHOPNO_By_Mem_No;
+					  
+					  $PD_PIC=$MAX_PD_NO."-".$PD_SHOPNO_By_Mem_No.substr($FileName,strpos($FileName,'.'));
 					  $sql_update_PD_PIC = "UPDATE product SET PD_PIC='$PD_PIC' WHERE PD_NO=$MAX_PD_NO";
 					  $update_PD_PIC = $connectPDO->query($sql_update_PD_PIC);
 					 

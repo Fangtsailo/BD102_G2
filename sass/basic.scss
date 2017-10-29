@@ -435,7 +435,7 @@ li {
 			font-size: 0;
 			span {
 				margin-right: 10px;
-				color:$globalBgColor;
+				color:$globalTitleColor;
 				font-weight: 300;
 			}
 			#headSearch {
@@ -453,8 +453,8 @@ li {
 				display: inline-block;
 				width: 80px;
 				height: 30px;
-				color:$globalBgColor;
-				background-color:transparent;
+				color:$globalTitleColor;
+				background-color:$globalBgColor;
 				border:1px solid $globalBgColor;
 				margin: 0px 5px;
 				font-size: $globalContentSize;
@@ -467,9 +467,8 @@ li {
 				width: 80px;
 				display: inline-block;
 				height: 30px;
-				color:$globalBgColor;
-				background-color:transparent;
-				border:1px solid $globalBgColor;
+				color:$globalTitleColor;
+				background-color:$globalBgColor;
 				margin: 0px 5px;
 				font-size: $globalContentSize;
 				border-radius:2px;
@@ -478,15 +477,19 @@ li {
 				text-align: center;
 				box-sizing:border-box;
 				cursor:pointer;
+				box-shadow:-1px 1px 0px 1px #713f2a;
+				transition: .3s;
 			}
-			input[type=radio] {
+			input[name=filter] {
 				display: none;
 				&:checked+label {
-					background-color: $globalBgColor;
-					color:$globalHdColor01;
+					background-color: #5d2812;
+					color:$globalBgColor;
 					outline: none;
 					box-sizing:border-box;
-					
+					box-shadow:none;
+					transition: .3s;
+					// animation: checked .5s ease infinite alternate;
 				}
 			}	
 			#headSearchSubmit {
@@ -503,9 +506,15 @@ li {
 				outline: none;
 				box-sizing:border-box;
 				vertical-align: top;
+				transition: .3s;
 				&:active {
 					background-color:$globalFontColor ;
 					color:$globalBgColor;
+				}
+				&.keyIn{
+					background-color: $globalBtnColor;
+					color:$globalBgColor;
+					transition: .3s;
 				}
 
 			}
@@ -521,6 +530,10 @@ li {
 	0%{transform:translate(15px,0px);}
 	100%{transform:translate(-15px,0px);}
 }
+// @keyframes checked {
+// 	0%{ transform:translate(0px,1px); }
+// 	100%{ transform:translate(0px,0px); }
+// }
 .shake {
 	animation:shake1 .2s linear 3 alternate;
 }

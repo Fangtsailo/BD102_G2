@@ -50,17 +50,49 @@ session_start();
 			$selectFollow = $connectPDO->query($selectFollowSQL);
 			while ( $selectFollowRow = $selectFollow->fetchObject() ){
 
+<<<<<<< HEAD
+				<?php
+				// phpinfo();
+				
+				// try{
+				// 	require_once("php/pdo/connectPDO.php");
+				// 	$sql = "select * from follow where MEM_NO='$memNo'";
+				// 	$follow = $connectPDO->query($sql);
+
+				// 	while( $followRow = $follow->fetchObject() ){
+				$score=5;
+				?>
+	
+=======
 		 ?>
 		
+>>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 				<div class="myfollow">
 					<a href="#"><img src="img/storeBgImg/<?php echo $selectFollowRow->SI_BIMG_1.'.jpg'; ?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
 					<ul>
+<<<<<<< HEAD
+						<?php
+						for( $i=1; $i<=5; $i++){
+							if( $i <= $score){
+								echo '<li class="star"><img src="img/memimg/star2.svg"></li>';
+							}else{
+								echo '<li class="star"><img src="img/memimg/star3.svg"></li>';
+							}
+						}
+						?>
+						<!-- <li class="star"><img src="img/memimg/star3.svg"></li>
+						<li class="star"><img src="img/memimg/star3.svg"></li>
+						<li class="star"><img src="img/memimg/star3.svg"></li>
+						<li class="star"><img src="img/memimg/star3.svg"></li>
+						<li class="star"><img src="img/memimg/star3.svg"></li> -->
+=======
 						<?php 
 							$starAmt = $selectFollowRow->reviews;
 							for ($i=1; $i<$starAmt ; $i++) { 
 								echo '<li class="star"><img src="img/memimg/star2.svg"></li>';
 							}
 						 ?>
+>>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 					</ul>
 					<a href="php/member/track/cancelFollow.php?SI_NUM=<?php echo $selectFollowRow->SI_NUM;?>" id="cancelfollow" class="btn50" id="cancelfollow">
 						<img src="img/memimg/follow3.svg">

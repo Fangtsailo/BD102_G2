@@ -40,11 +40,16 @@ try {
 		//啟動交易管理
 		$connectPDO->beginTransaction();
 		//寫入主檔
-		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,null,0,1,null,:email)";
+<<<<<<< HEAD
+		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,:memPic,0,1,null,:email)";
+=======
+		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,null,0,0,1,:email)";
+>>>>>>> 8e2d0a255150d6e101a7d1f7daa9c3a562c53b9a
 		$register = $connectPDO->prepare( $newMemberSQL );
 		$register->bindValue(":memId" , StringValidate( $_REQUEST["newMemId"],"string" )  );
 		$register->bindValue(":memPsw" ,$_REQUEST["newMemPsw"] );
 		$register->bindValue(":email" , StringValidate( $_REQUEST["newMemMail"], "email" ) );
+		$register->bindValue(":memPic" ,"default.png" );
 		$register->execute();
 		$connectPDO->commit(); //確認交易完成
 		// $register->close();
@@ -61,6 +66,7 @@ try {
 	        $_SESSION["memId"] = $registerRow->MEM_ID;
 	        $_SESSION["memName"] = $registerRow->MEM_NAME;
 	        $_SESSION["memRole"] = $registerRow->MEM_ROLE;
+	         $_SESSION["memPic"] = $registerRow->MEM_PIC;
 
 		header("Location:../../../homepage.php");
 ?>
