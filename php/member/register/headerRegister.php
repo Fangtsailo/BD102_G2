@@ -41,7 +41,7 @@ try {
 		$connectPDO->beginTransaction();
 		//寫入主檔
 
-		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,:memPic,0,1,null,:email)";
+		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,:memPic,0,0,null,:email)";
 		$register = $connectPDO->prepare( $newMemberSQL );
 		$register->bindValue(":memId" , StringValidate( $_REQUEST["newMemId"],"string" )  );
 		$register->bindValue(":memPsw" ,$_REQUEST["newMemPsw"] );
