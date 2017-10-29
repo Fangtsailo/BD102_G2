@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
 	//判斷是否有登入過網站
@@ -153,7 +154,7 @@
 				</select>
 				<input type="radio" name="filter" value="top" id="top">
 				<label id="headSearchHot" for="top">熱門</label>
-				<input type="radio" name="filter" value="star" id="star">
+				<input type="radio" name="filter" value="stars" id="stars">
 				<label id="headSearchStar" for="stars">評價</label>
 				<input type="text" name="searchName" id="headSearch">
 				<input id="headSearchSubmit" type="button" value="搜尋">
@@ -356,62 +357,65 @@
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
+						<input type="hidden" name="SI_lat" id="SI_lat" value="">
+						<input type="hidden" name="SI_lng" id="SI_lng" value="">
 					</div>
+					<div id="map"></div>
 					<div class="globalFormInput">
 						<label><span>*</span>營業時間</label>
 						<div class="selectTime">
 							<select name="startTime">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
 							</select>
 							<span>點至</span>
 							<select name="endTime">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
 							</select>
 							<span>點</span>
 						</div>

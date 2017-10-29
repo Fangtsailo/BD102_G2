@@ -20,7 +20,7 @@ try{
 		$_SESSION["memId"] = $memRow->MEM_ID;
 		$_SESSION["memName"] = $memRow->MEM_NAME;
 	    $_SESSION["memRole"] = $memRow->MEM_ROLE;
-	    $_SESSION["memPic"] = $memRow->MEM_PIC==""?"default.png":$memRow->MEM_PIC;
+	    $_SESSION["memPic"] = ($memRow->MEM_PIC=="")?"default.png":$memRow->MEM_PIC;
 	    // header("Location:../../../homepage.php");
 	}
 }catch(PDOException $ex){
