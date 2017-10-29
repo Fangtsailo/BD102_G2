@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
 <!-- ======================================================header 頁首========================================================= -->
 <?php 
 	//判斷是否有登入過網站
@@ -12,7 +13,7 @@
 		}
 	}else { 
 		// session_destroy();
-	}
+	}  
 	require_once("php/common/globalVar.php");
  ?>
 
@@ -139,13 +140,13 @@
 		<!-- 頁首搜尋區塊 -->
 			<div class="headSearch">
 				<span>商家搜尋</span>
-				<form id="SearchForm" action="search.php" method="post">
+				<form id="SearchForm" action="search.php" method="get">
 				<select id="headSearchKind" name="shopType">
 					<option id="shops" value="0">店家</option>
 					<option id="cars" value="1">胖小車</option>
 				</select>
 				<select name="shopPosition" id="headSearchPlace">
-				<option value="default">地區</option>
+				<option value="">地區</option>
 				<option value="0">北部</option>
 				<option value="1">中部</option>
 				<option value="2">南部</option>
@@ -153,8 +154,8 @@
 				</select>
 				<input type="radio" name="filter" value="top" id="top">
 				<label id="headSearchHot" for="top">熱門</label>
-				<input type="radio" name="filter" value="star" id="star">
-				<label id="headSearchStar" for="star">評價</label>
+				<input type="radio" name="filter" value="stars" id="stars">
+				<label id="headSearchStar" for="stars">評價</label>
 				<input type="text" name="searchName" id="headSearch">
 				<input id="headSearchSubmit" type="button" value="搜尋">
 				</form>
@@ -228,27 +229,40 @@
 	</div>
 	
 	<div class="rwdSearchBar" id="rwdSearchBar">
-		<form action="" method="get">
+		<form id="rwdsearchForm" action="search.php" method="get">
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
-			<label><input type="radio" value="1" name="shopType">麵包小車</label>
-			<label><input type="radio" value="0" name="shopType">麵包店</label>
+			<input id="shopType1" type="radio" value="1" name="shopType">
+			<label for="shopType1" class="selectType rwdfilter">麵包小車</label>
+
+			<input id="shopType2" type="radio" value="0" name="shopType">
+			<label for="shopType2" class="selectType rwdfilter">麵包店</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
-				<label><input type="radio" name="shopPosition" value="0">北部</label>
-				<label><input type="radio" name="shopPosition" value="1">中部</label>
-				<label><input type="radio" name="shopPosition" value="2">南部</label>
-				<label><input type="radio" name="shopPosition" value="3">東部</label>
-				
+				<input id="shopPos1" type="radio" name="shopPosition" value="0">
+				<label for="shopPos1" class="rwdfilter">北部</label>
+
+				<input id="shopPos2" type="radio" name="shopPosition" value="1">
+				<label for="shopPos2" class="rwdfilter">中部</label>
+
+				<input id="shopPos3" type="radio" name="shopPosition" value="2">
+				<label for="shopPos3" class="rwdfilter">南部</label>
+
+				<input id="shopPos4" type="radio" name="shopPosition" value="3">
+				<label for="shopPos4" class="rwdfilter">東部</label>
+
 			</div>
 			<span>- 其他篩選條件 -</span>
-				<label><input type="radio" name="filter" value="top">熱門</label>
-				<label><input type="radio" name="filter" value="star">評價</label>
+				<input type="radio" value="top" name="filter" id="filterTops">
+				<label for="filterTops" class="rwdfilter">熱門</label>	
+				<input type="radio" name="filter" value="stars" id="filterstars">
+				<label for="filterstars" class="rwdfilter">評價</label>
+
 			<div class="clearfix"></div>
 		</div>
 		<input type="search" name="searchName" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
-		<input type="submit" value="搜尋">
+		<input id="rwdSubmit" type="button" value="搜尋">
 		</form>
 	</div>
 
@@ -356,62 +370,65 @@
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
+						<input type="hidden" name="SI_lat" id="SI_lat" value="">
+						<input type="hidden" name="SI_lng" id="SI_lng" value="">
 					</div>
+					<div id="map"></div>
 					<div class="globalFormInput">
 						<label><span>*</span>營業時間</label>
 						<div class="selectTime">
 							<select name="startTime">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
 							</select>
 							<span>點至</span>
 							<select name="endTime">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
 							</select>
 							<span>點</span>
 						</div>

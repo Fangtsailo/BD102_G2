@@ -41,8 +41,8 @@ session_start();
 			<!-- 成為店長_第四頁_新增麵包店店家 -->
 			<h1><img src="img/memimg/bebosstl.svg" alt="成為店長"></h1>
 			<section class="col-xs-12 col-sm-12 section1000 memBeBoss1">
-				<h1>新增店家</h1>
-                <p>查無此店！請填寫以下表單簡介您的店舖！完成後請按送出，<br>我們將與您進行審核作業！</p>
+				<h1>OOPS！查無此店！</h1>
+                <p>請填寫以下表單簡介您的店舖！完成後送出，<br>我們將協助您進行新增店家和店長審核作業！</p>
 
 				<?php
 				// phpinfo();
@@ -51,9 +51,9 @@ session_start();
 
 				?>
 
-				<form class="form-horizontal" action="php/member/memBeBossInsertToDb.php" method="get">
+				<form class="form-horizontal" action="php/member/beBossInsertToDb.php" method="get">
 					<p>
-						<label for="SI_TYPE">&nbsp;店&nbsp;&nbsp;型</label>
+						<label for="SI_TYPE">&nbsp;店型</label>
 	                	<strong><?php
 	                		if ($siType==1){
 								echo "麵包車";
@@ -63,19 +63,19 @@ session_start();
 	                	?></strong>
 					</p>
 					<p>
-						<label for="SI_NAME">&nbsp;店&nbsp;&nbsp;名</label>
+						<label for="SI_NAME">&nbsp;店名</label>
 	                 	<strong><?php echo $siName ?></strong>
 					</p>
 					<p>
 						<label for="SI_COMFIRM_ID"><span class="required">*</span>車牌號碼</label>
-						<input type="text" name="SI_COMFIRM_ID" maxlength="8" placeholder="輸入格式:80088888" autofocus>
+						<input type="text" name="SI_COMFIRM_ID" placeholder="輸入格式:KAQ-230" autofocus>
 					</p>
 					<p>
-						<label for="SI_NAME"><span class="required">*</span>店長姓名</label>
-						<input type="text" name="SI_NAME" maxlength="8" placeholder="輸入真實姓名" autofocus>
+						<label for="MEM_REALNAME"><span class="required">*</span>店長姓名</label>
+						<input type="text" name="MEM_REALNAME" placeholder="輸入真實姓名">
 					</p>
 					<p>
-						<label for="SI_PHONE"><span class="required">*</span>電&nbsp;&nbsp;話</label>
+						<label for="SI_PHONE"><span class="required">*</span>&nbsp;電話</label>
 						<input type="tel" name="SI_PHONE" placeholder="輸入手機或市話">
 					</p>
 					<p>
@@ -85,7 +85,7 @@ session_start();
 					</p>
 					<p>
 						<label for="SI_STORY">&nbsp;故事介紹</label>
-						<textarea name="SI_STORY" maxlength="250" minlength="10" placeholder="字數限250字??">紅色就</textarea>
+						<textarea name="SI_STORY" maxlength="250" minlength="5" placeholder="字數限250字??">紅色就</textarea>
 					</p>
 					<p>
 						<input type="submit" class="btn" value="送出" id="check">

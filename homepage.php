@@ -151,7 +151,7 @@ require_once("headerForHomePage.php");
 					<div class="filterBar">
 						<span class="filterTitle">篩選條件</span>
 						<select  class="filter" name="shopPosition" id="filterArea">
-							<option value="default">地區</option>
+							<option value="">地區</option>
 							<option value="0">北部</option>
 							<option value="1">中部</option>
 							<option value="2">南部</option>
@@ -200,14 +200,20 @@ require_once("headerForHomePage.php");
 	<?php 
 	try{
 		require_once("php/PDO/connectPDO.php");
-		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE f.MEM_NO=r.MEM_NO GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
+		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC,s.SI_TYPE,s.SI_CHECKSTAY,s.SI_SELLSTAY,s.SI_BIMG_1 FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE f.MEM_NO=r.MEM_NO AND s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
 		$topShops = $connectPDO->query($selectTopShopSQL);
 		while ($topShopsRow = $topShops->fetchObject()) {
+			$topStoreBgd = ( isset($topShopsRow->SI_BIMG_1) )? $topShopsRow->SI_BIMG_1 : "default.png" ;
 	?>
+			<?php 
 
-			<div class="shopItem" data-depth="1">
+				$type = ($topShopsRow->SI_TYPE == 1) ? "storeBrowse.php" : "shopB.php" ;
+
+			 ?>
+			
+			<div class="shopItem" data-depth="1" onclick="location.href='<?php echo $type ;?>';">
 				<div class="shopPic">
-					<img src="img/homepage/shop1.jpg">
+					<img src="<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$topStoreBgd; ?>">
 					<h3><?php echo $topShopsRow->SI_NAME ?></h3>
 					<div class="shopInfo">
 						<ul>
@@ -219,14 +225,7 @@ require_once("headerForHomePage.php");
 				</div>
 				<div class="shopMessage">
 					<div class="memPic">
-						<?php 
-								if ( isset($_SESSION['memPic']) ){
-									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
-								}else {
-									echo "<img src='img/member_pic/default.png'>";
-								}
-
-							 ?>
+						<img src="img/member_pic/<?php echo $topShopsRow->MEM_PIC ?>">
 					</div>
 					<span><?php echo $topShopsRow->MEM_NAME ?></span>
 					<span id="messageTime"><?php echo $topShopsRow->SPMSG_TIME?></span>
@@ -260,160 +259,65 @@ require_once("headerForHomePage.php");
 			<div class="search_mapcar">
 				<div id="map-now1"></div>
 				<div class="search_store">
-		
-		
-		
+		<?php 
+		try{
+			require_once("php/pdo/connectPDO.php");
+			require_once("php/common/globalVar.php");
+			$shopType=1;
+			$mapCarSQL = "SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top,s.SI_SELLSTAY,s.SI_CHECKSTAY,s.SI_BIMG_1 FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' AND s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM";
+			$mapCar = $connectPDO->query($mapCarSQL);
+			while($mapCarRow=$mapCar->fetchObject()){
+
+				$mapStoreBgd = (isset($mapCarRow->SI_BIMG_1))? $mapCarRow->SI_BIMG_1 : "default.png" ;
+		 ?>
+		 <script type="text/javascript">
+			$(document).ready(function (){
+				$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$mapStoreBgd; ?>") center center').css('background-size','cover');
+				});
+		</script>
 					<div class="search_storeOne">
 						<div class="search_storeImg col-sm-5 col-xs-4">
 							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
+							<h2><a href="storeBrowse.php?storeId='<?php $mapCarRow->SI_NUM ?>'"><?php echo "$mapCarRow->SI_NAME "; ?></a></h2>
 							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
+								<img src="img/icon/follow3.svg">	
 							</div>
-							<div id="search_followNum">123</div>
+							<div id="search_followNum"><?php echo "$mapCarRow->top"; ?></div>
 							<div class="search_storeStar">
 								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
+								<?php
+										for( $i=1; $i<=5; $i++){
+											if( $i <= $mapCarRow->SI_AVG_REVIEW){
+												echo '<li class="star"><img src="img/icon/star2.svg"></li>';
+											}else{
+												echo '<li class="star"><img src="img/icon/star3.svg"></li>';
+											}
+										}
+									?>
+								</ul>
 								</ul>
 							</div>  
 							<div class="search_storeInfor ">
 								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
+									<li>電話：<?php echo "$mapCarRow->SI_PHONE"; ?></li>
+									<li>地址：<?php echo "$mapCarRow->SI_ADDR"; ?>
 										</li>
-									<li>營業時間： 10:00~23:00</li>
+									<li>營業時間： <?php echo "$mapCarRow->SI_STARTTIME"; ?>:00至<?php echo "$mapCarRow->SI_ENDTIME"; ?>:00</li>
 								</ul>
 							</div>
 						</div>
-						
 					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-					<div class="search_storeOne">
-						<div class="search_storeImg col-sm-5 col-xs-4">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="#">山下麵包</a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow.svg">	
-							</div>
-							<div id="search_followNum">123</div>
-							<div class="search_storeStar">
-								<ul>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-									<li><img src="img/icon/star.svg"></li>
-								</ul>
-							</div>
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話： (03)3333551</li>
-									<li>地址：  桃園市中壢區中大路300號
-										</li>
-									<li>營業時間： 10:00~23:00</li>
-								</ul>
-							</div>
-						</div>
-						
-					</div>
-						
+		<?php 
+			}
+		}catch (PDOException $e) {
+			echo "錯誤行號 : ", $e->getLine(), "<br>";
+			echo "錯誤訊息 : ", $e->getMessage(), "<br>";	
+		}
+
+ 		?>
+
 				</div>  <!-- search_store -->
 		</div>
 		</div>
@@ -442,19 +346,20 @@ require_once("headerForHomePage.php");
 <?php 
 try{
 	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM, s.SI_NUM, s.SI_NAME FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM ORDER BY RAND() LIMIT 6" ;
+	$selectNewShopSQL = "SELECT a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 ORDER BY RAND() LIMIT 6" ;
 	$showActivity = $connectPDO->query($selectNewShopSQL);
 	while ($showActivityRow = $showActivity->fetchObject()) {
+		$actStoreBgd = (isset($showActivityRow->AC_BANNER1))? $showActivityRow->AC_BANNER1 : "default.png" ;
 ?>
 
 					<div class="actBanner">
 						<div class="actDate">
 							<div class="dateItem">
 								<span><?php echo $showActivityRow->AC_TIME ?></span>
-								<span>Nov</span>
+								
 							</div>
 						</div>
-						<img src="img/homepage/acty-1.jpg">
+						<img src="<?php echo GLOBAL_ACTIVITY_PIC_PATH.$actStoreBgd; ?>">
 						<div class="actContent">
 							<div class="content-txt">
 								<h3><?php echo $showActivityRow->AC_NAME ?></h3>
@@ -513,13 +418,14 @@ try{
 <?php 
 try{
 	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT SI_NAME,SI_STORY,SUBSTRING(SI_ADDR,1,6) address,SI_ADDDATE FROM store_imformation ORDER BY SI_ADDDATE LIMIT 6" ;
+	$selectNewShopSQL = "SELECT SI_NAME,SI_STORY,SUBSTRING(SI_ADDR,1,6) address,SI_ADDDATE,SI_SELLSTAY,SI_CHECKSTAY,SI_BIMG_1 FROM store_imformation WHERE SI_SELLSTAY = 1 AND SI_CHECKSTAY = 1 ORDER BY SI_ADDDATE desc LIMIT 6" ;
 	$newShops = $connectPDO->query($selectNewShopSQL);
 	while ($newShopsRow = $newShops->fetchObject()) {
+		$newStoreBgd = (isset($newShopsRow->SI_BIMG_1))? $newShopsRow->SI_BIMG_1 : "default.png" ;
 ?>
 			<div class="newShops">
 					<div class="newShopItem">
-						<img src="img/homepage/shop1.jpg">
+						<img src="<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$newStoreBgd; ?>">
 						<div class="shopContent">
 							<h2><?php echo $newShopsRow->SI_NAME ?></h2>
 							<p><?php echo $newShopsRow->SI_STORY ?></p>
@@ -562,7 +468,7 @@ try{
 	<section class="homeContact" id="section6-move">
 		<div class="addShop">
 			<p>想跟全世界分享吃到好麵包的感動？</p>
-			<div class="sectionItem">
+			<div class="sectionItem" id="homeAddBtn">
 					<span>
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/></g></g>
 						</svg>
@@ -573,7 +479,7 @@ try{
 		</div>
 		<div class="contactUs">
 			<p>遇到問題無法解決，或有更多建議想讓我們知道？</p>
-			<div class="sectionItem">
+			<div class="sectionItem" id="homeServiceBtn">
 				<span>
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/><path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
 					</svg>

@@ -86,8 +86,6 @@ h2 {
   margin: auto;
   cursor: pointer; }
   .left-bread:hover img {
-    -webkit-transform: rotate(15deg) !important;
-    -ms-transform: rotate(15deg) !important;
     transform: rotate(15deg) !important;
     transition: .3s; }
   .left-bread:hover h2 {
@@ -109,8 +107,6 @@ h2 {
   margin: auto;
   cursor: pointer; }
   .right-bread:hover img {
-    -webkit-transform: rotate(15deg) !important;
-    -ms-transform: rotate(15deg) !important;
     transform: rotate(15deg) !important;
     transition: .3s; }
   .right-bread:hover h2 {
@@ -143,6 +139,7 @@ h2 {
 @media screen and (max-width: 767px) {
   .left-bread, .right-bread {
     display: none; }
+
   .rwdBread {
     display: block;
     width: 80%;
