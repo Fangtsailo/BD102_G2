@@ -20,6 +20,7 @@ try{
 		$_SESSION["memId"] = $memRow->MEM_ID;
 		$_SESSION["memName"] = $memRow->MEM_NAME;
 	    $_SESSION["memRole"] = $memRow->MEM_ROLE;
+	    $_SESSION["memPic"] = $memRow->MEM_PIC;
 	    echo $memRow->MEM_ID;
 	    // header("Location:../../../homepage.php");
 	}
