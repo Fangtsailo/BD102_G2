@@ -119,6 +119,19 @@ img{
 		margin:0 auto;
 		overflow:hidden;
 		border:$globalUnclickColor solid 1px;
+		&:hover {
+			background-color: rgba(234, 178, 96, 0.5) !important;
+		}
+		a {
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    width: 172px;
+		    white-space: nowrap;
+		    display: block;
+			&:hover {
+				color: #f06428;
+			}
+		}
 		.search_storeImg {
 			float:left;
 			overflow:hidden;
@@ -174,7 +187,16 @@ img{
 			}
 			.search_storeInfor{
 				line-height: 20px;
-				ul{ position:relative}
+				ul{ 
+					position:relative;
+					li {
+					    list-style: none;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    width: 100%;
+					    white-space: nowrap;
+					}
+				}
 			}
 
 
@@ -258,6 +280,9 @@ img{
 					.search_storeContent{
 						h2{
 							float:none;
+							a {
+							    width: 100%;
+							}
 						}
 						.search_storeInfor{
 							#search_map1{
