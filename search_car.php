@@ -17,7 +17,7 @@ session_start();
 	 	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	 	<script type="text/javascript" src="js/header.js"></script>
 	<!-- map區 -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+
 	<script type="text/javascript" src="js/search_car.js"></script>
 </head>
 <body>
@@ -29,16 +29,19 @@ session_start();
 		
 		$filter='';
 		$shopPosition='';
+		 
 		$searchName='';
 		$firstCarNum = -1;//為了預設顯示第一台車的位置
 		if (isset($_REQUEST["filter"])){
+
 			
 			$filter=$_REQUEST["filter"]; 
 		}
 
 		if (isset($_REQUEST["shopPosition"])) {
 			
-			$shopPosition=$_REQUEST["shopPosition"];
+			 $shopPosition=$_REQUEST["shopPosition"];
+			
 		} 
 
 		if(isset($_REQUEST["searchName"])) {
@@ -90,7 +93,7 @@ try{
 						<span class="tag" ><span class="head"></span><?php echo $searchName ?></span>
 					<?php
 					}?>
-					
+				<!-- 	<?php //exit($shopPosition); ?> -->
 					<?php if ($shopPosition!==''){
 						switch ($shopPosition) {
 							case "0":

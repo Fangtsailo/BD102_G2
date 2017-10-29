@@ -26,9 +26,9 @@ session_start();
 
 
 <?php 
-		$shopPosition='';
-		$filter='';
-		$searchName='';
+		$shopPosition="";
+		$filter="";
+		$searchName="";
 	
 		if (isset($_REQUEST["filter"])){
 			
