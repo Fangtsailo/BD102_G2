@@ -963,7 +963,7 @@ footer {
           font-size: 20px;
           background-color: #663300;
           border-radius: 5px; }
-        .globalHead .rwdSearchBar .rwdsearchItem label {
+        .globalHead .rwdSearchBar .rwdsearchItem label.rwdfilter {
           display: inline-block;
           margin: 0px 5px;
           margin-bottom: 5px;
@@ -971,11 +971,15 @@ footer {
           color: #fbf8f1;
           border: 1px solid #fbf8f1;
           outline: none;
-          border-radius: 5px; }
-          .globalHead .rwdSearchBar .rwdsearchItem label input {
-            display: none; }
-          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
-            background-color: #f06428; }
+          border-radius: 5px;
+          cursor: pointer; }
+        .globalHead .rwdSearchBar .rwdsearchItem input[type=radio] {
+          display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
+            background-color: #fbf8f1;
+            color: #996633;
+            box-shadow: none;
+            transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
           margin: auto; }
@@ -990,7 +994,7 @@ footer {
         top: 80px;
         left: 0;
         transition: .3s; }
-      .globalHead .rwdSearchBar input[type="submit"] {
+      .globalHead .rwdSearchBar #rwdSubmit {
         display: block;
         width: 50%;
         height: 40px;

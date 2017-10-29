@@ -50,13 +50,8 @@ try{
 	require_once("php/pdo/connectPDO.php");
 
 		$shopType=1;  //店家 0  胖小車1
-	
 
-<<<<<<< HEAD
-		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE s.SI_TYPE='$shopType' ";	
-=======
 		$searchsql="select s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top from store_imformation s JOIN follow f ON f.SI_NUM=s.SI_NUM JOIN reviews r ON r.SI_NUM = s.SI_NUM where  SI_TYPE='$shopType' ";	
->>>>>>> e6f66a8320ec0a5abd1550a8751370615fea6523
 			if ($shopPosition!=='') {
 				$searchsql.=" and SI_POSITION = '$shopPosition'";
 			}

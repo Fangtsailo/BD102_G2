@@ -13,7 +13,7 @@
 		}
 	}else { 
 		// session_destroy();
-	}
+	}  
 	require_once("php/common/globalVar.php");
  ?>
 
@@ -232,20 +232,33 @@
 		<form id="rwdsearchForm" action="search.php" method="get">
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
-			<label class="selectType"><input type="radio" value="1" name="shopType">麵包小車</label>
-			<label class="selectType"><input type="radio" value="0" name="shopType">麵包店</label>
+			<input id="shopType1" type="radio" value="1" name="shopType">
+			<label for="shopType1" class="selectType rwdfilter">麵包小車</label>
+
+			<input id="shopType2" type="radio" value="0" name="shopType">
+			<label for="shopType2" class="selectType rwdfilter">麵包店</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
-				<label><input type="radio" name="shopPosition" value="0">北部</label>
-				<label><input type="radio" name="shopPosition" value="1">中部</label>
-				<label><input type="radio" name="shopPosition" value="2">南部</label>
-				<label><input type="radio" name="shopPosition" value="3">東部</label>
-				
+				<input id="shopPos1" type="radio" name="shopPosition" value="0">
+				<label for="shopPos1" class="rwdfilter">北部</label>
+
+				<input id="shopPos2" type="radio" name="shopPosition" value="1">
+				<label for="shopPos2" class="rwdfilter">中部</label>
+
+				<input id="shopPos3" type="radio" name="shopPosition" value="2">
+				<label for="shopPos3" class="rwdfilter">南部</label>
+
+				<input id="shopPos4" type="radio" name="shopPosition" value="3">
+				<label for="shopPos4" class="rwdfilter">東部</label>
+
 			</div>
 			<span>- 其他篩選條件 -</span>
-				<label><input type="radio" name="filter" value="top">熱門</label>
-				<label><input type="radio" name="filter" value="stars">評價</label>
+				<input type="radio" value="top" name="filter" id="filterTops">
+				<label for="filterTops" class="rwdfilter">熱門</label>	
+				<input type="radio" name="filter" value="stars" id="filterstars">
+				<label for="filterstars" class="rwdfilter">評價</label>
+
 			<div class="clearfix"></div>
 		</div>
 		<input type="search" name="searchName" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
