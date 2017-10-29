@@ -167,7 +167,7 @@ try{
 					<!-- <img src="img/search-store.png"> -->
 				</div>
 				<div class="search_storeContent col-sm-6 col-xs-12">
-					<h2><a href="shopB.php?storeId='<?php $searchRow->SI_NUM ?>'"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
+					<h2><a href="shopB.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
 					<div class="search_follow">
 						<img src="img/icon/follow3.svg">	
 					</div>
