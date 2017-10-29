@@ -1,5 +1,6 @@
 @import "member/myBusiness/store/_FMybusinessStorVar.scss";
 @import "member/myBusiness/store/_FMybusinessStorMixin.scss";
+@import "basic.scss";
 @import "basic/_var.scss";
 
 @keyframes letterDraw {
@@ -412,8 +413,24 @@ footer{
 							font-size: 14px;
 							&:nth-child(5){
 								div{
+
+
+									
 									span{
 										display: none;
+									}
+
+									&:nth-child(1){
+										img{
+										margin-right: 5px;
+									}
+									}
+									&:nth-child(2){
+
+										img{
+										  margin-left: 5px;
+										}
+
 									}
 								}
 							}

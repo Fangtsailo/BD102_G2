@@ -42,8 +42,8 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/subtitle.css">
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
-
-	
+	<!-- =====alert==== -->
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	
 
 	
@@ -65,9 +65,9 @@ session_start();
 		//$_SESSION["memId"]="cccfff";
 		//$_SESSION["memNo"]="7";
 
-		$memNo="7";
+		$memNo=$_SESSION["memNo"];
 
-		$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+		$sql = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=0";
 
 		$store_imformation = $connectPDO->query($sql);
 
@@ -94,7 +94,7 @@ session_start();
 
 	<?php 
 
-		require_once('subtitle.php');
+		//require_once('subtitle.php');
 
 	 ?>
 
@@ -188,7 +188,7 @@ session_start();
 		</div>
 		
 
-		<form action="php/member/myBusiness/store/storeManage.php" method="post" enctype="multipart/form-data">
+		<form id="alertFormSubmit" action="php/member/myBusiness/store/storeManage.php" method="post" enctype="multipart/form-data">
 		<div class="content-table">
 				
 			<table>
@@ -198,7 +198,7 @@ session_start();
 				</tr>
 
 				<tr>
-					<th><div>狀態</div></th>
+					<th><div>狀態 <?php echo $memNo; ?></div></th>
 					<td>
 						<p>			
 							<?php 
@@ -206,14 +206,20 @@ session_start();
 							if($store_imformation->rowCount()!=0){
 
 									$SI_SELLSTAY=$store_imformationRow->SI_SELLSTAY;
+									$SI_CHECKSTAY=$store_imformationRow->SI_CHECKSTAY;
 
-								if ($SI_SELLSTAY==1) {
-									echo "營運中";
-								}elseif($SI_SELLSTAY==0){
-									echo "歇業中";
-								}else{
-									echo "建構中";
-								}
+									if($SI_CHECKSTAY==="1"){
+
+											if ($SI_SELLSTAY==1) {
+												echo "營運中";
+											}elseif($SI_SELLSTAY==0){
+												echo "歇業中";
+											}
+									}elseif($SI_CHECKSTAY==="0"){
+											echo "駁回";
+									}elseif($SI_CHECKSTAY===NULL){
+											echo "待審核";
+									}
 
 							}else{
 								echo "首次建構";
@@ -527,7 +533,7 @@ session_start();
 								echo '<img class="preview preview_0" src="">';
 							}else{
 
-								echo '<img class="preview preview_0" src="img/store/logo/'.$store_imformationRow->SI_LOGO.'.jpg">';
+								echo '<img class="preview preview_0" src="img/store/logo/'.$store_imformationRow->SI_LOGO.'">';
 							}
 						}else{
 
@@ -563,7 +569,7 @@ session_start();
 							echo '<img class="preview preview_1" src="">';
 							}else{
 
-								echo '<img class="preview preview_1" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_1.'.jpg">';
+								echo '<img class="preview preview_1" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_1.'">';
 							}
 						}else{
 							echo '<img class="preview preview_1" src="">';
@@ -597,7 +603,7 @@ session_start();
 							echo '<img class="preview preview_2" src="">';
 							}else{
 
-								echo '<img class="preview preview_2" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_2.'.jpg">';
+								echo '<img class="preview preview_2" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_2.'">';
 							}
 
 						}else{
@@ -635,7 +641,7 @@ session_start();
 							
 							}else{
 
-								echo '<img class="preview preview_3" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_3.'.jpg">';
+								echo '<img class="preview preview_3" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_3.'">';
 							}
 						}else{
 
@@ -658,25 +664,25 @@ session_start();
 
 							//var logoSrc = $('.preview_0').attr("src");
 
-							if($('.preview_0').attr("src") !=null || $('.preview_0').attr("src") !=''){
-			                	$('.preview_0').css('z-index', 1);
+							if($('.preview_0').attr("src")){
+			                	$('.preview_0').css('z-index', 1);			      
 							}else{
 								$('.preview_0').css('z-index', -1);
 							}
 
-							if($('.preview_1').attr("src")!=null || $('.preview_1').attr("src")!=""){
+							if($('.preview_1').attr("src")){
 			                	$('.preview_1').css('z-index', 1);
 							}else{
 								$('.preview_1').css('z-index', -1);
 							}
 
-							if($('.preview_2').attr("src")!=null || $('.preview_2').attr("src")!=""){
+							if($('.preview_2').attr("src")){
 			                	$('.preview_2').css('z-index', 1);
 							}else{
 								$('.preview_2').css('z-index', -1);
 							}
 
-							if($('.preview_3').attr("src")!=null || $('.preview_3').attr("src")!="" ){
+							if($('.preview_3').attr("src")){
 			                	$('.preview_3').css('z-index', 1);
 							}else{
 								$('.preview_3').css('z-index', -1);
@@ -907,12 +913,38 @@ session_start();
 
 		<div class="commit">
 			<!-- <input type="button" name="" value="預覽"> -->
-			<input type="submit" name="" value="編輯完成">
+			<input type="button" id="alertBtn" name="" value="編輯完成">
 		</div>
 
 		</form>
 
 	</div>  <!-- CenterBusiness -->
+
+	<script>
+		
+	$("#alertBtn").click(function(){
+
+
+      $.sweetModal({
+            content: '修改成功！',
+            icon: $.sweetModal.ICON_SUCCESS,
+            width: '300px',
+            theme: $.sweetModal.THEME_MIXED,
+            timeout: 1000,
+            onClose: function(){
+              $("#alertFormSubmit").submit();
+            }
+        });
+     
+     
+      
+      
+    });
+
+
+
+
+	</script>
 
 
 

@@ -20,7 +20,7 @@ function logOut(){
 
 //更換會員專區角色
 function changeRole() {
-    $("#role").text("店長專區").attr('href','bossActivity.php');
+    $("#role").text("店長專區").attr('href','FMybusinessStore.php');
     $("#rwdBossRole").replaceWith("<span id='rwdBossRole'>店長專區   <i class='fa fa-plus' aria-hidden='true'></i></span>");
     $("#rwdBossRole").click(function(){
         $('#bossMenu').slideToggle(500);
@@ -37,6 +37,7 @@ function hideShowPsw(){
         }  
     }
 
+//將地址轉經緯度    
 
 
 
@@ -93,34 +94,20 @@ var bodyClass = document.body.classList,
 	});
 
 //關閉燈箱按鈕
-	$('.closeBtn,#cancelLogin').click(function(){
+	$('.closeBtn,#cancelLogin,#closeBtn01,#closeBtn02').click(function(){
 			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
-            $("#loginForm")[0].reset();
-            $("#registerForm")[0].reset();
+      $("#loginForm")[0].reset();
+      $("#registerForm")[0].reset();
+      $("#addShopBox").fadeOut(300);
+      $("#serviceCenter").fadeOut(300);
 		
   });
 
 
 //按下登入檢查
 $("#submitLogin").click(function(){
-         //檢查帳號不可小於六碼
-        if ( $("#memId").val().length < 6 && $("#memId").val().length >=0  ){
-            $.sweetModal({
-                content: '帳號不得低於六碼',
-                icon: $.sweetModal.ICON_WARNING,
-                width: '300px',
-                theme: $.sweetModal.THEME_MIXED,
-                buttons: [
-                    {
-                        label: '知道了',
-                        classes: 'brownB'
-                    }
-                ]
-            });
-            $("#memId").select();
-            return;
-        }
+        
 
         //檢查密碼不可超過六碼
         if ($("#memPsw").val().length < 6 && $("#memPsw").val().length>=0 ){
@@ -198,12 +185,9 @@ $("#submitLogin").click(function(){
 });
 
 
-      
-  
 
 
-
-//註冊檢查function
+//=======================註冊檢查================================
 $('#showPsw').click(function(){
     hideShowPsw();
 });
@@ -234,17 +218,10 @@ $('#newMemId').blur(function(){
       }
 
       } );
-
 });
 
 
-
-
-
-
 $("#submitRegister").click(function(){
-
-  
 
     //檢查email格式
     var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -276,37 +253,15 @@ $("#submitRegister").click(function(){
               $("#registerForm").submit();
             }
         });
-  
-
 });
 
 
 //登入後會員專區顯示
-     $("#headMemPic").click(function(){
-          $('#memStatusBar').slideToggle(300);
-     });
+$("#headMemPic").click(function(){
+  $('#memStatusBar').slideToggle(300);
+  $("#addShopBox").fadeOut(300);
+});
 
-//新增店家按鈕
-
-    $("#addShop1").click(function(){
-        $("#addShopBox").show(300);
-    });
-
-    $("#closeBtn01").click(function(){
-      $("#addShopBox").hide(500);
-    });
-
-    $("#closeBtn02").click(function(){
-      $("#serviceCenter").hide(500);
-    });
-
-    $('#addShopBtn').click(function(){
-      $("#addShopBox").show(500);
-    });
-
-    $('#serviceBtn').click(function(){
-      $("#serviceCenter").show(500)
-    });
 
 //mobile導覽列會員專區顯示
 
@@ -323,7 +278,10 @@ $("#submitRegister").click(function(){
 
         });
 
-//導覽列搜尋區塊
+
+
+
+//導覽列搜尋區塊=============
 
     $(".rwd_headerSearch").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
@@ -333,14 +291,58 @@ $("#submitRegister").click(function(){
         });
 
 
-//首頁導覽列漢堡選單
+//header.php選擇送出查詢的頁面是胖小車或店家(desktop)
+$("#headSearchKind").change(function(){
+    var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
+    $("#SearchForm").attr("action",action);
+});    
+$('#headSearchSubmit').click(function(){ //送出表單
+    $("#SearchForm").submit()
+});
+
+
+
+//header.php選擇送出查詢的頁面是胖小車或店家(rwd)
+$(".selectType input[name=shopType]").change(function(){
+    var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
+    $("#rwdsearchForm").attr("action",action);
+});
+$("#rwdSubmit").click(function(){ //送出表單
+    $("#rwdsearchForm").submit();
+});
+
+
+
+//homepage.php選擇送出查詢的頁面是胖小車或店家(radio)
+$(".tab_contents input[name=shopType]").change(function(){
+    var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
+    $("#homeSearchForm").attr("action",action);     
+});
+
+$("#searchSubmit").click(function(){ //送出表單
+    $("#homeSearchForm").submit();
+});
+
+$("#searchSubmit").click(function(){ //送出表單
+    $("#homeSearchForm").submit();
+});
+
+$("#headSearch").keyup(function(){
+    $(this).siblings("#headSearchSubmit").addClass('keyIn').attr("value","GO");
+  });
+$("#headSearch").blur(function(){
+    $(this).siblings("#headSearchSubmit").removeClass('keyIn').attr("value","搜尋");
+  });
+
+
+
+//首頁導覽列錨點選單=================
+
     $("#left-burgerBtn").click(function(){
           $("#left-burgerBtn").toggleClass("active");
           $("#rwd-HeaderLink").toggleClass("showMenu");
           $("#menu").removeClass("show");
     });
-
-
     for (var i = 1; i <= 6; i++) {
       let j = i; 
       $('.section'+i+'-click').click(function(){
@@ -350,59 +352,95 @@ $("#submitRegister").click(function(){
       });
     }
 
+//新增店家=================
 
-//新增店家燈箱
+    //新增店家按鈕
+    $("#addShop1,#addShopBtn,#homeAddBtn").click(function(){
+        $("#addShopBox").fadeIn(300);
+        $('#memStatusBar').slideUp(300);
+    });
+     $('#serviceBtn').click(function(){
+      $("#serviceCenter").fadeIn(300)
+    });
+
+
+    //新增店家燈箱條件
+
     $("#addstoreBtn").click(function(){
 
-      //店家型態為必選
-      if($("#type1,#type2").is(':checked') == false ){
-        
-        $.sweetModal({
-            content: '請選擇店家型態',
-            icon: $.sweetModal.ICON_WARNING
-        });
-        
-        $("#type1").select();
-        
-        return;
-      }
+        //店家型態為必選
+        if($("#type1,#type2").is(':checked') == false ){
+            
+            $.sweetModal({
+                content: '請選擇店家型態',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            
+            $("#type1").select();
+            
+            return;
+        }
 
-      //店家名稱為必選
-      if ($("#storeName").val().length ==0 ){
-        $.sweetModal({
-            content: '請填寫店家名稱',
-            icon: $.sweetModal.ICON_WARNING
-        });
-        $("#storeName").select();
-        return;
-      }
+        //店家名稱為必選
+          if ($("#storeName").val().length ==0 ){
+            $.sweetModal({
+                content: '請填寫店家名稱',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            $("#storeName").select();
+            return;
+          }
 
-      //店家地址為必選
-       if ($("#address").val().length ==0 ){
-        $.sweetModal({
-            content: '請填寫店家地址',
-            icon: $.sweetModal.ICON_WARNING
-        });
-        $("#address").select();
-        return;
-      }
-      console.log('新增成功');
-      $("#addShopBox").hide(300);
-      $.sweetModal({
-            content: '新增成功！',
-            icon: $.sweetModal.ICON_SUCCESS,
-            width: '300px',
-            theme: $.sweetModal.THEME_MIXED,
-            timeout: 1000,
-            onClose: function(){
-              $("#addstoreForm").submit();
-            }
-        });
-     
-     
-      
-      
-    });
+          //店家地址為必選
+           if ($("#address").val().length ==0 ){
+            $.sweetModal({
+                content: '請填寫店家地址',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            $("#address").select();
+            return;
+          }
+          
+          //將地址轉經緯度
+          // globalMap = new google.maps.Map(document.getElementById("map"), {
+          // zoom: 16,
+          // center: {lat: 24.965356, lng: 121.191038}
+          // });
+          var address = document.getElementById("address").value;
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                // globalMap.setCenter(results[0].geometry.location);
+                var lat =results[0].geometry.location.lat();
+                document.getElementById("SI_lat").value = lat ; 
+                var lng =results[0].geometry.location.lng();
+                document.getElementById("SI_lng").value = lng ; 
+                console.log(lng);
+                console.log(lat);
+                // document.getElementById("lat").value=results[0].geometry.location.lat();
+                // document.getElementById("lng").value=results[0].geometry.location.lng();
+                // var marker = new google.maps.Marker({
+                //     map: globalMap,
+                //     position: results[0].geometry.location
+                // });
+              } else {
+                alert("失敗, 原因: " + status);
+              }
+            });
+
+          console.log('新增成功');
+          $("#addShopBox").hide(300);
+          $.sweetModal({
+                content: '新增成功！',
+                icon: $.sweetModal.ICON_SUCCESS,
+                width: '300px',
+                theme: $.sweetModal.THEME_MIXED,
+                timeout: 1000,
+                onClose: function(){
+                  $("#addstoreForm").submit();
+                }
+            });  
+      });
 
 
 

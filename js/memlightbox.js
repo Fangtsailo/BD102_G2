@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //memedit.php 開啟密碼光箱
 // $(function(){
 
@@ -51,17 +50,3 @@ $(function(){
 
 
 // $('.msg').appendChild('div');
-=======
-$(function(){
-
-	$(".openlightbox").click(function(){
-		$(".box").css("display","block");
-	});
-
-	$(".closelightbox").click(function(){
-		$(".box").css("display","none");
-	});
-	
-});
-
->>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f

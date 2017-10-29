@@ -120,7 +120,6 @@ header {
           color: #ffffff;
           background-color: #af6363;
           border-radius: 10px;
-          -webkit-box-shadow: 0 0 0;
           box-shadow: 0 0 0;
           border: none; }
 
@@ -143,15 +142,12 @@ footer {
       color: #ffffff;
       background-color: #7e4a1d;
       border-radius: 10px;
-      -webkit-box-shadow: 0 0 0;
       box-shadow: 0 0 0;
       margin-top: 5px;
       border: none; }
       footer section .square_2 span input:hover {
         background-color: #ffffff;
         color: #7e4a1d;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
         transition: 0.3s; }
     footer section .square_2 label {
       display: block;
@@ -177,8 +173,11 @@ footer {
 .dutyColorChange {
   background-color: #00c853 !important;
 <<<<<<< HEAD
+<<<<<<< HEAD
   -webkit-transition: .5s;
   -o-transition: .5s;
+=======
+>>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
   transition: .5s; }
 =======
   transition: 0.5s; }

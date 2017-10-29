@@ -22,12 +22,39 @@ try {
 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
 }
-
+	//轉換數字成星期文字
+	function transNumToWord($num) {
+		$word = "一";
+		switch ($num) {
+			case 1:
+				$word = "一";
+				break;
+			case 2:
+				$word = "二";
+				break;
+			case 3:
+				$word = "三";
+				break;
+			case 4:
+				$word = "四";
+				break;
+			case 5:
+				$word = "五";
+				break;
+			case 6:
+				$word = "六";
+				break;
+			case 7:
+				$word = "日";
+				break;
+		}
+		return $word;
+	}
 	//特定num的會員有沒有追蹤特定店家
 	function isFollowStoreByMemNum($memNum, $storeId) {
 		$isFollow = false;
 		if ($memNum != -1) {
-			$sql = "SELECT * FROM trepun.follow WHERE SI_NUM=$storeId AND MEM_NO=$memNum";
+			$sql = "SELECT * FROM follow WHERE SI_NUM=$storeId AND MEM_NO=$memNum";
 			$stmt = $GLOBALS["connectPDO"] ->query($sql);
 			while ($count = $stmt->fetchObject()) {
 				//有追蹤
@@ -39,7 +66,7 @@ try {
 	
 	function getFollowCountByStoreId($storeId) {
 		$followCount = 0;
-		$sql = "SELECT count(*) count FROM trepun.follow WHERE SI_NUM=$storeId";
+		$sql = "SELECT count(*) count FROM follow WHERE SI_NUM=$storeId";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($count = $stmt->fetchObject()) {
 			$followCount = $count->count;
@@ -64,9 +91,9 @@ try {
 		$sql = "SELECT * FROM store_imformation limit $randomStart, $StoreCountToGet";
 		$stmt = $GLOBALS["connectPDO"] ->query($sql);
 		while ($store = $stmt->fetchObject()) {
-			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3);
+			$otherStore = new Store($store->SI_NUM, $store->SI_NAME, $store->SI_LOGO, $store->SI_ADDR, $store->SI_STARTTIME, $store->SI_ENDTIME, $store->SI_PHONE, $store->SI_RESTDAY, $store->SI_STORY, $store->SI_TYPE, $store->SI_BIMG_1, $store->SI_BIMG_2, $store->SI_BIMG_3, $store->SI_LAT, $store->SI_LNG, $store->SI_AVG_REVIEW);
 					$followCount = 0;
-			// $sql = "SELECT count(*) FROM trepun.follow WHERE SI_NUM=$storeId";
+			// $sql = "SELECT count(*) FROM follow WHERE SI_NUM=$storeId";
 			// $stmt = $GLOBALS["connectPDO"] ->query($sql);
 			// while ($count = $stmt->fetchObject()) {
 			// 	$followCount = $count->count;
@@ -89,7 +116,7 @@ try {
 			while($row = $stmt->fetchObject()) {
 				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
 				//這筆留言有沒有被此登入的 member 檢舉過
-				$sql = "SELECT * FROM trepun.report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
+				$sql = "SELECT * FROM report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
 				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
 				if ($row = $stmt2->fetchObject()) {
 					$message->isReportByMe = true;
@@ -101,7 +128,7 @@ try {
 	}
 	function getActivityInfoByStoreId($storeId) {
 		$activityArr = array();
-		$sql = "SELECT * FROM trepun.activity where AC_STORE_NUM=:storeId";
+		$sql = "SELECT * FROM activity where AC_STORE_NUM=:storeId";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
@@ -117,7 +144,7 @@ try {
 	}
 	function getProductsByStoreId($storeId) {
 		$productsArr = array();
-		$sql = "SELECT * FROM trepun.product where PD_SHOPNO=:storeId";
+		$sql = "SELECT * FROM product where PD_SHOPNO=:storeId";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
@@ -140,14 +167,18 @@ try {
 			header("location:homepage.php");
 		} else {
 			$tmpStore = $stmt->fetchObject();
-			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG);
+			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG, $tmpStore->SI_AVG_REVIEW);
 			$followCount = getFollowCountByStoreId($storeId);
 			$GLOBALS["store"]->follow = $followCount;
+			//防呆, type 不是1的都導到 shopB.php
+			if ($GLOBALS["store"]->type != 1) {
+				header("location:shopB.php?storeId=$storeId");
+			}
 		}
 	}
 	function getBreadCarPathByStoreId($storeId) {
 		$breadCarPathArr = array();
-		$sql = "select path.bcp_location,path.bcp_describe, store.si_lat, store.si_lng from trepun.bread_car_path path, trepun.store_imformation store where path.BCP_STORE_NUM = :storeId and path.bcp_store_num=store.si_num";
+		$sql = "select path.bcp_location,path.bcp_describe, store.si_lat, store.si_lng from bread_car_path path, store_imformation store where path.BCP_STORE_NUM = :storeId and path.bcp_store_num=store.si_num";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();

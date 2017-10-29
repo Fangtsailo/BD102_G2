@@ -337,7 +337,7 @@ li {
       font-size: 0; }
       .globalHead .headerRight .headSearch span {
         margin-right: 10px;
-        color: #fbf8f1;
+        color: #996633;
         font-weight: 300; }
       .globalHead .headerRight .headSearch #headSearch {
         width: 20%;
@@ -353,8 +353,8 @@ li {
         display: inline-block;
         width: 80px;
         height: 30px;
-        color: #fbf8f1;
-        background-color: transparent;
+        color: #996633;
+        background-color: #fbf8f1;
         border: 1px solid #fbf8f1;
         margin: 0px 5px;
         font-size: 16px;
@@ -362,22 +362,31 @@ li {
         border-radius: 2px;
         box-sizing: border-box;
         vertical-align: top; }
-      .globalHead .headerRight .headSearch button {
+      .globalHead .headerRight .headSearch label {
         width: 80px;
         display: inline-block;
         height: 30px;
-        color: #fbf8f1;
-        background-color: transparent;
-        border: 1px solid #fbf8f1;
+        color: #996633;
+        background-color: #fbf8f1;
         margin: 0px 5px;
         font-size: 16px;
-        border-radius: 2px; }
-        .globalHead .headerRight .headSearch button:focus {
-          background-color: #fbf8f1;
-          color: #805934;
+        border-radius: 2px;
+        vertical-align: top;
+        outline: none;
+        text-align: center;
+        box-sizing: border-box;
+        cursor: pointer;
+        box-shadow: -1px 1px 0px 1px #713f2a;
+        transition: .3s; }
+      .globalHead .headerRight .headSearch input[name=filter] {
+        display: none; }
+        .globalHead .headerRight .headSearch input[name=filter]:checked + label {
+          background-color: #5d2812;
+          color: #fbf8f1;
           outline: none;
           box-sizing: border-box;
-          vertical-align: top; }
+          box-shadow: none;
+          transition: .3s; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -390,10 +399,15 @@ li {
         border-radius: 2px;
         outline: none;
         box-sizing: border-box;
-        vertical-align: top; }
+        vertical-align: top;
+        transition: .3s; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
+        .globalHead .headerRight .headSearch #headSearchSubmit.keyIn {
+          background-color: #f06428;
+          color: #fbf8f1;
+          transition: .3s; }
 
 @-webkit-keyframes shake {
   0% {
@@ -1030,7 +1044,8 @@ footer {
 
 #addShopBox {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(50, 50, 50, 0.5);
@@ -1067,11 +1082,50 @@ footer {
         right: 0;
 <<<<<<< HEAD
         margin: auto; }
-    #addShopBox .globalForm input[type="number"] {
-      width: 20%;
+    #addShopBox .globalForm .selectTime {
+      display: block;
+      float: right;
+      width: 65%;
       height: 100%;
-      float: none;
-      display: inline-block; }
+      padding-left: 10px;
+      margin: auto;
+      background-color: transparent; }
+      #addShopBox .globalForm .selectTime span {
+        display: inline-block;
+        float: left;
+        line-height: 50px;
+        color: #663300; }
+      #addShopBox .globalForm .selectTime select {
+        width: 30%;
+        height: 30px;
+        float: left;
+        display: inline-block;
+        margin: 10px; }
+
+@media screen and (max-width: 400px) {
+  #addShopBox .globalForm .globalFormHeader {
+    padding: 2%; }
+    #addShopBox .globalForm .globalFormHeader .svg {
+      width: 30px; }
+    #addShopBox .globalForm .globalFormHeader p {
+      font-size: 13px; }
+  #addShopBox .globalForm .globalFormInput {
+    width: 90%;
+    height: 30px; }
+    #addShopBox .globalForm .globalFormInput label {
+      line-height: 30px;
+      font-size: 13px; }
+    #addShopBox .globalForm .globalFormInput .chooseBtn {
+      margin: 0px 5px; }
+    #addShopBox .globalForm .globalFormInput .selectTime {
+      padding-left: 0; }
+    #addShopBox .globalForm .globalFormInput select {
+      width: 37%;
+      line-height: 30px;
+      margin: 0; }
+    #addShopBox .globalForm .globalFormInput span {
+      line-height: 30px;
+      font-size: 12px; } }
 
 #serviceCenter {
   position: fixed;

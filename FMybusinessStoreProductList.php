@@ -35,6 +35,12 @@ session_start();
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 
+
+	<!-- =====alert==== -->
+	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+	
+
+
 </head>
 
 <body>
@@ -59,7 +65,7 @@ session_start();
 
 <?php 
 
-		require_once('subtitle.php');
+		//require_once('subtitle.php');
 
 	 ?>
 
@@ -146,7 +152,7 @@ session_start();
 		// $store_imformationRow=$store_imformation->fetchObject();
 
 
-		$mem_No="4";
+		$mem_No=$_SESSION["memNo"];
 
 		$sql_mem_No_FIND_PD_SHOPNO="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE=0";
 
@@ -198,9 +204,9 @@ session_start();
 					while ($product_table_Row=$product_table->fetchObject()) {
 
 					$PD_NO=$product_table_Row->PD_NO;
-					$PD_SHOPNO=$product_table_Row->PD_SHOPNO;
+					// $PD_SHOPNO=$product_table_Row->PD_SHOPNO;
 
-					$fileName = $PD_NO."-".$PD_SHOPNO;
+					$fileName = $product_table_Row->PD_PIC;
 						
 					
 
@@ -209,17 +215,29 @@ session_start();
 						<td><?php echo $product_table_Row->PD_NO; ?></td>
 
 
-						<td><img src="<?php echo 'img/store/products/'.$fileName.'.jpg'; ?>"></td>
+						<td><img src="<?php 
+
+						if($fileName != null){
+
+							echo 'img/store/products/'.$fileName; 
+
+						}
+
+						?>"></td>
 						<td><?php echo $product_table_Row->PD_NAME; ?></td>
 						<td><?php echo $product_table_Row->PD_PRICE; ?></td>
 						<td>
 							<div>
-								<img src="img/icon/editIcon.png">
-								<span>編輯</span>
+								<a href="FMybusinessStoreProductListContentDetail.php?PD_NO=<?php echo $PD_NO; ?>" >
+									<img src="img/icon/editIcon.png">
+									<span>編輯</span>
+								</a>
 							</div>
 							<div>
-								<img src="img/icon/deleteIcon.png">
-								<span>下架</span>
+								<a href="php/member/myBusiness/store/delProduct.php?PD_NO=<?php echo $PD_NO; ?>" >
+									<img src="img/icon/deleteIcon.png">
+									<span>下架</span>
+								</a>
 							</div>
 						</td>
 					</tr>

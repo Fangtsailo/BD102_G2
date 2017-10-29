@@ -11,19 +11,10 @@ session_start();
 	<link rel="icon" href="img/trepun4.png">
 	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/grid.css">
-<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="css/memEdit.css">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
-=======
-	<link rel="stylesheet" type="text/css" href="css/memtry.css">
-<<<<<<< HEAD
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-=======
-	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
->>>>>>> be751a354b4549967bf45be3f100e72f80dd0ea3
->>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
 	<?php
@@ -130,7 +121,6 @@ session_start();
 					</p>
 					<p>
 						<label for="MEM_PHONE">手機</label>
-<<<<<<< HEAD
 						<input type="tel" name="MEM_PHONE" placeholder="輸入手機或市話" value="<?php echo $memRow->MEM_PHONE;?>">
 					</p>
 					<div class="psw">
@@ -145,35 +135,6 @@ session_start();
 					</div>
 					<label class="openpsw">變更密碼</label>
 					<input type="submit" value="儲存">
-=======
-						<input type="tel" name="MEM_PHONE" pattern="\d{10}" placeholder="輸入格式:0900888888">
-					</p>
-					<div>
-						<input type="checkbox" id="check" name="check">
-						<label for="check"><a>變更密碼</a></label>
-						<input type="submit" value="儲存">
-					
-					<!-- 變更密碼光箱 -->
-					    <div class="box">
-					    	<div class="changepsw">
-					    		<h1>變更密碼</h1>
-					    		<p>
-					    			<label for="MEM_OLDPSW???">舊密碼</label>
-									<input type="password" name="MEM_OLDPSW???" maxlength="10">
-									
-					    		</p>
-					    		<p>
-					    			<label for="MEM_OLDPSW???">新密碼</label>
-									<input type="password" name="MEM_NEWPSW???" maxlength="10">
-					    		</p>
-					    		<p>
-					    			<input type="submit" value="變更密碼">
-					    		</p>
-								<label for="check"><img src="img/memimg/micon_cancel3.svg"></label>
-					    	</div>
-					    </div>
-					</div>
->>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
 				</form>
 				<?php
 					// }//if...else
