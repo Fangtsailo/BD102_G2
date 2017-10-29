@@ -454,10 +454,16 @@ require_once("header.php");
 
 
 		<div class="OTHERSPHOTOS">
-    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_01.jpg"></a> </div>
-    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_02.jpg"></a> </div>
+			<?php 
+				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
+			?>
+    		<div><a href="shopB.php?storeId=<?php echo $otherStore->id; ?>"><img id="IIImg" src="<?php echo $otherStore->banner1; ?>"></a> </div>
+    		<?php
+				}
+	 		?>	
+    		<!-- <div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_02.jpg"></a> </div>
     		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_03.jpg"></a> </div>
-    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_04.jpg"></a> </div>
+    		<div><a href="#"><img id="IIImg" src="img/SHOPB/OTHER_04.jpg"></a> </div> -->
 
   		</div>
 

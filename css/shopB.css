@@ -349,7 +349,15 @@ a {
   margin-top: 30%; }
 
 .pd1_DTL p {
-  font-size: 18px; }
+  font-size: 18px;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 #pd1:hover .pd1_DTL {
   display: inline; }
@@ -373,7 +381,15 @@ a {
   margin-top: 25%; }
 
 .pd2_DTL p {
-  font-size: 16px; }
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 #pd2:hover .pd2_DTL {
   display: inline; }
@@ -386,7 +402,15 @@ a {
   margin-top: 25%; }
 
 .pd3_DTL p {
-  font-size: 16px; }
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 #pd3:hover .pd3_DTL {
   display: inline; }
@@ -399,7 +423,15 @@ a {
   margin-top: 25%; }
 
 .pd4_DTL p {
-  font-size: 16px; }
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 #pd4:hover .pd4_DTL {
   display: inline; }
@@ -412,7 +444,15 @@ a {
   margin-top: 25%; }
 
 .pd5_DTL p {
-  font-size: 16px; }
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 #pd5:hover .pd5_DTL {
   display: inline; }
@@ -425,7 +465,15 @@ a {
   margin-top: 25%; }
 
 .pd6_DTL p {
-  font-size: 16px; }
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 #pd6:hover .pd6_DTL {
   display: inline; }
@@ -669,6 +717,9 @@ a {
 .slick-next {
   right: 10px; }
 
+.OTHERSPHOTOS img {
+  height: 28vw; }
+
 @media screen and (max-width: 1630px) {
   #SPNAME {
     width: 30vw;
@@ -752,7 +803,12 @@ a {
     left: 67vw; }
   #pd6 {
     top: 5vw;
-    left: 81vw; } }
+    left: 81vw; }
+  #ACTTXT #tt {
+    top: 5vw; }
+  #ACTTXT #cc {
+    color: #654;
+    font-size: 2vmin; } }
 
 @media screen and (max-width: 1060px) {
   #SPSTORY {
@@ -870,7 +926,10 @@ a {
     top: 17vw; }
   #pd6 > #dis {
     position: relative;
-    top: 17vw; } }
+    top: 17vw; }
+  #ACTIMG {
+    width: 52vw;
+    height: 38vw; } }
 
 @media screen and (max-width: 767px) {
   header.globalHead {
@@ -902,12 +961,12 @@ a {
       font-size: 3.2vmin;
       line-height: 4.5vmin; }
   #SPGRADE {
-    width: 60vw;
+    width: 70%;
     height: 8vw;
     padding: 0.5vw;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    top: 130px;
+    top: 33vw;
     left: 0px; }
   .rating > label:after {
     padding: 5px 10px 5px 10px;
@@ -919,13 +978,13 @@ a {
     width: 10vw;
     line-height: 7vw; }
   #getstar {
-    width: 22.5vw;
+    width: 27%;
     height: 8vw;
     line-height: 8vw;
     font-size: 3.2vw;
     position: absolute;
-    top: 130px;
-    left: 61.5vw; }
+    top: 33vw;
+    left: 73%; }
   #trace-btn {
     bottom: 5vw;
     right: 3vw;
@@ -1008,41 +1067,42 @@ a {
   #pd4 {
     display: none; }
   .SHOPB_ACT {
-    height: 60vw;
+    height: 56vw;
     position: relative; }
   #BOTTOMAREA {
     height: 28vw;
     background-color: #9e693d;
     position: absolute;
-    top: 5vw;
+    top: 7vw;
     left: 8vw; }
   #ACTIMG {
     position: absolute;
-    top: 2vw;
+    top: 4vw;
     left: 38vw;
     right: 2vw; }
   #SKINAREA {
     width: 70vw;
-    height: 40vw;
+    height: 33vw;
     background-color: rgba(236, 225, 203, 0.9);
     position: absolute;
-    top: 13vw;
+    top: 15vw;
     left: 15vw; }
   #ACTTXT #tt {
     color: #FFF;
     font-size: 4.3vmin;
     position: absolute;
+    top: 7.5vw;
     left: 12vw;
     text-shadow: 1px 2px 2px #000; }
   #ACTTXT #cc {
     color: #654;
     font-size: 3vmin;
     position: absolute;
-    top: 15vw;
+    top: 18vw;
     left: 19vw; }
   #ACTBT {
-    right: 24vw;
-    bottom: 10vw;
+    right: 20vw;
+    bottom: 12vw;
     width: 75px;
     height: 30px;
     font-size: 14px;
