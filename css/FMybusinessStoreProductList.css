@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 @charset "UTF-8";
 * {
   padding: 0;
@@ -965,7 +963,7 @@ footer {
           font-size: 20px;
           background-color: #663300;
           border-radius: 5px; }
-        .globalHead .rwdSearchBar .rwdsearchItem label {
+        .globalHead .rwdSearchBar .rwdsearchItem label.rwdfilter {
           display: inline-block;
           margin: 0px 5px;
           margin-bottom: 5px;
@@ -973,11 +971,15 @@ footer {
           color: #fbf8f1;
           border: 1px solid #fbf8f1;
           outline: none;
-          border-radius: 5px; }
-          .globalHead .rwdSearchBar .rwdsearchItem label input {
-            display: none; }
-          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
-            background-color: #f06428; }
+          border-radius: 5px;
+          cursor: pointer; }
+        .globalHead .rwdSearchBar .rwdsearchItem input[type=radio] {
+          display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
+            background-color: #fbf8f1;
+            color: #996633;
+            box-shadow: none;
+            transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
           margin: auto; }
@@ -992,7 +994,7 @@ footer {
         top: 80px;
         left: 0;
         transition: .3s; }
-      .globalHead .rwdSearchBar input[type="submit"] {
+      .globalHead .rwdSearchBar #rwdSubmit {
         display: block;
         width: 50%;
         height: 40px;
@@ -1136,13 +1138,18 @@ footer {
   to {
     stroke-dashoffset: 0; } }
 
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 @keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
+
+@-webkit-keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+
 @keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
+
 body {
   background-color: #fbf8f1; }
 
@@ -1182,11 +1189,13 @@ header {
       fill: none;
       stroke-width: 1;
       stroke: #4b7cbf;
+      -webkit-animation: letterleaf 1s ease forwards;
       animation: letterleaf 1s ease forwards; }
       .CenterBusiness .subtitle svg .line .line-g {
         opacity: 1;
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
+        -webkit-animation: letterDraw 3s ease forwards;
         animation: letterDraw 3s ease forwards; }
   .CenterBusiness .content-table {
     min-height: 400px; }
@@ -1305,6 +1314,7 @@ header {
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; } }
+
 @media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }

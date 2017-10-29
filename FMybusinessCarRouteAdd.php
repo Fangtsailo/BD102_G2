@@ -659,7 +659,7 @@ session_start();
 							<input id="clear3" type="button" name="" value="清除">
 							<input type="button" id="route3_btn" name="" value="確認">
 							<input type="hidden" id="route3" name="route3">
-							<input type="hidden" id="route3_del" name="route2_del" value="">
+							<input type="hidden" id="route3_del" name="route3_del" value="">
 
 							<script>
 

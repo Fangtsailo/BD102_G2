@@ -20,7 +20,7 @@ try{
 	require_once("../../PDO/connectPDO.php");
 	$acNum = $_REQUEST["acNo"];
 
-	//先新增活動文字資訊以取得活動編號
+	
 	$deleteAcInfoSQL = "DELETE FROM ac_info WHERE AC_NO = $acNum";
 	$deletetAcInfo = $connectPDO->prepare($deleteAcInfoSQL);
 	$deleteActSQL = "DELETE FROM activity WHERE AC_NO = $acNum";
