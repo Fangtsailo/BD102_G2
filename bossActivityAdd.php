@@ -72,6 +72,18 @@ session_start();
 						</td>
 					</tr>
 					<tr>
+						<th><div>活動費用</div></th>
+						<td>
+							<input type="text" name="acPrice" placeholder="請輸入活動參加者每人報名費用">
+						</td>
+					</tr>
+					<tr>
+						<th><div>活動材料</div></th>
+						<td>
+							<input type="text" name="acIngrd" placeholder="請輸入活動所需食材">
+						</td>
+					</tr>
+					<tr>
 						<th><div>人數限制</div></th>
 						<td>
 							<input type="number" name="acParticipants" placeholder="請輸入人數">

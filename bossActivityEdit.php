@@ -49,7 +49,7 @@ try{
 			<input type="hidden" name="acNo" value="<?php echo $queryActRow->AC_NO;?>">
 			<!-- <input type="hidden" name="MAX_FILE_SIZE" value="2048"> -->
 			<img src="img/icon/bossActivity.svg" alt="#" class="bigTitle">
-			<h2>新增活動</h2>
+			<h2>編輯活動詳情</h2>
 			<div class="actManageTable">
 				<table>
 					<tr>
@@ -62,6 +62,18 @@ try{
 						<th><div>活動時間</div></th>
 						<td>
 							<input type="text" name="acTime" value="<?php echo $queryActRow->AC_TIME;  ?>">
+						</td>
+					</tr>
+					<tr>
+						<th><div>活動費用</div></th>
+						<td>
+							<input type="text" name="acPrice" value="<?php echo $queryActRow->AC_PRICE;?>">
+						</td>
+					</tr>
+					<tr>
+						<th><div>活動材料</div></th>
+						<td>
+							<input type="text" name="acIngrd" value="<?php echo $queryActRow->AC_INGREDIENT;?>">
 						</td>
 					</tr>
 					<tr>

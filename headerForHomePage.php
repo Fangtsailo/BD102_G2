@@ -193,8 +193,8 @@
 						</a>
 						<a href="#" id="headMemPic">
 							<?php 
-								if ( isset($_SESSION['memPic']) ){
-									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+								if ( isset($_SESSION["memPic"]) ){
+									echo "<img src='img/member_pic/".$_SESSION["memPic"]."''>";
 								}else {
 									echo "<img src='img/member_pic/default.png'>";
 								}
@@ -337,62 +337,64 @@
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
+						<input type="hidden" name="SI_lat" id="SI_lat" value="">
+						<input type="hidden" name="SI_lng" id="SI_lng" value="">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>營業時間</label>
 						<div class="selectTime">
 							<select name="startTime">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
 							</select>
 							<span>點至</span>
 							<select name="endTime">
-								<option value="00:00">00:00</option>
-								<option value="01:00">01:00</option>
-								<option value="02:00">02:00</option>
-								<option value="03:00">03:00</option>
-								<option value="04:00">04:00</option>
-								<option value="05:00">05:00</option>
-								<option value="06:00">06:00</option>
-								<option value="07:00">07:00</option>
-								<option value="08:00">08:00</option>
-								<option value="09:00">09:00</option>
-								<option value="10:00">10:00</option>
-								<option value="11:00">11:00</option>
-								<option value="12:00">12:00</option>
-								<option value="13:00">13:00</option>
-								<option value="14:00">14:00</option>
-								<option value="15:00">15:00</option>
-								<option value="16:00">16:00</option>
-								<option value="17:00">17:00</option>
-								<option value="18:00">18:00</option>
-								<option value="19:00">19:00</option>
-								<option value="20:00">20:00</option>
-								<option value="21:00">21:00</option>
-								<option value="22:00">22:00</option>
-								<option value="23:00">23:00</option>
+								<option value="00">00:00</option>
+								<option value="01">01:00</option>
+								<option value="02">02:00</option>
+								<option value="03">03:00</option>
+								<option value="04">04:00</option>
+								<option value="05">05:00</option>
+								<option value="06">06:00</option>
+								<option value="07">07:00</option>
+								<option value="08">08:00</option>
+								<option value="09">09:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
 							</select>
 							<span>點</span>
 						</div>
