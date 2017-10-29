@@ -51,16 +51,26 @@ session_start();
 				// 	$follow = $connectPDO->query($sql);
 
 				// 	while( $followRow = $follow->fetchObject() ){
+				$score=5;
 				?>
 	
 				<div class="myfollow">
 					<a href="#"><img src="img/memimg/followimg1.jpg"><h2>小木屋鬆餅屋</h2></a>
 					<ul>
+						<?php
+						for( $i=1; $i<=5; $i++){
+							if( $i <= $score){
+								echo '<li class="star"><img src="img/memimg/star2.svg"></li>';
+							}else{
+								echo '<li class="star"><img src="img/memimg/star3.svg"></li>';
+							}
+						}
+						?>
+						<!-- <li class="star"><img src="img/memimg/star3.svg"></li>
 						<li class="star"><img src="img/memimg/star3.svg"></li>
 						<li class="star"><img src="img/memimg/star3.svg"></li>
 						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
+						<li class="star"><img src="img/memimg/star3.svg"></li> -->
 					</ul>
 					<a href="javascript:;" class="btn50" id="cancelfollow">
 						<img src="img/memimg/follow3.svg">

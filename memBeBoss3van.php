@@ -17,6 +17,25 @@ session_start();
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
+
+	<?php
+		//是否接到beBossUpdateToDb.php回傳的info?    有就傳此值  :沒有傳""
+    	$info = isset($_REQUEST["info"]) ?  $_REQUEST["info"] :"";
+	?>
+	<script type="text/javascript">
+		//宣告var info來接php的$info
+		var info = '<?php echo $info; ?>' ;		
+		$(document).ready(function(){
+			if ( info == "ok" ) {
+				$.sweetModal({
+					content: '表單已送出！請靜候我們的聯絡！',
+					icon: $.sweetModal.ICON_SUCCESS,
+					width: '600px',
+					theme: $.sweetModal.THEME_MIXED,
+				});
+			}
+		});//$(document).ready();
+	</script>	
 </head>
 
 <body>
@@ -38,27 +57,43 @@ session_start();
 		</div>
 		
 		<div class="content">
-			<!-- 成為店長_第四頁_新增麵包店店家 -->
+			<!-- 成為店長_第三頁 -->
 			<h1><img src="img/memimg/bebosstl.svg" alt="成為店長"></h1>
-			<section class="col-xs-12 col-sm-12 section1000 memBeBoss1">
-				<h1>OOPS！查無此店！</h1>
-                <p>請填寫以下表單簡介您的店舖！完成後送出，<br>我們將協助您進行新增店家和店長審核作業！</p>
+			<section class="col-xs-12 col-sm-12 section1000">
+				<h1>繼續完成店長資料登錄</h1>
+				<p>完成後請按送出，<br>我們將與您進行審核作業！</p>
 
 				<?php
+				
 				// phpinfo();
+
 				$siType=isset($_SESSION["SI_TYPE"])? $_SESSION["SI_TYPE"] : "";
 				$siName=isset($_SESSION["SI_NAME"])? $_SESSION["SI_NAME"] : "";
+				
+				try {
+				require_once("php\pdo\connectPDO.php");
 
+				//取得資料庫中符合店長編號為空值的資料
+				$sql = "select * from store_imformation where SI_TYPE='$siType' and SI_NAME='$siName' and SI_MEMNO is null";
+
+				//用query();把從$sql取得的資料放在$siQuery
+				$siQuery = $connectPDO->query($sql);
+
+				//用fetchObject();取出此店資料並放到$siQueryRow陣列中
+				$siQueryRow = $siQuery->fetchObject();
+
+				//宣告$siPhone變數以便從資料庫取出電話
+				// $siPhone = $siQueryRow->SI_PHONE;
 				?>
 
-				<form class="form-horizontal" action="php/member/beBossInsertToDb.php" method="get">
+				<form class="form-horizontal" action="php\member\beBossUpdateToDb.php" method="get">
 					<p>
 						<label for="SI_TYPE">&nbsp;店型</label>
 	                	<strong><?php
-	                		if ($siType==1){
-								echo "麵包車";
+	                		if ($siType==0){
+								echo "麵包店";
 							}else{
-								echo "麵包店";	
+								echo "麵包車";	
 							}
 	                	?></strong>
 					</p>
@@ -74,26 +109,29 @@ session_start();
 						<label for="MEM_REALNAME"><span class="required">*</span>店長姓名</label>
 						<input type="text" name="MEM_REALNAME" placeholder="輸入真實姓名">
 					</p>
-					<p>
-						<label for="SI_PHONE"><span class="required">*</span>&nbsp;電話</label>
-						<input type="tel" name="SI_PHONE" placeholder="輸入手機或市話">
-					</p>
-					<p>
-						<label><span class="required">*</span>營業時間</label>
-						<input type="number" name="SI_STARTTIME" max="24" min="1" value="9">點至
-						<input type="number" name="SI_ENDTIME" max="24" min="1" value="21">點
-					</p>
-					<p>
-						<label for="SI_STORY">&nbsp;故事介紹</label>
-						<textarea name="SI_STORY" maxlength="250" minlength="5" placeholder="字數限250字??">紅色就</textarea>
-					</p>
-					<p>
-						<input type="submit" class="btn" value="送出" id="check">
-					</p>
+					<!-- <p>
+						<label for="SI_PHONE"><span class="required">*</span>電&nbsp;&nbsp;話</label>
+						<input type="tel" name="SI_PHONE" value=" --><?php 
+							// if ($siPhone != ""){
+							// 	echo $siQueryRow->SI_PHONE; 
+							// }else{
+							// 	echo "輸入市話或手機";
+							// }
+						?><!-- " >
+					</p> -->
+			    	<input type="submit" value="送出">
 				</form>
+
+				<?php
+				}catch(PDOException $e){
+				 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
+					echo "行號 : " , $e->getLine(),"<br>";
+				 }//catch end
+				?>
 			</section>
 		</div>
 	</div>
+
 	<!-- footer -->
 	<?php
 		require_once("footer.php");
