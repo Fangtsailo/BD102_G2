@@ -267,10 +267,10 @@ require_once("BackStageHeaderSidebar.php");
 
 										?>
 										
-										<form action="php/backstage/authority/Back_empStatus.php" method="get">
+										<!-- <form action="php/backstage/authority/Back_empStatus.php" method="get">
 										<input type="hidden" name="dutyOne" value="<?php echo $employee_normal_row->EMP_ID; ?>">
 										<input type="submit" class="dutyChange dutyColorChange" name="" value="復原">
-										</form>
+										</form> -->
 
 										
 
@@ -283,10 +283,10 @@ require_once("BackStageHeaderSidebar.php");
 
 										 ?>
 										
-										<form action="php/backstage/authority/Back_empStatus.php" method="get">
+										<!-- <form action="php/backstage/authority/Back_empStatus.php" method="get">
 										 <input type="hidden" name="dutyZero" value="<?php echo $employee_normal_row->EMP_ID; ?>">
 										 <input type="submit" class="dutyChange" name="" value="停權">
-										 </form>
+										 </form> -->
 
 
 

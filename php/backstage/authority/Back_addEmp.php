@@ -55,7 +55,7 @@
 			$employee -> execute();
 
 
-
+			header("Location:../../../BAuthority.php");
 
 
 		 }else{
@@ -63,6 +63,8 @@
 		  
 
 		  echo "帳號已存在";
+
+		  header("Location:../../../BAuthority.php");
 
           
 
