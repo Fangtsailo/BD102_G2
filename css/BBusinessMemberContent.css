@@ -66,19 +66,12 @@ header {
 
 .dutyColorChange {
   background-color: #00c853 !important;
-<<<<<<< HEAD
-  transition: 0.5s; }
-<<<<<<< HEAD
-
-.disableBtn {
-  background-color: #ccc !important;
-  transition: 0.2s; }
-=======
->>>>>>> 3f3c43e3f633a68fed7e83ccf9edf3ae8a684c9f
-=======
+  -webkit-transition: .5s;
+  -o-transition: .5s;
   transition: .5s; }
 
 .disableBtn {
   background-color: #ccc !important;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
   transition: .2s; }
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
