@@ -182,6 +182,7 @@ li {
 			height: 100vh;
 			background-color: rgba(50,50,50,.5);
 			display: none;
+			z-index: 999;
 			.globalForm {
 				position: absolute;
 				top: 0;
@@ -1166,16 +1167,23 @@ footer {
 @media screen and (max-width:400px){
 	.globalHead {
 		.headLoginBox{
+			position: absolute;
 			.globalForm {
 				width: 100%;
 				margin-top: 80px;
-				height: 90vh;
+				height: 90%;
 				.globalFormHeader {
 					img {
 						width: 120px;	
 					}
 				}
 				.globalFormContent {
+					.globalFormInput {
+						input {
+							font-size: 16px;
+
+						}
+					}
 					.forgetPsw {
 						padding: 10px auto;
 					}
@@ -1207,6 +1215,10 @@ footer {
 				.globalFormContent {
 					.globalFormInput{
 						width: 90%;
+						input {
+							font-size: 16px;
+
+						}
 
 					}
 					.globalFormBtns{
