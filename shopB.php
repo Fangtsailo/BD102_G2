@@ -434,7 +434,7 @@ require_once("header.php");
 	</div>
 	<div class="send-message-area">
 		<div class="message-box" id="MSG123">
-			<div class="mem-pic col-lg-2"><img alt="<?php echo $memPic ?>" src="<?php echo $memPic ?>"></div>
+			<div class="mem-pic col-lg-2"><div id="login-men-pic"></div></div>
 			<div class="content col-lg-10"><textarea wrap="physical" id="message-box-txtarea" maxlength="200" placeholder="登入後開始留言..." rows="5"></textarea>
 			<button id="send-message-btn" class="button">留言</button>
 			</div>
@@ -446,7 +446,7 @@ require_once("header.php");
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
 		?>
 					<div class="message-box">
-						<div class="mem-pic col-lg-2"><img alt="<?php echo $messageItem->memberPicName ?>" src="<?php echo $memPic ?>"></div>
+						<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('<?php echo $messageItem->memberPicName ?>')"></div></div>
 						<div class="content col-lg-10">
 							<div class="container">
 								<div class="name"><?php echo $messageItem->memberName ?><span class="datetime"><?php echo $messageItem->dateStr ?></span></div>
@@ -582,7 +582,7 @@ $(document).ready(function(){
 		loadMoreMessage(<?php echo $GLOBALS["store"]->id; ?>);
 	}, false);
 	//寄發留言-------------------------
-	
+	$('#login-men-pic').css('background-image', 'url("<?php echo $memPic;?>")')
 	$("#send-message-btn").click(function() {
 		var content = $("#message-box-txtarea").val();
 		if (content.length > 0) {
