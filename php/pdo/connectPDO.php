@@ -5,7 +5,6 @@
 	$user = "root";
 	$password = "zxc123";
 
-
 	$options = array( PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
 	$connectPDO = new PDO($dsn, $user, $password, $options);
  ?>

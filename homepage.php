@@ -27,6 +27,7 @@ session_start();
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
 
 	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/search_car.js"></script>
 
 
 </head>
@@ -140,7 +141,7 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form id="homeSearchForm" action="search.php" method="post">
+				<form id="homeSearchForm" action="search.php" method="get">
 				<div class="tabs">
 						<label class="tab_contents active" id="searchShops">店家<input type="radio" value="0" name="shopType"></label>
 						<label class="tab_contents" id="searchVans">胖小車<input type="radio" value="1" name="shopType"></label>
@@ -257,25 +258,42 @@ require_once("headerForHomePage.php");
 		<div class="carMap">
 			<h1 class="mapTitle">胖小車地圖</h1>
 			<div class="search_mapcar">
-				<div id="map-now1"></div>
+				<div id="map-now-1"></div>
 				<div class="search_store">
 		<?php 
 		try{
 			require_once("php/pdo/connectPDO.php");
 			require_once("php/common/globalVar.php");
 			$shopType=1;
+			$firstCarNum = -1;//為了預設顯示第一台車的位置
 			$mapCarSQL = "SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top,s.SI_SELLSTAY,s.SI_CHECKSTAY,s.SI_BIMG_1 FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' AND s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM";
 			$mapCar = $connectPDO->query($mapCarSQL);
 			while($mapCarRow=$mapCar->fetchObject()){
+
 				$type = ($mapCarRow->SI_TYPE == 1) ? "storeBrowse.php" : "shopB.php" ;
 				$mapStoreBgd = (isset($mapCarRow->SI_BIMG_1))? $mapCarRow->SI_BIMG_1 : "default.png" ;
+				if ($firstCarNum == -1) {
+					$firstCarNum = $mapCarRow->SI_NUM;
+				}
+
 		 ?>
 		 <script type="text/javascript">
-			$(document).ready(function (){
-				$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$mapStoreBgd; ?>") center center').css('background-size','cover');
+				$(document).ready(function (){
+					
+					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$mapStoreBgd; ?>") center center').css('background-size','cover');
+					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
+						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
+						$('.search_storeOne').css("background-color","transparent");
+						$(this).css("background-color","rgba(234, 178, 96, 0.5)");
+					});
+					$('#car-<?php echo $mapCarRow->SI_NUM ?>').hover(function(){
+						// $('.search_storeOne').css("background-color","transparent");
+						// $(this).css("background-color","rgba(234, 178, 96, 0.5)");
+					});
 				});
-		</script>
-					<div class="search_storeOne">
+
+			</script>
+					<div class="search_storeOne" id="car-<?php echo $mapCarRow->SI_NUM ?>" data-lat="<?php echo $mapCarRow->SI_LAT ?>" data-lng="<?php echo $mapCarRow->SI_LNG ?>">
 						<div class="search_storeImg col-sm-5 col-xs-4">
 							
 						</div>
@@ -319,6 +337,25 @@ require_once("headerForHomePage.php");
  		?>
 
 				</div>  <!-- search_store -->
+		<script>
+		$(document).ready(function (){
+			<?php if ($mapCar->rowCount()!==0){
+
+				 ?>
+
+			initBreadCarNowLocationMap("map-now-1");
+			<?php
+				}
+			 ?>
+			<?php 
+				if ($firstCarNum != -1) {
+			?>
+					$('#car-<?php echo $firstCarNum ?>').click();
+			<?php
+				}
+			 ?>
+		});
+		</script>		
 		</div>
 		</div>
 	</section>
