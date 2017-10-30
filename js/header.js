@@ -265,6 +265,7 @@ $("#submitRegister").click(function(){
 
 //登入後會員專區顯示
 $("#headMemPic").click(function(){
+  event.preventDefault();
   $('#memStatusBar').slideToggle(300);
   $("#addShopBox").fadeOut(300);
 });
@@ -363,6 +364,7 @@ $("#headSearch").blur(function(){
 
     //新增店家按鈕
     $("#addShop1,#addShopBtn,#homeAddBtn").click(function(){
+         event.preventDefault();
         $("#addShopBox").fadeIn(300);
         $('#memStatusBar').slideUp(300);
     });

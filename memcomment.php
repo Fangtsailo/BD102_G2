@@ -86,7 +86,7 @@ session_start();
 							$member=$connectPDO->query($sql_member);
 
 							$member_row=$member->fetchObject();
-
+							$dateStamp=1508501792; 
 
 
 
@@ -98,7 +98,7 @@ session_start();
 					<li>
 						<div class="msg">
 							<time>
-			                    留言時間： <?php echo $shop_message_row->SPMSG_TIME ?>
+			                    留言時間： <?php echo  date("Y/m/d H:i", $shop_message_row->SPMSG_TIME) ; ?>
 			                </time>
 							<p>TO:<?php 
 
