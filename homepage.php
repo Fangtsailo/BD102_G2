@@ -219,7 +219,7 @@ require_once("headerForHomePage.php");
 					<div class="shopInfo">
 						<ul>
 							<li><img src="img/icon/mappointer1.svg"><span><?php echo $topShopsRow->address ?></span></li>
-							<li><img src="img/icon/star2.svg"><span><?php echo $topShopsRow->reviews ?>顆星</span></li>
+							<li><img src="img/icon/star2.svg"><span><?php echo $topShopsRow->SI_AVG_REVIEW ?>顆星</span></li>
 							<li><img src="img/icon/follow3.svg"><span><?php echo $topShopsRow->followers ?>人追蹤</span></li>
 						</ul>
 					</div>
