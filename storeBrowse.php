@@ -215,9 +215,23 @@ try {
 					<?php 
 						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
 							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
-								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
+								if ($GLOBALS["store"]->closeDayArr[$i] != "") {
+									if ($GLOBALS["store"]->closeDayArr[$i] == 0) {
+										//國定假日
+										echo transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
+									} else {
+										echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
+									}	
+								}
 							} else {
-								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
+								if ($GLOBALS["store"]->closeDayArr[$i] != "") {
+									if ($GLOBALS["store"]->closeDayArr[$i] == 0) {
+										//國定假日
+										echo transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
+									} else {
+										echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
+									}
+								}
 							}
 						}
 					 ?>
@@ -315,7 +329,7 @@ try {
 		<?php 
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
-				<div class="item pointer col-xs-4">
+				<div class="item pointer col-xs-4" data-id="small-bread-<?php echo $product->num; ?>">
 					<div class="image"></div>
 					<p><?php echo $product->name; ?></p>
 				</div>
@@ -578,7 +592,7 @@ $(document).ready(function(){
 	 	//商品大背景圖
 	 	$('#big-bread-<?php echo $product->num; ?> .image').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 	//商品列表小背景圖
-	 	$('#small-bread-<?php echo $product->num; ?> .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
+	 	$('[data-id=small-bread-<?php echo $product->num; ?>] .image').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 	
 	 <?php
 	 	}
