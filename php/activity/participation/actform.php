@@ -35,7 +35,7 @@
 			$newin=$connectPDO->exec($sql);
 
 
-			header("Location:../../../Activity_act.php");
+			header("Location:../../../Activity_act.php?actNum=$acNo");
 
 
 
