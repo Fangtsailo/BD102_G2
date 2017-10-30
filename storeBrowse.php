@@ -23,7 +23,6 @@
 	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script src="js/storeBrowse.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
 
     <script src="js/header.js"></script>
@@ -301,7 +300,6 @@ try {
 		?>
 					<div class="item" id="big-bread-<?php echo $product->num; ?>">
 						<div class="image">
-							<div class="wraper"></div>
 						</div>
 						<div class="describe">
 						<h3><?php echo $product->name; ?><button class="bread-detail" id="bread-detail-<?php echo $product->num; ?>">詳情</button></h3>
@@ -318,9 +316,7 @@ try {
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
 				<div class="item pointer col-xs-4">
-					<div class="image" id="small-bread-<?php echo $product->num; ?>">
-						<div class="wraper"></div>
-					</div>
+					<div class="image"></div>
 					<p><?php echo $product->name; ?></p>
 				</div>
 		<?php
@@ -516,7 +512,7 @@ $(document).ready(function(){
 	<?php
 	foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
 	?>
-		initBreadCarRouteMap("map-now<?php echo $key;?>",<?php echo $path->locationsStr ?>,<?php echo $path->nowLocation?>);
+		initBreadCarRouteMap("map-now<?php echo $key;?>",[<?php echo $path->locationsStr ?>],<?php echo $path->nowLocationLat?>,<?php echo $path->nowLocationLng?>);
 	<?php
 		}
 	 ?>
@@ -580,7 +576,7 @@ $(document).ready(function(){
 	 	$('.textLightBox').fadeIn(500);
 	 });
 	 	//商品大背景圖
-	 	$('#big-bread-<?php echo $product->num; ?> .image .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
+	 	$('#big-bread-<?php echo $product->num; ?> .image').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 	//商品列表小背景圖
 	 	$('#small-bread-<?php echo $product->num; ?> .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 	

@@ -147,7 +147,7 @@ require_once("BackStageHeaderSidebar.php");
 
 								 if(isset($_REQUEST["searchBar"])){
 
-								 exit("22222222222222222222222222222"); 
+								 //exit("22222222222222222222222222222"); 
 
 
 								 	$searchBar = $_GET["searchBar"];
@@ -366,10 +366,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $memberRow->MEM_PHONE; ?></td>
 
 
-						<?php echo $memberSearchRow->MEM_PHONE; 
-
-						exit();
-						?>
+						
 
 
 <!-- =========td pass or not====== -->

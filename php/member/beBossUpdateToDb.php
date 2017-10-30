@@ -36,7 +36,15 @@ try {
 	// exit();	
 
 	//將統編或車牌更新到商家資料表
-	$sql = "update store_imformation set SI_COMFIRM_ID=:siComfirmId where  SI_TYPE='$siType' and SI_NAME='$siName'";
+	$memNo=$_SESSION["memNo"];
+
+	$sql_update_memNo = "UPDATE member SET MEM_ROLE='1' where MEM_NO ='$memNo'";
+
+	$sql_update_memNo_table=$connectPDO->query($sql_update_memNo);
+
+
+	
+	$sql = "update store_imformation set SI_MEMNO='$memNo' , SI_COMFIRM_ID=:siComfirmId where  SI_TYPE='$siType' and SI_NAME='$siName'";
 	$siRow = $connectPDO->prepare($sql);
 	$siRow->bindValue(":siComfirmId", $siComfirmId);
 	$siRow->execute();

@@ -466,12 +466,28 @@ session_start();
 						<select name="SI_STARTTIME">
 
 							<?php 
+					// 		exit("1122221");
+					// 		echo $store_imformationRow->SI_STARTTIME;
+					// exit("111111");
 
-							for($i=0;$i<24;$i++){
-								$clock = $i<10 ? "0".$i.":00" : $i.":00";
-								$sel = ($i==$store_imformationRow->SI_STARTTIME)? "selected" : "" ;
+							if($store_imformation->rowCount()!=0){
 
-								echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==$store_imformationRow->SI_STARTTIME)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
+							}else{
+
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==9)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
 							}
 
 							 ?>
@@ -485,11 +501,24 @@ session_start();
 						<select name="SI_ENDTIME">
 							<?php 
 
-							for($i=0;$i<24;$i++){
-								$clock = $i<10 ? "0".$i.":00" : $i.":00";
-								$sel = ($i==$store_imformationRow->SI_ENDTIME)? "selected" : "" ;
+							if($store_imformation->rowCount()!=0){
 
-								echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==$store_imformationRow->SI_ENDTIME)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
+							}else{
+
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==9)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
 							}
 
 							 ?>
