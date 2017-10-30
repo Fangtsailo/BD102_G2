@@ -218,7 +218,9 @@ session_start();
 
 			$('#livePosition').val(SI_NUM);
 
-			var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+			//var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+
+			var coord = '24.967779,121.192124';
 
 			$('#livePosition_data').val(coord);
 
@@ -238,9 +240,9 @@ session_start();
           center: {lat: 24.967779, lng: 121.192124},
           zoom: 16
         });
-        // var infoWindow = new google.maps.InfoWindow({map: map});
+        var infoWindow = new google.maps.InfoWindow({map: map2});
 
-        // Try HTML5 geolocation.
+        // //Try HTML5 geolocation.
         // if (navigator.geolocation) {
         //   navigator.geolocation.getCurrentPosition(function(position) {
         //      pos = {
