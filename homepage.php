@@ -392,7 +392,7 @@ try{
 					<div class="actBanner">
 						<div class="actDate">
 							<div class="dateItem">
-								<span><?php echo $showActivityRow->AC_TIME ?></span>
+								<span><?php echo substr($showActivityRow->AC_TIME,0,11); ?></span>
 								
 							</div>
 						</div>

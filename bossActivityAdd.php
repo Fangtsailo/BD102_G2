@@ -70,9 +70,21 @@ session_start();
 						</td>
 					</tr>
 					<tr>
+						<th><div>活動副標題</div></th>
+						<td>
+							<input type="text" name="acSubName" placeholder="請輸入副標題">
+						</td>
+					</tr>
+					<tr>
 						<th><div>活動時間</div></th>
 						<td>
 							<input type="text" name="acTime" placeholder="例如：2017-10-10上午10:00">
+						</td>
+					</tr>
+					<tr>
+						<th><div>活動地點</div></th>
+						<td>
+							<input type="text" name="acAddress" placeholder="輸入活動舉辦地點與位置">
 						</td>
 					</tr>
 					<tr>
