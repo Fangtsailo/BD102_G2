@@ -92,7 +92,7 @@ require_once("BackStageHeaderSidebar.php");
 						// $ownerinfo_row = $ownerinfo->fetchObject();
 
 						$sql_storelist = "select *
-										from store_imformation join member 
+										from store_imformation left join member 
 										on store_imformation.SI_MEMNO = member.MEM_NO
 										group by store_imformation.SI_NUM
 										order by SI_NUM DESC";

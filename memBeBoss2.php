@@ -51,7 +51,7 @@ session_start();
 					$siType=isset($_SESSION["SI_TYPE"])? $_SESSION["SI_TYPE"] : "";
 					$siName=isset($_SESSION["SI_NAME"])? $_SESSION["SI_NAME"] : "";
 
-					require_once("php\pdo\connectPDO.php");
+					require_once("php/pdo/connectPDO.php");
 
 					//比對資料庫中是否有此店型的店名
 					$sql = "select * from store_imformation where SI_TYPE=:SI_TYPE and SI_NAME=:SI_NAME";

@@ -1574,6 +1574,11 @@ section {
 						word-wrap: wrap;
 						color:$globalAltColor;
 						font-size: 16px;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 5;
+						-webkit-box-orient: vertical;
 					}
 					ul {
 						width: 100%;
@@ -1667,6 +1672,11 @@ section {
 					width: 100%;
 					p {
 						font-size: 14px;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 5;
+						-webkit-box-orient: vertical;
 					}
 				.exploreBtn {
 					display:block;

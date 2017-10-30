@@ -152,7 +152,7 @@ session_start();
 	</div>
 <?php 
 	require_once('footer.php');
-	$deleteInfo = $_REQUEST["info"];
+	$deleteInfo = (isset($_REQUEST["info"])) ? $_REQUEST["info"] : "" ;
 ?>
 <?php echo $deleteInfo;  ?>
 <script type="text/javascript">
