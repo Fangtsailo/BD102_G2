@@ -270,7 +270,7 @@ session_start();
 					<th>點Ａ:</th>
 					<td><?php 
 					if(isset( $LOCATION_1_Ary[0])){
-						echo $LOCATION_1_Ary[0]; 
+						echo $LOCATION_1_Ary[0].'}'; 
 					}
 						?></td>
 					</tr>
@@ -281,7 +281,7 @@ session_start();
 
 					if(isset( $LOCATION_1_Ary[1])){
 
-						echo $LOCATION_1_Ary[1]; 
+						echo '{'.$LOCATION_1_Ary[1].'}'; 
 
 					}
 
@@ -294,7 +294,7 @@ session_start();
 					<td><?php 
 
 						if(isset( $LOCATION_1_Ary[2])){
-						echo $LOCATION_1_Ary[2] ;
+						echo '{'.$LOCATION_1_Ary[2] ;
 						}
 						?></td>
 					</tr>
@@ -457,7 +457,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_2_Ary[0])){
 
-					echo $LOCATION_2_Ary[0]; 
+					echo $LOCATION_2_Ary[0].'}'; 
 
 					}
 					?></td>
@@ -469,7 +469,7 @@ session_start();
 
 					if(isset( $LOCATION_2_Ary[1])){
 
-						echo $LOCATION_2_Ary[1]; 
+						echo '{'.$LOCATION_2_Ary[1].'}'; 
 
 					}
 
@@ -482,7 +482,7 @@ session_start();
 					<td><?php 
 
 						if(isset( $LOCATION_2_Ary[2])){
-						echo $LOCATION_2_Ary[2] ;
+						echo '{'.$LOCATION_2_Ary[2] ;
 						}
 						?></td>
 					</tr>
@@ -615,7 +615,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_3_Ary[0])){
 
-					echo $LOCATION_3_Ary[0]; 
+					echo $LOCATION_3_Ary[0].'}'; 
 
 					}
 					?></td>
@@ -626,7 +626,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_3_Ary[1])){
 
-					echo $LOCATION_3_Ary[1]; 
+					echo '{'.$LOCATION_3_Ary[1].'}'; 
 
 					}
 					?></td>
@@ -638,7 +638,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_3_Ary[2])){
 
-					echo $LOCATION_3_Ary[2]; 
+					echo '{'.$LOCATION_3_Ary[2]; 
 
 					}
 					?></td>

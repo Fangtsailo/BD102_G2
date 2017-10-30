@@ -127,7 +127,7 @@
 						
 							  $from = $_FILES["uploadImg"]["tmp_name"][$i];
 							  $FileName = mb_convert_encoding($_FILES["uploadImg"]["name"][$i],"big5","utf-8");
-							  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
+							  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
 							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  $SI_BGIMG_COL="SI_BIMG_".($i+1);
@@ -187,7 +187,7 @@
 						
 							  $from = $_FILES["uploadImg"]["tmp_name"][$i];
 							  $FileName = mb_convert_encoding($_FILES["uploadImg"]["name"][$i],"big5","utf-8");
-							  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
+							  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
 							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  $SI_BGIMG_COL="SI_BIMG_".($i+1);
