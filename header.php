@@ -56,7 +56,8 @@
 				</div>
 				
 				<div class="facebookLogin">
-					<a href="#">
+					<a href="#" scope="public_profile,email"
+  onlogin="checkLoginState();">
 					Facebook帳號登入</a>
 				</div>
 				

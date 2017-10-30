@@ -346,7 +346,7 @@ require_once("headerForHomePage.php");
 <?php 
 try{
 	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 ORDER BY RAND() LIMIT 6" ;
+	$selectNewShopSQL = "SELECT a.AC_NO,a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 ORDER BY RAND() LIMIT 6" ;
 	$showActivity = $connectPDO->query($selectNewShopSQL);
 	while ($showActivityRow = $showActivity->fetchObject()) {
 		$actStoreBgd = (isset($showActivityRow->AC_BANNER1))? $showActivityRow->AC_BANNER1 : "default.png" ;
@@ -378,7 +378,7 @@ try{
 									</li>
 								</ul>
 							</div>
-							<a href="#" class="globalOkBtn" >立即體驗</a>
+							<a href="activity_act.php?acNo=<?php echo $showActivityRow->AC_NO; ?>" class="globalOkBtn" >立即體驗</a>
 						</div>
 					</div>
 
