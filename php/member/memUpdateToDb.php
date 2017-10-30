@@ -52,7 +52,7 @@ try {
 
 		  $_FILES["mempic"]["name"]=$memId.'.jpg';
 
-		  $to = "../../img/member_pic/" . $_FILES["mempic"]["name"];
+		  $to = GLOBAL_MEM_PIC_PATH.$_FILES["mempic"]["name"];
 		  copy($from, $to);  //將暫存檔儲存在伺服器指定的$to路徑
 		  
 		   //宣告一個新圖檔的全域變數來接暫存區圖檔

@@ -72,7 +72,8 @@ input {
           height: 30px;
           margin: 0;
           padding: 0;
-          border: none; }
+          border: none;
+          text-indent: 6px; }
       .LightBox section .square_2 span input {
         border: none;
         display: block;

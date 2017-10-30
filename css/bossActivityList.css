@@ -1055,7 +1055,10 @@ footer {
           .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
             background-color: #fbf8f1;
             color: #996633;
+            -webkit-box-shadow: none;
             box-shadow: none;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
             transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
@@ -1228,134 +1231,6 @@ footer {
       line-height: 70px;
       color: #fbf8f1;
       letter-spacing: 2px; }
-  .container .LeftBusiness {
-    width: 200px;
-    height: 500px;
-    position: fixed;
-    left: 0;
-    top: 160px; }
-    .container .LeftBusiness .nav-Group1 {
-      margin-top: 30px; }
-      .container .LeftBusiness .nav-Group1 svg .cls-ma-1 {
-        fill: #00c853; }
-      .container .LeftBusiness .nav-Group1 svg .cls-ma-2 {
-        fill: #fff; }
-    .container .LeftBusiness div div:nth-child(1) {
-      width: 200px;
-      height: 57px;
-      margin-top: 10px;
-      position: relative; }
-      .container .LeftBusiness div div:nth-child(1) .cls-1 {
-        fill: #4289FF; }
-      .container .LeftBusiness div div:nth-child(1) .cls-2 {
-        fill: #bbb; }
-      .container .LeftBusiness div div:nth-child(1) .cls-3 {
-        fill: #999; }
-      .container .LeftBusiness div div:nth-child(1) h2 {
-        position: absolute;
-        line-height: 60px;
-        left: 20px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        font-size: 18px;
-        color: #fff; }
-    .container .LeftBusiness div div:nth-child(2) {
-      display: block;
-      width: 160px;
-      height: 60px;
-      background-color: #D9E8FF;
-      border-radius: 2px;
-      position: relative; }
-      .container .LeftBusiness div div:nth-child(2) h3 {
-        position: absolute;
-        line-height: 60px;
-        left: 60px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        font-size: 18px;
-        color: #fff;
-        color: #4289FF !important; }
-      .container .LeftBusiness div div:nth-child(2) svg {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 30px;
-        margin: auto; }
-        .container .LeftBusiness div div:nth-child(2) svg .cls-ar {
-          fill: #4289FF; }
-        .container .LeftBusiness div div:nth-child(2) svg .cls-1 {
-          fill: none; }
-        .container .LeftBusiness div div:nth-child(2) svg .cls-2 {
-          fill: #bbb; }
-        .container .LeftBusiness div div:nth-child(2) svg .cls-3 {
-          fill: #999; }
-    .container .LeftBusiness div div:nth-child(3) {
-      display: block;
-      width: 160px;
-      height: 60px;
-      background-color: #D9E8FF;
-      border-radius: 2px;
-      position: relative; }
-      .container .LeftBusiness div div:nth-child(3) h3 {
-        position: absolute;
-        line-height: 60px;
-        left: 60px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        font-size: 18px;
-        color: #fff;
-        color: #4289FF !important; }
-      .container .LeftBusiness div div:nth-child(3) svg {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 30px;
-        margin: auto; }
-        .container .LeftBusiness div div:nth-child(3) svg .cls-ar {
-          fill: #4289FF; }
-        .container .LeftBusiness div div:nth-child(3) svg .cls-1 {
-          fill: none; }
-        .container .LeftBusiness div div:nth-child(3) svg .cls-2 {
-          fill: #bbb; }
-        .container .LeftBusiness div div:nth-child(3) svg .cls-3 {
-          fill: #999; }
-    .container .LeftBusiness div div:nth-child(4) {
-      display: block;
-      width: 160px;
-      height: 60px;
-      background-color: #D9E8FF;
-      border-radius: 2px;
-      position: relative; }
-      .container .LeftBusiness div div:nth-child(4) h3 {
-        position: absolute;
-        line-height: 60px;
-        left: 60px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        font-size: 18px;
-        color: #fff;
-        color: #4289FF !important; }
-      .container .LeftBusiness div div:nth-child(4) svg {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 30px;
-        margin: auto; }
-        .container .LeftBusiness div div:nth-child(4) svg .cls-ar {
-          fill: #4289FF; }
-        .container .LeftBusiness div div:nth-child(4) svg .cls-1 {
-          fill: none; }
-        .container .LeftBusiness div div:nth-child(4) svg .cls-2 {
-          fill: #bbb; }
-        .container .LeftBusiness div div:nth-child(4) svg .cls-3 {
-          fill: #999; }
   .container .bossActContent {
     width: 70%;
     margin: auto; }

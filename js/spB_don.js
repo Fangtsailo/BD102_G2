@@ -33,7 +33,7 @@ TweenMax.fromTo( "#SPSTORY" , 1 , {
 });
 
 
-TweenMax.fromTo( ["#SPGRADE","#getstar","#SPFOLLOW"] , 1 , {
+TweenMax.fromTo( ["#review-btn","#getstar","#SPFOLLOW"] , 1 , {
     y : -50,
     opacity : 0,
 }, {

@@ -13,12 +13,10 @@ session_start();
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
-
-		<link rel="stylesheet" type="text/css" href="css/subTitleAmination.css">
-
+	
 	<!-- =====side bar==== -->
 	<link rel="stylesheet" type="text/css" href="css/memberSideBar.css">
-
+	<link rel="stylesheet" type="text/css" href="css/subTitleAmination.css">
 
 	<script type="text/javascript" src="js/memberSideBar.js"></script>
 
