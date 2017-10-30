@@ -166,7 +166,7 @@ try{
 
 				<div class="search_storeImg col-sm-3 col-xs-12 " id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
 
-				<div class="search_storeImg col-sm-3 col-xs-12" id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
+				
 
 					<!-- <img src="img/search-store.png"> -->
 				</div>
