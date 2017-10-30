@@ -47,7 +47,7 @@ session_start();
 				require_once("php/common/globalVar.php");
 				// $memNo=$_SESSION["memNo"];
 
-				$actNum=6;
+				// $actNum=6;
 
 
 

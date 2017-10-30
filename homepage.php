@@ -415,7 +415,7 @@ try{
 									</li>
 								</ul>
 							</div>
-							<a href="activity_act.php?acNo=<?php echo $showActivityRow->AC_NO; ?>" class="globalOkBtn" >立即體驗</a>
+							<a href="activity_act.php?actNum=<?php echo $showActivityRow->AC_NO; ?>" class="globalOkBtn" >立即體驗</a>
 						</div>
 					</div>
 
