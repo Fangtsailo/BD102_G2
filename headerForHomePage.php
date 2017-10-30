@@ -193,10 +193,10 @@
 						</a>
 						<a href="#" id="headMemPic">
 							<?php 
-								if ( isset($_SESSION["memPic"]) ){
-									echo "<img src='img/member_pic/".$_SESSION["memPic"]."''>";
+								if ( isset($_SESSION['memPic']) ){
+									echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
 								}else {
-									echo "<img src='img/member_pic/default.png'>";
+									echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
 								}
 
 							 ?>
