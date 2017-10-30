@@ -1,5 +1,5 @@
 
-@import 'basic/setting'; 
+@import 'basic.scss';
 
 * {
 	padding: 0;
@@ -147,8 +147,8 @@ a {
 #SPINFO p{
 	margin-bottom: 5px;
 }
-#SPGRADE{
-	width: 18vw;
+#review-btn{
+	width: 58%;
 	height:3vw;
 	padding:0.5vw;
 	box-sizing:border-box;
@@ -158,7 +158,7 @@ a {
 	text-align: center;
 	font-size: 1.1vw;
 	position: absolute;
-	top:190px ;
+	top:22vh ;
 	left:0px ;
 }
 
@@ -185,7 +185,8 @@ a {
     .rating > input:checked ~ label,
     .rating:not(:checked) > label:hover,
     .rating:not(:checked) > label:hover ~ label {
-        color: #FFD700;
+        //color: #FFD700;
+        color: $globalStarColor;
     }
 
 
@@ -196,19 +197,75 @@ a {
     }
 
 
-#GIVESTAR{
-	float: left;
-	width: 2.5vw;
-	line-height: 2.4vw;
+// #GIVESTAR{
+// 	float: left;
+// 	width: 2.5vw;
+// 	line-height: 2.4vw;
+// }
+// #GIVESTAR a{
+// 	text-decoration: none;
+// 	color: $globalAltColor;
+// }
+// #GIVESTAR a:hover{
+// 	text-decoration: none;
+// 	color: #333;
+// }
+
+.review-mask, .mask {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 4;
+	#give-reivew-modal, .modal {
+		position: relative;
+		top: 50%;
+		width: 50%;
+		margin: auto;
+		left: 0;
+		right: 0;
+		transform: translateY(-50%);
+		background-color: $globalBgColor;
+		padding: 10px;
+		p {
+			text-align: center;
+			margin:15px;
+			font-size: 18px;
+			color: $globalFontColor; 
+		}
+		ul {
+			margin: 20px auto;
+			position: relative;
+			width: 170px;
+			.star {
+				width: 30px;
+				display: inline-block;
+				img {
+					width: 100%;
+				}
+			}
+		}
+		.btns {
+			margin: auto;
+			//margin-top: 30px;
+			text-align: center;
+			div {
+				display: inline-block;
+				margin-bottom: 10px;
+				width: 120px;
+    			height: 36px;
+    			line-height: 36px;
+    			font-size: 16px;
+			}
+		}
+	}
 }
-#GIVESTAR a{
-	text-decoration: none;
-	color: $globalAltColor;
-}
-#GIVESTAR a:hover{
-	text-decoration: none;
-	color: #333;
-}
+#review-btn li {width: 2vw;
+				margin: 0vw 0.5vw;
+				//display:inline-block;
+				float: left;}
+
 #getstar{
 	width: 7vw;
 	height: 3vw;
@@ -218,8 +275,8 @@ a {
 	text-align: center;
 	font-size: 1vw;
 	position: absolute;
-	top: 190px;
-    left: 19vw;
+	top: 22vh;
+    left: 60%;
 }
 
 #trace-btn{
@@ -233,16 +290,18 @@ a {
 	bottom: 0.5vw ;
 	right:0.5vw ;
 }
-#trace-btn img{width: 80%;
-			margin-left: 10%;}
+#trace-btn img{
+	width: 100%;
+    margin-left: -28%;
+    margin-bottom: 10%;}
 #getfollow{font-size: 14px;
 		text-align: center;}
 
 
 #SPSTORY{
-	height:18vw;
+	// height:18vw;
 	width: 40vw;
-	padding:1vw;
+	padding:2vw;
 	box-sizing:border-box;
 	//line-height: 6vw;
 	background-color: rgba(236,225,203,.7);
@@ -929,6 +988,41 @@ a {
 	}
 
 
+.report-mask {
+	textarea {
+		background: #ffe;
+		width: 95%;
+		padding: 1vw;
+		margin-bottom: 1.5vw; 
+	}
+}
+
+.setting-area {
+	width: 100px;
+	float: right;
+	color: #bbbbbb;
+	font-size: 12px;
+	.reply, .report {
+		overflow: hidden;
+		float: right;
+		padding: 3px;
+		.img-icon {
+			width: 15px;
+		    height: 16px;
+		}
+		&:hover p{
+			color: $globalBgColor;
+		}
+	}
+	.reported {//已經檢舉過
+		border: none;
+		cursor: default;
+		pointer-events: none;
+		p {
+			color: #D44;
+		}
+	}
+}
 
 
 
@@ -973,7 +1067,7 @@ a {
 	
 
 	#SPSTORY{
-	height:22vw;
+	//height:22vw;
 	width: 42vw;
 	top:15vw ;
 	left:48vw ;
@@ -982,7 +1076,9 @@ a {
 	#SPHAPPYDON{
 		display: none;
 	}
-
+	
+	#review-btn{width: 52%;}
+	#getstar{left: 54%;}
 
 
 	#pd1{
@@ -1066,12 +1162,16 @@ a {
 	  line-height: 3.5vmin;
 	   }
 
-	#SPGRADE {top: 203px;}
+	#review-btn {
+		width:33%;
+		top: 22vh;}
 	// #SPFOLLOW {top: 35vw;}
-	#getstar{top: 203px;}
+	#getstar{
+		top: 22vh;
+		left: 35%;}
 
 	#SPSTORY{
-	height:24vw;
+	//height:24vw;
 	width: 55vw;
 	top:35vw ;
 	left:40vw ;
@@ -1081,6 +1181,14 @@ a {
 
  @media screen and (max-width: 1220px) {
 
+
+	#review-btn {
+		width:35%;
+		top: 22vh;}
+	// #SPFOLLOW {top: 35vw;}
+	#getstar{
+		top: 22vh;
+		left: 37%;}
 
 	#pd1{
 		top: 3vw;
@@ -1147,9 +1255,9 @@ a {
 	 	font-size: 3vmin;
 	 	line-height: 5vmin;
 	 }
-	 #SPGRADE{
+	 #review-btn{
 		z-index: 2;
-		width: 50vw;
+		width: 45%;
 		height:7.5vw;
 		padding:0.5vw;
 		box-sizing:border-box;
@@ -1177,18 +1285,20 @@ a {
     	font-size: 3vw;
     	position: absolute;
     	top: 250px;
-    	left: 52vw;
+    	left: 47%;
     	}
 
 	#trace-btn{
-		bottom: 2vw;
-		right: 2vw;
+		bottom: 6vw;
+		right: 3vw;
 		z-index: 2;
     	font-size: 3vw;
 
 	}
 	#trace-btn img{
-		width: 100%;}
+		width: 240%;
+    	margin-left: -60%;
+    	margin-bottom: 30%;}
 
 
 }
@@ -1270,7 +1380,28 @@ a {
  @media screen and (max-width: 850px) {
 
 
- 	#pd1>#dis{
+ 	#review-btn{
+		width: 48%;
+		height:8vw;
+		padding:0.7vw;
+		box-sizing:border-box;
+		top:28vw ;
+		left:0px ;
+	}
+
+    #getstar{
+    	width: 33%;
+    	height: 8vw;
+    	line-height: 8vw;
+    	font-size: 3.2vw;
+    	position: absolute;
+    	top:28vw ;
+    	left: 50%;
+    	}
+
+
+
+    #pd1>#dis{
 		position: relative;
 		top: 23vw;
 		left: 1vw;}
@@ -1333,10 +1464,10 @@ a {
 		font-size: 3.2vmin;
     	line-height: 4.5vmin;}
 	}
-	#SPGRADE{
-		width: 70%;
+	#review-btn{
+		width: 65%;
 		height:8vw;
-		padding:0.5vw;
+		padding:0.7vw;
 		box-sizing:border-box;
 		top:33vw ;
 		left:0px ;
@@ -1354,21 +1485,21 @@ a {
 		line-height: 7vw;
     }
     #getstar{
-    	width: 27%;
+    	width: 33%;
     	height: 8vw;
     	line-height: 8vw;
     	font-size: 3.2vw;
     	position: absolute;
     	top:33vw ;
-    	left: 73%;
+    	left: 67%;
     	}
 	#trace-btn{
-		bottom: 5vw;
-		right: 3vw;
+		bottom: 7vw;
 		z-index: 2;
 	}
 	#trace-btn img{
-		width: 90%;}
+		margin-bottom: 0;
+	}
 	#SPSTORY{
 		left: 46vw;
 		top: 27vw;
