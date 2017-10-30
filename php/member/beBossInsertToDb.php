@@ -23,6 +23,7 @@ try {
 	$siStartTime = $_REQUEST["SI_STARTTIME"];
 	$siEndTime = $_REQUEST["SI_ENDTIME"];
 	$siStory = $_REQUEST["SI_STORY"];
+	$siAddr = $_REQUEST["SI_ADDR"];
 
 
 	$memNo=$_SESSION["memNo"];
@@ -38,8 +39,8 @@ try {
 
 
 
-	$sql = "insert into store_imformation (SI_MEMNO, SI_TYPE, SI_NAME, SI_COMFIRM_ID, SI_PHONE, SI_STARTTIME, SI_ENDTIME, SI_STORY)
-			values ($memNo, :siType, :siName, :siComfirmId, :siPhone, :siStartTime, :siEndTime, :siStory)";
+	$sql = "insert into store_imformation (SI_MEMNO, SI_TYPE, SI_NAME, SI_COMFIRM_ID, SI_PHONE, SI_STARTTIME, SI_ENDTIME, SI_STORY, SI_ADDR)
+			values ($memNo, :siType, :siName, :siComfirmId, :siPhone, :siStartTime, :siEndTime, :siStory , :siAddr)";
 
 
 
@@ -58,6 +59,7 @@ try {
 	$siRow->bindValue(":siStartTime", $siStartTime);
 	$siRow->bindValue(":siEndTime", $siEndTime);
 	$siRow->bindValue(":siStory", $siStory);
+	$siRow->bindValue(":siAddr", $siAddr);
 
 	//執行該指令
 	if($siRow->execute()){
