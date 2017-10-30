@@ -822,7 +822,8 @@ section {
 				}
 				#messageTime {
 					float: right;
-					width: 41%;
+					width: 45%;
+					font-size: 12px;
 					text-align: center;
 				}
 				.message {
@@ -920,7 +921,7 @@ section {
 				width:100%;
 				margin:0 auto;
 				overflow:hidden;
-				border:$globalUnclickColor solid 1px;
+				// border:$globalUnclickColor solid 1px;
 				&:hover {
 					background-color: rgba(234, 178, 96, 0.5) !important;
 				}
@@ -930,6 +931,7 @@ section {
 				    width: 171px;
 				    white-space: nowrap;
 				    display: block;
+				    font-size: 20px;
 					&:hover {
 						color: #f06428;
 					}
@@ -994,6 +996,7 @@ section {
 								    text-overflow: ellipsis;
 								    width: 100%;
 								    white-space: nowrap;
+								    font-size: 16px;
 								}
 						}
 					}
@@ -1072,6 +1075,11 @@ section {
 						.search_storeInfor{
 							#search_map1{
 								display:inline;
+							}
+							ul{
+								li{
+									font-size: 12px;
+								}
 							}
 						}
 					}
