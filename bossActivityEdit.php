@@ -45,8 +45,6 @@ try{
 	<div class="bossActContent">
 		<form action="php/activity/manage/editActivity.php" method="post" id="editActForm" enctype="multipart/form-data">
 			<input type="hidden" name="acNo" value="<?php echo $queryActRow->AC_NO;?>">
-			<!-- <input type="hidden" name="MAX_FILE_SIZE" value="2048"> -->
-			<img src="img/icon/bossActivity.svg" alt="#" class="bigTitle">
 		<div class="subtitle">
 			<svg id="圖層_1" class="mysvg" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 331.16 104.99" width="300" height="100"><defs><style>.cls-1{font-size:36px;font-family:NotoSansCJKtc-Regular-B5pc-H, Noto Sans CJK TC;}.cls-1,.cls-6{fill:#4b7cbf;}.cls-2{opacity:0.7;}.cls-3,.cls-4,.cls-5{fill:none;stroke:#4b7cbf;stroke-miterlimit:10;}.cls-3{stroke-width:3px;}.cls-4{stroke-width:2px;}</style></defs><title>breadstoreTitile</title>
 
