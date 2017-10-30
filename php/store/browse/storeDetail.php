@@ -186,8 +186,7 @@ try {
 			return array();
 		} else {
 			while($path = $stmt->fetchObject()) {
-				$nowLocationStr = "{lat:".$path->si_lat.", lng:".$path->si_lng."}";
-				$breadCarPath = new BreadCarPath($path->bcp_describe, $nowLocationStr, $path->bcp_location);
+				$breadCarPath = new BreadCarPath($path->bcp_describe, $path->si_lat, $path->si_lng, $path->bcp_location);
 				array_push($breadCarPathArr, $breadCarPath);
 			}
 			return $breadCarPathArr;
