@@ -141,7 +141,7 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form id="homeSearchForm" action="search.php" method="post">
+				<form id="homeSearchForm" action="search.php" method="get">
 				<div class="tabs">
 						<label class="tab_contents active" id="searchShops">店家<input type="radio" value="0" name="shopType"></label>
 						<label class="tab_contents" id="searchVans">胖小車<input type="radio" value="1" name="shopType"></label>
