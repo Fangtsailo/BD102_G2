@@ -259,44 +259,7 @@ require_once("BackStageHeaderSidebar.php");
 
 
 						<td>
-										<?php // distinguish button color by database
-
-											$EMP_STATUS = $employee_normal_row->EMP_STATUS;
-
-											if($EMP_STATUS==0){
-
-										?>
 										
-										<!-- <form action="php/backstage/authority/Back_empStatus.php" method="get">
-										<input type="hidden" name="dutyOne" value="<?php echo $employee_normal_row->EMP_ID; ?>">
-										<input type="submit" class="dutyChange dutyColorChange" name="" value="復原">
-										</form> -->
-
-										
-
-										
-
-										<?php  
-											
-											} else{//if($EMP_STATUS==0)
-
-
-										 ?>
-										
-										<!-- <form action="php/backstage/authority/Back_empStatus.php" method="get">
-										 <input type="hidden" name="dutyZero" value="<?php echo $employee_normal_row->EMP_ID; ?>">
-										 <input type="submit" class="dutyChange" name="" value="停權">
-										 </form> -->
-
-
-
-
-										<?php  
-											
-											} //else
-
-
-										 ?>
 						</td>
 						</tr>
 
