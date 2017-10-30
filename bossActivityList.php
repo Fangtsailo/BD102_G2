@@ -31,7 +31,8 @@ session_start();
 
 	
 	<?php 
-
+	try{
+		require_once("php/PDO/connectPDO.php");
 		require_once('memberSideBar.php');
 
 			 ?>	
@@ -62,14 +63,14 @@ session_start();
 					</tr>
 
 <?php 
-	try{
-		require_once("php/PDO/connectPDO.php");
+	
+		
 		$memNo = $_SESSION["memNo"];
 		$ac_no = $_GET['AC_NO'];
 		$activityPartcipantSQL = "SELECT a.AC_NO,a.MEM_NO,m.MEM_PHONE,m.MEM_MAIL,m.MEM_ID,m.MEM_REALNAME FROM ac_info a JOIN member m ON a.MEM_NO=m.MEM_NO WHERE a.AC_NO = '$ac_no'";
 		$participants = $connectPDO->query($activityPartcipantSQL);
 		while ($participantsRow = $participants->fetchObject()) {
-			if ( $participantsRow->rowCount()==0 ) {
+			if ( $participants->rowCount()==0 ) {
 				echo "<tr><td>尚未有人報名</td></tr>";
 			}
 ?>
