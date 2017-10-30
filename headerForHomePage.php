@@ -321,7 +321,7 @@
 					<h1>新增店家</h1>
 					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
 				</div>
-				<form action="php/store/add/lightboxAddStore.php" method="get" id="addstoreForm">
+				<form action="php/store/add/lightboxAddStore.php" method="post" id="addstoreForm">
 				<div class="globalFormContent" id="showAddShopForm">
 					<div class="globalFormInput chooseType">
 						<label><span>*</span>選擇店型</label>
@@ -333,7 +333,7 @@
 						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
@@ -400,7 +400,7 @@
 						</div>
 					</div>
 					<div class="globalFormInput">
-						<label>故事介紹</label><textarea name="story"></textarea>
+						<label>故事介紹</label><textarea name="story" maxlength="450"></textarea>
 					</div>
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">

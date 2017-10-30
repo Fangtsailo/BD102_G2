@@ -27,6 +27,7 @@ session_start();
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
 
 	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/search_car.js"></script>
 
 
 </head>
@@ -140,7 +141,7 @@ require_once("headerForHomePage.php");
 		</div>
 			<h2 id="descrp" class="descrp">尋找台灣巷弄間的麵包香</h2>
 			<div class="searchPart">
-				<form id="homeSearchForm" action="search.php" method="post">
+				<form id="homeSearchForm" action="search.php" method="get">
 				<div class="tabs">
 						<label class="tab_contents active" id="searchShops">店家<input type="radio" value="0" name="shopType"></label>
 						<label class="tab_contents" id="searchVans">胖小車<input type="radio" value="1" name="shopType"></label>
@@ -164,7 +165,7 @@ require_once("headerForHomePage.php");
 						<div class="clearfix"></div>
 					</div>
 					<div class="searchbar">
-					<input id="searchInput" type="search" name="searchStore" placeholder="輸入您喜愛的麵包店面！">
+					<input id="searchInput" type="search" name="searchName" placeholder="輸入您喜愛的麵包店面！">
 					<button id="searchSubmit" type="button">搜尋</button>
 					</div>
 				</div>
@@ -208,10 +209,10 @@ require_once("headerForHomePage.php");
 			<?php 
 
 				$type = ($topShopsRow->SI_TYPE == 1) ? "storeBrowse.php" : "shopB.php" ;
-
+				$dateStamp=1508501792;  
 			 ?>
 			
-			<div class="shopItem" data-depth="1" onclick="location.href='<?php echo $type ;?>';">
+			<div class="shopItem" data-depth="1" onclick="location.href='<?php echo $type."?storeId=".$topShopsRow->SI_NUM;?>';">
 				<div class="shopPic">
 					<img src="<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$topStoreBgd; ?>">
 					<h3><?php echo $topShopsRow->SI_NAME ?></h3>
@@ -228,10 +229,10 @@ require_once("headerForHomePage.php");
 						<img src="img/member_pic/<?php echo $topShopsRow->MEM_PIC ?>">
 					</div>
 					<span><?php echo $topShopsRow->MEM_NAME ?></span>
-					<span id="messageTime"><?php echo $topShopsRow->SPMSG_TIME?></span>
+					<span id="messageTime"><?php echo  date("Y/m/d H:i", $topShopsRow->SPMSG_TIME) ;?></span>
 					<div class="clearfix"></div>
 					<div class="message">
-						<p><?php echo $topShopsRow->SPMSG_CON?></p>
+						<p><?php echo $topShopsRow->SPMSG_CON;?></p>
 					</div>
 				</div>
 			</div>
@@ -257,30 +258,47 @@ require_once("headerForHomePage.php");
 		<div class="carMap">
 			<h1 class="mapTitle">胖小車地圖</h1>
 			<div class="search_mapcar">
-				<div id="map-now1"></div>
+				<div id="map-now-1"></div>
 				<div class="search_store">
 		<?php 
 		try{
 			require_once("php/pdo/connectPDO.php");
 			require_once("php/common/globalVar.php");
 			$shopType=1;
+			$firstCarNum = -1;//為了預設顯示第一台車的位置
 			$mapCarSQL = "SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top,s.SI_SELLSTAY,s.SI_CHECKSTAY,s.SI_BIMG_1 FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' AND s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM";
 			$mapCar = $connectPDO->query($mapCarSQL);
 			while($mapCarRow=$mapCar->fetchObject()){
 
+				$type = ($mapCarRow->SI_TYPE == 1) ? "storeBrowse.php" : "shopB.php" ;
 				$mapStoreBgd = (isset($mapCarRow->SI_BIMG_1))? $mapCarRow->SI_BIMG_1 : "default.png" ;
+				if ($firstCarNum == -1) {
+					$firstCarNum = $mapCarRow->SI_NUM;
+				}
+
 		 ?>
 		 <script type="text/javascript">
-			$(document).ready(function (){
-				$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$mapStoreBgd; ?>") center center').css('background-size','cover');
+				$(document).ready(function (){
+					
+					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$mapStoreBgd; ?>") center center').css('background-size','cover');
+					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
+						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
+						$('.search_storeOne').css("background-color","transparent");
+						$(this).css("background-color","rgba(234, 178, 96, 0.5)");
+					});
+					$('#car-<?php echo $mapCarRow->SI_NUM ?>').hover(function(){
+						// $('.search_storeOne').css("background-color","transparent");
+						// $(this).css("background-color","rgba(234, 178, 96, 0.5)");
+					});
 				});
-		</script>
-					<div class="search_storeOne">
+
+			</script>
+					<div class="search_storeOne" id="car-<?php echo $mapCarRow->SI_NUM ?>" data-lat="<?php echo $mapCarRow->SI_LAT ?>" data-lng="<?php echo $mapCarRow->SI_LNG ?>">
 						<div class="search_storeImg col-sm-5 col-xs-4">
 							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="storeBrowse.php?storeId='<?php $mapCarRow->SI_NUM ?>'"><?php echo "$mapCarRow->SI_NAME "; ?></a></h2>
+							<h2><a href="storeBrowse.php?storeId=<?php echo $mapCarRow->SI_NUM ;?>"><?php echo "$mapCarRow->SI_NAME "; ?></a></h2>
 							<div class="search_follow">
 								<img src="img/icon/follow3.svg">	
 							</div>
@@ -319,6 +337,25 @@ require_once("headerForHomePage.php");
  		?>
 
 				</div>  <!-- search_store -->
+		<script>
+		$(document).ready(function (){
+			<?php if ($mapCar->rowCount()!==0){
+
+				 ?>
+
+			initBreadCarNowLocationMap("map-now-1");
+			<?php
+				}
+			 ?>
+			<?php 
+				if ($firstCarNum != -1) {
+			?>
+					$('#car-<?php echo $firstCarNum ?>').click();
+			<?php
+				}
+			 ?>
+		});
+		</script>		
 		</div>
 		</div>
 	</section>
@@ -346,7 +383,7 @@ require_once("headerForHomePage.php");
 <?php 
 try{
 	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 ORDER BY RAND() LIMIT 6" ;
+	$selectNewShopSQL = "SELECT a.AC_NO,a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 ORDER BY RAND() LIMIT 6" ;
 	$showActivity = $connectPDO->query($selectNewShopSQL);
 	while ($showActivityRow = $showActivity->fetchObject()) {
 		$actStoreBgd = (isset($showActivityRow->AC_BANNER1))? $showActivityRow->AC_BANNER1 : "default.png" ;
@@ -378,7 +415,7 @@ try{
 									</li>
 								</ul>
 							</div>
-							<a href="#" class="globalOkBtn" >立即體驗</a>
+							<a href="activity_act.php?acNo=<?php echo $showActivityRow->AC_NO; ?>" class="globalOkBtn" >立即體驗</a>
 						</div>
 					</div>
 
@@ -418,7 +455,7 @@ try{
 <?php 
 try{
 	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT SI_NAME,SI_STORY,SUBSTRING(SI_ADDR,1,6) address,SI_ADDDATE,SI_SELLSTAY,SI_CHECKSTAY,SI_BIMG_1 FROM store_imformation WHERE SI_SELLSTAY = 1 AND SI_CHECKSTAY = 1 ORDER BY SI_ADDDATE desc LIMIT 6" ;
+	$selectNewShopSQL = "SELECT SI_NAME,SI_STORY,SUBSTRING(SI_ADDR,1,6) address,SI_ADDDATE,SI_SELLSTAY,SI_CHECKSTAY,SI_BIMG_1,SI_NUM FROM store_imformation WHERE SI_SELLSTAY = 1 AND SI_CHECKSTAY = 1 ORDER BY SI_ADDDATE desc LIMIT 6" ;
 	$newShops = $connectPDO->query($selectNewShopSQL);
 	while ($newShopsRow = $newShops->fetchObject()) {
 		$newStoreBgd = (isset($newShopsRow->SI_BIMG_1))? $newShopsRow->SI_BIMG_1 : "default.png" ;
@@ -440,7 +477,7 @@ try{
 								</li>
 								<div class="clearfix"></div>
 							</ul>
-							<a class="exploreBtn" href="#">探索更多</a>
+							<a class="exploreBtn" href="shopB.php?storeId=<?php echo $newShopsRow->SI_NUM; ?>">探索更多</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>

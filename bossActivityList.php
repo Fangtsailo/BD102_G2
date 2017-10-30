@@ -69,6 +69,9 @@ session_start();
 		$activityPartcipantSQL = "SELECT a.AC_NO,a.MEM_NO,m.MEM_PHONE,m.MEM_MAIL,m.MEM_ID,m.MEM_REALNAME FROM ac_info a JOIN member m ON a.MEM_NO=m.MEM_NO WHERE a.AC_NO = '$ac_no'";
 		$participants = $connectPDO->query($activityPartcipantSQL);
 		while ($participantsRow = $participants->fetchObject()) {
+			if ( $participantsRow->rowCount()==0 ) {
+				echo "<tr><td>尚未有人報名</td></tr>";
+			}
 ?>
 					<tr>
 						<td data-th="活動編號"><?php echo $participantsRow->AC_NO ?></td>

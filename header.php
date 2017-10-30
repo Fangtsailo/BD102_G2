@@ -56,7 +56,8 @@
 				</div>
 				
 				<div class="facebookLogin">
-					<a href="#">
+					<a href="#" scope="public_profile,email"
+  onlogin="checkLoginState();">
 					Facebook帳號登入</a>
 				</div>
 				
@@ -233,10 +234,10 @@
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
 			<input id="shopType1" type="radio" value="1" name="shopType">
-			<label for="shopType1" class="selectType rwdfilter">麵包小車</label>
+			<label for="shopType1" class="selectType rwdfilter">胖小車</label>
 
 			<input id="shopType2" type="radio" value="0" name="shopType">
-			<label for="shopType2" class="selectType rwdfilter">麵包店</label>
+			<label for="shopType2" class="selectType rwdfilter">店家</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
@@ -366,7 +367,7 @@
 						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">

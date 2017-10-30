@@ -115,14 +115,14 @@ session_start();
 						<th class="uploadPic"><div>封面照片(限兩張)</div></th>
 						<td class="uploadPic">
 							<label class="upload">
-								<img src="img/icon/camera.png">
+								<img class=".preview_0" src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upBanner[]">
+								<input type="file" name="upBanner[]" id="upImg1">
 								<span></span>
 								</label>
 							
 							<label class="upload">
-								<img src="img/icon/camera.png">
+								<img class=".preview_1" src="img/icon/camera.png">
 								<span>上傳照片</span>
 								<input type="file" name="upBanner[]"></label>
 						</td>
@@ -201,9 +201,44 @@ session_start();
 	  ?>
 <script type="text/javascript">
 	$(function(){
+		if($('.preview_0').attr("src")){
+			$('.preview_0').css('z-index', 1);			      
+		}else{
+			$('.preview_0').css('z-index', -1);
+		}
+		if($('.preview_1').attr("src")){
+			$('.preview_1').css('z-index', 1);
+		}else{
+			$('.preview_1').css('z-index', -1);
+		}
+		if($('.preview_2').attr("src")){
+			$('.preview_2').css('z-index', 1);
+		}else{
+			$('.preview_2').css('z-index', -1);
+		}
+		if($('.preview_3').attr("src")){
+			$('.preview_3').css('z-index', 1);
+		}else{
+			$('.preview_3').css('z-index', -1);
+		}
+
+
+		var inputLogoImg = document.getElementById('uploadLogoImg');
+			$('#uploadLogoImg').change(function(){
+				if (inputLogoImg.files && inputLogoImg.files[0]) {
+						var reader_0 = new FileReader();
+						reader_0.onload = function () {
+							$('.preview_0').attr('src', reader_0.result);
+							$('.preview_0').css('z-index', 2);
+						}
+						reader_0.readAsDataURL(inputLogoImg.files[0]);
+				}
+			});
+
+
+
+
 		$("#addActBtn").click(function(){
-
-
             $.sweetModal.confirm('確認送出?', function() {
 				
 				$.sweetModal({
@@ -217,11 +252,8 @@ session_start();
 		           	}
 		        });
 			});
-
-
-
-
 		});
+
 
 	});
 
