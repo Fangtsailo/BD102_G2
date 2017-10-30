@@ -26,7 +26,6 @@ li {
     width: 100%;
     padding: 5% 5%;
     position: relative;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background: #805934;
     /* Old browsers */
@@ -40,7 +39,6 @@ li {
     /* Opera 11.10+ */
     background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
     /* IE10+ */
-    background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
     background: linear-gradient(to right, #805934 0%, #9e693d 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#805934', endColorstr='#9e693d', GradientType=0 );
@@ -62,15 +60,11 @@ li {
       right: 10px;
       top: 10px;
       cursor: pointer;
-      -webkit-transition: .3s ease-in;
-      -o-transition: .3s ease-in;
       transition: .3s ease-in; }
       .globalForm .globalFormHeader .svg:hover {
         -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
         transform: rotate(180deg);
-        -webkit-transition: .3s ease-in;
-        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
   .globalForm .globalFormContent {
     width: 100%;
@@ -129,8 +123,6 @@ li {
 
 .hideUp_sub {
   top: 0px  !important;
-  -webkit-transition: 0.3s ease-in-out !important;
-  -o-transition: 0.3s ease-in-out !important;
   transition: 0.3s ease-in-out !important; }
 
 .hideUp_sub_burger {
@@ -151,7 +143,6 @@ li {
   /* Opera 11.10+ */
   background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* IE10+ */
-  background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
   background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -159,12 +150,8 @@ li {
   z-index: 100;
   position: fixed;
   top: 0;
-  -webkit-box-shadow: 0px 0px 15px 0px #382715;
   box-shadow: 0px 0px 15px 0px #382715;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: top .3s ease-in-out;
-  -o-transition: top .3s ease-in-out;
   transition: top .3s ease-in-out; }
   .globalHead .headLoginBox {
     position: fixed;
@@ -183,7 +170,6 @@ li {
       height: 80vh;
       border: none;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       .globalHead .headLoginBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -193,8 +179,6 @@ li {
         font-size: 16px; }
       .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
-        -webkit-transition: .3s ease-in;
-        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
       .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
         width: 100%;
@@ -222,7 +206,6 @@ li {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
-          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -259,7 +242,6 @@ li {
       height: 80vh;
       border: none;
       border-radius: 5px;
-      -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
       box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
       .globalHead .headRegisterBox .globalForm .globalFormHeader {
         text-align: center; }
@@ -269,8 +251,6 @@ li {
         font-size: 16px; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input:focus {
         border-bottom: 1px solid #f06428;
-        -webkit-transition: .3s ease-in;
-        -o-transition: .3s ease-in;
         transition: .3s ease-in; }
       .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput.enterID {
         position: relative; }
@@ -314,7 +294,6 @@ li {
           /* Opera 11.10+ */
           background: -ms-linear-gradient(top, #3B5998 0%, #283D69 100%);
           /* IE10+ */
-          background: -webkit-gradient(linear, left top, left bottom, from(#3B5998), to(#283D69));
           background: linear-gradient(to bottom, #3B5998 0%, #283D69 100%);
           /* W3C */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3B5998', endColorstr='#283D69', GradientType=0 );
@@ -349,12 +328,10 @@ li {
   .globalHead .headerRight {
     padding: 5px 0px;
     float: right;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box; }
     .globalHead .headerRight .headSearch {
       float: left;
       padding: 20px 10px;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box;
       text-align: right;
       font-size: 0; }
@@ -370,7 +347,6 @@ li {
         border: 1px solid #fff;
         padding-left: 10px;
         outline: none;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       .globalHead .headerRight .headSearch select {
@@ -384,7 +360,6 @@ li {
         font-size: 16px;
         outline: none;
         border-radius: 2px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
       .globalHead .headerRight .headSearch label {
@@ -399,13 +374,9 @@ li {
         vertical-align: top;
         outline: none;
         text-align: center;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         cursor: pointer;
-        -webkit-box-shadow: -1px 1px 0px 1px #713f2a;
         box-shadow: -1px 1px 0px 1px #713f2a;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
         transition: .3s; }
       .globalHead .headerRight .headSearch input[name=filter] {
         display: none; }
@@ -413,12 +384,8 @@ li {
           background-color: #5d2812;
           color: #fbf8f1;
           outline: none;
-          -webkit-box-sizing: border-box;
           box-sizing: border-box;
-          -webkit-box-shadow: none;
           box-shadow: none;
-          -webkit-transition: .3s;
-          -o-transition: .3s;
           transition: .3s; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
@@ -431,11 +398,8 @@ li {
         font-size: 16px;
         border-radius: 2px;
         outline: none;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
         transition: .3s; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
@@ -443,8 +407,6 @@ li {
         .globalHead .headerRight .headSearch #headSearchSubmit.keyIn {
           background-color: #f06428;
           color: #fbf8f1;
-          -webkit-transition: .3s;
-          -o-transition: .3s;
           transition: .3s; }
 
 @-webkit-keyframes shake {
@@ -491,7 +453,6 @@ li {
         width: 100%;
         height: 70px;
         padding: 5px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box; }
         .globalHead .headerRight .headAccount #headMemStatus div {
           width: 110px;
@@ -509,14 +470,10 @@ li {
               height: 100%;
               border-radius: 50%; }
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
-                -webkit-transition: .3s;
-                -o-transition: .3s;
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
                   -webkit-animation: shake .3s ease infinite alternate;
                   animation: shake .3s ease infinite alternate;
-                  -webkit-transition: .3s;
-                  -o-transition: .3s;
                   transition: .3s; }
             .globalHead .headerRight .headAccount #headMemStatus div a:first-child {
               margin-right: 10px; }
@@ -570,14 +527,10 @@ li {
               text-align: center;
               font-weight: 500;
               color: #663300;
-              -webkit-transition: .3s;
-              -o-transition: .3s;
               transition: .3s; }
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;
-                -webkit-transition: .3s;
-                -o-transition: .3s;
                 transition: .3s; }
       .globalHead .headerRight .headAccount #headMemLogin {
         width: 100%;
@@ -605,14 +558,10 @@ li {
           font-weight: 300; }
         .globalHead .headerRight .headAccount #headMemLogin:hover {
           background-color: #996633;
-          -webkit-transition: .3s;
-          -o-transition: .3s;
           transition: .3s; }
           .globalHead .headerRight .headAccount #headMemLogin:hover #loginIcon {
             -webkit-animation: shake .5s ease infinite alternate;
             animation: shake .5s ease infinite alternate;
-            -webkit-transition: .3s;
-            -o-transition: .3s;
             transition: .3s; }
   .globalHead .rwd_headerSearch {
     display: none; }
@@ -673,14 +622,10 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
-  -webkit-transition: .3s ease;
-  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
-    -webkit-transition: .3s ease;
-    -o-transition: .3s ease;
     transition: .3s ease;
     cursor: pointer; }
 
@@ -695,14 +640,10 @@ footer {
   border: 1px solid #3399ff;
   color: #3399ff;
   background-color: #fbf8f1;
-  -webkit-transition: .3s ease;
-  -o-transition: .3s ease;
   transition: .3s ease; }
   .globalCancelBtn:hover {
     background-color: #3399ff;
     color: #fbf8f1;
-    -webkit-transition: .3s ease;
-    -o-transition: .3s ease;
     transition: .3s ease;
     text-decoration: none;
     cursor: pointer; }
@@ -877,8 +818,6 @@ footer {
         margin: auto;
         fill: #fbf8f1; }
       .globalHead .burgerMenu.active {
-        -webkit-transition: .3s ease;
-        -o-transition: .3s ease;
         transition: .3s ease; }
     .globalHead #headMemStatus {
       display: none; }
@@ -891,13 +830,9 @@ footer {
       background-color: rgba(0, 0, 0, 0.5); }
       .globalHead #menu.hideMenu {
         right: -120%;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu.show {
         right: 0;
-        -webkit-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
         transition: all 0.3s ease; }
       .globalHead #menu ul {
         display: block;
@@ -914,7 +849,6 @@ footer {
         /* Opera 11.10+ */
         background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* IE10+ */
-        background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
         background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -960,13 +894,9 @@ footer {
             padding: 10px;
             color: #fbf8f1;
             font-weight: 400;
-            -webkit-transition: .3s;
-            -o-transition: .3s;
             transition: .3s; }
             .globalHead #menu ul li a:focus {
               background-color: rgba(158, 105, 61, 0.5);
-              -webkit-transition: .3s;
-              -o-transition: .3s;
               transition: .3s; }
           .globalHead #menu ul li #rwdBossRole {
             display: block;
@@ -974,13 +904,9 @@ footer {
             padding: 10px;
             color: #fbf8f1;
             font-weight: 400;
-            -webkit-transition: .3s;
-            -o-transition: .3s;
             transition: .3s; }
             .globalHead #menu ul li #rwdBossRole:focus {
               background-color: rgba(158, 105, 61, 0.5);
-              -webkit-transition: .3s;
-              -o-transition: .3s;
               transition: .3s; }
           .globalHead #menu ul li.myActivity {
             position: relative; }
@@ -1013,7 +939,6 @@ footer {
       /* Opera 11.10+ */
       background: -ms-linear-gradient(left, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* IE10+ */
-      background: -webkit-gradient(linear, left top, right top, from(rgba(128, 89, 52, 0.9)), to(rgba(158, 105, 61, 0.9)));
       background: linear-gradient(to right, rgba(128, 89, 52, 0.9) 0%, rgba(158, 105, 61, 0.9) 100%);
       /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(128, 89, 52, 0.9)', endColorstr='rgba(158, 105, 61, 0.9)', GradientType=0 );
@@ -1023,8 +948,6 @@ footer {
       top: 80px;
       left: -100%;
       height: 100vh;
-      -webkit-transition: .3s;
-      -o-transition: .3s;
       transition: .3s;
       display: block; }
       .globalHead .rwdSearchBar .rwdsearchItem {
@@ -1055,10 +978,7 @@ footer {
           .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
             background-color: #fbf8f1;
             color: #996633;
-            -webkit-box-shadow: none;
             box-shadow: none;
-            -webkit-transition: .3s;
-            -o-transition: .3s;
             transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
@@ -1073,8 +993,6 @@ footer {
       .globalHead .rwdSearchBar.activeSearch {
         top: 80px;
         left: 0;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
         transition: .3s; }
       .globalHead .rwdSearchBar #rwdSubmit {
         display: block;
@@ -1131,7 +1049,6 @@ footer {
     height: 75%;
     border: none;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
     #addShopBox .globalForm .chooseType input {
       width: 20px;
@@ -1215,7 +1132,6 @@ footer {
     height: 75%;
     border: none;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5);
     box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.5); }
 
 .container {
@@ -1251,11 +1167,9 @@ footer {
         .container .bossActContent .actManageTable table tr {
           background-color: #fff;
           border-radius: 10px;
-          -webkit-box-shadow: 0px 0px 10px #aaa;
           box-shadow: 0px 0px 10px #aaa; }
           .container .bossActContent .actManageTable table tr:first-child {
             background-color: #f2ebd4;
-            -webkit-box-shadow: none;
             box-shadow: none; }
           .container .bossActContent .actManageTable table tr th {
             width: calc(100%/6);
@@ -1302,7 +1216,6 @@ footer {
       width: 100%;
       height: 100%;
       padding: 1%;
-      -webkit-box-sizing: border-box;
       box-sizing: border-box; }
       .container .bossActContent .actManageTable table {
         width: 100%;
