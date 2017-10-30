@@ -396,7 +396,13 @@ try {
 				<div class="label col-lg-3 col-xs-4">費用:</div>
 				<div class="content col-lg-9 col-xs-8"><?php echo $activity->price ?></div>
        			</div>
+       			<?php 
+       				if ($activity->num != -1) {
+       			 ?>
        			<a href="activity_act.php?actNum=<?php echo $activity->num ?>" class="activity-detail button">活動詳情</a>
+       			<?php 
+       				}
+       			 ?>
 			</div>
 			<div class="banner col-lg-6 col-xs-12" id="act-<?php echo $activity->num ?>">
 				<div class="item col-lg-6">

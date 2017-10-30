@@ -248,7 +248,7 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 I</th>
 					<td>
-						<input type="text" name="BCP_DESCRIBE_1" placeholder="請輸入路線描述" value="<?php 
+						<input type="text" name="BCP_DESCRIBE_1" maxlength="30" placeholder="請輸入路線描述" value="<?php 
 
 																					if(isset($BCP_DESCRIBE[0])){
 																					echo $BCP_DESCRIBE[0]; 
@@ -439,7 +439,7 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 II</th>
 					<td>
-						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
+						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" maxlength="30" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
 					</td>
 					</tr>
 					<?php 
@@ -597,7 +597,7 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 III</th>
 					<td>
-						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
+						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" maxlength="30" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
 					</td>
 					</tr>
 					<?php 

@@ -30,6 +30,7 @@ session_start();
 					content: '資料異動成功~',
 					icon: $.sweetModal.ICON_SUCCESS,
 					width: '300px',
+					timeout:1000,
 					theme: $.sweetModal.THEME_MIXED,
 				});
 			} else if ( info == "error" ) {

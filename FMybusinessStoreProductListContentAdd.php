@@ -169,7 +169,7 @@ session_start();
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value=""></td>
+				<td><input type="text" name="PD_PRICE" placeholder="請輸入價格" value=""></td>
 				</tr>
 
 
@@ -179,7 +179,7 @@ session_start();
 				<tr>
 				<th><div>簡介</div></th>
 				<td>
-					<textarea name="PD_INTRO" placeholder="限500字"></textarea>
+					<textarea name="PD_INTRO" placeholder="限100字" maxlength="100"></textarea>
 				</td>
 				</tr>
 

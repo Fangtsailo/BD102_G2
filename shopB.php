@@ -24,7 +24,10 @@ session_start();
     <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script type="text/javascript" src="js/parallax.min.js"></script>  
     <script src="js/storeBrowse.js"></script>
+    <!-- <script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css"> -->
 	<script type="text/javascript" src="js/header.js"></script>
+
 	
     	
 </head>
@@ -485,7 +488,7 @@ require_once("header.php");
 			<?php 
 				foreach ($GLOBALS["otherStoreArr"] as $otherStore) {
 			?>
-    		<div><a href="shopB.php?storeId=<?php echo $otherStore->id; ?>"><img id="IIImg" src="<?php echo $otherStore->banner1; ?>"></a> </div>
+    		<div><a href="storeBrowse.php?storeId=<?php echo $otherStore->id; ?>"><img id="IIImg" src="<?php echo $otherStore->banner1; ?>"></a> </div>
     		<?php
 				}
 	 		?>	
