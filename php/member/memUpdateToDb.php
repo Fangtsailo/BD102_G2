@@ -49,7 +49,10 @@ try {
 		  	mkdir("member_pic");
 		  } //若無member_pic資料夾則新增此資料夾
 		  $from = $_FILES["mempic"]["tmp_name"];
-		  $to = "member_pic//" . $_FILES["mempic"]["name"];
+
+		  $_FILES["mempic"]["name"]=$memId.'.jpg';
+
+		  $to = "../../img/member_pic/" . $_FILES["mempic"]["name"];
 		  copy($from, $to);  //將暫存檔儲存在伺服器指定的$to路徑
 		  
 		   //宣告一個新圖檔的全域變數來接暫存區圖檔
