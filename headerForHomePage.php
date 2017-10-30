@@ -275,14 +275,14 @@
 				<div class="memPic">
 					<?php 
 								if ( isset($_SESSION['memPic']) ){
-									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+									echo "<img src=".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
 								}else {
-									echo "<img src='img/member_pic/default.png'>";
+									echo "<img src=".GLOBAL_MEM_PIC_PATH."default.png'>";
 								}
 
 							 ?>
 				</div>
-				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
+				<span id="memId" onclick="location.href='memedit.php'"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<ul id="memberMenu">
@@ -295,14 +295,17 @@
 				
 				<ul id="bossMenu">
 					<li><a class="navItem bossMenu" href="FMybusinessStore.php" id="rwdStore">麵包店<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+
 						<?php 
 						require_once("php/PDO/connectPDO.php");
 						$memNo=$_SESSION["memNo"];
-						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0";
+						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0 and SI_CHECKSTAY=1 and SI_SELLSTAY=1";
 						$storeMenu = $connectPDO->query($sql_Store);
 						if($storeMenu->rowCount()!=0){
 
 						 ?>
+
 						<ul id="storeMenu" style="display: none;">
 						<li><a class="navItem bossMenu" href="FMybusinessStore.php">基本資料</a></li>
 						<li><a class="navItem bossMenu" href="FMybusinessStoreProductList.php">商品</a></li>
@@ -310,25 +313,36 @@
 						 <?php 
 						 }
 						  ?>
+
+
 					</li>
 					
-					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a></li>
+					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+
+
 						<?php 
 
 						$memNo=$_SESSION["memNo"];
-						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0";
+						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=1 and SI_CHECKSTAY=1 and SI_SELLSTAY=1";
 						$carMenu = $connectPDO->query($sql_Store);
-						if($carMenu->rowCount()!=0){
-						 ?>
+						?>
 						<ul id="carMenu" style="display: none;">
 						<li><a class="navItem bossMenu" href="FMybusinessCar.php">基本資料</a></li>
+						
+						<?php
+						if($carMenu->rowCount()!=0){
+						?>
 						<li><a class="navItem bossMenu" href="FMybusinessCarProductList.php">商品</a></li>
 						<li><a class="navItem bossMenu" href="FMybusinessCarRouteAdd.php">路線規劃</a></li>
 						<li><a class="navItem bossMenu" href="FMybusinessCarPosition.php">基本資料</a></li>
-						</ul>
+						
+
 						 <?php 
 						}
 						  ?>
+						</ul>
+					</li>
 					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
 					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>

@@ -142,7 +142,7 @@ $('.shopItemGrp').slick({
 
 //胖小車地圖
 
-initBreadCarNowLocationMap("map-now1");
+initBreadCarNowLocationMap("map-now-1");
 
 	function initBreadCarNowLocationMap(selector) {
 		var map = new google.maps.Map(document.getElementById(selector), {
