@@ -282,7 +282,7 @@
 
 							 ?>
 				</div>
-				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
+				<span id="memId" onclick="location.href='memedit.php'"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<ul id="memberMenu">
@@ -295,6 +295,8 @@
 				
 				<ul id="bossMenu">
 					<li><a class="navItem bossMenu" href="FMybusinessStore.php" id="rwdStore">麵包店<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+
 						<?php 
 						require_once("php/PDO/connectPDO.php");
 						$memNo=$_SESSION["memNo"];
@@ -310,9 +312,14 @@
 						 <?php 
 						 }
 						  ?>
+
+
 					</li>
 					
-					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a></li>
+					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+
+
 						<?php 
 
 						$memNo=$_SESSION["memNo"];
@@ -329,6 +336,7 @@
 						 <?php 
 						}
 						  ?>
+					</li>
 					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
 					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>
