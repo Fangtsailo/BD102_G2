@@ -40,8 +40,8 @@ session_start();
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 	<!-- =====mapAPI==== -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
-    </script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
+    </script> -->
 
 
     	<!-- =====alert==== -->
