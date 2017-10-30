@@ -1,7 +1,7 @@
-function doFirst(){
+function initShopBMap(lat, lng){
 	var area = document.getElementById('myMap');
-	var myPosition = new google.maps.LatLng(24.9708264, 121.18820769999999);
-
+	var myPosition = new google.maps.LatLng(lat, lng);
+	
 	var map = new google.maps.Map(area,{
 		zoom: 14,
 		center: myPosition,
@@ -15,4 +15,3 @@ function doFirst(){
 		title: '哪裡有好吃麵包店!'
 	});
 }
-window.addEventListener('load',doFirst,false);

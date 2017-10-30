@@ -23,14 +23,13 @@
 		//$mem_ID=$_SESSION["memId"];
 		//$mem_No=$_SESSION["memNo"];
 
-		$mem_No="8";
+		$mem_No=$_SESSION["memNo"];
 
 		if($_REQUEST["delLogo"]==="1"){
 
 			
 
-			$sql = "UPDATE store_imformation SET SI_LOGO= null WHERE SI_MEMNO =$mem_No";
-
+			$sql = "UPDATE store_imformation SET SI_LOGO= null WHERE SI_MEMNO =$mem_No and SI_TYPE=0";
       		$update = $connectPDO->query($sql);
 
       		//header("Location:../../../../FMybusinessStore.php");
@@ -41,7 +40,7 @@
 
       	if($_REQUEST["delImg1"]==="1"){
 
-			$sql = "UPDATE store_imformation SET SI_BIMG_1= null WHERE SI_MEMNO =$mem_No";
+			$sql = "UPDATE store_imformation SET SI_BIMG_1= null WHERE SI_MEMNO =$mem_No and SI_TYPE=0";
 
       		$update = $connectPDO->query($sql);
 
@@ -56,7 +55,7 @@
 
 			
 
-			$sql = "UPDATE store_imformation SET SI_BIMG_2= null WHERE SI_MEMNO =$mem_No";
+			$sql = "UPDATE store_imformation SET SI_BIMG_2= null WHERE SI_MEMNO =$mem_No and SI_TYPE=0";
 
       		$update = $connectPDO->query($sql);
 
@@ -71,7 +70,7 @@
 
 			
 
-			$sql = "UPDATE store_imformation SET SI_BIMG_3= null WHERE SI_MEMNO =$mem_No";
+			$sql = "UPDATE store_imformation SET SI_BIMG_3= null WHERE SI_MEMNO =$mem_No and SI_TYPE=0";
 
       		$update = $connectPDO->query($sql);
 
@@ -87,7 +86,7 @@
 
 		$SI_NAME = $_REQUEST["SI_NAME"];
 
-		$sql = "select * from store_imformation where SI_MEMNO='$mem_No' and SI_TYPE='1'";
+		$sql = "select * from store_imformation where SI_MEMNO='$mem_No' and SI_TYPE='0'";
 
 		$store_imformation = $connectPDO->query($sql);
 
@@ -98,7 +97,7 @@
 		if ($store_imformation->rowCount()==0) {
 
 			$sql_insert = "INSERT INTO store_imformation (SI_MEMNO,SI_NAME,SI_PHONE,SI_ADDR,SI_RESTDAY,SI_STARTTIME,SI_ENDTIME,SI_STORY,SI_TYPE,SI_CHECKSTAY)
-    			VALUES (:SI_MEMNO,:SI_NAME,:SI_PHONE,:SI_ADDR,:SI_RESTDAY,:SI_STARTTIME,:SI_ENDTIME,:SI_STORY,1,1)";
+    			VALUES (:SI_MEMNO,:SI_NAME,:SI_PHONE,:SI_ADDR,:SI_RESTDAY,:SI_STARTTIME,:SI_ENDTIME,:SI_STORY,0,null)";
 
     		$store_imformation_insert = $connectPDO ->prepare($sql_insert);
     		$store_imformation_insert -> bindValue(":SI_MEMNO",$mem_No);
@@ -113,7 +112,7 @@
 
 
 
-    		$sql_find_SI_NUM ="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE='1'";
+    		$sql_find_SI_NUM ="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE='0'";
     		$store_imformation_find_SI_NUM = $connectPDO->query($sql_find_SI_NUM);
     		$store_imformation_find_SI_NUM_Row = $store_imformation_find_SI_NUM -> fetchObject();
 
@@ -122,16 +121,36 @@
 
 
 
-    		foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
+    // 		foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
+				// // 以foreach叫出每一陣列
+				// 	if($_FILES["uploadImg"]["error"][$i]==0){
+						
+				// 			  $from = $_FILES["uploadImg"]["tmp_name"][$i];
+				// 			  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).".jpg";
+				// 			  copy($from, $to);
+				// 			  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1);
+				// 			  $SI_BGIMG_COL="SI_BIMG_".($i+1);
+	   //  					  $sql_update_logo = "UPDATE store_imformation SET $SI_BGIMG_COL='$SI_NUM_file' WHERE SI_MEMNO=$mem_No and SI_TYPE='0'";
+	   //  					  $update_logo = $connectPDO->query($sql_update_logo);
+
+				// 				//echo "error : " , $_FILES["uploadImg"]["error"][$i];
+						
+				// 	}	
+				// }
+
+
+
+				foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
 				// 以foreach叫出每一陣列
 					if($_FILES["uploadImg"]["error"][$i]==0){
 						
 							  $from = $_FILES["uploadImg"]["tmp_name"][$i];
-							  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).".jpg";
+							  $FileName = mb_convert_encoding($_FILES["uploadImg"]["name"][$i],"big5","utf-8");
+							  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
-							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1);
+							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  $SI_BGIMG_COL="SI_BIMG_".($i+1);
-	    					  $sql_update_logo = "UPDATE store_imformation SET $SI_BGIMG_COL='$SI_NUM_file' WHERE SI_MEMNO=$mem_No";
+	    					  $sql_update_logo = "UPDATE store_imformation SET $SI_BGIMG_COL='$SI_NUM_file' WHERE SI_MEMNO=$mem_No and SI_TYPE='0'";
 	    					  $update_logo = $connectPDO->query($sql_update_logo);
 
 								//echo "error : " , $_FILES["uploadImg"]["error"][$i];
@@ -140,16 +159,20 @@
 				}
 
 
+			
 
-			foreach( $_FILES["uploadLogoImg"]["error"] as $i=>$data ){
+
+
+				foreach( $_FILES["uploadLogoImg"]["error"] as $i=>$data ){
 				// 以foreach叫出每一陣列
 					if($_FILES["uploadLogoImg"]["error"][$i]==0){
 						
 							  $from = $_FILES["uploadLogoImg"]["tmp_name"][$i];
-							  $to = "../../../../img/store/logo/".$SI_NUM."_logo.jpg";
+							  $FileName = mb_convert_encoding($_FILES["uploadLogoImg"]["name"][$i],"big5","utf-8");
+							  $to = "../../../../img/store/logo/".$SI_NUM."_logo".substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
-							  $SI_NUM_file=$SI_NUM."_logo";
-	    					  $sql_update_logo = "UPDATE store_imformation SET SI_LOGO='$SI_NUM_file' WHERE SI_MEMNO=$mem_No";
+							  $SI_NUM_file=$SI_NUM."_logo".substr($FileName,strpos($FileName,'.'));
+	    					  $sql_update_logo = "UPDATE store_imformation SET SI_LOGO='$SI_NUM_file' WHERE SI_MEMNO=$mem_No and SI_TYPE='0'";
 	    					  $update_logo = $connectPDO->query($sql_update_logo);
 							 
 						
@@ -185,11 +208,12 @@
 					if($_FILES["uploadImg"]["error"][$i]==0){
 						
 							  $from = $_FILES["uploadImg"]["tmp_name"][$i];
-							  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).".jpg";
+							  $FileName = mb_convert_encoding($_FILES["uploadImg"]["name"][$i],"big5","utf-8");
+							  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
-							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1);
+							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  $SI_BGIMG_COL="SI_BIMG_".($i+1);
-	    					  $sql_update_logo = "UPDATE store_imformation SET $SI_BGIMG_COL='$SI_NUM_file' WHERE SI_MEMNO=$mem_No";
+	    					  $sql_update_logo = "UPDATE store_imformation SET $SI_BGIMG_COL='$SI_NUM_file' WHERE SI_MEMNO=$mem_No and SI_TYPE='0'";
 	    					  $update_logo = $connectPDO->query($sql_update_logo);
 
 								//echo "error : " , $_FILES["uploadImg"]["error"][$i];
@@ -197,33 +221,27 @@
 					}	
 				}
 
-			//}//if(isset($_FILES["uploadImg"])){
+
+			
 
 
-
-
-
-
-
-
-			//if($_FILES["uploadLogoImg"]["error"][0]==0){
 
 				foreach( $_FILES["uploadLogoImg"]["error"] as $i=>$data ){
 				// 以foreach叫出每一陣列
 					if($_FILES["uploadLogoImg"]["error"][$i]==0){
 						
 							  $from = $_FILES["uploadLogoImg"]["tmp_name"][$i];
-							  $to = "../../../../img/store/logo/".$SI_NUM."_logo.jpg";
+							  $FileName = mb_convert_encoding($_FILES["uploadLogoImg"]["name"][$i],"big5","utf-8");
+							  $to = "../../../../img/store/logo/".$SI_NUM."_logo".substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
-							  $SI_NUM_file=$SI_NUM."_logo";
-	    					  $sql_update_logo = "UPDATE store_imformation SET SI_LOGO='$SI_NUM_file' WHERE SI_MEMNO=$mem_No";
+							  $SI_NUM_file=$SI_NUM."_logo".substr($FileName,strpos($FileName,'.'));
+	    					  $sql_update_logo = "UPDATE store_imformation SET SI_LOGO='$SI_NUM_file' WHERE SI_MEMNO=$mem_No and SI_TYPE='0'";
 	    					  $update_logo = $connectPDO->query($sql_update_logo);
 							 
 						
 					}
 
 				}
-
 
 				// $SI_NUM_file=$SI_NUM."_logo";
 
@@ -250,7 +268,7 @@
 
 
 
-			$sql_update = "UPDATE store_imformation SET SI_NAME=:SI_NAME,SI_PHONE=:SI_PHONE,SI_ADDR=:SI_ADDR,SI_RESTDAY=:SI_RESTDAY,SI_STARTTIME=:SI_STARTTIME,SI_ENDTIME=:SI_ENDTIME,SI_STORY=:SI_STORY,SI_TYPE=1,SI_CHECKSTAY=1 where SI_MEMNO=$mem_No";
+			$sql_update = "UPDATE store_imformation SET SI_NAME=:SI_NAME,SI_PHONE=:SI_PHONE,SI_ADDR=:SI_ADDR,SI_RESTDAY=:SI_RESTDAY,SI_STARTTIME=:SI_STARTTIME,SI_ENDTIME=:SI_ENDTIME,SI_STORY=:SI_STORY,SI_TYPE=0,SI_CHECKSTAY=1 where SI_MEMNO=$mem_No and SI_TYPE='0'";
 
 			//SI_LOGO=:SI_LOGO,SI_BIMG_1=:SI_BIMG_1,SI_BIMG_2=:SI_BIMG_2,SI_BIMG_3=:SI_BIMG_3
 

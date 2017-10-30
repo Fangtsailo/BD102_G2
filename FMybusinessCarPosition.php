@@ -1,3 +1,14 @@
+<?php 
+
+ob_start();
+
+session_start();
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +39,38 @@
 
 
 
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"> -->
+    </script>
+
+
+
 
 </head>
 
 <body>
+
+
+
+<?php 
+
+
+	try {
+		
+		require_once("php/pdo/connectPDO.php");
+
+
+		// $memNo=$_SESSION["memNo"];
+
+		// $sql = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=0";
+
+		// $store_imformation = $connectPDO->query($sql);
+
+		// $store_imformationRow=$store_imformation->fetchObject();
+
+
+
+
+?>
 
 <!-- ======================================================header 頁首========================================================= -->
 
@@ -48,7 +87,7 @@
 
 	<?php 
 
-		require_once('subtitle.php');
+		//require_once('subtitle.php');
 
 	 ?>
 
@@ -115,24 +154,50 @@
 			</svg>
 		</div><!-- subtitle -->
 
+		<?php 
+
+				$memNo=$_SESSION["memNo"];
+
+				$sql = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE='1'";
+
+				$store_imformation=$connectPDO->query($sql);
+
+				$store_imformation_row=$store_imformation->fetchObject();
+
+				$SI_NUM=$store_imformation_row->SI_NUM;
+
+
+
+		 ?>
+
 		<div class="content-table">
 
-			<table class="tableHeader">
-
-					<tr class="tabletitle" >
-					<th>定位目前位置</th>
-					<td>
-						到達定點時，請按下【定位】圓鈕，系統會自動將您的目前位置發送至地圖上。
-					</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map">
-							<div><img src="img/icon/mapAim.png"></div>
-						</td>
-					</tr>
-				
-			</table>
+<form id="alertFormSubmit" action="php/member/myBusiness/store/livePosition.php" method="post" enctype="multipart/form-data">
+	<table class="tableHeader">
+	
+			<tr class="tabletitle" >
+			<th>定位 <?php echo $store_imformation->rowCount(); ?></th>
+			<td>
+				到達定點時，請按下【定位】圓鈕，系統會自動將您的目前位置發送至地圖上。
+			</td>
+			</tr>
+			<tr>
+				<td id="map" colspan="2">
+					<!-- <img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map"> -->
+					
+				</td>
+			</tr>
+	
+			<tr>
+				<td id="" colspan="2">
+					<img id="position_btn" src="img/icon/mapAim.png" style="cursor: pointer;">
+				</td>
+			</tr>
+		
+	</table>
+	<input type="hidden" id="livePosition" name="livePosition" value="">
+	<input type="hidden" id="livePosition_data" name="livePosition_data" value="">
+</form>
 
 			
 
@@ -142,6 +207,71 @@
 
 
 		</div>  <!-- content-table -->
+
+<script>
+
+
+		$('#position_btn').click(function(){
+
+			var SI_NUM=<?php echo $SI_NUM; ?>;
+
+			$('#livePosition').val(SI_NUM);
+
+			var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+
+
+			$('#livePosition_data').val(coord);
+
+			$('#alertFormSubmit').submit();
+
+		});
+
+
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      initMap();
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 24.967779, lng: 121.192124},
+          zoom: 16
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+             pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('目前位置');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+
+    </script>
+
+
+
 
 	
 
@@ -210,46 +340,30 @@
 
 
 <!-- ======================================================footer 頁尾========================================================= -->
-	<footer>
-	<!-- <div class="globalFtgroup">
-		<div class="globalFtBtn">
-			<div class="svg">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
-				<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/>
-				<path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
-				</svg>
-			</div>
-			<a href="#">客服中心</a>
+	<?php 
 
-		</div>
-		<div class="globalFtBtn">
-			<div class="svg">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
-	<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
-		L22,0z"/>
-	<path d="M23.3,17.5c0-0.8,0.3-1.5,1.5-1.5h1.5v-3h-2.5c-3,0-4,1-4,4v2h-2v3h2v9h3.5v-9h2.5l0.5-3h-3V17.5z"/></g>
-				</svg>
+	require_once('footer.php');
 
-			</div>
-			<a href="#">TrePun粉絲專頁</a>
+	 ?>
 
-		</div>
-		<div class="globalFtBtn">
-			<div class="svg">
-				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 
-			13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 
-			22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
-			L22,0z"/>
-	</g>
-</g>
-</svg>
-			</div>
-			<a href="#">新增店家</a>
+	<!-- 
+<script>
+$(document).ready(function(){
+    $(".burger").click(function(){
+        $(".CoverRightMy").toggleClass("moveToLeft");
+    });
+});
+</script>	 -->
 
-		</div>
-		<p>© 2017 找麥方TrePun - 設計製作</p>
-	</div> -->
-	</footer>
+<?php 
+
+	}catch( PDOException $ex){
+  		echo "行號: ",$ex->getLine(), "<br>";	
+  		echo "訊息: ",$ex->getMessage() , "<br>";	
+	}//catch
+
+
+ ?>
 	
 
 </body>

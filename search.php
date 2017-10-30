@@ -26,9 +26,9 @@ session_start();
 
 
 <?php 
-		$shopPosition='';
-		$filter='';
-		$searchName='';
+		$shopPosition="";
+		$filter="";
+		$searchName="";
 	
 		if (isset($_REQUEST["filter"])){
 			
@@ -156,7 +156,7 @@ try{
 
 			<script>
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');			
+					$('.search_storeImg').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');			
 
 
 				});
@@ -167,13 +167,15 @@ try{
 					<!-- <img src="img/search-store.png"> -->
 				</div>
 				<div class="search_storeContent col-sm-6 col-xs-12">
-					<h2><a href="shopB.php?storeId='<?php $searchRow->SI_NUM ?>'"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
+					<h2><a href="shopB.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
 					<div class="search_follow">
-						<img src="img/icon/follow3.svg">	
+						<img src="img/icon/follow3.svg">
+						<div id="search_followNum"><?php echo "$searchRow->top"; ?></div>	
 					</div>
 
-					<div id="search_followNum"><?php echo "$searchRow->top"; ?></div>
+					
 					<div class="search_storeStar">
+						
 						<ul>
 							<?php
 						for( $i=1; $i<=5; $i++){

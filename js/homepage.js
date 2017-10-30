@@ -140,29 +140,6 @@ $('.shopItemGrp').slick({
 
 
 
-//胖小車地圖
-
-initBreadCarNowLocationMap("map-now1");
-
-	function initBreadCarNowLocationMap(selector) {
-		var map = new google.maps.Map(document.getElementById(selector), {
-		  zoom: 16,
-		  center: {lat: 24.965356, lng: 121.191038}
-		});
-		var image =src='img/map_pointcar.png';
-			
-		;
-		var beachMarker = new google.maps.Marker({
-		  position: {lat:  24.965356 , lng: 121.191038},
-		  map: map, 
-		  icon: image
-		});
-	}
-
-
-
-
-
 
 
 
@@ -237,28 +214,9 @@ $('.newShopGrp').slick({
   ]
 });
 
-
-$('#addShopBtn').click(function(){
-	$("#addShopBox").show(500);
+//客服中心燈箱開啟
+$('#serviceBtn,#homeServiceBtn').click(function(){
+	$("#serviceCenter").fadeIn(500)
 });
-$('#serviceBtn').click(function(){
-	$("#serviceCenter").show(500)
-});
-$("#closeBtn01").click(function(){
-	$("#addShopBox").hide(500);
-});
-$("#closeBtn02").click(function(){
-	$("#serviceCenter").hide(500);
-});
-// for (var i = 1; i <= 6; i++) {
-// 	$('.section'+i+'-click').click(function(){
-// 		let j = i;	
-// 		$('html,body').animate({scrollTop:$('#section'+j+'-move').offset().top},800);
-		
-//     });
-// }
-
- 
-
 
 });

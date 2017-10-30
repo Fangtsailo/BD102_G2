@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<title>TEMPLATE</title>
+	<link rel="stylesheet" type="text/css" href="css/basic.css">
+	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
+    <script src="js/storeBrowse.js"></script>
+    <style type="text/css">
+    	header.globalHead {
+    		opacity: 0.7;
+    	}
+    </style>
+</head>
+<body>
+
+<!-- ======================================================header 頁首========================================================= -->
+	<header class="globalHead">
+
+	<div class="headLoginBox" id="loginBox">
+		
+
+
+		<div class="globalForm">
+		<form action="" method="">
+			<div class="globalFormHeader">
+				<div class="svg">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve">
+					<path class="st0" d="M15.2,14.2l4.2,4.2l4.2-4.2l1.4,1.4l-4.2,4.2l4.2,4.2l-1.4,1.4l-4.2-4.2l-4.2,4.2l-1.4-1.4l4.2-4.2l-4.2-4.2
+						L15.2,14.2z M19.4,2.9c-9.4,0-17,7.6-17,17c0,5.1,2.2,9.6,5.7,12.7l1.4-1.4c-3.1-2.8-5.1-6.8-5.1-11.3c0-8.3,6.7-15,15-15
+						s15,6.7,15,15s-6.7,15-15,15c-3.1,0-5.9-0.9-8.3-2.5l-1.4,1.4c2.8,1.9,6.1,3.1,9.7,3.1c9.4,0,17-7.6,17-17S28.8,2.9,19.4,2.9z"/>
+					</svg>
+				</div>
+				<img src="img/trepun2.svg">
+				<p>歡迎登入找麥方麵包平台</p>	
+			</div>
+			<div class="globalFormContent">
+
+				<div class="globalFormInput">
+					<label>會員帳號</label><input type="text" name="" placeholder="請輸入會員帳號或信箱">
+				</div>
+
+				<div class="globalFormInput">
+					<label>會員密碼</label><input type="text" name="" placeholder="密碼">
+				</div>
+				<div class="forgetPsw">
+					<a href="#">忘記密碼？</a>
+				</div>
+				<div class="clearfix"></div>
+				
+				<div class="globalFormBtns">
+					<div class="globalCancelBtn">取消</div>
+					<input type="submit" name="" class="globalOkBtn" value="登入">					
+				</div>
+				
+				<div class="facebookLogin">
+					<a href="#">
+					<!-- <span class="svg">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
+		L22,0z"/><path d="M23.3,17.5c0-0.8,0.3-1.5,1.5-1.5h1.5v-3h-2.5c-3,0-4,1-4,4v2h-2v3h2v9h3.5v-9h2.5l0.5-3h-3V17.5z"/></g></svg>
+					</span> -->
+					
+					Facebook帳號登入</a>
+				</div>
+				
+				<div class="registerLink">
+					<a href="#">還沒有帳號？ 註冊成為PUN友</a>
+				</div>
+
+			</div>
+		</form>
+		</div>
+			
+	</div>
+
+
+
+
+	<!-- logo區塊 -->
+		<div class="headLogo">
+			<div class="svg">
+				<img src="img/trepunLogoWhite.svg">
+			</div>	
+		</div>	
+
+
+	
+	
+		
+
+	
+		
+		
+
+
+
+	<div class="headerRight">
+		<!-- 頁首搜尋區塊 -->
+			<div class="headSearch">
+		
+			</div>
+		
+		<!-- 頁首會員區塊 -->
+			<div class="headAccount">
+				<div id="headMemStatus">
+					<div id="headMemPic">
+					</div>
+				</div>
+				<div id="headMemLogin">
+					<span id="registerBtn">
+						註冊
+					</span>
+		
+					<span id="loginBtn">
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><g>
+						<path class="st0" d="M28.4,28.2c-0.5-3.6-1.8-4.1-3.7-4.9c-0.3-0.1-0.7-0.3-1.1-0.5c-0.2-0.1-0.3-0.2-0.5-0.2c-1.1-0.5-1.4-0.8-1.4-1.3c1.4-1,2.2-2.6,2.2-4.1v-6.4L23.3,11c-0.4,0.1-0.7,0.1-1,0.1c-0.8,0-1.3-0.1-1.9-0.3c-0.5-0.1-1.1-0.3-1.9-0.3c-0.9,0-1.6,0.4-2.1,1.1l0.9,0.7c0.3-0.4,0.7-0.6,1.2-0.6c0.7,0,1.1,0.1,1.7,0.2c0.6,0.1,1.2,0.3,2.1,0.3c0.2,0,0.3,0,0.5,0v5.1c0,1.9-1.4,3.9-3.9,3.9c-2.4,0-3.9-2-3.9-3.9v-5.9C15.3,11,16,9,18.6,9c0.9,0,1.5,0.2,2.1,0.3c0.5,0.1,1,0.2,1.6,0.2c0.6,0,1.2-0.1,1.6-0.3V8.1c-0.4,0.1-1,0.4-1.6,0.4c-0.5,0-0.9-0.1-1.4-0.2c-0.7-0.2-1.4-0.3-2.4-0.3c-2.9,0-4.2,2.1-4.5,3.3l0,6.1c0,1.5,0.8,3.2,2.2,4.1c-0.1,0.5-0.3,0.8-1.4,1.3c-0.1,0.1-0.3,0.1-0.5,0.2c-0.4,0.2-0.7,0.3-1.1,0.5c-1.8,0.8-3.2,1.3-3.7,4.9l-0.1,0.6h19L28.4,28.2z M10.8,27.8c0.4-2.4,1.3-2.7,2.9-3.4c0.3-0.1,0.7-0.3,1.1-0.5c0.3-0.1,0.5-0.2,0.8-0.4c0.8-0.4,1.4-0.9,1.6-1.6c0.5,0.2,1.1,0.3,1.8,0.3c0.6,0,1.2-0.1,1.8-0.3c0.2,0.7,0.8,1.2,1.6,1.6c0.2,0.1,0.5,0.2,0.8,0.4c0.4,0.2,0.8,0.3,1.1,0.5c1.6,0.7,2.4,1,2.9,3.4H10.8z"/>
+						<path class="st1" d="M36,19c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15S27.3,4,19,4S4,10.7,4,19c0,0.3,0,0.7,0.1,1H2v-1C2,9.6,9.6,2,19,2S36,9.6,36,19z"/></g></svg>
+					</span>
+				</div>
+			</div>
+	</div>
+
+
+	</header>
+	
+
+
+	
+<div class="screen-1">
+	<div class="detail-box">
+		<div class="store-logo"><img src="img/store/browse/bread.svg"></div>
+		<h1 class="store-name">Bread Store</h1>
+		<div class="detail">刷新舉辦比如感謝更新校長怪物作，怎樣焦點眼中其他恢復露出，提出了期間的是群眾湖南斑，不去記錄很快均為不是產品重新寶貝加上網址世紀思考同意轉載有，女朋友聯盟排名不能減少丈夫還要進一步不想忘記作為金融提，從來沒英文後來留言客戶附件她們登，頭銜不大配件除了第一章衝突全市，只是每日深深設備看著所在成本風格爸爸擔任法規榮，神話金額今年金幣英語之。</div>
+		<div class="other-info">
+			<div class="follow"><img src="img/store/browse/star.svg"></div>
+			<div class="trace"><img src="img/store/browse/follow.svg"></div>
+		</div>
+	</div>
+	<div class="right-describe">笑道夏天很難手段你看微笑什麼能量公路回去反映，他還電子看法機器更加身後風險會不會失，只要飯店它們卻是多少另一主動教材文本設立，窗口一遍飲食經銷商隨意多年成熟方向學院也，實踐周邊收入濟南來電大廈公開貫徹幾年請教口氣章，聽到人大幾年顯得委員會社會主義都，會員原創溫州品牌天津模組驚人兄弟討論創意人民危險讀書，群眾權益才能起點再次插入重要一直故意提出了，作業海外只有十大正確超市還沒，世界盃然而據說點這裡下載一點打電話估計漸漸問題非常多麼窗口，留言強調報告開發商確認人口放棄至少太多產品，完了口氣對她每頁認真感染日，美麗整合前後仍然找不到城市國有插入提示信息網吧股，聯賽藝術註冊時間就業，將來思路完全心中。</div>
+	<div class="bottom-city"><img src="img/store/browse/tmp-city.png"></div>
+</div>
+<div class="screen-bread-car-map">
+	<h2 class="title">胖小車路線圖</h2>
+	<ul class="tabs">
+		<li class="item item-selected">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-selected.png">
+				<div class="content">
+				<div class="icon"><img src="img/store/browse/tab-now.png"></div>
+				<p>即時位置</p>
+				</div>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
+				<div class="content">
+				<div class="icon"><img src="img/store/browse/tab-date-non-selected.png"></div>
+				<p>禮拜一路線</p>
+				</div>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
+				<div class="content">
+				<div class="icon">
+				<img src="img/store/browse/tab-date-non-selected.png">
+				</div>
+				<p>禮拜三路線</p>
+				</div>
+			</a>
+		</li>
+		<li class="item">
+			<a href="#">
+				<img class="tab-img" src="img/store/browse/tab-non-selected.png">
+				<div class="content">
+				<div class="icon">
+				<img src="img/store/browse/tab-date-non-selected.png">
+				</div>
+				<p>禮拜日路線</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+	<div id="map-now"></div>
+</div>
+<div class="screen-product">
+	<h2 class="title">商品</h2>
+	<div class="product">
+		<div class="image"><img src="img/store/browse/big_product1.png"></div>
+		<div class="describe">
+		<h3>烤焦三角麵包</h3>
+		<p>普遍半年無奈明顯各自，相關圖片住宅市委中有背景概念顯卡上傳外面醫學，每日明確激動找到年輕人造成，唱。</p></div>
+	</div>
+	<div class="product-list">
+		<div class="item">
+			<img src="img/store/browse/small_product1.png">
+			<p>name</p>
+		</div>
+		<div class="item">
+			<img src="img/store/browse/small_product2.png">
+			<p>name</p>
+		</div>
+		<div class="item only-pc">
+			<img src="img/store/browse/small_product3.png">
+			<p>name</p>
+		</div>
+		<div class="item only-pc">
+			<img src="img/store/browse/small_product4.png">
+			<p>name</p>
+		</div>
+	</div>
+	<div class="switcher">
+		<div class="item selected"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+</div>
+<div class="screen-activity">
+	<h2 class="title">體驗活動</h2>
+	<div class="banner-area">
+		<div class="item">
+			<img src="img/store/browse/activity_banner1.png">
+		</div>
+		<div class="switcher">
+			<div class="item selected"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</div>
+</div>
+<div class="screen-other-store">
+	<h2 class="title">其他店家推薦</h2>
+	<div class="store-list">
+		<div class="top-list">
+			<div class="item">
+				<img src="img/store/browse/other_store1.png">
+			</div>
+			<div class="item">
+				<img src="img/store/browse/other_store1.png">
+			</div>
+			<div class="item only-pc">
+				<img src="img/store/browse/other_store1.png">
+			</div>
+		</div>
+		<div class="bottom-list">
+			<div class="item">
+				<img src="img/store/browse/other_store1.png">
+			</div>
+			<div class="item">
+				<img src="img/store/browse/other_store1.png">
+			</div>
+			<div class="item only-pc">
+				<img src="img/store/browse/other_store1.png">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="screen-messages">
+	<h2 class="title">留言板</h2>
+	<div class="send-message-area">
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content"><textarea placeholder="登入後開始留言..." rows="5"></textarea></div>
+		</div>
+	</div>
+	<div class="messages-area">
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+<!-- 				<div class="reply-area">
+					<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+					<div class="content">
+					<p class="name">小架純</p>
+					<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+					<div class="setting-area">
+						<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+					</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="message-box" id="MSG123">
+			<img class="mem-pic" src="img/store/browse/member_photo_test.png"></img>
+			<div class="content">
+				<p class="name">小架純</p>
+				<p>買了各級去年特別是笑容說著我這數碼不到本，立刻時代法人增強另一個傳輸總體下載地址一，思考頁面大大請大家什麼是絶對黑暗讀書出現在交給首先首先出租夫，等方面每一個開通威望獲得感到飯店思路。</p>
+				<div class="setting-area">
+					<div class="report">
+						<div class="img-icon"><img src="img/store/browse/report.png"></div><p>檢舉</p></div>
+					<div class="reply"><div class="img-icon"><img src="img/store/browse/reply.png"></div><p>回覆</p></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+<!-- ======================================================footer 頁尾========================================================= -->
+	<footer>
+	<div class="globalFtgroup">
+		<div class="globalFtBtn">
+			<div class="svg">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
+				<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0L22,0z"/>
+				<path d="M22,8.4c-6.5,0-10.7,4.5-10.7,11.5v4.9c0,1.9,0.5,3.3,1.4,4.1c0.3,4.6,4.3,6.7,7.9,6.7H23l0-1.9h-2.3c-2.3,0-5.1-1-5.8-3.8c0.6,0.1,1.2,0.1,1.6,0.1h1v-8.9h-3.3v1.9h1.4V28c-1.5-0.1-2.3-0.8-2.3-3.2v-4.9c0-5.9,3.4-9.6,8.8-9.6s8.9,3.7,8.9,9.6v1.1h-4.2v8.9h1c3.3,0,5.1-1.8,5.1-5.2v-4.9C32.7,12.9,28.5,8.4,22,8.4z M28.6,28v-5h2.3v1.8C30.9,26.7,30.1,27.7,28.6,28z"/></g>
+				</svg>
+			</div>
+			<a href="#">客服中心</a>
+
+		</div>
+		<div class="globalFtBtn">
+			<div class="svg">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g>
+	<path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
+		L22,0z"/>
+	<path d="M23.3,17.5c0-0.8,0.3-1.5,1.5-1.5h1.5v-3h-2.5c-3,0-4,1-4,4v2h-2v3h2v9h3.5v-9h2.5l0.5-3h-3V17.5z"/></g>
+				</svg>
+
+			</div>
+			<a href="#">TrePun粉絲專頁</a>
+
+		</div>
+		<div class="globalFtBtn">
+			<div class="svg">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve"><g><g><polygon points="32.8,17.8 32.8,12 28,12 28,13.9 30.9,13.9 30.9,16.8 22,11.9 8.7,19.2 9.6,20.9 22,14 30.9,19 30.9,30.2 
+			13.2,30.2 13.2,20 11.3,21 11.3,32.1 32.8,32.1 32.8,20 34.4,20.9 35.3,19.2 		"/><polygon points="21,17.6 21,21.8 16.8,21.8 16.8,23.7 21,23.7 21,27.8 22.9,27.8 22.9,23.7 27.2,23.7 27.2,21.8 22.9,21.8 
+			22.9,17.6 		"/></g><g><path d="M22,2c11,0,20,9,20,20s-9,20-20,20S2,33,2,22S11,2,22,2 M22,0C9.8,0,0,9.8,0,22s9.8,22,22,22s22-9.8,22-22S34.2,0,22,0
+			L22,0z"/>
+	</g>
+</g>
+</svg>
+			</div>
+			<a href="#">新增店家</a>
+
+		</div>
+		<p>© 2017 找麥方TrePun - 設計製作</p>
+	</div>
+	</footer>
+	
+<script type="text/javascript">
+function initMap() {
+	initBreadCarNowLocationMap("map-now");
+}
+</script>
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYNlq7nKbzULI84W-62PA9ICijVFN6Qeg&callback=initMap">
+    </script>
+</body>
+</html>

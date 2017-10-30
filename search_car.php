@@ -6,7 +6,7 @@ session_start();
 
  ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -17,7 +17,7 @@ session_start();
 	 	<script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	 	<script type="text/javascript" src="js/header.js"></script>
 	<!-- map區 -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+
 	<script type="text/javascript" src="js/search_car.js"></script>
 </head>
 <body>
@@ -29,16 +29,19 @@ session_start();
 		
 		$filter='';
 		$shopPosition='';
+		 
 		$searchName='';
-	
+		$firstCarNum = -1;//為了預設顯示第一台車的位置
 		if (isset($_REQUEST["filter"])){
+
 			
 			$filter=$_REQUEST["filter"]; 
 		}
 
 		if (isset($_REQUEST["shopPosition"])) {
 			
-			$shopPosition=$_REQUEST["shopPosition"];
+			 $shopPosition=$_REQUEST["shopPosition"];
+			
 		} 
 
 		if(isset($_REQUEST["searchName"])) {
@@ -51,7 +54,6 @@ try{
 	require_once("php/pdo/connectPDO.php");
 	require_once("php/common/globalVar.php");
 		$shopType=1;  //店家 0  胖小車1
-	
 
 		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' ";	
 			if ($shopPosition!=='') {
@@ -90,7 +92,7 @@ try{
 						<span class="tag" ><span class="head"></span><?php echo $searchName ?></span>
 					<?php
 					}?>
-					
+				<!-- 	<?php //exit($shopPosition); ?> -->
 					<?php if ($shopPosition!==''){
 						switch ($shopPosition) {
 							case "0":
@@ -144,26 +146,28 @@ try{
 
 
 		<?php }else{ ?>
-
-
-		<div class="search_mapcar">
-			<div id="map-now1"></div>
+			<div class="search_mapcar">
+			<div id="map-now-1"></div>
 			<div class="search_store">
-		
+	<?php 
 			
-			<?php 
-			$firstCarNum = -1;//為了預設顯示第一台車的位置
 			while($searchRow=$search->fetchObject()){	 
 				if ($firstCarNum == -1) {
 					$firstCarNum = $searchRow->SI_NUM;
 				}
 			?>
+		
+			
+		
+			
+		
 			
 
 
 			<script type="text/javascript">
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');
+					
+					$('.search_storeImg').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');
 					$('#car-<?php echo $searchRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
 						$('.search_storeOne').css("background-color","transparent");
@@ -198,7 +202,7 @@ try{
 										}
 									?>
 								</ul>
-							</div>  
+							</div>
 							<div class="search_storeInfor ">
 								<ul>
 									<li>電話： <?php echo "$searchRow->SI_PHONE"; ?></li>
@@ -230,9 +234,17 @@ try{
 	 ?>
 
 
+
 <script>
 $(document).ready(function (){
-	initBreadCarNowLocationMap("map-now1");
+	<?php if ($search->rowCount()!==0){
+
+		 ?>
+
+	initBreadCarNowLocationMap("map-now-1");
+	<?php
+		}
+	 ?>
 	<?php 
 		if ($firstCarNum != -1) {
 	?>

@@ -1,4 +1,3 @@
-
 function initBreadCarNowLocationMap(selector) {
 	globalMap = new google.maps.Map(document.getElementById(selector), {
 	  zoom: 16,

@@ -1,4 +1,4 @@
-  
+
 
 
 //切換會員專區
@@ -37,6 +37,7 @@ function hideShowPsw(){
         }  
     }
 
+//將地址轉經緯度    
 
 
 
@@ -157,8 +158,6 @@ $("#submitLogin").click(function(){
                           location.reload();
                         }
                     });
-
-
                 }  
               }else{//server端無法順利的執行完畢,產生錯誤
                 alert( xhr.status );
@@ -262,8 +261,6 @@ $("#headMemPic").click(function(){
 });
 
 
-
-
 //mobile導覽列會員專區顯示
 
     $("#burgerBtn").click(function () { //點擊選單按鈕時
@@ -279,7 +276,10 @@ $("#headMemPic").click(function(){
 
         });
 
-//導覽列搜尋區塊
+
+
+
+//導覽列搜尋區塊=============
 
     $(".rwd_headerSearch").click(function (e) { //點擊選單按鈕時
             e.preventDefault(); //停止
@@ -294,31 +294,48 @@ $("#headSearchKind").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#SearchForm").attr("action",action);
 });    
-$('#headSearchSubmit').click(function(){
+$('#headSearchSubmit').click(function(){ //送出表單
     $("#SearchForm").submit()
 });
+
+
+
 //header.php選擇送出查詢的頁面是胖小車或店家(rwd)
 $(".selectType input[name=shopType]").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#rwdsearchForm").attr("action",action);
 });
-$("#rwdSubmit").click(function(){
+$("#rwdSubmit").click(function(){ //送出表單
     $("#rwdsearchForm").submit();
 });
+
+
+
 //homepage.php選擇送出查詢的頁面是胖小車或店家(radio)
 $(".tab_contents input[name=shopType]").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#homeSearchForm").attr("action",action);     
 });
-$("#searchSubmit").click(function(){
+
+$("#searchSubmit").click(function(){ //送出表單
     $("#homeSearchForm").submit();
 });
 
-$("#searchSubmit").click(function(){
-        $("#homeSearchForm").submit();
-     });
+$("#searchSubmit").click(function(){ //送出表單
+    $("#homeSearchForm").submit();
+});
 
-//首頁導覽列錨點選單
+$("#headSearch").keyup(function(){
+    $(this).siblings("#headSearchSubmit").addClass('keyIn').attr("value","GO");
+  });
+$("#headSearch").blur(function(){
+    $(this).siblings("#headSearchSubmit").removeClass('keyIn').attr("value","搜尋");
+  });
+
+
+
+//首頁導覽列錨點選單=================
+
     $("#left-burgerBtn").click(function(){
           $("#left-burgerBtn").toggleClass("active");
           $("#rwd-HeaderLink").toggleClass("showMenu");
@@ -333,9 +350,10 @@ $("#searchSubmit").click(function(){
       });
     }
 
-//新增店家按鈕
+//新增店家=================
 
-    $("#addShop1,#addShopBtn").click(function(){
+    //新增店家按鈕
+    $("#addShop1,#addShopBtn,#homeAddBtn").click(function(){
         $("#addShopBox").fadeIn(300);
         $('#memStatusBar').slideUp(300);
     });
@@ -343,58 +361,74 @@ $("#searchSubmit").click(function(){
       $("#serviceCenter").fadeIn(300)
     });
 
-//新增店家燈箱
+
+    //新增店家燈箱條件
+
     $("#addstoreBtn").click(function(){
 
-      //店家型態為必選
-      if($("#type1,#type2").is(':checked') == false ){
-        
-        $.sweetModal({
-            content: '請選擇店家型態',
-            icon: $.sweetModal.ICON_WARNING
-        });
-        
-        $("#type1").select();
-        
-        return;
-      }
+        //店家型態為必選
+        if($("#type1,#type2").is(':checked') == false ){
+            
+            $.sweetModal({
+                content: '請選擇店家型態',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            
+            $("#type1").select();
+            
+            return;
+        }
 
-      //店家名稱為必選
-      if ($("#storeName").val().length ==0 ){
-        $.sweetModal({
-            content: '請填寫店家名稱',
-            icon: $.sweetModal.ICON_WARNING
-        });
-        $("#storeName").select();
-        return;
-      }
+        //店家名稱為必選
+          if ($("#storeName").val().length ==0 ){
+            $.sweetModal({
+                content: '請填寫店家名稱',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            $("#storeName").select();
+            return;
+          }
 
-      //店家地址為必選
-       if ($("#address").val().length ==0 ){
-        $.sweetModal({
-            content: '請填寫店家地址',
-            icon: $.sweetModal.ICON_WARNING
-        });
-        $("#address").select();
-        return;
-      }
-      console.log('新增成功');
-      $("#addShopBox").hide(300);
-      $.sweetModal({
-            content: '新增成功！',
-            icon: $.sweetModal.ICON_SUCCESS,
-            width: '300px',
-            theme: $.sweetModal.THEME_MIXED,
-            timeout: 1000,
-            onClose: function(){
-              $("#addstoreForm").submit();
-            }
-        });
-     
-     
-      
-      
-    });
+          //店家地址為必選
+           if ($("#address").val().length ==0 ){
+            $.sweetModal({
+                content: '請填寫店家地址',
+                icon: $.sweetModal.ICON_WARNING
+            });
+            $("#address").select();
+            return;
+          }
+          
+          //將地址轉經緯度
+          
+          var address = document.getElementById("address").value;
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                
+                var lat =results[0].geometry.location.lat();
+                document.getElementById("SI_lat").value = lat ; 
+                var lng =results[0].geometry.location.lng();
+                document.getElementById("SI_lng").value = lng ; 
+               
+              } else {
+                alert("失敗, 原因: " + status);
+              }
+            });
+
+          console.log('新增成功');
+          $("#addShopBox").hide(300);
+          $.sweetModal({
+                content: '新增成功！',
+                icon: $.sweetModal.ICON_SUCCESS,
+                width: '300px',
+                theme: $.sweetModal.THEME_MIXED,
+                timeout: 1000,
+                onClose: function(){
+                  $("#addstoreForm").submit();
+                }
+            });  
+      });
 
 
 

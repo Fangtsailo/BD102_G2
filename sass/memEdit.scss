@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 @import "basic/setting";
 @import "basic.scss"; //scss of header vs footer
 *{
@@ -56,7 +56,7 @@ input, textarea{
 	font-family: $globalFont;
 	font-weight: lighter;
 }
-//ÔO¶¨input placeholder˜ÓÊ½
+//è¨­å®šinput placeholderæ¨£å¼
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
 	   color: $globalUnclickColor;
 }
@@ -72,18 +72,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explor
 input:not(.radio):focus, textarea:focus{
 	border: 1px solid rgba(240, 100, 40, 0.3);
 	box-shadow: 0 0 2px $globalStarColor;
-}//ÔO¶¨input:focus˜ÓÊ½
+}//è¨­å®šinput:focusæ¨£å¼
 
 .myfollow, .msg, .myentry{
 	transition: box-shadow 1s;
-}//hoveréLêÓ°•rég
+}//hoveré•·é™°å½±æ™‚é–“
 
-//===•ş†TŒ£…^¹²ÓÃµÄÔO¶¨==================================================
+//===æœƒå“¡å°ˆå€å…±ç”¨çš„è¨­å®š==================================================
 .container{
 	position: relative;
 	margin: 0 auto;
 
-//===‚Èß…™Ú==================================================
+//===å´é‚Šæ¬„==================================================
 	.sidebar{
 		width: 210px;
 		height: 310px;
@@ -156,12 +156,12 @@ input:not(.radio):focus, textarea:focus{
 		}
 	}//RWD end
 
-//===ƒÈÈİ¹²ÓÃµÄÔO¶¨==================================================
+//===å…§å®¹å…±ç”¨çš„è¨­å®š==================================================
 
 	.content{
 		max-width: 1200px;
     	width: 83.3333%;
-    	min-height: 60vh; //·ÀÖ¹footerÍùÉÏÅÜ
+    	min-height: 60vh; //é˜²æ­¢footerå¾€ä¸Šè·‘
 		margin: 0 auto;
 		margin-top: 100px;
 		text-align: center;
@@ -183,7 +183,7 @@ input:not(.radio):focus, textarea:focus{
 			clear: both;  
 		}
 
-	input[type="submit"], input[type="button"], .upload, label.openlightbox, .btn{
+	input[type="submit"], input[type="button"], .upload, label.openpsw, .btn{
 		width: 145px;
 		height: 50px;
 		border-radius: 25px;
@@ -212,7 +212,7 @@ input:not(.radio):focus, textarea:focus{
 	    width: 130px;
 		cursor: pointer;
 	}
-	.upload:hover, label.openlightbox:hover, .btn:hover{
+	.upload:hover, label.openpsw:hover, .btn:hover{
 		color: $globalBgColor;
 		background: $globalBtnColor;
 		transition: .3s ease;
@@ -225,72 +225,7 @@ input:not(.radio):focus, textarea:focus{
 		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
 	}
 
-	.box{
-		display: none;
-		z-index: 1;
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		position: fixed;
-		top: 0px;
-		left: 0px;
-		background-color: rgba(50, 50, 50, 0.5);
-		transition: width 0s 1s,
-					height 0s 1s,
-					background-color 1s;
-		.changepsw{
-			width: 330px;
-			height: 390px;
-			background-color: $globalBgColor;
-			position: absolute;
-			top: 0px;
-			right: 0px;
-			bottom: 0px;
-			left: 0px;
-			margin: auto;
-			box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-			p{
-				margin: 0 auto;
-			    width: 290px;
-			    padding: 20px;
-			    text-align: center;
-			}
-			label{
-			    width: 25%;
-			}
-			input{
-			    max-width: 75%;
-			}
-			input[type="submit"]{
-				margin: 0 auto;
-			}
-			h1{
-				width: 100%;
-			    padding: 5% 5% 15%;
-			    font-size: $globalh3Size - 2px;
-			    text-align: justify;
-			    color: $globalBgColor;
-			    position: relative;
-			    box-sizing: border-box;
-			    background: $globalHdColor01;
-			    background: -moz-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
-			    background: -webkit-gradient(linear, left left, left right, color-sleft(0%, $globalHdColor01), color-sleft(100%, $globalHdColor02));
-			    background: -webkit-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
-			    background: -o-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
-			    background: -ms-linear-gradient(left, $globalHdColor01 0%, $globalHdColor02 100%);
-			    background: linear-gradient(to right, $globalHdColor01 0%, $globalHdColor02 100%);
-			}
-			img{
-				width: 40px;
-				height: 40px;
-				position: absolute;
-				top: 10px;
-			    right: 10px;
-			}
-		}//changepsw end
-	}//¹âÏäbox end
-
-//===ÎÒµÄ×·Û™==================================================
+//===æˆ‘çš„è¿½è¹¤==================================================
 	.myfollow{
 		width: 220px;
 		float: left;
@@ -299,7 +234,7 @@ input:not(.radio):focus, textarea:focus{
 		position: relative;
 		background-color: #fff;
 		border-radius: 5px;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 
 		a{
 			display: block;
@@ -314,9 +249,9 @@ input:not(.radio):focus, textarea:focus{
 	}
 	.myfollow:hover{
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-	}//hoveréLêÓ°
+	}//hoveré•·é™°å½±
 
-	//Ğ¡°´âo˜ÓÊ½
+	//å°æŒ‰éˆ•æ¨£å¼
 	.btn50{
 		width: 50px;
 		height: 50px;
@@ -329,23 +264,22 @@ input:not(.radio):focus, textarea:focus{
 		float: right;
 		margin: -55px 2px 0 0;
 		&:after{
-		content: 'È¡Ïû×·Û™';
+		content: 'å–æ¶ˆè¿½è¹¤';
 		font-size: $globalCardSize;
 		vertical-align: top;
 		}
-	}//È¡Ïû×·Û™
+	}//å–æ¶ˆè¿½è¹¤
 
 	#mappointer{
 		text-align: center;
 		display: block;
 		&:after{
 		display: block;
-		content: 'µØˆD';
+		content: 'åœ°åœ–';
 		font-size: $globalCardSize;
 		vertical-align: top;
 		}
-	}//µØˆD
-	
+	}//åœ°åœ–
 		
 	.myfollow > ul{
 		height: 16px;
@@ -357,19 +291,18 @@ input:not(.radio):focus, textarea:focus{
 			vertical-align: top;
 			}
 		}
-	}//ÔuƒrĞÇĞÇ”µ
+	}//è©•åƒ¹æ˜Ÿæ˜Ÿæ•¸
 
 	time{
 		color: $globalUnclickColor;
 		font-size: $globalCardSize - 2px;
 		float: right;
 		margin: -20px 10px 0px;
-	}//ÈÕÆÚ•régĞ¡×Ö˜ÓÊ½
+	}//æ—¥æœŸæ™‚é–“å°å­—æ¨£å¼
 
 	@media screen and (max-width: 767px) {
 		.myfollow{
 			width: 100%;
-			margin-bottom: 30px;
 		}
 		.myfollow:nth-child(n+2){
 			margin-left: 0;
@@ -389,9 +322,9 @@ input:not(.radio):focus, textarea:focus{
 		}
 	}//RWD end
 
-//===ÎÒµÄÁôÑÔ==================================================
+//===æˆ‘çš„ç•™è¨€==================================================
 	.mycomment{
-		/*ÓÃuŒÓÔO¶¨¾GÉ«¾€¶Î*/
+		/*ç”¨æ¼¸å±¤è¨­å®šç¶ è‰²ç·šæ®µ*/
 		background-image: linear-gradient(90deg, $globalAccountColor 10px, $globalAccountColor 10px );
 		background-size: 2px 100px;
 		background-position: center top;
@@ -412,7 +345,7 @@ input:not(.radio):focus, textarea:focus{
 
 				time{
 					margin: 5px 50px 0 0;
-				}//ÁôÑÔ•rég
+				}//ç•™è¨€æ™‚é–“
 
 				.storepic{
 					width: 50px;
@@ -426,7 +359,7 @@ input:not(.radio):focus, textarea:focus{
 						height: 100%;
 						max-width: none;
 					}
-				}//•ş†T´óî^ÕÕ
+				}//æœƒå“¡å¤§é ­ç…§
 
 				.reply{
 					padding: 10px;
@@ -436,8 +369,8 @@ input:not(.radio):focus, textarea:focus{
 					display: none;
 					time{
 						margin-right: 0;
-					}//µêéL»Ø¸²•rég
-				}//µêéL»Ø¸²
+					}//åº—é•·å›è¦†æ™‚é–“
+				}//åº—é•·å›è¦†
 
 				#del{
 					padding: 0%;
@@ -445,11 +378,11 @@ input:not(.radio):focus, textarea:focus{
 					top: 0px;
 					right: 0;
 					&:after{
-						content: '„h³ı';
+						content: 'åˆªé™¤';
 						font-size: 12px;
 						vertical-align: top;
 					}
-				}//„h³ıÁôÑÔ°´âo
+				}//åˆªé™¤ç•™è¨€æŒ‰éˆ•
 			}//msg end
 
 			.msg:before{
@@ -461,11 +394,11 @@ input:not(.radio):focus, textarea:focus{
 				border-bottom: 10px solid  transparent;
 				position: absolute;		
 				top: 20px;	
-			}//msgÇ°ÃæµÄĞ¡Èı½ÇĞÎ
+			}//msgå‰é¢çš„å°ä¸‰è§’å½¢
 
 			.msg:hover {
 			    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-			}//hoveréLêÓ°
+			}//hoveré•·é™°å½±
 		}//mycomment li end
 
 		li:nth-child(even){
@@ -481,12 +414,12 @@ input:not(.radio):focus, textarea:focus{
 				left: -15px;
 				border-right: 16px solid #fff;
 			}
-		}//Å¼”µ™ÚÆ«ÒÆÔO¶¨
+		}//å¶æ•¸æ¬„åç§»è¨­å®š
 
 		li:nth-child(odd) .msg:before{
 			right: -15px;
 			border-left: 16px solid #fff;
-		}//Ææ”µ™ÚÆ«ÒÆÔO¶¨
+		}//å¥‡æ•¸æ¬„åç§»è¨­å®š
 	}//mycomment end
 
 	@media screen and (max-width: 767px) {
@@ -517,7 +450,7 @@ input:not(.radio):focus, textarea:focus{
 		}//mycomment end
 	}//RWD end
 
-//===ÎÒµÄˆóÃû==================================================
+//===æˆ‘çš„å ±å==================================================
 	.myentry{
 		width: 300px;
 		height: 200px;
@@ -526,7 +459,7 @@ input:not(.radio):focus, textarea:focus{
 		text-align: justify;
 		position: relative;
 		border-radius: 5px;
-		margin-bottom: 15px;
+		margin-bottom: 30px;
 		h2, address{
 			margin: 8px;
 		}
@@ -557,7 +490,7 @@ input:not(.radio):focus, textarea:focus{
 				margin: -50px 2px 0 0;
 			}
 			#cancelentry:after{
-				content: 'È¡ÏûˆóÃû';
+				content: 'å–æ¶ˆå ±å';
 				color: $globalBgColor;
 				font-size: 12px;
 				vertical-align: top;
@@ -577,8 +510,7 @@ input:not(.radio):focus, textarea:focus{
 	@media screen and (max-width: 767px) {
 		.myentry{
 			width: auto;
-			margin-bottom: 0px;
-			margin-top: 230px;
+			margin-top: 200px;
 			overflow: visible;
 			.info{
 				width: auto;
@@ -603,9 +535,9 @@ input:not(.radio):focus, textarea:focus{
 		}
 	}//RWD end
 
-//===¾İ‹‚€ÈËÙYÁÏ==================================================
+//===ç·¨è¼¯å€‹äººè³‡æ–™==================================================
 	form{
-		p, .checkbox{
+		p{
 			width: 42%;
 			height: 50px;
 			line-height: 50px;
@@ -621,7 +553,6 @@ input:not(.radio):focus, textarea:focus{
 			display: inline-block;
 			box-sizing: border-box;
 		}
-		
 		span.note{
 			font-size: 12px;
 			color: $globalBtnColor;
@@ -631,6 +562,10 @@ input:not(.radio):focus, textarea:focus{
 		label{
 			width: 90px;
 			float: left;
+		}
+		label.openpsw{
+			float: unset;
+			margin-right: 30px;
 		}
 		input, strong, textarea{
 			max-width: 320px;
@@ -653,17 +588,18 @@ input:not(.radio):focus, textarea:focus{
 			border: 1px solid rgba(187,187,187,0.3);
 			border-bottom: 1px solid $globalUnclickColor;
 			margin-bottom: 30px;
-		}//³ÉéµêéL_¹ÊÊÂ½é½Bİ”Èë¿ò
+		}//æˆç‚ºåº—é•·_æ•…äº‹ä»‹ç´¹è¼¸å…¥æ¡†
 		input[type="number"]{
 			width: 30%;
 			float: none;
 			text-align: center;
-		}//³ÉéµêéL I˜I•régßxí—
+		}//æˆç‚ºåº—é•·ç‡Ÿæ¥­æ™‚é–“é¸é …
 		.userpic{
 			width: 80px;
 			height: 80px;
 			border-radius: 40px;
-			background-color: $globalBtnColor;
+			background-color: $globalUnclickColor;
+			background-image: url(../img/member_pic/signin2.svg);
 			margin: 0 auto;
 			margin-bottom: -75px;
 		    margin-right: 520px;
@@ -678,17 +614,10 @@ input:not(.radio):focus, textarea:focus{
 			position: absolute;
 			top: 1px;
 		    left: 8px;
-		}//ÉÏ‚÷ÕÕÆ¬
-		.checkbox{
-			margin-left: 34%;
-			overflow: hidden;
-			line-height: 50px;
-			padding: 10px 0;
-			.openlightbox{
-				float: none;
-				margin-right: 30px;
-			}
-		}//×ƒ¸üÃÜ´a¹âÏä°´âo
+		}//ä¸Šå‚³ç…§ç‰‡
+		.psw{
+			display: none;
+		}//old and new psw's input
 
 	@media screen and (max-width: 767px) {
 		p{
@@ -703,7 +632,7 @@ input:not(.radio):focus, textarea:focus{
 			border-radius: 75px;
 			margin: 0 auto 30px;
 		}
-		input, .openlightbox, a.upload{
+		input, label.openpsw, a.upload{
 			margin-bottom: 30px;
 		}
 		strong{
@@ -712,19 +641,11 @@ input:not(.radio):focus, textarea:focus{
 		span.note{
 			margin: -70px 0px;
 		}
-		.checkbox {
-			width: 100%;
-			height: auto;
-		    margin: 0 auto;
-		    label.openlightbox{
-		    	margin-right: unset;
-		    }
-		}
 		input[type="submit"], .upload{
 			margin-left: auto;
 			margin-right: auto;
 		}
-		label.openlightbox{
+		label.openpsw{
 			margin-right: unset;
 		}
 		input[type="submit"]{
@@ -732,11 +653,11 @@ input:not(.radio):focus, textarea:focus{
 		}
 		input[type="number"]{
 			width: 18%;
-		}//³ÉéµêéL I˜I•régßxí—
+		}//æˆç‚ºåº—é•·ç‡Ÿæ¥­æ™‚é–“é¸é …
 	}//RWD end
 	}//form end
 
-//===³ÉéµêéL_µÚ1í“==================================================
+//===æˆç‚ºåº—é•·_ç¬¬1é ==================================================
 	.memBeBoss{
 		max-width: 1200px;
 		width: 120%;
@@ -800,26 +721,18 @@ input:not(.radio):focus, textarea:focus{
 		}//memBeBoss1 end
 	}//RWD end
 
-//===³ÉéµêéL_µÚ2¡¢3í“==================================================
+//===æˆç‚ºåº—é•·_ç¬¬2ã€3é ==================================================
 	h1.find{
 		margin-bottom: 30px;
 	}
-	div.find{
+	.myfollow.find{
 		width: 22%;
-		margin: 0 14%;
+		margin-left: 25%;
 	}
 	.action{
 		width: 30%;
-    	margin: 0 10%;
+    	margin: 13% 10%;
     	float: right;
-    	img{
-    		margin: 60px 0;
-    	}
-		.openlightbox{
-			width: 100%;
-		    border: none;
-		    margin: 60px 0;
-		}
 	}//action end
 	
 	@media screen and (max-width: 767px) {
@@ -827,14 +740,12 @@ input:not(.radio):focus, textarea:focus{
 			font-size: $globalh3Size - 2px;
 			text-align: left;
 		}
-		div.find, .action{
+		.myfollow.find, .action{
 			width: 100%;
 			margin: 0 auto;
 		}
 		.action{
-			.openlightbox{
-	    		margin: 30px 0;
-	    	}
+			margin: 30px 0;
 		}
 		h1{
 			font-size: $globalh3Size - 2px;
@@ -843,7 +754,6 @@ input:not(.radio):focus, textarea:focus{
 			text-align: left;
 		}
 	}//RWD end
-
 
 	}//content end
 }//container end

@@ -17,6 +17,41 @@ session_start();
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
+	<?php
+		//是否接到memUpdateToDb.php回傳的info?    有就傳此值  :沒有傳""
+    	$info = isset($_REQUEST["info"]) ?  $_REQUEST["info"] :"";
+	?>
+	<script type="text/javascript">
+		//宣告var info來接php的$info
+		var info = '<?php echo $info; ?>' ;		
+		$(document).ready(function(){
+			if ( info == "ok" ) {
+				$.sweetModal({
+					content: '資料異動成功~',
+					icon: $.sweetModal.ICON_SUCCESS,
+					width: '300px',
+					theme: $.sweetModal.THEME_MIXED,
+				});
+			} else if ( info == "error" ) {
+				$.sweetModal({
+					content: '舊密碼輸入錯誤！',
+					icon: $.sweetModal.ICON_WARNING,
+					width: '300px',
+					theme: $.sweetModal.THEME_MIXED,
+				});
+
+				$(".oldPsw").focus(function(){
+					$(this).css({
+						border: '1px solid rgba(240, 100, 40, 0.3)',
+						boxShadow: '0 0 2px $globalStarColor'	
+					});
+				});
+				$(".openpsw").hide();
+				$(".psw").show();
+			}//elseif
+		});//$(document).ready();
+	</script>
+
 </head>
 
 <body>
@@ -46,21 +81,22 @@ session_start();
 				// phpinfo();
 				
 				$memId=isset($_SESSION["memId"])? $_SESSION["memId"] : "";
-				
+				$info =isset($_REQUEST["info"])? $_REQUEST["info"] : "";
+
 				try{
 					require_once("php/pdo/connectPDO.php");
 					$sql = "select * from member where MEM_ID='$memId'";
 					$member = $connectPDO->query($sql);
-					if($member->rowCount()==0){
-						echo "<center>查無此帳號</center>";
-					}else{
-						$memRow = $member->fetchObject();
+					// if($member->rowCount()==0){
+					// 	echo "<center>查無此帳號</center>";
+					// }else{
+					$memRow = $member->fetchObject();
 				?>
 
 				<form class="form-horizontal" action="php\member\memUpdateToDb.php" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="memId" value="<?php echo $memRow->MEM_ID;?>">
 					<div class="userpic">
-						<img src="img/member_pic/signin2.svg">
+						<img src="img/member_pic/<?php echo $memRow->MEM_PIC;?>">
 					</div>
 					<p>
 						<label for="mempic">變更頭像</label>
@@ -71,52 +107,41 @@ session_start();
 					</p>
 					<p>
 						<label for="MEM_ID">帳號</label>
-						<strong><?php echo $memId ?></strong>
+						<strong><?php echo $memId; ?></strong>
 						<span class="note">※已註冊帳號無法變更</span>
 					</p>
 					<p>
-						<label for="MEM_NAME">姓名</label>
-						<input type="text" name="MEM_NAME" maxlength="8" placeholder="請輸入真實姓名" autofocus value="<?php echo $memRow->MEM_NAME;?>">
+						<label for="MEM_NAME">匿稱</label>
+						<input type="text" name="MEM_NAME" placeholder="請輸入真實姓名" autofocus value="<?php echo $memRow->MEM_NAME;?>">
 					</p>
 					<p>
 						<label for="MEM_MAIL">信箱</label>
-						<strong><?php echo $memRow->MEM_MAIL ?></strong>
+						<strong><?php echo $memRow->MEM_MAIL; ?></strong>
 						<span class="note">※已註冊信箱無法變更</span>
 					</p>
 					<p>
 						<label for="MEM_PHONE">手機</label>
-						<input type="tel" name="MEM_PHONE" pattern="\d{10}" placeholder="輸入格式:0900888888" id="" value="<?php echo $memRow->MEM_PHONE;?>">
+						<input type="tel" name="MEM_PHONE" placeholder="輸入手機或市話" value="<?php echo $memRow->MEM_PHONE;?>">
 					</p>
-					<div class="checkbox">
-						<label class="openlightbox">變更密碼</label>
-						<input type="submit" value="儲存">
+					<div class="psw">
+				    	<p>
+				    		<label for="MEM_PSW">舊密碼</label>
+							<input type="password" name="oldPsw">
+				    	</p>
+				    	<p>
+				    		<label for="MEM_PSW">新密碼</label>
+							<input type="password" name="MEM_PSW">
+				    	</p>
 					</div>
-					<!-- 變更密碼光箱 -->
-					<div class="box">
-					    <div class="changepsw">
-					    	<h1>變更密碼</h1>
-					    	<p>
-					    		<label for="MEM_PSW">舊密碼</label>
-								<input type="password" name="MEM_PSW" maxlength="8" value="<?php echo $memRow->MEM_PSW;?>">
-					    	</p>
-					    	<p>
-					    		<label for="MEM_PSW">新密碼</label>
-								<input type="password" name="MEM_PSW" maxlength="8">
-					    	</p>
-					    	<p>
-					    		<input type="submit" value="變更密碼">
-					    	</p>
-							<!-- 關閉光箱按鈕 -->
-							<img src="img/memimg/micon_cancel3.svg" class="closelightbox">
-					    </div>
-					</div>
+					<label class="openpsw">變更密碼</label>
+					<input type="submit" value="儲存">
 				</form>
 				<?php
-					}//if...else
+					// }//if...else
 				}catch(PDOException $e){
 				 	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 					echo "行號 : " , $e->getLine(),"<br>";
-				 }//catch end
+				}//catch end
 				?>
 			</section>
 		</div>
