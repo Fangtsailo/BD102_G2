@@ -130,6 +130,7 @@ $(function(){
 
 $('.shopItemGrp').slick({
   dots: true,
+  slidesToShow:3,
   infinite: true,
   speed: 1000,
   autoplay: true,

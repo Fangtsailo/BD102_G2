@@ -366,7 +366,7 @@
 						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">

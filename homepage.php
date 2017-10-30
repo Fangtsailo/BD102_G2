@@ -208,7 +208,7 @@ require_once("headerForHomePage.php");
 			<?php 
 
 				$type = ($topShopsRow->SI_TYPE == 1) ? "storeBrowse.php" : "shopB.php" ;
-
+				$dateStamp=1508501792;
 			 ?>
 			
 			<div class="shopItem" data-depth="1" onclick="location.href='<?php echo $type."?storeId=".$topShopsRow->SI_NUM;?>';">
@@ -228,10 +228,10 @@ require_once("headerForHomePage.php");
 						<img src="img/member_pic/<?php echo $topShopsRow->MEM_PIC ?>">
 					</div>
 					<span><?php echo $topShopsRow->MEM_NAME ?></span>
-					<span id="messageTime"><?php echo $topShopsRow->SPMSG_TIME?></span>
+					<span id="messageTime"><?php echo $topShopsRow->SPMSG_TIME ;?></span>
 					<div class="clearfix"></div>
 					<div class="message">
-						<p><?php echo $topShopsRow->SPMSG_CON?></p>
+						<p><?php echo $topShopsRow->SPMSG_CON;?></p>
 					</div>
 				</div>
 			</div>

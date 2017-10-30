@@ -73,7 +73,7 @@ session_start();
 				
 				try {
 
-				require_once("php\pdo\connectPDO.php");
+				require_once("php/pdo/connectPDO.php");
 
 				//取得資料庫中符合店長編號為空值的資料
 				$sql = "select * from store_imformation where SI_TYPE='$siType' and SI_NAME='$siName' and SI_MEMNO is null";
