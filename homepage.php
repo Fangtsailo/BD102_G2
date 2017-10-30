@@ -383,7 +383,7 @@ require_once("headerForHomePage.php");
 <?php 
 try{
 	require_once("php/PDO/connectPDO.php");
-	$selectNewShopSQL = "SELECT a.AC_NO,a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 ORDER BY RAND() LIMIT 6" ;
+	$selectNewShopSQL = "SELECT a.AC_NO,a.AC_TIME, a.AC_NAME,SUBSTRING(a.AC_ADDRESS,1,6) address , a.AC_MEM_COUNT, a.AC_STORE_NUM,a.AC_BANNER1,s.SI_NUM, s.SI_NAME,s.SI_SELLSTAY,s.SI_CHECKSTAY FROM activity a JOIN store_imformation s ON a.AC_STORE_NUM = s.SI_NUM WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 AND a.AC_CHECKSTAY=1 ORDER BY RAND() LIMIT 6" ;
 	$showActivity = $connectPDO->query($selectNewShopSQL);
 	while ($showActivityRow = $showActivity->fetchObject()) {
 		$actStoreBgd = (isset($showActivityRow->AC_BANNER1))? $showActivityRow->AC_BANNER1 : "default.png" ;
@@ -477,7 +477,7 @@ try{
 								</li>
 								<div class="clearfix"></div>
 							</ul>
-							<a class="exploreBtn" href="shopB.php?storeId=<?php echo $newShopsRow->SI_NUM; ?>">探索更多</a>
+							<a class="exploreBtn" href="storeBrowse.php?storeId=<?php echo $newShopsRow->SI_NUM; ?>">探索更多</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>

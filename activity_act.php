@@ -347,7 +347,7 @@ session_start();
 							
 
 											<input type="hidden" name="acNo" value="<?php echo $actRow->AC_NO ?>">
-
+										
 
 											<div class="globalFormHeader">
 														
@@ -417,6 +417,7 @@ session_start();
 														icon: $.sweetModal.ICON_SUCCESS,
 														width: '300px',
 														theme: $.sweetModal.THEME_MIXED,
+														timeout:1000;
 														onClose: function(){
 												              $( "#actform" ).submit();
 												         }
