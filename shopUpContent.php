@@ -100,7 +100,42 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 				<th>營業時間</th>
 				<td>
-					公休日　星期<?php echo $shop_row->SI_RESTDAY; ?><br>
+					公休日　<?php 
+					if($shop->rowCount()!=0){
+					$SI_RESTDAY=$shop_row->SI_RESTDAY;
+					$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+
+					}else{
+						$SI_RESTDAY=",,,,,,,";
+						$SI_RESTDAY_ARY=explode(",",$SI_RESTDAY);
+					}
+
+					if(in_array('1',$SI_RESTDAY_ARY)){
+								echo '<span id="week_1" >星期ㄧ &nbsp</span>';
+							}
+					if(in_array('2',$SI_RESTDAY_ARY)){
+								echo '<span id="week_2" >星期二 &nbsp</span>';
+							}
+					if(in_array('3',$SI_RESTDAY_ARY)){
+								echo '<span id="week_3" >星期三 &nbsp</span>';
+							}
+					if(in_array('4',$SI_RESTDAY_ARY)){
+								echo '<span id="week_4" >星期四 &nbsp</span>';
+							}
+					if(in_array('5',$SI_RESTDAY_ARY)){
+								echo '<span id="week_5" >星期五 &nbsp</span>';
+							}
+					if(in_array('6',$SI_RESTDAY_ARY)){
+								echo '<span id="week_6" >星期六 &nbsp</span>';
+							}
+					if(in_array('7',$SI_RESTDAY_ARY)){
+								echo '<span id="week_7" >星期日 &nbsp</span>';
+							}
+					if(in_array('0',$SI_RESTDAY_ARY)){
+								echo '<span id="week_0" >國定假日　<spanv>';
+							}
+
+					 ?><br>
 					營業時間　<?php echo $shop_row->SI_STARTTIME; ?>:00 - <?php echo $shop_row->SI_ENDTIME; ?>:00
 				</td>
 				</tr>

@@ -47,8 +47,6 @@ try {
 			case 7:
 				$word = "日";
 				break;
-			default:
-				$word = "國定假日";
 		}
 		return $word;
 	}
@@ -112,7 +110,6 @@ try {
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
-
 		if ($stmt->rowCount() == 0) {
 			return array();
 		} else {
@@ -139,7 +136,7 @@ try {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
+				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC1, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC1, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
 				array_push($activityArr, $activity);
 			}
 			return $activityArr;
@@ -186,7 +183,8 @@ try {
 			return array();
 		} else {
 			while($path = $stmt->fetchObject()) {
-				$breadCarPath = new BreadCarPath($path->bcp_describe, $path->si_lat, $path->si_lng, $path->bcp_location);
+				$nowLocationStr = "{lat:".$path->si_lat.", lng:".$path->si_lng."}";
+				$breadCarPath = new BreadCarPath($path->bcp_describe, $nowLocationStr, $path->bcp_location);
 				array_push($breadCarPathArr, $breadCarPath);
 			}
 			return $breadCarPathArr;
