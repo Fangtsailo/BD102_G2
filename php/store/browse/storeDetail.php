@@ -110,6 +110,7 @@ try {
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
+
 		if ($stmt->rowCount() == 0) {
 			return array();
 		} else {
