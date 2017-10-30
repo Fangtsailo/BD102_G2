@@ -326,8 +326,41 @@
 				<a id="rwdBossRole" href="memBeBoss1.php">成為店長</a>
 				
 				<ul id="bossMenu">
-					<li><a class="navItem bossMenu" href="FMybusinessStore.php">麵包店</a></li>
-					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
+					<li><a class="navItem bossMenu" href="FMybusinessStore.php" id="rwdStore">麵包店<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+						<?php 
+						require_once("php/PDO/connectPDO.php");
+						$memNo=$_SESSION["memNo"];
+						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0";
+						$storeMenu = $connectPDO->query($sql_Store);
+						if($storeMenu->rowCount()!=0){
+
+						 ?>
+						<ul id="storeMenu" style="display: none;">
+						<li><a class="navItem bossMenu" href="FMybusinessStore.php">基本資料</a></li>
+						<li><a class="navItem bossMenu" href="FMybusinessStoreProductList.php">商品</a></li>
+						</ul>
+						 <?php 
+						 }
+						  ?>
+					</li>
+					
+					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a></li>
+						<?php 
+
+						$memNo=$_SESSION["memNo"];
+						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0";
+						$carMenu = $connectPDO->query($sql_Store);
+						if($carMenu->rowCount()!=0){
+						 ?>
+						<ul id="carMenu" style="display: none;">
+						<li><a class="navItem bossMenu" href="FMybusinessCar.php">基本資料</a></li>
+						<li><a class="navItem bossMenu" href="FMybusinessCarProductList.php">商品</a></li>
+						<li><a class="navItem bossMenu" href="FMybusinessCarRouteAdd.php">路線規劃</a></li>
+						<li><a class="navItem bossMenu" href="FMybusinessCarPosition.php">基本資料</a></li>
+						</ul>
+						 <?php 
+						}
+						  ?>
 					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
 					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>
