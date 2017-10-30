@@ -18,8 +18,8 @@ session_start();
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
 
-	<!-- 若店名未輸入就跳窗警示 -->
- 	<script type="text/javascript">
+	<!-- 店名未輸入警示 -->
+ 	<!-- <script type="text/javascript">
 		$(document).ready(function(){
 
 			$( "#check" ).click(function() {
@@ -31,6 +31,34 @@ session_start();
 			  	}
 			});
 		});	
+	</script> -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$("#check").click(function(){
+
+		        if ( $("#SI_NAME").val().length==0 ){
+
+					$.sweetModal({
+						content: '沒有輸入店名喔~',
+						icon: $.sweetModal.ICON_WARNING,
+						width: '300px',
+						theme: $.sweetModal.THEME_MIXED,
+						buttons: [
+							{
+								label: '知道了',
+								classes: 'brownB'
+							}
+						]
+					});//sweetModal
+
+					// $("#SI_NAME").focus();
+					// return;
+				} else{
+					$( ".searchSi" ).submit();	
+				}//if else
+			});//$("#check").click();
+		});//$(document).ready();
 	</script>
 </head>
 
@@ -101,28 +129,17 @@ session_start();
 				<h1>想和我們合作嗎？</h1>
                 <p>請填寫以下表單，<br>我們將有專人盡快與你聯繫！</p>
 
-                <form class="form-horizontal searchSi" action="php/member/memBeBossSearch.php" method="get">
+                <form class="form-horizontal searchSi" action="php/member/beBossSearch.php" method="get">
 	                <p>
 	                	<label for="SI_TYPE"><span class="required">*</span>選擇店型</label>
 	                	<input type="radio" name="SI_TYPE" value="0" class="radio" checked>麵包店
 	                	<input type="radio" name="SI_TYPE" value="1" class="radio">麵包車
 	            	</p>
 
-	            	<!-- <p>
-	                	<label for="SI_TYPE"><span class="required">*</span>選擇店型</label>
-	                	<input type="radio" name="SI_TYPE" value="0" class="radio" <?php //if (isset($siType) && $siType=="0") echo "checked";?> >麵包店
-	                	<input type="radio" name="SI_TYPE" value="1" class="radio" <?php //if (isset($siType) && $siType=="1") echo "checked";?> >麵包車
-	            	</p>
- -->
 	            	<p>
 	                 	<label for="SI_NAME"><span class="required">*</span>輸入店名</label>
-	                 	<input type="text" name="SI_NAME" placeholder="請輸入完整店名" id="SI_NAME">
+	                 	<input type="text" name="SI_NAME" placeholder="請輸入完整店名" id="SI_NAME" autofocus>
 	             	</p>
-
-	             	<!-- <p>
-	                 	<label for="SI_NAME"><span class="required">*</span>輸入店名</label>
-	                 	<input type="text" name="SI_NAME" placeholder="請輸入完整店名" value="<?php //echo $storeInfoRow->SI_NAME;?>">
-	             	</p> -->
 					
 	             	<input type="button" class="btn" value="下一步" id="check">
 

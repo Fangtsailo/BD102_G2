@@ -13,7 +13,7 @@
 		}
 	}else { 
 		// session_destroy();
-	}
+	}  
 	require_once("php/common/globalVar.php");
  ?>
 
@@ -56,7 +56,8 @@
 				</div>
 				
 				<div class="facebookLogin">
-					<a href="#">
+					<a href="#" scope="public_profile,email"
+  onlogin="checkLoginState();">
 					Facebook帳號登入</a>
 				</div>
 				
@@ -232,20 +233,33 @@
 		<form id="rwdsearchForm" action="search.php" method="get">
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
-			<label class="selectType"><input type="radio" value="1" name="shopType">麵包小車</label>
-			<label class="selectType"><input type="radio" value="0" name="shopType">麵包店</label>
+			<input id="shopType1" type="radio" value="1" name="shopType">
+			<label for="shopType1" class="selectType rwdfilter">麵包小車</label>
+
+			<input id="shopType2" type="radio" value="0" name="shopType">
+			<label for="shopType2" class="selectType rwdfilter">麵包店</label>
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
-				<label><input type="radio" name="shopPosition" value="0">北部</label>
-				<label><input type="radio" name="shopPosition" value="1">中部</label>
-				<label><input type="radio" name="shopPosition" value="2">南部</label>
-				<label><input type="radio" name="shopPosition" value="3">東部</label>
-				
+				<input id="shopPos1" type="radio" name="shopPosition" value="0">
+				<label for="shopPos1" class="rwdfilter">北部</label>
+
+				<input id="shopPos2" type="radio" name="shopPosition" value="1">
+				<label for="shopPos2" class="rwdfilter">中部</label>
+
+				<input id="shopPos3" type="radio" name="shopPosition" value="2">
+				<label for="shopPos3" class="rwdfilter">南部</label>
+
+				<input id="shopPos4" type="radio" name="shopPosition" value="3">
+				<label for="shopPos4" class="rwdfilter">東部</label>
+
 			</div>
 			<span>- 其他篩選條件 -</span>
-				<label><input type="radio" name="filter" value="top">熱門</label>
-				<label><input type="radio" name="filter" value="stars">評價</label>
+				<input type="radio" value="top" name="filter" id="filterTops">
+				<label for="filterTops" class="rwdfilter">熱門</label>	
+				<input type="radio" name="filter" value="stars" id="filterstars">
+				<label for="filterstars" class="rwdfilter">評價</label>
+
 			<div class="clearfix"></div>
 		</div>
 		<input type="search" name="searchName" id="rwdHeadSearch" placeholder="搜尋您附近的麵包香">
@@ -341,7 +355,7 @@
 					<h1>新增店家</h1>
 					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
 				</div>
-				<form action="php/store/add/lightboxAddStore.php" method="get" id="addstoreForm">
+				<form action="php/store/add/lightboxAddStore.php" method="post" id="addstoreForm">
 				<div class="globalFormContent" id="showAddShopForm">
 					<div class="globalFormInput chooseType">
 						<label><span>*</span>選擇店型</label>
@@ -353,7 +367,7 @@
 						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
@@ -421,7 +435,7 @@
 						</div>
 					</div>
 					<div class="globalFormInput">
-						<label>故事介紹</label><textarea name="story"></textarea>
+						<label>故事介紹</label><textarea name="story" maxlength="450"></textarea>
 					</div>
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">

@@ -127,22 +127,8 @@ header {
           -webkit-box-shadow: 0 0 0;
           box-shadow: 0 0 0;
           border: none; }
-          .tableContent tr td:nth-child(8) input:hover {
-            border: 1px solid #cc4e4e;
-            color: #cc4e4e;
-            background-color: #fff;
-            -webkit-transition: 0.2s;
-            -o-transition: 0.2s;
-            transition: 0.2s; }
         .tableContent tr td:nth-child(8) .takeMeg {
           background-color: #00c853; }
-          .tableContent tr td:nth-child(8) .takeMeg:hover {
-            border: 1px solid #53c453;
-            color: #53c453;
-            background-color: #fff;
-            -webkit-transition: 0.2s;
-            -o-transition: 0.2s;
-            transition: 0.2s; }
 
 footer {
   height: 150px;

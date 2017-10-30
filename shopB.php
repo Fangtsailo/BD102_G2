@@ -37,7 +37,6 @@ require_once("header.php");
  ?>
 <?php 
 	try{
-	
 	require_once("php/common/globalVar.php");	
 	require_once("php/store/browse/storeDetail.php");
 
@@ -75,14 +74,23 @@ require_once("header.php");
 
 	$store_imformationRow=$store_imformation->fetchObject();
 
-	 } catch (Exception $e) {
-	echo "原因：",$e->getMessage(),"<br>";
-	echo "行號：",$e->getLine(),"<br>";
-	 }
+	$sql_review = "select round(AVG(ifnull(REVIEWS,0)),1) rrr
+					from store_imformation 
+					left join reviews on store_imformation.SI_NUM = reviews.SI_NUM
+					where store_imformation.SI_NUM = $storeId ";
+
+	$reviewrrr = $connectPDO->query( $sql_review );
+
+	while ( $review_row = $reviewrrr->fetchObject() ) {
+
+	//  } catch (Exception $e) {
+	// echo "原因：",$e->getMessage(),"<br>";
+	// echo "行號：",$e->getLine(),"<br>";
+	//  }
   ?>
 
 	<!-- <div class="container-template"></div> -->
-	
+	 
 
 
 
@@ -90,69 +98,50 @@ require_once("header.php");
 
 <div id="trigger1"></div>
 	<section class="SHOPB_SHOP">
+
+		<div class="review-mask">
+			 <div id="give-reivew-modal">
+			 	<p>給予評價</p>
+			 	<ul> 	
+			 		<li class="star pointer" id="review-star1" data-id="1"><img alt="star.svg" src="img/icon/star3.svg"></li>
+				 	<li class="star pointer" id="review-star2" data-id="2"><img alt="star.svg" src="img/icon/star3.svg"></li>
+				 	<li class="star pointer" id="review-star3" data-id="3"><img alt="star.svg" src="img/icon/star3.svg"></li>
+				 	<li class="star pointer" id="review-star4" data-id="4"><img alt="star.svg" src="img/icon/star3.svg"></li>
+				 	<li class="star pointer" id="review-star5" data-id="5"><img alt="star.svg" src="img/icon/star3.svg"></li>
+				 </ul>
+				 <div class="btns">
+				 	<div id="cancel-review-btn" class="globalCancelBtn">取消</div>
+				 	<div id="submit-review-btn" class="globalOkBtn">給評價</div>
+				 </div>
+				
+			 </div>
+		 </div>
+
+
+ 		<div class="report-mask mask">
+		 			<div class="report-modal modal">
+		 		<p>檢舉原因</p>
+				<textarea id="report-reason" maxlength="50" placeholder="請填寫原因..." rows="2"></textarea>
+				 <div class="btns">
+				 	<div id="cancel-report-btn" class="globalCancelBtn">取消</div>
+				 	<div id="submit-report-btn" class="globalOkBtn">檢舉</div>
+				 </div>
+ 			</div>
+ 		</div>
+
+
+
+
 		
 		<div class="banners">
-			<!-- <img src="img/SHOPB/BN_01.JPG" alt="">
-			<img src="img/SHOPB/BN_02.JPG" alt="">
-			<img src="img/SHOPB/BN_03.JPG" alt=""> -->
 			<div id="banner1"></div>
 			<div id="banner2"></div>
 			<div id="banner3"></div>
 		</div>
 
-		<!-- <script type="text/javascript">
-			var counter = 0, // 一開始要顯示的圖，0 的話就是顯示第一張
-		    slide = document.querySelector('.banners'),
-		    items = slide.querySelectorAll('img'),
-		    itemsCount = items.length, 
-		    prevBtn = document.createElement('a'),
-		    nextBtn = document.createElement('a'),
-		    timer = 5000, // 4 秒換圖
-		    interval = window.setInterval(showNext, timer);  // 設定循環
-		
-		prevBtn.classList.add('prev'); // 幫上一張按鈕加 class＝"prev" 給 CSS 指定樣式用
-		nextBtn.classList.add('next'); // 幫下一張按鈕加 class＝"next" 給 CSS 指定樣式用
-		slide.appendChild(prevBtn); // 將按鈕加到 #slide 裡
-		slide.appendChild(nextBtn);
-
-		// 帶入目前要顯示第幾張圖 
-		var showCurrent = function(){
-		    var itemToShow = Math.abs(counter % itemsCount); // 取餘數才能無限循環
-		    [].forEach.call( items, function(el){
-		        el.classList.remove('show'); // 將所有 img 的 class="show" 移除
-		    });
-		    items[itemToShow].classList.add('show'); // 將要顯示的 img 加入 class="show"
-		};
-		
-		function showNext(){
-		    counter++; // 將 counter+1 指定下一張圖
-		    showCurrent();
-		}
-		
-		function showPrev(){
-		    counter//--; // 將 counter－1 指定上一張圖
-		    showCurrent();
-		}
-		
-		// 綁定點擊上一張，下一張按鈕的事件
-		nextBtn.addEventListener('click', showNext, false);
-		prevBtn.addEventListener('click', showPrev, false);
-		
-		// 一開始秀出第一張圖，也可以在 HTML 的第一個 img 裡加上 class="show"
-		items[0].classList.add('show');
-		</script> -->
-		
-		
 
 
-
-
-
-
-		
-
-
-		<div class="col-xs-10 col-sm-3" id="SPNAME">MONOCLE 麵包屋</div>
+		<div class="col-xs-10 col-sm-3" id="SPNAME"><?php echo $GLOBALS["store"]->name ?></div>
 
 		<div class="col-xs-10 col-sm-3" id="biginfo">
 		<div class="" id="SPINFO">
@@ -214,7 +203,7 @@ require_once("header.php");
 			</div>
 		</div>
 		<div class="clearfix"></div>
-		<div id="SPGRADE" >
+		<div id="review-btn" >
 			<div class="rating">
         	<input type="radio" id="star1" name="rating" value="1" hidden/>
         	<label for="star1"></label>
@@ -228,20 +217,26 @@ require_once("header.php");
        	 	<label for="star5"></label>
 			</div>
 
-			<div id="GIVESTAR">
+			<!-- <div id="GIVESTAR">
 			<a href="#"><input  type="hidden" name="" value="" placeholder="">送出</a>
-			</div>
-
-
+			</div> -->
 		</div>
+
 
 
 		<div id="getstar">
 			<span>好評</span>
-			<span>&nbsp<?php echo $store_imformationRow->SI_AVG_REVIEW ; ?>&nbsp</span>
+			<span>&nbsp<?php echo $review_row->rrr ; } ?>&nbsp</span>
 			<span>分</span>
 		</div>
 		</div>
+
+		<?php
+			} catch (Exception $e) {
+			echo "原因：",$e->getMessage(),"<br>";
+			echo "行號：",$e->getLine(),"<br>";
+			 } 
+		 ?>
 
 		<!-- <div id="SPFOLLOW">
 			<img src="img/SHOPB/heart.png" id="heart" title="收藏到口袋！">
@@ -545,6 +540,13 @@ require_once("header.php");
 <script type="text/javascript">
 $(document).ready(function(){
 	initShopBMap(<?php echo $GLOBALS["store"]->lat ?>,<?php echo $GLOBALS["store"]->lng ?>);
+	//檢舉公用變數
+	reportMessageNum = -1;
+	reviewIGave = 0;//若有給予評價的分數
+	memNum = <?php echo $memNum; ?>;
+	storeId = <?php echo $storeId; ?>;
+	initReviewStarAction();
+	initReportAction();
 	isLogin = <?php echo $isLogin==true?"true":"false"; ?>;
 	isThisMemFollowThisStore = <?php echo $isThisMemFollowThisStore; ?>;
 	//initParallax("activity-parallax");
@@ -670,6 +672,18 @@ $(document).ready(function(){
 	<?php
 		}
 	 ?>	
+	 //給評價-----------------------------
+	 if (isLogin) {
+			$("#review-btn").on('click', function(){
+				$('.review-mask').fadeIn(500);
+			});
+	} else {
+		$("#review-btn").on('click', function(){
+				$('#loginBox').fadeIn(500);
+			    $("#menu").removeClass("show");
+			    $('#addShopBox').hide();
+			});
+	}	
 });	
 </script>	
 

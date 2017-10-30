@@ -5,7 +5,7 @@ session_start();
 <?php
 try{
 	require_once("../../PDO/connectPDO.php");
-	$login = "select * from member where MEM_ID =:memId and MEM_PSW =:memPsw" ;
+	$login = "select * from member where MEM_ID =:memId and MEM_PSW =:memPsw and MEM_STATUS=1" ;
 	$jsonStr = $_REQUEST["jsonStr"];
 	$jsonObj = json_decode($jsonStr);
 	$member = $connectPDO->prepare($login);
@@ -13,22 +13,14 @@ try{
 	$member -> bindValue(":memPsw",$jsonObj->memPsw);
 	$member -> execute();
 	$memRow = $member->fetchObject();
-	if( $member->rowCount()== 0 ){
+	if( $member->rowCount()==0 ){
 		echo "error";
 	}else{
 		$_SESSION["memNo"] = $memRow->MEM_NO;
 		$_SESSION["memId"] = $memRow->MEM_ID;
 		$_SESSION["memName"] = $memRow->MEM_NAME;
 	    $_SESSION["memRole"] = $memRow->MEM_ROLE;
-<<<<<<< HEAD
 	    $_SESSION["memPic"] = ($memRow->MEM_PIC=="")?"default.png":$memRow->MEM_PIC;
-=======
-	    
-
-	    
-	    $_SESSION["memPic"] = $memRow->MEM_PIC==""?"default.png":$memRow->MEM_PIC;
->>>>>>> 8e2d0a255150d6e101a7d1f7daa9c3a562c53b9a
-	    // header("Location:../../../homepage.php");
 	}
 }catch(PDOException $ex){
 	echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";

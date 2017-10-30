@@ -17,7 +17,35 @@ session_start();
 	<script type="text/javascript" src="libs/jquery.sweet-modal-1.3.3/min/jquery.sweet-modal.min.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/memlightbox.js"></script>
-</head>
+
+	<!-- 表單資料不齊警示 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$("#check").click(function(){
+
+		        if ( $(".beBossForm4").children('input').val().length=="" ){
+					$.sweetModal({
+						content: '請將所有表格填寫完畢~',
+						icon: $.sweetModal.ICON_WARNING,
+						width: '300px',
+						theme: $.sweetModal.THEME_MIXED,
+						buttons: [
+							{
+								label: '知道了',
+								classes: 'brownB'
+							}
+						]
+					});//sweetModal
+
+					// $("#SI_NAME").blur();
+					// return;
+				} else{
+					$( ".beBossForm4" ).submit();	
+				}//if else
+			});//$("#check").click();
+		});//$(document).ready();
+	</script>
 
 <body>
 	<!-- header -->
@@ -41,21 +69,19 @@ session_start();
 			<!-- 成為店長_第四頁_新增麵包店店家 -->
 			<h1><img src="img/memimg/bebosstl.svg" alt="成為店長"></h1>
 			<section class="col-xs-12 col-sm-12 section1000 memBeBoss1">
-				<h1>新增店家</h1>
-                <p>查無此店！請填寫以下表單簡介您的店舖！完成後請按送出，<br>我們將與您進行審核作業！</p>
+				<h1>OOPS！查無此店！</h1>
+                <p>請填寫以下表單簡介您的店舖！完成後送出，<br>我們將協助您進行新增店家和店長審核作業！</p>
 
 				<?php
 				// phpinfo();
-				
 				$siType=isset($_SESSION["SI_TYPE"])? $_SESSION["SI_TYPE"] : "";
 				$siName=isset($_SESSION["SI_NAME"])? $_SESSION["SI_NAME"] : "";
-				// $memName=isset($_SESSION["MEM_NAME"])? $_SESSION["MEM_NAME"] : "";
-
+				
 				?>
 
-				<form class="form-horizontal" action="php/member/memBeBossInsertToDb.php" method="get">
+				<form class="form-horizontal" action="php/member/beBossInsertToDb.php" method="get" class="beBossForm4">
 					<p>
-						<label for="SI_TYPE">&nbsp;店&nbsp;&nbsp;型</label>
+						<label for="SI_TYPE">&nbsp;店型</label>
 	                	<strong><?php
 	                		if ($siType==0){
 								echo "麵包店";
@@ -65,19 +91,19 @@ session_start();
 	                	?></strong>
 					</p>
 					<p>
-						<label for="SI_NAME">&nbsp;店&nbsp;&nbsp;名</label>
+						<label for="SI_NAME">&nbsp;店名</label>
 	                 	<strong><?php echo $siName ?></strong>
 					</p>
 					<p>
 						<label for="SI_COMFIRM_ID"><span class="required">*</span>統一編號</label>
-						<input type="text" name="SI_COMFIRM_ID" maxlength="8" placeholder="輸入格式:80088888" autofocus>
+						<input type="text" name="SI_COMFIRM_ID" placeholder="輸入格式:80088888" autofocus>
 					</p>
 					<p>
-						<label for="SI_NAME"><span class="required">*</span>店長姓名</label>
-						<input type="text" name="SI_NAME" maxlength="8" placeholder="輸入真實姓名" autofocus>
+						<label for="MEM_REALNAME"><span class="required">*</span>店長姓名</label>
+						<input type="text" name="MEM_REALNAME" placeholder="輸入真實姓名">
 					</p>
 					<p>
-						<label for="SI_PHONE"><span class="required">*</span>電&nbsp;&nbsp;話</label>
+						<label for="SI_PHONE"><span class="required">*</span>&nbsp;電話</label>
 						<input type="tel" name="SI_PHONE" placeholder="輸入手機或市話">
 					</p>
 					<p>
@@ -86,12 +112,12 @@ session_start();
 						<input type="number" name="SI_ENDTIME" max="24" min="1" value="21">點
 					</p>
 					<p>
-						<label for="SI_ADDR"><span class="required">*</span>地&nbsp;&nbsp;址</label>
-						<input type="text" name="SI_ADDR" maxlength="8" placeholder="輸入地址門牌號碼" value="<?php //echo $memRow->SI_ADDR;?>">
+						<label for="SI_ADDR"><span class="required">*</span>&nbsp;地址</label>
+						<input type="text" name="SI_ADDR" placeholder="輸入地址門牌號碼">
 					</p>
 					<p>
 						<label for="SI_STORY">&nbsp;故事介紹</label>
-						<textarea name="SI_STORY" maxlength="250" minlength="10" placeholder="字數限250字??">紅色就</textarea>
+						<textarea name="SI_STORY" maxlength="250" minlength="5" placeholder="字數限250字??">紅色就</textarea>
 					</p>
 					<p>
 						<input type="submit" class="btn" value="送出" id="check">

@@ -165,6 +165,7 @@ try {
 		$stmt->execute();
 		if ($stmt->rowCount() == 0) {//找不到對應商家導回首頁
 			header("location:homepage.php");
+
 		} else {
 			$tmpStore = $stmt->fetchObject();
 			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG, $tmpStore->SI_AVG_REVIEW);

@@ -102,6 +102,8 @@
 			$sql="delete from bread_car_path where BCP_NO=$route_del";
 
 			$delBCP=$connectPDO->query($sql);
+
+			echo "11111";
 			
 
 

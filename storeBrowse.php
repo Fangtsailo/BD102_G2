@@ -52,6 +52,10 @@ try {
 		$memPic = GLOBAL_MEM_PIC_PATH.$_SESSION["memPic"];
 	}
 	getStoreInfoById($storeId);
+				//防呆, type 不是1的都導到 shopB.php
+			if ($GLOBALS["store"]->type != 1) {
+				header("location:shopB.php?storeId=$storeId");
+			}
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$breadCarPathCount = 1;//至少有"即時位置"
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
@@ -73,9 +77,9 @@ try {
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
- <div id="loading-page">
+<!--  <div id="loading-page">
  	<div class="content">Loading...</div>
- </div>
+ </div> -->
  <div class="report-mask mask">
  	<div class="report-modal modal">
  		<p>檢舉原因</p>
@@ -293,7 +297,9 @@ try {
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
 					<div class="item" id="big-bread-<?php echo $product->num; ?>">
-						<div class="image"><img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>"></div>
+						<div class="image">
+							<div class="wraper"></div>
+						</div>
 						<div class="describe">
 						<h3><?php echo $product->name; ?><button class="bread-detail" id="bread-detail-<?php echo $product->num; ?>">詳情</button></h3>
 
@@ -309,7 +315,9 @@ try {
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
 				<div class="item pointer col-xs-4">
-					<img alt="<?php echo $product->pictureName; ?>" src="<?php echo $product->pictureName; ?>">
+					<div class="image" id="small-bread-<?php echo $product->num; ?>">
+						<div class="wraper"></div>
+					</div>
 					<p><?php echo $product->name; ?></p>
 				</div>
 		<?php
@@ -488,7 +496,7 @@ try {
 $(document).ready(function(){
 	//loading page
 	// $('#loading-page').delay(2000).fadeOut(1000);
-	$('#loading-page').hide();
+	//$('#loading-page').hide();
 	//檢舉公用變數
 	reportMessageNum = -1;
 	reviewIGave = 0;//若有給予評價的分數
@@ -568,6 +576,11 @@ $(document).ready(function(){
 	 	$('.textLightBox .content p').text(detailContent);
 	 	$('.textLightBox').fadeIn(500);
 	 });
+	 	//商品大背景圖
+	 	$('#big-bread-<?php echo $product->num; ?> .image .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
+	 	//商品列表小背景圖
+	 	$('#small-bread-<?php echo $product->num; ?> .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
+	 	
 	 <?php
 	 	}
 	?>
