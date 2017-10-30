@@ -112,7 +112,7 @@ session_start();
 					</p>
 					<p>
 						<label for="MEM_NAME">匿稱</label>
-						<input type="text" name="MEM_NAME" placeholder="請輸入真實姓名" autofocus value="<?php echo $memRow->MEM_NAME;?>">
+						<input type="text" name="MEM_NAME" placeholder="請輸入暱稱" autofocus value="<?php echo $memRow->MEM_NAME;?>">
 					</p>
 					<p>
 						<label for="MEM_MAIL">信箱</label>
