@@ -112,7 +112,7 @@ $("#submitLogin").click(function(){
         //檢查密碼不可超過六碼
         if ($("#memPsw").val().length < 6 && $("#memPsw").val().length>=0 ){
             $.sweetModal({
-                content: '密碼不得空白',
+                content: '密碼不得空白'
                 icon: $.sweetModal.ICON_WARNING
             });
             $("#memPsw").select();

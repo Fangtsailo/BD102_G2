@@ -136,7 +136,7 @@ try {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
+				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC1, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC1, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
 				array_push($activityArr, $activity);
 			}
 			return $activityArr;
