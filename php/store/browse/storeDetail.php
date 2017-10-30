@@ -47,6 +47,8 @@ try {
 			case 7:
 				$word = "日";
 				break;
+			default:
+				$word = "國定假日";
 		}
 		return $word;
 	}
