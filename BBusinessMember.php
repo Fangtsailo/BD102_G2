@@ -187,6 +187,9 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $memberSearchRow->MEM_NAME; ?></td>
 						<td><?php echo $memberSearchRow->MEM_PHONE; ?></td>
 
+						
+						
+
 
 						
 <!-- =========td pass or not====== -->
@@ -257,7 +260,7 @@ require_once("BackStageHeaderSidebar.php");
 							} else{//if($EMP_STATUS==0)
 
 
-								exit("22222222222222222222222222222"); 
+							
 
 
 						?>
@@ -361,6 +364,12 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $memberRow->MEM_MAIL; ?></td>
 						<td><?php echo $memberRow->MEM_NAME; ?></td>
 						<td><?php echo $memberRow->MEM_PHONE; ?></td>
+
+
+						<?php echo $memberSearchRow->MEM_PHONE; 
+
+						exit();
+						?>
 
 
 <!-- =========td pass or not====== -->

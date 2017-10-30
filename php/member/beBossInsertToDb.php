@@ -24,9 +24,24 @@ try {
 	$siEndTime = $_REQUEST["SI_ENDTIME"];
 	$siStory = $_REQUEST["SI_STORY"];
 
+
+	$memNo=$_SESSION["memNo"];
+
+	$sql_update_memNo = "UPDATE member SET MEM_ROLE='1' where MEM_NO ='$memNo'";
+
+	$sql_update_memNo_table=$connectPDO->query($sql_update_memNo);
+
+
+
 	//編譯該指令
+
+
+
+
 	$sql = "insert into store_imformation (SI_MEMNO, SI_TYPE, SI_NAME, SI_COMFIRM_ID, SI_PHONE, SI_STARTTIME, SI_ENDTIME, SI_STORY)
-			values (null, :siType, :siName, :siComfirmId, :siPhone, :siStartTime, :siEndTime, :siStory)";
+			values ($memNo, :siType, :siName, :siComfirmId, :siPhone, :siStartTime, :siEndTime, :siStory)";
+
+
 
 	// echo $sql;
 
@@ -34,6 +49,7 @@ try {
 	$siRow = $connectPDO->prepare($sql);
 
 	//帶入實際參數資料 (":參數", $實際資料)
+	
 	$siRow->bindValue(":siType", $siType);
 	$siRow->bindValue(":siName", $siName);
 	$siRow->bindValue(":siComfirmId", $siComfirmId);
