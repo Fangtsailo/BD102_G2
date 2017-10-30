@@ -1758,7 +1758,8 @@ section {
         margin: 20px; }
         .homeTopChart .shopItem .shopMessage .memPic img {
           width: 100%;
-          height: 100%; }
+          height: 100%;
+          border-radius: 50%; }
       .homeTopChart .shopItem .shopMessage span {
         display: inline-block;
         float: left;

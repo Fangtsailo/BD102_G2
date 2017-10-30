@@ -23,7 +23,7 @@ try{
 
 	$connectPDO->beginTransaction();
 	//先新增活動文字資訊以取得活動編號
-	$addActSQL = "UPDATE activity SET AC_NAME=:acName,AC_TIME=:acTime,AC_PRICE=:acPrice,AC_INGREDIENT=:acIngrd,AC_MEM_COUNT=:acParticipants,AC_DETAIL1=:ac_detail1,AC_DETAIL2=:ac_detail2,AC_DETAIL3=:ac_detail3,AC_SECOND_NAME=:acSubName,AC_ADDRESS=:acAddress WHERE AC_NO = $acNum";
+	$editActSQL = "UPDATE activity SET AC_NAME=:acName,AC_TIME=:acTime,AC_PRICE=:acPrice,AC_INGREDIENT=:acIngrd,AC_MEM_COUNT=:acParticipants,AC_DETAIL1=:ac_detail1,AC_DETAIL2=:ac_detail2,AC_DETAIL3=:ac_detail3,AC_SECOND_NAME=:acSubName,AC_ADDRESS=:acAddress WHERE AC_NO = $acNum";
 
 	$editActTxt = $connectPDO->prepare($editActSQL);
 	$editActTxt->bindValue(":acName",$_REQUEST["acName"]);
