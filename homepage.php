@@ -165,7 +165,7 @@ require_once("headerForHomePage.php");
 						<div class="clearfix"></div>
 					</div>
 					<div class="searchbar">
-					<input id="searchInput" type="search" name="searchStore" placeholder="輸入您喜愛的麵包店面！">
+					<input id="searchInput" type="search" name="searchName" placeholder="輸入您喜愛的麵包店面！">
 					<button id="searchSubmit" type="button">搜尋</button>
 					</div>
 				</div>
