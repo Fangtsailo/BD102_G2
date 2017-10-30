@@ -26,7 +26,7 @@ try{
 
 	$connectPDO->beginTransaction();
 	//先新增活動文字資訊以取得活動編號
-	$addActSQL = "INSERT INTO activity (AC_STORE_NUM,AC_NAME,AC_TIME,AC_PRICE,AC_INGREDIENT,AC_MEM_COUNT,AC_DETAIL1,AC_DETAIL2,AC_DETAIL3,AC_CHECKSTAY) VALUE (:ac_StoreNum,:acName,:acTime,:acPrice,:acIngrd,:acParticipants,:ac_detail1,:ac_detail2,:ac_detail3,null)";
+	$addActSQL = "INSERT INTO activity (AC_STORE_NUM,AC_NAME,AC_TIME,AC_PRICE,AC_INGREDIENT,AC_MEM_COUNT,AC_DETAIL1,AC_DETAIL2,AC_DETAIL3,AC_CHECKSTAY,AC_SECOND_NAME,AC_ADDRESS) VALUE (:ac_StoreNum,:acName,:acTime,:acPrice,:acIngrd,:acParticipants,:ac_detail1,:ac_detail2,:ac_detail3,null,:acSubName,:acAddress)";
 	$addActTxt = $connectPDO->prepare($addActSQL);
 	$addActTxt->bindValue(":ac_StoreNum",$ac_StoreNum);
 	$addActTxt->bindValue(":acName",$_REQUEST["acName"]);
@@ -37,6 +37,8 @@ try{
 	$addActTxt->bindValue(":ac_detail1",$_REQUEST["ac_detail1"]);
 	$addActTxt->bindValue(":ac_detail2",$_REQUEST["ac_detail2"]);
 	$addActTxt->bindValue(":ac_detail3",$_REQUEST["ac_detail3"]);
+	$addActTxt->bindValue(":acSubName",$_REQUEST["acSubName"]);
+	$addActTxt->bindValue(":acAddress",$_REQUEST["acAddress"]);
 	$addActTxt -> execute();
 	
 	//取得該筆新增活動的活動編號

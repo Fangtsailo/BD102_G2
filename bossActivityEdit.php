@@ -63,9 +63,21 @@ try{
 						</td>
 					</tr>
 					<tr>
+						<th><div>活動副標題</div></th>
+						<td>
+							<input type="text" name="acSubName" value="<?php echo $queryActRow->AC_SECOND_NAME;?>">
+						</td>
+					</tr>
+					<tr>
 						<th><div>活動時間</div></th>
 						<td>
 							<input type="text" name="acTime" value="<?php echo $queryActRow->AC_TIME;  ?>">
+						</td>
+					</tr>
+					<tr>
+						<th><div>活動地點</div></th>
+						<td>
+							<input type="text" name="acAddress" value="<?php echo $queryActRow->AC_ADDRESS;  ?>">
 						</td>
 					</tr>
 					<tr>
