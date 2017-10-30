@@ -9,7 +9,7 @@ function changePanel(){
     $("#visitor").hide(300);
     $('#showAddShopForm').css('display','block');
     $('#visitorForm').css('display','none');
-}
+}   
 
 //登出會員專區
 function logOut(){
@@ -24,6 +24,15 @@ function changeRole() {
     $("#rwdBossRole").replaceWith("<span id='rwdBossRole'>店長專區   <i class='fa fa-plus' aria-hidden='true'></i></span>");
     $("#rwdBossRole").click(function(){
         $('#bossMenu').slideToggle(500);
+        $('#memberMenu').slideToggle(500);
+    });
+    $("#rwdStore").click(function(){
+        event.preventDefault()
+        $("#storeMenu").slideToggle(200);
+    });
+    $("#rwdCar").click(function(){
+        event.preventDefault()
+        $("#carMenu").slideToggle(200);
     });
 }
 

@@ -882,6 +882,8 @@ footer {
         transition: .3s ease; }
     .globalHead #headMemStatus {
       display: none; }
+    .globalHead ul#storeMenu {
+      display: none; }
     .globalHead #menu {
       display: block;
       position: fixed;
