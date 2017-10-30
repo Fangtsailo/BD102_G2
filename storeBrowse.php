@@ -51,7 +51,9 @@ try {
 	if ($memNum != -1) {
 		$memPic = GLOBAL_MEM_PIC_PATH.$_SESSION["memPic"];
 	}
+
 	getStoreInfoById($storeId);
+	
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$breadCarPathCount = 1;//至少有"即時位置"
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
