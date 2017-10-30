@@ -47,6 +47,8 @@ try {
 			case 7:
 				$word = "日";
 				break;
+			default:
+				$word = "國定假日";
 		}
 		return $word;
 	}
@@ -110,6 +112,7 @@ try {
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
+
 		if ($stmt->rowCount() == 0) {
 			return array();
 		} else {
@@ -183,8 +186,7 @@ try {
 			return array();
 		} else {
 			while($path = $stmt->fetchObject()) {
-				$nowLocationStr = "{lat:".$path->si_lat.", lng:".$path->si_lng."}";
-				$breadCarPath = new BreadCarPath($path->bcp_describe, $nowLocationStr, $path->bcp_location);
+				$breadCarPath = new BreadCarPath($path->bcp_describe, $path->si_lat, $path->si_lng, $path->bcp_location);
 				array_push($breadCarPathArr, $breadCarPath);
 			}
 			return $breadCarPathArr;
