@@ -156,14 +156,14 @@ try{
 
 			<script>
 				$(document).ready(function (){
-					$('.search_storeImg').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');			
+					$('#search_Pic_<?php echo $searchRow->SI_NUM ?>').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');			
 
 
 				});
 			</script>
 
 			<div class="search_storeOne">
-				<div class="search_storeImg col-sm-3 col-xs-12">
+				<div class="search_storeImg col-sm-3 col-xs-12" id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
 					<!-- <img src="img/search-store.png"> -->
 				</div>
 				<div class="search_storeContent col-sm-6 col-xs-12">

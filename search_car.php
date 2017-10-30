@@ -167,7 +167,7 @@ try{
 			<script type="text/javascript">
 				$(document).ready(function (){
 					
-					$('.search_storeImg').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');
+					$('#search_Pic_<?php echo $searchRow->SI_NUM ?>').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');
 					$('#car-<?php echo $searchRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
 						$('.search_storeOne').css("background-color","transparent");
@@ -182,7 +182,7 @@ try{
 			</script>
 
 				<div class="search_storeOne" id="car-<?php echo $searchRow->SI_NUM ?>" data-lat="<?php echo $searchRow->SI_LAT ?>" data-lng="<?php echo $searchRow->SI_LNG ?>">
-						<div class="search_storeImg col-sm-5 col-xs-4"></div>
+						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $searchRow->SI_NUM ?>"></div>
 						
 						<div class="search_storeContent col-sm-7 col-xs-8">
 							<h2><a href="storeBrowse.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
