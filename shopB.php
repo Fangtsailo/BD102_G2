@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SSSHOP</title>
+    <title>TrePun</title>
     <link rel="icon" href="img/trepun4.png">
     <link rel="stylesheet" type="text/css" href="css/basic.css">
     <link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
@@ -128,8 +128,6 @@ require_once("header.php");
 				 </div>
  			</div>
  		</div>
-
-
 
 
 		
