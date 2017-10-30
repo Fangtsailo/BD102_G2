@@ -53,7 +53,7 @@ session_start();
 		 ?>
 				<div class="myfollow">
 					
-					<a href="storeBrowse.php?storeId=<?php echo $selectFollowRow->SI_NUM; ?>"><img src="img/storeBgImg/<?php echo $shopBgd;?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
+					<a href="storeBrowse.php?storeId=<?php echo $selectFollowRow->SI_NUM; ?>"><img src="img/storeBgImg/<?php echo $shopBgd;?>.jpg"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
 					<ul>
 						<?php 
 							$starAmt = $selectFollowRow->reviews;
