@@ -169,7 +169,7 @@ session_start();
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value=""></td>
+				<td><input type="text" name="PD_PRICE" placeholder="請輸入價格" value=""></td>
 				</tr>
 
 

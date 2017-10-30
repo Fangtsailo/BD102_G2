@@ -184,7 +184,7 @@ session_start();
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value="<?php echo $product_one_Row->PD_PRICE; ?>"></td>
+				<td><input type="text" name="PD_PRICE" placeholder="請輸入價格" value="<?php echo $product_one_Row->PD_PRICE; ?>"></td>
 				</tr>
 
 
@@ -194,7 +194,7 @@ session_start();
 				<tr>
 				<th><div>簡介</div></th>
 				<td>
-					<textarea name="PD_INTRO" placeholder="限500字"><?php echo $product_one_Row->PD_INTRO; ?></textarea>
+					<textarea name="PD_INTRO" placeholder="限100字" maxlength="100"><?php echo $product_one_Row->PD_INTRO; ?></textarea>
 				</td>
 				</tr>
 
