@@ -92,9 +92,8 @@ try {
 		//啟動交易管理
 		$connectPDO->beginTransaction();
 		//寫入主檔
-		$newShopSQL = "insert into store_imformation (SI_MEMNO,SI_NAME,SI_STORY,SI_ADDR,SI_STARTTIME,SI_ENDTIME,SI_TYPE,SI_PHONE,SI_ADDDATE,SI_POSITION,SI_SELLSTAY,SI_LNG,SI_LAT) values (:memNo,:storeName,:story,:address,:startTime,:endTime,:storeType,:tel,:addDate,:position,1,:lng,:lat)";
+		$newShopSQL = "insert into store_imformation (SI_NAME,SI_STORY,SI_ADDR,SI_STARTTIME,SI_ENDTIME,SI_TYPE,SI_PHONE,SI_ADDDATE,SI_POSITION,SI_SELLSTAY,SI_LNG,SI_LAT) values (:storeName,:story,:address,:startTime,:endTime,:storeType,:tel,:addDate,:position,1,:lng,:lat)";
 		$addShop = $connectPDO->prepare( $newShopSQL );
-		$addShop->bindValue(":memNo" ,$_SESSION["memNo"] );
 		$addShop->bindValue(":storeName" ,$_REQUEST["storeName"] );
 		$addShop->bindValue(":story" ,$_REQUEST["story"] );
 		$addShop->bindValue(":address" ,$_REQUEST["address"] );
