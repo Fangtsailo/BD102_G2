@@ -53,7 +53,12 @@ try {
 	}
 
 	getStoreInfoById($storeId);
-	
+
+				//防呆, type 不是1的都導到 shopB.php
+			if ($GLOBALS["store"]->type != 1) {
+				header("location:shopB.php?storeId=$storeId");
+			}
+
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$breadCarPathCount = 1;//至少有"即時位置"
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);

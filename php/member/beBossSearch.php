@@ -25,7 +25,7 @@ try {
 	$_SESSION["SI_NAME"] = $siName;
 	
 	//連線到資料庫
-	require_once("..\pdo\connectPDO.php");
+	require_once("../PDO/connectPDO.php");
 
 	//比對資料庫中是否有此店型的店名
 	$sql = "select * from store_imformation where SI_TYPE='$siType' and SI_NAME='$siName'";

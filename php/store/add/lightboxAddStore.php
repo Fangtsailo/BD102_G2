@@ -80,7 +80,15 @@ try {
 								break;
 						} //switch
 
+
+			//若新增胖小車，則經緯度儲存為0;
+			if($_REQUEST["storeType"] == 1){
+				$_REQUEST["SI_lng"]=0;
+				$_REQUEST["SI_lat"]=0;
+			}
+
 		require_once("../../PDO/connectPDO.php");
+
 		//啟動交易管理
 		$connectPDO->beginTransaction();
 		//寫入主檔

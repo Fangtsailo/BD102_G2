@@ -158,8 +158,6 @@ $("#submitLogin").click(function(){
                           location.reload();
                         }
                     });
-
-
                 }  
               }else{//server端無法順利的執行完畢,產生錯誤
                 alert( xhr.status );
@@ -402,27 +400,17 @@ $("#headSearch").blur(function(){
           }
           
           //將地址轉經緯度
-          // globalMap = new google.maps.Map(document.getElementById("map"), {
-          // zoom: 16,
-          // center: {lat: 24.965356, lng: 121.191038}
-          // });
+          
           var address = document.getElementById("address").value;
             geocoder = new google.maps.Geocoder();
             geocoder.geocode( { 'address': address}, function(results, status) {
               if (status == google.maps.GeocoderStatus.OK) {
-                // globalMap.setCenter(results[0].geometry.location);
+                
                 var lat =results[0].geometry.location.lat();
                 document.getElementById("SI_lat").value = lat ; 
                 var lng =results[0].geometry.location.lng();
                 document.getElementById("SI_lng").value = lng ; 
-                console.log(lng);
-                console.log(lat);
-                // document.getElementById("lat").value=results[0].geometry.location.lat();
-                // document.getElementById("lng").value=results[0].geometry.location.lng();
-                // var marker = new google.maps.Marker({
-                //     map: globalMap,
-                //     position: results[0].geometry.location
-                // });
+               
               } else {
                 alert("失敗, 原因: " + status);
               }

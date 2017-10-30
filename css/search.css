@@ -1227,7 +1227,6 @@ img {
       box-sizing: border-box; }
       .search_store .search_storeOne .search_storeContent h2 a {
         overflow: hidden;
-        -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         width: 100%;
         white-space: nowrap;
@@ -1276,7 +1275,6 @@ img {
           .search_store .search_storeOne .search_storeContent .search_storeInfor ul li {
             list-style: none;
             overflow: hidden;
-            -o-text-overflow: ellipsis;
             text-overflow: ellipsis;
             width: 100%;
             white-space: nowrap; }

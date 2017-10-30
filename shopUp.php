@@ -84,7 +84,7 @@ require_once("BackStageHeaderSidebar.php");
 								left join member 
 								on store_imformation.SI_MEMNO = member.MEM_NO
 								where store_imformation.SI_TYPE = 0
-								group by store_imformation.SI_MEMNO
+								group by store_imformation.SI_NUM
 								order by SI_NUM DESC";
 
 						$shopinfo = $connectPDO->query($sql);

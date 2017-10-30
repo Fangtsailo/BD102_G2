@@ -569,7 +569,7 @@ session_start();
 							echo '<img class="preview preview_1" src="">';
 							}else{
 
-								echo '<img class="preview preview_1" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_1.'">';
+								echo '<img class="preview preview_1" src="img/store/banners/'.$store_imformationRow->SI_BIMG_1.'">';
 							}
 						}else{
 							echo '<img class="preview preview_1" src="">';
@@ -603,7 +603,7 @@ session_start();
 							echo '<img class="preview preview_2" src="">';
 							}else{
 
-								echo '<img class="preview preview_2" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_2.'">';
+								echo '<img class="preview preview_2" src="img/store/banners/'.$store_imformationRow->SI_BIMG_2.'">';
 							}
 
 						}else{
@@ -641,7 +641,7 @@ session_start();
 							
 							}else{
 
-								echo '<img class="preview preview_3" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_3.'">';
+								echo '<img class="preview preview_3" src="img/store/banners/'.$store_imformationRow->SI_BIMG_3.'">';
 							}
 						}else{
 
