@@ -809,6 +809,7 @@ footer {
 	color:$globalBtnColor;
 	background-color: $globalBgColor;
 	transition: .3s ease;
+	outline:none;
 	&:hover {
 	background-color: $globalBtnColor;
 	color:$globalBgColor;
@@ -1056,6 +1057,24 @@ footer {
 						&:focus {
 							background-color: rgba(158, 105, 61, .5);
 							transition: .3s;
+						}
+					}
+					ul#bossMenu {
+						li {
+							ul#storeMenu {
+								li {
+									a.bossMenu {
+										background-color: rgba(35, 22, 11, 0.22);
+									}
+								}
+							}
+							ul#carMenu {
+								li {
+									a.bossMenu {
+										background-color: rgba(35, 22, 11, 0.22);
+									}
+								}
+							}
 						}
 					}
 					&.myActivity {

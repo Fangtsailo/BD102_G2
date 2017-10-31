@@ -283,7 +283,7 @@ require_once("headerForHomePage.php");
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
 						$('.search_storeOne').css("background-color","transparent");
-						$(this).css("background-color","rgba(234, 178, 96, 0.5)");
+						// $(this).css("background-color","rgba(234, 178, 96, 0.5)");
 					});
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').hover(function(){
 						// $('.search_storeOne').css("background-color","transparent");

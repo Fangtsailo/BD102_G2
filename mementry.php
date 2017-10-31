@@ -32,7 +32,36 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+								<?php 
+
+					try{
+					require_once("php/pdo/connectPDO.php");
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
 			</ul>
 		</div>
 		
@@ -43,8 +72,7 @@ session_start();
 
 		<?php 
 		$memNo = $_SESSION["memNo"];
-		try{
-			require_once("php/PDO/connectPDO.php");
+		
 			$selectActSQL = "SELECT act.AC_NO ,act.AC_NAME,act.AC_TIME,act.AC_ADDRESS,act.AC_PRICE,act.AC_BANNER1,s.SI_NAME FROM activity act JOIN ac_info info ON act.AC_NO = info.AC_NO JOIN store_imformation s ON s.SI_NUM = act.AC_STORE_NUM  WHERE info.MEM_NO='$memNo' GROUP BY info.AC_NO ";
 			$selectAct = $connectPDO->query($selectActSQL);
 			while ( $selectActRow = $selectAct->fetchObject() ){
