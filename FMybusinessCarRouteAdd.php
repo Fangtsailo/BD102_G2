@@ -811,7 +811,7 @@ session_start();
 
 						
 
-						echo $centerLocation_1[0];
+						echo $centerLocation_1[0].','.$centerLocation_1[1];
 
 					}else{
 						echo '{lat: 24.967779, lng: 121.192124}';
@@ -919,7 +919,20 @@ session_start();
 
    	function initMap2() {
         map2 = new google.maps.Map(document.getElementById('map2'), {
-          center: {lat: 24.967779, lng: 121.192124},
+          center:  <?php 
+					if( isset($BCP_LOCATION[1]) ) {
+						
+						$centerLocation_2=explode(",",$BCP_LOCATION[1]);
+
+						
+
+						echo $centerLocation_2[0].','.$centerLocation_2[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
@@ -1006,7 +1019,20 @@ session_start();
 
    	function initMap3() {
         map3 = new google.maps.Map(document.getElementById('map3'), {
-          center: {lat: 24.967779, lng: 121.192124},
+          center: <?php 
+					if( isset($BCP_LOCATION[2]) ) {
+						
+						$centerLocation_3=explode(",",$BCP_LOCATION[2]);
+
+						
+
+						echo $centerLocation_3[0].','.$centerLocation_3[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
