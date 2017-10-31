@@ -624,7 +624,8 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
-  transition: .3s ease; }
+  transition: .3s ease;
+  outline: none; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;

@@ -809,6 +809,7 @@ footer {
 	color:$globalBtnColor;
 	background-color: $globalBgColor;
 	transition: .3s ease;
+	outline:none;
 	&:hover {
 	background-color: $globalBtnColor;
 	color:$globalBgColor;
