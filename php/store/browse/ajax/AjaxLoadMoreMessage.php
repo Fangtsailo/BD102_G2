@@ -24,7 +24,7 @@ if (isset($_REQUEST["messagePage"]) && isset($_REQUEST["storeId"]) && isset($_RE
 			while($row = $stmt->fetchObject()) {
 				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
 				//這筆留言有沒有被此登入的 member 檢舉過
-				$sql = "SELECT * FROM report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
+				$sql = "SELECT * FROM report WHERE SPMSG_NO={$row->SPMSG_NO} and MEM_NO={$loginMemNum}";
 				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
 				if ($row = $stmt2->fetchObject()) {
 					$message->isReportByMe = true;

@@ -259,6 +259,55 @@ function loadMoreMessage(storeId, loginMemNum) {
 	  xhr.open("Get", url, true);
 	  xhr.send( null );
 }
+function loadMoreMessage2(storeId, loginMemNum) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	        var messageListObj = JSON.parse(xhr.responseText);
+	        nowMessagePage++;
+	        var html = "";
+	        for (var key in messageListObj) {
+	        	html +=	'<div class="message-box">'
+					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
+					+	'	<div class="content col-lg-10">'
+					+	'		<div class="container">'
+					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
+					+	'			<p>'+ messageListObj[key].content +'</p>'
+					+	'			<div class="setting-area">'
+					+	'				<div class="report pointer button" data-id="'+ messageListObj[key].no +'" id="msg-'+ messageListObj[key].no + '">'
+					+	'					<p>檢舉</p>'
+					+	'			</div></div>'
+					+	'			<div class="clearfix"></div>'
+					+	'		</div>'
+					+	'	</div>'
+					+	'	<div class="clearfix"></div>'
+					+	'</div>';
+	        }
+	        $('#messages-area').append(html);
+	        $('#messages-area').append($('#more-message'));
+	        //ajax載入的檢舉要加事件
+	        for (var key in messageListObj) {
+	        	if (messageListObj[key].isReportByMe == true) {
+			   		$('#msg-' + messageListObj[key].no).addClass('reported');
+			   		$('#msg-' + messageListObj[key].no + ' p').text('已檢舉');
+				}
+	        	$('#msg-'+ messageListObj[key].no).on('click', function(){
+					var id = $(this).attr('data-id');
+						reportMessage(id, loginMemNum);
+
+				});	
+	        }
+	       }else{
+	          console.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxLoadMoreMessage.php?messagePage=" + nowMessagePage + "&storeId=" + storeId + "&loginMemNum=" + loginMemNum;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );
+}
 	//胖小車即時位置地圖
 function initBreadCarNowLocationMap(id, lat, lng) {
 	if ((lat != '' && lng != '') || (lat != 0 && lng != 0)) {
