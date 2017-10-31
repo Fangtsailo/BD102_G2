@@ -95,7 +95,7 @@ require_once("BackStageHeaderSidebar.php");
 					<tr>
 						<td>活動編號</td>
 						<td>店家編號</td>
-						<td>店家名稱</td>
+						<td>活動名稱</td>
 						<td>活動日期</td>
 						<td>活動內容</td>
 						<td>審核狀態</td>
@@ -156,7 +156,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $prodRow->AC_NO; ?></td>
 						<td><?php echo $prodRow->AC_STORE_NUM ;?></td>
 						
-						<td><?php echo $prodRow->SI_NAME; ?></td>
+						<td><?php echo $prodRow->AC_NAME; ?></td>
 						<td><?php echo $prodRow->AC_TIME; ?></td>
 
 						

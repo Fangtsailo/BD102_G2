@@ -89,7 +89,7 @@
 							}
 						}
 						input[type=file] {
-							display:block;
+							display:none;
 						}
 						&.uploadPic {
 							height: 100px;
@@ -97,19 +97,39 @@
 						
 						label {
 							display: inline-block;
-							margin: auto;
-							width: 30%;
-							margin: 10px 0px;
-							cursor: pointer;
-							border:1px dotted $globalAltColor;
+							width:30%;
+							margin: auto;							
+							&.upload {
+								width: 30%;
+								background-color: #eee;
+								cursor: pointer;
+								height: 80px;
+								float: left;
+								box-sizing:border-box;
+								padding: 10px;
+								border-radius: 10px;
+							}
+							&.showImg {
+								width: 70%;
+								height: 100%;
+								display:inline-block;
+								height: 80px;
+								float: left;
+								box-sizing:border-box;
+							}
 							img {
 								display: block;
 								margin: auto;
 								width: 60px;
 								height: 40px;
-
-
+								&.image {
+									width: 33%;
+									height: 80px;
+									object-fit:cover;
+									display:inline-block;
+								}
 							}
+
 							span {
 								display: block;
 								margin: auto;
@@ -171,9 +191,15 @@
 					width: 100%;
 					overflow:hidden;
 					tr {
-						
+						th {
+							div {
+								font-size: 16px;
+							}
+						}
 						td{
-								
+							input {
+								height: 50%;
+							}
 							a {
 								width: 100%;
 								color:#666;

@@ -38,7 +38,7 @@ header {
       color: #000;
       font-size: 13px;
       text-indent: 10px;
-      font-family: "Noto Sans CJK TC"; }
+      font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 .tableHeaderCover {
   width: 100%;

@@ -69,7 +69,39 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+				
+				<?php 
+
+					try{
+					require_once("php/pdo/connectPDO.php");
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
+
+
 			</ul>
 		</div>
 		
@@ -84,8 +116,7 @@ session_start();
 				$memId=isset($_SESSION["memId"])? $_SESSION["memId"] : "";
 				$info =isset($_REQUEST["info"])? $_REQUEST["info"] : "";
 
-				try{
-					require_once("php/pdo/connectPDO.php");
+				
 					$sql = "select * from member where MEM_ID='$memId'";
 					$member = $connectPDO->query($sql);
 					// if($member->rowCount()==0){

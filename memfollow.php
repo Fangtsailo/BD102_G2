@@ -32,7 +32,36 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+								<?php 
+
+					try{
+					require_once("php/pdo/connectPDO.php");
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
 			</ul>
 		</div>
 
@@ -44,8 +73,7 @@ session_start();
 			<section class="col-xs-12 col-sm-3 section1000">
 		<?php 
 		$memNo = $_SESSION["memNo"];
-		try{
-			require_once("php/PDO/connectPDO.php");
+		
 			$selectFollowSQL = "SELECT s.SI_NUM,s.SI_NAME,s.SI_PHONE,s.SI_BIMG_1,s.SI_ADDR,SUBSTRING(f.FL_TIME,1,10) followTime,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO='$memNo' AND s.SI_NUM = r.SI_NUM GROUP BY s.SI_NUM ";
 			$selectFollow = $connectPDO->query($selectFollowSQL);
 			while ( $selectFollowRow = $selectFollow->fetchObject() ){

@@ -50,7 +50,7 @@ require_once("BackStageHeaderSidebar.php");
 					try{
 						require_once("php/pdo/connectPDO.php");
 						$AcNo=$_REQUEST["AcNo"];
-						$sql="select * from activity,store_imformation where Ac_No='$AcNo'";
+						$sql="select * from activity,store_imformation where Ac_No='$AcNo' and activity.AC_STORE_NUM=  store_imformation.SI_NUM";
 						$activity=$connectPDO->query($sql);
 						$prodRow = $activity->fetchObject();
 
