@@ -293,7 +293,7 @@ require_once("headerForHomePage.php");
 
 			</script>
 					<div class="search_storeOne" id="car-<?php echo $mapCarRow->SI_NUM ?>" data-lat="<?php echo $mapCarRow->SI_LAT ?>" data-lng="<?php echo $mapCarRow->SI_LNG ?>">
-						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
+						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $mapCarRow->SI_NUM ?>">
 							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">
