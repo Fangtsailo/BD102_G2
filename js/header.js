@@ -81,6 +81,7 @@ var bodyClass = document.body.classList,
 
   //點選登入按鈕
 	$('#headMemLogin,#rwdLoginBtn,#lightboxNeedlogIn').click(function(){
+    $("body").css("position","fixed");  //ios11 bug fixed
 		$('#loginBox').fadeIn(500);
     $("#menu").removeClass("show");
     $('#addShopBox').hide();
@@ -104,6 +105,7 @@ var bodyClass = document.body.classList,
 
 //關閉燈箱按鈕
 	$('.closeBtn,#cancelLogin,#closeBtn01,#closeBtn02').click(function(){
+      $("body").css("position","static"); //ios11 bug fixed
 			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
       $("#loginForm")[0].reset();
@@ -311,7 +313,7 @@ $('#headSearchSubmit').click(function(){ //送出表單
 
 
 //header.php選擇送出查詢的頁面是胖小車或店家(rwd)
-$(".selectType input[name=shopType]").change(function(){
+$(".rwdsearchItem input[name=shopType]").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#rwdsearchForm").attr("action",action);
 });

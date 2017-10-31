@@ -176,7 +176,7 @@ session_start();
 	<table class="tableHeader">
 	
 			<tr class="tabletitle" >
-			<th>定位 <?php echo $store_imformation->rowCount(); ?></th>
+			<th>定位</th>
 			<td>
 				到達定點時，請按下【定位】圓鈕，系統會自動將您的目前位置發送至地圖上。
 			</td>

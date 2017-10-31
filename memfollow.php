@@ -49,7 +49,7 @@ session_start();
 			$selectFollowSQL = "SELECT s.SI_NUM,s.SI_NAME,s.SI_PHONE,s.SI_BIMG_1,s.SI_ADDR,SUBSTRING(f.FL_TIME,1,10) followTime,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO='$memNo' AND s.SI_NUM = r.SI_NUM GROUP BY s.SI_NUM ";
 			$selectFollow = $connectPDO->query($selectFollowSQL);
 			while ( $selectFollowRow = $selectFollow->fetchObject() ){
-				$shopBgd = (isset($selectFollowRow->SI_BIMG_1))?$selectFollowRow->SI_BIMG_1.".jpg":"default.png";
+				$shopBgd = (isset($selectFollowRow->SI_BIMG_1))?$selectFollowRow->SI_BIMG_1:"default.png";
 		 ?>
 				<div class="myfollow">
 					
@@ -75,7 +75,7 @@ session_start();
 						<img src="img/memimg/mappointer2.svg">
 					</a>
 					<time>
-                    	收藏日期：<?php echo $selectFollowRow->followTime ; ?>
+                    	收藏日期：<?php echo date("Y/m/d H:i", $selectFollowRow->followTime) ; ?>
                     </time>
 				</div>
 

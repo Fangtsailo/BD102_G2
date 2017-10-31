@@ -50,11 +50,6 @@
 					<input type="button" name="submit" class="globalOkBtn" id="submitLogin" value="登入">					
 				</div>
 				
-				<div class="facebookLogin">
-					<a href="#">
-					Facebook帳號登入</a>
-				</div>
-				
 				<div class="registerLink">
 					<span id="changeToRegister">還沒有帳號？ 註冊成為PUN友</span>
 				</div>
@@ -104,10 +99,7 @@
 					<input id="submitRegister" type="button" name="SubmitRegister" class="globalOkBtn" value="註冊">					
 				</div>
 				
-				<div class="facebookRegister">
-					<a href="#">
-					Facebook帳號註冊</a>
-				</div>
+				
 				
 				<div class="loginLink">
 					<span id="changeToLogin">已經有帳號，返回登入頁面</span>

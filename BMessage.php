@@ -218,16 +218,16 @@ require_once("BackStageHeaderSidebar.php");
 	
 						<?php 
 						
-						echo $repRow->RE_STATUS;
 						
-						if ($re==0) { ?>
+						
+						if ($re=="0") { ?>
 							
 							<script type="text/javascript">
 									$('#del<?php echo $repRow->RE_NO; ?>').css('background-color','rgba(181, 181, 181, 1)');
 									$('#pass<?php echo $repRow->RE_NO; ?>').css('background-color','#00c853');
 						   </script>
 					
-					<?php }elseif($re==1){  ?>
+					<?php }elseif($re=="1"){  ?>
 
 
 							<script type="text/javascript">
@@ -245,9 +245,9 @@ require_once("BackStageHeaderSidebar.php");
 
 					?>				
 								<script type="text/javascript">
-									$('#pass<?php echo $repRow->RE_NO; ?>').css('background-color','#000');
+									$('#pass<?php echo $repRow->RE_NO; ?>').css('background-color','#00c853');
 
-									$('#del<?php echo $repRow->RE_NO; ?>').css('background-color',"#000");
+									$('#del<?php echo $repRow->RE_NO; ?>').css('background-color',"#af6363");
 
 
 								</script>

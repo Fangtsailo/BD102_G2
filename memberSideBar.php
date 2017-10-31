@@ -13,7 +13,7 @@ require_once("php/pdo/connectPDO.php");
 				
 				
 					<div>
-						<a href=""><h2>會員專區</h2>
+						<a href="memedit.php"><h2>會員專區</h2>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60">
 								<defs>
 									<style>

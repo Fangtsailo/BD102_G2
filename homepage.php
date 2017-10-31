@@ -11,7 +11,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-1.8.0/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/homepage.css">
 	<!-- 套件區 -->
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -271,7 +271,6 @@ require_once("headerForHomePage.php");
 			while($mapCarRow=$mapCar->fetchObject()){
 
 				$type = ($mapCarRow->SI_TYPE == 1) ? "storeBrowse.php" : "shopB.php" ;
-				$mapStoreBgd = (isset($mapCarRow->SI_BIMG_1))? $mapCarRow->SI_BIMG_1 : "default.png" ;
 				if ($firstCarNum == -1) {
 					$firstCarNum = $mapCarRow->SI_NUM;
 				}
@@ -280,7 +279,7 @@ require_once("headerForHomePage.php");
 		 <script type="text/javascript">
 				$(document).ready(function (){
 					
-					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$mapStoreBgd; ?>") center center').css('background-size','cover');
+					$('#search_Pic_<?php echo $mapCarRow->SI_NUM ?>').css('background','url("<?php echo $mapCarRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$mapCarRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
 						$('.search_storeOne').css("background-color","transparent");
@@ -294,7 +293,7 @@ require_once("headerForHomePage.php");
 
 			</script>
 					<div class="search_storeOne" id="car-<?php echo $mapCarRow->SI_NUM ?>" data-lat="<?php echo $mapCarRow->SI_LAT ?>" data-lng="<?php echo $mapCarRow->SI_LNG ?>">
-						<div class="search_storeImg col-sm-5 col-xs-4">
+						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $mapCarRow->SI_NUM ?>">
 							
 						</div>
 						<div class="search_storeContent col-sm-7 col-xs-8">

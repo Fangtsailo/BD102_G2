@@ -171,7 +171,8 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
-    display: none; }
+    display: none;
+    z-index: 999; }
     .globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
@@ -1093,18 +1094,22 @@ footer {
         cursor: pointer; } }
 
 @media screen and (max-width: 400px) {
-  .globalHead .headLoginBox .globalForm {
-    width: 100%;
-    margin-top: 80px;
-    height: 90vh; }
-    .globalHead .headLoginBox .globalForm .globalFormHeader img {
-      width: 120px; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
-      padding: 10px auto; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
-      margin: 10px auto; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
-      width: 60%; }
+  .globalHead .headLoginBox {
+    position: absolute; }
+    .globalHead .headLoginBox .globalForm {
+      width: 100%;
+      margin-top: 80px;
+      height: 90%; }
+      .globalHead .headLoginBox .globalForm .globalFormHeader img {
+        width: 120px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        padding: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+        margin: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        width: 60%; }
   .globalHead .headRegisterBox .globalForm {
     width: 100%;
     margin-top: 80px;
@@ -1113,6 +1118,8 @@ footer {
       width: 120px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
       width: 90%; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
 
