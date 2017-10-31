@@ -38,7 +38,7 @@ try {
 	//將統編或車牌更新到商家資料表
 	$memNo=$_SESSION["memNo"];
 
-	$sql_update_memNo = "UPDATE member SET MEM_ROLE='1' where MEM_NO ='$memNo'";
+	$sql_update_memNo = "UPDATE member SET MEM_ROLE='1' , SI_CHECKSTAY = null where MEM_NO ='$memNo'";
 
 	$sql_update_memNo_table=$connectPDO->query($sql_update_memNo);
 
