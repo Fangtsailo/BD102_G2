@@ -2040,7 +2040,7 @@ section {
     height: 100%;
     float: right;
     padding: auto 0px;
-    background-color: rgba(50, 25, 0, 0.7); }
+    background-color: #0a0a0a; }
     .homeActivity .activityItem #chooseActUp {
       width: 80px;
       height: 15%;
@@ -2371,7 +2371,7 @@ section {
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical; }
           .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul {
             width: 100%;

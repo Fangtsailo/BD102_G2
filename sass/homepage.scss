@@ -1170,7 +1170,7 @@ section {
 		float: right;
 		padding:auto 0px;
 		// margin-right: 10%;
-		background-color: rgba(50, 25, 0, 0.7);
+		background-color: rgba(10, 10, 10, 1);
 		#chooseActUp {
 				width: 80px;
 				height: 15%;
@@ -1610,7 +1610,7 @@ section {
 						overflow : hidden;
 						text-overflow: ellipsis;
 						display: -webkit-box;
-						-webkit-line-clamp: 5;
+						-webkit-line-clamp: 3;
 						-webkit-box-orient: vertical;
 					}
 					ul {
