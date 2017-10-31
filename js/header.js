@@ -69,7 +69,7 @@ var bodyClass = document.body.classList,
           bodyClass.add('hideUp');
           $("#menu").removeClass("show");
           $("#burgerBtn").removeClass("active");
-          $("#rwdSearchBar").removeClass("activeSearch");
+          // $("#rwdSearchBar").removeClass("activeSearch");
           $("#rwd-HeaderLink").removeClass("showMenu");
           $("#left-burgerBtn").removeClass("active");
           $('#memStatusBar').slideUp(300);
