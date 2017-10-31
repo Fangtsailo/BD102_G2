@@ -353,7 +353,7 @@
 
 					</li>
 					
-					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+					<li><a class="navItem bossMenu" href="#" id="rwdCar">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a>
 
 				<?php 
 
