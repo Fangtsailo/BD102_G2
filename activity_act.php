@@ -35,8 +35,37 @@ session_start();
 
 <!-- ======================================================開始寫========================================================= -->
 
-	
+		
+			{
 
+			?>
+			<script type="text/javascript">
+				window.onload=check;
+				function check(){
+					<?php 
+						if  (isset($_REQUEST["success"])) {          ?>							$.sweetModal({
+								buttons: [
+									{
+										label: '回首頁',
+										classes: ' orangeB '
+									}
+								]
+							});
+					<?php 	}
+					 ?>
+				}
+			</script>
+				
+
+<?php 
+		}
+
+		 ?>
+			
+		<?php endif ?>
+		<script type="text/javascript">
+			function()
+		</script>
 
 	
 
@@ -374,7 +403,7 @@ session_start();
 												<div class="clearfix"></div>
 												<div class="globalFormBtns">
 													<input class="globalCancelBtn btnTop" type="reset" value="取消">
-													<input type="buttom" name="" class="globalOkBtn btnTop" value="送出" id="actSubmit">					
+													<input type="button" name="" class="globalOkBtn btnTop" value="送出" id="actSubmit">					
 												</div>
 
 											</div>
@@ -417,7 +446,7 @@ session_start();
 														icon: $.sweetModal.ICON_SUCCESS,
 														width: '300px',
 														theme: $.sweetModal.THEME_MIXED,
-														timeout:1000;
+													
 														onClose: function(){
 												              $( "#actform" ).submit();
 												         }
