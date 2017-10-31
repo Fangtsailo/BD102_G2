@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 a {
   text-decoration: none;
@@ -1288,7 +1288,7 @@ header {
             /* WebKit browsers */
             color: #999;
             font-size: 13px;
-            font-family: "Noto Sans CJK TC";
+            font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi";
             background-color: #FBF8F1;
             text-indent: 6px;
             line-height: 20px; }

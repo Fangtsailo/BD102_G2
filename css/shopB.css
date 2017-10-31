@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 a {
   text-decoration: none;
@@ -1153,10 +1153,10 @@ footer {
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 a {
   text-decoration: none;

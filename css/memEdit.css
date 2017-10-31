@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 a {
   text-decoration: none;
@@ -1197,7 +1197,7 @@ img {
 input, textarea {
   outline: none;
   padding: 2px;
-  font-family: "Noto Sans CJK TC";
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi";
   font-weight: lighter; }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
