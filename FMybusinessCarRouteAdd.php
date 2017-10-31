@@ -803,7 +803,22 @@ session_start();
 
    	function initMap1() {
         map1 = new google.maps.Map(document.getElementById('map1'), {
-          center: {lat: 24.967779, lng: 121.192124},
+
+          center: <?php 
+					if( isset($BCP_LOCATION[0]) ) {
+						
+						$centerLocation_1=explode(",",$BCP_LOCATION[0]);
+
+						
+
+						echo $centerLocation_1[0];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
+					
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
