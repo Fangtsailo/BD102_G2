@@ -5,6 +5,8 @@
   left: 0;
   top: 160px;
   z-index: 99;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s; }
   .LeftBusiness .nav-Group1 {
     margin-top: 30px; }
@@ -161,4 +163,6 @@
 
 .leftBarUp {
   top: 80px;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s; }

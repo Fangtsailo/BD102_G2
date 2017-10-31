@@ -44,7 +44,7 @@ try {
 
 
 	
-	$sql = "update store_imformation set SI_MEMNO='$memNo' , SI_COMFIRM_ID=:siComfirmId where  SI_TYPE='$siType' and SI_NAME='$siName'";
+	$sql = "update store_imformation set SI_MEMNO='$memNo' , SI_COMFIRM_ID=:siComfirmId , SI_CHECKSTAY = null where  SI_TYPE='$siType' and SI_NAME='$siName'";
 	$siRow = $connectPDO->prepare($sql);
 	$siRow->bindValue(":siComfirmId", $siComfirmId);
 	$siRow->execute();
