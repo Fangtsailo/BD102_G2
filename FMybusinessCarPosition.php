@@ -182,7 +182,8 @@ session_start();
 			</td>
 			</tr>
 			<tr>
-				<td id="map" colspan="2">
+				
+				<td id="map2" colspan="2">
 					<!-- <img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map"> -->
 					
 				</td>
@@ -190,7 +191,7 @@ session_start();
 	
 			<tr>
 				<td id="" colspan="2">
-					<img id="position_btn" src="img/icon/mapAim.png" style="cursor: pointer;">
+					<img id="position_btn" src="img/icon/aim.png" style="cursor: pointer;">
 				</td>
 			</tr>
 		
@@ -217,8 +218,9 @@ session_start();
 
 			$('#livePosition').val(SI_NUM);
 
-			var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+			//var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
 
+			var coord = '24.967779,121.192124';
 
 			$('#livePosition_data').val(coord);
 
@@ -234,30 +236,30 @@ session_start();
       initMap();
 
       function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map2'), {
           center: {lat: 24.967779, lng: 121.192124},
           zoom: 16
         });
-        var infoWindow = new google.maps.InfoWindow({map: map});
+        var infoWindow = new google.maps.InfoWindow({map: map2});
 
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-             pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
+        // //Try HTML5 geolocation.
+        // if (navigator.geolocation) {
+        //   navigator.geolocation.getCurrentPosition(function(position) {
+        //      pos = {
+        //       lat: position.coords.latitude,
+        //       lng: position.coords.longitude
+        //     };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('目前位置');
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
+        //     infoWindow.setPosition(pos);
+        //     infoWindow.setContent('目前位置');
+        //     map.setCenter(pos);
+        //   }, function() {
+        //     handleLocationError(true, infoWindow, map.getCenter());
+        //   });
+        // } else {
+        //   // Browser doesn't support Geolocation
+        //   handleLocationError(false, infoWindow, map.getCenter());
+        // }
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {

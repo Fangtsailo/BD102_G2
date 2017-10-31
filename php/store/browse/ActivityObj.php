@@ -8,7 +8,7 @@ class ActivityObj {
 	public $price = "";
 	public $bannerPicName = "";
 	public $bannerfullPicName = "";
-	public $num = 0;
+	public $num = -1;
 	public $actPicName1 = "";//活動照片
 	public $actPicName2 = "";
 	public $actPicName3 = "";
@@ -17,7 +17,7 @@ class ActivityObj {
 	public $actProductPicName3 = "";
 
 
-	function __construct($num=0,$title="敬請期待體驗活動...", $address="", $time="", $peopleLimit = 0, $ingredient = "", $price="",$bannerPicName="",$actPicName1 = "",$actPicName2 = "",$actPicName3 = "",$actProductPicName1 = "",$actProductPicName2 = "",$actProductPicName3 = "") {
+	function __construct($num=-1,$title="敬請期待體驗活動...", $address="", $time="", $peopleLimit = 0, $ingredient = "", $price="",$bannerPicName="",$actPicName1 = "",$actPicName2 = "",$actPicName3 = "",$actProductPicName1 = "",$actProductPicName2 = "",$actProductPicName3 = "") {
 		$this->num = $num;
 		$this->title = $title;
 		$this->address = $address;

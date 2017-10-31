@@ -81,6 +81,7 @@ var bodyClass = document.body.classList,
 
   //點選登入按鈕
 	$('#headMemLogin,#rwdLoginBtn,#lightboxNeedlogIn').click(function(){
+    $("body").css("position","fixed");  //ios11 bug fixed
 		$('#loginBox').fadeIn(500);
     $("#menu").removeClass("show");
     $('#addShopBox').hide();
@@ -104,6 +105,7 @@ var bodyClass = document.body.classList,
 
 //關閉燈箱按鈕
 	$('.closeBtn,#cancelLogin,#closeBtn01,#closeBtn02').click(function(){
+      $("body").css("position","static"); //ios11 bug fixed
 			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
       $("#loginForm")[0].reset();
@@ -265,6 +267,7 @@ $("#submitRegister").click(function(){
 
 //登入後會員專區顯示
 $("#headMemPic").click(function(){
+  event.preventDefault();
   $('#memStatusBar').slideToggle(300);
   $("#addShopBox").fadeOut(300);
 });
@@ -363,6 +366,7 @@ $("#headSearch").blur(function(){
 
     //新增店家按鈕
     $("#addShop1,#addShopBtn,#homeAddBtn").click(function(){
+         event.preventDefault();
         $("#addShopBox").fadeIn(300);
         $('#memStatusBar').slideUp(300);
     });
