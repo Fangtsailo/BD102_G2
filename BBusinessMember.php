@@ -281,7 +281,7 @@ require_once("BackStageHeaderSidebar.php");
 
 											if($MEM_STATUS==0){
 
-												exit();
+												
 
 										?>
 										

@@ -33,7 +33,7 @@ session_start();
 		$memNo=$_SESSION["memNo"];
 
 
-		$sql_msg="select * from shop_message where SPMSG_MEMNO='$memNo' and SPMSG_NO not in ( select SPMSG_NO from report where RE_STATUS='0')";
+		$sql_msg="select * from shop_message where SPMSG_MEMNO='$memNo' and SPMSG_NO not in ( select SPMSG_NO from report where RE_STATUS='0') order by SPMSG_NO";
 
 		$shop_message=$connectPDO->query($sql_msg);
 

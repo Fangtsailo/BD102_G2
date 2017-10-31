@@ -58,6 +58,8 @@ header {
       border: 1px solid #cc4e4e;
       color: #cc4e4e;
       background-color: #fff;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
       transition: 0.2s; }
   .commit form input:nth-child(3) {
     border: none;
@@ -72,8 +74,12 @@ header {
       border: 1px solid #53c453;
       color: #53c453;
       background-color: #fff;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
       transition: 0.2s; }
 
 .dutyColorChange {
   background-color: #00c853 !important;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
   transition: .5s; }
