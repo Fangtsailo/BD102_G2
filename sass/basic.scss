@@ -1058,6 +1058,24 @@ footer {
 							transition: .3s;
 						}
 					}
+					ul#bossMenu {
+						li {
+							ul#storeMenu {
+								li {
+									a.bossMenu {
+										background-color: rgba(35, 22, 11, 0.22);
+									}
+								}
+							}
+							ul#carMenu {
+								li {
+									a.bossMenu {
+										background-color: rgba(35, 22, 11, 0.22);
+									}
+								}
+							}
+						}
+					}
 					&.myActivity {
 						position: relative;
 						&:after {

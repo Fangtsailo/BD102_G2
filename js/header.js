@@ -1,6 +1,6 @@
 
 
-
+    
 //切換會員專區
 function changePanel(){
     $("#headMemStatus").fadeIn(300);
@@ -26,13 +26,16 @@ function changeRole() {
         $('#bossMenu').slideToggle(500);
         $('#memberMenu').slideToggle(500);
     });
+    $("#storeMenu,#carMenu").hide();
     $("#rwdStore").click(function(){
         event.preventDefault()
-        $("#storeMenu").slideToggle(200);
+        $("#storeMenu").slideToggle();
+        $("#carMenu").slideUp();
     });
     $("#rwdCar").click(function(){
         event.preventDefault()
-        $("#carMenu").slideToggle(200);
+        $("#carMenu").slideToggle();
+        $("#storeMenu").slideUp();
     });
 }
 
