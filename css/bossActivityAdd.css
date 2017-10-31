@@ -678,7 +678,8 @@ footer {
   background-color: #fbf8f1;
   -webkit-transition: .3s ease;
   -o-transition: .3s ease;
-  transition: .3s ease; }
+  transition: .3s ease;
+  outline: none; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
@@ -992,6 +993,10 @@ footer {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+          .globalHead #menu ul li ul#bossMenu li ul#storeMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
+          .globalHead #menu ul li ul#bossMenu li ul#carMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
           .globalHead #menu ul li.myActivity {
             position: relative; }
             .globalHead #menu ul li.myActivity:after {
@@ -1314,6 +1319,7 @@ footer {
               cursor: pointer;
               height: 80px;
               float: left;
+              -webkit-box-sizing: border-box;
               box-sizing: border-box;
               padding: 10px;
               border-radius: 10px; }
@@ -1323,6 +1329,7 @@ footer {
               display: inline-block;
               height: 80px;
               float: left;
+              -webkit-box-sizing: border-box;
               box-sizing: border-box; }
             .container .bossActContent .actManageTable table tr td label img {
               display: block;
@@ -1332,6 +1339,7 @@ footer {
               .container .bossActContent .actManageTable table tr td label img.image {
                 width: 33%;
                 height: 80px;
+                -o-object-fit: cover;
                 object-fit: cover;
                 display: inline-block; }
             .container .bossActContent .actManageTable table tr td label span {
