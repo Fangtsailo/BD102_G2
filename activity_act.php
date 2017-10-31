@@ -36,36 +36,45 @@ session_start();
 <!-- ======================================================開始寫========================================================= -->
 
 		
-			{
+			<?php 
+				$success="";
+				if (isset($_REQUEST["success"])) {
+					$success=$_REQUEST["success"];
+				}
 
-			?>
+			 ?>
+
 			<script type="text/javascript">
 				window.onload=check;
 				function check(){
 					<?php 
-						if  (isset($_REQUEST["success"])) {          ?>							$.sweetModal({
-								buttons: [
-									{
-										label: '回首頁',
-										classes: ' orangeB '
+						if  ($success!=="") {  ?>							
+							$.sweetModal({
+								content :'成功報名囉',
+									buttons: {
+										someOtherAction: {
+											label: '查看報名去',
+											classes: ' orangeB',
+											action: function() {
+											location.href="mementry.php"
+											}
+										},
+
+										someAction: {
+											label: '回活動頁',
+											classes: ' orangeB',
+											
+										},
 									}
-								]
+							
 							});
+
 					<?php 	}
 					 ?>
 				}
 			</script>
 				
 
-<?php 
-		}
-
-		 ?>
-			
-		<?php endif ?>
-		<script type="text/javascript">
-			function()
-		</script>
 
 	
 
@@ -332,7 +341,7 @@ session_start();
 						
 							$memNo=$_SESSION["memNo"];
 					
-						$memsql="select * from ac_info where AC_NO='$actNum' and MEM_NO ='$memNo' ";
+						$memsql="SELECT * FROM ac_info a left join  member m  on  m.MEM_NO=a.MEM_NO where a.AC_NO='$actNum' and a.MEM_NO ='$memNo'  ";
 						$actSign=$connectPDO->query($memsql);
 						$activityRow=$actSign->fetchObject();	
 
@@ -388,15 +397,15 @@ session_start();
 											<div class="globalFormContent">
 
 												<div class="globalFormInput">
-													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName">
+													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName" value="<?php if(isset($actRow->MEM_REALNAME)){echo $actRow->MEM_REALNAME ;}  ?>">
 												</div>
 												
 												<div class="globalFormInput">
-													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)">
+													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)" value="<?php if(isset($actRow->MEM_PHONE)){echo $actRow->MEM_PHONE ;}  ?>">
 												</div>
 												
 												<div class="globalFormInput">
-													<label><span>*</span>信箱</label><input type="email" name="memEmail"  id="memEmail"  placeholder="必填" required>
+													<label><span>*</span>信箱</label><input type="email" name="memEmail" value="<?php if(isset($actRow->MEM_MAIL)){echo $actRow->MEM_MAIL ;}  ?>" id="memEmail"  placeholder="必填" required>
 												</div>
 
 												
@@ -441,17 +450,10 @@ session_start();
 													$('#memPhone').val($('#memPhone').val().trim());
 													$('#memEmail').val($('#memEmail').val().trim());
 														  		//消空格
-													$.sweetModal({
-														content: '成功報名',
-														icon: $.sweetModal.ICON_SUCCESS,
-														width: '300px',
-														theme: $.sweetModal.THEME_MIXED,
-													
-														onClose: function(){
+
+														
 												              $( "#actform" ).submit();
-												         }
-													});
-														  				
+												    				
 											}
 
 										});
