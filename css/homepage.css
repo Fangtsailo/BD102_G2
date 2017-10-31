@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
 
 a {
   text-decoration: none;
@@ -624,7 +624,8 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
-  transition: .3s ease; }
+  transition: .3s ease;
+  outline: none; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
@@ -915,6 +916,10 @@ footer {
             .globalHead #menu ul li #rwdBossRole:focus {
               background-color: rgba(158, 105, 61, 0.5);
               transition: .3s; }
+          .globalHead #menu ul li ul#bossMenu li ul#storeMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
+          .globalHead #menu ul li ul#bossMenu li ul#carMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
           .globalHead #menu ul li.myActivity {
             position: relative; }
             .globalHead #menu ul li.myActivity:after {
@@ -2040,7 +2045,7 @@ section {
     height: 100%;
     float: right;
     padding: auto 0px;
-    background-color: rgba(50, 25, 0, 0.7); }
+    background-color: #0a0a0a; }
     .homeActivity .activityItem #chooseActUp {
       width: 80px;
       height: 15%;
@@ -2371,7 +2376,7 @@ section {
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical; }
           .homeNewshop .newShopGrp .newShops .newShopItem .shopContent ul {
             width: 100%;
