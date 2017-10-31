@@ -3,9 +3,9 @@
 
 
 
-	$dsn ="mysql:host=localhost;dbname=trepun;port=8889;charset=utf8";
+	$dsn ="mysql:host=localhost;dbname=trepun;port=3306;charset=utf8";
 	$user = "root";
-	$password = "root";
+	$password = "zxc123";
 
 
 

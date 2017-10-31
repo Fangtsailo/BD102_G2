@@ -151,7 +151,31 @@ session_start();
 	<!-- footer -->
 	<?php
 		require_once("footer.php");
-	?>
 
+	   $info = isset($_REQUEST["info"]) ?  $_REQUEST["info"] :"";
+
+	?>
+<script type="text/javascript">
+		//宣告var info來接php的$info
+		var info = '<?php echo $info; ?>' ;		
+		$(document).ready(function(){
+			if ( info == "error" ) {
+				$.sweetModal({
+					content: '本店已有店長  下次請早 >.^',
+					icon: $.sweetModal.ICON_SUCCESS,
+					width: '300px',
+					timeout:2000,
+					theme: $.sweetModal.THEME_MIXED,
+					onClose: function(){
+						location.href="memBeBoss1.php"; 
+					}
+				});
+
+				
+			}
+		});//$(document).ready();
+
+
+	</script>
 </body>
 </html>
