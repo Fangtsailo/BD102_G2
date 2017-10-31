@@ -1301,21 +1301,39 @@ footer {
               font-size: 16px;
               color: #999; }
           .container .bossActContent .actManageTable table tr td input[type=file] {
-            display: block; }
+            display: none; }
           .container .bossActContent .actManageTable table tr td.uploadPic {
             height: 100px; }
           .container .bossActContent .actManageTable table tr td label {
             display: inline-block;
-            margin: auto;
             width: 30%;
-            margin: 10px 0px;
-            cursor: pointer;
-            border: 1px dotted #999; }
+            margin: auto; }
+            .container .bossActContent .actManageTable table tr td label.upload {
+              width: 30%;
+              background-color: #eee;
+              cursor: pointer;
+              height: 80px;
+              float: left;
+              box-sizing: border-box;
+              padding: 10px;
+              border-radius: 10px; }
+            .container .bossActContent .actManageTable table tr td label.showImg {
+              width: 70%;
+              height: 100%;
+              display: inline-block;
+              height: 80px;
+              float: left;
+              box-sizing: border-box; }
             .container .bossActContent .actManageTable table tr td label img {
               display: block;
               margin: auto;
               width: 60px;
               height: 40px; }
+              .container .bossActContent .actManageTable table tr td label img.image {
+                width: 33%;
+                height: 80px;
+                object-fit: cover;
+                display: inline-block; }
             .container .bossActContent .actManageTable table tr td label span {
               display: block;
               margin: auto;
@@ -1350,6 +1368,10 @@ footer {
       .container .bossActContent .actManageTable table {
         width: 100%;
         overflow: hidden; }
+        .container .bossActContent .actManageTable table tr th div {
+          font-size: 16px; }
+        .container .bossActContent .actManageTable table tr td input {
+          height: 50%; }
         .container .bossActContent .actManageTable table tr td a {
           width: 100%;
           color: #666; }
