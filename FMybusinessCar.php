@@ -946,8 +946,18 @@ session_start();
 
 
 		<div class="commit">
-			<!-- <input type="button" name="" value="預覽"> -->
-			<input type="button" id="alertBtn" name="" value="編輯完成">
+
+			<?php 
+
+			if($store_imformation->rowCount()!=0){
+			 ?>
+			
+			<input type="button" name="" value="瀏覽頁面" onclick="location.href='storeBrowse.php?storeId=<?php echo $store_imformationRow->SI_NUM; ?>'">
+			<?php
+			 }
+			 ?>
+
+			<input type="button" id="alertBtn" name="" value="編輯確認">
 		</div>
 
 		</form>
