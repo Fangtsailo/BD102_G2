@@ -313,7 +313,7 @@ $('#headSearchSubmit').click(function(){ //送出表單
 
 
 //header.php選擇送出查詢的頁面是胖小車或店家(rwd)
-$(".selectType input[name=shopType]").change(function(){
+$(".rwdsearchItem input[name=shopType]").change(function(){
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#rwdsearchForm").attr("action",action);
 });
