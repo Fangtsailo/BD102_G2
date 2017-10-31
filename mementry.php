@@ -56,7 +56,7 @@ session_start();
 					<img src="img/store/activity/banner/<?php echo $selectActRow->AC_BANNER1 ; ?>" class="actpic">
 					<div class="info">
 						<h2><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>"><?php echo $selectActRow->AC_NAME ; ?></a></h2>
-						<a href="javascript:;" class="btn50" id="cancelentry">
+						<a href="php/member/track/cancelentry.php?actNum=<?php echo $selectActRow->AC_NO ; ?>" class="btn50" id="cancelentry">
 							<img src="img/memimg/cancel.svg">
 						</a>
 						<address>
@@ -76,8 +76,6 @@ session_start();
 				echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
 				echo "行號：",$ex->getLine(),"<br>";
 		}
-
-
 		?>
 
 
@@ -88,6 +86,29 @@ session_start();
 	<?php
 		require_once("footer.php");
 	?>
+	
+<script type="text/javascript">
+	$(function(){
 
+
+		//送出取消追蹤時
+		$("#cancelentry").click(function(){
+			event.preventDefault();
+			$.sweetModal.confirm('確認不參加此項活動?', function() {
+				$.sweetModal({
+					content: '好可惜，下次再邀請您與我們一起體驗烘焙的樂趣！',
+					icon: $.sweetModal.ICON_SUCCESS,
+					width: '300px',
+					theme: $.sweetModal.THEME_MIXED,
+					onClose: function(){
+						var link = $("#cancelentry").attr('href');
+		              	location.href=link;
+		           	}
+		        });
+			});
+
+		});
+	});
+</script>
 </body>
 </html>
