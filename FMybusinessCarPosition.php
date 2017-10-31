@@ -166,6 +166,12 @@ session_start();
 
 				$SI_NUM=$store_imformation_row->SI_NUM;
 
+				
+				$SI_LNG=$store_imformation_row->SI_LNG;
+
+				$SI_LAT=$store_imformation_row->SI_LAT;
+
+
 
 
 		 ?>
@@ -191,7 +197,15 @@ session_start();
 	
 			<tr>
 				<td id="" colspan="2">
-					<img id="position_btn" src="img/icon/aim.png" style="cursor: pointer;">
+					<img id="position_btn" src="<?php 
+
+						if(isset($SI_LAT) && $SI_LAT!='0'){
+							echo 'img/icon/aimN.png';
+						} else{
+							echo 'img/icon/aim.png';
+						}
+
+					 ?>" style="cursor: pointer;">
 				</td>
 			</tr>
 		
@@ -214,17 +228,61 @@ session_start();
 
 		$('#position_btn').click(function(){
 
-			var SI_NUM=<?php echo $SI_NUM; ?>;
+			
 
-			$('#livePosition').val(SI_NUM);
+			if( $('#position_btn').attr('src')=="img/icon/aim.png"){
 
-			//var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+				$('#position_btn').attr('src','img/icon/aimN.png');
 
-			var coord = '24.967779,121.192124';
+				var SI_NUM=<?php echo $SI_NUM; ?>;
 
-			$('#livePosition_data').val(coord);
+				$('#livePosition').val(SI_NUM);
 
-			$('#alertFormSubmit').submit();
+				lat = (23.967779+Math.random()*0.4);
+
+				lng = (120.592124+Math.random()*0.02);
+
+
+				var coord = lat+','+lng;
+
+				$('#livePosition_data').val(coord);
+
+				//var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+
+				
+
+			
+
+
+					       // markers1.push(beachMarker1);
+
+				$('#alertFormSubmit').submit();
+
+
+			}else{
+				$('#position_btn').attr('src','img/icon/aim.png');
+
+				var SI_NUM=<?php echo $SI_NUM; ?>;
+				$('#livePosition').val(SI_NUM);
+
+				var coord = '0,0';
+				$('#livePosition_data').val(coord);
+
+
+			
+
+
+					       // markers1.push(beachMarker1);
+
+
+
+				$('#alertFormSubmit').submit();
+
+
+
+			}
+
+			
 
 		});
 
@@ -236,11 +294,68 @@ session_start();
       initMap();
 
       function initMap() {
+
+      	<?php if(isset($SI_LAT) && $SI_LAT!='0'){
+
+
+      		$SI_LNG=$store_imformation_row->SI_LNG;
+
+			$SI_LAT=$store_imformation_row->SI_LAT;
+
+			$SI_JSON = '{lat: '.$SI_LAT.',lng:'.$SI_LNG.'}';
+
+      	 ?>
+
         var map = new google.maps.Map(document.getElementById('map2'), {
-          center: {lat: 24.967779, lng: 121.192124},
+          center: <?php echo $SI_JSON; ?>,
           zoom: 16
         });
         var infoWindow = new google.maps.InfoWindow({map: map2});
+
+
+        	var beachMarker1 = new google.maps.Marker({
+	    				        position:<?php 
+
+	    				        if(isset($SI_LAT) && $SI_LAT!='0'){
+
+	    				        		$SI_LNG=$store_imformation_row->SI_LNG;
+
+										$SI_LAT=$store_imformation_row->SI_LAT;
+
+										$SI_JSON = '{lat: '.$SI_LAT.',lng:'.$SI_LNG.'}';
+
+										echo $SI_JSON;
+									} else{
+										echo '""';
+									}
+
+	    				        	
+
+
+	    				         ?>,
+	    				        map: map,
+	    				       // label: labels1[labelIndex1++ % labels1.length]
+	    				    });
+
+        <?php 
+
+        	}else{
+
+        		$SI_LNG=$store_imformation_row->SI_LNG;
+
+				$SI_LAT=$store_imformation_row->SI_LAT;
+
+				$SI_JSON = '{lat: '.$SI_LAT.',lng:'.$SI_LNG.'}';
+			?>
+        		 var map = new google.maps.Map(document.getElementById('map2'), {
+		          center: {lat: 24.967779, lng: 121.192124},
+		          zoom: 16
+		        });
+		        var infoWindow = new google.maps.InfoWindow({map: map2});
+
+        <?php
+        	}//else{
+         ?>
 
         // //Try HTML5 geolocation.
         // if (navigator.geolocation) {
@@ -260,7 +375,7 @@ session_start();
         //   // Browser doesn't support Geolocation
         //   handleLocationError(false, infoWindow, map.getCenter());
         // }
-      }
+      }// function initMap() {
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
