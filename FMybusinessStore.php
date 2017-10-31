@@ -198,7 +198,7 @@ session_start();
 				</tr>
 
 				<tr>
-					<th><div>狀態 <?php echo $memNo; ?></div></th>
+					<th><div>狀態</div></th>
 					<td>
 						<p>			
 							<?php 
