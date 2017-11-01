@@ -110,7 +110,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>檢舉會員編號</td>
 						<td>留言內容</td>
 						<td>檢舉原因</td>
-						<td>檢舉次數</td>
+						
 						<td>審核狀態</td>
 						<td>審核結果</td>
 					</tr>	
@@ -166,7 +166,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $repRow->MEM_NO; ?></td>
 						<td><?php echo $repRow->SPMSG_CON; ?></td>
 						<td><?php echo $repRow->RE_CONTENT; ?></td>
-						<td><?php echo $repRow->SPMSG_REPORTIMES; ?></td>
+					
 						
 							<?php
 								$re=$repRow->RE_STATUS;
