@@ -8,7 +8,7 @@ $(function(){
 	var controller = new ScrollMagic.Controller();
 //logo動畫
 	new Vivus('theLogo', {
-		duration: 200, 
+		duration: 350, 
 		type: 'delayed',
 		pathTimingFunction: Vivus.EASE_IN,
     	animTimingFunction: Vivus.EASE
