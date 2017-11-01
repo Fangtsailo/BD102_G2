@@ -168,6 +168,7 @@ try {
 		</a>
 </div>
 <div class="screen screen-1" id="screen1">
+	<!-- <img class="scroll-down-tip" src="img/icon/scrolldown.svg" class="section2-click"> -->
 	<div class="banners">
 		<div id="banner1"></div>
 		<div id="banner2"></div>
