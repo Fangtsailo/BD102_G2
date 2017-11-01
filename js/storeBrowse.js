@@ -219,6 +219,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 	        nowMessagePage++;
 	        var html = "";
 	        for (var key in messageListObj) {
+	        	if (!messageListObj[key].isRemoveByADM) {
 	        	html +=	'<div class="message-box">'
 					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
 					+	'	<div class="content col-lg-10">'
@@ -234,6 +235,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 					+	'	</div>'
 					+	'	<div class="clear"></div>'
 					+	'</div>';
+				}
 	        }
 	        $('#messages-area').append(html);
 	        $('#messages-area').append($('#more-message'));

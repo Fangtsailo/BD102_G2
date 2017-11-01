@@ -26,8 +26,14 @@ if (isset($_REQUEST["messagePage"]) && isset($_REQUEST["storeId"]) && isset($_RE
 				//這筆留言有沒有被此登入的 member 檢舉過
 				$sql = "SELECT * FROM report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
 				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
-				if ($row = $stmt2->fetchObject()) {
+				if ($row2 = $stmt2->fetchObject()) {
 					$message->isReportByMe = true;
+				}
+								//這筆留言有沒有被管理員刪除
+				$sql = "SELECT * FROM report where SPMSG_NO=$row->SPMSG_NO AND RE_STATUS=0";
+				$stmt3 = $GLOBALS["connectPDO"]->query($sql);
+				if ($row3 = $stmt3->fetchObject()) {
+					$message->isRemoveByADM = true;
 				}
 				array_push($messageArr, $message);
 			}
