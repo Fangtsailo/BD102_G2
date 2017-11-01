@@ -961,6 +961,13 @@ session_start();
 			<input type="button" id="alertBtn" name="" value="編輯確認">
 		</div>
 
+
+
+
+
+			
+					<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
+
 		</form>
 
 	</div>  <!-- CenterBusiness -->
