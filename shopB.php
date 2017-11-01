@@ -294,7 +294,10 @@ require_once("header.php");
     ?>
     <div id="pd<?php echo ($key+1); ?>">
       <div class="pdimg">
-      <img src="<?php echo $product->pictureName; ?>">
+        <script type="text/javascript">
+          $("#pd<?php echo ($key+1); ?> .pdimg").css('background','url("<?php echo $product->pictureName=="" ? "default.jpg" : $product->pictureName; ?>") center center').css('background-size','cover');
+        </script>
+      <!-- <img src="<?php //echo $product->pictureName; ?>"> -->
       </div>
       <p id="dis"><?php echo $product->name; ?></p>
       <div class="pd<?php echo ($key+1); ?>_DTL">
