@@ -1286,6 +1286,7 @@ a {
   color: #3399ff; }
 
 img {
+  width: 100%;
   max-width: 100%;
   vertical-align: bottom; }
 
@@ -1615,8 +1616,12 @@ input:not(.radio):focus, textarea:focus {
         margin: 8px; }
       .container .content .myentry h2 > a {
         color: #fbf8f1; }
-      .container .content .myentry h2:hover {
-        text-decoration: underline; }
+      .container .content .myentry address {
+        color: #fff;
+        text-decoration: underline;
+        font-size: 18px; }
+      .container .content .myentry li a:hover {
+        color: #f06428; }
       .container .content .myentry time {
         margin: 20px 0 0 5px; }
       .container .content .myentry .actpic {
@@ -1653,6 +1658,8 @@ input:not(.radio):focus, textarea:focus {
         width: auto;
         margin-top: 200px;
         overflow: visible; }
+        .container .content .myentry address {
+          font-size: 14px; }
         .container .content .myentry .info {
           width: auto;
           position: unset;

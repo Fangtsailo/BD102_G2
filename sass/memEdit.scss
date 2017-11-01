@@ -47,6 +47,7 @@ a{
 	color: $globalLinkColor;
 }
 img{
+	width: 100%;
 	max-width: 100%;
 	vertical-align: bottom;
 }
@@ -466,8 +467,13 @@ input:not(.radio):focus, textarea:focus{
 		h2 > a{
 			color: $globalBgColor;
 		}
-		h2:hover{
+		address{
+			color: #fff;
 			text-decoration: underline;
+			font-size: $globalBtnSize;
+		}
+		li a:hover{
+			color: $globalBtnColor;
 		}
 		time{
 			margin: 20px 0 0 5px;
@@ -512,6 +518,9 @@ input:not(.radio):focus, textarea:focus{
 			width: auto;
 			margin-top: 200px;
 			overflow: visible;
+			address{
+			font-size: 14px;
+			}
 			.info{
 				width: auto;
 				position: unset;
