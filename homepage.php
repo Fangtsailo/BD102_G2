@@ -222,7 +222,7 @@ require_once("headerForHomePage.php");
 	<?php 
 	try{
 		require_once("php/PDO/connectPDO.php");
-		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(DISTINCT f.MEM_NO) followers,s.SI_AVG_REVIEW,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC,s.SI_TYPE,s.SI_CHECKSTAY,s.SI_SELLSTAY,s.SI_BIMG_1 FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
+		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,3) address ,COUNT(DISTINCT f.MEM_NO) followers,s.SI_AVG_REVIEW,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC,s.SI_TYPE,s.SI_CHECKSTAY,s.SI_SELLSTAY,s.SI_BIMG_1 FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
 		$topShops = $connectPDO->query($selectTopShopSQL);
 		while ($topShopsRow = $topShops->fetchObject()) {
 			$topStoreBgd = ( isset($topShopsRow->SI_BIMG_1) )? $topShopsRow->SI_BIMG_1 : "default.png" ;
@@ -300,7 +300,7 @@ require_once("headerForHomePage.php");
 		 <script type="text/javascript">
 				$(document).ready(function (){
 					//loading page
-					$('#loading-page').delay(1500).fadeOut(1000);
+					$('#loading-page').delay(2000).fadeOut(1000);
 					$('#search_Pic_<?php echo $mapCarRow->SI_NUM ?>').css('background','url("<?php echo $mapCarRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$mapCarRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');

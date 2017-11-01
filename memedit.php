@@ -127,8 +127,8 @@ session_start();
 
 				<form class="form-horizontal" action="php\member\memUpdateToDb.php" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="memId" value="<?php echo $memRow->MEM_ID;?>">
-					<div class="userpic">
-						<img src="img/member_pic/<?php echo $memRow->MEM_PIC;?>">
+					<div id="showPic" class="userpic">
+						<img id="nullPic" src="img/member_pic/<?php echo $memRow->MEM_PIC;?>">
 					</div>
 					<p>
 						<label for="mempic">變更頭像</label>
@@ -137,6 +137,41 @@ session_start();
 							<input type="hidden" name="oldImage" value="<?php echo $memRow->MEM_PIC;?>">
 						</a>
 					</p>
+					<script>
+
+
+
+						function showfile(evt,showarea) {
+
+						var files = evt.files; // FileList 
+					    function load_image(e){
+					      var img = document.createElement('img');
+					      img.src = e.target.result;
+					      img.className = "image";
+					      document.getElementById(showarea).insertBefore(img, null);
+				    	}
+				    	for (var i = 0, len = files.length ; i<len ; i++) {
+					      file = files[i];
+					      // 只要影像圖
+					      if (!file.type.match('image.*')) {
+					        continue;
+					      }
+					      var reader = new FileReader();
+					      reader.onload = load_image;
+					      // Read in the image file as a data URL.
+					      reader.fileName = file.name;
+					      reader.readAsDataURL(file);
+					    }
+					}
+
+					$("#mempic").change(function(){
+
+						$('#nullPic').css('display','none');
+
+					    showfile(this,'showPic');
+				  	});
+
+					</script>
 					<p>
 						<label for="MEM_ID">帳號</label>
 						<strong><?php echo $memId; ?></strong>

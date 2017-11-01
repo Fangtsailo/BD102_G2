@@ -650,6 +650,9 @@ li {
 							font-weight: 500;
 							color:$globalFontColor;
 							transition:.3s;
+							&#showMemId {
+								color:#442d18;
+							}
 							&.memLink {
 								&:hover {
 								background-color:$globalHdColor01;

@@ -577,6 +577,8 @@ li {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+              .globalHead .headerRight .headAccount .memStatusBar ul li a#showMemId {
+                color: #442d18; }
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;

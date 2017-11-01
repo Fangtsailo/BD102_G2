@@ -206,7 +206,18 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="memedit.php" id="showMemId"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?>  </a></li>
+						<li><a href="memedit.php" id="showMemId"> <?php 
+						//echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; 
+						if( isset($_SESSION["memId"]) ){
+								if( $_SESSION["memName"]!="" ){
+									echo $_SESSION["memName"];
+								}else{
+									echo $_SESSION["memId"] ;
+								}
+							}else{
+								echo "";
+							}
+						?>  </a></li>
 						<li><a class="memLink" href="memedit.php">基本資料</a></li>
 						<li><a class="memLink" href="memfollow.php">我的追蹤</a></li>
 						<li><a class="memLink" href="memcomment.php">我的留言</a></li>
@@ -243,9 +254,14 @@
 	<div class="burgerMenu" id="burgerBtn">
 		<?php 
 			if ( isset($_SESSION['memPic']) ){
-				echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+				if($_SESSION['memPic']==""){
+					echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
+				}else{
+					echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
+				}
 			}else {
-				echo "<img src='img/member_pic/default.png'>";
+				echo "<img src='img/icon/signin.svg'>";
+
 			}
 		?>
 	</div>

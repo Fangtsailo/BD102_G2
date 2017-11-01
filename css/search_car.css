@@ -577,6 +577,8 @@ li {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+              .globalHead .headerRight .headAccount .memStatusBar ul li a#showMemId {
+                color: #442d18; }
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;
@@ -1369,7 +1371,10 @@ img {
     .search_store .search_storeOne .search_storeContent {
       float: left;
       padding: 10px 10px;
+<<<<<<< HEAD
       width: 100%;
+=======
+>>>>>>> c1f965d78434f609f787f7576baa85989d20d485
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
       .search_store .search_storeOne .search_storeContent .search_follow {
