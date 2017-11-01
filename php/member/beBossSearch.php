@@ -23,12 +23,12 @@ try {
 
 	$_SESSION["SI_TYPE"] = $siType;
 	$_SESSION["SI_NAME"] = $siName;
-	
+
 	//連線到資料庫
 	require_once("../PDO/connectPDO.php");
 
 	//比對資料庫中是否有此店型的店名
-	$sql = "select * from store_imformation where SI_TYPE='$siType' and SI_NAME='$siName'";
+	$sql = "select * from store_imformation where SI_TYPE='$siType' and SI_NAME = '$siName'";
 	
 	//echo $sql;
 
@@ -36,7 +36,7 @@ try {
 	$searchSi=$connectPDO->query($sql);
 
 	//取得搜尋結果
-	if( $searchRow = $searchSi->fetchObject()){
+	if( $searchRow = $searchSi->fetchObject() ){
 		//若有資料，跳轉至結果頁面
 		header("Location: ../../memBeBoss2.php");
 		
