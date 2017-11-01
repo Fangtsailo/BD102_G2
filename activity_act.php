@@ -63,7 +63,9 @@ session_start();
 										someAction: {
 											label: '回活動頁',
 											classes: ' orangeB',
-											
+											onClose: function(){
+											location.href="activity_act.php?actNum=$_REQUEST['actNum']"; 
+											}
 										},
 									}
 							
@@ -75,7 +77,7 @@ session_start();
 			</script>
 				
 
-
+			
 	
 
 
@@ -93,6 +95,9 @@ session_start();
 					
 				$actNum=$_REQUEST["actNum"];
 				}
+
+
+
 
 				try {
 					require_once("php/pdo/connectPDO.php");
@@ -377,6 +382,9 @@ session_start();
 					======================================還未報名============================================================ -->			 				
 								<?php			
 									}else{
+										$memActsql="SELECT * from member where $memNo=MEM_NO ";
+										$memInfor=$connectPDO->query($memActsql);
+										$memRow=$memInfor->fetchObject();
 								 ?>		
 
 								 <div class="globalForm" >
@@ -397,15 +405,15 @@ session_start();
 											<div class="globalFormContent">
 
 												<div class="globalFormInput">
-													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName" value="<?php if(isset($actRow->MEM_REALNAME)){echo $actRow->MEM_REALNAME ;}  ?>">
+													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName" value="<?php if(isset($memRow->MEM_REALNAME)){echo $memRow->MEM_REALNAME ;}  ?>">
 												</div>
 												
 												<div class="globalFormInput">
-													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)" value="<?php if(isset($actRow->MEM_PHONE)){echo $actRow->MEM_PHONE ;}  ?>">
+													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)" value="<?php if(isset($memRow->MEM_PHONE)){echo $memRow->MEM_PHONE ;}  ?>">
 												</div>
 												
 												<div class="globalFormInput">
-													<label><span>*</span>信箱</label><input type="email" name="memEmail" value="<?php if(isset($actRow->MEM_MAIL)){echo $actRow->MEM_MAIL ;}  ?>" id="memEmail"  placeholder="必填" required>
+													<label><span>*</span>信箱</label><input type="email" name="memEmail" value="<?php if(isset($memRow->MEM_MAIL)){echo $memRow->MEM_MAIL ;}  ?>" id="memEmail"  placeholder="必填" required>
 												</div>
 
 												
