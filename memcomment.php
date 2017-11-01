@@ -131,12 +131,18 @@ session_start();
 							<p>TO:<?php 
 							
 							if($shop_message_row->SPMSG_CON_RETIME!==NULL){
+
+								
 								
 								echo '<span style="color:#4289ff;">'.$store_imformation_row->SI_NAME.'</span>'; 
 
+								
+
 							}else{
 
-								echo $store_imformation_row->SI_NAME; 
+								echo $store_imformation_row->SI_NAME;
+
+								
 
 							}
 
