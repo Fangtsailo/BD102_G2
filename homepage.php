@@ -267,7 +267,7 @@ require_once("headerForHomePage.php");
 			require_once("php/common/globalVar.php");
 			$shopType=1;
 			$firstCarNum = -1;//為了預設顯示第一台車的位置
-			$mapCarSQL = "SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top,s.SI_SELLSTAY,s.SI_CHECKSTAY,s.SI_BIMG_1 FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' AND s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM";
+			$mapCarSQL = "SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(DISTINCT f.MEM_NO) top,s.SI_SELLSTAY,s.SI_CHECKSTAY,s.SI_BIMG_1 FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' AND s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM";
 			$mapCar = $connectPDO->query($mapCarSQL);
 			while($mapCarRow=$mapCar->fetchObject()){
 
