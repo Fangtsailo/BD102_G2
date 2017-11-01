@@ -79,9 +79,27 @@ try {
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
-<!--  <div id="loading-page">
- 	<div class="content">Loading...</div>
- </div> -->
+ <div id="loading-page">
+ 	<div class="content">
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+		<img id="pointer" src="img/loading_front.png">
+		<img id="north" src="img/loading_back-min.png">
+ 	</div>
+ </div>
  <div class="report-mask mask">
  	<div class="report-modal modal">
  		<p>檢舉原因</p>
@@ -150,6 +168,7 @@ try {
 		</a>
 </div>
 <div class="screen screen-1" id="screen1">
+	<!-- <img class="scroll-down-tip" src="img/icon/scrolldown.svg" class="section2-click"> -->
 	<div class="banners">
 		<div id="banner1"></div>
 		<div id="banner2"></div>
@@ -451,6 +470,8 @@ try {
 	<div class="messages-area" id="messages-area">
 		<?php 
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
+				$isRemoveByADM = $messageItem->isRemoveByADM;
+				if (!$isRemoveByADM) {
 		?>
 					<div class="message-box">
 						<div class="mem-pic col-lg-2">
@@ -470,6 +491,7 @@ try {
 						<div class="clear"></div>
 					</div>	
 		<?php
+				}
 			}
 		 ?>
 		<div class="more-message button" id="more-message">看更多</div>
@@ -514,8 +536,8 @@ try {
 <script type="text/javascript">
 $(document).ready(function(){
 	//loading page
-	// $('#loading-page').delay(2000).fadeOut(1000);
-	//$('#loading-page').hide();
+	// $('#loading-page').delay(3000).fadeOut(1000);
+	$('#loading-page').hide();
 	//檢舉公用變數
 	reportMessageNum = -1;
 	reviewIGave = 0;//若有給予評價的分數

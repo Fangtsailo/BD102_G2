@@ -91,13 +91,10 @@ header {
       color: #ffffff;
       background-color: #7e4a1d;
       border-radius: 10px;
-      -webkit-box-shadow: 0 0 0;
       box-shadow: 0 0 0; }
       .LightBox section .square_2 span input:hover {
         background-color: #ffffff;
         color: #7e4a1d;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
         transition: 0.3s; }
 
 .tableArea {
@@ -132,7 +129,7 @@ header {
       color: #000;
       font-size: 13px;
       text-indent: 10px;
-      font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+      font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 .tableHeaderCover {
   width: 100%;
@@ -208,17 +205,13 @@ header {
           color: #ffffff;
           background-color: #565894;
           border-radius: 10px;
-          -webkit-box-shadow: 0 0 0;
           box-shadow: 0 0 0;
           border: none;
-          -webkit-transition: .5s;
-          -o-transition: .5s;
           transition: .5s; }
           .tableContent tr td:nth-child(5) form input:hover {
             color: #565894;
             background-color: #fff;
             border: 1px solid #565894;
-            -webkit-box-sizing: border-box;
             box-sizing: border-box; }
       .tableContent tr td:nth-child(6) {
         width: 15%;
@@ -243,15 +236,12 @@ footer {
       color: #ffffff;
       background-color: #7e4a1d;
       border-radius: 10px;
-      -webkit-box-shadow: 0 0 0;
       box-shadow: 0 0 0;
       margin-top: 5px;
       border: none; }
       footer section .square_2 span input:hover {
         background-color: #ffffff;
         color: #7e4a1d;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
         transition: 0.3s; }
     footer section .square_2 label {
       display: block;
@@ -277,6 +267,4 @@ footer {
 
 .dutyColorChange {
   background-color: #00c853 !important;
-  -webkit-transition: .5s;
-  -o-transition: .5s;
   transition: .5s; }

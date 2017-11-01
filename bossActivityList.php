@@ -7,7 +7,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>店長專區-活動管理</title>
+	<title>TrePun</title>
+	<link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
 	<link rel="stylesheet" type="text/css" href="css/bossActivityList.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
