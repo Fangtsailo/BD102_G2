@@ -114,7 +114,7 @@ session_start();
 							$member=$connectPDO->query($sql_member);
 
 							$member_row=$member->fetchObject();
-							$dateStamp=1508501792; 
+							 
 
 
 
@@ -129,9 +129,9 @@ session_start();
 			                    留言時間： <?php echo  date("Y/m/d H:i", $shop_message_row->SPMSG_TIME) ; ?>
 			                </time>
 							<p>TO:<?php 
-
+							
 							if($shop_message_row->SPMSG_CON_RETIME!==NULL){
-
+								
 								echo '<span style="color:#4289ff;">'.$store_imformation_row->SI_NAME.'</span>'; 
 
 							}else{
@@ -143,7 +143,7 @@ session_start();
 
 
 							?></p>
-							<p><?php echo $shop_message_row->SPMSG_CON ?></p>
+							<p><?php echo $shop_message_row->SPMSG_CON; ?></p>
 							<div class="storepic">
 								<img src="img/member_pic/<?php echo $member_row->MEM_PIC ?>">
 							</div>
