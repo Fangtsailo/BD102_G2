@@ -346,7 +346,7 @@ $("#headSearch").keyup(function(){
 $("#headSearch").blur(function(){
     $(this).siblings("#headSearchSubmit").removeClass('keyIn').attr("value","搜尋");
   });
-
+  
 
 
 //首頁導覽列錨點選單=================

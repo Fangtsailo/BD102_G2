@@ -113,28 +113,32 @@
 	
 
 <!-- logo區塊 -->
-		<div class="headLogo" id="section1-click">
-			<a href="#">
+		<div class="headLogo">
+			<a href="#section1-move" class="section1-click">
 				<img src="img/trepunLogoWhite.svg">
 			</a>	
 		</div>	
 <!--頁面錨點連結 -->
 		<div class="headerLink">
-			<a href="#" class="section2-click">
+			<a href="#section2-move" class="section2-click">
 				<img src="img/homepage/hot.svg">
 				<span>熱門商家</span>	
 			</a>
-			<a href="#" class="section3-click">
+			<a href="#section3-move" class="section3-click">
 				<img src="img/homepage/mappointer3.svg">
 				<span>胖小車地圖</span>	
 			</a>
-			<a href="#" class="section4-click">
+			<a href="#section4-move" class="section4-click">
 				<img src="img/homepage/cookIcon.svg">
 				<span>烘焙體驗</span>	
 			</a>
-			<a href="#" class="section5-click">
+			<a href="#section5-move" class="section5-click">
 				<img src="img/homepage/newShopIcon.svg">
 				<span>新進商家</span>	
+			</a>
+			<a href="#section1-move" class="section1-click">
+				<img src="img/icon/search.svg">
+				<span>搜尋商家</span>	
 			</a>
 			<div class="clearfix"></div>
 		</div>
@@ -153,17 +157,21 @@
 					<span>熱門商家</span>	
 					<div class="clearfix"></div>
 			</a>
-			<a href="#" class="section3-click">
+			<a href="#section3-move" class="section3-click">
 				<img src="img/homepage/mappointer3.svg">
 				<span>胖小車地圖</span>	
 			</a>
-			<a href="#" class="section4-click">
+			<a href="#section4-move" class="section4-click">
 				<img src="img/homepage/cookIcon.svg">
 				<span>烘焙體驗</span>	
 			</a>
-			<a href="#" class="section5-click">
+			<a href="#section5-move" class="section5-click">
 				<img src="img/homepage/newShopIcon.svg">
 				<span>新進商家</span>	
+			</a>
+			<a href="#section1-move" class="section1-click">
+				<img src="img/icon/search.svg">
+				<span>搜尋</span>	
 			</a>
 			<div class="clearfix"></div>
 		</div>
