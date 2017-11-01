@@ -550,7 +550,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;}
 
 #pd2:hover .pd2_DTL{
@@ -570,7 +570,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;}
 
 #pd3:hover .pd3_DTL{
@@ -590,7 +590,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;}
 
 #pd4:hover .pd4_DTL{
@@ -610,7 +610,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;}
 
 #pd5:hover .pd5_DTL{
@@ -630,7 +630,7 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;}
 
 #pd6:hover .pd6_DTL{
@@ -867,8 +867,10 @@ a {
 				display: inline;
 				float: left;
 				//background-color: #000;
-				width: 70px;
-				height: 70px;
+				position: relative;
+				left: 2vw;
+				width: 80px;
+				height: 80px;
 				#login-men-pic {
 					border-radius: 50%;
 				    background-position: center center;
@@ -880,9 +882,6 @@ a {
 				// margin-left: 2%;
 				}
 			}
-			.mem-pic img{
-				width:70px;
-				height:70px;}
 			.content {
 				padding: 10px;
 				background-color: rgba(0, 0, 0,0.1);
@@ -948,9 +947,6 @@ a {
 			
 	}	
 }
-.message-box .mem-pic img{
-				width:70px;
-				height:70px;}
 .content{
 	display: inline-block;
 	background-color: #fff;
@@ -968,15 +964,15 @@ a {
 				margin-bottom: 5px;
 				display: inline;
 				float: left;
-				width: 65px;
-				height:65px ;
 				margin-left: 3%;
 				.picture {
 				border-radius: 50%;
-				width: 60px;
+				width: 70px;
 			    background-position: center center;
 			    background-size: cover;
-			    height: 60px;
+			    height: 70px;
+			    position: relative;
+			    left: 2vw;
 			}
 		}
 		.content{
@@ -1158,6 +1154,20 @@ a {
 
  }
 
+@media screen and (max-width: 1490px) {
+.send-message-area .message-box .mem-pic #login-men-pic {
+	width: 90%;
+    height: 90%;
+}
+.send-message-area .message-box .mem-pic{
+	left: 0vw;
+}
+.messages-area .message-box .mem-pic .picture{
+	width: 65px;
+	height: 65px;
+	left: 1vw;
+}
+}
 
 @media screen and (max-width: 1435px) {
 
@@ -1238,6 +1248,17 @@ a {
 	left:40vw ;
 	}
 	#ACTBT{right: 43vw;}
+}
+
+@media screen and (max-width: 1240px) {
+
+.send-message-area .message-box .mem-pic{
+	left: -2vw;
+}
+.messages-area .message-box .mem-pic .picture {
+	left: -1vw;
+}
+
 }
 
  @media screen and (max-width: 1220px) {
@@ -1330,8 +1351,11 @@ a {
 
 }
 
+@media screen and (max-width: 1000px) {
+.content {width: 83%;}
+}
 
- @media screen and (max-width: 980px) {
+@media screen and (max-width: 980px) {
 
  	.pdimg{
  		height: 100%;
@@ -1449,10 +1473,14 @@ a {
 	    overflow: hidden;
 	    text-overflow: ellipsis;
 	    display: -webkit-box;
-	    -webkit-line-clamp: 2;
+	    -webkit-line-clamp: 3;
 	    -webkit-box-orient: vertical;}
 
  }
+
+ @media screen and (max-width: 878px) {
+.content {width: 80%;}
+}
 
  @media screen and (max-width: 850px) {
 
@@ -1812,40 +1840,26 @@ a {
 	// 	left: -7px;
 	// }
 	.send-message-area .message-box {
-    margin: auto;
-    width: 90%;
-    	.content {width: 69%;}
-}
-	.send-message-area .message-box .mem-pic img {
-    width: 50px;
-    height: 50px;
-}
-	.message-box .mem-pic img {
-    width: 50px;
-    height: 50px;
-}
-	.messages-area .message-box .content {width: 69%;}
-
+   		 margin: auto;
+   		 width: 90%;
+    	.content {width: 75%;}
+	}
+	.send-message-area .message-box .mem-pic {
+		left: 1vw;
+	}
+	.messages-area .message-box .content {width: 75%;}
 	.messages-area .message-box .content p{
 		word-wrap:break-word; word-break:normal;
 	}
-
-
- 
-
-
+	.messages-area .message-box .mem-pic .picture {
+    left: 0vw;
+	}
 
 	.OTHERSTITLE p{
 		font-size: 5vmin;
 	}
 
-
-
-
 }
-
-
-
 
 
 @media screen and (max-width: 767px) {
@@ -1853,7 +1867,120 @@ a {
 	#SPINFO{
 	  	line-height: 10px;
 	}
+	#pd1 > #dis {
+    display: table-row;
+    position: absolute;
+    top: 21vw;
+    left: 5vw;
+    font-size: 2vw;
+	}
+	#pd2 > #dis {
+    display: table-row;
+    position: absolute;
+    top: 21vw;
+    left: 4vw;
+    font-size: 2vw;
+	}
+	#pd3 > #dis {
+    display: table-row;
+    position: absolute;
+    top: 21vw;
+    left: 4vw;
+    font-size: 2vw;
+	}
+	#pd6 > #dis {
+    display: table-row;
+    position: absolute;
+    top: 21vw;
+    left: 4vw;
+    font-size: 2vw;
+	}
+	#pd1{
+		&:hover .pd1_DTL>
+		p{font-size: 12px;
+    		position: absolute;
+    		top: 38%;}
+		h3{display: none;}
+	}
+	#pd2{
+		&:hover .pd2_DTL>
+		p{font-size: 12px;
+    		position: absolute;
+    		top: 38%;}
+		h3{display: none;}
+	}
+	#pd3{
+		&:hover .pd3_DTL>
+		p{font-size: 12px;
+    		position: absolute;
+    		top: 38%;}
+		h3{display: none;}
+	}
+	#pd6{
+		&:hover .pd6_DTL>
+		p{font-size: 12px;
+    		position: absolute;
+    		top: 38%;}
+		h3{display: none;}
+	}
 }
+
+@media screen and (max-width: 400px) {
+	#pd1{
+		&:hover .pd1_DTL{display: none;}
+				#pd1{width: 25vw; height: 25vw;}
+	}
+	#pd2{
+		&:hover .pd2_DTL{display: none;}
+				#pd2{width: 25vw; height: 25vw;}
+	}
+	#pd3{
+		&:hover .pd3_DTL{display: none;}
+				#pd3{width: 25vw; height: 25vw;}
+	}
+	#pd6{
+		&:hover .pd6_DTL{display: none;}
+				#pd6{width: 25vw; height: 25vw;}
+	}
+	#pd1 > #dis {
+    left: 2vw;
+    font-size: 1.5vw;
+	}
+	#pd2 > #dis {
+    left: 2vw;
+    font-size: 1.5vw;
+	}
+	#pd3 > #dis {
+    left: 2vw;
+    font-size: 1.5vw;
+	}
+	#pd6 > #dis {
+    left: 2vw;
+    font-size: 1.5vw;
+	}
+	
+	.send-message-area .message-box {
+    	.content {width: 64%; right: -1vw;}
+	}
+	.send-message-area .message-box .mem-pic #login-men-pic {
+    	width: 86%;
+    	height: 86%;
+	}
+	.send-message-area .message-box .mem-pic {
+		left: -3vw;
+	}
+	.messages-area .message-box .content {width: 72%;right: -3vw;}
+	.messages-area .message-box .mem-pic .picture {
+    	left: -4vw;
+    	width: 52px;
+    	height: 52px;
+	}
+
+
+
+
+}
+
 
 @media screen and (max-width: 321px) {
 	
