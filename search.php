@@ -53,7 +53,7 @@ try{
 		$shopType=0;  //店家 0  胖小車1
 	
 
-		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' and s.SI_SELLSTAY=1 and s.SI_CHECKSTAY=1 ";	
+		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(distinct f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' and s.SI_SELLSTAY=1 and s.SI_CHECKSTAY=1  ";	
 			if ($shopPosition!=='') {
 				$searchsql.=" AND s.SI_POSITION = '$shopPosition'";
 			}
@@ -61,7 +61,7 @@ try{
 				$searchsql.=" AND s.SI_NAME like '%$searchName%'";
 			}
 			
-			$searchsql.= " group by s.SI_NUM";
+			$searchsql.= " group by SI_NUM";
 			
 			if ($filter!=='' && $filter=="top"){
 				$searchsql.=" order by top desc"; 
