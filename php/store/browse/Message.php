@@ -7,6 +7,7 @@ class Message {
 	public $content = "";
 	public $dateStr = "";
 	public $isReportByMe = false;//這筆留言有沒有被我檢舉過
+	public $isRemoveByADM = false;//這筆留言有沒有被管理員刪除
 
 	function __construct($no=0, $memberName="使用者", $dateStamp=1508501792, $content="", $memberPicName="") {
 		$this->no = $no;
