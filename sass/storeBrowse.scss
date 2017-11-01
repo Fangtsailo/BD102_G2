@@ -123,6 +123,7 @@ textarea {
 //for google maps info window
 .gm-style-iw {
 	color: red;
+	font-size: 22px !important;
 	font-family: "Noto Sans CJK TC";
 }
 .review-mask, .mask {
@@ -328,6 +329,20 @@ img {
 	position: relative;
 	overflow: hidden;
 	padding-top: 0;
+	// .scroll-down-tip {
+	// 	position: absolute;
+	// 	bottom:300px;
+	// 	z-index: 10;
+	// 	left: 0;
+	// 	right: 0;
+	// 	width: 60px;
+	// 	height: 60px;
+	// 	margin: 10px auto;
+	// 	animation:moveDown .5s ease infinite alternate;
+	// 	cursor:pointer;
+	// 	background-color: rgba(0,0,0,.7);
+	// 	border-radius: 50%;
+	// }
 	.banners {
 		background-size: cover;
 		background-position: center center;
@@ -1296,6 +1311,13 @@ img {
 	.screen-1, .screen-bread-car-map, .screen-product, .screen-activity
 	, .screen-other-store, .screen-messages{
 		// height: auto;
+	}
+	.navigator {
+		.item {
+			.name {
+				display: none;
+			}
+		}
 	}
 	.button {
 		background-color: rgba(158, 105, 61,0.7);

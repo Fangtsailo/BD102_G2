@@ -1254,6 +1254,11 @@ section {
     -webkit-transform: translate(0px, 0px);
     transform: translate(0px, 0px); } }
 
+.gm-style-iw {
+  color: red;
+  font-size: 22px !important;
+  font-family: "Noto Sans CJK TC"; }
+
 .headerLink {
   width: 60%;
   height: 100%;
