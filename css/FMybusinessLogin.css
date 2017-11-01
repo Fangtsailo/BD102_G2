@@ -10,7 +10,7 @@ input {
 .LightBox {
   position: relative; }
   .LightBox > img {
-    width: 100vw;
+    width: 100%;
     height: 100vh; }
   .LightBox section {
     background-color: #c5beb7;
@@ -72,7 +72,8 @@ input {
           height: 30px;
           margin: 0;
           padding: 0;
-          border: none; }
+          border: none;
+          text-indent: 6px; }
       .LightBox section .square_2 span input {
         border: none;
         display: block;
@@ -84,13 +85,10 @@ input {
         color: #ffffff;
         background-color: #7e4a1d;
         border-radius: 10px;
-        -webkit-box-shadow: 0 0 0;
         box-shadow: 0 0 0; }
         .LightBox section .square_2 span input:hover {
           background-color: #ffffff;
           color: #7e4a1d;
-          -webkit-transition: 0.3s;
-          -o-transition: 0.3s;
           transition: 0.3s; }
 
 @media screen and (max-width: 767px) {

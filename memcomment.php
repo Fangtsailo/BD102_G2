@@ -33,7 +33,11 @@ session_start();
 		$memNo=$_SESSION["memNo"];
 
 
+<<<<<<< HEAD
 		$sql_msg="select * from shop_message where SPMSG_MEMNO='$memNo' and SPMSG_NO not in ( select SPMSG_NO from report where RE_STATUS='0')";
+=======
+		$sql_msg="select * from shop_message where SPMSG_MEMNO='$memNo' and SPMSG_NO not in ( select SPMSG_NO from report where RE_STATUS='0') order by SPMSG_NO";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 		$shop_message=$connectPDO->query($sql_msg);
 
@@ -59,7 +63,35 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+				<?php 
+
+					
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
 			</ul>
 		</div>
 		
@@ -86,7 +118,11 @@ session_start();
 							$member=$connectPDO->query($sql_member);
 
 							$member_row=$member->fetchObject();
+<<<<<<< HEAD
 
+=======
+							 
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
 
@@ -98,6 +134,7 @@ session_start();
 					<li>
 						<div class="msg">
 							<time>
+<<<<<<< HEAD
 			                    留言時間： <?php echo $shop_message_row->SPMSG_TIME ?>
 			                </time>
 							<p>TO:<?php 
@@ -109,13 +146,36 @@ session_start();
 							}else{
 
 								echo $store_imformation_row->SI_NAME; 
+=======
+			                    留言時間： <?php echo  date("Y/m/d H:i", $shop_message_row->SPMSG_TIME) ; ?>
+			                </time>
+							<p>TO:<?php 
+							
+							if($shop_message_row->SPMSG_CON_RETIME!==NULL){
+
+								
+								
+								echo '<span style="color:#4289ff;">'.$store_imformation_row->SI_NAME.'</span>'; 
+
+								
+
+							}else{
+
+								echo $store_imformation_row->SI_NAME;
+
+								
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 							}
 
 
 
 							?></p>
+<<<<<<< HEAD
 							<p><?php echo $shop_message_row->SPMSG_CON ?></p>
+=======
+							<p><?php echo $shop_message_row->SPMSG_CON; ?></p>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 							<div class="storepic">
 								<img src="img/member_pic/<?php echo $member_row->MEM_PIC ?>">
 							</div>

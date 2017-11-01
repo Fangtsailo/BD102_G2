@@ -35,9 +35,49 @@ session_start();
 
 <!-- ======================================================開始寫========================================================= -->
 
-	
+		
+			<?php 
+				$success="";
+				if (isset($_REQUEST["success"])) {
+					$success=$_REQUEST["success"];
+				}
 
+			 ?>
 
+			<script type="text/javascript">
+				window.onload=check;
+				function check(){
+					<?php 
+						if  ($success!=="") {  ?>							
+							$.sweetModal({
+								content :'成功報名囉',
+									buttons: {
+										someOtherAction: {
+											label: '查看報名去',
+											classes: ' orangeB',
+											action: function() {
+											location.href="mementry.php"
+											}
+										},
+
+										someAction: {
+											label: '回活動頁',
+											classes: ' orangeB',
+											onClose: function(){
+											location.href="activity_act.php?actNum=$_REQUEST['actNum']"; 
+											}
+										},
+									}
+							
+							});
+
+					<?php 	}
+					 ?>
+				}
+			</script>
+				
+
+			
 	
 
 
@@ -47,7 +87,11 @@ session_start();
 				require_once("php/common/globalVar.php");
 				// $memNo=$_SESSION["memNo"];
 
+<<<<<<< HEAD
 				$actNum=6;
+=======
+				// $actNum=6;
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
 
@@ -55,6 +99,9 @@ session_start();
 					
 				$actNum=$_REQUEST["actNum"];
 				}
+
+
+
 
 				try {
 					require_once("php/pdo/connectPDO.php");
@@ -303,7 +350,11 @@ session_start();
 						
 							$memNo=$_SESSION["memNo"];
 					
+<<<<<<< HEAD
 						$memsql="select * from ac_info where AC_NO='$actNum' and MEM_NO ='$memNo' ";
+=======
+						$memsql="SELECT * FROM ac_info a left join  member m  on  m.MEM_NO=a.MEM_NO where a.AC_NO='$actNum' and a.MEM_NO ='$memNo'  ";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						$actSign=$connectPDO->query($memsql);
 						$activityRow=$actSign->fetchObject();	
 
@@ -339,6 +390,12 @@ session_start();
 					======================================還未報名============================================================ -->			 				
 								<?php			
 									}else{
+<<<<<<< HEAD
+=======
+										$memActsql="SELECT * from member where $memNo=MEM_NO ";
+										$memInfor=$connectPDO->query($memActsql);
+										$memRow=$memInfor->fetchObject();
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								 ?>		
 
 								 <div class="globalForm" >
@@ -347,7 +404,11 @@ session_start();
 							
 
 											<input type="hidden" name="acNo" value="<?php echo $actRow->AC_NO ?>">
+<<<<<<< HEAD
 
+=======
+										
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 											<div class="globalFormHeader">
 														
@@ -359,6 +420,7 @@ session_start();
 											<div class="globalFormContent">
 
 												<div class="globalFormInput">
+<<<<<<< HEAD
 													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName">
 												</div>
 												
@@ -368,13 +430,28 @@ session_start();
 												
 												<div class="globalFormInput">
 													<label><span>*</span>信箱</label><input type="email" name="memEmail"  id="memEmail"  placeholder="必填" required>
+=======
+													<label><span>*</span>姓名</label><input type="text" name="memName" placeholder="必填" id="memName" value="<?php if(isset($memRow->MEM_REALNAME)){echo $memRow->MEM_REALNAME ;}  ?>">
+												</div>
+												
+												<div class="globalFormInput">
+													<label><span>*</span>聯絡電話</label><input type="tel" id="memPhone" name="memPhone" placeholder="手機或家用電話(必填)" value="<?php if(isset($memRow->MEM_PHONE)){echo $memRow->MEM_PHONE ;}  ?>">
+												</div>
+												
+												<div class="globalFormInput">
+													<label><span>*</span>信箱</label><input type="email" name="memEmail" value="<?php if(isset($memRow->MEM_MAIL)){echo $memRow->MEM_MAIL ;}  ?>" id="memEmail"  placeholder="必填" required>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 												</div>
 
 												
 												<div class="clearfix"></div>
 												<div class="globalFormBtns">
 													<input class="globalCancelBtn btnTop" type="reset" value="取消">
+<<<<<<< HEAD
 													<input type="buttom" name="" class="globalOkBtn btnTop" value="送出" id="actSubmit">					
+=======
+													<input type="button" name="" class="globalOkBtn btnTop" value="送出" id="actSubmit">					
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 												</div>
 
 											</div>
@@ -412,6 +489,7 @@ session_start();
 													$('#memPhone').val($('#memPhone').val().trim());
 													$('#memEmail').val($('#memEmail').val().trim());
 														  		//消空格
+<<<<<<< HEAD
 													$.sweetModal({
 														content: '成功報名',
 														icon: $.sweetModal.ICON_SUCCESS,
@@ -422,6 +500,12 @@ session_start();
 												         }
 													});
 														  				
+=======
+
+														
+												              $( "#actform" ).submit();
+												    				
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 											}
 
 										});

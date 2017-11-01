@@ -55,12 +55,15 @@
 					<input type="button" name="submit" class="globalOkBtn" id="submitLogin" value="登入">
 				</div>
 				
+<<<<<<< HEAD
 				<div class="facebookLogin">
 					<a href="#" scope="public_profile,email"
   onlogin="checkLoginState();">
 					Facebook帳號登入</a>
 				</div>
 				
+=======
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 				<div class="registerLink">
 					<span id="changeToRegister">還沒有帳號？ 註冊成為PUN友</span>
 				</div>
@@ -110,10 +113,7 @@
 					<input id="submitRegister" type="button" name="SubmitRegister" class="globalOkBtn" value="註冊">					
 				</div>
 				
-				<div class="facebookRegister">
-					<a href="#">
-					Facebook帳號註冊</a>
-				</div>
+				
 				
 				<div class="loginLink">
 					<span id="changeToLogin">已經有帳號，返回登入頁面</span>
@@ -174,9 +174,15 @@
 						<a href="#" id="headMemPic">
 							<?php 
 								if ( isset($_SESSION['memPic']) ){
+<<<<<<< HEAD
 									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
 								}else {
 									echo "<img src='img/member_pic/default.png'>";
+=======
+									echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
+								}else {
+									echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								}
 
 							 ?>
@@ -187,7 +193,24 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
+<<<<<<< HEAD
 						<li><a href="memedit.php"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : "" ; ?>  </a></li>
+=======
+						<li><a href="memedit.php"> <?php 
+
+							if( isset($_SESSION["memId"]) ){
+								if( $_SESSION["memName"]!="" ){
+									echo $_SESSION["memName"];
+								}else{
+									echo $_SESSION["memId"] ;
+								}
+							}else{
+								echo "";
+							}
+
+
+						?>  </a></li>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						<li><a class="memLink" href="memedit.php">基本資料</a></li>
 						<li><a class="memLink" href="memfollow.php">我的追蹤</a></li>
 						<li><a class="memLink" href="memcomment.php">我的留言</a></li>
@@ -234,10 +257,17 @@
 		<div class="rwdsearchItem">
 			<span>- 商家型態 -</span>
 			<input id="shopType1" type="radio" value="1" name="shopType">
+<<<<<<< HEAD
 			<label for="shopType1" class="selectType rwdfilter">麵包小車</label>
 
 			<input id="shopType2" type="radio" value="0" name="shopType">
 			<label for="shopType2" class="selectType rwdfilter">麵包店</label>
+=======
+			<label for="shopType1" class="selectType rwdfilter">胖小車</label>
+
+			<input id="shopType2" type="radio" value="0" name="shopType">
+			<label for="shopType2" class="selectType rwdfilter">店家</label>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 			
 			<span>- 地區 -</span>
 			<div class="searchArea">
@@ -267,18 +297,28 @@
 		</form>
 	</div>
 
-
-	
 <!-- 左側漢堡選單 -->
 	<div class="burgerMenu" id="burgerBtn">
-			<!-- <span></span>
-			<span></span>
-			<span></span> -->
-			<span>
+
+			<?php 
+				if ( isset($_SESSION['memPic']) ){
+					if($_SESSION['memPic']==""){
+						echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
+					}else{
+						echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
+					}
+				}else {
+					echo "<img src='img/icon/signin.svg'>";
+
+				}
+
+			?>
+			<!-- <span>
 								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><g>
 								<path d="M28.4,28.2c-0.5-3.6-1.8-4.1-3.7-4.9c-0.3-0.1-0.7-0.3-1.1-0.5c-0.2-0.1-0.3-0.2-0.5-0.2c-1.1-0.5-1.4-0.8-1.4-1.3c1.4-1,2.2-2.6,2.2-4.1v-6.4L23.3,11c-0.4,0.1-0.7,0.1-1,0.1c-0.8,0-1.3-0.1-1.9-0.3c-0.5-0.1-1.1-0.3-1.9-0.3c-0.9,0-1.6,0.4-2.1,1.1l0.9,0.7c0.3-0.4,0.7-0.6,1.2-0.6c0.7,0,1.1,0.1,1.7,0.2c0.6,0.1,1.2,0.3,2.1,0.3c0.2,0,0.3,0,0.5,0v5.1c0,1.9-1.4,3.9-3.9,3.9c-2.4,0-3.9-2-3.9-3.9v-5.9C15.3,11,16,9,18.6,9c0.9,0,1.5,0.2,2.1,0.3c0.5,0.1,1,0.2,1.6,0.2c0.6,0,1.2-0.1,1.6-0.3V8.1c-0.4,0.1-1,0.4-1.6,0.4c-0.5,0-0.9-0.1-1.4-0.2c-0.7-0.2-1.4-0.3-2.4-0.3c-2.9,0-4.2,2.1-4.5,3.3l0,6.1c0,1.5,0.8,3.2,2.2,4.1c-0.1,0.5-0.3,0.8-1.4,1.3c-0.1,0.1-0.3,0.1-0.5,0.2c-0.4,0.2-0.7,0.3-1.1,0.5c-1.8,0.8-3.2,1.3-3.7,4.9l-0.1,0.6h19L28.4,28.2z M10.8,27.8c0.4-2.4,1.3-2.7,2.9-3.4c0.3-0.1,0.7-0.3,1.1-0.5c0.3-0.1,0.5-0.2,0.8-0.4c0.8-0.4,1.4-0.9,1.6-1.6c0.5,0.2,1.1,0.3,1.8,0.3c0.6,0,1.2-0.1,1.8-0.3c0.2,0.7,0.8,1.2,1.6,1.6c0.2,0.1,0.5,0.2,0.8,0.4c0.4,0.2,0.8,0.3,1.1,0.5c1.6,0.7,2.4,1,2.9,3.4H10.8z"/>
 								<path class="st1" d="M36,19c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15S27.3,4,19,4S4,10.7,4,19c0,0.3,0,0.7,0.1,1H2v-1C2,9.6,9.6,2,19,2S36,9.6,36,19z"/></g></svg>
-			</span>
+			</span> -->
+
 	</div>
 	<nav id="menu" class="hideMenu">
 		<ul id="visitor">
@@ -326,8 +366,68 @@
 				<a id="rwdBossRole" href="memBeBoss1.php">成為店長</a>
 				
 				<ul id="bossMenu">
+<<<<<<< HEAD
 					<li><a class="navItem bossMenu" href="FMybusinessStore.php">麵包店</a></li>
 					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
+=======
+
+					<li><a class="navItem bossMenu" href="#" id="rwdStore">麵包店<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+						<?php 
+						require_once("php/PDO/connectPDO.php");
+						if( isset($_SESSION["memNo"]) ){
+						$memNo=$_SESSION["memNo"];
+						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0 and SI_CHECKSTAY=1 and SI_SELLSTAY=1";
+						$storeMenu = $connectPDO->query($sql_Store);
+						?>
+							
+							<ul id="storeMenu">
+							<li><a class="navItem bossMenu" href="FMybusinessStore.php">基本資料</a></li>
+
+						<?php
+						
+							if($storeMenu->rowCount()!=0){
+						
+						?>
+
+							<li><a class="navItem bossMenu" href="FMybusinessStoreProductList.php">商品</a></li>
+							
+
+							 <?php 
+							}//if rowCount
+						}//if isset
+						  ?>
+						  	</ul>
+
+					</li>
+					
+					<li><a class="navItem bossMenu" href="#" id="rwdCar">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+				<?php 
+
+						if( isset($_SESSION["memNo"]) ){
+							$memNo=$_SESSION["memNo"];
+							$sql_Store = "SELECT * FROM store_imformation WHERE SI_MEMNO='$memNo' AND SI_TYPE=1 AND SI_CHECKSTAY=1 AND SI_SELLSTAY=1";
+							$carMenu = $connectPDO->query($sql_Store);
+				?>
+							<ul id="carMenu">
+							<li><a class="navItem bossMenu" href="FMybusinessCar.php">基本資料</a></li> 
+
+				<?php
+							if($carMenu->rowCount()!=0){
+				?>
+
+							<li><a class="navItem bossMenu" href="FMybusinessCarProductList.php">商品</a></li>
+							<li><a class="navItem bossMenu" href="FMybusinessCarRouteAdd.php">路線規劃</a></li>
+							<li><a class="navItem bossMenu" href="FMybusinessCarPosition.php">基本資料</a></li>
+
+				<?php 
+							}
+						}
+				?>
+							</ul>
+					</li>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
 					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>

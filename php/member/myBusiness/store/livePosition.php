@@ -35,10 +35,28 @@
 		 $livePosition=$_REQUEST['livePosition'];
 		 $livePosition_data=$_REQUEST['livePosition_data'];
 
+<<<<<<< HEAD
 		$sql = "UPDATE store_imformation SET SI_ADDR='$livePosition_data' WHERE SI_NUM =$livePosition";
 
 		$connectPDO->query($sql);
 
+=======
+		 $position =explode(",",$livePosition_data);
+
+
+
+
+
+
+
+		$sql = "UPDATE store_imformation SET SI_LAT='$position[0]',SI_LNG='$position[1]' WHERE SI_NUM =$livePosition";
+
+		$connectPDO->query($sql);
+
+
+		
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 		
 
 			

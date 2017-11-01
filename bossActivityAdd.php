@@ -7,7 +7,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>店長專區-活動管理</title>
+	<title>TrePun</title>
+	<link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
 	<link rel="stylesheet" type="text/css" href="css/bossActivityAdd.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -70,12 +71,27 @@ session_start();
 						</td>
 					</tr>
 					<tr>
+						<th><div>活動副標題</div></th>
+						<td>
+							<input type="text" name="acSubName" placeholder="請輸入副標題">
+						</td>
+					</tr>
+					<tr>
 						<th><div>活動時間</div></th>
 						<td>
 							<input type="text" name="acTime" placeholder="例如：2017-10-10上午10:00">
 						</td>
 					</tr>
 					<tr>
+<<<<<<< HEAD
+=======
+						<th><div>活動地點</div></th>
+						<td>
+							<input type="text" name="acAddress" placeholder="輸入活動舉辦地點與位置">
+						</td>
+					</tr>
+					<tr>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						<th><div>活動費用</div></th>
 						<td>
 							<input type="text" name="acPrice" placeholder="請輸入活動參加者每人報名費用">
@@ -94,54 +110,75 @@ session_start();
 						</td>
 					</tr>
 					<tr>
-						<th><div>目的</div></th>
+						<th><div id="hidden">目的</div></th>
 						<td>
-							<textarea name="ac_detail1" placeholder="限70字" maxlength="70"></textarea>
+							<textarea id="ac_detail1" name="ac_detail1" placeholder="限70字" maxlength="70"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th><div>詳情</div></th>
 						<td>
-							<textarea name="ac_detail2" placeholder="限55字" maxlength="55"></textarea>
+							<textarea id="ac_detail2" name="ac_detail2" placeholder="限55字" maxlength="55"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th><div>食材準備</div></th>
 						<td>
-							<textarea name="ac_detail3" placeholder="限80字" maxlength="80"></textarea>
+							<textarea id="ac_detail3" name="ac_detail3" placeholder="限80字" maxlength="80"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th class="uploadPic"><div>封面照片(限兩張)</div></th>
 						<td class="uploadPic">
 							<label class="upload">
-								<img src="img/icon/camera.png">
+								<img class="preview_0" src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upBanner[]">
+=======
+								<input id="bnrImg" type="file" name="upBanner[]" multiple>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								<span></span>
 								</label>
-							
-							<label class="upload">
-								<img src="img/icon/camera.png">
+								<label class="showImg" id="bnrImgShow"></label>
+								<div class="clearfix"></div>
+							<!-- <label class="upload">
+								<img class="preview_1" src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upBanner[]"></label>
+=======
+								<input type="file" name="upBanner[]">
+							</label> -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						</td>
 					</tr>
 					<tr>
 						<th class="uploadPic"><div>活動照片(限3張)</div></th>
 						<td class="uploadPic">
 							<label class="upload">
+								<img class="uploadImg" src="img/icon/camera.png">
+								<span>上傳照片</span>
+<<<<<<< HEAD
+								<input type="file" name="upAct[]"></label>
+							<label class="upload">
+=======
+								<input id="actImg" type="file" name="upAct[]" multiple></label>
+								<label class="showImg" id="actImgShow"></label>
+								<div class="clearfix"></div>
+							<!-- <label class="upload">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
 								<input type="file" name="upAct[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upAct[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upAct[]"></label>
+=======
+								<input type="file" name="upAct[]"></label> -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						</td>
 					</tr>
 					<tr>
@@ -150,15 +187,26 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upIngrd[]"></label>
 							<label class="upload">
+=======
+								<input id="ingrdImg" type="file" name="upIngrd[]" multiple></label>
+								<label class="showImg" id="ingrdImgShow"></label>
+								<div class="clearfix"></div>
+							<!-- <label class="upload">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
 								<input type="file" name="upIngrd[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upIngrd[]"></label>
+=======
+								<input type="file" name="upIngrd[]"></label> -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						</td>
 					</tr>
 					<tr>
@@ -167,15 +215,26 @@ session_start();
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upProd[]"></label>
 							<label class="upload">
+=======
+								<input id="prodImg" type="file" name="upProd[]" multiple></label>
+								<label class="showImg" id="prodImgShow"></label>
+								<div class="clearfix"></div>
+							<!-- <label class="upload">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
 								<input type="file" name="upProd[]"></label>
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
+<<<<<<< HEAD
 								<input type="file" name="upProd[]"></label>
+=======
+								<input type="file" name="upProd[]"></label> -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 						</td>
 					</tr>
 				</table>
@@ -201,6 +260,55 @@ session_start();
 	  ?>
 <script type="text/javascript">
 	$(function(){
+		
+		$("#hidden").click(function(){
+			$("#ac_detail1").html("菠蘿麵包的魅力是凡人無法擋,不管任何階層年齡的人，都喜歡這一味！無論市場上有多少新口味出現，菠蘿家族總是屹立不搖！");
+			$("#ac_detail2").html("香港茶餐廳人氣最旺的就是菠蘿牛油包，剛出爐的菠蘿麵包趁熱切開夾上一片冰凍的奶油，熱熱的麵包馬上融化濃郁的奶油片，我們讓你製作自己的冰火五重天！");
+			$("#ac_detail3").html("湯種麵糊、特級高筋麵粉、特級低筋麵粉、速發酵母、洗選蛋、台糖特級細砂糖、純白精鹽、義美鮮奶、法國特級總統牌奶油");
+		});
+
+
+
+	function showfile(evt,showarea) {
+
+		var files = evt.files; // FileList 
+	    function load_image(e){
+	      var img = document.createElement('img');
+	      img.src = e.target.result;
+	      img.className = "image";
+	      document.getElementById(showarea).insertBefore(img, null);
+    	}
+    	for (var i = 0, len = files.length ; i<len ; i++) {
+	      file = files[i];
+	      // 只要影像圖
+	      if (!file.type.match('image.*')) {
+	        continue;
+	      }
+	      var reader = new FileReader();
+	      reader.onload = load_image;
+	      // Read in the image file as a data URL.
+	      reader.fileName = file.name;
+	      reader.readAsDataURL(file);
+	    }
+	}
+
+
+	$("#bnrImg").change(function(){
+	    showfile(this,'bnrImgShow');
+  	});
+	$("#actImg").change(function(){
+	    showfile(this,'actImgShow');
+  	});
+	$("#ingrdImg").change(function(){
+	    showfile(this,'ingrdImgShow');
+  	});
+	$("#prodImg").change(function(){
+	    showfile(this,'prodImgShow');
+  	});
+
+
+
+
 		$("#addActBtn").click(function(){
 
 
@@ -223,6 +331,10 @@ session_start();
 
 		});
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	});
 
 </script>

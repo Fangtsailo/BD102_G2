@@ -147,7 +147,11 @@ require_once("BackStageHeaderSidebar.php");
 
 								 if(isset($_REQUEST["searchBar"])){
 
+<<<<<<< HEAD
 								 exit("22222222222222222222222222222"); 
+=======
+								 //exit("22222222222222222222222222222"); 
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
 								 	$searchBar = $_GET["searchBar"];
@@ -186,6 +190,9 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $memberSearchRow->MEM_MAIL; ?></td>
 						<td><?php echo $memberSearchRow->MEM_NAME; ?></td>
 						<td><?php echo $memberSearchRow->MEM_PHONE; ?></td>
+
+						
+						
 
 
 						
@@ -257,7 +264,11 @@ require_once("BackStageHeaderSidebar.php");
 							} else{//if($EMP_STATUS==0)
 
 
+<<<<<<< HEAD
 								exit("22222222222222222222222222222"); 
+=======
+							
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
 						?>
@@ -278,7 +289,11 @@ require_once("BackStageHeaderSidebar.php");
 
 											if($MEM_STATUS==0){
 
+<<<<<<< HEAD
 												exit();
+=======
+												
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 										?>
 										
@@ -363,6 +378,12 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $memberRow->MEM_PHONE; ?></td>
 
 
+<<<<<<< HEAD
+=======
+						
+
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 <!-- =========td pass or not====== -->
 
 

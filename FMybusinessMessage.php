@@ -13,7 +13,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessMessage.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -190,6 +191,7 @@ session_start();
 						<td>
 							
 							<img src="img/member_pic/<?php echo $mem_table_Row->MEM_PIC ?>">
+<<<<<<< HEAD
 							
 						</td>
 						<td>
@@ -291,6 +293,173 @@ session_start();
 								}else{
 
 									//echo'<button style="backgroundColor=#ccc;">送出</button>';
+=======
+							
+						</td>
+						<td>
+							<p class="idName"><?php echo $mem_table_Row->MEM_ID; ?></p>
+							<p class="memMsg"><?php echo $shop_message_Row->SPMSG_CON; ?></p>
+							
+						</td>
+						
+						<td>
+							<!-- <div>
+								<img src="img/icon/editIcon.png">
+								<span>回應</span>
+							</div> -->
+							<div>
+								
+									<?php 
+
+										$SPMSG_NO=$shop_message_Row->SPMSG_NO;
+										$sql_report="select * from report where SPMSG_NO=$SPMSG_NO";
+										$report=$connectPDO->query($sql_report);
+										
+
+
+										if($report->rowCount()==0 ){
+
+										?>
+											<a href="php/member/myBusiness/store/reportMsg.php?SPMSG_NO=<?php echo $shop_message_Row->SPMSG_NO; ?>&SPMSG_SPNO=<?php echo $shop_message_Row->SPMSG_SPNO; ?>&SPMSG_MEMNO=<?php echo $shop_message_Row->SPMSG_MEMNO; ?>&SPMSG_CON=<?php echo $shop_message_Row->SPMSG_CON; ?>">
+										<?php
+
+											echo '<img class="delImg" src="img/icon/risk.png"><span style="color:#f00;">檢舉</span>';
+
+										?>
+										</a>
+										<?php
+
+										}else{
+
+											$reportRow=$report->fetchObject();
+											$RE_STATUS=$reportRow->RE_STATUS;
+
+											if($RE_STATUS===NULL){
+												echo '<img src="img/icon/delete.png"><span style="color:#ccc;">審核中</span>';
+											}else if($RE_STATUS==="0"){
+												echo '<img src="img/icon/delete.png"><span style="color:#ccc;">已刪除</span>';
+											}else if($RE_STATUS==="1"){
+												echo '<img src="img/icon/delete.png"><span style="color:#ccc;">已保留</span>';
+											}
+
+										}
+
+									 ?>
+									
+									<!-- <span>檢舉</span> -->
+								
+							</div>
+							<div class="clear"></div>
+							<div class="msgTime"><?php 
+
+							//date("Y/m/d H:i:s", $shop_message_Row->SPMSG_TIME)
+
+							echo date("Y/m/d H:i:s", $shop_message_Row->SPMSG_TIME); 
+
+
+							?></div>
+						</td>
+					</tr>
+
+
+
+					<tr>
+						
+						<td class="txtFather" colspan="2">
+							<?php 
+									$SPMSG_NO=$shop_message_Row->SPMSG_NO;
+										$sql_report="select * from report where SPMSG_NO=$SPMSG_NO";
+										$report=$connectPDO->query($sql_report);
+									//$reportRow=$report->fetchObject();
+									//$RE_STATUS=$reportRow->RE_STATUS;
+
+							
+
+								if($report->rowCount()==0 ){
+
+										if($shop_message_Row->SPMSG_CON_REPLY===null){
+
+												echo'<textarea name="SPMSG_CON_REPLY_'.$shop_message_Row->SPMSG_NO.'" placeholder="店長回覆"></textarea>';
+
+
+										}else{
+
+											echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+										}
+								}else{
+
+										$reportRow=$report->fetchObject();
+										$RE_STATUS=$reportRow->RE_STATUS;
+
+										if($RE_STATUS==="0"){
+
+											//echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+											
+										}else{
+
+											echo'<textarea name="SPMSG_CON_REPLY_'.$shop_message_Row->SPMSG_NO.'" placeholder="店長回覆"></textarea>';
+
+										}
+
+
+								}
+
+
+
+							
+
+							 ?>
+							
+						</td>
+						<!-- <td></td> -->
+						<td>
+
+							<?php 
+
+								$SPMSG_NO=$shop_message_Row->SPMSG_NO;
+										$sql_report="select * from report where SPMSG_NO=$SPMSG_NO";
+										$report=$connectPDO->query($sql_report);
+									//$reportRow=$report->fetchObject();
+									//$RE_STATUS=$reportRow->RE_STATUS;
+
+							
+
+							if($report->rowCount()==0 ){
+
+
+
+									if($shop_message_Row->SPMSG_CON_REPLY===null){
+
+										//echo'<button id="alertBtn" value="'.$shop_message_Row->SPMSG_NO.'">送出</button>';
+										// echo'<button id="alertBtn">送出</button>';
+										echo '<input type="hidden" name="" value="'.$shop_message_Row->SPMSG_NO.'">';
+										echo '<input type="button" class="alertBtn" name="" value="送出" style="cursor:pointer;">';
+
+									}else{
+
+										//echo'<button style="backgroundColor=#ccc;">送出</button>';
+									}
+
+								}else{
+
+
+									$reportRow=$report->fetchObject();
+										$RE_STATUS=$reportRow->RE_STATUS;
+
+										if($RE_STATUS==="0"){
+
+											//echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+											
+										}else{
+
+											echo '<input type="hidden" name="" value="'.$shop_message_Row->SPMSG_NO.'">';
+											echo '<input type="button" class="alertBtn" name="" value="送出" style="cursor:pointer;">';
+
+
+										}
+
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 								}
 
 							 ?>
@@ -341,9 +510,15 @@ session_start();
           }else{
 
           	var Value =$(this).siblings().attr("value");
+<<<<<<< HEAD
 
 			$("#SPMSG_NO").attr("value",Value);
 
+=======
+
+			$("#SPMSG_NO").attr("value",Value);
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 				$.sweetModal({
 	            content: '回覆成功！',
 	            icon: $.sweetModal.ICON_SUCCESS,

@@ -264,7 +264,19 @@ require_once("BackStageHeaderSidebar.php");
 
 
 
-						9
+						<?php 
+
+						$MEM_NO=$memberRow->MEM_NO;
+
+						$sql_report="select * from report where MEM_NO='$MEM_NO'";
+
+
+						$report=$connectPDO->query($sql_report);
+
+						echo $report->rowCount();
+						
+
+						 ?>
 
 
 

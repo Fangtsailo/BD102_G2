@@ -47,6 +47,11 @@ try {
 			case 7:
 				$word = "日";
 				break;
+<<<<<<< HEAD
+=======
+			default:
+				$word = "國定假日";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 		}
 		return $word;
 	}
@@ -106,20 +111,28 @@ try {
 	function getMessagesByStoreId($storeId, $loginMemNum) {
 		$messageArr = array();
 		$limitCount = 5;//一次載入5筆
-		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC limit $limitCount";
+		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME,member.MEM_ID, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC limit $limitCount";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
+
 		if ($stmt->rowCount() == 0) {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
+				$memDisplayName = $row->MEM_NAME==""?$row->MEM_ID:$row->MEM_NAME;
+				$message = new Message($row->SPMSG_NO, $memDisplayName, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
 				//這筆留言有沒有被此登入的 member 檢舉過
 				$sql = "SELECT * FROM report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
 				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
-				if ($row = $stmt2->fetchObject()) {
+				if ($row2 = $stmt2->fetchObject()) {
 					$message->isReportByMe = true;
+				}
+				//這筆留言有沒有被管理員刪除
+				$sql = "SELECT * FROM report where SPMSG_NO=$row->SPMSG_NO AND RE_STATUS=0";
+				$stmt3 = $GLOBALS["connectPDO"]->query($sql);
+				if ($row3 = $stmt3->fetchObject()) {
+					$message->isRemoveByADM = true;
 				}
 				array_push($messageArr, $message);
 			}
@@ -183,8 +196,7 @@ try {
 			return array();
 		} else {
 			while($path = $stmt->fetchObject()) {
-				$nowLocationStr = "{lat:".$path->si_lat.", lng:".$path->si_lng."}";
-				$breadCarPath = new BreadCarPath($path->bcp_describe, $nowLocationStr, $path->bcp_location);
+				$breadCarPath = new BreadCarPath($path->bcp_describe, $path->si_lat, $path->si_lng, $path->bcp_location);
 				array_push($breadCarPathArr, $breadCarPath);
 			}
 			return $breadCarPathArr;

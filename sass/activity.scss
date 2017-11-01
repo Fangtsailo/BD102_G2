@@ -108,9 +108,9 @@
 					color:$globalStarColor;
 				}
 				.acty_h2{
-					width:100%;
+					width:96%;
 					position:absolute;
-					bottom: 32%;
+					bottom: 18%;
 					left:0%;
 					text-align:center;
 					h2{
@@ -155,7 +155,7 @@
 				.acty_h2{
 					width:100%;
 					position:absolute;
-					bottom: 32%;
+					bottom: 14%;
 					left:0%;
 					text-align:center;
 					h2{
@@ -856,6 +856,7 @@
 
 	.btnTop{
 		margin-top:10px;
+		outline:none;
 	}
 	.activity_cloud{
 		position: absolute;
@@ -890,7 +891,11 @@
 		}	
 	}
 
-	
+	.sweet-modal-box alert {
+		.sweet-modal-buttons{
+	text-align:center;
+		}
+	}
 
 
 /*===========activity_application   rwd  ====================

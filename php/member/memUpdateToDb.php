@@ -15,6 +15,10 @@ session_start();
 try {
 	//連線到資料庫
 	require_once("../pdo/connectPDO.php");
+<<<<<<< HEAD
+=======
+	require_once("../common/globalVar.php");
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	//取得暫存區的帳號
 	$memId = $_SESSION["memId"];
 	//取得在編輯頁輸入的舊密碼 (此行可以不寫，因除未選的單選鈕不會傳值外，其餘都會傳值)
@@ -40,20 +44,31 @@ try {
 	$memPhone = $_REQUEST["MEM_PHONE"];
 	$memPsw = $_REQUEST["MEM_PSW"]; //新密碼
 	$memPic = $_REQUEST["oldImage"]; //既有在資料庫的圖檔
+	$memNo = $_SESSION["memNo"];
 
 
 	//$_FILES["input屬性name的值"]["上傳檔案時的錯誤代碼"]
 	switch($_FILES["mempic"]["error"]){  
 		case 0:  //0表示有重新上傳圖檔
+<<<<<<< HEAD
 		  if( file_exists("member_pic") === false){
 		  	mkdir("member_pic");
 		  } //若無member_pic資料夾則新增此資料夾
+=======
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 		  $from = $_FILES["mempic"]["tmp_name"];
-		  $to = "member_pic//" . $_FILES["mempic"]["name"];
+		  $fileName = $memNo. substr($_FILES["mempic"]["name"],strripos($_FILES["mempic"]["name"],"."),strlen($_FILES["mempic"]["name"]));
+		  $to = "../../".GLOBAL_MEM_PIC_PATH .$fileName;
 		  copy($from, $to);  //將暫存檔儲存在伺服器指定的$to路徑
+<<<<<<< HEAD
 		  
 		   //宣告一個新圖檔的全域變數來接暫存區圖檔
 		  $GLOBALS["newMemPic"] = $_FILES["mempic"]["name"];
+=======
+		  $_SESSION["memPic"] = $fileName;
+		  //宣告一個新圖檔的全域變數來接暫存區圖檔
+          $GLOBALS["newMemPic"] = $fileName;
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 		  break;
 		case 1: //超過ini檔限制的檔案大小
 		  echo "上傳失敗,不可超過", ini_get("upload_max_filesize"),"<br>";
@@ -73,11 +88,14 @@ try {
 
 	$newMemPic = ($GLOBALS["newMemPic"]!=null)? $GLOBALS["newMemPic"] : $_REQUEST["oldImage"] ;
 
+<<<<<<< HEAD
 	echo" $memPsw <br>";
 	echo "$memName <br>";
 	echo" $memPhone <br>";
 	echo $newMemPic."<br>";
 
+=======
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	//更新資料庫中的姓名、電話
 	$sql = "update member set MEM_NAME=:memName, MEM_PHONE=:memPhone";
 	

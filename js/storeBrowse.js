@@ -219,6 +219,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 	        nowMessagePage++;
 	        var html = "";
 	        for (var key in messageListObj) {
+	        	if (!messageListObj[key].isRemoveByADM) {
 	        	html +=	'<div class="message-box">'
 					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
 					+	'	<div class="content col-lg-10">'
@@ -234,6 +235,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 					+	'	</div>'
 					+	'	<div class="clear"></div>'
 					+	'</div>';
+				}
 	        }
 	        $('#messages-area').append(html);
 	        $('#messages-area').append($('#more-message'));
@@ -249,6 +251,58 @@ function loadMoreMessage(storeId, loginMemNum) {
 
 				});	
 	        }
+	       }else{
+	          console.log( xhr.status );
+	       }
+	   }
+	  }
+	  
+	  var url = "php/store/browse/ajax/AjaxLoadMoreMessage.php?messagePage=" + nowMessagePage + "&storeId=" + storeId + "&loginMemNum=" + loginMemNum;
+	  xhr.open("Get", url, true);
+	  xhr.send( null );
+}
+function loadMoreMessage2(storeId, loginMemNum) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.onreadystatechange=function (){
+	    if( xhr.readyState == 4){
+	       if( xhr.status == 200 ){
+	        var messageListObj = JSON.parse(xhr.responseText);
+	        nowMessagePage++;
+	        var html = "";
+	        for (var key in messageListObj) {
+	        	if (!messageListObj[key].isRemoveByADM) {
+	        	html +=	'<div class="message-box">'
+					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
+					+	'	<div class="content col-lg-10">'
+					+	'		<div class="container">'
+					+	'			<div class="name">'+ messageListObj[key].memberName +'<span class="datetime">'+ messageListObj[key].dateStr +'</span></div>'
+					+	'			<p>'+ messageListObj[key].content +'</p>'
+					+	'			<div class="setting-area">'
+					+	'				<div class="report pointer button" data-id="'+ messageListObj[key].no +'" id="msg-'+ messageListObj[key].no + '">'
+					+	'					<p>檢舉</p>'
+					+	'			</div></div>'
+					+	'			<div class="clearfix"></div>'
+					+	'		</div>'
+					+	'	</div>'
+					+	'	<div class="clearfix"></div>'
+					+	'</div>';
+				}
+	        }
+	        $('#messages-area').append(html);
+	        $('#messages-area').append($('#more-message'));
+	        //ajax載入的檢舉要加事件
+	        for (var key in messageListObj) {
+	        	if (messageListObj[key].isReportByMe == true) {
+			   		$('#msg-' + messageListObj[key].no).addClass('reported');
+			   		$('#msg-' + messageListObj[key].no + ' p').text('已檢舉');
+				}
+	        	$('#msg-'+ messageListObj[key].no).on('click', function(){
+					var id = $(this).attr('data-id');
+						reportMessage(id, loginMemNum);
+
+				});	
+	        }
+<<<<<<< HEAD
 	       }else{
 	          console.log( xhr.status );
 	       }
@@ -298,6 +352,8 @@ function loadMoreMessage2(storeId, loginMemNum) {
 
 				});	
 	        }
+=======
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	       }else{
 	          console.log( xhr.status );
 	       }
@@ -336,7 +392,7 @@ function initBreadCarNowLocationMap(id, lat, lng) {
 	}
 }
 	//胖小車路線地圖: id, 座標 array
-function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
+function initBreadCarRouteMap(id, LatLngArr, nowLocationLat, nowLocationLng) {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
 	var labels = '123456';
@@ -349,11 +405,13 @@ function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
     directionsDisplay.setMap(map);
 //now location marker
 	var image = "img/icon/van2.png";
-	var nowLocationMarker = new google.maps.Marker({
-	  position: nowLocation,
-	  map: map, 
-	  icon: image
-	});    
+	if ((nowLocationLat !=0 || nowLocationLng !=0) && (nowLocationLat !="" || nowLocationLng != "")) {
+		var nowLocationMarker = new google.maps.Marker({
+		  position: {lat: nowLocationLat, lng: nowLocationLng},
+		  map: map, 
+		  icon: image
+		});  
+	}  
 //init route service
     var waypts = [];
 	for (waypointIndex in LatLngArr) {
@@ -417,12 +475,14 @@ function allSlickSetting(breadCarPathCount) {
 	  dots: true,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  arrows: false,
 	  responsive: [
 	    {
 	      breakpoint: 767,
 	      settings: {
 	        slidesToShow: 3,
-	        slidesToScroll: 1
+	        slidesToScroll: 1,
+	        centerMode: true,
 	      }
 	    }
 	  ]

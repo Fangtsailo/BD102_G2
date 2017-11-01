@@ -182,6 +182,7 @@ li {
 			height: 100vh;
 			background-color: rgba(50,50,50,.5);
 			display: none;
+			z-index: 999;
 			.globalForm {
 				position: absolute;
 				top: 0;
@@ -279,6 +280,7 @@ li {
 			height: 100vh;
 			background-color: rgba(50,50,50,.5);
 			display: none;
+			z-index: 999;
 			.globalForm {
 				position: absolute;
 				top: 0;
@@ -574,6 +576,7 @@ li {
 							width: 100%;
 							height: 100%;
 							border-radius: 50%;
+							object-fit: cover;
 							&#addShop1 {
 								transition: .3s;
 								&:hover {
@@ -647,6 +650,9 @@ li {
 							font-weight: 500;
 							color:$globalFontColor;
 							transition:.3s;
+							&#showMemId {
+								color:#442d18;
+							}
 							&.memLink {
 								&:hover {
 								background-color:$globalHdColor01;
@@ -807,6 +813,7 @@ footer {
 	color:$globalBtnColor;
 	background-color: $globalBgColor;
 	transition: .3s ease;
+	outline:none;
 	&:hover {
 	background-color: $globalBtnColor;
 	color:$globalBgColor;
@@ -907,7 +914,7 @@ footer {
 			text-align: center;
 			float: none;
 			img {
-				width: 100%;  
+				width: 100%;
 			}
 		}
 		.headerRight {
@@ -940,18 +947,23 @@ footer {
 			bottom: 0;
 			right: 20px;
 			margin: auto;
-			span {
+			img {
 				width: 40px;
 				height: 40px;
 				display: block;
 				margin: auto;
 				fill:$globalBgColor;
+				border-radius: 50%;
+				object-fit: cover;
 			}
 			&.active {
 				transition: .3s ease;
 			}
 		}
 		#headMemStatus{
+			display: none;
+		}
+		ul#storeMenu {
 			display: none;
 		}
 		#menu {
@@ -1015,6 +1027,7 @@ footer {
 								width: 50px;
 								height: 50px;
 								border-radius: 50%;
+								object-fit: cover;
 							}
 						}
 						span {
@@ -1048,6 +1061,24 @@ footer {
 						&:focus {
 							background-color: rgba(158, 105, 61, .5);
 							transition: .3s;
+						}
+					}
+					ul#bossMenu {
+						li {
+							ul#storeMenu {
+								li {
+									a.bossMenu {
+										background-color: rgba(35, 22, 11, 0.22);
+									}
+								}
+							}
+							ul#carMenu {
+								li {
+									a.bossMenu {
+										background-color: rgba(35, 22, 11, 0.22);
+									}
+								}
+							}
 						}
 					}
 					&.myActivity {
@@ -1162,16 +1193,23 @@ footer {
 @media screen and (max-width:400px){
 	.globalHead {
 		.headLoginBox{
+			position: absolute;
 			.globalForm {
 				width: 100%;
 				margin-top: 80px;
-				height: 90vh;
+				height: 90%;
 				.globalFormHeader {
 					img {
 						width: 120px;	
 					}
 				}
 				.globalFormContent {
+					.globalFormInput {
+						input {
+							font-size: 16px;
+
+						}
+					}
 					.forgetPsw {
 						padding: 10px auto;
 					}
@@ -1203,6 +1241,10 @@ footer {
 				.globalFormContent {
 					.globalFormInput{
 						width: 90%;
+						input {
+							font-size: 16px;
+
+						}
 
 					}
 					.globalFormBtns{
@@ -1328,7 +1370,12 @@ footer {
 				} 
 		}
 	}
+<<<<<<< HEAD
+=======
 
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
+
+}
 
 }
 

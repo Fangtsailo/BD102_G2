@@ -30,6 +30,10 @@ session_start();
 					content: '資料異動成功~',
 					icon: $.sweetModal.ICON_SUCCESS,
 					width: '300px',
+<<<<<<< HEAD
+=======
+					timeout:1000,
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					theme: $.sweetModal.THEME_MIXED,
 				});
 			} else if ( info == "error" ) {
@@ -68,7 +72,39 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+				
+				<?php 
+
+					try{
+					require_once("php/pdo/connectPDO.php");
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
+
+
 			</ul>
 		</div>
 		
@@ -83,8 +119,12 @@ session_start();
 				$memId=isset($_SESSION["memId"])? $_SESSION["memId"] : "";
 				$info =isset($_REQUEST["info"])? $_REQUEST["info"] : "";
 
+<<<<<<< HEAD
 				try{
 					require_once("php/pdo/connectPDO.php");
+=======
+				
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					$sql = "select * from member where MEM_ID='$memId'";
 					$member = $connectPDO->query($sql);
 					// if($member->rowCount()==0){
@@ -95,8 +135,13 @@ session_start();
 
 				<form class="form-horizontal" action="php\member\memUpdateToDb.php" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="memId" value="<?php echo $memRow->MEM_ID;?>">
+<<<<<<< HEAD
 					<div class="userpic">
 						<img src="img/member_pic/<?php echo $memRow->MEM_PIC;?>">
+=======
+					<div id="showPic" class="userpic">
+						<img id="nullPic" src="img/member_pic/<?php echo $memRow->MEM_PIC;?>">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					</div>
 					<p>
 						<label for="mempic">變更頭像</label>
@@ -105,6 +150,41 @@ session_start();
 							<input type="hidden" name="oldImage" value="<?php echo $memRow->MEM_PIC;?>">
 						</a>
 					</p>
+					<script>
+
+
+
+						function showfile(evt,showarea) {
+
+						var files = evt.files; // FileList 
+					    function load_image(e){
+					      var img = document.createElement('img');
+					      img.src = e.target.result;
+					      img.className = "image";
+					      document.getElementById(showarea).insertBefore(img, null);
+				    	}
+				    	for (var i = 0, len = files.length ; i<len ; i++) {
+					      file = files[i];
+					      // 只要影像圖
+					      if (!file.type.match('image.*')) {
+					        continue;
+					      }
+					      var reader = new FileReader();
+					      reader.onload = load_image;
+					      // Read in the image file as a data URL.
+					      reader.fileName = file.name;
+					      reader.readAsDataURL(file);
+					    }
+					}
+
+					$("#mempic").change(function(){
+
+						$('#nullPic').css('display','none');
+
+					    showfile(this,'showPic');
+				  	});
+
+					</script>
 					<p>
 						<label for="MEM_ID">帳號</label>
 						<strong><?php echo $memId; ?></strong>
@@ -112,7 +192,11 @@ session_start();
 					</p>
 					<p>
 						<label for="MEM_NAME">匿稱</label>
+<<<<<<< HEAD
 						<input type="text" name="MEM_NAME" placeholder="請輸入真實姓名" autofocus value="<?php echo $memRow->MEM_NAME;?>">
+=======
+						<input type="text" name="MEM_NAME" placeholder="請輸入暱稱" autofocus value="<?php echo $memRow->MEM_NAME;?>">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					</p>
 					<p>
 						<label for="MEM_MAIL">信箱</label>

@@ -5,10 +5,17 @@
 
 body {
   background-color: #fbf8f1;
+<<<<<<< HEAD
   font-family: "Noto Sans CJK TC"; }
 
 input {
   font-family: "Noto Sans CJK TC"; }
+=======
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
+
+input {
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 a {
   text-decoration: none;
@@ -171,7 +178,12 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
+<<<<<<< HEAD
     display: none; }
+=======
+    display: none;
+    z-index: 999; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     .globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
@@ -247,7 +259,12 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
+<<<<<<< HEAD
     display: none; }
+=======
+    display: none;
+    z-index: 999; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     .globalHead .headRegisterBox .globalForm {
       position: absolute;
       top: 0;
@@ -507,7 +524,13 @@ li {
               display: block;
               width: 100%;
               height: 100%;
+<<<<<<< HEAD
               border-radius: 50%; }
+=======
+              border-radius: 50%;
+              -o-object-fit: cover;
+              object-fit: cover; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
                 -webkit-transition: .3s;
                 -o-transition: .3s;
@@ -573,6 +596,11 @@ li {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+<<<<<<< HEAD
+=======
+              .globalHead .headerRight .headAccount .memStatusBar ul li a#showMemId {
+                color: #442d18; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;
@@ -675,7 +703,12 @@ footer {
   background-color: #fbf8f1;
   -webkit-transition: .3s ease;
   -o-transition: .3s ease;
+<<<<<<< HEAD
   transition: .3s ease; }
+=======
+  transition: .3s ease;
+  outline: none; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
@@ -870,18 +903,34 @@ footer {
       bottom: 0;
       right: 20px;
       margin: auto; }
+<<<<<<< HEAD
       .globalHead .burgerMenu span {
+=======
+      .globalHead .burgerMenu img {
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
         width: 40px;
         height: 40px;
         display: block;
         margin: auto;
+<<<<<<< HEAD
         fill: #fbf8f1; }
+=======
+        fill: #fbf8f1;
+        border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
       .globalHead .burgerMenu.active {
         -webkit-transition: .3s ease;
         -o-transition: .3s ease;
         transition: .3s ease; }
     .globalHead #headMemStatus {
       display: none; }
+<<<<<<< HEAD
+=======
+    .globalHead ul#storeMenu {
+      display: none; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     .globalHead #menu {
       display: block;
       position: fixed;
@@ -948,7 +997,13 @@ footer {
               .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
+<<<<<<< HEAD
                 border-radius: 50%; }
+=======
+                border-radius: 50%;
+                -o-object-fit: cover;
+                object-fit: cover; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
             .globalHead #menu ul li.memPart span {
               width: 100%;
               height: 100%;
@@ -982,6 +1037,13 @@ footer {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+<<<<<<< HEAD
+=======
+          .globalHead #menu ul li ul#bossMenu li ul#storeMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
+          .globalHead #menu ul li ul#bossMenu li ul#carMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
           .globalHead #menu ul li.myActivity {
             position: relative; }
             .globalHead #menu ul li.myActivity:after {
@@ -1089,6 +1151,7 @@ footer {
         cursor: pointer; } }
 
 @media screen and (max-width: 400px) {
+<<<<<<< HEAD
   .globalHead .headLoginBox .globalForm {
     width: 100%;
     margin-top: 80px;
@@ -1101,6 +1164,24 @@ footer {
       margin: 10px auto; }
     .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
       width: 60%; }
+=======
+  .globalHead .headLoginBox {
+    position: absolute; }
+    .globalHead .headLoginBox .globalForm {
+      width: 100%;
+      margin-top: 80px;
+      height: 90%; }
+      .globalHead .headLoginBox .globalForm .globalFormHeader img {
+        width: 120px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        padding: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+        margin: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        width: 60%; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   .globalHead .headRegisterBox .globalForm {
     width: 100%;
     margin-top: 80px;
@@ -1109,6 +1190,11 @@ footer {
       width: 120px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
       width: 90%; }
+<<<<<<< HEAD
+=======
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
 
@@ -1226,6 +1312,7 @@ textarea {
   resize: none;
   font-family: "Noto Sans CJK TC"; }
 
+<<<<<<< HEAD
 #loading-page {
   position: fixed;
   width: 100%;
@@ -1245,6 +1332,11 @@ textarea {
 
 .gm-style-iw {
   color: red;
+=======
+.gm-style-iw {
+  color: red;
+  font-size: 22px !important;
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   font-family: "Noto Sans CJK TC"; }
 
 .review-mask, .mask {
@@ -1801,18 +1893,25 @@ img {
     .screen-product .product .item {
       outline: none; }
       .screen-product .product .item .image {
-        max-width: 250px;
-        width: 100%;
+        background-image: url(../img/store/products/2-1.png);
+        width: 280px;
         height: 280px;
+        border-radius: 50%;
         float: left;
+        background-position: center center;
+        background-size: cover;
         margin-right: 40px;
+        border: 1px solid #ffb078;
         position: relative; }
+<<<<<<< HEAD
         .screen-product .product .item .image .wraper {
           width: 280px;
           height: 280px;
           border-radius: 50%;
           background-size: cover;
           background-position: center center; }
+=======
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
       .screen-product .product .item .describe {
         background-color: rgba(128, 89, 52, 0.7);
         float: left;
@@ -1822,8 +1921,9 @@ img {
         padding: 10px;
         color: #fbf8f1; }
         .screen-product .product .item .describe h3 {
-          color: #663300; }
+          color: #ffb078; }
   .screen-product .product-list {
+    padding-top: 30px;
     max-width: 800px;
     width: 100%;
     margin: auto;
@@ -1836,10 +1936,10 @@ img {
       height: 180px;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      padding: 0px 40px;
       display: inline-block;
       text-align: center;
       font-size: 16px; }
+<<<<<<< HEAD
       .screen-product .product-list .item .wraper {
         width: 100px;
         height: 100px;
@@ -1847,6 +1947,23 @@ img {
         background-size: cover;
         background-position: center center;
         opacity: 0.5; }
+=======
+      .screen-product .product-list .item .image {
+        background-image: url("../img/store/products/default.png");
+        opacity: 0.5;
+        -webkit-transition: -webkit-transform 1s;
+        transition: -webkit-transform 1s;
+        -o-transition: transform 1s;
+        transition: transform 1s;
+        transition: transform 1s, -webkit-transform 1s;
+        width: 125px;
+        height: 125px;
+        margin: auto;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 50%;
+        border: 1px solid #fbf8f1; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
       .screen-product .product-list .item p {
         position: absolute;
         bottom: 0;
@@ -1857,11 +1974,17 @@ img {
         margin: auto;
         color: #fbf8f1;
         text-shadow: 1px 2px black; }
+<<<<<<< HEAD
     .screen-product .product-list .slick-current .image .wraper {
+=======
+    .screen-product .product-list .slick-current .image {
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
       opacity: 1;
-      -webkit-transform: scale(1.8);
-      -ms-transform: scale(1.8);
-      transform: scale(1.8); }
+      -webkit-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      transform: scale(1.5); }
+    .screen-product .product-list .slick-list {
+      overflow: visible; }
     .screen-product .product-list .slick-next:before {
       content: '';
       display: block;
@@ -2584,6 +2707,11 @@ img {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 10px; }
+<<<<<<< HEAD
+=======
+  .navigator .item .name {
+    display: none; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   .button {
     background-color: rgba(158, 105, 61, 0.7);
     border-color: transparent;
@@ -2636,6 +2764,9 @@ img {
     display: none; }
   .screen-product .product-list .item {
     height: 126px; }
+    .screen-product .product-list .item .image {
+      width: 10vh;
+      height: 10vh; }
   .screen-product .product {
     height: auto;
     padding-bottom: 0; }
@@ -2650,6 +2781,7 @@ img {
       vertical-align: middle;
       margin-left: 5px; }
     .screen-product .product .item .image {
+<<<<<<< HEAD
       width: 210px;
       float: none;
       margin: auto;
@@ -2657,6 +2789,13 @@ img {
       .screen-product .product .item .image .wraper {
         width: 210px;
         height: 210px; }
+=======
+      max-width: 250px;
+      width: 200px;
+      height: 200px;
+      float: none;
+      margin: auto; }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     .screen-product .product .item .describe {
       background-color: transparent;
       max-width: none;

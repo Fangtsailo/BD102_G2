@@ -10,14 +10,19 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width , initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>Trepun</title>
+	<title>TrePun</title>
+	<link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="css/search.css">
 	<!-- js區 -->
 	 <script type="text/javascript" src="libs/gsap/src/minified/TweenMax.min.js"></script>
 	 <script  type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
 	 <script type="text/javascript" src="js/header.js"></script>
 	<!-- map區 -->
+<<<<<<< HEAD
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"></script>
+=======
+	
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	<script src="js/search.js"></script>
 </head>
 <body>
@@ -52,7 +57,11 @@ try{
 		$shopType=0;  //店家 0  胖小車1
 	
 
+<<<<<<< HEAD
 		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' ";	
+=======
+		$searchsql="SELECT s.SI_NUM, s.SI_NAME,s.SI_TYPE,s.SI_LNG,s.SI_LAT,s.SI_POSITION,s.SI_ADDR,s.SI_STARTTIME,s.SI_ENDTIME,s.SI_BIMG_1,s.SI_PHONE,s.SI_AVG_REVIEW,COUNT(distinct f.MEM_NO) top FROM store_imformation s LEFT JOIN follow f ON f.SI_NUM=s.SI_NUM LEFT JOIN reviews r ON r.SI_NUM = s.SI_NUM WHERE  s.SI_TYPE='$shopType' and s.SI_SELLSTAY=1 and s.SI_CHECKSTAY=1  ";	
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 			if ($shopPosition!=='') {
 				$searchsql.=" AND s.SI_POSITION = '$shopPosition'";
 			}
@@ -60,7 +69,11 @@ try{
 				$searchsql.=" AND s.SI_NAME like '%$searchName%'";
 			}
 			
+<<<<<<< HEAD
 			$searchsql.= " group by s.SI_NUM";
+=======
+			$searchsql.= " group by SI_NUM";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 			
 			if ($filter!=='' && $filter=="top"){
 				$searchsql.=" order by top desc"; 
@@ -156,14 +169,22 @@ try{
 
 			<script>
 				$(document).ready(function (){
+<<<<<<< HEAD
 					$('.search_storeImg').css('background','url("<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1; ?>") center center').css('background-size','cover');			
+=======
+					$('#search_Pic_<?php echo $searchRow->SI_NUM ?>').css('background','url("<?php echo $searchRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$searchRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');			
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
 				});
 			</script>
 
 			<div class="search_storeOne">
-				<div class="search_storeImg col-sm-3 col-xs-12">
+
+				<div class="search_storeImg col-sm-3 col-xs-12 " id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
+
+				
+
 					<!-- <img src="img/search-store.png"> -->
 				</div>
 				<div class="search_storeContent col-sm-6 col-xs-12">
@@ -204,7 +225,10 @@ try{
 				<div class="search_storeMap col-sm-3 col-xs-12">
 		
 					
+<<<<<<< HEAD
+=======
 
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 				
 				<?php 	
@@ -227,10 +251,37 @@ try{
 				</div>
 			</div>   <!-- search_storeOne -->
 
+<<<<<<< HEAD
+				
+				<?php 	
+						if ($searchRow->SI_LNG!="" and $searchRow->SI_LAT!="") {
+				?>
+					<script type="text/javascript">
+							$(document).ready(function (){
+							initBreadCarNowLocationMap("map-now-<?php echo "$searchRow->SI_NUM";?>",<?php echo "$searchRow->SI_LAT";?>,<?php echo "$searchRow->SI_LNG";?>);
+							});
+					</script>
+					<div id="map-now-<?php echo "$searchRow->SI_NUM";?>" class="search_map">				
+					</div>
+			 
+				<?php } else { ?>
+					<div class="noneMap">
+						<p>沒有提供地圖</p>
+					</div>	
+				<?php } ?>
+=======
+			<?php } ?> <!-- while迴圈 -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
+
+				</div>
+			</div>   <!-- search_storeOne -->
+
 			<?php } ?> <!-- while迴圈 -->
 
 
 
+		</div>  <!-- search_store -->
+		<?php } ?>    <!-- 有找到店家if -->
 
 		</div>  <!-- search_store -->
 		<?php } ?>    <!-- 有找到店家if -->

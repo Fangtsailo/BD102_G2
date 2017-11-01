@@ -92,12 +92,113 @@
 
 		$store_imformation_Row=$store_imformation->fetchObject();
 
+<<<<<<< HEAD
 		$SI_NUM = $store_imformation_Row->SI_NUM;
 
 		if ($store_imformation->rowCount()==0) {
 
 			$sql_insert = "INSERT INTO store_imformation (SI_MEMNO,SI_NAME,SI_PHONE,SI_ADDR,SI_RESTDAY,SI_STARTTIME,SI_ENDTIME,SI_STORY,SI_TYPE,SI_CHECKSTAY)
     			VALUES (:SI_MEMNO,:SI_NAME,:SI_PHONE,:SI_ADDR,:SI_RESTDAY,:SI_STARTTIME,:SI_ENDTIME,:SI_STORY,1,null)";
+=======
+		//$SI_NUM = $store_imformation_Row->SI_NUM;
+
+
+
+
+
+
+
+
+
+
+		$shopPosition= mb_substr($_REQUEST["SI_ADDR"],0,2,"UTF-8");
+			$position = 0;
+						switch($shopPosition){
+							case '桃園':
+								$position= 0;
+								break;
+							case '台北':
+								$position= 0;
+								break;
+							case '臺北':
+								$position= 0;
+								break;
+							case '新北':
+								$position= 0;
+								break;	
+							case '宜蘭':
+								$position= 0;
+								break;
+							case '基隆':
+								$position= 0;
+								break;
+							case '新竹':
+								$position= 0;
+								break;
+							case '苗栗':
+								$position= 1;
+								break;	
+							case '台中':
+								$position= 1;
+								break;
+							case '臺中':
+								$position= 1;
+								break;
+							case '彰化':
+								$position= 1;
+								break;
+							case '雲林':
+								$position= 1;
+								break;
+							case '南投':
+								$position= 1;
+								break;
+							case '嘉義':
+								$position= 2;
+								break;
+							case '台南':
+								$position= 2;
+								break;
+							case '臺南':
+								$position= 2;
+								break;
+							case '高雄':
+								$position= 2;
+								break;
+							case '屏東':
+								$position= 2;
+								break;
+							case '台東':
+								$position= 3;
+								break;
+							case '臺東':
+								$position= 3;
+								break;
+							case '花蓮':
+								$position= 3;
+								break;
+						} //switch
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+
+		if ($store_imformation->rowCount()==0) {
+
+			$sql_insert = "INSERT INTO store_imformation (SI_MEMNO,SI_NAME,SI_PHONE,SI_ADDR,SI_RESTDAY,SI_STARTTIME,SI_ENDTIME,SI_STORY,SI_TYPE,SI_CHECKSTAY,SI_POSITION,SI_ADDDATE,SI_LAT,SI_LNG)
+    			VALUES (:SI_MEMNO,:SI_NAME,:SI_PHONE,:SI_ADDR,:SI_RESTDAY,:SI_STARTTIME,:SI_ENDTIME,:SI_STORY,1,null,$position,:SI_ADDDATE,0,0)";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
     		$store_imformation_insert = $connectPDO ->prepare($sql_insert);
     		$store_imformation_insert -> bindValue(":SI_MEMNO",$mem_No);
@@ -108,10 +209,20 @@
     		$store_imformation_insert -> bindValue(":SI_STARTTIME",$_REQUEST["SI_STARTTIME"]);
     		$store_imformation_insert -> bindValue(":SI_ENDTIME",$_REQUEST["SI_ENDTIME"]);
     		$store_imformation_insert -> bindValue(":SI_STORY",$_REQUEST["SI_STORY"]);
+<<<<<<< HEAD
+=======
+    		$store_imformation_insert -> bindValue(":SI_ADDDATE",$_REQUEST["addShopDate"]);
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     		$store_imformation_insert -> execute();
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     		$sql_find_SI_NUM ="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE='1'";
     		$store_imformation_find_SI_NUM = $connectPDO->query($sql_find_SI_NUM);
     		$store_imformation_find_SI_NUM_Row = $store_imformation_find_SI_NUM -> fetchObject();
@@ -253,7 +364,11 @@
 
 
 
+<<<<<<< HEAD
 			$sql_update = "UPDATE store_imformation SET SI_NAME=:SI_NAME,SI_PHONE=:SI_PHONE,SI_ADDR=:SI_ADDR,SI_RESTDAY=:SI_RESTDAY,SI_STARTTIME=:SI_STARTTIME,SI_ENDTIME=:SI_ENDTIME,SI_STORY=:SI_STORY,SI_TYPE=1,SI_CHECKSTAY=1 where SI_MEMNO=$mem_No and SI_TYPE='1'";
+=======
+			$sql_update = "UPDATE store_imformation SET SI_NAME=:SI_NAME,SI_PHONE=:SI_PHONE,SI_ADDR=:SI_ADDR,SI_RESTDAY=:SI_RESTDAY,SI_STARTTIME=:SI_STARTTIME,SI_ENDTIME=:SI_ENDTIME,SI_STORY=:SI_STORY,SI_TYPE=1,SI_CHECKSTAY=1,SI_LAT=0,SI_LNG=0,SI_POSITION=$position where SI_MEMNO=$mem_No and SI_TYPE='1'";
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 			//SI_LOGO=:SI_LOGO,SI_BIMG_1=:SI_BIMG_1,SI_BIMG_2=:SI_BIMG_2,SI_BIMG_3=:SI_BIMG_3
 

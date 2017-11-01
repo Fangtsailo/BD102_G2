@@ -23,6 +23,7 @@ try{
 
 	$connectPDO->beginTransaction();
 	//先新增活動文字資訊以取得活動編號
+<<<<<<< HEAD
 	$addActSQL = "UPDATE activity SET AC_NAME=:acName,AC_TIME=:acTime,AC_PRICE=:acPrice,AC_INGREDIENT=:acIngrd,AC_MEM_COUNT=:acParticipants,AC_DETAIL1=:ac_detail1,AC_DETAIL2=:ac_detail2,AC_DETAIL3=:ac_detail3 WHERE AC_NO = $acNum";
 
 	$addActTxt = $connectPDO->prepare($addActSQL);
@@ -35,6 +36,22 @@ try{
 	$addActTxt->bindValue(":ac_detail2",$_REQUEST["ac_detail2"]);
 	$addActTxt->bindValue(":ac_detail3",$_REQUEST["ac_detail3"]);
 	$addActTxt -> execute();
+=======
+	$editActSQL = "UPDATE activity SET AC_NAME=:acName,AC_TIME=:acTime,AC_PRICE=:acPrice,AC_INGREDIENT=:acIngrd,AC_MEM_COUNT=:acParticipants,AC_DETAIL1=:ac_detail1,AC_DETAIL2=:ac_detail2,AC_DETAIL3=:ac_detail3,AC_SECOND_NAME=:acSubName,AC_ADDRESS=:acAddress WHERE AC_NO = $acNum";
+
+	$editActTxt = $connectPDO->prepare($editActSQL);
+	$editActTxt->bindValue(":acName",$_REQUEST["acName"]);
+	$editActTxt->bindValue(":acTime",$_REQUEST["acTime"]);
+	$editActTxt->bindValue(":acPrice",$_REQUEST["acPrice"]);
+	$editActTxt->bindValue(":acIngrd",$_REQUEST["acIngrd"]);
+	$editActTxt->bindValue(":acParticipants",$_REQUEST["acParticipants"]);
+	$editActTxt->bindValue(":ac_detail1",$_REQUEST["ac_detail1"]);
+	$editActTxt->bindValue(":ac_detail2",$_REQUEST["ac_detail2"]);
+	$editActTxt->bindValue(":ac_detail3",$_REQUEST["ac_detail3"]);
+	$editActTxt->bindValue(":acSubName",$_REQUEST["acSubName"]);
+	$editActTxt->bindValue(":acAddress",$_REQUEST["acAddress"]);
+	$editActTxt -> execute();
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	
 	//取得該筆新增活動的活動編號
 	

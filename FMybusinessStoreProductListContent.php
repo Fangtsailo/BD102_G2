@@ -3,7 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<<<<<<< HEAD
 	<title>TEMPLATE</title>
+=======
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStoreProductListContent.css">
 
@@ -123,7 +128,11 @@
 
 				<tr>
 				<th><div>價格</div></th>
+<<<<<<< HEAD
 				<td><input type="text" name="" value="請輸入字數"></td>
+=======
+				<td><input type="text" name="" value="請輸入價格"></td>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 				</tr>
 
 
@@ -133,7 +142,11 @@
 				<tr>
 				<th><div>故事</div></th>
 				<td>
+<<<<<<< HEAD
 					<textarea placeholder="限500字"></textarea>
+=======
+					<textarea placeholder="限100字" maxlength="100"></textarea>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 				</td>
 				</tr>
 

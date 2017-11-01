@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 a {
   text-decoration: none;
@@ -171,7 +171,8 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
-    display: none; }
+    display: none;
+    z-index: 999; }
     .globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
@@ -247,7 +248,8 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
-    display: none; }
+    display: none;
+    z-index: 999; }
     .globalHead .headRegisterBox .globalForm {
       position: absolute;
       top: 0;
@@ -360,7 +362,7 @@ li {
       font-size: 0; }
       .globalHead .headerRight .headSearch span {
         margin-right: 10px;
-        color: #fbf8f1;
+        color: #996633;
         font-weight: 300; }
       .globalHead .headerRight .headSearch #headSearch {
         width: 20%;
@@ -377,8 +379,8 @@ li {
         display: inline-block;
         width: 80px;
         height: 30px;
-        color: #fbf8f1;
-        background-color: transparent;
+        color: #996633;
+        background-color: #fbf8f1;
         border: 1px solid #fbf8f1;
         margin: 0px 5px;
         font-size: 16px;
@@ -387,23 +389,39 @@ li {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         vertical-align: top; }
-      .globalHead .headerRight .headSearch button {
+      .globalHead .headerRight .headSearch label {
         width: 80px;
         display: inline-block;
         height: 30px;
-        color: #fbf8f1;
-        background-color: transparent;
-        border: 1px solid #fbf8f1;
+        color: #996633;
+        background-color: #fbf8f1;
         margin: 0px 5px;
         font-size: 16px;
-        border-radius: 2px; }
-        .globalHead .headerRight .headSearch button:focus {
-          background-color: #fbf8f1;
-          color: #805934;
+        border-radius: 2px;
+        vertical-align: top;
+        outline: none;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        -webkit-box-shadow: -1px 1px 0px 1px #713f2a;
+        box-shadow: -1px 1px 0px 1px #713f2a;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
+      .globalHead .headerRight .headSearch input[name=filter] {
+        display: none; }
+        .globalHead .headerRight .headSearch input[name=filter]:checked + label {
+          background-color: #5d2812;
+          color: #fbf8f1;
           outline: none;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
-          vertical-align: top; }
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
+          transition: .3s; }
       .globalHead .headerRight .headSearch #headSearchSubmit {
         display: inline-block;
         width: 50px;
@@ -417,10 +435,19 @@ li {
         outline: none;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        vertical-align: top; }
+        vertical-align: top;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s; }
         .globalHead .headerRight .headSearch #headSearchSubmit:active {
           background-color: #663300;
           color: #fbf8f1; }
+        .globalHead .headerRight .headSearch #headSearchSubmit.keyIn {
+          background-color: #f06428;
+          color: #fbf8f1;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
+          transition: .3s; }
 
 @-webkit-keyframes shake {
   0% {
@@ -482,7 +509,9 @@ li {
               display: block;
               width: 100%;
               height: 100%;
-              border-radius: 50%; }
+              border-radius: 50%;
+              -o-object-fit: cover;
+              object-fit: cover; }
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
                 -webkit-transition: .3s;
                 -o-transition: .3s;
@@ -548,6 +577,8 @@ li {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+              .globalHead .headerRight .headAccount .memStatusBar ul li a#showMemId {
+                color: #442d18; }
               .globalHead .headerRight .headAccount .memStatusBar ul li a.memLink:hover {
                 background-color: #805934;
                 color: #fbf8f1;
@@ -650,7 +681,8 @@ footer {
   background-color: #fbf8f1;
   -webkit-transition: .3s ease;
   -o-transition: .3s ease;
-  transition: .3s ease; }
+  transition: .3s ease;
+  outline: none; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
@@ -845,17 +877,22 @@ footer {
       bottom: 0;
       right: 20px;
       margin: auto; }
-      .globalHead .burgerMenu span {
+      .globalHead .burgerMenu img {
         width: 40px;
         height: 40px;
         display: block;
         margin: auto;
-        fill: #fbf8f1; }
+        fill: #fbf8f1;
+        border-radius: 50%;
+        -o-object-fit: cover;
+        object-fit: cover; }
       .globalHead .burgerMenu.active {
         -webkit-transition: .3s ease;
         -o-transition: .3s ease;
         transition: .3s ease; }
     .globalHead #headMemStatus {
+      display: none; }
+    .globalHead ul#storeMenu {
       display: none; }
     .globalHead #menu {
       display: block;
@@ -923,7 +960,9 @@ footer {
               .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
-                border-radius: 50%; }
+                border-radius: 50%;
+                -o-object-fit: cover;
+                object-fit: cover; }
             .globalHead #menu ul li.memPart span {
               width: 100%;
               height: 100%;
@@ -957,6 +996,10 @@ footer {
               -webkit-transition: .3s;
               -o-transition: .3s;
               transition: .3s; }
+          .globalHead #menu ul li ul#bossMenu li ul#storeMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
+          .globalHead #menu ul li ul#bossMenu li ul#carMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
           .globalHead #menu ul li.myActivity {
             position: relative; }
             .globalHead #menu ul li.myActivity:after {
@@ -1015,7 +1058,7 @@ footer {
           font-size: 20px;
           background-color: #663300;
           border-radius: 5px; }
-        .globalHead .rwdSearchBar .rwdsearchItem label {
+        .globalHead .rwdSearchBar .rwdsearchItem label.rwdfilter {
           display: inline-block;
           margin: 0px 5px;
           margin-bottom: 5px;
@@ -1023,11 +1066,18 @@ footer {
           color: #fbf8f1;
           border: 1px solid #fbf8f1;
           outline: none;
-          border-radius: 5px; }
-          .globalHead .rwdSearchBar .rwdsearchItem label input {
-            display: none; }
-          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
-            background-color: #f06428; }
+          border-radius: 5px;
+          cursor: pointer; }
+        .globalHead .rwdSearchBar .rwdsearchItem input[type=radio] {
+          display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
+            background-color: #fbf8f1;
+            color: #996633;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -webkit-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
           margin: auto; }
@@ -1044,7 +1094,7 @@ footer {
         -webkit-transition: .3s;
         -o-transition: .3s;
         transition: .3s; }
-      .globalHead .rwdSearchBar input[type="submit"] {
+      .globalHead .rwdSearchBar #rwdSubmit {
         display: block;
         width: 50%;
         height: 40px;
@@ -1057,18 +1107,22 @@ footer {
         cursor: pointer; } }
 
 @media screen and (max-width: 400px) {
-  .globalHead .headLoginBox .globalForm {
-    width: 100%;
-    margin-top: 80px;
-    height: 90vh; }
-    .globalHead .headLoginBox .globalForm .globalFormHeader img {
-      width: 120px; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
-      padding: 10px auto; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
-      margin: 10px auto; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
-      width: 60%; }
+  .globalHead .headLoginBox {
+    position: absolute; }
+    .globalHead .headLoginBox .globalForm {
+      width: 100%;
+      margin-top: 80px;
+      height: 90%; }
+      .globalHead .headLoginBox .globalForm .globalFormHeader img {
+        width: 120px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        padding: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+        margin: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        width: 60%; }
   .globalHead .headRegisterBox .globalForm {
     width: 100%;
     margin-top: 80px;
@@ -1077,12 +1131,15 @@ footer {
       width: 120px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
       width: 90%; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
 
 #addShopBox {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(50, 50, 50, 0.5);
@@ -1119,11 +1176,50 @@ footer {
         left: 0;
         right: 0;
         margin: auto; }
-    #addShopBox .globalForm input[type="number"] {
-      width: 20%;
+    #addShopBox .globalForm .selectTime {
+      display: block;
+      float: right;
+      width: 65%;
       height: 100%;
-      float: none;
-      display: inline-block; }
+      padding-left: 10px;
+      margin: auto;
+      background-color: transparent; }
+      #addShopBox .globalForm .selectTime span {
+        display: inline-block;
+        float: left;
+        line-height: 50px;
+        color: #663300; }
+      #addShopBox .globalForm .selectTime select {
+        width: 30%;
+        height: 30px;
+        float: left;
+        display: inline-block;
+        margin: 10px; }
+
+@media screen and (max-width: 400px) {
+  #addShopBox .globalForm .globalFormHeader {
+    padding: 2%; }
+    #addShopBox .globalForm .globalFormHeader .svg {
+      width: 30px; }
+    #addShopBox .globalForm .globalFormHeader p {
+      font-size: 13px; }
+  #addShopBox .globalForm .globalFormInput {
+    width: 90%;
+    height: 30px; }
+    #addShopBox .globalForm .globalFormInput label {
+      line-height: 30px;
+      font-size: 13px; }
+    #addShopBox .globalForm .globalFormInput .chooseBtn {
+      margin: 0px 5px; }
+    #addShopBox .globalForm .globalFormInput .selectTime {
+      padding-left: 0; }
+    #addShopBox .globalForm .globalFormInput select {
+      width: 37%;
+      line-height: 30px;
+      margin: 0; }
+    #addShopBox .globalForm .globalFormInput span {
+      line-height: 30px;
+      font-size: 12px; } }
 
 #serviceCenter {
   position: fixed;
@@ -1196,7 +1292,7 @@ img {
 input, textarea {
   outline: none;
   padding: 2px;
-  font-family: "Noto Sans CJK TC";
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif;
   font-weight: lighter; }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -1305,7 +1401,7 @@ input:not(.radio):focus, textarea:focus {
       content: '';
       display: block;
       clear: both; }
-    .container .content input[type="submit"], .container .content input[type="button"], .container .content .upload, .container .content label.openlightbox, .container .content .btn {
+    .container .content input[type="submit"], .container .content input[type="button"], .container .content .upload, .container .content label.openpsw, .container .content .btn {
       width: 145px;
       height: 50px;
       border-radius: 25px;
@@ -1335,7 +1431,7 @@ input:not(.radio):focus, textarea:focus {
       opacity: 0;
       width: 130px;
       cursor: pointer; }
-    .container .content .upload:hover, .container .content label.openlightbox:hover, .container .content .btn:hover {
+    .container .content .upload:hover, .container .content label.openpsw:hover, .container .content .btn:hover {
       color: #fbf8f1;
       background: #f06428;
       -webkit-transition: .3s ease;
@@ -1347,65 +1443,6 @@ input:not(.radio):focus, textarea:focus {
     .container .content input[type="submit"]:hover, .container .content input[type="button"]:hover {
       -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5); }
-    .container .content .box {
-      display: none;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: fixed;
-      top: 0px;
-      left: 0px;
-      background-color: rgba(50, 50, 50, 0.5);
-      -webkit-transition: width 0s 1s, height 0s 1s, background-color 1s;
-      -o-transition: width 0s 1s, height 0s 1s, background-color 1s;
-      transition: width 0s 1s, height 0s 1s, background-color 1s; }
-      .container .content .box .changepsw {
-        width: 330px;
-        height: 390px;
-        background-color: #fbf8f1;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        margin: auto;
-        -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); }
-        .container .content .box .changepsw p {
-          margin: 0 auto;
-          width: 290px;
-          padding: 20px;
-          text-align: center; }
-        .container .content .box .changepsw label {
-          width: 25%; }
-        .container .content .box .changepsw input {
-          max-width: 75%; }
-        .container .content .box .changepsw input[type="submit"] {
-          margin: 0 auto; }
-        .container .content .box .changepsw h1 {
-          width: 100%;
-          padding: 5% 5% 15%;
-          font-size: 22px;
-          text-align: justify;
-          color: #fbf8f1;
-          position: relative;
-          -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-          background: #805934;
-          background: -moz-linear-gradient(left, #805934 0%, #9e693d 100%);
-          background: -webkit-gradient(linear, left left, left right, color-sleft(0%, #805934), color-sleft(100%, #9e693d));
-          background: -webkit-linear-gradient(left, #805934 0%, #9e693d 100%);
-          background: -o-linear-gradient(left, #805934 0%, #9e693d 100%);
-          background: -ms-linear-gradient(left, #805934 0%, #9e693d 100%);
-          background: -webkit-gradient(linear, left top, right top, from(#805934), to(#9e693d));
-          background: linear-gradient(to right, #805934 0%, #9e693d 100%); }
-        .container .content .box .changepsw img {
-          width: 40px;
-          height: 40px;
-          position: absolute;
-          top: 10px;
-          right: 10px; }
     .container .content .myfollow {
       width: 220px;
       float: left;
@@ -1414,7 +1451,7 @@ input:not(.radio):focus, textarea:focus {
       position: relative;
       background-color: #fff;
       border-radius: 5px;
-      margin-bottom: 15px; }
+      margin-bottom: 30px; }
       .container .content .myfollow a {
         display: block; }
       .container .content .myfollow h2, .container .content .myfollow address {
@@ -1433,7 +1470,7 @@ input:not(.radio):focus, textarea:focus {
       float: right;
       margin: -55px 2px 0 0; }
       .container .content #cancelfollow:after {
-        content: 'ȡ��׷ۙ';
+        content: '取消追蹤';
         font-size: 12px;
         vertical-align: top; }
     .container .content #mappointer {
@@ -1441,7 +1478,7 @@ input:not(.radio):focus, textarea:focus {
       display: block; }
       .container .content #mappointer:after {
         display: block;
-        content: '�؈D';
+        content: '地圖';
         font-size: 12px;
         vertical-align: top; }
     .container .content .myfollow > ul {
@@ -1459,8 +1496,7 @@ input:not(.radio):focus, textarea:focus {
       margin: -20px 10px 0px; }
     @media screen and (max-width: 767px) {
       .container .content .myfollow {
-        width: 100%;
-        margin-bottom: 30px; }
+        width: 100%; }
       .container .content .myfollow:nth-child(n+2) {
         margin-left: 0; }
       .container .content .btn50 {
@@ -1474,7 +1510,7 @@ input:not(.radio):focus, textarea:focus {
         margin: 5px 10px;
         float: left; } }
     .container .content .mycomment {
-      /*�Ýu���O���Gɫ����*/
+      /*用漸層設定綠色線段*/
       background-image: -webkit-linear-gradient(left, #00c853 10px, #00c853 10px);
       background-image: -o-linear-gradient(left, #00c853 10px, #00c853 10px);
       background-image: linear-gradient(90deg, #00c853 10px, #00c853 10px);
@@ -1520,7 +1556,7 @@ input:not(.radio):focus, textarea:focus {
             top: 0px;
             right: 0; }
             .container .content .mycomment li .msg #del:after {
-              content: '�h��';
+              content: '刪除';
               font-size: 12px;
               vertical-align: top; }
         .container .content .mycomment li .msg:before {
@@ -1574,7 +1610,7 @@ input:not(.radio):focus, textarea:focus {
       text-align: justify;
       position: relative;
       border-radius: 5px;
-      margin-bottom: 15px; }
+      margin-bottom: 30px; }
       .container .content .myentry h2, .container .content .myentry address {
         margin: 8px; }
       .container .content .myentry h2 > a {
@@ -1601,7 +1637,7 @@ input:not(.radio):focus, textarea:focus {
           float: right;
           margin: -50px 2px 0 0; }
         .container .content .myentry .info #cancelentry:after {
-          content: 'ȡ������';
+          content: '取消報名';
           color: #fbf8f1;
           font-size: 12px;
           vertical-align: top; }
@@ -1615,8 +1651,7 @@ input:not(.radio):focus, textarea:focus {
     @media screen and (max-width: 767px) {
       .container .content .myentry {
         width: auto;
-        margin-bottom: 0px;
-        margin-top: 230px;
+        margin-top: 200px;
         overflow: visible; }
         .container .content .myentry .info {
           width: auto;
@@ -1633,7 +1668,7 @@ input:not(.radio):focus, textarea:focus {
             float: left; }
       .container .content .myentry:nth-child(n+2) {
         margin-left: 0px; } }
-    .container .content form p, .container .content form .checkbox {
+    .container .content form p {
       width: 42%;
       height: 50px;
       line-height: 50px;
@@ -1655,6 +1690,9 @@ input:not(.radio):focus, textarea:focus {
     .container .content form label {
       width: 90px;
       float: left; }
+    .container .content form label.openpsw {
+      float: unset;
+      margin-right: 30px; }
     .container .content form input, .container .content form strong, .container .content form textarea {
       max-width: 320px;
       width: 100%;
@@ -1682,7 +1720,8 @@ input:not(.radio):focus, textarea:focus {
       width: 80px;
       height: 80px;
       border-radius: 40px;
-      background-color: #f06428;
+      background-color: #bbb;
+      background-image: url(../img/member_pic/signin2.svg);
       margin: 0 auto;
       margin-bottom: -75px;
       margin-right: 520px;
@@ -1695,14 +1734,8 @@ input:not(.radio):focus, textarea:focus {
       position: absolute;
       top: 1px;
       left: 8px; }
-    .container .content form .checkbox {
-      margin-left: 34%;
-      overflow: hidden;
-      line-height: 50px;
-      padding: 10px 0; }
-      .container .content form .checkbox .openlightbox {
-        float: none;
-        margin-right: 30px; }
+    .container .content form .psw {
+      display: none; }
     @media screen and (max-width: 767px) {
       .container .content form p {
         width: 100%;
@@ -1714,22 +1747,16 @@ input:not(.radio):focus, textarea:focus {
         height: 150px;
         border-radius: 75px;
         margin: 0 auto 30px; }
-      .container .content form input, .container .content form .openlightbox, .container .content form a.upload {
+      .container .content form input, .container .content form label.openpsw, .container .content form a.upload {
         margin-bottom: 30px; }
       .container .content form strong {
         margin-bottom: 45px; }
       .container .content form span.note {
         margin: -70px 0px; }
-      .container .content form .checkbox {
-        width: 100%;
-        height: auto;
-        margin: 0 auto; }
-        .container .content form .checkbox label.openlightbox {
-          margin-right: unset; }
       .container .content form input[type="submit"], .container .content form .upload {
         margin-left: auto;
         margin-right: auto; }
-      .container .content form label.openlightbox {
+      .container .content form label.openpsw {
         margin-right: unset; }
       .container .content form input[type="submit"] {
         margin-bottom: 0px; }
@@ -1779,27 +1806,21 @@ input:not(.radio):focus, textarea:focus {
         margin-left: 3%; } }
     .container .content h1.find {
       margin-bottom: 30px; }
-    .container .content div.find {
+    .container .content .myfollow.find {
       width: 22%;
-      margin: 0 14%; }
+      margin-left: 25%; }
     .container .content .action {
       width: 30%;
-      margin: 0 10%;
+      margin: 13% 10%;
       float: right; }
-      .container .content .action img {
-        margin: 60px 0; }
-      .container .content .action .openlightbox {
-        width: 100%;
-        border: none;
-        margin: 60px 0; }
     @media screen and (max-width: 767px) {
       .container .content h1.find {
         font-size: 22px;
         text-align: left; }
-      .container .content div.find, .container .content .action {
+      .container .content .myfollow.find, .container .content .action {
         width: 100%;
         margin: 0 auto; }
-      .container .content .action .openlightbox {
+      .container .content .action {
         margin: 30px 0; }
       .container .content h1 {
         font-size: 22px; }

@@ -15,7 +15,12 @@ session_start();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
 	<title>TEMPLATE</title>
+=======
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessCarRoute.css">
 	<link rel="stylesheet" type="text/css" href="css/subTitleAmination.css">
@@ -40,8 +45,13 @@ session_start();
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 	<!-- =====mapAPI==== -->
+<<<<<<< HEAD
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
+=======
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
+    </script> -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
     	<!-- =====alert==== -->
@@ -248,7 +258,11 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 I</th>
 					<td>
+<<<<<<< HEAD
 						<input type="text" name="BCP_DESCRIBE_1" placeholder="請輸入路線描述" value="<?php 
+=======
+						<input type="text" name="BCP_DESCRIBE_1" maxlength="30" placeholder="請輸入路線描述" value="<?php 
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 																					if(isset($BCP_DESCRIBE[0])){
 																					echo $BCP_DESCRIBE[0]; 
@@ -439,7 +453,11 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 II</th>
 					<td>
+<<<<<<< HEAD
 						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
+=======
+						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" maxlength="30" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					</td>
 					</tr>
 					<?php 
@@ -597,7 +615,11 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 III</th>
 					<td>
+<<<<<<< HEAD
 						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
+=======
+						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" maxlength="30" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 					</td>
 					</tr>
 					<?php 
@@ -802,7 +824,26 @@ session_start();
 
    	function initMap1() {
         map1 = new google.maps.Map(document.getElementById('map1'), {
+<<<<<<< HEAD
           center: {lat: 24.967779, lng: 121.192124},
+=======
+
+          center: <?php 
+					if( isset($BCP_LOCATION[0]) ) {
+						
+						$centerLocation_1=explode(",",$BCP_LOCATION[0]);
+
+						
+
+						echo $centerLocation_1[0].','.$centerLocation_1[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
+					
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
@@ -903,7 +944,24 @@ session_start();
 
    	function initMap2() {
         map2 = new google.maps.Map(document.getElementById('map2'), {
+<<<<<<< HEAD
           center: {lat: 24.967779, lng: 121.192124},
+=======
+          center:  <?php 
+					if( isset($BCP_LOCATION[1]) ) {
+						
+						$centerLocation_2=explode(",",$BCP_LOCATION[1]);
+
+						
+
+						echo $centerLocation_2[0].','.$centerLocation_2[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
@@ -990,7 +1048,24 @@ session_start();
 
    	function initMap3() {
         map3 = new google.maps.Map(document.getElementById('map3'), {
+<<<<<<< HEAD
           center: {lat: 24.967779, lng: 121.192124},
+=======
+          center: <?php 
+					if( isset($BCP_LOCATION[2]) ) {
+						
+						$centerLocation_3=explode(",",$BCP_LOCATION[2]);
+
+						
+
+						echo $centerLocation_3[0].','.$centerLocation_3[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
           zoom: 16
         });
         //先輸入地址把地圖 center 移入

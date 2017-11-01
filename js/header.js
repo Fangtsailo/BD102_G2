@@ -1,6 +1,6 @@
 
 
-
+    
 //切換會員專區
 function changePanel(){
     $("#headMemStatus").fadeIn(300);
@@ -9,7 +9,7 @@ function changePanel(){
     $("#visitor").hide(300);
     $('#showAddShopForm').css('display','block');
     $('#visitorForm').css('display','none');
-}
+}   
 
 //登出會員專區
 function logOut(){
@@ -24,6 +24,18 @@ function changeRole() {
     $("#rwdBossRole").replaceWith("<span id='rwdBossRole'>店長專區   <i class='fa fa-plus' aria-hidden='true'></i></span>");
     $("#rwdBossRole").click(function(){
         $('#bossMenu').slideToggle(500);
+        $('#memberMenu').slideToggle(500);
+    });
+    $("#storeMenu,#carMenu").hide();
+    $("#rwdStore").click(function(){
+        event.preventDefault()
+        $("#storeMenu").slideToggle();
+        $("#carMenu").slideUp();
+    });
+    $("#rwdCar").click(function(){
+        event.preventDefault()
+        $("#carMenu").slideToggle();
+        $("#storeMenu").slideUp();
     });
 }
 
@@ -60,7 +72,7 @@ var bodyClass = document.body.classList,
           bodyClass.add('hideUp');
           $("#menu").removeClass("show");
           $("#burgerBtn").removeClass("active");
-          $("#rwdSearchBar").removeClass("activeSearch");
+          // $("#rwdSearchBar").removeClass("activeSearch");
           $("#rwd-HeaderLink").removeClass("showMenu");
           $("#left-burgerBtn").removeClass("active");
           $('#memStatusBar').slideUp(300);
@@ -72,6 +84,7 @@ var bodyClass = document.body.classList,
 
   //點選登入按鈕
 	$('#headMemLogin,#rwdLoginBtn,#lightboxNeedlogIn').click(function(){
+    $("body").css("position","fixed");  //ios11 bug fixed
 		$('#loginBox').fadeIn(500);
     $("#menu").removeClass("show");
     $('#addShopBox').hide();
@@ -95,6 +108,10 @@ var bodyClass = document.body.classList,
 
 //關閉燈箱按鈕
 	$('.closeBtn,#cancelLogin,#closeBtn01,#closeBtn02').click(function(){
+<<<<<<< HEAD
+=======
+      $("body").css("position","static"); //ios11 bug fixed
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
       $("#loginForm")[0].reset();
@@ -183,15 +200,20 @@ $("#submitLogin").click(function(){
 });
 
 
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 //=======================註冊檢查================================
 $('#showPsw').click(function(){
     hideShowPsw();
 });
 
 
-$('#newMemId').blur(function(){
+$('#newMemId').keyup(function(){
 
       $.ajax( {
         url: 'IDValidate.php',
@@ -203,6 +225,15 @@ $('#newMemId').blur(function(){
         alert('Ajax request 發生錯誤');
       },
       success: function(response) {
+        if($("#newMemId").val().length >8) {
+        $.sweetModal({ 
+            content: '帳號長度不得超過8碼',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#newMemId").select();
+        return;
+        
+        }
         $("#showResult").html(response);
         $("#showResult").fadeIn();
         
@@ -220,7 +251,19 @@ $('#newMemId').blur(function(){
 
 
 $("#submitRegister").click(function(){
+<<<<<<< HEAD
 
+=======
+    //帳號長度不可超過8碼
+    if ($("#newMemId").val().length <=0 ){
+        $.sweetModal({ 
+            content: '請輸入帳號',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#newMemId").select();
+        return;
+    }
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     //檢查email格式
     var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if( filter.test($("#newMemMail").val())==false  ){
@@ -256,6 +299,10 @@ $("#submitRegister").click(function(){
 
 //登入後會員專區顯示
 $("#headMemPic").click(function(){
+<<<<<<< HEAD
+=======
+  event.preventDefault();
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   $('#memStatusBar').slideToggle(300);
   $("#addShopBox").fadeOut(300);
 });
@@ -301,7 +348,11 @@ $('#headSearchSubmit').click(function(){ //送出表單
 
 
 //header.php選擇送出查詢的頁面是胖小車或店家(rwd)
+<<<<<<< HEAD
 $(".selectType input[name=shopType]").change(function(){
+=======
+$(".rwdsearchItem input[name=shopType]").change(function(){
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     var action = $(this).val()== 1 ? "search_car.php" : "search.php" ;
     $("#rwdsearchForm").attr("action",action);
 });
@@ -331,7 +382,11 @@ $("#headSearch").keyup(function(){
 $("#headSearch").blur(function(){
     $(this).siblings("#headSearchSubmit").removeClass('keyIn').attr("value","搜尋");
   });
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
 
 //首頁導覽列錨點選單=================
@@ -354,6 +409,10 @@ $("#headSearch").blur(function(){
 
     //新增店家按鈕
     $("#addShop1,#addShopBtn,#homeAddBtn").click(function(){
+<<<<<<< HEAD
+=======
+         event.preventDefault();
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
         $("#addShopBox").fadeIn(300);
         $('#memStatusBar').slideUp(300);
     });

@@ -37,8 +37,12 @@ session_start();
   ======================================================= -->
 <?php 
 require_once("header.php");
+<<<<<<< HEAD
  ?>
 <?php 
+=======
+ 
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   try{
   require_once("php/common/globalVar.php"); 
   require_once("php/store/browse/storeDetail.php");
@@ -294,7 +298,14 @@ require_once("header.php");
     ?>
     <div id="pd<?php echo ($key+1); ?>">
       <div class="pdimg">
+<<<<<<< HEAD
       <img src="<?php echo $product->pictureName; ?>">
+=======
+        <script type="text/javascript">
+          $("#pd<?php echo ($key+1); ?> .pdimg").css('background','url("<?php echo $product->pictureName=="" ? "default.jpg" : $product->pictureName; ?>") center center').css('background-size','cover');
+        </script>
+      <!-- <img src="<?php //echo $product->pictureName; ?>"> -->
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
       </div>
       <p id="dis"><?php echo $product->name; ?></p>
       <div class="pd<?php echo ($key+1); ?>_DTL">
@@ -318,6 +329,13 @@ require_once("header.php");
       <img src="img/SHOPB/act.png">
     </div> -->
     <div id="SKINAREA"></div>
+<<<<<<< HEAD
+=======
+
+    <?php 
+    if (count($GLOBALS["activityArr"]) != 0) {       
+      ?>
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
     <div id="ACTTXT">
       <?php  
       foreach ($GLOBALS["activityArr"] as $activity) {
@@ -338,8 +356,40 @@ require_once("header.php");
       <!-- <img src="<?php //echo $activity->bannerfullPicName ?>"> -->
       </div>
     </div>
+<<<<<<< HEAD
     <?php 
     } ?>
+=======
+
+    <?php 
+    }
+    }else{
+    ?>
+    <div id="ACTTXT">
+      <?php  
+      foreach ($GLOBALS["activityArr"] as $activity) {
+      ?>
+      <p id="tt"><?php echo $activity->title ?></p>
+      <p id="cc">
+        此店家目前未有體驗活動！
+      </p>
+      <a href="activity_act.php?actNum=<?php echo $activity->num ?>" id="ACTBT">活動詳情</a>
+      <div id="ACTIMG">
+        <script type="text/javascript">
+          $("#ACTIMG").css('background','url("<?php echo $activity->bannerfullPicName=="" ? "default.jpg" : $activity->bannerfullPicName; ?>") center center').css('background-size','cover');
+        </script>
+      <!-- <img src="<?php //echo $activity->bannerfullPicName ?>"> -->
+      </div>
+    </div>
+    <?php 
+    }
+    }
+     ?>
+
+
+
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   </section>
 
 
@@ -353,6 +403,7 @@ require_once("header.php");
 
   <section class="SHOPB_MSG">
 
+<<<<<<< HEAD
     <!-- <div class="MSG_CON">
       <div class="MSG_PROFILE">
         <img src="img/SHOPB/PROFILE1.png">
@@ -406,6 +457,9 @@ require_once("header.php");
 <!--      </div>  <!-- MSG_TXT -->    
       
 <!--    </div><div class="clearfix"></div> -->
+=======
+
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
 
     <div class="perspective">
     <div class="title">
@@ -559,7 +613,11 @@ $(document).ready(function(){
   var messageLoadMore = document.getElementById("more-message");
   //看更多留言事件--------------------
   messageLoadMore.addEventListener("click", function() {
+<<<<<<< HEAD
     loadMoreMessage2(<?php echo $GLOBALS["store"]->id; ?>);
+=======
+    loadMoreMessage2(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum; ?>);
+>>>>>>> ea9d01410979e319ddb16791f424f899cbba5736
   }, false);
   //寄發留言-------------------------
   $('#login-men-pic').css('background-image', 'url("<?php echo $memPic;?>")')
