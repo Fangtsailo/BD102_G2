@@ -162,17 +162,20 @@ try{
 
 				});
 			</script>
-
+			
 			<div class="search_storeOne">
-
+				<a href="shopB.php?storeId=<?php echo $searchRow->SI_NUM ?>">
 				<div class="search_storeImg col-sm-3 col-xs-12 " id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
 
 				
 
 					<!-- <img src="img/search-store.png"> -->
 				</div>
+
+				
 				<div class="search_storeContent col-sm-6 col-xs-12">
-					<h2><a href="shopB.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
+					
+					<h2><?php echo "$searchRow->SI_NAME "; ?></h2>
 					<div class="search_follow">
 						<img src="img/icon/follow3.svg">
 						<div id="search_followNum"><?php echo "$searchRow->top"; ?></div>	
@@ -205,7 +208,10 @@ try{
 							<li>營業時間： <?php echo "$searchRow->SI_STARTTIME"; ?>:00~<?php echo "$searchRow->SI_ENDTIME"; ?>:00</li>
 						</ul>
 					</div>
+					
+				
 				</div>
+				</a>
 				<div class="search_storeMap col-sm-3 col-xs-12">
 		
 					
@@ -231,6 +237,10 @@ try{
 
 				</div>
 			</div>   <!-- search_storeOne -->
+			
+
+
+
 
 			<?php } ?> <!-- while迴圈 -->
 
