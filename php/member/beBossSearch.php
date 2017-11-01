@@ -37,8 +37,18 @@ try {
 
 	//取得搜尋結果
 	if( $searchRow = $searchSi->fetchObject() ){
+
+		if($searchRow->SI_MEMNO != null){
+
+			
 		//若有資料，跳轉至結果頁面
-		header("Location: ../../memBeBoss2.php");
+		  header("Location: ../../memBeBoss1.php?info=error");
+
+		}else{
+			
+			header("Location: ../../memBeBoss2.php");
+
+		}
 		
 	}elseif($siType == 1){
 		//若資料庫無此麵包車，則跳轉至新增麵包車頁
