@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 input {
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 a {
   text-decoration: none;
@@ -1158,10 +1158,10 @@ footer {
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 input {
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 a {
   text-decoration: none;
@@ -1528,7 +1528,9 @@ a {
   top: 0;
   left: 0%;
   color: #663300;
-  display: none; }
+  display: none;
+  padding: 0vw 1vw 1vw 1vw;
+  box-sizing: border-box; }
 
 .pd1_DTL h3 {
   font-size: 24px;
@@ -1541,7 +1543,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; }
 
 #pd1:hover .pd1_DTL {
@@ -1559,7 +1561,9 @@ a {
   top: 0;
   left: 0%;
   color: #663300;
-  display: none; }
+  display: none;
+  padding: 1vw;
+  box-sizing: border-box; }
 
 .pd2_DTL h3 {
   font-size: 18px;
@@ -1974,6 +1978,30 @@ a {
     top: 5vw;
     left: 77vw; } }
 
+@media screen and (max-width: 1435px) {
+  #pd1 {
+    top: 3vw;
+    left: 47vw; }
+  #pd2 {
+    top: 11vw;
+    left: 15vw; }
+  #pd3 {
+    top: 21vw;
+    left: 33vw; }
+  #pd4 {
+    display: none; }
+  #pd5 {
+    top: 21vw;
+    left: 67vw; }
+  #pd6 {
+    top: 5vw;
+    left: 81vw; }
+  #ACTTXT #tt {
+    top: 5vw; }
+  #ACTTXT #cc {
+    color: #654;
+    font-size: 2vmin; } }
+
 @media screen and (max-width: 1400px) {
   #SPNAME {
     height: 6vw;
@@ -2014,29 +2042,7 @@ a {
     top: 22vh; }
   #getstar {
     top: 22vh;
-    left: 37%; }
-  #pd1 {
-    top: 3vw;
-    left: 47vw; }
-  #pd2 {
-    top: 11vw;
-    left: 15vw; }
-  #pd3 {
-    top: 21vw;
-    left: 33vw; }
-  #pd4 {
-    display: none; }
-  #pd5 {
-    top: 21vw;
-    left: 67vw; }
-  #pd6 {
-    top: 5vw;
-    left: 81vw; }
-  #ACTTXT #tt {
-    top: 5vw; }
-  #ACTTXT #cc {
-    color: #654;
-    font-size: 2vmin; } }
+    left: 37%; } }
 
 @media screen and (max-width: 1060px) {
   #SPSTORY {
@@ -2101,45 +2107,78 @@ a {
 
 @media screen and (max-width: 980px) {
   .pdimg {
-    height: 0vw; }
+    height: 100%;
+    width: 100%; }
   #pd1 > #dis {
-    position: relative;
-    top: 19vw;
-    left: 1vw; }
+    display: none; }
   #pd2 > #dis {
-    position: relative;
-    top: 14vw;
-    left: 0vw; }
+    display: none; }
   #pd3 > #dis {
-    position: relative;
-    top: 14vw;
-    left: 0vw; }
+    display: none; }
   #pd5 > #dis {
-    position: relative;
-    top: 14vw;
-    left: 1vw; }
+    display: none; }
   #pd6 > #dis {
-    position: relative;
-    top: 14vw;
-    left: 0vw; } }
-
-@media screen and (max-width: 910px) {
-  #pd1 > #dis {
-    position: relative;
-    top: 20vw;
-    left: 1vw; }
-  #pd2 > #dis {
-    position: relative;
-    top: 16vw; }
-  #pd3 > #dis {
-    position: relative;
-    top: 16vw; }
-  #pd5 > #dis {
-    position: relative;
-    top: 16vw; }
-  #pd6 > #dis {
-    position: relative;
-    top: 16vw; } }
+    display: none; }
+  #pd1 {
+    width: 20vw;
+    height: 20vw;
+    top: 3vw;
+    left: 43vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 10px; }
+  #pd2 {
+    width: 20vw;
+    height: 20vw;
+    top: 11vw;
+    left: 8vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 10px; }
+  #pd3 {
+    width: 20vw;
+    height: 20vw;
+    top: 21vw;
+    left: 27vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 10px; }
+  #pd5 {
+    width: 20vw;
+    height: 20vw;
+    top: 22vw;
+    left: 58vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 10px; }
+  #pd6 {
+    width: 20vw;
+    height: 20vw;
+    top: 6vw;
+    left: 74vw;
+    color: #f0e6d2;
+    text-shadow: 1px 1px 1px #666;
+    font-size: 10px; }
+  .pdimg {
+    height: 100%;
+    width: 100%; }
+  .pd1_DTL, .pd2_DTL, .pd3_DTL, .pd4_DTL, .pd5_DTL, .pd6_DTL {
+    width: 20vw;
+    height: 20vw;
+    padding: 1vw;
+    box-sizing: border-box; }
+  .pd1_DTL h3 {
+    font-size: 18px;
+    margin-top: 25%; }
+  .pd1_DTL p {
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; } }
 
 @media screen and (max-width: 850px) {
   #review-btn {
@@ -2160,22 +2199,6 @@ a {
   #review-btn li {
     width: 5vw;
     margin: 0.5vw 1.1vw; }
-  #pd1 > #dis {
-    position: relative;
-    top: 23vw;
-    left: 1vw; }
-  #pd2 > #dis {
-    position: relative;
-    top: 17vw; }
-  #pd3 > #dis {
-    position: relative;
-    top: 17vw; }
-  #pd5 > #dis {
-    position: relative;
-    top: 17vw; }
-  #pd6 > #dis {
-    position: relative;
-    top: 17vw; }
   #ACTIMG {
     width: 52vw;
     height: 38vw; } }
@@ -2251,64 +2274,66 @@ a {
     height: 6vw;
     background-color: rgba(0, 0, 0, 0.4); }
   #pd1 {
-    width: 25%;
+    width: 20vw;
     top: 12vw;
     left: 5vw;
     color: #f0e6d2;
     text-shadow: 1px 1px 1px #666;
     font-size: 10px;
-    height: 180px; }
+    height: 20vw; }
   #pd1 img {
     width: 68%; }
   #pd1 > #dis {
+    display: inline-block;
     position: relative;
     top: 21vw;
     left: -1vw;
     font-size: 12px; }
   #pd2 > #dis {
+    display: inline-block;
     position: relative;
     top: 21vw;
     left: -1vw;
     font-size: 12px; }
   #pd3 > #dis {
+    display: inline-block;
     position: relative;
     top: 21vw;
     left: 0vw;
     font-size: 12px; }
   #pd6 > #dis {
+    display: inline-block;
     position: relative;
     top: 21vw;
     left: 0vw;
     font-size: 12px; }
   #pd2 {
-    width: 25%;
+    width: 20vw;
+    height: 20vw;
     top: 12vw;
     left: 27vw;
     color: #f0e6d2;
     text-shadow: 1px 1px 1px #666;
     font-size: 10px; }
-  #pd2 img {
-    width: 68%; }
   #pd3 {
-    width: 25%;
+    width: 20vw;
+    height: 20vw;
     top: 12vw;
     left: 49vw;
     color: #f0e6d2;
     text-shadow: 1px 1px 1px #666;
     font-size: 10px; }
-  #pd3 img {
-    width: 68%; }
   #pd6 {
-    width: 25%;
+    width: 20vw;
+    height: 20vw;
     top: 12vw;
     left: 70vw;
     color: #f0e6d2;
     text-shadow: 1px 1px 1px #666;
     font-size: 10px; }
-  #pd6 img {
-    width: 68%; }
   .pdimg {
-    height: 0vw; }
+    height: 100%;
+    width: 100%; }
   #dis {
     position: relative;
     top: 22vw; }

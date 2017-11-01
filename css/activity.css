@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 input {
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 a {
   text-decoration: none;
@@ -1941,7 +1941,8 @@ footer {
   .activity_application .globalFormBtns {
     margin-top: 10px; }
   .activity_application .btnTop {
-    margin-top: 10px; }
+    margin-top: 10px;
+    outline: none; }
   .activity_application .activity_cloud {
     position: absolute;
     top: -300px;
@@ -1969,6 +1970,8 @@ footer {
     left: 200px;
     -webkit-animation: cloud2 5s  linear infinite;
     animation: cloud2 5s  linear infinite; }
+  .activity_application .sweet-modal-box alert .sweet-modal-buttons {
+    text-align: center; }
   @media screen and (max-width: 960px) {
     .activity_application .activity_final {
       width: 90%;

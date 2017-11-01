@@ -7,7 +7,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<title>店長專區-活動管理</title>
+	<title>TrePun</title>
+	<link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="libs/jquery.sweet-modal-1.3.3/dev/jquery.sweet-modal.css">
 	<link rel="stylesheet" type="text/css" href="css/bossActivityAdd.css">
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
@@ -122,11 +123,9 @@ try{
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upBanner[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upBanner[]"></label>
+								<input id="bnrImg" type="file" name="upBanner[]" multiple></label>
+								<label class="showImg" id="bnrImgShow"></label>
+								<div class="clearfix"></div>
 						</td>
 					</tr>
 					<tr>
@@ -135,15 +134,9 @@ try{
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upAct[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upAct[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upAct[]"></label>
+								<input id="actImg" type="file" name="upAct[]" multiple></label>
+								<label class="showImg" id="actImgShow"></label>
+								<div class="clearfix"></div>
 						</td>
 					</tr>
 					<tr>
@@ -152,15 +145,9 @@ try{
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upIngrd[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upIngrd[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upIngrd[]"></label>
+								<input id="ingrdImg" type="file" name="upIngrd[]" multiple></label>
+								<label class="showImg" id="ingrdImgShow"></label>
+								<div class="clearfix"></div>
 						</td>
 					</tr>
 					<tr>
@@ -169,15 +156,9 @@ try{
 							<label class="upload">
 								<img src="img/icon/camera.png">
 								<span>上傳照片</span>
-								<input type="file" name="upProd[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upProd[]"></label>
-							<label class="upload">
-								<img src="img/icon/camera.png">
-								<span>上傳照片</span>
-								<input type="file" name="upProd[]"></label>
+								<input id="prodImg" type="file" name="upProd[]" multiple></label>
+								<label class="showImg" id="prodImgShow"></label>
+								<div class="clearfix"></div>
 						</td>
 					</tr>
 				</table>
@@ -214,6 +195,77 @@ try{
 
 <script type="text/javascript">
 	$(function(){
+	// 	if($('.preview_0').attr("src")){
+	// 		$('.preview_0').css('z-index', 1);			      
+	// 	}else{
+	// 		$('.preview_0').css('z-index', -1);
+	// 	}
+	// 	if($('.preview_1').attr("src")){
+	// 		$('.preview_1').css('z-index', 1);
+	// 	}else{
+	// 		$('.preview_1').css('z-index', -1);
+	// 	}
+	// 	if($('.preview_2').attr("src")){
+	// 		$('.preview_2').css('z-index', 1);
+	// 	}else{
+	// 		$('.preview_2').css('z-index', -1);
+	// 	}
+	// 	if($('.preview_3').attr("src")){
+	// 		$('.preview_3').css('z-index', 1);
+	// 	}else{
+	// 		$('.preview_3').css('z-index', -1);
+	// 	}
+
+
+	// 	var inputLogoImg = document.getElementById('uploadLogoImg');
+	// 		$('#uploadLogoImg').change(function(){
+	// 			if (inputLogoImg.files && inputLogoImg.files[0]) {
+	// 					var reader_0 = new FileReader();
+	// 					reader_0.onload = function () {
+	// 						$('.preview_0').attr('src', reader_0.result);
+	// 						$('.preview_0').css('z-index', 2);
+	// 					}
+	// 					reader_0.readAsDataURL(inputLogoImg.files[0]);
+	// 			}
+	// 		});
+	function showfile(evt,showarea) {
+
+		var files = evt.files; // FileList 
+	    function load_image(e){
+	      var img = document.createElement('img');
+	      img.src = e.target.result;
+	      img.className = "image";
+	      document.getElementById(showarea).insertBefore(img, null);
+    	}
+    	for (var i = 0, len = files.length ; i<len ; i++) {
+	      file = files[i];
+	      // 只要影像圖
+	      if (!file.type.match('image.*')) {
+	        continue;
+	      }
+	      var reader = new FileReader();
+	      reader.onload = load_image;
+	      // Read in the image file as a data URL.
+	      reader.fileName = file.name;
+	      reader.readAsDataURL(file);
+	    }
+	}
+
+
+	$("#bnrImg").change(function(){
+	    showfile(this,'bnrImgShow');
+  	});
+	$("#actImg").change(function(){
+	    showfile(this,'actImgShow');
+  	});
+	$("#ingrdImg").change(function(){
+	    showfile(this,'ingrdImgShow');
+  	});
+	$("#prodImg").change(function(){
+	    showfile(this,'prodImgShow');
+  	});
+
+
 		$("#editActBtn").click(function(){
             $.sweetModal.confirm('確認送出?', function() {
             	width: '300px',

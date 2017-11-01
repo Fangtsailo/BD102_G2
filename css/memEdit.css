@@ -5,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 input {
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 a {
   text-decoration: none;
@@ -1202,7 +1202,7 @@ img {
 input, textarea {
   outline: none;
   padding: 2px;
-  font-family: "Noto Sans CJK TC", "Microsoft JhengHei", "Gadugi";
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif;
   font-weight: lighter; }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {

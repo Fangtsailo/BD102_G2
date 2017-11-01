@@ -247,7 +247,14 @@ session_start();
 								
 							</div>
 							<div class="clear"></div>
-							<div class="msgTime"><?php echo $shop_message_Row->SPMSG_TIME; ?></div>
+							<div class="msgTime"><?php 
+
+							//date("Y/m/d H:i:s", $shop_message_Row->SPMSG_TIME)
+
+							echo date("Y/m/d H:i:s", $shop_message_Row->SPMSG_TIME); 
+
+
+							?></div>
 						</td>
 					</tr>
 
