@@ -1616,7 +1616,7 @@ input:not(.radio):focus, textarea:focus {
         margin: 8px; }
       .container .content .myentry h2 > a {
         color: #fbf8f1; }
-      .container .content .myentry address {
+      .container .content .myentry address a {
         color: #fff;
         text-decoration: underline;
         font-size: 18px; }
