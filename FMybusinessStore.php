@@ -262,8 +262,16 @@ session_start();
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_ADDR;
 					}
-					?>"></td>
+					?>">
+
+					
+
+				</td>
 				</tr>
+
+
+
+				
 
 
 				<tr>
@@ -955,13 +963,35 @@ session_start();
 			<input type="button" id="alertBtn" name="" value="編輯完成">
 		</div>
 
+						<input type="hidden" id="SI_LAT" name="SI_LAT">
+					<input type="hidden" id="SI_LNG" name="SI_LNG">
+					<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
+
 		</form>
 
 	</div>  <!-- CenterBusiness -->
 
+
+					
 	<script>
 		
 	$("#alertBtn").click(function(){
+
+
+		var address = document.getElementById("storeAddr").value;
+		            geocoder = new google.maps.Geocoder();
+		            geocoder.geocode( { 'address': address}, function(results, status) {
+		              if (status == google.maps.GeocoderStatus.OK) {
+		                
+		                var lat =results[0].geometry.location.lat();
+		                document.getElementById("SI_LAT").value = lat ; 
+		                var lng =results[0].geometry.location.lng();
+		                document.getElementById("SI_LNG").value = lng ; 
+		               
+		              } else {
+		                alert("失敗, 原因: " + status);
+		              }
+		            });
 
 
       $.sweetModal({
@@ -974,6 +1004,9 @@ session_start();
               $("#alertFormSubmit").submit();
             }
         });
+
+
+      		
      
      
       
@@ -1008,6 +1041,8 @@ session_start();
 
 
 
+					
+					
 
 
 
@@ -1083,6 +1118,7 @@ $(document).ready(function(){
     });
 });
 </script>	 -->
+
 
 <?php 
 

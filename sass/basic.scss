@@ -280,6 +280,7 @@ li {
 			height: 100vh;
 			background-color: rgba(50,50,50,.5);
 			display: none;
+			z-index: 999;
 			.globalForm {
 				position: absolute;
 				top: 0;

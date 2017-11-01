@@ -107,21 +107,21 @@ session_start();
 						</td>
 					</tr>
 					<tr>
-						<th><div>目的</div></th>
+						<th><div id="hidden">目的</div></th>
 						<td>
-							<textarea name="ac_detail1" placeholder="限70字" maxlength="70"></textarea>
+							<textarea id="ac_detail1" name="ac_detail1" placeholder="限70字" maxlength="70"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th><div>詳情</div></th>
 						<td>
-							<textarea name="ac_detail2" placeholder="限55字" maxlength="55"></textarea>
+							<textarea id="ac_detail2" name="ac_detail2" placeholder="限55字" maxlength="55"></textarea>
 						</td>
 					</tr>
 					<tr>
 						<th><div>食材準備</div></th>
 						<td>
-							<textarea name="ac_detail3" placeholder="限80字" maxlength="80"></textarea>
+							<textarea id="ac_detail3" name="ac_detail3" placeholder="限80字" maxlength="80"></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -222,39 +222,15 @@ session_start();
 	  ?>
 <script type="text/javascript">
 	$(function(){
-	// 	if($('.preview_0').attr("src")){
-	// 		$('.preview_0').css('z-index', 1);			      
-	// 	}else{
-	// 		$('.preview_0').css('z-index', -1);
-	// 	}
-	// 	if($('.preview_1').attr("src")){
-	// 		$('.preview_1').css('z-index', 1);
-	// 	}else{
-	// 		$('.preview_1').css('z-index', -1);
-	// 	}
-	// 	if($('.preview_2').attr("src")){
-	// 		$('.preview_2').css('z-index', 1);
-	// 	}else{
-	// 		$('.preview_2').css('z-index', -1);
-	// 	}
-	// 	if($('.preview_3').attr("src")){
-	// 		$('.preview_3').css('z-index', 1);
-	// 	}else{
-	// 		$('.preview_3').css('z-index', -1);
-	// 	}
+		
+		$("#hidden").click(function(){
+			$("#ac_detail1").html("菠蘿麵包的魅力是凡人無法擋,不管任何階層年齡的人，都喜歡這一味！無論市場上有多少新口味出現，菠蘿家族總是屹立不搖！");
+			$("#ac_detail2").html("香港茶餐廳人氣最旺的就是菠蘿牛油包，剛出爐的菠蘿麵包趁熱切開夾上一片冰凍的奶油，熱熱的麵包馬上融化濃郁的奶油片，我們讓你製作自己的冰火五重天！");
+			$("#ac_detail3").html("湯種麵糊、特級高筋麵粉、特級低筋麵粉、速發酵母、洗選蛋、台糖特級細砂糖、純白精鹽、義美鮮奶、法國特級總統牌奶油");
+		});
 
 
-	// 	var inputLogoImg = document.getElementById('uploadLogoImg');
-	// 		$('#uploadLogoImg').change(function(){
-	// 			if (inputLogoImg.files && inputLogoImg.files[0]) {
-	// 					var reader_0 = new FileReader();
-	// 					reader_0.onload = function () {
-	// 						$('.preview_0').attr('src', reader_0.result);
-	// 						$('.preview_0').css('z-index', 2);
-	// 					}
-	// 					reader_0.readAsDataURL(inputLogoImg.files[0]);
-	// 			}
-	// 		});
+
 	function showfile(evt,showarea) {
 
 		var files = evt.files; // FileList 
