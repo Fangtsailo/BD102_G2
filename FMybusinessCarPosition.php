@@ -14,7 +14,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessCarPosition.css">
 	
@@ -39,7 +40,7 @@ session_start();
 
 
 
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback"> -->
     </script>
 
 
@@ -166,6 +167,12 @@ session_start();
 
 				$SI_NUM=$store_imformation_row->SI_NUM;
 
+				
+				$SI_LNG=$store_imformation_row->SI_LNG;
+
+				$SI_LAT=$store_imformation_row->SI_LAT;
+
+
 
 
 		 ?>
@@ -176,13 +183,14 @@ session_start();
 	<table class="tableHeader">
 	
 			<tr class="tabletitle" >
-			<th>定位 <?php echo $store_imformation->rowCount(); ?></th>
+			<th>定位</th>
 			<td>
 				到達定點時，請按下【定位】圓鈕，系統會自動將您的目前位置發送至地圖上。
 			</td>
 			</tr>
 			<tr>
-				<td id="map" colspan="2">
+				
+				<td id="map2" colspan="2">
 					<!-- <img src="http://fakeimg.pl/720x440/00CED1/FFF/?text=Map"> -->
 					
 				</td>
@@ -190,7 +198,15 @@ session_start();
 	
 			<tr>
 				<td id="" colspan="2">
-					<img id="position_btn" src="img/icon/mapAim.png" style="cursor: pointer;">
+					<img id="position_btn" src="<?php 
+
+						if(isset($SI_LAT) && $SI_LAT!='0'){
+							echo 'img/icon/aimN.png';
+						} else{
+							echo 'img/icon/aim.png';
+						}
+
+					 ?>" style="cursor: pointer;">
 				</td>
 			</tr>
 		
@@ -213,16 +229,61 @@ session_start();
 
 		$('#position_btn').click(function(){
 
-			var SI_NUM=<?php echo $SI_NUM; ?>;
+			
 
-			$('#livePosition').val(SI_NUM);
+			if( $('#position_btn').attr('src')=="img/icon/aim.png"){
 
-			var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+				$('#position_btn').attr('src','img/icon/aimN.png');
+
+				var SI_NUM=<?php echo $SI_NUM; ?>;
+
+				$('#livePosition').val(SI_NUM);
+
+				lat = (23.967779+Math.random()*0.4);
+
+				lng = (120.592124+Math.random()*0.02);
 
 
-			$('#livePosition_data').val(coord);
+				var coord = lat+','+lng;
 
-			$('#alertFormSubmit').submit();
+				$('#livePosition_data').val(coord);
+
+				//var coord ='{lat:'+pos.lat+',lng:'+pos.lng+'}';
+
+				
+
+			
+
+
+					       // markers1.push(beachMarker1);
+
+				$('#alertFormSubmit').submit();
+
+
+			}else{
+				$('#position_btn').attr('src','img/icon/aim.png');
+
+				var SI_NUM=<?php echo $SI_NUM; ?>;
+				$('#livePosition').val(SI_NUM);
+
+				var coord = '0,0';
+				$('#livePosition_data').val(coord);
+
+
+			
+
+
+					       // markers1.push(beachMarker1);
+
+
+
+				$('#alertFormSubmit').submit();
+
+
+
+			}
+
+			
 
 		});
 
@@ -234,31 +295,88 @@ session_start();
       initMap();
 
       function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 24.967779, lng: 121.192124},
+
+      	<?php if(isset($SI_LAT) && $SI_LAT!='0'){
+
+
+      		$SI_LNG=$store_imformation_row->SI_LNG;
+
+			$SI_LAT=$store_imformation_row->SI_LAT;
+
+			$SI_JSON = '{lat: '.$SI_LAT.',lng:'.$SI_LNG.'}';
+
+      	 ?>
+
+        var map = new google.maps.Map(document.getElementById('map2'), {
+          center: <?php echo $SI_JSON; ?>,
           zoom: 16
         });
-        var infoWindow = new google.maps.InfoWindow({map: map});
+        var infoWindow = new google.maps.InfoWindow({map: map2});
 
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-             pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('目前位置');
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
+        	var beachMarker1 = new google.maps.Marker({
+	    				        position:<?php 
+
+	    				        if(isset($SI_LAT) && $SI_LAT!='0'){
+
+	    				        		$SI_LNG=$store_imformation_row->SI_LNG;
+
+										$SI_LAT=$store_imformation_row->SI_LAT;
+
+										$SI_JSON = '{lat: '.$SI_LAT.',lng:'.$SI_LNG.'}';
+
+										echo $SI_JSON;
+									} else{
+										echo '""';
+									}
+
+	    				        	
+
+
+	    				         ?>,
+	    				        map: map,
+	    				       // label: labels1[labelIndex1++ % labels1.length]
+	    				    });
+
+        <?php 
+
+        	}else{
+
+        		$SI_LNG=$store_imformation_row->SI_LNG;
+
+				$SI_LAT=$store_imformation_row->SI_LAT;
+
+				$SI_JSON = '{lat: '.$SI_LAT.',lng:'.$SI_LNG.'}';
+			?>
+        		 var map = new google.maps.Map(document.getElementById('map2'), {
+		          center: {lat: 24.967779, lng: 121.192124},
+		          zoom: 16
+		        });
+		        var infoWindow = new google.maps.InfoWindow({map: map2});
+
+        <?php
+        	}//else{
+         ?>
+
+        // //Try HTML5 geolocation.
+        // if (navigator.geolocation) {
+        //   navigator.geolocation.getCurrentPosition(function(position) {
+        //      pos = {
+        //       lat: position.coords.latitude,
+        //       lng: position.coords.longitude
+        //     };
+
+        //     infoWindow.setPosition(pos);
+        //     infoWindow.setContent('目前位置');
+        //     map.setCenter(pos);
+        //   }, function() {
+        //     handleLocationError(true, infoWindow, map.getCenter());
+        //   });
+        // } else {
+        //   // Browser doesn't support Geolocation
+        //   handleLocationError(false, infoWindow, map.getCenter());
+        // }
+      }// function initMap() {
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);

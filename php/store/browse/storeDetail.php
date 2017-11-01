@@ -47,6 +47,8 @@ try {
 			case 7:
 				$word = "日";
 				break;
+			default:
+				$word = "國定假日";
 		}
 		return $word;
 	}
@@ -106,20 +108,28 @@ try {
 	function getMessagesByStoreId($storeId, $loginMemNum) {
 		$messageArr = array();
 		$limitCount = 5;//一次載入5筆
-		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC limit $limitCount";
+		$sql = "SELECT message.SPMSG_MEMNO,message.SPMSG_NO, message.SPMSG_CON, message.SPMSG_TIME, member.MEM_NAME,member.MEM_ID, member.MEM_PIC FROM shop_message message, member WHERE message.SPMSG_SPNO=:storeId and message.SPMSG_MEMNO=member.MEM_NO ORDER BY SPMSG_TIME DESC limit $limitCount";
 		$stmt = $GLOBALS["connectPDO"] ->prepare($sql);
 		$stmt->bindValue(":storeId", $storeId);
 		$stmt->execute();
+
 		if ($stmt->rowCount() == 0) {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$message = new Message($row->SPMSG_NO, $row->MEM_NAME, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
+				$memDisplayName = $row->MEM_NAME==""?$row->MEM_ID:$row->MEM_NAME;
+				$message = new Message($row->SPMSG_NO, $memDisplayName, $row->SPMSG_TIME, $row->SPMSG_CON, $row->MEM_PIC);
 				//這筆留言有沒有被此登入的 member 檢舉過
 				$sql = "SELECT * FROM report WHERE SPMSG_NO=$row->SPMSG_NO and MEM_NO=$loginMemNum";
 				$stmt2 = $GLOBALS["connectPDO"]->query($sql);
-				if ($row = $stmt2->fetchObject()) {
+				if ($row2 = $stmt2->fetchObject()) {
 					$message->isReportByMe = true;
+				}
+				//這筆留言有沒有被管理員刪除
+				$sql = "SELECT * FROM report where SPMSG_NO=$row->SPMSG_NO AND RE_STATUS=0";
+				$stmt3 = $GLOBALS["connectPDO"]->query($sql);
+				if ($row3 = $stmt3->fetchObject()) {
+					$message->isRemoveByADM = true;
 				}
 				array_push($messageArr, $message);
 			}
@@ -136,7 +146,7 @@ try {
 			return array();
 		} else {
 			while($row = $stmt->fetchObject()) {
-				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
+				$activity = new ActivityObj($row->AC_NO,$row->AC_NAME, $row->AC_ADDRESS, $row->AC_TIME, $row->AC_MEM_COUNT, $row->AC_INGREDIENT, $row->AC_PRICE, $row->AC_BANNER1, $row->AC_PIC1, $row->AC_PIC2, $row->AC_PIC3, $row->AC_PRODUCT_PIC1, $row->AC_PRODUCT_PIC2, $row->AC_PRODUCT_PIC3 );
 				array_push($activityArr, $activity);
 			}
 			return $activityArr;
@@ -165,15 +175,12 @@ try {
 		$stmt->execute();
 		if ($stmt->rowCount() == 0) {//找不到對應商家導回首頁
 			header("location:homepage.php");
+
 		} else {
 			$tmpStore = $stmt->fetchObject();
 			$GLOBALS["store"] = new Store($tmpStore->SI_NUM,$tmpStore->SI_NAME, $tmpStore->SI_LOGO, $tmpStore->SI_ADDR, $tmpStore->SI_STARTTIME, $tmpStore->SI_ENDTIME, $tmpStore->SI_PHONE, $tmpStore->SI_RESTDAY, $tmpStore->SI_STORY, $tmpStore->SI_TYPE, $tmpStore->SI_BIMG_1, $tmpStore->SI_BIMG_2, $tmpStore->SI_BIMG_3, $tmpStore->SI_LAT, $tmpStore->SI_LNG, $tmpStore->SI_AVG_REVIEW);
 			$followCount = getFollowCountByStoreId($storeId);
 			$GLOBALS["store"]->follow = $followCount;
-			//防呆, type 不是1的都導到 shopB.php
-			if ($GLOBALS["store"]->type != 1) {
-				header("location:shopB.php?storeId=$storeId");
-			}
 		}
 	}
 	function getBreadCarPathByStoreId($storeId) {
@@ -186,8 +193,7 @@ try {
 			return array();
 		} else {
 			while($path = $stmt->fetchObject()) {
-				$nowLocationStr = "{lat:".$path->si_lat.", lng:".$path->si_lng."}";
-				$breadCarPath = new BreadCarPath($path->bcp_describe, $nowLocationStr, $path->bcp_location);
+				$breadCarPath = new BreadCarPath($path->bcp_describe, $path->si_lat, $path->si_lng, $path->bcp_location);
 				array_push($breadCarPathArr, $breadCarPath);
 			}
 			return $breadCarPathArr;

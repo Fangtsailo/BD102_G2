@@ -32,7 +32,36 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+								<?php 
+
+					try{
+					require_once("php/pdo/connectPDO.php");
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
 			</ul>
 		</div>
 		
@@ -43,9 +72,8 @@ session_start();
 
 		<?php 
 		$memNo = $_SESSION["memNo"];
-		try{
-			require_once("php/PDO/connectPDO.php");
-			$selectActSQL = "SELECT act.AC_NO ,act.AC_NAME,act.AC_TIME,act.AC_ADDRESS,act.AC_PRICE,act.AC_BANNER1,s.SI_NAME FROM activity act JOIN ac_info info ON act.AC_NO = info.AC_NO JOIN store_imformation s ON s.SI_NUM = act.AC_STORE_NUM  WHERE info.MEM_NO='$memNo' GROUP BY info.AC_NO ";
+		
+			$selectActSQL = "SELECT act.AC_NO ,act.AC_NAME,act.AC_TIME,act.AC_ADDRESS,act.AC_PRICE,act.AC_BANNER1,s.SI_NAME, s.SI_NUM FROM activity act JOIN ac_info info ON act.AC_NO = info.AC_NO JOIN store_imformation s ON s.SI_NUM = act.AC_STORE_NUM  WHERE info.MEM_NO='$memNo' GROUP BY info.AC_NO ";
 			$selectAct = $connectPDO->query($selectActSQL);
 			while ( $selectActRow = $selectAct->fetchObject() ){
 
@@ -55,15 +83,15 @@ session_start();
 				<div class="myentry">
 					<img src="img/store/activity/banner/<?php echo $selectActRow->AC_BANNER1 ; ?>" class="actpic">
 					<div class="info">
-						<h2><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>"><?php echo $selectActRow->AC_NAME ; ?></a></h2>
-						<a href="javascript:;" class="btn50" id="cancelentry">
+						<h2><?php echo $selectActRow->AC_NAME ; ?></a></h2>
+						<a href="php/member/track/cancelentry.php?actNum=<?php echo $selectActRow->AC_NO ; ?>" class="btn50" id="cancelentry">
 							<img src="img/memimg/cancel.svg">
 						</a>
 						<address>
 							<ul>
-								<li><a href="#"><?php echo $selectActRow->SI_NAME ; ?></a></li>
+								<li><a href="storeBrowse.php?storeId=<?php echo $selectActRow->SI_NUM; ?>" target="_blank"><?php echo $selectActRow->SI_NAME ; ?></a></li>
 						        <li>活動時間: <?php echo $selectActRow->AC_TIME ; ?></li>
-						        <li><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>">活動詳情</a></li>
+						        <li><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>" target="_blank">活動詳情</a></li>
 							</ul>
 						</address>
 					</div>
@@ -76,8 +104,6 @@ session_start();
 				echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
 				echo "行號：",$ex->getLine(),"<br>";
 		}
-
-
 		?>
 
 
@@ -88,6 +114,29 @@ session_start();
 	<?php
 		require_once("footer.php");
 	?>
+	
+<script type="text/javascript">
+	$(function(){
 
+
+		//送出取消追蹤時
+		$("#cancelentry").click(function(){
+			event.preventDefault();
+			$.sweetModal.confirm('確認不參加此項活動?', function() {
+				$.sweetModal({
+					content: '好可惜，下次再邀請您與我們一起體驗烘焙的樂趣！',
+					icon: $.sweetModal.ICON_SUCCESS,
+					width: '300px',
+					theme: $.sweetModal.THEME_MIXED,
+					onClose: function(){
+						var link = $("#cancelentry").attr('href');
+		              	location.href=link;
+		           	}
+		        });
+			});
+
+		});
+	});
+</script>
 </body>
 </html>

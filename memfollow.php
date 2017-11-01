@@ -32,7 +32,36 @@ session_start();
 				<li><a href="memcomment.php" class="mycommentsvg">我的留言</a></li>
 				<li><a href="mementry.php" class="myentrysvg">我的報名</a></li>
 				<li><a href="memedit.php" class="myeditsvg">編輯個人資料</a></li>
+								<?php 
+
+					try{
+					require_once("php/pdo/connectPDO.php");
+
+							$memNo=$_SESSION["memNo"];
+
+							$sql = "select * from store_imformation where SI_MEMNO=$memNo";
+
+							$store_imformation = $connectPDO->query($sql);
+
+							if($store_imformation->rowCount()!=0){
+
+				 ?>
+
+				 <li><a href="FMybusinessStore.php" class="bebosssvg">店長專區</a></li>
+
+				 <?php 
+
+				}else{
+
+				  ?>
+
 				<li><a href="memBeBoss1.php" class="bebosssvg">成為店長</a></li>
+
+				<?php 
+
+				}
+
+				 ?>
 			</ul>
 		</div>
 
@@ -44,55 +73,22 @@ session_start();
 			<section class="col-xs-12 col-sm-3 section1000">
 		<?php 
 		$memNo = $_SESSION["memNo"];
-		try{
-			require_once("php/PDO/connectPDO.php");
-			$selectFollowSQL = "SELECT s.SI_NAME,s.SI_PHONE,s.SI_BIMG_1,s.SI_ADDR,SUBSTRING(f.FL_TIME,1,10) followTime,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO='$memNo' AND s.SI_NUM = r.SI_NUM GROUP BY s.SI_NUM ";
+		
+			$selectFollowSQL = "SELECT s.SI_NUM,s.SI_NAME,s.SI_PHONE,s.SI_BIMG_1,s.SI_ADDR,SUBSTRING(f.FL_TIME,1,10) followTime,COUNT(f.FL_TIME) followers,ROUND(AVG(r.REVIEWS),1) reviews,f.SI_NUM ,r.SI_NUM FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM WHERE f.MEM_NO='$memNo' AND s.SI_NUM = r.SI_NUM GROUP BY s.SI_NUM ";
 			$selectFollow = $connectPDO->query($selectFollowSQL);
 			while ( $selectFollowRow = $selectFollow->fetchObject() ){
-
-<<<<<<< HEAD
-				<?php
-				// phpinfo();
-				
-				// try{
-				// 	require_once("php/pdo/connectPDO.php");
-				// 	$sql = "select * from follow where MEM_NO='$memNo'";
-				// 	$follow = $connectPDO->query($sql);
-
-				// 	while( $followRow = $follow->fetchObject() ){
-				$score=5;
-				?>
-	
-=======
+				$shopBgd = (isset($selectFollowRow->SI_BIMG_1))?$selectFollowRow->SI_BIMG_1:"default.png";
 		 ?>
-		
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 				<div class="myfollow">
-					<a href="#"><img src="img/storeBgImg/<?php echo $selectFollowRow->SI_BIMG_1.'.jpg'; ?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
+					
+					<a href="storeBrowse.php?storeId=<?php echo $selectFollowRow->SI_NUM; ?>" target="_blank"><img src="<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$shopBgd ;?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
 					<ul>
-<<<<<<< HEAD
-						<?php
-						for( $i=1; $i<=5; $i++){
-							if( $i <= $score){
-								echo '<li class="star"><img src="img/memimg/star2.svg"></li>';
-							}else{
-								echo '<li class="star"><img src="img/memimg/star3.svg"></li>';
-							}
-						}
-						?>
-						<!-- <li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li>
-						<li class="star"><img src="img/memimg/star3.svg"></li> -->
-=======
 						<?php 
 							$starAmt = $selectFollowRow->reviews;
 							for ($i=1; $i<$starAmt ; $i++) { 
 								echo '<li class="star"><img src="img/memimg/star2.svg"></li>';
 							}
 						 ?>
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 					</ul>
 					<a href="php/member/track/cancelFollow.php?SI_NUM=<?php echo $selectFollowRow->SI_NUM;?>" id="cancelfollow" class="btn50" id="cancelfollow">
 						<img src="img/memimg/follow3.svg">
@@ -107,7 +103,7 @@ session_start();
 						<img src="img/memimg/mappointer2.svg">
 					</a>
 					<time>
-                    	收藏日期：<?php echo $selectFollowRow->followTime ; ?>
+                    	收藏日期：<?php echo date("Y/m/d H:i", $selectFollowRow->followTime) ; ?>
                     </time>
 				</div>
 

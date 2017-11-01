@@ -14,7 +14,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStore.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -198,7 +199,7 @@ session_start();
 				</tr>
 
 				<tr>
-					<th><div>狀態 <?php echo $memNo; ?></div></th>
+					<th><div>狀態</div></th>
 					<td>
 						<p>			
 							<?php 
@@ -234,7 +235,7 @@ session_start();
 
 				<tr>
 				<th><div>店名</div></th>
-				<td><input type="text" name="SI_NAME" value="<?php
+				<td><input type="text" name="SI_NAME" id="storeName" value="<?php
 
 				 if($store_imformation->rowCount()!=0){
 
@@ -247,7 +248,7 @@ session_start();
 
 				<tr>
 				<th><div>電話</div></th>
-				<td><input type="text" name="SI_PHONE" value="<?php 
+				<td><input type="text" name="SI_PHONE" id="storePhone" value="<?php 
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_PHONE;
 					}
@@ -257,12 +258,20 @@ session_start();
 
 				<tr>
 				<th><div>地址</div></th>
-				<td><input type="text" name="SI_ADDR" value="<?php 
+				<td><input type="text" name="SI_ADDR" id="storeAddr" value="<?php 
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_ADDR;
 					}
-					?>"></td>
+					?>">
+
+					
+
+				</td>
 				</tr>
+
+
+
+				
 
 
 				<tr>
@@ -466,12 +475,28 @@ session_start();
 						<select name="SI_STARTTIME">
 
 							<?php 
+					// 		exit("1122221");
+					// 		echo $store_imformationRow->SI_STARTTIME;
+					// exit("111111");
 
-							for($i=0;$i<24;$i++){
-								$clock = $i<10 ? "0".$i.":00" : $i.":00";
-								$sel = ($i==$store_imformationRow->SI_STARTTIME)? "selected" : "" ;
+							if($store_imformation->rowCount()!=0){
 
-								echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==$store_imformationRow->SI_STARTTIME)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
+							}else{
+
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==9)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
 							}
 
 							 ?>
@@ -485,11 +510,24 @@ session_start();
 						<select name="SI_ENDTIME">
 							<?php 
 
-							for($i=0;$i<24;$i++){
-								$clock = $i<10 ? "0".$i.":00" : $i.":00";
-								$sel = ($i==$store_imformationRow->SI_ENDTIME)? "selected" : "" ;
+							if($store_imformation->rowCount()!=0){
 
-								echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==$store_imformationRow->SI_ENDTIME)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
+							}else{
+
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==9)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
 							}
 
 							 ?>
@@ -503,9 +541,9 @@ session_start();
 
 
 				<tr>
-				<th><div>故事</div></th>
+				<th><div id="storeStoryClick">故事</div></th>
 				<td>
-					<textarea name="SI_STORY" placeholder="請輸入"><?php
+					<textarea id="storeStory" name="SI_STORY" placeholder="請輸入"><?php
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_STORY;
 					}
@@ -569,7 +607,7 @@ session_start();
 							echo '<img class="preview preview_1" src="">';
 							}else{
 
-								echo '<img class="preview preview_1" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_1.'">';
+								echo '<img class="preview preview_1" src="img/store/banners/'.$store_imformationRow->SI_BIMG_1.'">';
 							}
 						}else{
 							echo '<img class="preview preview_1" src="">';
@@ -603,7 +641,7 @@ session_start();
 							echo '<img class="preview preview_2" src="">';
 							}else{
 
-								echo '<img class="preview preview_2" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_2.'">';
+								echo '<img class="preview preview_2" src="img/store/banners/'.$store_imformationRow->SI_BIMG_2.'">';
 							}
 
 						}else{
@@ -641,7 +679,7 @@ session_start();
 							
 							}else{
 
-								echo '<img class="preview preview_3" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_3.'">';
+								echo '<img class="preview preview_3" src="img/store/banners/'.$store_imformationRow->SI_BIMG_3.'">';
 							}
 						}else{
 
@@ -912,17 +950,48 @@ session_start();
 
 
 		<div class="commit">
+			<?php 
+
+			if($store_imformation->rowCount()!=0){
+			 ?>
+			
+			<input type="button" name="" value="瀏覽頁面" onclick="location.href='storeBrowse.php?storeId=<?php echo $store_imformationRow->SI_NUM; ?>'">
+			<?php
+			 }
+			 ?>
 			<!-- <input type="button" name="" value="預覽"> -->
 			<input type="button" id="alertBtn" name="" value="編輯完成">
 		</div>
+
+						<input type="hidden" id="SI_LAT" name="SI_LAT">
+					<input type="hidden" id="SI_LNG" name="SI_LNG">
+					<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
 
 		</form>
 
 	</div>  <!-- CenterBusiness -->
 
+
+					
 	<script>
 		
 	$("#alertBtn").click(function(){
+
+
+		var address = document.getElementById("storeAddr").value;
+		            geocoder = new google.maps.Geocoder();
+		            geocoder.geocode( { 'address': address}, function(results, status) {
+		              if (status == google.maps.GeocoderStatus.OK) {
+		                
+		                var lat =results[0].geometry.location.lat();
+		                document.getElementById("SI_LAT").value = lat ; 
+		                var lng =results[0].geometry.location.lng();
+		                document.getElementById("SI_LNG").value = lng ; 
+		               
+		              } else {
+		                alert("失敗, 原因: " + status);
+		              }
+		            });
 
 
       $.sweetModal({
@@ -935,10 +1004,29 @@ session_start();
               $("#alertFormSubmit").submit();
             }
         });
+
+
+      		
      
      
       
       
+    });
+
+
+
+
+    $('#storeStoryClick').click(function(){
+
+    	
+    	$('#storePhone').val('0923239493');
+    	$('#storeAddr').val('台東縣東河鄉都蘭村436-3號');
+    	$('#storeStory').html('David & Rolly自台北天母移民台東縣美麗的都蘭村。我們用這份東海岸快樂．感謝的心﹐研製自然．健康的義大利麵醬汁和手工麵包');
+    	// $('#storeName').val('1');
+
+
+
+
     });
 
 
@@ -953,6 +1041,8 @@ session_start();
 
 
 
+					
+					
 
 
 
@@ -1028,6 +1118,7 @@ $(document).ready(function(){
     });
 });
 </script>	 -->
+
 
 <?php 
 

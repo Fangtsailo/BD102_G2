@@ -50,11 +50,6 @@
 					<input type="button" name="submit" class="globalOkBtn" id="submitLogin" value="登入">					
 				</div>
 				
-				<div class="facebookLogin">
-					<a href="#">
-					Facebook帳號登入</a>
-				</div>
-				
 				<div class="registerLink">
 					<span id="changeToRegister">還沒有帳號？ 註冊成為PUN友</span>
 				</div>
@@ -104,10 +99,7 @@
 					<input id="submitRegister" type="button" name="SubmitRegister" class="globalOkBtn" value="註冊">					
 				</div>
 				
-				<div class="facebookRegister">
-					<a href="#">
-					Facebook帳號註冊</a>
-				</div>
+				
 				
 				<div class="loginLink">
 					<span id="changeToLogin">已經有帳號，返回登入頁面</span>
@@ -121,28 +113,32 @@
 	
 
 <!-- logo區塊 -->
-		<div class="headLogo" id="section1-click">
-			<a href="#">
+		<div class="headLogo">
+			<a href="#section1-move" class="section1-click">
 				<img src="img/trepunLogoWhite.svg">
 			</a>	
 		</div>	
 <!--頁面錨點連結 -->
 		<div class="headerLink">
-			<a href="#" class="section2-click">
+			<a href="#section2-move" class="section2-click">
 				<img src="img/homepage/hot.svg">
 				<span>熱門商家</span>	
 			</a>
-			<a href="#" class="section3-click">
+			<a href="#section3-move" class="section3-click">
 				<img src="img/homepage/mappointer3.svg">
 				<span>胖小車地圖</span>	
 			</a>
-			<a href="#" class="section4-click">
+			<a href="#section4-move" class="section4-click">
 				<img src="img/homepage/cookIcon.svg">
 				<span>烘焙體驗</span>	
 			</a>
-			<a href="#" class="section5-click">
+			<a href="#section5-move" class="section5-click">
 				<img src="img/homepage/newShopIcon.svg">
 				<span>新進商家</span>	
+			</a>
+			<a href="#section1-move" class="section1-click">
+				<img src="img/icon/search.svg">
+				<span>搜尋商家</span>	
 			</a>
 			<div class="clearfix"></div>
 		</div>
@@ -161,17 +157,21 @@
 					<span>熱門商家</span>	
 					<div class="clearfix"></div>
 			</a>
-			<a href="#" class="section3-click">
+			<a href="#section3-move" class="section3-click">
 				<img src="img/homepage/mappointer3.svg">
 				<span>胖小車地圖</span>	
 			</a>
-			<a href="#" class="section4-click">
+			<a href="#section4-move" class="section4-click">
 				<img src="img/homepage/cookIcon.svg">
 				<span>烘焙體驗</span>	
 			</a>
-			<a href="#" class="section5-click">
+			<a href="#section5-move" class="section5-click">
 				<img src="img/homepage/newShopIcon.svg">
 				<span>新進商家</span>	
+			</a>
+			<a href="#section1-move" class="section1-click">
+				<img src="img/icon/search.svg">
+				<span>搜尋</span>	
 			</a>
 			<div class="clearfix"></div>
 		</div>
@@ -193,10 +193,10 @@
 						</a>
 						<a href="#" id="headMemPic">
 							<?php 
-								if ( isset($_SESSION["memPic"]) ){
-									echo "<img src='img/member_pic/".$_SESSION["memPic"]."''>";
+								if ( isset($_SESSION['memPic']) ){
+									echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
 								}else {
-									echo "<img src='img/member_pic/default.png'>";
+									echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
 								}
 
 							 ?>
@@ -241,12 +241,13 @@
 	
 <!-- 右側會員選單 -->
 	<div class="burgerMenu" id="burgerBtn">
-			
-			<span>
-								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><g>
-								<path d="M28.4,28.2c-0.5-3.6-1.8-4.1-3.7-4.9c-0.3-0.1-0.7-0.3-1.1-0.5c-0.2-0.1-0.3-0.2-0.5-0.2c-1.1-0.5-1.4-0.8-1.4-1.3c1.4-1,2.2-2.6,2.2-4.1v-6.4L23.3,11c-0.4,0.1-0.7,0.1-1,0.1c-0.8,0-1.3-0.1-1.9-0.3c-0.5-0.1-1.1-0.3-1.9-0.3c-0.9,0-1.6,0.4-2.1,1.1l0.9,0.7c0.3-0.4,0.7-0.6,1.2-0.6c0.7,0,1.1,0.1,1.7,0.2c0.6,0.1,1.2,0.3,2.1,0.3c0.2,0,0.3,0,0.5,0v5.1c0,1.9-1.4,3.9-3.9,3.9c-2.4,0-3.9-2-3.9-3.9v-5.9C15.3,11,16,9,18.6,9c0.9,0,1.5,0.2,2.1,0.3c0.5,0.1,1,0.2,1.6,0.2c0.6,0,1.2-0.1,1.6-0.3V8.1c-0.4,0.1-1,0.4-1.6,0.4c-0.5,0-0.9-0.1-1.4-0.2c-0.7-0.2-1.4-0.3-2.4-0.3c-2.9,0-4.2,2.1-4.5,3.3l0,6.1c0,1.5,0.8,3.2,2.2,4.1c-0.1,0.5-0.3,0.8-1.4,1.3c-0.1,0.1-0.3,0.1-0.5,0.2c-0.4,0.2-0.7,0.3-1.1,0.5c-1.8,0.8-3.2,1.3-3.7,4.9l-0.1,0.6h19L28.4,28.2z M10.8,27.8c0.4-2.4,1.3-2.7,2.9-3.4c0.3-0.1,0.7-0.3,1.1-0.5c0.3-0.1,0.5-0.2,0.8-0.4c0.8-0.4,1.4-0.9,1.6-1.6c0.5,0.2,1.1,0.3,1.8,0.3c0.6,0,1.2-0.1,1.8-0.3c0.2,0.7,0.8,1.2,1.6,1.6c0.2,0.1,0.5,0.2,0.8,0.4c0.4,0.2,0.8,0.3,1.1,0.5c1.6,0.7,2.4,1,2.9,3.4H10.8z"/>
-								<path class="st1" d="M36,19c0,9.4-7.6,17-17,17c-8.3,0-15.3-6-16.7-14h2c1.4,6.8,7.4,12,14.7,12c8.3,0,15-6.7,15-15S27.3,4,19,4S4,10.7,4,19c0,0.3,0,0.7,0.1,1H2v-1C2,9.6,9.6,2,19,2S36,9.6,36,19z"/></g></svg>
-			</span>
+		<?php 
+			if ( isset($_SESSION['memPic']) ){
+				echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+			}else {
+				echo "<img src='img/member_pic/default.png'>";
+			}
+		?>
 	</div>
 	<nav id="menu" class="hideMenu">
 		<ul id="visitor">
@@ -273,16 +274,15 @@
 			</li>
 			<li class="memPart">
 				<div class="memPic">
-					<?php 
-								if ( isset($_SESSION['memPic']) ){
-									echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
-								}else {
-									echo "<img src='img/member_pic/default.png'>";
-								}
-
-							 ?>
+				<?php 
+				if ( isset($_SESSION['memPic']) ){
+					echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+				}else {
+					echo "<img src='img/member_pic/default.png'>";
+				}
+				?>
 				</div>
-				<span id="memId"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
+				<span id="memId" onclick="location.href='memedit.php'"><?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?></span>
 				<div class="clearfix"></div>
 			</li>
 			<ul id="memberMenu">
@@ -294,8 +294,64 @@
 				<a id="rwdBossRole" href="memBeBoss1.php">成為店長</a>
 				
 				<ul id="bossMenu">
-					<li><a class="navItem bossMenu" href="FMybusinessStore.php">麵包店</a></li>
-					<li><a class="navItem bossMenu" href="#">胖小車</a></li>
+
+					<li><a class="navItem bossMenu" href="#" id="rwdStore">麵包店<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+						<?php 
+						require_once("php/PDO/connectPDO.php");
+						if( isset($_SESSION["memNo"]) ){
+						$memNo=$_SESSION["memNo"];
+						$sql_Store = "select * from store_imformation where SI_MEMNO='$memNo' and SI_TYPE=0 and SI_CHECKSTAY=1 and SI_SELLSTAY=1";
+						$storeMenu = $connectPDO->query($sql_Store);
+						?>
+							
+							<ul id="storeMenu">
+							<li><a class="navItem bossMenu" href="FMybusinessStore.php">基本資料</a></li>
+
+						<?php
+						
+							if($storeMenu->rowCount()!=0){
+						
+						?>
+
+							<li><a class="navItem bossMenu" href="FMybusinessStoreProductList.php">商品</a></li>
+							
+
+							 <?php 
+							}//if rowCount
+						}//if isset
+						  ?>
+						  	</ul>
+
+					</li>
+					
+					<li id="rwdCar"><a class="navItem bossMenu" href="#" id="rwdStore">胖小車<i class='fa fa-angle-down' aria-hidden='true'></i></a>
+
+				<?php 
+
+						if( isset($_SESSION["memNo"]) ){
+							$memNo=$_SESSION["memNo"];
+							$sql_Store = "SELECT * FROM store_imformation WHERE SI_MEMNO='$memNo' AND SI_TYPE=1 AND SI_CHECKSTAY=1 AND SI_SELLSTAY=1";
+							$carMenu = $connectPDO->query($sql_Store);
+				?>
+							<ul id="carMenu">
+							<li><a class="navItem bossMenu" href="FMybusinessCar.php">基本資料</a></li> 
+
+				<?php
+							if($carMenu->rowCount()!=0){
+				?>
+
+							<li><a class="navItem bossMenu" href="FMybusinessCarProductList.php">商品</a></li>
+							<li><a class="navItem bossMenu" href="FMybusinessCarRouteAdd.php">路線規劃</a></li>
+							<li><a class="navItem bossMenu" href="FMybusinessCarPosition.php">基本資料</a></li>
+
+				<?php 
+							}
+						}
+				?>
+							</ul>
+					</li>
+
 					<li><a class="navItem bossMenu" href="bossActivity.php">活動管理</a></li>
 					<li><a class="navItem bossMenu" href="FMybusinessMessage.php">留言管理</a></li>
 				</ul>
@@ -321,7 +377,7 @@
 					<h1>新增店家</h1>
 					<p>想跟鄉民分享吃到好麵包的感動嗎？TrePun邀請您一起來分享隱身巷弄的好吃麵包店和胖小車。</p>
 				</div>
-				<form action="php/store/add/lightboxAddStore.php" method="get" id="addstoreForm">
+				<form action="php/store/add/lightboxAddStore.php" method="post" id="addstoreForm">
 				<div class="globalFormContent" id="showAddShopForm">
 					<div class="globalFormInput chooseType">
 						<label><span>*</span>選擇店型</label>
@@ -333,7 +389,7 @@
 						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話">
+						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
@@ -400,7 +456,7 @@
 						</div>
 					</div>
 					<div class="globalFormInput">
-						<label>故事介紹</label><textarea name="story"></textarea>
+						<label>故事介紹</label><textarea name="story" maxlength="450"></textarea>
 					</div>
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">

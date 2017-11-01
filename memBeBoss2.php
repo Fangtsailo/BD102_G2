@@ -51,10 +51,10 @@ session_start();
 					$siType=isset($_SESSION["SI_TYPE"])? $_SESSION["SI_TYPE"] : "";
 					$siName=isset($_SESSION["SI_NAME"])? $_SESSION["SI_NAME"] : "";
 
-					require_once("php\pdo\connectPDO.php");
+					require_once("php/pdo/connectPDO.php");
 
 					//比對資料庫中是否有此店型的店名
-					$sql = "select * from store_imformation where SI_TYPE=:SI_TYPE and SI_NAME=:SI_NAME";
+					$sql = "select * from store_imformation where SI_TYPE=:SI_TYPE and SI_NAME=:SI_NAME and SI_MEMNO=null";
 
 					//編譯該指令
 					$searchSi=$connectPDO->prepare($sql);
@@ -65,7 +65,7 @@ session_start();
 					$searchSi->execute();
 
 					//若有，顯示此店資料
-					$searchRow = $searchSi->fetchObject()
+					$searchRow = $searchSi->fetchObject();
 
 					//執行該指令
 					// if($searchSi->rowCount()==0){
@@ -75,8 +75,11 @@ session_start();
 					// }else{
 						//若有，顯示此店資料
 						// while ( $searchRow = $searchSi->fetchObject() ){
+					if($searchSi->rowCount()!=0){
 				?>
 				
+				
+
 				<div class="myfollow find">
 					<a href="shopB.php?SI_NUM=<?php echo $searchRow->SI_NAME;?>" target="blank"> <!-- 店的網頁 -->
 						<img src="img/store/banners/<?php echo $searchRow->SI_BIMG_1; ?>"> <!-- 店照 -->
@@ -99,13 +102,20 @@ session_start();
 						<img src="img/memimg/mappointer2.svg">
 					</a>
 				</div>
-				<?php
-						//}//while end
-				?>
 
 				<div class="action">
                     <a href="php/member/beBossSwitch.php" class="btn">是的! 下一步</a>
                 </div>
+
+				<?php
+				}else{
+
+					header("Location:memBeBoss1.php?info=error"); 
+
+				}		//}//while end
+				?>
+
+				
 
 				<?php
 					//}//if...else end

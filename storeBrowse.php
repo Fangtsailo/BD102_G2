@@ -23,7 +23,6 @@
 	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script src="libs/ScrollMagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>
     <script src="js/storeBrowse.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
     </script>
 
     <script src="js/header.js"></script>
@@ -51,7 +50,14 @@ try {
 	if ($memNum != -1) {
 		$memPic = GLOBAL_MEM_PIC_PATH.$_SESSION["memPic"];
 	}
+
 	getStoreInfoById($storeId);
+
+				//防呆, type 不是1的都導到 shopB.php
+			if ($GLOBALS["store"]->type != 1) {
+				header("location:shopB.php?storeId=$storeId");
+			}
+
 	$GLOBALS["breadCarPathArr"] = getBreadCarPathByStoreId($storeId);
 	$breadCarPathCount = 1;//至少有"即時位置"
 	$GLOBALS["produtsArr"] = getProductsByStoreId($storeId);
@@ -73,9 +79,6 @@ try {
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
-<!--  <div id="loading-page">
- 	<div class="content">Loading...</div>
- </div> -->
  <div class="report-mask mask">
  	<div class="report-modal modal">
  		<p>檢舉原因</p>
@@ -144,6 +147,7 @@ try {
 		</a>
 </div>
 <div class="screen screen-1" id="screen1">
+	<!-- <img class="scroll-down-tip" src="img/icon/scrolldown.svg" class="section2-click"> -->
 	<div class="banners">
 		<div id="banner1"></div>
 		<div id="banner2"></div>
@@ -209,9 +213,23 @@ try {
 					<?php 
 						for ($i = 0; $i < count($GLOBALS["store"]->closeDayArr); $i++) {
 							if ($i != count($GLOBALS["store"]->closeDayArr) - 1) {
-								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
+								if ($GLOBALS["store"]->closeDayArr[$i] != "") {
+									if ($GLOBALS["store"]->closeDayArr[$i] == 0) {
+										//國定假日
+										echo transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
+									} else {
+										echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]), ", ";
+									}	
+								}
 							} else {
-								echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
+								if ($GLOBALS["store"]->closeDayArr[$i] != "") {
+									if ($GLOBALS["store"]->closeDayArr[$i] == 0) {
+										//國定假日
+										echo transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
+									} else {
+										echo "星期", transNumToWord($GLOBALS["store"]->closeDayArr[$i]);
+									}
+								}
 							}
 						}
 					 ?>
@@ -294,7 +312,6 @@ try {
 		?>
 					<div class="item" id="big-bread-<?php echo $product->num; ?>">
 						<div class="image">
-							<div class="wraper"></div>
 						</div>
 						<div class="describe">
 						<h3><?php echo $product->name; ?><button class="bread-detail" id="bread-detail-<?php echo $product->num; ?>">詳情</button></h3>
@@ -310,10 +327,8 @@ try {
 		<?php 
 			foreach ($GLOBALS["produtsArr"] as $product) {
 		?>
-				<div class="item pointer col-xs-4">
-					<div class="image" id="small-bread-<?php echo $product->num; ?>">
-						<div class="wraper"></div>
-					</div>
+				<div class="item pointer col-xs-4" data-id="small-bread-<?php echo $product->num; ?>">
+					<div class="image"></div>
 					<p><?php echo $product->name; ?></p>
 				</div>
 		<?php
@@ -379,7 +394,13 @@ try {
 				<div class="label col-lg-3 col-xs-4">費用:</div>
 				<div class="content col-lg-9 col-xs-8"><?php echo $activity->price ?></div>
        			</div>
+       			<?php 
+       				if ($activity->num != -1) {
+       			 ?>
        			<a href="activity_act.php?actNum=<?php echo $activity->num ?>" class="activity-detail button">活動詳情</a>
+       			<?php 
+       				}
+       			 ?>
 			</div>
 			<div class="banner col-lg-6 col-xs-12" id="act-<?php echo $activity->num ?>">
 				<div class="item col-lg-6">
@@ -428,6 +449,8 @@ try {
 	<div class="messages-area" id="messages-area">
 		<?php 
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
+				$isRemoveByADM = $messageItem->isRemoveByADM;
+				if (!$isRemoveByADM) {
 		?>
 					<div class="message-box">
 						<div class="mem-pic col-lg-2">
@@ -447,6 +470,7 @@ try {
 						<div class="clear"></div>
 					</div>	
 		<?php
+				}
 			}
 		 ?>
 		<div class="more-message button" id="more-message">看更多</div>
@@ -490,9 +514,6 @@ try {
 	
 <script type="text/javascript">
 $(document).ready(function(){
-	//loading page
-	// $('#loading-page').delay(2000).fadeOut(1000);
-	//$('#loading-page').hide();
 	//檢舉公用變數
 	reportMessageNum = -1;
 	reviewIGave = 0;//若有給予評價的分數
@@ -509,7 +530,7 @@ $(document).ready(function(){
 	<?php
 	foreach ($GLOBALS["breadCarPathArr"] as $key=>$path) {
 	?>
-		initBreadCarRouteMap("map-now<?php echo $key;?>",<?php echo $path->locationsStr ?>,<?php echo $path->nowLocation?>);
+		initBreadCarRouteMap("map-now<?php echo $key;?>",[<?php echo $path->locationsStr ?>],<?php echo $path->nowLocationLat?>,<?php echo $path->nowLocationLng?>);
 	<?php
 		}
 	 ?>
@@ -573,9 +594,9 @@ $(document).ready(function(){
 	 	$('.textLightBox').fadeIn(500);
 	 });
 	 	//商品大背景圖
-	 	$('#big-bread-<?php echo $product->num; ?> .image .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
+	 	$('#big-bread-<?php echo $product->num; ?> .image').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 	//商品列表小背景圖
-	 	$('#small-bread-<?php echo $product->num; ?> .wraper').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
+	 	$('[data-id=small-bread-<?php echo $product->num; ?>] .image').css('background-image', 'url(<?php echo $product->pictureName; ?>)');
 	 	
 	 <?php
 	 	}

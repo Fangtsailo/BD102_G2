@@ -50,7 +50,7 @@ require_once("BackStageHeaderSidebar.php");
 					try{
 						require_once("php/pdo/connectPDO.php");
 						$AcNo=$_REQUEST["AcNo"];
-						$sql="select * from activity,store_imformation where Ac_No='$AcNo'";
+						$sql="select * from activity,store_imformation where Ac_No='$AcNo' and activity.AC_STORE_NUM=  store_imformation.SI_NUM";
 						$activity=$connectPDO->query($sql);
 						$prodRow = $activity->fetchObject();
 
@@ -142,7 +142,7 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 					<th>活動相關照片</th>
 					<td>
-						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC; ?>">
+						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC1; ?>">
 						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC2; ?>">
 						<img src="img/store/activity/activity/<?php echo $prodRow->AC_PIC3; ?>">
 					</td>
@@ -152,7 +152,7 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 					<th>成品照片</th>
 					<td>
-						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC; ?>">
+						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC1; ?>">
 						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC2; ?>">
 						<img src="img/store/activity/product/<?php echo $prodRow->AC_PRODUCT_PIC3; ?>">
 					</td>
@@ -162,7 +162,7 @@ require_once("BackStageHeaderSidebar.php");
 				<tr>
 				<th>材料照片</th>
 					<td>
-						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC; ?>">
+						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC1; ?>">
 						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC2; ?>">
 						<img src="img/store/activity/ingredient/<?php echo $prodRow->AC_INGREDIENT_PIC3; ?>">
 					</td>

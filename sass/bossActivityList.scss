@@ -21,48 +21,48 @@
 		}
 	}
 
-	.LeftBusiness{
-		width: 200px;
-		height: 500px;
-		position: fixed;
-		left: 0;
-		top: 160px;
-		// background-color: #ccc;
-		.nav-Group1{
-			margin-top: 30px;
-			svg{
-				.cls-ma-1{
-					fill:$globalAccountColor;
-				}
-				.cls-ma-2{
-					fill:#fff;
-				}
-			}
-		}
-		div{
-			div{
-				&:nth-child(1){
-					@include member-nav-bar-mainTitle-propity();
-					// margin-top:150px;
+	// .LeftBusiness{
+	// 	width: 200px;
+	// 	height: 500px;
+	// 	position: fixed;
+	// 	left: 0;
+	// 	top: 160px;
+	// 	// background-color: #ccc;
+	// 	.nav-Group1{
+	// 		margin-top: 30px;
+	// 		svg{
+	// 			.cls-ma-1{
+	// 				fill:$globalAccountColor;
+	// 			}
+	// 			.cls-ma-2{
+	// 				fill:#fff;
+	// 			}
+	// 		}
+	// 	}
+	// 	div{
+	// 		div{
+	// 			&:nth-child(1){
+	// 				@include member-nav-bar-mainTitle-propity();
+	// 				// margin-top:150px;
 
-				}
-				&:nth-child(2){
-					@include member-nav-bar-subTitle-propity();
+	// 			}
+	// 			&:nth-child(2){
+	// 				@include member-nav-bar-subTitle-propity();
 					
-				}
-				&:nth-child(3){
-					@include member-nav-bar-subTitle-propity();
+	// 			}
+	// 			&:nth-child(3){
+	// 				@include member-nav-bar-subTitle-propity();
 					
-				}
-				&:nth-child(4){
-					@include member-nav-bar-subTitle-propity();
+	// 			}
+	// 			&:nth-child(4){
+	// 				@include member-nav-bar-subTitle-propity();
 					
-				}
+	// 			}
 
 				
-			}
-		}
-	}
+	// 		}
+	// 	}
+	// }
 
 	.bossActContent {
 		width: 70%;

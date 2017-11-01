@@ -92,12 +92,106 @@
 
 		$store_imformation_Row=$store_imformation->fetchObject();
 
-		$SI_NUM = $store_imformation_Row->SI_NUM;
+		//$SI_NUM = $store_imformation_Row->SI_NUM;
+
+
+//exit($SI_NUM);
+
+
+
+		$shopPosition= mb_substr($_REQUEST["SI_ADDR"],0,2,"UTF-8");
+			$position = 0;
+						switch($shopPosition){
+							case '桃園':
+								$position= 0;
+								break;
+							case '台北':
+								$position= 0;
+								break;
+							case '臺北':
+								$position= 0;
+								break;
+							case '新北':
+								$position= 0;
+								break;	
+							case '宜蘭':
+								$position= 0;
+								break;
+							case '基隆':
+								$position= 0;
+								break;
+							case '新竹':
+								$position= 0;
+								break;
+							case '苗栗':
+								$position= 1;
+								break;	
+							case '台中':
+								$position= 1;
+								break;
+							case '臺中':
+								$position= 1;
+								break;
+							case '彰化':
+								$position= 1;
+								break;
+							case '雲林':
+								$position= 1;
+								break;
+							case '南投':
+								$position= 1;
+								break;
+							case '嘉義':
+								$position= 2;
+								break;
+							case '台南':
+								$position= 2;
+								break;
+							case '臺南':
+								$position= 2;
+								break;
+							case '高雄':
+								$position= 2;
+								break;
+							case '屏東':
+								$position= 2;
+								break;
+							case '台東':
+								$position= 3;
+								break;
+							case '臺東':
+								$position= 3;
+								break;
+							case '花蓮':
+								$position= 3;
+								break;
+						} //switch
+
+
+
+
+
+
+
+				$addDate=$_REQUEST['addShopDate'];
+
+
+				//date("Y/m/d H:i", $shop_message_row->SPMSG_TIME)
+
+				
+
+
+
+
+
+
+
+
 
 		if ($store_imformation->rowCount()==0) {
 
-			$sql_insert = "INSERT INTO store_imformation (SI_MEMNO,SI_NAME,SI_PHONE,SI_ADDR,SI_RESTDAY,SI_STARTTIME,SI_ENDTIME,SI_STORY,SI_TYPE,SI_CHECKSTAY)
-    			VALUES (:SI_MEMNO,:SI_NAME,:SI_PHONE,:SI_ADDR,:SI_RESTDAY,:SI_STARTTIME,:SI_ENDTIME,:SI_STORY,0,null)";
+			$sql_insert = "INSERT INTO store_imformation (SI_MEMNO,SI_NAME,SI_PHONE,SI_ADDR,SI_RESTDAY,SI_STARTTIME,SI_ENDTIME,SI_STORY,SI_TYPE,SI_CHECKSTAY,SI_POSITION,SI_ADDDATE,SI_LAT,SI_LNG)
+    			VALUES (:SI_MEMNO,:SI_NAME,:SI_PHONE,:SI_ADDR,:SI_RESTDAY,:SI_STARTTIME,:SI_ENDTIME,:SI_STORY,0,null,$position,:SI_ADDDATE,:SI_LAT,:SI_LNG)";
 
     		$store_imformation_insert = $connectPDO ->prepare($sql_insert);
     		$store_imformation_insert -> bindValue(":SI_MEMNO",$mem_No);
@@ -108,6 +202,9 @@
     		$store_imformation_insert -> bindValue(":SI_STARTTIME",$_REQUEST["SI_STARTTIME"]);
     		$store_imformation_insert -> bindValue(":SI_ENDTIME",$_REQUEST["SI_ENDTIME"]);
     		$store_imformation_insert -> bindValue(":SI_STORY",$_REQUEST["SI_STORY"]);
+    		$store_imformation_insert -> bindValue(":SI_ADDDATE",$_REQUEST["addShopDate"]);
+    		$store_imformation_insert -> bindValue(":SI_LAT",$_REQUEST["SI_LAT"]);
+    		$store_imformation_insert -> bindValue(":SI_LNG",$_REQUEST["SI_LNG"]);
     		$store_imformation_insert -> execute();
 
 
@@ -126,7 +223,7 @@
 				// 	if($_FILES["uploadImg"]["error"][$i]==0){
 						
 				// 			  $from = $_FILES["uploadImg"]["tmp_name"][$i];
-				// 			  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).".jpg";
+				// 			  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).".jpg";
 				// 			  copy($from, $to);
 				// 			  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1);
 				// 			  $SI_BGIMG_COL="SI_BIMG_".($i+1);
@@ -146,7 +243,7 @@
 						
 							  $from = $_FILES["uploadImg"]["tmp_name"][$i];
 							  $FileName = mb_convert_encoding($_FILES["uploadImg"]["name"][$i],"big5","utf-8");
-							  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
+							  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
 							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  $SI_BGIMG_COL="SI_BIMG_".($i+1);
@@ -203,13 +300,15 @@
 
 			//if(isset($_FILES["uploadImg"])){
 
+			$SI_NUM = $store_imformation_Row->SI_NUM;
+
 				foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
 				// 以foreach叫出每一陣列
 					if($_FILES["uploadImg"]["error"][$i]==0){
 						
 							  $from = $_FILES["uploadImg"]["tmp_name"][$i];
 							  $FileName = mb_convert_encoding($_FILES["uploadImg"]["name"][$i],"big5","utf-8");
-							  $to = "../../../../img/store/storeBgImg/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
+							  $to = "../../../../img/store/banners/".$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  copy($from, $to);
 							  $SI_NUM_file=$SI_NUM."_BgIMG_00".($i+1).substr($FileName,strpos($FileName,'.'));
 							  $SI_BGIMG_COL="SI_BIMG_".($i+1);
@@ -268,7 +367,7 @@
 
 
 
-			$sql_update = "UPDATE store_imformation SET SI_NAME=:SI_NAME,SI_PHONE=:SI_PHONE,SI_ADDR=:SI_ADDR,SI_RESTDAY=:SI_RESTDAY,SI_STARTTIME=:SI_STARTTIME,SI_ENDTIME=:SI_ENDTIME,SI_STORY=:SI_STORY,SI_TYPE=0,SI_CHECKSTAY=1 where SI_MEMNO=$mem_No and SI_TYPE='0'";
+			$sql_update = "UPDATE store_imformation SET SI_NAME=:SI_NAME,SI_PHONE=:SI_PHONE,SI_ADDR=:SI_ADDR,SI_RESTDAY=:SI_RESTDAY,SI_STARTTIME=:SI_STARTTIME,SI_ENDTIME=:SI_ENDTIME,SI_STORY=:SI_STORY,SI_TYPE=0,SI_CHECKSTAY=1,SI_ADDDATE=:SI_ADDDATE,SI_LAT=:SI_LAT,SI_LNG=:SI_LNG where SI_MEMNO=$mem_No and SI_TYPE='0'";
 
 			//SI_LOGO=:SI_LOGO,SI_BIMG_1=:SI_BIMG_1,SI_BIMG_2=:SI_BIMG_2,SI_BIMG_3=:SI_BIMG_3
 
@@ -280,6 +379,9 @@
     		$store_imformation_insert -> bindValue(":SI_STARTTIME",$_REQUEST["SI_STARTTIME"]);
     		$store_imformation_insert -> bindValue(":SI_ENDTIME",$_REQUEST["SI_ENDTIME"]);
     		$store_imformation_insert -> bindValue(":SI_STORY",$_REQUEST["SI_STORY"]);
+    		$store_imformation_insert -> bindValue(":SI_ADDDATE",$_REQUEST["addShopDate"]);
+    		$store_imformation_insert -> bindValue(":SI_LAT",$_REQUEST["SI_LAT"]);
+    		$store_imformation_insert -> bindValue(":SI_LNG",$_REQUEST["SI_LNG"]);
     		// $store_imformation_insert -> bindValue(":SI_LOGO",$SI_NUM."_logo");
     		// $store_imformation_insert -> bindValue(":SI_BIMG_1",$SI_NUM."_BgIMG_001");
     		// $store_imformation_insert -> bindValue(":SI_BIMG_2",$SI_NUM."_BgIMG_002");

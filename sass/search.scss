@@ -95,6 +95,9 @@ img{
 		margin:25px auto;
 		overflow:hidden;
 		border:$globalUnclickColor solid 1px;
+		&:hover {
+			background-color: rgba(234, 178, 96, 0.5) !important;
+		}
 		.search_storeImg {
 			float:left;
 			overflow:hidden;
@@ -116,12 +119,22 @@ img{
 			
 			box-sizing:border-box;
 			h2{
-				float:left;
+				
+				a {
+		    		overflow: hidden;
+		    		text-overflow: ellipsis;
+		    		width: 100%;
+		    		white-space: nowrap;
+		    		display: block;
+			&:hover {
+				color: #f06428;
+			}
+		}
 				
 			}
 			.search_follow{
 				// float:left;
-				width:30px;
+				// width:30px;
 				display:inline-block;
 				box-sizing:content-box;
 				// padding:0 0 0 20px;
@@ -145,12 +158,22 @@ img{
 				font-size:16px;
 				padding:6px 0 0;
 				display: inline-block;
+				position: relative;
+    			left: -7px;
 	
 			}
 			.search_storeStar{
+				display:inline-block;
 				height:20px;
-				
+				margin-top: 5px;
 				margin-bottom: 10px;
+				ul{
+				   display: inline-block;
+    				position: relative;
+    				top: 2px;
+    					left: 10px;
+				}
+
 				li{
 					display:inline-block;
 					width:20px;
@@ -163,6 +186,13 @@ img{
 				line-height: 20px;
 				ul{ 
 					position:relative;
+					li{
+						list-style: none;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    width: 100%;
+					    white-space: nowrap;
+					}
 					
 				}
 			}
@@ -234,7 +264,11 @@ img{
 				height:25vh;
 			}	
 				.search_storeContent{
+
 					.search_storeInfor{
+						a{
+							width: 100%;
+						}
 						#search_map1{
 							display:inline;
 						}

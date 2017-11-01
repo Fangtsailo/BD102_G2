@@ -86,10 +86,13 @@ h2 {
   margin: auto;
   cursor: pointer; }
   .left-bread:hover img {
+    -webkit-transform: rotate(15deg) !important;
+    -ms-transform: rotate(15deg) !important;
     transform: rotate(15deg) !important;
     transition: .3s; }
-  .left-bread:hover h2 {
+  .left-bread:hover h2 a {
     font-size: 34px;
+    color: #663300 !important;
     transition: .3s; }
   .left-bread img {
     width: 100%;
@@ -107,11 +110,14 @@ h2 {
   margin: auto;
   cursor: pointer; }
   .right-bread:hover img {
+    -webkit-transform: rotate(15deg) !important;
+    -ms-transform: rotate(15deg) !important;
     transform: rotate(15deg) !important;
     transition: .3s; }
   .right-bread:hover h2 {
     font-size: 34px;
-    transition: .3s; }
+    transition: .3s;
+    color: #663300 !important; }
   .right-bread img {
     width: 100%;
     max-width: 160px;
@@ -139,7 +145,6 @@ h2 {
 @media screen and (max-width: 767px) {
   .left-bread, .right-bread {
     display: none; }
-
   .rwdBread {
     display: block;
     width: 80%;

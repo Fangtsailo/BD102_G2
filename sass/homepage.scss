@@ -32,8 +32,92 @@ section {
 //================= 首頁導覽列 ================================
 
 
-
-
+//loading page
+#loading-page {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to right, rgb(128, 89, 52) 0%, rgb(158, 105, 61) 100%);
+	z-index: 100;
+	.loading-cloud {
+		position: absolute;
+		z-index: 103;
+		opacity: 0.5;
+		img {
+			transform: scale(1.5);
+		}
+		
+	}
+	.loading-cloud:nth-child(1) {
+		animation: loading-cloud-move-right 10s infinite linear alternate;
+		top:-30px;
+		left: -50px;
+	}
+	.loading-cloud:nth-child(2) {
+		animation: loading-cloud-move-right 10s infinite linear alternate;
+		top:-50px;
+		right: -10px;
+	}
+	.loading-cloud:nth-child(3) {
+		animation: loading-cloud-move-right 6s infinite linear alternate;
+		top:100px;
+		left: 10px;
+	}
+	.loading-cloud:nth-child(4) {
+		animation: loading-cloud-move-left 10s infinite linear alternate;
+		bottom:50px;
+		right: -50px;
+	}
+	.loading-cloud:nth-child(5) {
+		animation: loading-cloud-move-left 8s infinite linear alternate;
+		bottom:-100px;
+		right: -10px;
+	}
+	.content {
+		width: 200px;
+		height: 308px;
+		position: relative;
+		top: 50%;
+		margin: auto;
+		transform: translateY(-50%);
+		#pointer {
+		    width: 20px;
+		    margin: auto;
+		    position: absolute;
+		    left: -12px;
+		    right: 0;
+		    top: 116px;
+		    z-index: 102;
+		    animation: pointerRotate 3s linear infinite;
+		}
+		#north {
+			position: absolute;
+			width: 100%;
+			margin: auto;
+		}
+	}
+}
+@keyframes pointerRotate {
+	0%{transform:rotateZ(0deg);
+		    transform-origin:50% 28%;},
+	100%{
+		transform:rotateZ(360deg);
+		    transform-origin:50% 28%;}
+}
+@keyframes loading-cloud-move-right {
+	0%{transform:translateX(0px);},
+	100%{transform:translateX(300px);}
+}
+@keyframes loading-cloud-move-left {
+	0%{transform:translateX(0px);},
+	100%{transform:translateX(-300px);}
+}
+//for google maps info window
+.gm-style-iw {
+	color: red;
+	font-size: 22px !important;
+	font-family: "Noto Sans CJK TC";
+}
 .headerLink {
 	width: 60%;
 	height: 100%;
@@ -613,6 +697,7 @@ section {
 						img {
 							width: 100%;
 							height: 100%;
+							border-radius: 50%;
 							
 						}
 
@@ -822,7 +907,8 @@ section {
 				}
 				#messageTime {
 					float: right;
-					width: 41%;
+					width: 45%;
+					font-size: 12px;
 					text-align: center;
 				}
 				.message {
@@ -905,7 +991,7 @@ section {
 			height: 100%;
 			position:relative
 		}
-		#map-now1{
+		#map-now-1{
 			width:100%;
 			height:100%;
 			z-index:1;
@@ -920,7 +1006,24 @@ section {
 				width:100%;
 				margin:0 auto;
 				overflow:hidden;
-				border:$globalUnclickColor solid 1px;
+				// border:$globalUnclickColor solid 1px;
+				&:hover {
+					background-color: rgba(234, 178, 96, 0.5) !important;
+				}
+				a {
+				    overflow: hidden;
+				    text-overflow: ellipsis;
+				    width: 171px;
+				    white-space: nowrap;
+				    display: block;
+				    font-size: 20px;
+					&:hover {
+						color: #f06428;
+					}
+				}
+
+
+
 				.search_storeImg {
 					float:left;
 					overflow:hidden;
@@ -971,7 +1074,16 @@ section {
 					}
 					.search_storeInfor{
 						line-height: 20px;
-						ul{ position:relative}
+						ul{ position:relative;
+								li {
+								    list-style: none;
+								    overflow: hidden;
+								    text-overflow: ellipsis;
+								    width: 100%;
+								    white-space: nowrap;
+								    font-size: 16px;
+								}
+						}
 					}
 				}//search_storeContent
 				.search_storeMap{
@@ -984,9 +1096,6 @@ section {
 					}
 				}//.search_storeMap
 			}//search_storeOne
-			#map-now2{
-				height:100%;
-			}
 		}//search_store
 
 
@@ -1025,7 +1134,7 @@ section {
 		.search_mapcar{
 			overflow:-webkit-paged-x;
 			// height:none;
-			#map-now1{
+			#map-now-1{
 			height: 45vh;
 			}
 			.search_store{
@@ -1044,10 +1153,18 @@ section {
 					.search_storeContent{
 						h2{
 							float:none;
+							a {
+							    width: 100%;
+							}
 						}
 						.search_storeInfor{
 							#search_map1{
 								display:inline;
+							}
+							ul{
+								li{
+									font-size: 12px;
+								}
 							}
 						}
 					}
@@ -1137,7 +1254,7 @@ section {
 		float: right;
 		padding:auto 0px;
 		// margin-right: 10%;
-		background-color: rgba(50, 25, 0, 0.7);
+		background-color: rgba(10, 10, 10, 1);
 		#chooseActUp {
 				width: 80px;
 				height: 15%;
@@ -1574,6 +1691,11 @@ section {
 						word-wrap: wrap;
 						color:$globalAltColor;
 						font-size: 16px;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 3;
+						-webkit-box-orient: vertical;
 					}
 					ul {
 						width: 100%;
@@ -1667,6 +1789,11 @@ section {
 					width: 100%;
 					p {
 						font-size: 14px;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 5;
+						-webkit-box-orient: vertical;
 					}
 				.exploreBtn {
 					display:block;

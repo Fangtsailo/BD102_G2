@@ -219,6 +219,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 	        nowMessagePage++;
 	        var html = "";
 	        for (var key in messageListObj) {
+	        	if (!messageListObj[key].isRemoveByADM) {
 	        	html +=	'<div class="message-box">'
 					+	'	<div class="mem-pic col-lg-2"><div class="picture" style="background-image:url('+messageListObj[key].memberPicName+')"></div></div>'
 					+	'	<div class="content col-lg-10">'
@@ -234,6 +235,7 @@ function loadMoreMessage(storeId, loginMemNum) {
 					+	'	</div>'
 					+	'	<div class="clear"></div>'
 					+	'</div>';
+				}
 	        }
 	        $('#messages-area').append(html);
 	        $('#messages-area').append($('#more-message'));
@@ -287,7 +289,7 @@ function initBreadCarNowLocationMap(id, lat, lng) {
 	}
 }
 	//胖小車路線地圖: id, 座標 array
-function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
+function initBreadCarRouteMap(id, LatLngArr, nowLocationLat, nowLocationLng) {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
 	var labels = '123456';
@@ -300,11 +302,13 @@ function initBreadCarRouteMap(id, LatLngArr, nowLocation) {
     directionsDisplay.setMap(map);
 //now location marker
 	var image = "img/icon/van2.png";
-	var nowLocationMarker = new google.maps.Marker({
-	  position: nowLocation,
-	  map: map, 
-	  icon: image
-	});    
+	if ((nowLocationLat !=0 || nowLocationLng !=0) && (nowLocationLat !="" || nowLocationLng != "")) {
+		var nowLocationMarker = new google.maps.Marker({
+		  position: {lat: nowLocationLat, lng: nowLocationLng},
+		  map: map, 
+		  icon: image
+		});  
+	}  
 //init route service
     var waypts = [];
 	for (waypointIndex in LatLngArr) {
@@ -368,12 +372,14 @@ function allSlickSetting(breadCarPathCount) {
 	  dots: true,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  arrows: false,
 	  responsive: [
 	    {
 	      breakpoint: 767,
 	      settings: {
 	        slidesToShow: 3,
-	        slidesToScroll: 1
+	        slidesToScroll: 1,
+	        centerMode: true,
 	      }
 	    }
 	  ]

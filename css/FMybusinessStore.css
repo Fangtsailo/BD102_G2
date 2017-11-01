@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 @charset "UTF-8";
 * {
   padding: 0;
@@ -7,10 +5,10 @@
 
 body {
   background-color: #fbf8f1;
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 input {
-  font-family: "Noto Sans CJK TC"; }
+  font-family: "Gadugi", "Noto Sans CJK TC", "PingFang TC", "Heiti TC", "cwTeXHei", "Microsoft JhengHei", "Helvetica Neue", sans-serif; }
 
 a {
   text-decoration: none;
@@ -160,7 +158,8 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
-    display: none; }
+    display: none;
+    z-index: 999; }
     .globalHead .headLoginBox .globalForm {
       position: absolute;
       top: 0;
@@ -232,7 +231,8 @@ li {
     width: 100%;
     height: 100vh;
     background-color: rgba(50, 50, 50, 0.5);
-    display: none; }
+    display: none;
+    z-index: 999; }
     .globalHead .headRegisterBox .globalForm {
       position: absolute;
       top: 0;
@@ -470,7 +470,8 @@ li {
               display: block;
               width: 100%;
               height: 100%;
-              border-radius: 50%; }
+              border-radius: 50%;
+              object-fit: cover; }
               .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1 {
                 transition: .3s; }
                 .globalHead .headerRight .headAccount #headMemStatus div a img#addShop1:hover {
@@ -624,7 +625,8 @@ footer {
   border: 1px solid #f06428;
   color: #f06428;
   background-color: #fbf8f1;
-  transition: .3s ease; }
+  transition: .3s ease;
+  outline: none; }
   .globalOkBtn:hover {
     background-color: #f06428;
     color: #fbf8f1;
@@ -813,15 +815,19 @@ footer {
       bottom: 0;
       right: 20px;
       margin: auto; }
-      .globalHead .burgerMenu span {
+      .globalHead .burgerMenu img {
         width: 40px;
         height: 40px;
         display: block;
         margin: auto;
-        fill: #fbf8f1; }
+        fill: #fbf8f1;
+        border-radius: 50%;
+        object-fit: cover; }
       .globalHead .burgerMenu.active {
         transition: .3s ease; }
     .globalHead #headMemStatus {
+      display: none; }
+    .globalHead ul#storeMenu {
       display: none; }
     .globalHead #menu {
       display: block;
@@ -884,7 +890,8 @@ footer {
               .globalHead #menu ul li.memPart .memPic img {
                 width: 50px;
                 height: 50px;
-                border-radius: 50%; }
+                border-radius: 50%;
+                object-fit: cover; }
             .globalHead #menu ul li.memPart span {
               width: 100%;
               height: 100%;
@@ -910,6 +917,10 @@ footer {
             .globalHead #menu ul li #rwdBossRole:focus {
               background-color: rgba(158, 105, 61, 0.5);
               transition: .3s; }
+          .globalHead #menu ul li ul#bossMenu li ul#storeMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
+          .globalHead #menu ul li ul#bossMenu li ul#carMenu li a.bossMenu {
+            background-color: rgba(35, 22, 11, 0.22); }
           .globalHead #menu ul li.myActivity {
             position: relative; }
             .globalHead #menu ul li.myActivity:after {
@@ -965,7 +976,7 @@ footer {
           font-size: 20px;
           background-color: #663300;
           border-radius: 5px; }
-        .globalHead .rwdSearchBar .rwdsearchItem label {
+        .globalHead .rwdSearchBar .rwdsearchItem label.rwdfilter {
           display: inline-block;
           margin: 0px 5px;
           margin-bottom: 5px;
@@ -973,11 +984,15 @@ footer {
           color: #fbf8f1;
           border: 1px solid #fbf8f1;
           outline: none;
-          border-radius: 5px; }
-          .globalHead .rwdSearchBar .rwdsearchItem label input {
-            display: none; }
-          .globalHead .rwdSearchBar .rwdsearchItem label:focus {
-            background-color: #f06428; }
+          border-radius: 5px;
+          cursor: pointer; }
+        .globalHead .rwdSearchBar .rwdsearchItem input[type=radio] {
+          display: none; }
+          .globalHead .rwdSearchBar .rwdsearchItem input[type=radio]:checked + label.rwdfilter {
+            background-color: #fbf8f1;
+            color: #996633;
+            box-shadow: none;
+            transition: .3s; }
         .globalHead .rwdSearchBar .rwdsearchItem .searchArea {
           width: 100%;
           margin: auto; }
@@ -992,7 +1007,7 @@ footer {
         top: 80px;
         left: 0;
         transition: .3s; }
-      .globalHead .rwdSearchBar input[type="submit"] {
+      .globalHead .rwdSearchBar #rwdSubmit {
         display: block;
         width: 50%;
         height: 40px;
@@ -1005,18 +1020,22 @@ footer {
         cursor: pointer; } }
 
 @media screen and (max-width: 400px) {
-  .globalHead .headLoginBox .globalForm {
-    width: 100%;
-    margin-top: 80px;
-    height: 90vh; }
-    .globalHead .headLoginBox .globalForm .globalFormHeader img {
-      width: 120px; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
-      padding: 10px auto; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
-      margin: 10px auto; }
-    .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
-      width: 60%; }
+  .globalHead .headLoginBox {
+    position: absolute; }
+    .globalHead .headLoginBox .globalForm {
+      width: 100%;
+      margin-top: 80px;
+      height: 90%; }
+      .globalHead .headLoginBox .globalForm .globalFormHeader img {
+        width: 120px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .forgetPsw {
+        padding: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .globalFormBtns {
+        margin: 10px auto; }
+      .globalHead .headLoginBox .globalForm .globalFormContent .facebookLogin a {
+        width: 60%; }
   .globalHead .headRegisterBox .globalForm {
     width: 100%;
     margin-top: 80px;
@@ -1025,6 +1044,8 @@ footer {
       width: 120px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput {
       width: 90%; }
+      .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormInput input {
+        font-size: 16px; }
     .globalHead .headRegisterBox .globalForm .globalFormContent .globalFormBtns {
       margin: 10px auto; } }
 
@@ -1136,13 +1157,18 @@ footer {
   to {
     stroke-dashoffset: 0; } }
 
->>>>>>> 38013b5dca8ea69e62e2659586d37846775ef956
 @keyframes letterDraw {
   to {
     stroke-dashoffset: 0; } }
+
+@-webkit-keyframes letterleaf {
+  to {
+    fill: #4b7cbf; } }
+
 @keyframes letterleaf {
   to {
     fill: #4b7cbf; } }
+
 .coverHeader {
   height: 80px; }
 
@@ -1167,11 +1193,13 @@ header {
       fill: none;
       stroke-width: 1;
       stroke: #4b7cbf;
+      -webkit-animation: letterleaf 2s ease forwards;
       animation: letterleaf 2s ease forwards; }
       .CenterBusiness .subtitle svg .line .line-g {
         opacity: 1;
         stroke-dasharray: 340;
         stroke-dashoffset: 340;
+        -webkit-animation: letterDraw 5s ease forwards;
         animation: letterDraw 5s ease forwards; }
   .CenterBusiness .content-table table {
     width: 80%;
@@ -1469,9 +1497,9 @@ header {
 @media screen and (max-width: 940px) {
   .LeftBusiness {
     display: none; }
-
   .coverSubtitile .subtitle .burger {
     display: block; } }
+
 @media screen and (max-width: 767px) {
   .CenterBusiness {
     width: 90%; }
@@ -1486,6 +1514,7 @@ header {
       .CenterBusiness .content-table table tr:nth-child(6) td div div {
         font-size: 14px;
         margin: 10px 0; } }
+
 @media screen and (max-width: 940px) {
   .CenterBusiness {
     width: 90%; }

@@ -14,7 +14,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStoreProductListContent.css">
 
@@ -169,7 +170,7 @@ session_start();
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="PD_PRICE" placeholder="請輸入字數" value=""></td>
+				<td><input type="text" name="PD_PRICE" placeholder="請輸入價格" value=""></td>
 				</tr>
 
 
@@ -179,7 +180,7 @@ session_start();
 				<tr>
 				<th><div>簡介</div></th>
 				<td>
-					<textarea name="PD_INTRO" placeholder="限500字"></textarea>
+					<textarea name="PD_INTRO" placeholder="限100字" maxlength="100"></textarea>
 				</td>
 				</tr>
 

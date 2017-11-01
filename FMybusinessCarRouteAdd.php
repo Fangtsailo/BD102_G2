@@ -15,7 +15,8 @@ session_start();
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>TEMPLATE</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessCarRoute.css">
 	<link rel="stylesheet" type="text/css" href="css/subTitleAmination.css">
@@ -40,8 +41,8 @@ session_start();
 	<script type="text/javascript" src="js/subtitle.js"></script>
 
 	<!-- =====mapAPI==== -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
-    </script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZlV8XEYyGoIi9poFgwFzwc5X_rfvtXsE&callback">
+    </script> -->
 
 
     	<!-- =====alert==== -->
@@ -248,7 +249,7 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 I</th>
 					<td>
-						<input type="text" name="BCP_DESCRIBE_1" placeholder="請輸入路線描述" value="<?php 
+						<input type="text" name="BCP_DESCRIBE_1" maxlength="30" placeholder="請輸入路線描述" value="<?php 
 
 																					if(isset($BCP_DESCRIBE[0])){
 																					echo $BCP_DESCRIBE[0]; 
@@ -270,7 +271,7 @@ session_start();
 					<th>點Ａ:</th>
 					<td><?php 
 					if(isset( $LOCATION_1_Ary[0])){
-						echo $LOCATION_1_Ary[0]; 
+						echo $LOCATION_1_Ary[0].'}'; 
 					}
 						?></td>
 					</tr>
@@ -281,7 +282,7 @@ session_start();
 
 					if(isset( $LOCATION_1_Ary[1])){
 
-						echo $LOCATION_1_Ary[1]; 
+						echo '{'.$LOCATION_1_Ary[1].'}'; 
 
 					}
 
@@ -294,7 +295,7 @@ session_start();
 					<td><?php 
 
 						if(isset( $LOCATION_1_Ary[2])){
-						echo $LOCATION_1_Ary[2] ;
+						echo '{'.$LOCATION_1_Ary[2] ;
 						}
 						?></td>
 					</tr>
@@ -439,7 +440,7 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 II</th>
 					<td>
-						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
+						<input type="text" name="BCP_DESCRIBE_2" placeholder="請輸入路線描述" maxlength="30" value="<?php if(isset($BCP_DESCRIBE[1])){echo $BCP_DESCRIBE[1];} ?>">
 					</td>
 					</tr>
 					<?php 
@@ -457,7 +458,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_2_Ary[0])){
 
-					echo $LOCATION_2_Ary[0]; 
+					echo $LOCATION_2_Ary[0].'}'; 
 
 					}
 					?></td>
@@ -469,7 +470,7 @@ session_start();
 
 					if(isset( $LOCATION_2_Ary[1])){
 
-						echo $LOCATION_2_Ary[1]; 
+						echo '{'.$LOCATION_2_Ary[1].'}'; 
 
 					}
 
@@ -482,7 +483,7 @@ session_start();
 					<td><?php 
 
 						if(isset( $LOCATION_2_Ary[2])){
-						echo $LOCATION_2_Ary[2] ;
+						echo '{'.$LOCATION_2_Ary[2] ;
 						}
 						?></td>
 					</tr>
@@ -597,7 +598,7 @@ session_start();
 					<tr class="tabletitle" >
 					<th>路線 III</th>
 					<td>
-						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
+						<input type="text" name="BCP_DESCRIBE_3" placeholder="請輸入路線描述" maxlength="30" value="<?php if(isset($BCP_DESCRIBE[2])){echo $BCP_DESCRIBE[2];}?>">
 					</td>
 					</tr>
 					<?php 
@@ -615,7 +616,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_3_Ary[0])){
 
-					echo $LOCATION_3_Ary[0]; 
+					echo $LOCATION_3_Ary[0].'}'; 
 
 					}
 					?></td>
@@ -626,7 +627,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_3_Ary[1])){
 
-					echo $LOCATION_3_Ary[1]; 
+					echo '{'.$LOCATION_3_Ary[1].'}'; 
 
 					}
 					?></td>
@@ -638,7 +639,7 @@ session_start();
 					<td><?php 
 					if(isset( $LOCATION_3_Ary[2])){
 
-					echo $LOCATION_3_Ary[2]; 
+					echo '{'.$LOCATION_3_Ary[2]; 
 
 					}
 					?></td>
@@ -659,7 +660,7 @@ session_start();
 							<input id="clear3" type="button" name="" value="清除">
 							<input type="button" id="route3_btn" name="" value="確認">
 							<input type="hidden" id="route3" name="route3">
-							<input type="hidden" id="route3_del" name="route2_del" value="">
+							<input type="hidden" id="route3_del" name="route3_del" value="">
 
 							<script>
 
@@ -802,7 +803,22 @@ session_start();
 
    	function initMap1() {
         map1 = new google.maps.Map(document.getElementById('map1'), {
-          center: {lat: 24.967779, lng: 121.192124},
+
+          center: <?php 
+					if( isset($BCP_LOCATION[0]) ) {
+						
+						$centerLocation_1=explode(",",$BCP_LOCATION[0]);
+
+						
+
+						echo $centerLocation_1[0].','.$centerLocation_1[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
+					
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
@@ -903,7 +919,20 @@ session_start();
 
    	function initMap2() {
         map2 = new google.maps.Map(document.getElementById('map2'), {
-          center: {lat: 24.967779, lng: 121.192124},
+          center:  <?php 
+					if( isset($BCP_LOCATION[1]) ) {
+						
+						$centerLocation_2=explode(",",$BCP_LOCATION[1]);
+
+						
+
+						echo $centerLocation_2[0].','.$centerLocation_2[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
           zoom: 16
         });
         //先輸入地址把地圖 center 移入
@@ -990,7 +1019,20 @@ session_start();
 
    	function initMap3() {
         map3 = new google.maps.Map(document.getElementById('map3'), {
-          center: {lat: 24.967779, lng: 121.192124},
+          center: <?php 
+					if( isset($BCP_LOCATION[2]) ) {
+						
+						$centerLocation_3=explode(",",$BCP_LOCATION[2]);
+
+						
+
+						echo $centerLocation_3[0].','.$centerLocation_3[1];
+
+					}else{
+						echo '{lat: 24.967779, lng: 121.192124}';
+					}
+
+						?>,
           zoom: 16
         });
         //先輸入地址把地圖 center 移入

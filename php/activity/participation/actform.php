@@ -33,9 +33,18 @@
 
 			$sql="insert into ac_info value('$memNo', '$acNo')";
 			$newin=$connectPDO->exec($sql);
+			?>
+			<form name='fr' action='../../../Activity_act.php' method='POST'>
+			<input type='hidden' name='actNum' value='<?php echo $acNo ?>'>
+			<input type='hidden' name='success' value='1'>
+			</form>
+			<script type='text/javascript'>
+			document.fr.submit();
+			</script>
+			
 
-
-			header("Location:../../../Activity_act.php");
+   			<?php
+			// header("Location:../../../Activity_act.php?actNum=$acNo&=1");
 
 
 

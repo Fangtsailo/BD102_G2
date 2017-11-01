@@ -13,7 +13,7 @@ require_once("php/pdo/connectPDO.php");
 				
 				
 					<div>
-						<a href=""><h2>會員專區</h2>
+						<a href="memedit.php"><h2>會員專區</h2>
 							<svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60">
 								<defs>
 									<style>
@@ -81,7 +81,7 @@ require_once("php/pdo/connectPDO.php");
 
 						$memNo=$_SESSION["memNo"];
 
-						$sql_Store = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=0";
+						$sql_Store = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=0 and SI_CHECKSTAY=1 and SI_SELLSTAY=1";
 
 						$store_imformation_sideBar_store = $connectPDO->query($sql_Store);
 
@@ -170,7 +170,7 @@ require_once("php/pdo/connectPDO.php");
 
 						$memNo=$_SESSION["memNo"];
 
-						$sql_Car = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=1";
+						$sql_Car = "select * from store_imformation where SI_MEMNO=$memNo and SI_TYPE=1 and SI_CHECKSTAY=1 and SI_SELLSTAY=1";
 
 						$store_imformation_sideBar_Car = $connectPDO->query($sql_Car);
 

@@ -40,11 +40,8 @@ try {
 		//啟動交易管理
 		$connectPDO->beginTransaction();
 		//寫入主檔
-<<<<<<< HEAD
-		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,:memPic,0,1,null,:email)";
-=======
-		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_STATUS,MEM_MAIL) values (:memId,:memPsw,null,null,null,0,0,1,:email)";
->>>>>>> 8e2d0a255150d6e101a7d1f7daa9c3a562c53b9a
+
+		$newMemberSQL = "insert into member(MEM_ID,MEM_PSW,MEM_NAME,MEM_PHONE,MEM_PIC,MEM_ABSENT,MEM_ROLE,MEM_MAIL,MEM_STATUS) values (:memId,:memPsw,null,null,:memPic,0,0,:email,1)";
 		$register = $connectPDO->prepare( $newMemberSQL );
 		$register->bindValue(":memId" , StringValidate( $_REQUEST["newMemId"],"string" )  );
 		$register->bindValue(":memPsw" ,$_REQUEST["newMemPsw"] );

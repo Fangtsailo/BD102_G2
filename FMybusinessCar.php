@@ -14,7 +14,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<link rel="icon" href="img/trepun4.png">
+	<title>TrePun</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/FMybusinessStore.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -203,7 +204,7 @@ session_start();
 				</tr>
 
 				<tr>
-					<th><div>狀態 <?php echo $memNo; ?></div></th>
+					<th><div>狀態</div></th>
 					<td>
 						<p>			
 							<?php 
@@ -471,12 +472,28 @@ session_start();
 						<select name="SI_STARTTIME">
 
 							<?php 
+					// 		exit("1122221");
+					// 		echo $store_imformationRow->SI_STARTTIME;
+					// exit("111111");
 
-							for($i=0;$i<24;$i++){
-								$clock = $i<10 ? "0".$i.":00" : $i.":00";
-								$sel = ($i==$store_imformationRow->SI_STARTTIME)? "selected" : "" ;
+							if($store_imformation->rowCount()!=0){
 
-								echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==$store_imformationRow->SI_STARTTIME)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
+							}else{
+
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==9)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
 							}
 
 							 ?>
@@ -490,11 +507,24 @@ session_start();
 						<select name="SI_ENDTIME">
 							<?php 
 
-							for($i=0;$i<24;$i++){
-								$clock = $i<10 ? "0".$i.":00" : $i.":00";
-								$sel = ($i==$store_imformationRow->SI_ENDTIME)? "selected" : "" ;
+							if($store_imformation->rowCount()!=0){
 
-								echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==$store_imformationRow->SI_ENDTIME)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
+							}else{
+
+								for($i=0;$i<24;$i++){
+									$clock = $i<10 ? "0".$i.":00" : $i.":00";
+									$sel = ($i==9)? "selected" : "" ;
+
+									echo "<option value=".$i." ".$sel.">".$clock."</option>";
+								}
+
 							}
 
 							 ?>
@@ -574,7 +604,7 @@ session_start();
 							echo '<img class="preview preview_1" src="">';
 							}else{
 
-								echo '<img class="preview preview_1" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_1.'">';
+								echo '<img class="preview preview_1" src="img/store/banners/'.$store_imformationRow->SI_BIMG_1.'">';
 							}
 						}else{
 							echo '<img class="preview preview_1" src="">';
@@ -608,7 +638,7 @@ session_start();
 							echo '<img class="preview preview_2" src="">';
 							}else{
 
-								echo '<img class="preview preview_2" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_2.'">';
+								echo '<img class="preview preview_2" src="img/store/banners/'.$store_imformationRow->SI_BIMG_2.'">';
 							}
 
 						}else{
@@ -646,7 +676,7 @@ session_start();
 							
 							}else{
 
-								echo '<img class="preview preview_3" src="img/store/storeBgImg/'.$store_imformationRow->SI_BIMG_3.'">';
+								echo '<img class="preview preview_3" src="img/store/banners/'.$store_imformationRow->SI_BIMG_3.'">';
 							}
 						}else{
 
@@ -917,9 +947,26 @@ session_start();
 
 
 		<div class="commit">
-			<!-- <input type="button" name="" value="預覽"> -->
-			<input type="button" id="alertBtn" name="" value="編輯完成">
+
+			<?php 
+
+			if($store_imformation->rowCount()!=0){
+			 ?>
+			
+			<input type="button" name="" value="瀏覽頁面" onclick="location.href='storeBrowse.php?storeId=<?php echo $store_imformationRow->SI_NUM; ?>'">
+			<?php
+			 }
+			 ?>
+
+			<input type="button" id="alertBtn" name="" value="編輯確認">
 		</div>
+
+
+
+
+
+			
+					<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
 
 		</form>
 
@@ -946,7 +993,19 @@ session_start();
       
       
     });
-</script>
+	</script>
+
+
+
+
+	
+
+<!-- for demo easier -->
+	<script>
+		
+
+
+	</script>
 
 
 
