@@ -42,7 +42,27 @@ require_once("headerForHomePage.php");
 <!-- ======================================================內頁開始========================================================= -->	
 
 
-
+ <div id="loading-page">
+ 	<div class="content">
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+ 		<div class="loading-cloud">
+ 			<img src="img/store/browse/cloud.png">
+ 		</div>
+		<img id="pointer" src="img/loading_front.png">
+		<img id="north" src="img/loading_back-min.png">
+ 	</div>
+ </div>
 
 
 
@@ -279,7 +299,8 @@ require_once("headerForHomePage.php");
 		 ?>
 		 <script type="text/javascript">
 				$(document).ready(function (){
-					
+					//loading page
+					$('#loading-page').delay(2500).fadeOut(1000);
 					$('#search_Pic_<?php echo $mapCarRow->SI_NUM ?>').css('background','url("<?php echo $mapCarRow->SI_BIMG_1=="" ? GLOBAL_STORE_BANNERS_PIC_PATH."default.png" : GLOBAL_STORE_BANNERS_PIC_PATH.$mapCarRow->SI_BIMG_1 ; ?>") center center').css('background-size','cover');
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
