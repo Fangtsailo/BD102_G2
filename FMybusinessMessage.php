@@ -264,20 +264,46 @@ session_start();
 						
 						<td class="txtFather" colspan="2">
 							<?php 
+									$SPMSG_NO=$shop_message_Row->SPMSG_NO;
+										$sql_report="select * from report where SPMSG_NO=$SPMSG_NO";
+										$report=$connectPDO->query($sql_report);
+									//$reportRow=$report->fetchObject();
+									//$RE_STATUS=$reportRow->RE_STATUS;
 
-								if($shop_message_Row->SPMSG_CON_REPLY===null){
+							
 
-									$reportRow=$report->fetchObject();
+								if($report->rowCount()==0 ){
 
-									
+										if($shop_message_Row->SPMSG_CON_REPLY===null){
 
-										echo'<textarea name="SPMSG_CON_REPLY_'.$shop_message_Row->SPMSG_NO.'" placeholder="店長回覆"></textarea>';
+												echo'<textarea name="SPMSG_CON_REPLY_'.$shop_message_Row->SPMSG_NO.'" placeholder="店長回覆"></textarea>';
 
-									
+
+										}else{
+
+											echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+										}
 								}else{
 
-									echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+										$reportRow=$report->fetchObject();
+										$RE_STATUS=$reportRow->RE_STATUS;
+
+										if($RE_STATUS==="0"){
+
+											//echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+											
+										}else{
+
+											echo'<textarea name="SPMSG_CON_REPLY_'.$shop_message_Row->SPMSG_NO.'" placeholder="店長回覆"></textarea>';
+
+										}
+
+
 								}
+
+
+
+							
 
 							 ?>
 							
@@ -287,18 +313,49 @@ session_start();
 
 							<?php 
 
+								$SPMSG_NO=$shop_message_Row->SPMSG_NO;
+										$sql_report="select * from report where SPMSG_NO=$SPMSG_NO";
+										$report=$connectPDO->query($sql_report);
+									//$reportRow=$report->fetchObject();
+									//$RE_STATUS=$reportRow->RE_STATUS;
+
+							
+
+							if($report->rowCount()==0 ){
 
 
-								if($shop_message_Row->SPMSG_CON_REPLY===null){
 
-									//echo'<button id="alertBtn" value="'.$shop_message_Row->SPMSG_NO.'">送出</button>';
-									// echo'<button id="alertBtn">送出</button>';
-									echo '<input type="hidden" name="" value="'.$shop_message_Row->SPMSG_NO.'">';
-									echo '<input type="button" class="alertBtn" name="" value="送出" style="cursor:pointer;">';
+									if($shop_message_Row->SPMSG_CON_REPLY===null){
+
+										//echo'<button id="alertBtn" value="'.$shop_message_Row->SPMSG_NO.'">送出</button>';
+										// echo'<button id="alertBtn">送出</button>';
+										echo '<input type="hidden" name="" value="'.$shop_message_Row->SPMSG_NO.'">';
+										echo '<input type="button" class="alertBtn" name="" value="送出" style="cursor:pointer;">';
+
+									}else{
+
+										//echo'<button style="backgroundColor=#ccc;">送出</button>';
+									}
 
 								}else{
 
-									//echo'<button style="backgroundColor=#ccc;">送出</button>';
+
+									$reportRow=$report->fetchObject();
+										$RE_STATUS=$reportRow->RE_STATUS;
+
+										if($RE_STATUS==="0"){
+
+											//echo'<textarea disabled style="border:1px solid #ccc;color:#999">'.$shop_message_Row->SPMSG_CON_REPLY.'</textarea>';
+											
+										}else{
+
+											echo '<input type="hidden" name="" value="'.$shop_message_Row->SPMSG_NO.'">';
+											echo '<input type="button" class="alertBtn" name="" value="送出" style="cursor:pointer;">';
+
+
+										}
+
+
 								}
 
 							 ?>

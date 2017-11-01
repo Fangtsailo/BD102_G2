@@ -8,8 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TrePun</title>
-	<link rel="icon" href="img/trepun4.png">
+	<title>TEMPLATE</title>
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="libs/slick-master/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="css/storeBrowse.css">
@@ -80,9 +79,6 @@ try {
 	echo "行號：",$e->getLine(),"<br>";
 }
  ?>
-<!--  <div id="loading-page">
- 	<div class="content">Loading...</div>
- </div> -->
  <div class="report-mask mask">
  	<div class="report-modal modal">
  		<p>檢舉原因</p>
@@ -151,6 +147,7 @@ try {
 		</a>
 </div>
 <div class="screen screen-1" id="screen1">
+	<!-- <img class="scroll-down-tip" src="img/icon/scrolldown.svg" class="section2-click"> -->
 	<div class="banners">
 		<div id="banner1"></div>
 		<div id="banner2"></div>
@@ -452,6 +449,8 @@ try {
 	<div class="messages-area" id="messages-area">
 		<?php 
 			foreach ($GLOBALS["messageArr"] as $messageItem) {
+				$isRemoveByADM = $messageItem->isRemoveByADM;
+				if (!$isRemoveByADM) {
 		?>
 					<div class="message-box">
 						<div class="mem-pic col-lg-2">
@@ -471,6 +470,7 @@ try {
 						<div class="clear"></div>
 					</div>	
 		<?php
+				}
 			}
 		 ?>
 		<div class="more-message button" id="more-message">看更多</div>
@@ -514,9 +514,6 @@ try {
 	
 <script type="text/javascript">
 $(document).ready(function(){
-	//loading page
-	// $('#loading-page').delay(2000).fadeOut(1000);
-	//$('#loading-page').hide();
 	//檢舉公用變數
 	reportMessageNum = -1;
 	reviewIGave = 0;//若有給予評價的分數

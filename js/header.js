@@ -205,7 +205,7 @@ $('#showPsw').click(function(){
 });
 
 
-$('#newMemId').blur(function(){
+$('#newMemId').keyup(function(){
 
       $.ajax( {
         url: 'IDValidate.php',
@@ -217,6 +217,15 @@ $('#newMemId').blur(function(){
         alert('Ajax request 發生錯誤');
       },
       success: function(response) {
+        if($("#newMemId").val().length >8) {
+        $.sweetModal({ 
+            content: '帳號長度不得超過8碼',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#newMemId").select();
+        return;
+        
+        }
         $("#showResult").html(response);
         $("#showResult").fadeIn();
         
@@ -234,7 +243,15 @@ $('#newMemId').blur(function(){
 
 
 $("#submitRegister").click(function(){
-
+    //帳號長度不可超過8碼
+    if ($("#newMemId").val().length <=0 ){
+        $.sweetModal({ 
+            content: '請輸入帳號',
+            icon: $.sweetModal.ICON_WARNING
+        });
+        $("#newMemId").select();
+        return;
+    }
     //檢查email格式
     var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if( filter.test($("#newMemMail").val())==false  ){

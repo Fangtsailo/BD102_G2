@@ -986,7 +986,19 @@ session_start();
       
       
     });
-</script>
+	</script>
+
+
+
+
+	
+
+<!-- for demo easier -->
+	<script>
+		
+
+
+	</script>
 
 
 
