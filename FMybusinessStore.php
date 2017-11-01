@@ -235,7 +235,7 @@ session_start();
 
 				<tr>
 				<th><div>店名</div></th>
-				<td><input type="text" name="SI_NAME" value="<?php
+				<td><input type="text" name="SI_NAME" id="storeName" value="<?php
 
 				 if($store_imformation->rowCount()!=0){
 
@@ -248,7 +248,7 @@ session_start();
 
 				<tr>
 				<th><div>電話</div></th>
-				<td><input type="text" name="SI_PHONE" value="<?php 
+				<td><input type="text" name="SI_PHONE" id="storePhone" value="<?php 
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_PHONE;
 					}
@@ -258,7 +258,7 @@ session_start();
 
 				<tr>
 				<th><div>地址</div></th>
-				<td><input type="text" name="SI_ADDR" value="<?php 
+				<td><input type="text" name="SI_ADDR" id="storeAddr" value="<?php 
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_ADDR;
 					}
@@ -533,9 +533,9 @@ session_start();
 
 
 				<tr>
-				<th><div>故事</div></th>
+				<th><div id="storeStoryClick">故事</div></th>
 				<td>
-					<textarea name="SI_STORY" placeholder="請輸入"><?php
+					<textarea id="storeStory" name="SI_STORY" placeholder="請輸入"><?php
 					if($store_imformation->rowCount()!=0){
 						echo $store_imformationRow->SI_STORY;
 					}
@@ -978,6 +978,22 @@ session_start();
      
       
       
+    });
+
+
+
+
+    $('#storeStoryClick').click(function(){
+
+    	
+    	$('#storePhone').val('0923239493');
+    	$('#storeAddr').val('台東縣東河鄉都蘭村436-3號');
+    	$('#storeStory').html('David & Rolly自台北天母移民台東縣美麗的都蘭村。我們用這份東海岸快樂．感謝的心﹐研製自然．健康的義大利麵醬汁和手工麵包');
+    	// $('#storeName').val('1');
+
+
+
+
     });
 
 
