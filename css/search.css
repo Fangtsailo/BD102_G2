@@ -1333,10 +1333,7 @@ img {
     .search_store .search_storeOne .search_storeContent {
       float: left;
       padding: 10px 10px;
-<<<<<<< HEAD
       height: 200px;
-=======
->>>>>>> c1f965d78434f609f787f7576baa85989d20d485
       -webkit-box-sizing: border-box;
       box-sizing: border-box; }
       .search_store .search_storeOne .search_storeContent h2 a {
