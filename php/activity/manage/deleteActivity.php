@@ -23,9 +23,9 @@ try{
 	
 	$deleteAcInfoSQL = "DELETE FROM ac_info WHERE AC_NO = $acNum";
 	$deletetAcInfo = $connectPDO->prepare($deleteAcInfoSQL);
+	$deletetAcInfo -> execute();
 	$deleteActSQL = "DELETE FROM activity WHERE AC_NO = $acNum";
 	$deletetAct = $connectPDO->prepare($deleteActSQL);
-	$deletetAcInfo -> execute();
 	$deletetAct -> execute();
 
 	header('Location:../../../bossActivity.php?info=success');
