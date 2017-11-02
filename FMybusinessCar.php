@@ -179,7 +179,7 @@ session_start();
 				if ($SI_TYPE==0) {
 					echo "麵包店";
 				}else{
-					echo "麵包車";
+					echo "胖小車";
 				}
 
 			}else{
