@@ -12,7 +12,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>店家資訊</title>
+	<title>TrePun</title>
+    <link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/shopUp.css">
 
@@ -83,7 +84,7 @@ require_once("BackStageHeaderSidebar.php");
 								from store_imformation 
 								left join member 
 								on store_imformation.SI_MEMNO = member.MEM_NO
-								where store_imformation.SI_TYPE = 0
+								where store_imformation.SI_TYPE = 0 and store_imformation.SI_CHECKSTAY = 1
 								group by store_imformation.SI_NUM
 								order by SI_NUM DESC";
 
