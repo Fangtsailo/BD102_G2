@@ -37,8 +37,20 @@ try {
 
 	//取得搜尋結果
 	if( $searchRow = $searchSi->fetchObject() ){
+		var_dump($searchRow);
+		if($searchRow->SI_MEMNO != null){
+
+			//exit('有找到店 但有店長');
 		//若有資料，跳轉至結果頁面
-		header("Location: ../../memBeBoss2.php");
+		   header("Location: ../../memBeBoss1.php?info=error");
+
+		}else{
+
+		//	 exit('有找到店 也無店長');
+			
+			header("Location: ../../memBeBoss2.php");
+
+		}
 		
 	}elseif($siType == 1){
 		//若資料庫無此麵包車，則跳轉至新增麵包車頁
@@ -49,6 +61,8 @@ try {
 		header("Location: ../../memBeBoss4.php");
 
 	}//else end
+
+
 }catch(PDOException $e){
  	echo "錯誤原因 : " , $e->getMessage(),"<br>";
 	echo "行號 : " , $e->getLine(),"<br>";
