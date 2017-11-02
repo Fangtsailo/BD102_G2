@@ -14,7 +14,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<title>TrePun</title>
+	<link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/BActivity.css">
 
@@ -127,7 +128,7 @@ require_once("BackStageHeaderSidebar.php");
 
 						$searchIdName=$_REQUEST["searchIdName"];
 
-						$sql = "select * from activity,store_imformation where AC_STORE_NUM=SI_NUM and (AC_NO=:searchId or AC_STORE_NUM=:searchId)" ; 
+						$sql = "select * from activity,store_imformation where AC_STORE_NUM=SI_NUM and (AC_NO=:searchId or AC_STORE_NUM=:searchId) order by AC_NO desc" ; 
 
 						$activity= $connectPDO->prepare($sql);
 						$activity->bindValue(":searchId",$searchIdName);
