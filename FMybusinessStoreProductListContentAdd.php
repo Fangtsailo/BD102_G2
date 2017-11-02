@@ -164,13 +164,13 @@ session_start();
 
 				<tr>
 				<th><div>品名</div></th>
-				<td><input type="text" name="PD_NAME" placeholder="請輸入商品名稱" value=""></td>
+				<td><input type="text" name="PD_NAME" id="pName" placeholder="請輸入商品名稱" value=""></td>
 				</tr>
 
 
 				<tr>
 				<th><div>價格</div></th>
-				<td><input type="text" name="PD_PRICE" placeholder="請輸入價格" value=""></td>
+				<td><input type="text" name="PD_PRICE" id="pPrice" placeholder="請輸入價格" value=""></td>
 				</tr>
 
 
@@ -178,13 +178,13 @@ session_start();
 
 
 				<tr>
-				<th><div>簡介</div></th>
+				<th><div id="addContent">簡介</div></th>
 				<td>
-					<textarea name="PD_INTRO" placeholder="限100字" maxlength="100"></textarea>
+					<textarea name="PD_INTRO" placeholder="限100字" id="pStory" maxlength="100"></textarea>
 				</td>
 				</tr>
 
-
+					
 
 
 				<tr>
@@ -209,6 +209,17 @@ session_start();
 
 
 				<script>
+
+					$('#addContent').click(function(){
+
+
+						$('#pName').val('黑麥麵包');
+						$('#pPrice').val('100');
+						$('#pStory').html('來自義大利磨纺研磨而成之小麥所製成之麵包');
+
+
+					});
+
 					
 					$(function (){
 
