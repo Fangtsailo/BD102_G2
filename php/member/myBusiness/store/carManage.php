@@ -274,7 +274,7 @@
 
 		}else{ // if($store_imformation->rowCount()==0) 
 
-
+ 
 			//if(isset($_FILES["uploadImg"])){
 
 				foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
@@ -336,7 +336,6 @@
 
 
 			//}
-
 
 
 

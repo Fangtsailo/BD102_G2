@@ -64,6 +64,15 @@ require_once("header.php");
   $GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
   $GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
   $isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
+
+  //預設至少一個商品跟活動圖
+  if (count($GLOBALS["produtsArr"]) == 0 ) {
+    array_push($GLOBALS["produtsArr"],new Bread());
+  }
+  if (count($GLOBALS["activityArr"]) == 0 ) {
+    array_push($GLOBALS["activityArr"],new ActivityObj());
+  }
+  
   require_once("php/pdo/connectPDO.php");
   $sql = "select * from store_imformation where SI_NUM=$storeId and SI_TYPE=0";
   $store_imformation = $connectPDO->query($sql);
@@ -320,10 +329,6 @@ require_once("header.php");
       <img src="img/SHOPB/act.png">
     </div> -->
     <div id="SKINAREA"></div>
-
-    <?php 
-    if (count($GLOBALS["activityArr"]) != 0) {       
-      ?>
     <div id="ACTTXT">
       <?php  
       foreach ($GLOBALS["activityArr"] as $activity) {
@@ -344,35 +349,8 @@ require_once("header.php");
       <!-- <img src="<?php //echo $activity->bannerfullPicName ?>"> -->
       </div>
     </div>
-
     <?php 
-    }
-    }else{
-    ?>
-    <div id="ACTTXT">
-      <?php  
-      foreach ($GLOBALS["activityArr"] as $activity) {
-      ?>
-      <p id="tt"><?php echo $activity->title ?></p>
-      <p id="cc">
-        此店家目前未有體驗活動！
-      </p>
-      <a href="activity_act.php?actNum=<?php echo $activity->num ?>" id="ACTBT">活動詳情</a>
-      <div id="ACTIMG">
-        <script type="text/javascript">
-          $("#ACTIMG").css('background','url("<?php echo $activity->bannerfullPicName=="" ? "default.jpg" : $activity->bannerfullPicName; ?>") center center').css('background-size','cover');
-        </script>
-      <!-- <img src="<?php //echo $activity->bannerfullPicName ?>"> -->
-      </div>
-    </div>
-    <?php 
-    }
-    }
-     ?>
-
-
-
-
+    } ?>
   </section>
 
 
