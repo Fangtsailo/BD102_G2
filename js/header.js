@@ -87,7 +87,7 @@ var bodyClass = document.body.classList,
     $("body").css("position","fixed");  //ios11 bug fixed
 		$('#loginBox').fadeIn(500);
     $("#menu").removeClass("show");
-    $('#addShopBox').hide();
+    $('#addShopBox').fadeOut();
 	
 	});
 
@@ -107,7 +107,7 @@ var bodyClass = document.body.classList,
 	});
 
 //關閉燈箱按鈕
-	$('.closeBtn,#cancelLogin,#closeBtn01,#closeBtn02').click(function(){
+	$('.closeBtn,#cancelLogin,#closeBtn01,#closeBtn02,#canceladdbtn').click(function(){
       $("body").css("position","static"); //ios11 bug fixed
 			$('#loginBox').fadeOut(500);
 			$('#RegisterBox').css('display','none');
@@ -160,7 +160,7 @@ $("#submitLogin").click(function(){
                     });
                            
                 }else{//登入成功
-                    $("#loginBox").hide(300);
+                    $("#loginBox").fadeOut();
                     $.sweetModal({
                         content: '登入成功',
                         icon: $.sweetModal.ICON_SUCCESS,
