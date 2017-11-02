@@ -67,43 +67,43 @@ session_start();
 					<tr>
 						<th><div>活動名稱</div></th>
 						<td>
-							<input type="text" name="acName" placeholder="請輸入活動名稱">
+							<input id="acname" type="text" name="acName" placeholder="請輸入活動名稱">
 						</td>
 					</tr>
 					<tr>
 						<th><div>活動副標題</div></th>
 						<td>
-							<input type="text" name="acSubName" placeholder="請輸入副標題">
+							<input id="actitle" type="text" name="acSubName" placeholder="請輸入副標題">
 						</td>
 					</tr>
 					<tr>
 						<th><div>活動時間</div></th>
 						<td>
-							<input type="text" name="acTime" placeholder="例如：2017-10-10上午10:00">
+							<input id="actime" type="text" name="acTime" placeholder="例如：2017-10-10上午10:00">
 						</td>
 					</tr>
 					<tr>
 						<th><div>活動地點</div></th>
 						<td>
-							<input type="text" name="acAddress" placeholder="輸入活動舉辦地點與位置">
+							<input id="acplace" type="text" name="acAddress" placeholder="輸入活動舉辦地點與位置">
 						</td>
 					</tr>
 					<tr>
 						<th><div>活動費用</div></th>
 						<td>
-							<input type="text" name="acPrice" placeholder="請輸入活動參加者每人報名費用">
+							<input id="acprice" type="text" name="acPrice" placeholder="請輸入活動參加者每人報名費用">
 						</td>
 					</tr>
 					<tr>
 						<th><div>活動材料</div></th>
 						<td>
-							<input type="text" name="acIngrd" placeholder="請輸入活動所需食材">
+							<input id="acingrd" type="text" name="acIngrd" placeholder="請輸入活動所需食材">
 						</td>
 					</tr>
 					<tr>
 						<th><div>人數限制</div></th>
 						<td>
-							<input type="number" name="acParticipants" placeholder="請輸入人數">
+							<input id="acpeople" type="number" name="acParticipants" placeholder="請輸入人數">
 						</td>
 					</tr>
 					<tr>
@@ -224,7 +224,12 @@ session_start();
 	$(function(){
 		
 		$("#hidden").click(function(){
+			$("#actime").val("2017-12-13 16:00-18:00");
+			$("#acplace").val("台南市仁德區太子路77號");
 			$("#ac_detail1").html("菠蘿麵包的魅力是凡人無法擋,不管任何階層年齡的人，都喜歡這一味！無論市場上有多少新口味出現，菠蘿家族總是屹立不搖！");
+			$("#acprice").val("NT$800/每人");
+			$("#acingrd").val("店家提供");
+			$("#acpeople").val("20");
 			$("#ac_detail2").html("香港茶餐廳人氣最旺的就是菠蘿牛油包，剛出爐的菠蘿麵包趁熱切開夾上一片冰凍的奶油，熱熱的麵包馬上融化濃郁的奶油片，我們讓你製作自己的冰火五重天！");
 			$("#ac_detail3").html("湯種麵糊、特級高筋麵粉、特級低筋麵粉、速發酵母、洗選蛋、台糖特級細砂糖、純白精鹽、義美鮮奶、法國特級總統牌奶油");
 		});
