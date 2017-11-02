@@ -145,6 +145,7 @@ img{
 			position:relative;
 			//background:url('../img/search-1.png') center center;
 			background-size:cover;
+			cursor:pointer;
 			&:hover .hoverMap{
 					opacity:1;
 				}
@@ -296,6 +297,11 @@ img{
 				.search_storeMap{
 					
 				}	
+					.search_storeImg {
+						.hoverMap {
+							height: 25%;
+						}
+					}
 					.search_storeContent{
 						h2{
 							float:none;

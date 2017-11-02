@@ -305,7 +305,7 @@ require_once("headerForHomePage.php");
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
 						$('.search_storeOne').css("background-color","transparent");
-						// $(this).css("background-color","rgba(234, 178, 96, 0.5)");
+						$(this).css("background-color","rgba(234, 178, 96, 0.5)");
 					});
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').hover(function(){
 						// $('.search_storeOne').css("background-color","transparent");
@@ -316,37 +316,41 @@ require_once("headerForHomePage.php");
 			</script>
 					<div class="search_storeOne" id="car-<?php echo $mapCarRow->SI_NUM ?>" data-lat="<?php echo $mapCarRow->SI_LAT ?>" data-lng="<?php echo $mapCarRow->SI_LNG ?>">
 						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $mapCarRow->SI_NUM ?>">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="storeBrowse.php?storeId=<?php echo $mapCarRow->SI_NUM ;?>"><?php echo "$mapCarRow->SI_NAME "; ?></a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow3.svg">	
+							<div class="hoverMap ">
+								<p>點擊查看地圖位置</p>
 							</div>
-							<div id="search_followNum"><?php echo "$mapCarRow->top"; ?></div>
-							<div class="search_storeStar">
-								<ul>
-								<?php
-										for( $i=1; $i<=5; $i++){
-											if( $i <= $mapCarRow->SI_AVG_REVIEW){
-												echo '<li class="star"><img src="img/icon/star2.svg"></li>';
-											}else{
-												echo '<li class="star"><img src="img/icon/star3.svg"></li>';
+						</div>
+						<a href="storeBrowse.php?storeId=<?php echo $mapCarRow->SI_NUM ;?>">
+							<div class="search_storeContent col-xs-8">
+								<h2><?php echo "$mapCarRow->SI_NAME "; ?></h2>
+								<div class="search_follow">
+									<img src="img/icon/follow3.svg">	
+								</div>
+								<div id="search_followNum"><?php echo "$mapCarRow->top"; ?></div>
+								<div class="search_storeStar">
+									<ul>
+									<?php
+											for( $i=1; $i<=5; $i++){
+												if( $i <= $mapCarRow->SI_AVG_REVIEW){
+													echo '<li class="star"><img src="img/icon/star2.svg"></li>';
+												}else{
+													echo '<li class="star"><img src="img/icon/star3.svg"></li>';
+												}
 											}
-										}
-									?>
-								</ul>
-								</ul>
-							</div>  
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話：<?php echo "$mapCarRow->SI_PHONE"; ?></li>
-									<li>地址：<?php echo "$mapCarRow->SI_ADDR"; ?>
-										</li>
-									<li>營業時間： <?php echo "$mapCarRow->SI_STARTTIME"; ?>:00至<?php echo "$mapCarRow->SI_ENDTIME"; ?>:00</li>
-								</ul>
+										?>
+									</ul>
+									</ul>
+								</div>  
+								<div class="search_storeInfor ">
+									<ul>
+										<li>電話：<?php echo "$mapCarRow->SI_PHONE"; ?></li>
+										<li>地址：<?php echo "$mapCarRow->SI_ADDR"; ?>
+											</li>
+										<li>營業時間： <?php echo "$mapCarRow->SI_STARTTIME"; ?>:00至<?php echo "$mapCarRow->SI_ENDTIME"; ?>:00</li>
+									</ul>
+								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 		<?php 
 			}

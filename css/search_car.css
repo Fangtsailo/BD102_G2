@@ -1262,7 +1262,8 @@ img {
       height: 200px;
       box-sizing: border-box;
       position: relative;
-      background-size: cover; }
+      background-size: cover;
+      cursor: pointer; }
       .search_store .search_storeOne .search_storeImg:hover .hoverMap {
         opacity: 1; }
       .search_store .search_storeOne .search_storeImg img {
@@ -1355,6 +1356,8 @@ img {
       position: relative; }
       .search_content .search_mapcar .search_store .search_storeOne {
         width: 100%; }
+        .search_content .search_mapcar .search_store .search_storeOne .search_storeImg .hoverMap {
+          height: 25%; }
         .search_content .search_mapcar .search_store .search_storeOne .search_storeContent h2 {
           float: none; }
           .search_content .search_mapcar .search_store .search_storeOne .search_storeContent h2 a {
