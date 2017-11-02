@@ -54,7 +54,7 @@ session_start();
 					require_once("php/pdo/connectPDO.php");
 
 					//比對資料庫中是否有此店型的店名
-					$sql = "select * from store_imformation where SI_TYPE=:SI_TYPE and SI_NAME=:SI_NAME and SI_MEMNO=null";
+					$sql = "select * from store_imformation where SI_TYPE=:SI_TYPE and SI_NAME=:SI_NAME";
 
 					//編譯該指令
 					$searchSi=$connectPDO->prepare($sql);
