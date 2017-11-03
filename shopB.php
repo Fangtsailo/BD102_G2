@@ -37,8 +37,7 @@ session_start();
   ======================================================= -->
 <?php 
 require_once("header.php");
- ?>
-<?php 
+ 
   try{
   require_once("php/common/globalVar.php"); 
   require_once("php/store/browse/storeDetail.php");
@@ -65,6 +64,15 @@ require_once("header.php");
   $GLOBALS["messageArr"] = getMessagesByStoreId($storeId, $memNum);
   $GLOBALS["otherStoreArr"] = getOtherStoreByRandom(6);
   $isThisMemFollowThisStore = isFollowStoreByMemNum($memNum, $storeId);
+
+  //預設至少一個商品跟活動圖
+  if (count($GLOBALS["produtsArr"]) == 0 ) {
+    array_push($GLOBALS["produtsArr"],new Bread());
+  }
+  if (count($GLOBALS["activityArr"]) == 0 ) {
+    array_push($GLOBALS["activityArr"],new ActivityObj());
+  }
+  
   require_once("php/pdo/connectPDO.php");
   $sql = "select * from store_imformation where SI_NUM=$storeId and SI_TYPE=0";
   $store_imformation = $connectPDO->query($sql);
@@ -356,59 +364,7 @@ require_once("header.php");
 
   <section class="SHOPB_MSG">
 
-    <!-- <div class="MSG_CON">
-      <div class="MSG_PROFILE">
-        <img src="img/SHOPB/PROFILE1.png">
-      </div>
-      <div class="MSG_TXT sp">
-          <input type="text" name="msgmsg" placeholder="登入開始留言">
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="MSG_CON">
-      <div class="MSG_PROFILE">
-        <img src="img/SHOPB/PROFILE2.png">
-      </div>
-      <div class="MSG_TXT">
-        <p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在，調查基金來看中央選擇進來開口很，浪費未來傳來女性品種每個人結束無人。
-        </p>
-        <span id="respit">回覆</span>
-        <span id="repoit">檢舉</span>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="MSG_CON">
-      <div class="MSG_PROFILE">
-        <img src="img/SHOPB/PROFILE2.png">
-      </div>
-      <div class="MSG_TXT">
-        <p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在，調查基金來看中央選擇進來開口很，浪費未來傳來女性品種每個人結束無人。
-        </p>
-        <span id="respit">回覆</span>
-        <span id="repoit">檢舉</span>
-        
-        <div class="MSG_RES">
-          <div class="MSG_RES_PROFILE">
-            <img src="img/SHOPB/PROFILE2.png">
-          </div>
-          <div class="MSG_RES_TXT">
-          <p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽不怕本身那麼多存在。
-          </p>
-          </div>          
-        </div> <!-- MSG_RES -->
-<!--        <div class="clearfix"></div>
-        <div class="MSG_RES">
-          <div class="MSG_RES_PROFILE">
-            <img src="img/SHOPB/PROFILE2.png">
-          </div>
-          <div class="MSG_RES_TXT">
-          <p>搜索引擎歷史魔獸讓我們正常天氣無論視頻笑容求助理想機構正在，創造指標媽媽。
-          </p>          
-        </div> <!-- MSG_RES -->
 
-<!--      </div>  <!-- MSG_TXT -->    
-      
-<!--    </div><div class="clearfix"></div> -->
 
     <div class="perspective">
     <div class="title">
@@ -562,7 +518,7 @@ $(document).ready(function(){
   var messageLoadMore = document.getElementById("more-message");
   //看更多留言事件--------------------
   messageLoadMore.addEventListener("click", function() {
-    loadMoreMessage2(<?php echo $GLOBALS["store"]->id; ?>);
+    loadMoreMessage2(<?php echo $GLOBALS["store"]->id; ?>, <?php echo $memNum; ?>);
   }, false);
   //寄發留言-------------------------
   $('#login-men-pic').css('background-image', 'url("<?php echo $memPic;?>")')

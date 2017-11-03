@@ -183,10 +183,14 @@ try{
 			</script>
 
 				<div class="search_storeOne" id="car-<?php echo $searchRow->SI_NUM ?>" data-lat="<?php echo $searchRow->SI_LAT ?>" data-lng="<?php echo $searchRow->SI_LNG ?>">
-						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $searchRow->SI_NUM ?>"></div>
-						
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="storeBrowse.php?storeId=<?php echo $searchRow->SI_NUM ?>"><?php echo "$searchRow->SI_NAME "; ?></a></h2>
+						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $searchRow->SI_NUM ?>">
+							<div class="hoverMap ">
+								<p>點擊查看地圖位置</p>
+							</div>
+						</div>
+						<a href="storeBrowse.php?storeId=<?php echo $searchRow->SI_NUM ?>">
+						<div class="search_storeContent  col-xs-8">
+							<h2><?php echo "$searchRow->SI_NAME "; ?></h2>
 							<div class="search_follow">
 								<img src="img/icon/follow3.svg">	
 							</div>
@@ -213,7 +217,7 @@ try{
 								</ul>
 							</div>
 						</div>
-						
+						</a>
 				</div> <!-- search_storeOne -->
 	
 			<?php } ?>    <!-- while迴圈 -->

@@ -222,7 +222,7 @@ require_once("headerForHomePage.php");
 	<?php 
 	try{
 		require_once("php/PDO/connectPDO.php");
-		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,6) address ,COUNT(DISTINCT f.MEM_NO) followers,s.SI_AVG_REVIEW,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC,s.SI_TYPE,s.SI_CHECKSTAY,s.SI_SELLSTAY,s.SI_BIMG_1 FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
+		$selectTopShopSQL = "SELECT s.SI_NAME ,SUBSTRING(s.SI_ADDR,1,3) address ,COUNT(DISTINCT f.MEM_NO) followers,s.SI_AVG_REVIEW,f.SI_NUM ,r.SI_NUM,msg.SPMSG_NO,msg.SPMSG_CON,msg.SPMSG_TIME,m.MEM_NAME,m.MEM_PIC,s.SI_TYPE,s.SI_CHECKSTAY,s.SI_SELLSTAY,s.SI_BIMG_1 FROM store_imformation s JOIN follow f ON s.SI_NUM = f.SI_NUM JOIN reviews r ON s.SI_NUM=r.SI_NUM JOIN shop_message msg ON msg.SPMSG_SPNO = s.SI_NUM JOIN member m ON m.MEM_NO=msg.SPMSG_MEMNO WHERE s.SI_SELLSTAY = 1 AND s.SI_CHECKSTAY = 1 GROUP BY s.SI_NUM ORDER BY RAND() DESC LIMIT 6" ;
 		$topShops = $connectPDO->query($selectTopShopSQL);
 		while ($topShopsRow = $topShops->fetchObject()) {
 			$topStoreBgd = ( isset($topShopsRow->SI_BIMG_1) )? $topShopsRow->SI_BIMG_1 : "default.png" ;
@@ -305,7 +305,7 @@ require_once("headerForHomePage.php");
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').click(function(){
 						changeMapStatus($(this).attr('data-lat'), $(this).attr('data-lng'), '胖小車休息中喔!!');
 						$('.search_storeOne').css("background-color","transparent");
-						// $(this).css("background-color","rgba(234, 178, 96, 0.5)");
+						$(this).css("background-color","rgba(234, 178, 96, 0.5)");
 					});
 					$('#car-<?php echo $mapCarRow->SI_NUM ?>').hover(function(){
 						// $('.search_storeOne').css("background-color","transparent");
@@ -316,37 +316,41 @@ require_once("headerForHomePage.php");
 			</script>
 					<div class="search_storeOne" id="car-<?php echo $mapCarRow->SI_NUM ?>" data-lat="<?php echo $mapCarRow->SI_LAT ?>" data-lng="<?php echo $mapCarRow->SI_LNG ?>">
 						<div class="search_storeImg col-sm-5 col-xs-4" id="search_Pic_<?php echo $mapCarRow->SI_NUM ?>">
-							
-						</div>
-						<div class="search_storeContent col-sm-7 col-xs-8">
-							<h2><a href="storeBrowse.php?storeId=<?php echo $mapCarRow->SI_NUM ;?>"><?php echo "$mapCarRow->SI_NAME "; ?></a></h2>
-							<div class="search_follow">
-								<img src="img/icon/follow3.svg">	
+							<div class="hoverMap ">
+								<p>點擊查看地圖位置</p>
 							</div>
-							<div id="search_followNum"><?php echo "$mapCarRow->top"; ?></div>
-							<div class="search_storeStar">
-								<ul>
-								<?php
-										for( $i=1; $i<=5; $i++){
-											if( $i <= $mapCarRow->SI_AVG_REVIEW){
-												echo '<li class="star"><img src="img/icon/star2.svg"></li>';
-											}else{
-												echo '<li class="star"><img src="img/icon/star3.svg"></li>';
+						</div>
+						<a href="storeBrowse.php?storeId=<?php echo $mapCarRow->SI_NUM ;?>">
+							<div class="search_storeContent col-xs-8">
+								<h2><?php echo "$mapCarRow->SI_NAME "; ?></h2>
+								<div class="search_follow">
+									<img src="img/icon/follow3.svg">	
+								</div>
+								<div id="search_followNum"><?php echo "$mapCarRow->top"; ?></div>
+								<div class="search_storeStar">
+									<ul>
+									<?php
+											for( $i=1; $i<=5; $i++){
+												if( $i <= $mapCarRow->SI_AVG_REVIEW){
+													echo '<li class="star"><img src="img/icon/star2.svg"></li>';
+												}else{
+													echo '<li class="star"><img src="img/icon/star3.svg"></li>';
+												}
 											}
-										}
-									?>
-								</ul>
-								</ul>
-							</div>  
-							<div class="search_storeInfor ">
-								<ul>
-									<li>電話：<?php echo "$mapCarRow->SI_PHONE"; ?></li>
-									<li>地址：<?php echo "$mapCarRow->SI_ADDR"; ?>
-										</li>
-									<li>營業時間： <?php echo "$mapCarRow->SI_STARTTIME"; ?>:00至<?php echo "$mapCarRow->SI_ENDTIME"; ?>:00</li>
-								</ul>
+										?>
+									</ul>
+									</ul>
+								</div>  
+								<div class="search_storeInfor ">
+									<ul>
+										<li>電話：<?php echo "$mapCarRow->SI_PHONE"; ?></li>
+										<li>地址：<?php echo "$mapCarRow->SI_ADDR"; ?>
+											</li>
+										<li>營業時間： <?php echo "$mapCarRow->SI_STARTTIME"; ?>:00至<?php echo "$mapCarRow->SI_ENDTIME"; ?>:00</li>
+									</ul>
+								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 		<?php 
 			}

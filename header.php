@@ -178,7 +178,20 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="memedit.php"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : "" ; ?>  </a></li>
+						<li><a href="memedit.php"> <?php 
+
+							if( isset($_SESSION["memId"]) ){
+								if( $_SESSION["memName"]!="" ){
+									echo $_SESSION["memName"];
+								}else{
+									echo $_SESSION["memId"] ;
+								}
+							}else{
+								echo "";
+							}
+
+
+						?>  </a></li>
 						<li><a class="memLink" href="memedit.php">基本資料</a></li>
 						<li><a class="memLink" href="memfollow.php">我的追蹤</a></li>
 						<li><a class="memLink" href="memcomment.php">我的留言</a></li>
@@ -262,13 +275,18 @@
 	<div class="burgerMenu" id="burgerBtn">
 
 			<?php 
-								if ( isset($_SESSION['memPic']) ){
-									echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
-								}else {
-									echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
-								}
+				if ( isset($_SESSION['memPic']) ){
+					if($_SESSION['memPic']==""){
+						echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
+					}else{
+						echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
+					}
+				}else {
+					echo "<img src='img/icon/signin.svg'>";
 
-							 ?>
+				}
+
+			?>
 			<!-- <span>
 								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 38 38" style="enable-background:new 0 0 38 38;" xml:space="preserve"><g>
 								<path d="M28.4,28.2c-0.5-3.6-1.8-4.1-3.7-4.9c-0.3-0.1-0.7-0.3-1.1-0.5c-0.2-0.1-0.3-0.2-0.5-0.2c-1.1-0.5-1.4-0.8-1.4-1.3c1.4-1,2.2-2.6,2.2-4.1v-6.4L23.3,11c-0.4,0.1-0.7,0.1-1,0.1c-0.8,0-1.3-0.1-1.9-0.3c-0.5-0.1-1.1-0.3-1.9-0.3c-0.9,0-1.6,0.4-2.1,1.1l0.9,0.7c0.3-0.4,0.7-0.6,1.2-0.6c0.7,0,1.1,0.1,1.7,0.2c0.6,0.1,1.2,0.3,2.1,0.3c0.2,0,0.3,0,0.5,0v5.1c0,1.9-1.4,3.9-3.9,3.9c-2.4,0-3.9-2-3.9-3.9v-5.9C15.3,11,16,9,18.6,9c0.9,0,1.5,0.2,2.1,0.3c0.5,0.1,1,0.2,1.6,0.2c0.6,0,1.2-0.1,1.6-0.3V8.1c-0.4,0.1-1,0.4-1.6,0.4c-0.5,0-0.9-0.1-1.4-0.2c-0.7-0.2-1.4-0.3-2.4-0.3c-2.9,0-4.2,2.1-4.5,3.3l0,6.1c0,1.5,0.8,3.2,2.2,4.1c-0.1,0.5-0.3,0.8-1.4,1.3c-0.1,0.1-0.3,0.1-0.5,0.2c-0.4,0.2-0.7,0.3-1.1,0.5c-1.8,0.8-3.2,1.3-3.7,4.9l-0.1,0.6h19L28.4,28.2z M10.8,27.8c0.4-2.4,1.3-2.7,2.9-3.4c0.3-0.1,0.7-0.3,1.1-0.5c0.3-0.1,0.5-0.2,0.8-0.4c0.8-0.4,1.4-0.9,1.6-1.6c0.5,0.2,1.1,0.3,1.8,0.3c0.6,0,1.2-0.1,1.8-0.3c0.2,0.7,0.8,1.2,1.6,1.6c0.2,0.1,0.5,0.2,0.8,0.4c0.4,0.2,0.8,0.3,1.1,0.5c1.6,0.7,2.4,1,2.9,3.4H10.8z"/>

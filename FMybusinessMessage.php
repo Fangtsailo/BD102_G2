@@ -167,7 +167,7 @@ session_start();
 
 				$SI_NUM=$store_imformation_row->SI_NUM;
 
-				$sql_msg="select * from shop_message where SPMSG_SPNO=$SI_NUM";
+				$sql_msg="select * from shop_message where SPMSG_SPNO=$SI_NUM and SPMSG_MEMNO!=$memNo";
 
 				$shop_message=$connectPDO->query($sql_msg);
 
@@ -194,7 +194,7 @@ session_start();
 							
 						</td>
 						<td>
-							<p class="idName"><?php echo $mem_table_Row->MEM_ID; ?></p>
+							<p class="idName"><?php echo $mem_table_Row->MEM_NAME; ?></p>
 							<p class="memMsg"><?php echo $shop_message_Row->SPMSG_CON; ?></p>
 							
 						</td>

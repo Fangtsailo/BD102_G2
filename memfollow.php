@@ -81,7 +81,7 @@ session_start();
 		 ?>
 				<div class="myfollow">
 					
-					<a href="storeBrowse.php?storeId=<?php echo $selectFollowRow->SI_NUM; ?>"><img src="<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$shopBgd ;?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
+					<a href="storeBrowse.php?storeId=<?php echo $selectFollowRow->SI_NUM; ?>" target="_blank"><img id="myfollowbk" src="<?php echo GLOBAL_STORE_BANNERS_PIC_PATH.$shopBgd ;?>"><h2><?php echo $selectFollowRow->SI_NAME ; ?></h2></a>
 					<ul>
 						<?php 
 							$starAmt = $selectFollowRow->reviews;

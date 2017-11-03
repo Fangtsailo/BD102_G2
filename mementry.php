@@ -73,7 +73,7 @@ session_start();
 		<?php 
 		$memNo = $_SESSION["memNo"];
 		
-			$selectActSQL = "SELECT act.AC_NO ,act.AC_NAME,act.AC_TIME,act.AC_ADDRESS,act.AC_PRICE,act.AC_BANNER1,s.SI_NAME FROM activity act JOIN ac_info info ON act.AC_NO = info.AC_NO JOIN store_imformation s ON s.SI_NUM = act.AC_STORE_NUM  WHERE info.MEM_NO='$memNo' GROUP BY info.AC_NO ";
+			$selectActSQL = "SELECT act.AC_NO ,act.AC_NAME,act.AC_TIME,act.AC_ADDRESS,act.AC_PRICE,act.AC_BANNER1,s.SI_NAME, s.SI_NUM FROM activity act JOIN ac_info info ON act.AC_NO = info.AC_NO JOIN store_imformation s ON s.SI_NUM = act.AC_STORE_NUM  WHERE info.MEM_NO='$memNo' GROUP BY info.AC_NO ";
 			$selectAct = $connectPDO->query($selectActSQL);
 			while ( $selectActRow = $selectAct->fetchObject() ){
 
@@ -83,15 +83,15 @@ session_start();
 				<div class="myentry">
 					<img src="img/store/activity/banner/<?php echo $selectActRow->AC_BANNER1 ; ?>" class="actpic">
 					<div class="info">
-						<h2><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>"><?php echo $selectActRow->AC_NAME ; ?></a></h2>
+						<h2><?php echo $selectActRow->AC_NAME ; ?></a></h2>
 						<a href="php/member/track/cancelentry.php?actNum=<?php echo $selectActRow->AC_NO ; ?>" class="btn50" id="cancelentry">
 							<img src="img/memimg/cancel.svg">
 						</a>
 						<address>
 							<ul>
-								<li><a href="#"><?php echo $selectActRow->SI_NAME ; ?></a></li>
+								<li><a href="storeBrowse.php?storeId=<?php echo $selectActRow->SI_NUM; ?>" target="_blank"><?php echo $selectActRow->SI_NAME ; ?></a></li>
 						        <li>活動時間: <?php echo $selectActRow->AC_TIME ; ?></li>
-						        <li><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>">活動詳情</a></li>
+						        <li><a href="activity_act.php?actNum=<?php echo $selectActRow->AC_NO;?>" target="_blank">活動詳情</a></li>
 							</ul>
 						</address>
 					</div>

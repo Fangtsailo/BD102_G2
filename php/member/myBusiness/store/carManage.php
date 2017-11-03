@@ -217,6 +217,8 @@
 
 
 
+
+
     		foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
 				// 以foreach叫出每一陣列
 					if($_FILES["uploadImg"]["error"][$i]==0){
@@ -274,8 +276,14 @@
 
 		}else{ // if($store_imformation->rowCount()==0) 
 
-
+ 
 			//if(isset($_FILES["uploadImg"])){
+
+			$sql_find_SI_NUM ="select * from store_imformation where SI_MEMNO=$mem_No and SI_TYPE='1'";
+    		$store_imformation_find_SI_NUM = $connectPDO->query($sql_find_SI_NUM);
+    		$store_imformation_find_SI_NUM_Row = $store_imformation_find_SI_NUM -> fetchObject();
+
+    		$SI_NUM=$store_imformation_find_SI_NUM_Row->SI_NUM;
 
 				foreach( $_FILES["uploadImg"]["error"] as $i=>$data ){
 				// 以foreach叫出每一陣列
@@ -336,7 +344,6 @@
 
 
 			//}
-
 
 
 

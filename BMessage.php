@@ -12,7 +12,8 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-	<title>TEMPLATE</title>
+	<title>TrePun</title>
+	<link rel="icon" href="img/trepun4.png">
 	<link rel="stylesheet" type="text/css" href="css/basic.css">
 	<link rel="stylesheet" type="text/css" href="css/BMessage.css">
 
@@ -110,7 +111,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td>檢舉會員編號</td>
 						<td>留言內容</td>
 						<td>檢舉原因</td>
-						<td>檢舉次數</td>
+						
 						<td>審核狀態</td>
 						<td>審核結果</td>
 					</tr>	
@@ -130,7 +131,7 @@ require_once("BackStageHeaderSidebar.php");
 
 						$searchIdName=$_REQUEST["searchIdName"];
 
-						$sql = "select * from report ,shop_message where (report.RE_NO= '$searchIdName' or report.SPMSG_NO='$searchIdName' ) and (report.SPMSG_NO=shop_message.SPMSG_NO)" ; 
+						$sql = "select * from report ,shop_message where (report.RE_NO= '$searchIdName' or report.SPMSG_NO='$searchIdName' ) and (report.SPMSG_NO=shop_message.SPMSG_NO) order by RE_NO desc"  ; 
 
 						$report= $connectPDO->prepare($sql);
 						$report->bindValue(":searchId",$searchIdName);
@@ -166,7 +167,7 @@ require_once("BackStageHeaderSidebar.php");
 						<td><?php echo $repRow->MEM_NO; ?></td>
 						<td><?php echo $repRow->SPMSG_CON; ?></td>
 						<td><?php echo $repRow->RE_CONTENT; ?></td>
-						<td><?php echo $repRow->SPMSG_REPORTIMES; ?></td>
+					
 						
 							<?php
 								$re=$repRow->RE_STATUS;

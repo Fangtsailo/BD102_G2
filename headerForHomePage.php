@@ -206,7 +206,18 @@
 				</div>
 				<div class="memStatusBar" id="memStatusBar">
 					<ul>
-						<li><a href="memedit.php" id="showMemId"> <?php echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; ?>  </a></li>
+						<li><a href="memedit.php" id="showMemId"> <?php 
+						//echo isset($_SESSION["memId"])? $_SESSION["memId"] : ""; 
+						if( isset($_SESSION["memId"]) ){
+								if( $_SESSION["memName"]!="" ){
+									echo $_SESSION["memName"];
+								}else{
+									echo $_SESSION["memId"] ;
+								}
+							}else{
+								echo "";
+							}
+						?>  </a></li>
 						<li><a class="memLink" href="memedit.php">基本資料</a></li>
 						<li><a class="memLink" href="memfollow.php">我的追蹤</a></li>
 						<li><a class="memLink" href="memcomment.php">我的留言</a></li>
@@ -243,9 +254,14 @@
 	<div class="burgerMenu" id="burgerBtn">
 		<?php 
 			if ( isset($_SESSION['memPic']) ){
-				echo "<img src='img/member_pic/".$_SESSION['memPic']."'>";
+				if($_SESSION['memPic']==""){
+					echo "<img src='".GLOBAL_MEM_PIC_PATH."default.png'>";
+				}else{
+					echo "<img src='".GLOBAL_MEM_PIC_PATH.$_SESSION['memPic']."'>";
+				}
 			}else {
-				echo "<img src='img/member_pic/default.png'>";
+				echo "<img src='img/icon/signin.svg'>";
+
 			}
 		?>
 	</div>
@@ -386,10 +402,10 @@
 							<div class="clearfix"></div>
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
+						<label id="hide"><span>*</span>輸入店名</label><input id="storeName" type="text" name="storeName" placeholder="輸入麵包店名">
 					</div>
 					<div class="globalFormInput">
-						<label><span>*</span>商家電話</label><input type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
+						<label><span>*</span>商家電話</label><input id="tel" type="tel" name="tel" placeholder="輸入手機或市話" maxlength="15">
 					</div>
 					<div class="globalFormInput">
 						<label><span>*</span>商家地址</label><input id="address" type="text" name="address" placeholder="輸入縣市/地區/地址門牌號碼">
@@ -456,11 +472,11 @@
 						</div>
 					</div>
 					<div class="globalFormInput">
-						<label>故事介紹</label><textarea name="story" maxlength="450"></textarea>
+						<label>故事介紹</label><textarea id="story" name="story" maxlength="450"></textarea>
 					</div>
 					<div class="clearfix"></div>
 					<div class="globalFormBtns">
-						<div class="globalCancelBtn">取消</div>
+						<div id="canceladdbtn" class="globalCancelBtn">取消</div>
 						<input type="hidden" name="addShopDate" value="<?php echo date("Y-m-d") ?>"> 
 						<input id="addstoreBtn" type="button" name="submitAddShop" class="globalOkBtn" value="送出">					
 					</div>
@@ -471,7 +487,18 @@
 			</form>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(function(){
 
+			$("#hide").click(function(){
+				$("#storeName").val("一八一烘焙屋");
+				$("#tel").val("03-8340346");
+				$("#address").val("花蓮市中山路181號");
+				$("#story").val("一八一烘焙屋嚴選天然蔬果和新鮮食材，每日精心烘焙三四十種麵包與精緻法式西點，有別於傳統麵包店偏好使用現成食品原料，節省時間與成本，本店手工烘焙多種歐式麵包、不添加色素、防腐劑與人工香精，讓您吃「好麵包」的同時，不只品嘗美味，更讓您健康沒有負擔!");
+			});
+
+		});
+	</script>
 <!-- ========================客服中心燈箱===================== -->
 	<div id="serviceCenter">
 		<div class="globalForm">
